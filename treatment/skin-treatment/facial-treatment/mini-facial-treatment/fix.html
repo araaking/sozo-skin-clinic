@@ -1,0 +1,711 @@
+<style>
+  .sozo-sku-mini-facial-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-mini-facial-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-mini-facial-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-mini-facial-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  .sozo-sku-mini-facial-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-mini-facial-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important;
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  .sozo-sku-mini-facial-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important;
+    font-weight: 700 !important;
+  }
+
+  .sozo-sku-mini-facial-wrapper .sozo-btn,
+  .sozo-sku-mini-facial-wrapper .sozo-related-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-btn:hover,
+  .sozo-sku-mini-facial-wrapper .sozo-related-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+  }
+
+  .sozo-sku-mini-facial-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-mini-facial-wrapper .sozo-cta-banner {
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 650px;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    border: 2px solid #ffffff !important;
+  }
+
+  .sozo-sku-mini-facial-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-mini-facial-wrapper .sozo-section-card,
+  .sozo-sku-mini-facial-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-section-card h2,
+  .sozo-sku-mini-facial-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-section-card h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-section-card p,
+  .sozo-sku-mini-facial-wrapper .sozo-section-card li {
+    color: #475569 !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-section-card ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .sozo-sku-mini-facial-wrapper .sozo-problem-grid,
+  .sozo-sku-mini-facial-wrapper .sozo-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-problem-card strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-problem-card span {
+    color: #475569;
+    font-size: 14px;
+  }
+
+  .sozo-sku-mini-facial-wrapper .sozo-process-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-step-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-step-text strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-step-text p {
+    margin: 0 !important;
+    color: #475569 !important;
+    font-size: 15px !important;
+  }
+
+  .sozo-sku-mini-facial-wrapper .sozo-related-card {
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-related-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-related-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-related-body h3 {
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin: 0 !important;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-related-body p {
+    font-size: 14px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    flex: 1;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-related-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-related-btn {
+    max-width: none;
+    padding: 11px 16px;
+    font-size: 14px !important;
+    box-shadow: none;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-related-link {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    text-align: center;
+  }
+
+  .sozo-sku-mini-facial-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-mini-facial-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-mini-facial-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-mini-facial-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-mini-facial-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-mini-facial-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-faq-question svg { flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; }
+  .sozo-sku-mini-facial-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-mini-facial-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-mini-facial-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-mini-facial-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-mini-facial-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-mini-facial-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-mini-facial-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-mini-facial-wrapper .sozo-btn,
+    .sozo-sku-mini-facial-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-mini-facial-wrapper .sozo-section-card,
+    .sozo-sku-mini-facial-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-mini-facial-wrapper .sozo-problem-grid,
+    .sozo-sku-mini-facial-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-mini-facial-wrapper" id="sozo-mini-facial-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li><a href="https://sozoskinclinic.com/">Home</a></li>
+      <li class="separator">/</li>
+      <li><a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a></li>
+      <li class="separator">/</li>
+      <li><a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/">Facial Treatment</a></li>
+      <li class="separator">/</li>
+      <li aria-current="page" style="color: #1A2080; font-weight: 600;">Mini Facial Treatment</li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Mini Facial Treatment untuk Wajah Bersih dan Segar dengan Cepat</h1>
+      <p>Mini facial treatment adalah perawatan wajah praktis yang membantu membersihkan komedo, memberikan relaksasi melalui pijatan, dan menyegarkan kulit dalam waktu singkat sekitar 30 menit.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">30 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga</span>
+            <span class="sozo-info-value">Rp 149.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20Mini%20Facial%20Treatment%20%5Bsumber:%20ORG-facial-general%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Mini-Facial.webp" alt="Mini facial treatment untuk wajah bersih dan segar di Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Wajah Bersih dan Rileks dalam Waktu Singkat</h2>
+      <p>Mini facial treatment membantu mengangkat komedo, melemaskan otot wajah melalui pijatan, dan menyegarkan kulit, sehingga wajah dapat tampak lebih bersih dan segar dalam waktu sekitar 30 menit.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Clinic,%20saya%20mau%20konsultasi%20Mini%20Facial%20Treatment%20%5Bsumber:%20ORG-facial-general%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <div class="sozo-section-card">
+      <h2>Masalah Kulit yang Dapat Dibantu Mini Facial Treatment</h2>
+      <p>Mini facial treatment dapat menjadi pilihan perawatan wajah cepat untuk membantu keluhan ringan berikut:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Wajah Kusam dan Lelah</strong>
+          <span>Wajah tampak kurang segar akibat rutinitas harian dan kurang perawatan.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Komedo</strong>
+          <span>Komedo yang menumpuk dan menyumbat pori sehingga kulit terasa kasar.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Pori Tersumbat</strong>
+          <span>Pori tersumbat oleh sisa makeup, debu, dan minyak yang menumpuk.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Otot Wajah Tegang</strong>
+          <span>Wajah terasa tegang dan butuh relaksasi melalui pijatan ringan.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kulit Kurang Segar</strong>
+          <span>Kulit yang tampak lelah dan membutuhkan penyegaran cepat.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Butuh Perawatan Cepat</strong>
+          <span>Kebutuhan perawatan wajah praktis dengan waktu singkat di sela kesibukan.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Mini Facial Treatment, Perawatan Wajah Cepat dan Praktis</h2>
+      <p>Rutinitas harian sering membuat otot wajah menjadi tegang dan memicu penumpukan kotoran serta komedo. Mini facial treatment hadir sebagai perawatan wajah cepat untuk membantu mengembalikan kesegaran kulit melalui pembersihan dan pijatan ringan.</p>
+      <p>Di SOZO Skin Clinic, mini facial treatment dilakukan oleh terapis profesional. Untuk kondisi kulit tertentu seperti jerawat yang sedang meradang, kami menyarankan konsultasi dengan dokter terlebih dahulu agar perawatan dapat disesuaikan dengan kondisi kulit Anda.</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionMiniFacial">
+        <div class="sozo-expandable-inner">
+          <h3>Apa Itu Mini Facial Treatment?</h3>
+          <p>Mini facial treatment adalah perawatan facial ringkas yang berfokus pada pembersihan wajah, relaksasi otot melalui pijatan, dan pengangkatan komedo. Dengan durasi sekitar 30 menit, perawatan ini cocok sebagai facial cepat untuk menjaga kebersihan dan kesegaran kulit secara rutin.</p>
+
+          <h3>Manfaat Mini Facial Treatment</h3>
+          <ul>
+            <li><strong>Membantu membersihkan komedo:</strong> mengangkat komedo dan kotoran yang menyumbat pori.</li>
+            <li><strong>Memberikan efek relaksasi:</strong> pijatan ringan membantu melemaskan otot wajah yang tegang.</li>
+            <li><strong>Membantu melancarkan sirkulasi:</strong> mendukung kulit agar tampak lebih segar dan merona.</li>
+            <li><strong>Praktis dan cepat:</strong> perawatan singkat sekitar 30 menit yang mudah disesuaikan dengan jadwal.</li>
+          </ul>
+
+          <h3>Mini Facial untuk Perawatan Wajah Cepat</h3>
+          <p>Mini facial treatment cocok untuk Anda yang membutuhkan perawatan wajah cepat di sela kesibukan. Karena fokusnya pada pembersihan dan relaksasi, perawatan ini dapat dilakukan secara rutin untuk membantu menjaga kulit tetap bersih dan segar.</p>
+
+          <h3>Siapa yang Cocok Melakukan Mini Facial Treatment?</h3>
+          <p>Mini facial treatment umumnya cocok untuk berbagai kondisi kulit yang membutuhkan pembersihan dan penyegaran ringan. Untuk kulit dengan jerawat yang sedang meradang atau keluhan khusus, disarankan berkonsultasi dengan dokter terlebih dahulu agar perawatan lebih sesuai.</p>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="toggleMiniDescription()">
+        <span id="miniReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Proses dan Cara Kerja Mini Facial Treatment</h2>
+      <p>Mini facial treatment dilakukan secara bertahap dengan prosedur yang praktis dan nyaman.</p>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan Wajah</strong>
+          <p>Wajah dibersihkan untuk mengangkat sisa makeup, minyak, dan kotoran di permukaan kulit.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Pijat Relaksasi</strong>
+          <p>Pijatan ringan pada wajah membantu melemaskan otot dan melancarkan sirkulasi.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Ekstraksi Komedo</strong>
+          <p>Komedo diangkat secara hati hati untuk membantu membersihkan pori yang tersumbat.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Penyegaran Akhir</strong>
+          <p>Kulit diberi pelembap agar wajah terasa lebih segar dan nyaman setelah perawatan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Treatment Terkait untuk Perawatan Wajah</h2>
+      <p>Beberapa perawatan berikut dapat menjadi pilihan lanjutan atau kombinasi sesuai kebutuhan kulit Anda.</p>
+
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.webp" alt="Acne Clear Facial Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Acne Clear Facial</h3>
+            <p>Facial untuk membantu mengatasi jerawat, membersihkan pori, dan mengontrol minyak berlebih.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20Acne%20Clear%20Facial%20%5Bsumber:%20ORG-facial-general%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-clear-facial/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Skin-Bright-Facial-Medical-1.webp" alt="Brightening Facial Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Brightening Facial</h3>
+            <p>Facial untuk membantu mencerahkan kulit kusam dan meratakan warna kulit agar tampak lebih glowing.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20Brightening%20Facial%20%5Bsumber:%20ORG-facial-general%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/brightening-facial/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/04/collagen-mask-scaled.webp" alt="Collagen Mask Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Collagen Mask</h3>
+            <p>Masker untuk membantu melembapkan, menyegarkan, dan membuat kulit tampak lebih kenyal dan glowing.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20Collagen%20Mask%20%5Bsumber:%20ORG-facial-general%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/collagen-mask/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Mini Facial Treatment</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleMiniFaq(this)">
+          <span>Apa itu mini facial treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Mini facial treatment adalah perawatan facial ringkas yang berfokus pada pembersihan wajah, relaksasi otot melalui pijatan, dan pengangkatan komedo. Perawatan ini cocok sebagai facial cepat untuk menjaga kebersihan dan kesegaran kulit.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleMiniFaq(this)">
+          <span>Berapa lama durasi mini facial treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Durasi mini facial treatment di SOZO Skin Clinic sekitar 30 menit, sehingga cocok sebagai perawatan wajah cepat di sela kesibukan Anda.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleMiniFaq(this)">
+          <span>Apa manfaat mini facial treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Mini facial treatment membantu membersihkan komedo, memberikan relaksasi melalui pijatan, melancarkan sirkulasi, dan menyegarkan kulit. Hasilnya dapat berbeda pada setiap orang tergantung kondisi kulit.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleMiniFaq(this)">
+          <span>Berapa harga mini facial treatment di SOZO?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Harga mini facial treatment di SOZO Skin Clinic mulai dari Rp 149.000. Untuk informasi promo terbaru dan rekomendasi perawatan, Anda dapat menghubungi tim SOZO melalui WhatsApp.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleMiniFaq(this)">
+          <span>Apakah mini facial cocok untuk kulit berjerawat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Mini facial treatment cocok untuk berbagai kondisi kulit. Namun untuk jerawat yang sedang meradang, disarankan berkonsultasi terlebih dahulu dengan dokter kami agar perawatan dapat disesuaikan dengan kondisi kulit Anda.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleMiniFaq(this)">
+          <span>Apa bedanya mini facial dengan facial biasa?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Mini facial treatment adalah versi facial yang lebih ringkas dengan durasi sekitar 30 menit, berfokus pada pembersihan dan relaksasi. Facial yang lebih lengkap biasanya memiliki rangkaian dan durasi yang lebih panjang sesuai kebutuhan kulit.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleMiniFaq(this)">
+          <span>Apakah mini facial bisa dilakukan rutin?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Mini facial treatment dapat dilakukan secara rutin untuk membantu menjaga kebersihan dan kesegaran kulit. Untuk jadwal yang ideal, Anda dapat menyesuaikan dengan rekomendasi terapis atau dokter berdasarkan kondisi kulit.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleMiniFaq(this)">
+          <span>Apakah ada downtime setelah mini facial?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Mini facial treatment umumnya tidak memiliki downtime yang berarti. Kulit dapat sedikit kemerahan setelah ekstraksi komedo dan biasanya mereda dalam waktu singkat.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleMiniFaq(this)">
+          <span>Di mana lokasi mini facial treatment terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Jika Anda sedang mencari klinik kecantikan untuk mini facial treatment terdekat dengan prosedur yang aman dan nyaman, Anda bisa mengunjungi seluruh cabang SOZO Skin Clinic. Setiap klinik kami didukung fasilitas medis modern, menggunakan produk berkualitas tinggi, dan ditangani langsung oleh terapis serta Dokter Kecantikan profesional. Klinik kami tersebar di berbagai wilayah Jabodetabek, termasuk Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Untuk menemukan cabang yang paling mudah dijangkau dari domisili Anda, silakan cek halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a>.</p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleMiniDescription() {
+    const content = document.getElementById('treatmentDescriptionMiniFacial');
+    const btn = document.querySelector('.sozo-load-more-btn');
+    const btnText = document.getElementById('miniReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function toggleMiniFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
+

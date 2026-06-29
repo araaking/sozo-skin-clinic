@@ -1,0 +1,410 @@
+<style>
+  .sozo-sku-body-hr-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-body-hr-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-body-hr-wrapper .sozo-breadcrumb { padding: 15px 20px 25px 20px; width: 100%; }
+  .sozo-sku-body-hr-wrapper .sozo-breadcrumb ol { list-style: none !important; margin: 0 !important; padding: 0 !important; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .sozo-sku-body-hr-wrapper .sozo-breadcrumb li { display: flex; align-items: center; font-size: 14px; color: #1A2080; }
+  .sozo-sku-body-hr-wrapper .sozo-breadcrumb a { text-decoration: none !important; color: #64748b !important; font-weight: 500; transition: color 0.2s ease; }
+  .sozo-sku-body-hr-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-body-hr-wrapper .sozo-breadcrumb .separator { color: #cbd5e1; margin: 0 4px; font-size: 12px; user-select: none; }
+
+  .sozo-sku-body-hr-wrapper .sozo-treatment-hero { display: flex; flex-wrap: nowrap; gap: 50px; align-items: center; margin-bottom: 50px; padding: 0 20px; }
+  .sozo-sku-body-hr-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-body-hr-wrapper .sozo-hero-text h1 { font-size: clamp(32px, 4vw, 42px) !important; color: #1A2080 !important; margin: 0 0 16px 0 !important; line-height: 1.2 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-body-hr-wrapper .sozo-hero-text p { font-size: 16px !important; color: #475569 !important; margin: 0 0 30px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-body-hr-wrapper .sozo-hero-image { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; }
+  .sozo-sku-body-hr-wrapper .sozo-hero-image img { width: 100%; max-width: 480px; height: 340px; border-radius: 24px; object-fit: cover; object-position: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); display: block; }
+
+  .sozo-sku-body-hr-wrapper .sozo-info-row { display: flex; gap: 40px; margin-bottom: 35px; padding: 24px; background-color: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9; }
+  .sozo-sku-body-hr-wrapper .sozo-info-col { display: flex; align-items: flex-start; gap: 15px; }
+  .sozo-sku-body-hr-wrapper .sozo-info-icon { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #EEF2FF; border-radius: 12px; color: #1A2080; }
+  .sozo-sku-body-hr-wrapper .sozo-info-text { display: flex; flex-direction: column; gap: 2px; }
+  .sozo-sku-body-hr-wrapper .sozo-info-label { font-size: 13px !important; color: #64748b !important; font-weight: 600 !important; text-transform: uppercase; letter-spacing: 0.5px; }
+  .sozo-sku-body-hr-wrapper .sozo-info-value { font-size: 20px !important; color: #1A2080 !important; font-weight: 700 !important; }
+
+  .sozo-sku-body-hr-wrapper .sozo-btn,
+  .sozo-sku-body-hr-wrapper .sozo-related-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background-color: #1A2080 !important; color: #ffffff !important; text-decoration: none !important; font-size: 16px !important; font-weight: 600 !important; border-radius: 100px; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2); border: 2px solid #1A2080 !important; }
+  .sozo-sku-body-hr-wrapper .sozo-btn:hover,
+  .sozo-sku-body-hr-wrapper .sozo-related-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; transform: translateY(-3px); }
+
+  .sozo-sku-body-hr-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-body-hr-wrapper .sozo-cta-banner { background-color: #1A2080; background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%); border-radius: 24px; padding: 50px 30px; margin-bottom: 50px; text-align: center; color: #ffffff; box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15); }
+  .sozo-sku-body-hr-wrapper .sozo-cta-banner h2 { font-size: clamp(24px, 3vw, 32px) !important; color: #ffffff !important; margin: 0 0 15px 0 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-body-hr-wrapper .sozo-cta-banner p { font-size: 16px !important; color: #e2e8f0 !important; margin: 0 auto 30px auto !important; max-width: 650px; line-height: 1.6 !important; }
+  .sozo-sku-body-hr-wrapper .sozo-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background-color: #ffffff !important; color: #1A2080 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 100px; border: 2px solid #ffffff !important; }
+  .sozo-sku-body-hr-wrapper .sozo-btn-secondary:hover { background-color: transparent !important; color: #ffffff !important; transform: translateY(-3px); }
+
+  .sozo-sku-body-hr-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-body-hr-wrapper .sozo-section-card,
+  .sozo-sku-body-hr-wrapper .sozo-description-section,
+  .sozo-sku-body-hr-wrapper .sozo-faq-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-body-hr-wrapper .sozo-section-card h2,
+  .sozo-sku-body-hr-wrapper .sozo-description-section h2,
+  .sozo-sku-body-hr-wrapper .sozo-faq-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 20px !important; font-weight: 800 !important; }
+  .sozo-sku-body-hr-wrapper .sozo-section-card h3,
+  .sozo-sku-body-hr-wrapper .sozo-description-section h3 { font-size: 18px !important; color: #1A2080 !important; margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 700 !important; }
+  .sozo-sku-body-hr-wrapper .sozo-section-card p,
+  .sozo-sku-body-hr-wrapper .sozo-section-card li,
+  .sozo-sku-body-hr-wrapper .sozo-description-section p,
+  .sozo-sku-body-hr-wrapper .sozo-description-section li { color: #475569 !important; margin-bottom: 16px !important; font-size: 16px !important; }
+  .sozo-sku-body-hr-wrapper .sozo-description-section ul { padding-left: 20px !important; margin-bottom: 20px !important; }
+
+  .sozo-sku-body-hr-wrapper .sozo-problem-grid,
+  .sozo-sku-body-hr-wrapper .sozo-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sozo-sku-body-hr-wrapper .sozo-problem-card { background-color: #f8fafc; border: 1px solid #f1f5f9; border-radius: 14px; padding: 20px; }
+  .sozo-sku-body-hr-wrapper .sozo-problem-card strong { display: block; color: #1A2080; font-size: 16px; margin-bottom: 6px; }
+  .sozo-sku-body-hr-wrapper .sozo-problem-card span { color: #475569; font-size: 14px; }
+
+  .sozo-sku-body-hr-wrapper .sozo-process-step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
+  .sozo-sku-body-hr-wrapper .sozo-step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background-color: #EEF2FF; color: #1A2080; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .sozo-sku-body-hr-wrapper .sozo-step-text strong { display: block; color: #1A2080; font-size: 16px; margin-bottom: 4px; }
+  .sozo-sku-body-hr-wrapper .sozo-step-text p { margin: 0 !important; color: #475569 !important; font-size: 15px !important; }
+
+  .sozo-sku-body-hr-wrapper .sozo-related-card { border: 1px solid #f1f5f9; border-radius: 16px; overflow: hidden; background-color: #ffffff; display: flex; flex-direction: column; }
+  .sozo-sku-body-hr-wrapper .sozo-related-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+  .sozo-sku-body-hr-wrapper .sozo-related-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .sozo-sku-body-hr-wrapper .sozo-related-body h3 { font-size: 16px !important; color: #1A2080 !important; margin: 0 !important; }
+  .sozo-sku-body-hr-wrapper .sozo-related-body p { font-size: 14px !important; color: #475569 !important; margin: 0 !important; flex: 1; }
+  .sozo-sku-body-hr-wrapper .sozo-related-actions { display: flex; flex-direction: column; gap: 10px; }
+  .sozo-sku-body-hr-wrapper .sozo-related-btn { max-width: none; padding: 11px 16px; font-size: 14px !important; box-shadow: none; }
+  .sozo-sku-body-hr-wrapper .sozo-related-link { color: #1A2080 !important; font-weight: 600 !important; font-size: 14px !important; text-decoration: none !important; text-align: center; }
+
+  .sozo-sku-body-hr-wrapper .sozo-expandable-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease-out; }
+  .sozo-sku-body-hr-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-body-hr-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-body-hr-wrapper .sozo-load-more-btn { background: none !important; border: none !important; color: #1A2080 !important; font-size: 15px !important; font-weight: 600 !important; padding: 0 !important; margin-top: 15px !important; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .sozo-sku-body-hr-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-body-hr-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-body-hr-wrapper .sozo-faq-item { border-bottom: 1px solid #f1f5f9; padding: 16px 0; }
+  .sozo-sku-body-hr-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-body-hr-wrapper .sozo-faq-question { width: 100%; background: none !important; border: none !important; text-align: left; font-size: 16px !important; font-weight: 600 !important; color: #1e293b !important; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0 0 8px 0 !important; }
+  .sozo-sku-body-hr-wrapper .sozo-faq-question svg { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
+  .sozo-sku-body-hr-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-body-hr-wrapper .sozo-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+  .sozo-sku-body-hr-wrapper .sozo-faq-answer p { color: #475569 !important; font-size: 15px !important; margin: 8px 0 16px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-body-hr-wrapper .sozo-faq-answer a { color: #1A2080 !important; text-decoration: underline !important; font-weight: 500; }
+
+  @media (max-width: 768px) {
+    .sozo-sku-body-hr-wrapper .sozo-treatment-hero { flex-direction: column-reverse; gap: 30px; }
+    .sozo-sku-body-hr-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-body-hr-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-body-hr-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-body-hr-wrapper .sozo-btn,
+    .sozo-sku-body-hr-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-body-hr-wrapper .sozo-section-card,
+    .sozo-sku-body-hr-wrapper .sozo-description-section,
+    .sozo-sku-body-hr-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-body-hr-wrapper .sozo-problem-grid,
+    .sozo-sku-body-hr-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-body-hr-wrapper" id="sozo-body-hr-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li><a href="https://sozoskinclinic.com/">Home</a></li>
+      <li class="separator">/</li>
+      <li><a href="https://sozoskinclinic.com/hair-removal-treatment/">Hair Removal Treatment</a></li>
+      <li class="separator">/</li>
+      <li aria-current="page" style="color: #1A2080; font-weight: 600;">Body Hair Removal</li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Body Hair Removal: Hilangkan Bulu Tangan dan Kaki dengan IPL</h1>
+      <p>Body hair removal di SOZO menggunakan teknologi IPL untuk membantu menghilangkan bulu di area tangan dan kaki dengan menargetkan akar rambut, sehingga pertumbuhan bulu lebih lambat dan kulit terasa lebih halus, bersih, dan terawat.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">45 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 1.598.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Body%20Hair%20Removal%20%5Bsumber:%20ORG-hr%20treatment%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/1711015489WhatsApp_Image_2024-03-07_at_5.27.41_PM_2.webp" alt="Body hair removal IPL untuk bulu tangan dan kaki di Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Kulit Tangan dan Kaki Lebih Halus dan Bebas Bulu</h2>
+      <p>Kurangi rasa tidak nyaman akibat sering mencukur. Body hair removal dengan IPL membantu menghambat pertumbuhan bulu untuk hasil yang lebih tahan lama dan kulit yang lebih mulus bersama dokter ahli kami.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20Body%20Hair%20Removal%20%5Bsumber:%20ORG-hr%20treatment%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Dokter Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <div class="sozo-section-card">
+      <h2>Keluhan yang Dapat Dibantu Body Hair Removal</h2>
+      <p>Body hair removal dapat menjadi pilihan untuk membantu mengatasi keluhan berikut pada area tangan dan kaki:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Bulu Tangan dan Kaki</strong>
+          <span>Pertumbuhan bulu di area tangan atau kaki yang ingin dikurangi secara bertahap.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Iritasi Sering Mencukur</strong>
+          <span>Kulit kemerahan atau iritasi akibat sering mencukur atau waxing.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kulit Kasar dan Gelap</strong>
+          <span>Tekstur kulit yang kasar dan warna menggelap akibat metode pencukuran manual.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bulu Tumbuh ke Dalam</strong>
+          <span>Bulu yang tumbuh ke dalam (ingrown hair) setelah mencukur.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Perawatan Cukur Berulang</strong>
+          <span>Lelah harus mencukur berulang dan ingin perawatan yang lebih praktis.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Ingin Hasil Tahan Lama</strong>
+          <span>Menginginkan kulit yang lebih halus dengan hasil yang lebih tahan lama.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-description-section">
+      <h2>Body Hair Removal untuk Kulit Tangan dan Kaki Lebih Halus</h2>
+      <p>Body hair removal (Medium atau Large) adalah perawatan untuk membantu menghilangkan bulu di area tubuh yang lebih luas, seperti tangan dan kaki, menggunakan teknologi IPL (Intense Pulsed Light).</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionBody">
+        <div class="sozo-expandable-inner">
+          <h3>Apa Itu Body Hair Removal dengan IPL?</h3>
+          <p>Body hair removal dengan IPL bekerja dengan memancarkan cahaya yang diserap oleh pigmen pada rambut untuk menargetkan akar rambut. Proses ini membantu menghambat pertumbuhan bulu secara bertahap, sehingga bulu tumbuh lebih lambat dan kulit terasa lebih halus dibandingkan mencukur secara manual.</p>
+
+          <h3>Manfaat Body Hair Removal</h3>
+          <ul>
+            <li><strong>Membantu mengurangi pertumbuhan bulu:</strong> menargetkan akar rambut untuk hasil yang lebih tahan lama.</li>
+            <li><strong>Membantu menghaluskan kulit:</strong> mengurangi tekstur kasar akibat mencukur berulang.</li>
+            <li><strong>Membantu mengurangi iritasi:</strong> meminimalkan risiko iritasi dibandingkan mencukur atau waxing.</li>
+            <li><strong>Praktis:</strong> mengurangi kebutuhan mencukur secara rutin.</li>
+          </ul>
+
+          <h3>Area yang Dapat Ditangani (Medium dan Large)</h3>
+          <p>Body hair removal difokuskan untuk area tubuh yang lebih luas, terutama tangan (arms) dan kaki (legs). Pilihan area Medium atau Large disesuaikan dengan luas area yang ingin ditangani, dan dokter akan membantu menentukan pilihan yang sesuai saat konsultasi.</p>
+
+          <h3>Berapa Sesi yang Dibutuhkan?</h3>
+          <p>Karena pertumbuhan rambut memiliki siklus, hasil yang lebih optimal umumnya membutuhkan beberapa sesi perawatan secara berkala. Jumlah sesi yang ideal berbeda pada setiap orang dan akan disesuaikan dokter berdasarkan kondisi serta target perawatan Anda.</p>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="toggleBodyDescription()">
+        <span id="bodyReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Proses dan Cara Kerja Body Hair Removal</h2>
+      <p>Body hair removal dilakukan secara bertahap dengan prosedur yang terkontrol untuk menjaga kenyamanan pasien.</p>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi dan Penilaian Area</strong>
+          <p>Dokter menilai kondisi kulit dan area (tangan atau kaki) yang akan ditangani serta menentukan pilihan Medium atau Large.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Persiapan Kulit</strong>
+          <p>Area dibersihkan dan disiapkan agar tindakan IPL dapat dilakukan dengan nyaman dan aman.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Tindakan IPL</strong>
+          <p>Cahaya IPL diaplikasikan pada area target untuk membantu menargetkan akar rambut dan menghambat pertumbuhan bulu.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Perawatan Pasca Tindakan</strong>
+          <p>Dokter memberikan arahan perawatan, termasuk penggunaan pelembap dan tabir surya, agar kulit tetap nyaman.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Treatment Hair Removal Terkait</h2>
+      <p>Beberapa perawatan hair removal berikut dapat menjadi pilihan sesuai area dan kebutuhan Anda.</p>
+
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/underarm-laser-hair-removal-featured-1.webp" alt="Underarm Hair Removal Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Underarm Hair Removal</h3>
+            <p>Hair removal IPL untuk area ketiak agar lebih halus dan bersih dengan hasil yang lebih tahan lama.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Underarm%20Hair%20Removal%20%5Bsumber:%20ORG-hr%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-removal-treatment/underarm-hair-removal-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Brazilian.webp" alt="Brazilian Hair Removal Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Brazilian Hair Removal</h3>
+            <p>Hair removal untuk area bikini agar lebih halus, bersih, dan terawat dengan hasil yang lebih tahan lama.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Brazilian%20Hair%20Removal%20%5Bsumber:%20ORG-hr%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-removal-treatment/brazilian-hair-removal-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Laser-Hair-Removal.webp" alt="Laser Hair Removal Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Laser Hair Removal</h3>
+            <p>Hair removal dengan laser untuk membantu menghilangkan bulu dengan hasil yang lebih tahan lama dan minim iritasi.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Laser%20Hair%20Removal%20%5Bsumber:%20ORG-hr%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-removal-treatment/laser-hair-removal-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Body Hair Removal</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBodyFaq(this)">
+          <span>Apa itu body hair removal?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Body hair removal (Medium atau Large) adalah perawatan menggunakan teknologi IPL untuk membantu menghilangkan bulu di area tubuh seperti tangan (arms) dan kaki (legs), dengan menargetkan akar rambut agar pertumbuhan bulu lebih lambat dan kulit lebih halus.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBodyFaq(this)">
+          <span>Area mana saja yang bisa ditangani body hair removal?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Body hair removal difokuskan untuk area tubuh yang lebih luas, terutama tangan dan kaki. Pilihan area Medium atau Large disesuaikan dengan luas area yang ingin ditangani. Dokter akan membantu menentukan pilihan yang paling sesuai saat konsultasi.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBodyFaq(this)">
+          <span>Apakah body hair removal dengan IPL aman untuk kulit?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Body hair removal dengan IPL umumnya aman bila dilakukan dengan prosedur yang tepat dan evaluasi kondisi kulit. Teknologi IPL membantu meminimalkan risiko iritasi dibandingkan mencukur konvensional atau waxing. Konsultasi diperlukan untuk memastikan tindakan sesuai dengan kondisi kulit Anda.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBodyFaq(this)">
+          <span>Berapa lama durasi body hair removal?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Karena areanya lebih luas, durasi treatment umumnya berkisar antara 30 sampai 60 menit, tergantung luas area tangan atau kaki yang dikerjakan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBodyFaq(this)">
+          <span>Berapa harga body hair removal di SOZO?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Harga body hair removal di SOZO Skin Clinic mulai dari Rp 1.598.000. Karena luas area dan kebutuhan setiap orang berbeda, kami menyarankan konsultasi terlebih dahulu agar dokter dapat menyesuaikan pilihan area dan menginformasikan estimasi biaya secara transparan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBodyFaq(this)">
+          <span>Berapa sesi yang dibutuhkan untuk hasil optimal?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Karena pertumbuhan rambut memiliki siklus, hasil yang lebih optimal umumnya membutuhkan beberapa sesi secara berkala. Jumlah sesi ideal berbeda pada setiap orang dan akan disesuaikan dokter berdasarkan kondisi serta target perawatan Anda.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBodyFaq(this)">
+          <span>Apakah hasil body hair removal permanen?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Body hair removal dengan IPL membantu mengurangi dan menghambat pertumbuhan bulu secara bertahap, sehingga hasilnya lebih tahan lama dibandingkan mencukur. Hasil dapat berbeda pada setiap orang dan perawatan berkala biasanya disarankan untuk menjaga hasil tetap optimal.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBodyFaq(this)">
+          <span>Apa bedanya IPL dengan mencukur atau waxing?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Mencukur dan waxing hanya mengangkat bulu di permukaan sehingga bulu cepat tumbuh kembali dan berisiko menimbulkan iritasi. IPL bekerja dengan menargetkan akar rambut untuk membantu menghambat pertumbuhan bulu secara bertahap, sehingga hasilnya cenderung lebih tahan lama dan lebih nyaman untuk kulit.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBodyFaq(this)">
+          <span>Di mana lokasi body hair removal terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Jika Anda sedang mencari klinik kecantikan untuk body hair removal terdekat dengan prosedur yang aman dan nyaman, Anda bisa mengunjungi seluruh cabang SOZO Skin Clinic. Setiap klinik kami didukung fasilitas medis modern, menggunakan produk berkualitas tinggi, dan ditangani langsung oleh terapis serta Dokter Kecantikan profesional. Klinik kami tersebar di berbagai wilayah Jabodetabek, termasuk Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Untuk menemukan cabang yang paling mudah dijangkau dari domisili Anda, silakan cek halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a>.</p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleBodyDescription() {
+    const content = document.getElementById('treatmentDescriptionBody');
+    const btn = document.querySelector('.sozo-load-more-btn');
+    const btnText = document.getElementById('bodyReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function toggleBodyFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
+

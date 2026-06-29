@@ -1,0 +1,400 @@
+<style>
+  .sozo-sku-underarm-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+  .sozo-sku-underarm-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-underarm-wrapper .sozo-breadcrumb { padding: 15px 20px 25px 20px; width: 100%; }
+  .sozo-sku-underarm-wrapper .sozo-breadcrumb ol { list-style: none !important; margin: 0 !important; padding: 0 !important; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .sozo-sku-underarm-wrapper .sozo-breadcrumb li { display: flex; align-items: center; font-size: 14px; color: #1A2080; }
+  .sozo-sku-underarm-wrapper .sozo-breadcrumb a { text-decoration: none !important; color: #64748b !important; font-weight: 500; transition: color 0.2s ease; }
+  .sozo-sku-underarm-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-underarm-wrapper .sozo-breadcrumb .separator { color: #cbd5e1; margin: 0 4px; font-size: 12px; user-select: none; }
+
+  .sozo-sku-underarm-wrapper .sozo-treatment-hero { display: flex; flex-wrap: nowrap; gap: 50px; align-items: center; margin-bottom: 50px; padding: 0 20px; }
+  .sozo-sku-underarm-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-underarm-wrapper .sozo-hero-text h1 { font-size: clamp(32px, 4vw, 42px) !important; color: #1A2080 !important; margin: 0 0 16px 0 !important; line-height: 1.2 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-underarm-wrapper .sozo-hero-text p { font-size: 16px !important; color: #475569 !important; margin: 0 0 30px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-underarm-wrapper .sozo-hero-image { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; }
+  .sozo-sku-underarm-wrapper .sozo-hero-image img { width: 100%; max-width: 480px; height: 340px; border-radius: 24px; object-fit: cover; object-position: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); display: block; }
+
+  .sozo-sku-underarm-wrapper .sozo-info-row { display: flex; gap: 40px; margin-bottom: 35px; padding: 24px; background-color: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9; }
+  .sozo-sku-underarm-wrapper .sozo-info-col { display: flex; align-items: flex-start; gap: 15px; }
+  .sozo-sku-underarm-wrapper .sozo-info-icon { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #EEF2FF; border-radius: 12px; color: #1A2080; }
+  .sozo-sku-underarm-wrapper .sozo-info-text { display: flex; flex-direction: column; gap: 2px; }
+  .sozo-sku-underarm-wrapper .sozo-info-label { font-size: 13px !important; color: #64748b !important; font-weight: 600 !important; text-transform: uppercase; letter-spacing: 0.5px; }
+  .sozo-sku-underarm-wrapper .sozo-info-value { font-size: 20px !important; color: #1A2080 !important; font-weight: 700 !important; }
+
+  .sozo-sku-underarm-wrapper .sozo-btn,
+  .sozo-sku-underarm-wrapper .sozo-related-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background-color: #1A2080 !important; color: #ffffff !important; text-decoration: none !important; font-size: 16px !important; font-weight: 600 !important; border-radius: 100px; transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s; cursor: pointer; box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2); border: 2px solid #1A2080 !important; }
+  .sozo-sku-underarm-wrapper .sozo-btn:hover,
+  .sozo-sku-underarm-wrapper .sozo-related-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; transform: translateY(-3px); }
+
+  .sozo-sku-underarm-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-underarm-wrapper .sozo-cta-banner { background-color: #1A2080; background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%); border-radius: 24px; padding: 50px 30px; margin-bottom: 50px; text-align: center; color: #ffffff; box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15); }
+  .sozo-sku-underarm-wrapper .sozo-cta-banner h2 { font-size: clamp(24px, 3vw, 32px) !important; color: #ffffff !important; margin: 0 0 15px 0 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-underarm-wrapper .sozo-cta-banner p { font-size: 16px !important; color: #e2e8f0 !important; margin: 0 auto 30px auto !important; max-width: 650px; line-height: 1.6 !important; }
+  .sozo-sku-underarm-wrapper .sozo-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background-color: #ffffff !important; color: #1A2080 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 100px; border: 2px solid #ffffff !important; }
+  .sozo-sku-underarm-wrapper .sozo-btn-secondary:hover { background-color: transparent !important; color: #ffffff !important; transform: translateY(-3px); }
+
+  .sozo-sku-underarm-wrapper .sozo-section-card { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-underarm-wrapper .sozo-section-card > h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 16px !important; font-weight: 800 !important; }
+  .sozo-sku-underarm-wrapper .sozo-section-card > p { color: #475569 !important; font-size: 16px !important; margin-bottom: 24px !important; }
+
+  .sozo-sku-underarm-wrapper .sozo-problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .sozo-sku-underarm-wrapper .sozo-problem-card { background-color: #f8fafc; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; }
+  .sozo-sku-underarm-wrapper .sozo-problem-card strong { display: block; font-size: 16px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-underarm-wrapper .sozo-problem-card span { font-size: 14px !important; color: #475569 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-underarm-wrapper .sozo-process-step { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; }
+  .sozo-sku-underarm-wrapper .sozo-process-step:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .sozo-sku-underarm-wrapper .sozo-step-num { width: 45px; height: 45px; background-color: #EEF2FF; color: #1A2080; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px !important; font-weight: 700 !important; flex-shrink: 0; }
+  .sozo-sku-underarm-wrapper .sozo-step-text strong { display: block; font-size: 18px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-underarm-wrapper .sozo-step-text p { font-size: 15px !important; color: #475569 !important; margin: 0 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-underarm-wrapper .sozo-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sozo-sku-underarm-wrapper .sozo-related-card { border: 1px solid #f1f5f9; border-radius: 16px; overflow: hidden; background-color: #ffffff; display: flex; flex-direction: column; }
+  .sozo-sku-underarm-wrapper .sozo-related-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+  .sozo-sku-underarm-wrapper .sozo-related-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .sozo-sku-underarm-wrapper .sozo-related-body h3 { font-size: 16px !important; color: #1A2080 !important; margin: 0 !important; }
+  .sozo-sku-underarm-wrapper .sozo-related-body p { font-size: 14px !important; color: #475569 !important; margin: 0 !important; flex: 1; }
+  .sozo-sku-underarm-wrapper .sozo-related-actions { display: flex; flex-direction: column; gap: 10px; }
+  .sozo-sku-underarm-wrapper .sozo-related-btn { max-width: none; padding: 11px 16px; font-size: 14px !important; box-shadow: none; }
+  .sozo-sku-underarm-wrapper .sozo-related-link { color: #1A2080 !important; font-weight: 600 !important; font-size: 14px !important; text-decoration: none !important; text-align: center; }
+
+  .sozo-sku-underarm-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-underarm-wrapper .sozo-description-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-underarm-wrapper .sozo-description-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 20px !important; font-weight: 800 !important; }
+  .sozo-sku-underarm-wrapper .sozo-description-section h3 { font-size: 18px !important; color: #1A2080 !important; margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 700 !important; }
+  .sozo-sku-underarm-wrapper .sozo-description-section p,
+  .sozo-sku-underarm-wrapper .sozo-description-section li { color: #475569 !important; margin-bottom: 16px !important; font-size: 16px !important; }
+  .sozo-sku-underarm-wrapper .sozo-description-section ul { padding-left: 20px !important; margin-bottom: 20px !important; }
+
+  .sozo-sku-underarm-wrapper .sozo-expandable-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease-out; }
+  .sozo-sku-underarm-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-underarm-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-underarm-wrapper .sozo-load-more-btn { background: none !important; border: none !important; color: #1A2080 !important; font-size: 15px !important; font-weight: 600 !important; padding: 0 !important; margin-top: 15px !important; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .sozo-sku-underarm-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-underarm-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-underarm-wrapper .sozo-faq-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-underarm-wrapper .sozo-faq-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 24px !important; font-weight: 800 !important; }
+  .sozo-sku-underarm-wrapper .sozo-faq-item { border-bottom: 1px solid #f1f5f9; padding: 16px 0; }
+  .sozo-sku-underarm-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-underarm-wrapper .sozo-faq-question { width: 100%; background: none !important; border: none !important; text-align: left; font-size: 16px !important; font-weight: 600 !important; color: #1e293b !important; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0 0 8px 0 !important; }
+  .sozo-sku-underarm-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-underarm-wrapper .sozo-faq-question svg { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
+  .sozo-sku-underarm-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-underarm-wrapper .sozo-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+  .sozo-sku-underarm-wrapper .sozo-faq-answer p,
+  .sozo-sku-underarm-wrapper .sozo-faq-answer ol { color: #475569 !important; font-size: 15px !important; margin: 8px 0 16px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-underarm-wrapper .sozo-faq-answer ol { padding-left: 20px !important; }
+  .sozo-sku-underarm-wrapper .sozo-faq-answer a { color: #1A2080 !important; text-decoration: underline !important; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .sozo-sku-underarm-wrapper .sozo-treatment-hero { flex-direction: column; gap: 30px; }
+    .sozo-sku-underarm-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-underarm-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-underarm-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-underarm-wrapper .sozo-btn,
+    .sozo-sku-underarm-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-underarm-wrapper .sozo-description-section,
+    .sozo-sku-underarm-wrapper .sozo-faq-section,
+    .sozo-sku-underarm-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+    .sozo-sku-underarm-wrapper .sozo-problem-grid,
+    .sozo-sku-underarm-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-underarm-wrapper" id="sozo-underarm-widget">
+
+  <!-- FIXED: Microdata (itemscope/itemprop/itemtype) removed to prevent duplicate BreadcrumbList -->
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/"><span>Home</span></a>
+      </li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/hair-removal-treatment/"><span>Hair Removal Treatment</span></a>
+      </li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Underarm Hair Removal</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Underarm Hair Removal: Menghilangkan Bulu Ketiak dengan IPL</h1>
+      <p>Bebaskan diri Anda dari rutinitas mencukur yang merepotkan dengan perawatan Underarm Hair Removal. Menggunakan teknologi cahaya Intense Pulsed Light (IPL) berstandar medis, prosedur ini membantu menargetkan akar rambut ketiak untuk menghambat pertumbuhannya. Solusi modern, minim rasa sakit, dan nyaman untuk mendapatkan kulit ketiak yang lebih halus, cerah, dan terawat.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">45 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 249.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20Underarm%20Hair%20Removal%20%5Bsumber:%20ORG-hr%20treatment%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/underarm-laser-hair-removal-featured-1.webp"
+           alt="Underarm hair removal IPL untuk menghilangkan bulu ketiak di Sozo Skin Clinic"
+           width="480"
+           height="340"
+           fetchpriority="high"
+           decoding="async">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Kulit Ketiak Lebih Halus dan Bebas Bulu</h2>
+      <p>Jangan biarkan bulu mengganggu rasa percaya diri Anda. Dapatkan penanganan IPL berteknologi tinggi untuk hasil yang lebih tahan lama dan kulit ketiak yang lebih mulus bersama tenaga profesional kami.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%20Clinic,%20saya%20mau%20konsultasi%20Underarm%20Hair%20Removal%20%5Bsumber:%20ORG-hr%20treatment%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Dokter Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <section class="sozo-section-card">
+      <h2>Masalah Ketiak yang Sering Dialami</h2>
+      <p>Metode menghilangkan bulu ketiak secara tradisional sering kali justru memicu masalah baru pada kulit. Perawatan Underarm Hair Removal dapat menjadi solusi jika Anda sering mengalami keluhan berikut:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Ketiak Hitam dan Kasar (Chicken Skin)</strong>
+          <span>Gesekan pisau cukur secara terus-menerus dapat membuat permukaan kulit ketiak menghitam, menebal, dan bertekstur kasar menyerupai kulit ayam.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Iritasi dan Ingrown Hair</strong>
+          <span>Rasa perih, gatal, kemerahan, atau munculnya benjolan (rambut yang tumbuh ke dalam) setelah mencukur atau waxing.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bau Badan Berlebih</strong>
+          <span>Bulu ketiak yang lebat sering menjadi tempat terperangkapnya keringat dan berkembangnya bakteri yang dapat memicu bau badan.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Repot Mencukur Setiap Minggu</strong>
+          <span>Siklus pertumbuhan bulu ketiak yang cepat mengharuskan Anda mencukur atau waxing hampir setiap minggu.</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="sozo-description-section">
+      <h2>Underarm Hair Removal Treatment: Solusi Medis untuk Ketiak Bersih, Cerah, dan Bebas Bulu</h2>
+      <p>Mencukur dan waxing hanyalah solusi sementara yang memotong atau mencabut batang rambut, tanpa mengatasi pusat pertumbuhannya. Di SOZO Skin Clinic, perawatan Underarm Hair Removal menggunakan teknologi Intense Pulsed Light (IPL) berstandar medis yang bekerja melalui prinsip selective photothermolysis.</p>
+      <p>Spektrum cahaya yang dipancarkan oleh alat IPL dirancang untuk diserap oleh zat melanin (pigmen warna gelap) yang berada di dalam akar rambut. Energi cahaya ini kemudian berubah menjadi energi panas yang menargetkan papila dan bulge (pusat nutrisi dan sel induk folikel rambut) di bawah permukaan kulit, dengan tujuan menjaga jaringan di sekitarnya. Folikel yang dinonaktifkan ini cenderung kehilangan kemampuannya untuk menumbuhkan helai rambut baru dalam jangka panjang.</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionUnderarm">
+        <div class="sozo-expandable-inner">
+          <h3>4 Keunggulan IPL Underarm Dibandingkan Metode Konvensional</h3>
+          <p>Perawatan ini dapat memberikan manfaat positif bagi kesehatan dan estetika kulit ketiak Anda:</p>
+          <ul>
+            <li><strong>Pengurangan Bulu Terukur (Long-Lasting Reduction):</strong> dengan perawatan yang konsisten, pertumbuhan bulu berkurang secara signifikan. Bulu yang tersisa cenderung tumbuh lebih lambat dan menjadi lebih halus (vellus), sehingga ketiak terasa lebih mulus dalam jangka panjang.</li>
+            <li><strong>Membantu Mengurangi Chicken Skin dan Hiperpigmentasi:</strong> kebiasaan mencukur dapat memicu mikrotrauma (luka kecil) yang menyebabkan ketiak menghitam (hiperpigmentasi pasca-inflamasi) dan bertekstur kasar seperti kulit ayam (chicken skin). Dengan IPL, frekuensi gesekan akibat mencukur dapat berkurang. Cahaya IPL juga memiliki efek peremajaan ringan (skin rejuvenation) yang membantu memudarkan pigmen gelap sehingga kulit ketiak tampak lebih cerah.</li>
+            <li><strong>Membantu Mencegah Ingrown Hair (Rambut Tumbuh ke Dalam):</strong> menargetkan folikel dari akarnya adalah salah satu cara medis yang efektif untuk membantu mengurangi peradangan atau benjolan akibat ingrown hair yang sering terjadi setelah waxing.</li>
+            <li><strong>Membantu Mengurangi Bau Badan (Odor Control):</strong> bulu ketiak yang lebat dapat menjadi tempat bakteri bercampur dengan keringat dan memicu bau badan. Ketiak yang lebih bersih dari bulu membuat sirkulasi udara lebih baik, mengurangi kelembapan berlebih, dan membantu mengurangi bau badan.</li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" id="underarmLoadMore" onclick="toggleUnderarmDescription()">
+        <span id="underarmReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </article>
+
+    <section class="sozo-section-card">
+      <h2>Proses dan Cara Kerja Underarm Hair Removal</h2>
+      <p>Prosedur menghilangkan bulu ketiak ini dilakukan dengan langkah-langkah medis yang higienis, cepat, dan menjaga kenyamanan Anda sepanjang durasi perawatan:</p>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan dan Cukur Halus</strong>
+          <p>Terapis medis kami membersihkan area ketiak Anda secara menyeluruh. Jika rambut ketiak masih panjang, terapis akan mencukurnya hingga tersisa sekitar 1 sampai 2 milimeter agar energi IPL dapat fokus menargetkan akar rambut.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Aplikasi Cooling Gel</strong>
+          <p>Krim gel pendingin (cooling gel) yang diformulasikan khusus dioleskan secara merata pada area ketiak. Gel ini berfungsi melindungi permukaan kulit dan memberikan sensasi sejuk selama tindakan berlangsung.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Tindakan IPL Hair Removal</strong>
+          <p>Mata Anda ditutup dengan kacamata pelindung. Alat aplikator IPL ditempelkan pada area ketiak untuk menembakkan kilatan energi cahaya. Anda umumnya hanya merasakan sensasi hangat ringan yang masih dapat ditoleransi.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan dan Aftercare</strong>
+          <p>Setelah selesai, area ketiak dibersihkan dari sisa gel dan diberikan krim pelembap anti-iritasi. Terapis memberikan jadwal kunjungan berikutnya untuk membantu menangani seluruh siklus folikel rambut secara bertahap.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sozo-section-card">
+      <h2>Treatment Area Ketiak Terkait</h2>
+      <p>Beberapa perawatan berikut dapat menjadi pelengkap untuk area ketiak sesuai kebutuhan Anda.</p>
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/underarm-laser-hair-removal-featured-1.webp" alt="Underarm Brightening Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Underarm Brightening</h3>
+            <p>Pencerah ketiak dengan medical peeling untuk membantu meratakan warna kulit dan menghaluskan tekstur.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20Underarm%20Brightening%20%5Bsumber:%20ORG-hr%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-removal-treatment/underarm-brightening-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Laser-Hair-Removal.webp" alt="Laser Hair Removal Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Laser Hair Removal</h3>
+            <p>Laser hair removal untuk membantu pengurangan bulu yang lebih tahan lama dan kulit lebih halus.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20Laser%20Hair%20Removal%20%5Bsumber:%20ORG-hr%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-removal-treatment/laser-hair-removal-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Brazilian.webp" alt="Brazilian Hair Removal Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Brazilian Hair Removal</h3>
+            <p>Hair removal untuk area bikini agar lebih bersih dan halus dengan hasil yang lebih tahan lama.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20Brazilian%20Hair%20Removal%20%5Bsumber:%20ORG-hr%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-removal-treatment/brazilian-hair-removal-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Underarm Hair Removal</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmFaq(this)">
+          <span>Apa itu underarm hair removal dengan teknologi IPL dan bagaimana prinsip kerjanya?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><div><p>Underarm hair removal adalah treatment estetika medis untuk membantu menghambat pertumbuhan bulu ketiak secara jangka panjang menggunakan teknologi IPL (Intense Pulsed Light). Prinsip kerjanya memanfaatkan pancaran cahaya berspektrum luas yang secara selektif menargetkan melanin (pigmen warna) di dalam akar rambut. Energi cahaya tersebut diubah menjadi panas untuk menonaktifkan sel induk pada folikel rambut, sehingga folikel cenderung kehilangan fungsinya dan tidak lagi memproduksi batang rambut baru.</p></div></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmFaq(this)">
+          <span>Apa bedanya IPL hair removal dengan mencukur (shaving) atau waxing biasa?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><div><p>Mencukur hanya memotong rambut setara permukaan kulit, meninggalkan ujung rambut yang tumpul (stubble) sehingga ketiak terasa kasar dalam 1 sampai 2 hari dan berisiko menghitam. Waxing menarik rambut secara paksa yang sering merobek pori-pori dan memicu ingrown hair. Sebaliknya, IPL hair removal adalah solusi medis non-invasif yang bekerja menonaktifkan folikel secara langsung, sehingga membantu memberikan hasil ketiak yang lebih halus, mulus, dan cerah dengan hasil yang lebih tahan lama.</p></div></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmFaq(this)">
+          <span>Apakah treatment IPL underarm hair removal terasa sakit atau menyebabkan luka bakar?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><div><p>Prosedur ini umumnya aman dan tingkat kenyamanannya lebih tinggi dibandingkan rasa sakit akibat waxing atau epilator. Teknologi IPL modern dilengkapi sistem advanced cooling pada ujung aplikatornya. Ditambah pengaplikasian gel pendingin (cooling gel) sebelum tindakan, Anda umumnya hanya merasakan sensasi hangat ringan atau seperti jepretan karet gelang kecil di kulit. Risiko luka bakar relatif minim karena energi panas difokuskan pada akar rambut. Asesmen dokter tetap dilakukan untuk menyesuaikan tindakan dengan kondisi kulit Anda.</p></div></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmFaq(this)">
+          <span>Apakah hasil dari underarm hair removal ini bersifat permanen?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><div><p>Dalam dunia medis, istilah yang tepat adalah permanent hair reduction (pengurangan bulu secara permanen). Setelah menyelesaikan rangkaian program treatment, sebagian besar bulu ketiak berkurang signifikan, sekitar 80 sampai 90%. Jika ada beberapa helai yang tumbuh, bentuknya cenderung sangat tipis, halus, dan terang (vellus hair) sehingga hampir tidak terlihat. Perlu dicatat bahwa perubahan hormon (seperti kehamilan atau kondisi tiroid tertentu) dapat memicu pertumbuhan folikel baru di masa depan, sehingga sebagian orang membutuhkan sesi pemeliharaan.</p></div></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmFaq(this)">
+          <span>Berapa kali sesi treatment hingga bulu ketiak berkurang optimal?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><div><p>Rambut tumbuh dalam tiga siklus berbeda: anagen (fase pertumbuhan aktif), katagen (fase transisi), dan telogen (fase istirahat). Energi panas dari IPL paling efektif menargetkan folikel rambut yang sedang berada dalam fase aktif (anagen). Karena tidak semua bulu ketiak berada pada fase anagen di waktu yang bersamaan, Anda umumnya membutuhkan sekitar 6 hingga 10 sesi dengan interval 3 sampai 4 minggu sekali untuk membantu menargetkan seluruh folikel secara bertahap.</p></div></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmFaq(this)">
+          <span>Apa saja pantangan dan aftercare pasca-treatment IPL underarm?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><div><p>Selama 24 sampai 48 jam pasca-tindakan, pori-pori ketiak Anda akan lebih sensitif. Sebaiknya Anda:</p>
+          <ol>
+            <li>menunda penggunaan deodoran atau antiperspiran yang mengandung alkohol atau aluminium;</li>
+            <li>menghindari mandi air panas, sauna, dan aktivitas fisik yang memicu keringat berlebih;</li>
+            <li>menggunakan pakaian longgar untuk menghindari gesekan; dan</li>
+            <li>menghindari mencabut sisa bulu (plucking). Biarkan sisa bulu tersebut rontok dengan sendirinya dalam waktu 1 sampai 2 minggu.</li>
+          </ol>
+        </div></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmFaq(this)">
+          <span>Berapa harga treatment underarm hair removal per sesi?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><div><p>Harga treatment IPL Underarm Hair Removal di SOZO Skin Clinic mulai dari Rp 249.000 per sesi (dengan durasi tindakan sekitar 45 menit). Jika dibandingkan dengan akumulasi biaya rutin membeli pisau cukur, krim shaving, atau biaya waxing salon setiap bulan, treatment IPL dapat menjadi pilihan yang lebih praktis dalam jangka panjang.</p></div></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmFaq(this)">
+          <span>Di mana saya bisa melakukan underarm hair removal terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><div><p>Untuk mendapatkan kulit ketiak yang lebih halus dan bebas bulu dengan alat teknologi canggih dan higienis, Anda dapat mengunjungi seluruh cabang SOZO Skin Clinic. Jaringan klinik kami ditangani langsung oleh terapis ahli dan tersebar di berbagai wilayah strategis Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Temukan rute dan jadwal klinik terdekat Anda melalui halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic</a>.</p></div></div>
+      </div>
+
+    </section>
+  </div>
+
+</div>
+
+<script>
+  function toggleUnderarmDescription() {
+    const content = document.getElementById('treatmentDescriptionUnderarm');
+    const btn = document.getElementById('underarmLoadMore');
+    const btnText = document.getElementById('underarmReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function toggleUnderarmFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px";
+  }
+</script>

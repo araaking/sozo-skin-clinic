@@ -1,0 +1,397 @@
+<style>
+  .sozo-sku-underarm-bright-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+  .sozo-sku-underarm-bright-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-breadcrumb { padding: 15px 20px 25px 20px; width: 100%; }
+  .sozo-sku-underarm-bright-wrapper .sozo-breadcrumb ol { list-style: none !important; margin: 0 !important; padding: 0 !important; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-breadcrumb li { display: flex; align-items: center; font-size: 14px; color: #1A2080; }
+  .sozo-sku-underarm-bright-wrapper .sozo-breadcrumb a { text-decoration: none !important; color: #64748b !important; font-weight: 500; transition: color 0.2s ease; }
+  .sozo-sku-underarm-bright-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-breadcrumb .separator { color: #cbd5e1; margin: 0 4px; font-size: 12px; user-select: none; }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-treatment-hero { display: flex; flex-wrap: nowrap; gap: 50px; align-items: center; margin-bottom: 50px; padding: 0 20px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-underarm-bright-wrapper .sozo-hero-text h1 { font-size: clamp(32px, 4vw, 42px) !important; color: #1A2080 !important; margin: 0 0 16px 0 !important; line-height: 1.2 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-hero-text p { font-size: 16px !important; color: #475569 !important; margin: 0 0 30px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-hero-image { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; }
+  .sozo-sku-underarm-bright-wrapper .sozo-hero-image img { width: 100%; max-width: 480px; height: 340px; border-radius: 24px; object-fit: cover; object-position: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); display: block; }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-info-row { display: flex; gap: 40px; margin-bottom: 35px; padding: 24px; background-color: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9; }
+  .sozo-sku-underarm-bright-wrapper .sozo-info-col { display: flex; align-items: flex-start; gap: 15px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-info-icon { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #EEF2FF; border-radius: 12px; color: #1A2080; }
+  .sozo-sku-underarm-bright-wrapper .sozo-info-text { display: flex; flex-direction: column; gap: 2px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-info-label { font-size: 13px !important; color: #64748b !important; font-weight: 600 !important; text-transform: uppercase; letter-spacing: 0.5px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-info-value { font-size: 20px !important; color: #1A2080 !important; font-weight: 700 !important; }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-btn,
+  .sozo-sku-underarm-bright-wrapper .sozo-related-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background-color: #1A2080 !important; color: #ffffff !important; text-decoration: none !important; font-size: 16px !important; font-weight: 600 !important; border-radius: 100px; transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s; cursor: pointer; box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2); border: 2px solid #1A2080 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-btn:hover,
+  .sozo-sku-underarm-bright-wrapper .sozo-related-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; transform: translateY(-3px); }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-cta-banner { background-color: #1A2080; background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%); border-radius: 24px; padding: 50px 30px; margin-bottom: 50px; text-align: center; color: #ffffff; box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15); }
+  .sozo-sku-underarm-bright-wrapper .sozo-cta-banner h2 { font-size: clamp(24px, 3vw, 32px) !important; color: #ffffff !important; margin: 0 0 15px 0 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-cta-banner p { font-size: 16px !important; color: #e2e8f0 !important; margin: 0 auto 30px auto !important; max-width: 650px; line-height: 1.6 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background-color: #ffffff !important; color: #1A2080 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 100px; border: 2px solid #ffffff !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-btn-secondary:hover { background-color: transparent !important; color: #ffffff !important; transform: translateY(-3px); }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-section-card { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-underarm-bright-wrapper .sozo-section-card > h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 16px !important; font-weight: 800 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-section-card > p { color: #475569 !important; font-size: 16px !important; margin-bottom: 24px !important; }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-problem-card { background-color: #f8fafc; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; }
+  .sozo-sku-underarm-bright-wrapper .sozo-problem-card strong { display: block; font-size: 16px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-problem-card span { font-size: 14px !important; color: #475569 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-process-step { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; }
+  .sozo-sku-underarm-bright-wrapper .sozo-process-step:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .sozo-sku-underarm-bright-wrapper .sozo-step-num { width: 45px; height: 45px; background-color: #EEF2FF; color: #1A2080; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px !important; font-weight: 700 !important; flex-shrink: 0; }
+  .sozo-sku-underarm-bright-wrapper .sozo-step-text strong { display: block; font-size: 18px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-step-text p { font-size: 15px !important; color: #475569 !important; margin: 0 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-related-card { border: 1px solid #f1f5f9; border-radius: 16px; overflow: hidden; background-color: #ffffff; display: flex; flex-direction: column; }
+  .sozo-sku-underarm-bright-wrapper .sozo-related-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+  .sozo-sku-underarm-bright-wrapper .sozo-related-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .sozo-sku-underarm-bright-wrapper .sozo-related-body h3 { font-size: 16px !important; color: #1A2080 !important; margin: 0 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-related-body p { font-size: 14px !important; color: #475569 !important; margin: 0 !important; flex: 1; }
+  .sozo-sku-underarm-bright-wrapper .sozo-related-actions { display: flex; flex-direction: column; gap: 10px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-related-btn { max-width: none; padding: 11px 16px; font-size: 14px !important; box-shadow: none; }
+  .sozo-sku-underarm-bright-wrapper .sozo-related-link { color: #1A2080 !important; font-weight: 600 !important; font-size: 14px !important; text-decoration: none !important; text-align: center; }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-description-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-underarm-bright-wrapper .sozo-description-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 20px !important; font-weight: 800 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-description-section h3 { font-size: 18px !important; color: #1A2080 !important; margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 700 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-description-section p,
+  .sozo-sku-underarm-bright-wrapper .sozo-description-section li { color: #475569 !important; margin-bottom: 16px !important; font-size: 16px !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-description-section ul { padding-left: 20px !important; margin-bottom: 20px !important; }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-expandable-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease-out; }
+  .sozo-sku-underarm-bright-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-underarm-bright-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-underarm-bright-wrapper .sozo-load-more-btn { background: none !important; border: none !important; color: #1A2080 !important; font-size: 15px !important; font-weight: 600 !important; padding: 0 !important; margin-top: 15px !important; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-underarm-bright-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 24px !important; font-weight: 800 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-item { border-bottom: 1px solid #f1f5f9; padding: 16px 0; }
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-question { width: 100%; background: none !important; border: none !important; text-align: left; font-size: 16px !important; font-weight: 600 !important; color: #1e293b !important; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0 0 8px 0 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-question svg { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-answer p { color: #475569 !important; font-size: 15px !important; margin: 8px 0 16px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-underarm-bright-wrapper .sozo-faq-answer a { color: #1A2080 !important; text-decoration: underline !important; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .sozo-sku-underarm-bright-wrapper .sozo-treatment-hero { flex-direction: column; gap: 30px; }
+    .sozo-sku-underarm-bright-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-underarm-bright-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-underarm-bright-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-underarm-bright-wrapper .sozo-btn,
+    .sozo-sku-underarm-bright-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-underarm-bright-wrapper .sozo-description-section,
+    .sozo-sku-underarm-bright-wrapper .sozo-faq-section,
+    .sozo-sku-underarm-bright-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+    .sozo-sku-underarm-bright-wrapper .sozo-problem-grid,
+    .sozo-sku-underarm-bright-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-underarm-bright-wrapper" id="sozo-underarm-bright-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li><a href="https://sozoskinclinic.com/">Home</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/hair-removal-treatment/">Hair Removal Treatment</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li aria-current="page" style="color: #1A2080; font-weight: 600;">Underarm Brightening Treatment</li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Underarm Brightening Treatment: Pencerah Ketiak Hitam dan Kasar</h1>
+      <p>Kembalikan rasa percaya diri Anda dengan Underarm Brightening Treatment. Perawatan pencerah ketiak intensif ini dirancang untuk membantu mengangkat penumpukan sel kulit mati, meratakan warna kulit yang gelap, dan menghaluskan tekstur kasar akibat sering mencukur. Dapatkan kulit ketiak yang tampak lebih bersih, cerah, dan merata untuk menunjang aktivitas Anda sehari-hari.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">45 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 379.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Underarm%20Brightening%20Treatment%20%5Bsumber:%20ORG-underarm-brightening%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/underarm-laser-hair-removal-featured-1.webp"
+           alt="Underarm brightening treatment pencerah ketiak di Sozo Skin Clinic"
+           width="480"
+           height="340"
+           fetchpriority="high"
+           decoding="async">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Dapatkan Area Lipatan Ketiak yang Lebih Cerah dan Halus</h2>
+      <p>Jangan biarkan kulit lipatan ketiak yang gelap membatasi penampilan Anda. Dapatkan penanganan higienis medis untuk hasil yang lebih maksimal bersama tenaga profesional kami.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20Underarm%20Brightening%20%5Bsumber:%20ORG-underarm-brightening%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Dokter Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <div class="sozo-section-card">
+      <h2>Masalah Ketiak Gelap yang Sering Dialami</h2>
+      <p>Area lipatan sering kali luput dari perawatan maksimal padahal sangat rentan terhadap gesekan. Treatment ketiak untuk mencerahkan area lipatan dapat membantu jika Anda sering mengalami keluhan berikut yang menurunkan kepercayaan diri:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Ketiak Hitam dan Gelap (Hiperpigmentasi)</strong>
+          <span>Perubahan warna kulit menjadi lebih gelap akibat penumpukan sel kulit mati, gesekan pakaian ketat, atau reaksi iritasi dari bahan kimia deodoran.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tekstur Kasar (Chicken Skin)</strong>
+          <span>Permukaan kulit yang tidak rata, berbintik menonjol, dan terasa kasar akibat kebiasaan mencukur (shaving) atau mencabut bulu yang melukai pori-pori.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Pori-Pori Tersumbat dan Kusam</strong>
+          <span>Tumpukan sisa antiperspiran, bedak ketiak, dan keringat yang menyumbat pori-pori kulit, membuat area lipatan tampak kusam dan kotor.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Warna Kulit Tidak Merata (Belang)</strong>
+          <span>Perbedaan warna (belang) pada lipatan ketiak yang membuat Anda merasa ragu dan tidak nyaman saat mengenakan pakaian tanpa lengan (sleeveless).</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="sozo-description-section">
+      <h2>Underarm Brightening: Solusi Medis untuk Ketiak Cerah, Halus, dan Warna Merata</h2>
+      <p>Bagi Anda yang masih awam dengan istilah estetika ini dan bertanya-tanya, "apa itu underarm?" Secara anatomi, underarm adalah area lipatan di lipat lengan (ketiak) yang memiliki karakteristik kulit cenderung lebih tipis, sensitif, dan memiliki kepadatan kelenjar keringat yang tinggi. Karena posisinya yang selalu terlipat, area ini rentan mengalami frictional melanosis (penggelapan akibat gesekan konstan) serta hiperpigmentasi pasca-inflamasi (HPI) akibat trauma luar seperti mencukur.</p>
+      <p>Oleh karena itu, layanan underarm treatment di SOZO Skin Clinic tidak menggunakan krim pencerah instan yang berbahaya, melainkan menggunakan pendekatan medis berupa medical peeling (eksfoliasi kimiawi) yang terkontrol. Prosedur ini bekerja dengan cara melunakkan ikatan antar sel di lapisan stratum korneum (lapisan kulit terluar) untuk membantu mengangkat tumpukan sel kulit mati yang memadat dan menghitam, sekaligus mendukung pembentukan sel-sel kulit baru yang lebih sehat, cerah, dan bersih.</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionUnderarmBright">
+        <div class="sozo-expandable-inner">
+          <h3>Mengapa Kulit Lipatan Underarm Mudah Menghitam?</h3>
+          <p>Banyak faktor yang menyebabkan area lipatan kehilangan rona cerah alaminya. Memahami akar masalah adalah langkah awal untuk mendapatkan hasil treatment mencerahkan ketiak yang lebih optimal dan tahan lama:</p>
+          <ul>
+            <li><strong>Hiperpigmentasi Akibat Deodoran Berbahan Keras:</strong> penggunaan antiperspiran atau deodoran yang mengandung alkohol tinggi dan aluminium klorida dapat memicu iritasi kronis tersembunyi yang lambat laun mendorong produksi melanin (pigmen gelap) berlebih.</li>
+            <li><strong>Mikrotrauma Akibat Pisau Cukur:</strong> setiap kali Anda mencukur, pisau cukur tidak hanya memotong bulu, tetapi juga dapat mengikis lapisan pelindung kulit (skin barrier). Kondisi ini dapat menyebabkan kulit meradang, menebal, dan memicu tekstur kasar menyerupai kulit ayam (chicken skin).</li>
+            <li><strong>Faktor Gesekan dan Akanthosis Nigrikans:</strong> gesekan konstan antara kulit dengan pakaian ketat yang tidak menyerap keringat dengan baik dapat mempercepat akumulasi sel kulit mati, membuat lipatan tampak kusam dan bergaris gelap.</li>
+          </ul>
+
+          <h3>4 Keunggulan SOZO Underarm Brightening</h3>
+          <p>Sebagai prosedur pencerah ketiak (underarm brightening) di klinik, SOZO menghadirkan standar perawatan yang berfokus pada hasil jangka panjang:</p>
+          <ul>
+            <li><strong>Formulasi Cairan Medis Premium:</strong> zat aktif pencerah yang digunakan dirancang khusus untuk area lipatan sensitif, bekerja membantu menghambat enzim tyrosinase (pemicu flek hitam) dengan tetap menjaga kenyamanan kulit.</li>
+            <li><strong>Membantu Menghaluskan Tekstur Kasar (Chicken Skin):</strong> selain membantu mencerahkan, zat eksfoliator mikro di dalamnya bekerja membantu merapikan kembali tampilan pori-pori kulit ketiak, sehingga tekstur kulit terasa lebih halus.</li>
+            <li><strong>Dapat Dikombinasikan dengan Laser Brightening Ketiak:</strong> untuk kasus penggelapan yang membandel atau faktor genetik, treatment pencerah ketiak ini dapat dikombinasikan dengan teknologi laser brightening ketiak di klinik kami. Laser membantu menargetkan pigmen gelap di lapisan dalam, sementara peeling membersihkan lapisan luar.</li>
+            <li><strong>Higienis dan di Bawah Pengawasan Dokter:</strong> semua tahapan treatment underarm dilakukan dengan protokol sterilisasi yang ketat dan disesuaikan dengan asesmen dokter, sehingga lebih aman dibandingkan menggunakan produk pencerah yang tidak jelas keamanannya di pasaran.</li>
+          </ul>
+
+          <h3>Solusi Klinik Medis dibandingkan Bahan Alami Tradisional</h3>
+          <p>Banyak mitos beredar mengenai cara mencerahkan lipatan menggunakan bahan rumahan seperti lemon atau baking soda. Kami tidak menyarankan hal tersebut. Lemon memiliki tingkat keasaman (pH) yang ekstrem dan dapat merusak skin barrier serta memicu iritasi pada ketiak yang sensitif, yang justru berisiko membuat kulit ketiak tampak semakin gelap akibat HPI.</p>
+          <p>Treatment pencerah ketiak (brightening) di klinik kecantikan menggunakan bahan aktif yang telah dikalibrasi secara klinis (seperti Alpha Hydroxy Acids tingkat medis), sehingga memberikan hasil yang lebih terukur, teruji, dan lebih aman dari risiko iritasi, dengan perubahan yang dapat mulai terasa secara bertahap sejak sesi pertama.</p>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" id="underarmBrightLoadMore" onclick="toggleUnderarmBrightDescription()">
+        <span id="underarmBrightReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </article>
+
+    <div class="sozo-section-card">
+      <h2>Proses dan Cara Kerja Treatment Underarm</h2>
+      <p>Prosedur treatment underarm ini dilakukan langsung oleh terapis dan tenaga medis profesional, dengan memperhatikan keamanan untuk kulit sensitif Anda:</p>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi dan Asesmen Kulit</strong>
+          <p>Dokter atau tenaga medis memeriksa tingkat hiperpigmentasi dan memastikan tidak ada luka atau iritasi aktif pada ketiak Anda sebelum prosedur dimulai.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan Area (Cleansing)</strong>
+          <p>Ketiak dibersihkan secara menyeluruh dari sisa deodoran, keringat, dan kotoran agar cairan aktif pencerah dapat bekerja dengan lebih optimal.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Aplikasi Cairan Brightening (Medical Peeling)</strong>
+          <p>Menggunakan kuas khusus, tenaga medis mengoleskan cairan eksfoliator pencerah dengan takaran yang presisi, lalu didiamkan beberapa saat agar bereaksi membantu memecah pigmen gelap dan sel kulit mati.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan dan Aftercare</strong>
+          <p>Setelah proses eksfoliasi selesai, area ketiak dibersihkan kembali. Krim penenang (soothing cream) diaplikasikan untuk membantu meredakan kulit, mengembalikan kelembapan, dan mengurangi risiko iritasi pasca-tindakan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Treatment Area Ketiak Terkait</h2>
+      <p>Beberapa perawatan berikut dapat menjadi pelengkap untuk area ketiak sesuai kebutuhan Anda.</p>
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/underarm-laser-hair-removal-featured-1.webp" alt="Underarm Hair Removal Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Underarm Hair Removal</h3>
+            <p>Hair removal IPL untuk area ketiak agar lebih halus dan bersih dengan hasil yang lebih tahan lama.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Underarm%20Hair%20Removal%20%5Bsumber:%20ORG-underarm-brightening%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-removal-treatment/underarm-hair-removal-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Laser-Hair-Removal.webp" alt="Laser Hair Removal Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Laser Hair Removal</h3>
+            <p>Laser hair removal untuk membantu pengurangan bulu yang lebih tahan lama dan kulit lebih halus.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Laser%20Hair%20Removal%20%5Bsumber:%20ORG-underarm-brightening%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-removal-treatment/laser-hair-removal-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Brazilian.webp" alt="Brazilian Hair Removal Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Brazilian Hair Removal</h3>
+            <p>Hair removal untuk area bikini agar lebih bersih dan halus dengan hasil yang lebih tahan lama.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Brazilian%20Hair%20Removal%20%5Bsumber:%20ORG-underarm-brightening%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-removal-treatment/brazilian-hair-removal-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Underarm Brightening</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmBrightFaq(this)">
+          <span>Apa itu underarm brightening treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Underarm brightening treatment adalah perawatan pencerah ketiak di klinik yang menggunakan pendekatan medical peeling (eksfoliasi kimiawi terkontrol) untuk membantu mengangkat sel kulit mati yang menghitam, meratakan warna kulit, dan menghaluskan tekstur kasar pada area ketiak. Berbeda dengan krim pencerah biasa, treatment ini diawasi langsung oleh tenaga medis.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmBrightFaq(this)">
+          <span>Apakah treatment underarm brightening aman untuk kulit sensitif?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Treatment mencerahkan ketiak ini umumnya aman. Karena struktur kulit lipatan cukup sensitif, bahan eksfoliasi yang kami gunakan disesuaikan takaran medisnya. Dokter kami selalu melakukan asesmen awal terlebih dahulu untuk menilai kondisi kulit Anda guna menjaga kenyamanan dan mengurangi risiko iritasi.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmBrightFaq(this)">
+          <span>Berapa lama hasil underarm brightening treatment terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Hasil dari brightening underarm treatment biasanya terlihat secara bertahap. Sejak sesi pertama, sebagian orang sudah merasakan kulit ketiak menjadi lebih halus dan tampak lebih bersih. Untuk perubahan warna kulit yang lebih merata dan tahan lama, dokter umumnya menyarankan perawatan rutin sekitar 3 sampai 5 sesi. Hasil dapat berbeda pada setiap orang.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmBrightFaq(this)">
+          <span>Berapa harga underarm brightening treatment di SOZO?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Harga underarm brightening treatment di SOZO Skin Clinic mulai dari Rp 379.000. Biaya dapat bervariasi tergantung kondisi kulit dan jumlah sesi yang dibutuhkan. Untuk estimasi yang sesuai dengan kebutuhan Anda, kami menyarankan konsultasi terlebih dahulu.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmBrightFaq(this)">
+          <span>Apakah underarm brightening bisa dikombinasikan dengan laser brightening ketiak?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Bisa. Untuk kasus hiperpigmentasi yang gelap, membandel, atau karena faktor genetik, dokter kami dapat merekomendasikan kombinasi underarm brightening SOZO (peeling) dengan teknologi laser brightening ketiak. Laser membantu menargetkan pigmen melanin di lapisan dalam, sementara peeling membersihkan lapisan luar, sehingga hasilnya dapat lebih optimal.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmBrightFaq(this)">
+          <span>Apa bedanya treatment pencerah ketiak di klinik dengan krim pencerah biasa?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Krim pencerah ketiak yang dijual bebas biasanya bekerja lambat di permukaan luar kulit dan terkadang memicu alergi jika bahan kimianya tidak cocok. Sementara itu, treatment pencerah ketiak di klinik menggunakan zat aktif medis yang diawasi langsung oleh dokter, sehingga penetrasinya lebih dalam, hasilnya cenderung lebih cepat terlihat, dan lebih aman.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmBrightFaq(this)">
+          <span>Apa saja pantangan setelah melakukan underarm brightening?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setelah treatment underarm, pori-pori sedang dalam fase regenerasi. Selama 24 sampai 48 jam pertama, sebaiknya tunda pemakaian deodoran berbahan kimia atau alkohol, hindari sabun scrub yang kasar, serta tunda aktivitas berenang atau olahraga berat yang memicu keringat berlebih untuk memberi waktu kulit beristirahat.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleUnderarmBrightFaq(this)">
+          <span>Di mana saya bisa mendapatkan perawatan SOZO Underarm Brightening terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Anda bisa mendapatkan penanganan SOZO underarm brightening yang steril dan profesional di seluruh cabang klinik kami. Layanan ini tersedia di lokasi strategis Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Temukan informasi lengkap mengenai rute dan jadwal operasional klinik kami di halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic</a>.</p></div>
+      </div>
+
+    </section>
+  </div>
+
+</div>
+
+<script>
+  function toggleUnderarmBrightDescription() {
+    const content = document.getElementById('treatmentDescriptionUnderarmBright');
+    const btn = document.getElementById('underarmBrightLoadMore');
+    const btnText = document.getElementById('underarmBrightReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function toggleUnderarmBrightFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px";
+  }
+</script>
+

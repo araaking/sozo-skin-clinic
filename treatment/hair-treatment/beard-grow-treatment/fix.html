@@ -1,0 +1,405 @@
+<style>
+  .sozo-sku-beard-grow-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+  .sozo-sku-beard-grow-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-beard-grow-wrapper .sozo-breadcrumb { padding: 15px 20px 25px 20px; width: 100%; }
+  .sozo-sku-beard-grow-wrapper .sozo-breadcrumb ol { list-style: none !important; margin: 0 !important; padding: 0 !important; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .sozo-sku-beard-grow-wrapper .sozo-breadcrumb li { display: flex; align-items: center; font-size: 14px; color: #1A2080; }
+  .sozo-sku-beard-grow-wrapper .sozo-breadcrumb a { text-decoration: none !important; color: #64748b !important; font-weight: 500; transition: color 0.2s ease; }
+  .sozo-sku-beard-grow-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-breadcrumb .separator { color: #cbd5e1; margin: 0 4px; font-size: 12px; user-select: none; }
+
+  .sozo-sku-beard-grow-wrapper .sozo-treatment-hero { display: flex; flex-wrap: nowrap; gap: 50px; align-items: center; margin-bottom: 50px; padding: 0 20px; }
+  .sozo-sku-beard-grow-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-beard-grow-wrapper .sozo-hero-text h1 { font-size: clamp(32px, 4vw, 42px) !important; color: #1A2080 !important; margin: 0 0 16px 0 !important; line-height: 1.2 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-beard-grow-wrapper .sozo-hero-text p { font-size: 16px !important; color: #475569 !important; margin: 0 0 30px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-hero-image { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; }
+  .sozo-sku-beard-grow-wrapper .sozo-hero-image img { width: 100%; max-width: 480px; height: 340px; border-radius: 24px; object-fit: cover; object-position: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); display: block; }
+
+  .sozo-sku-beard-grow-wrapper .sozo-info-row { display: flex; gap: 40px; margin-bottom: 35px; padding: 24px; background-color: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9; }
+  .sozo-sku-beard-grow-wrapper .sozo-info-col { display: flex; align-items: flex-start; gap: 15px; }
+  .sozo-sku-beard-grow-wrapper .sozo-info-icon { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #EEF2FF; border-radius: 12px; color: #1A2080; }
+  .sozo-sku-beard-grow-wrapper .sozo-info-text { display: flex; flex-direction: column; gap: 2px; }
+  .sozo-sku-beard-grow-wrapper .sozo-info-label { font-size: 13px !important; color: #64748b !important; font-weight: 600 !important; text-transform: uppercase; letter-spacing: 0.5px; }
+  .sozo-sku-beard-grow-wrapper .sozo-info-value { font-size: 20px !important; color: #1A2080 !important; font-weight: 700 !important; }
+
+  .sozo-sku-beard-grow-wrapper .sozo-btn,
+  .sozo-sku-beard-grow-wrapper .sozo-related-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background-color: #1A2080 !important; color: #ffffff !important; text-decoration: none !important; font-size: 16px !important; font-weight: 600 !important; border-radius: 100px; transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s; cursor: pointer; box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2); border: 2px solid #1A2080 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-btn:hover,
+  .sozo-sku-beard-grow-wrapper .sozo-related-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; transform: translateY(-3px); }
+
+  .sozo-sku-beard-grow-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-beard-grow-wrapper .sozo-cta-banner { background-color: #1A2080; background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%); border-radius: 24px; padding: 50px 30px; margin-bottom: 50px; text-align: center; color: #ffffff; box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15); }
+  .sozo-sku-beard-grow-wrapper .sozo-cta-banner h2 { font-size: clamp(24px, 3vw, 32px) !important; color: #ffffff !important; margin: 0 0 15px 0 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-beard-grow-wrapper .sozo-cta-banner p { font-size: 16px !important; color: #e2e8f0 !important; margin: 0 auto 30px auto !important; max-width: 650px; line-height: 1.6 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background-color: #ffffff !important; color: #1A2080 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 100px; border: 2px solid #ffffff !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-btn-secondary:hover { background-color: transparent !important; color: #ffffff !important; transform: translateY(-3px); }
+
+  .sozo-sku-beard-grow-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-beard-grow-wrapper .sozo-section-card,
+  .sozo-sku-beard-grow-wrapper .sozo-description-section,
+  .sozo-sku-beard-grow-wrapper .sozo-faq-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-beard-grow-wrapper .sozo-section-card > h2,
+  .sozo-sku-beard-grow-wrapper .sozo-description-section h2,
+  .sozo-sku-beard-grow-wrapper .sozo-faq-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 16px !important; font-weight: 800 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-section-card > p { color: #475569 !important; font-size: 16px !important; margin-bottom: 24px !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-description-section h3 { font-size: 18px !important; color: #1A2080 !important; margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 700 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-description-section p,
+  .sozo-sku-beard-grow-wrapper .sozo-description-section li { color: #475569 !important; margin-bottom: 16px !important; font-size: 16px !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-description-section ul { padding-left: 20px !important; margin-bottom: 20px !important; }
+
+  .sozo-sku-beard-grow-wrapper .sozo-problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .sozo-sku-beard-grow-wrapper .sozo-problem-card { background-color: #f8fafc; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; }
+  .sozo-sku-beard-grow-wrapper .sozo-problem-card strong { display: block; font-size: 16px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-problem-card span { font-size: 14px !important; color: #475569 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-beard-grow-wrapper .sozo-process-step { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; }
+  .sozo-sku-beard-grow-wrapper .sozo-process-step:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .sozo-sku-beard-grow-wrapper .sozo-step-num { width: 45px; height: 45px; background-color: #EEF2FF; color: #1A2080; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px !important; font-weight: 700 !important; flex-shrink: 0; }
+  .sozo-sku-beard-grow-wrapper .sozo-step-text strong { display: block; font-size: 18px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-step-text p { font-size: 15px !important; color: #475569 !important; margin: 0 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-beard-grow-wrapper .sozo-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sozo-sku-beard-grow-wrapper .sozo-related-card { border: 1px solid #f1f5f9; border-radius: 16px; overflow: hidden; background-color: #ffffff; display: flex; flex-direction: column; }
+  .sozo-sku-beard-grow-wrapper .sozo-related-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+  .sozo-sku-beard-grow-wrapper .sozo-related-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .sozo-sku-beard-grow-wrapper .sozo-related-body h3 { font-size: 16px !important; color: #1A2080 !important; margin: 0 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-related-body p { font-size: 14px !important; color: #475569 !important; margin: 0 !important; flex: 1; }
+  .sozo-sku-beard-grow-wrapper .sozo-related-actions { display: flex; flex-direction: column; gap: 10px; }
+  .sozo-sku-beard-grow-wrapper .sozo-related-btn { max-width: none; padding: 11px 16px; font-size: 14px !important; box-shadow: none; }
+  .sozo-sku-beard-grow-wrapper .sozo-related-link { color: #1A2080 !important; font-weight: 600 !important; font-size: 14px !important; text-decoration: none !important; text-align: center; }
+
+  .sozo-sku-beard-grow-wrapper .sozo-expandable-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease-out; }
+  .sozo-sku-beard-grow-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-beard-grow-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-beard-grow-wrapper .sozo-load-more-btn { background: none !important; border: none !important; color: #1A2080 !important; font-size: 15px !important; font-weight: 600 !important; padding: 0 !important; margin-top: 15px !important; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .sozo-sku-beard-grow-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-beard-grow-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-beard-grow-wrapper .sozo-faq-item { border-bottom: 1px solid #f1f5f9; padding: 16px 0; }
+  .sozo-sku-beard-grow-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-beard-grow-wrapper .sozo-faq-question { width: 100%; background: none !important; border: none !important; text-align: left; font-size: 16px !important; font-weight: 600 !important; color: #1e293b !important; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0 0 8px 0 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-faq-question svg { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
+  .sozo-sku-beard-grow-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-beard-grow-wrapper .sozo-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+  .sozo-sku-beard-grow-wrapper .sozo-faq-answer p { color: #475569 !important; font-size: 15px !important; margin: 8px 0 16px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-beard-grow-wrapper .sozo-faq-answer a { color: #1A2080 !important; text-decoration: underline !important; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .sozo-sku-beard-grow-wrapper .sozo-treatment-hero { flex-direction: column; gap: 30px; }
+    .sozo-sku-beard-grow-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-beard-grow-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-beard-grow-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-beard-grow-wrapper .sozo-btn,
+    .sozo-sku-beard-grow-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-beard-grow-wrapper .sozo-description-section,
+    .sozo-sku-beard-grow-wrapper .sozo-faq-section,
+    .sozo-sku-beard-grow-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+    .sozo-sku-beard-grow-wrapper .sozo-problem-grid,
+    .sozo-sku-beard-grow-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-beard-grow-wrapper" id="sozo-beard-grow-widget">
+
+  <!-- FIXED: Microdata (itemscope/itemprop) removed to prevent duplicate BreadcrumbList -->
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/"><span>Home</span></a>
+      </li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/hair-treatment/"><span>Hair Treatment</span></a>
+      </li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Beard Grow Treatment</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Treatment Penumbuh Brewok Pria (Beard Grow) untuk Janggut Lebih Tebal</h1>
+      <p>Beard Grow adalah treatment penumbuh brewok pria (beard treatment) di SOZO Skin Clinic yang menggunakan teknik microneedling untuk membantu menstimulasi folikel rambut wajah. Prosedur ini membantu merangsang pertumbuhan kumis dan janggut agar tampak lebih tebal, rapi, dan merata secara bertahap.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">45 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 999.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Hair,%20saya%20mau%20booking%20Beard%20Grow%20Treatment%20%5Bsumber:%20ORG-hair-general%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Beard-Grow.webp"
+           alt="Treatment penumbuh brewok pria (Beard Grow) dengan microneedling di Sozo Skin Clinic"
+           width="480"
+           height="340"
+           fetchpriority="high"
+           decoding="async">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Janggut dan Kumis Lebih Tebal dan Rapi dengan Beard Grow</h2>
+      <p>Jangan biarkan kondisi janggut tipis menurunkan rasa percaya diri Anda. Jalani program treatment penumbuh brewok yang membantu menstimulasi folikel rambut wajah bersama tim dokter dan terapis kami.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Hair,%20saya%20mau%20konsultasi%20Beard%20Grow%20Treatment%20%5Bsumber:%20ORG-hair-general%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Dokter Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <section class="sozo-section-card">
+      <h2>Masalah Brewok yang Sering Dialami Pria</h2>
+      <p>Treatment penumbuh brewok dapat menjadi pilihan untuk membantu mengatasi keluhan berikut pada area janggut dan kumis:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Janggut Tipis</strong>
+          <span>Pertumbuhan janggut yang tipis atau halus sehingga sulit terlihat tebal dan rapi.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Brewok Bolong atau Patchy</strong>
+          <span>Area janggut yang kosong atau tidak merata (patchy) di sebagian sisi wajah.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Pertumbuhan Lambat</strong>
+          <span>Kumis dan janggut yang tumbuh lambat dan sulit memanjang secara alami.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bentuk Kurang Merata</strong>
+          <span>Struktur janggut yang kurang merata sehingga sulit dibentuk sesuai keinginan.</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="sozo-description-section">
+      <h2>Treatment Penumbuh Brewok Pria untuk Janggut Lebih Tebal dan Rapi</h2>
+      <p>Beard Grow (treatment penumbuh brewok atau janggut) merupakan bagian dari lini hair treatment di SOZO Skin Clinic yang dirancang khusus bagi pria untuk membantu menstimulasi folikel rambut wajah agar janggut dan kumis tumbuh lebih optimal.</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionBeard">
+        <div class="sozo-expandable-inner">
+          <h3>Apa Itu Beard Grow Treatment?</h3>
+          <p>Beard Grow adalah perawatan penumbuh brewok yang memanfaatkan jarum mikro steril (microneedling). Prosedur klinis ini membantu membuka jalur mikro pada kulit agar serum aktif pemicu pertumbuhan rambut dapat terserap lebih optimal langsung ke area folikel rambut wajah.</p>
+
+          <h3>Cara Kerja Microneedling untuk Brewok</h3>
+          <p>Microneedling bekerja dengan menciptakan stimulasi mikro yang memicu respons regenerasi kulit dan membantu meningkatkan penyerapan serum nutrisi ke folikel. Stimulasi ini diharapkan dapat membantu mengaktifkan folikel yang pasif sehingga pertumbuhan kumis dan janggut menjadi lebih merata secara bertahap.</p>
+
+          <h3>Manfaat Beard Grow</h3>
+          <ul>
+            <li>Membantu merangsang pertumbuhan janggut dan kumis pada area yang tipis.</li>
+            <li>Membantu menyamarkan area janggut yang kosong atau patchy agar tampak lebih merata.</li>
+            <li>Membantu meningkatkan penyerapan nutrisi ke folikel rambut wajah.</li>
+            <li>Mendukung tampilan janggut yang lebih rapi dan terawat.</li>
+          </ul>
+
+          <h3>Siapa yang Cocok dan Berapa Sesi yang Dibutuhkan?</h3>
+          <p>Treatment ini cocok untuk pria yang ingin menumbuhkan atau menebalkan janggut dan kumis. Karena pertumbuhan rambut memiliki siklus dan sangat dipengaruhi faktor genetik serta hormonal, hasil yang lebih optimal umumnya membutuhkan beberapa sesi rutin. Dokter akan membantu menentukan jumlah sesi yang sesuai dengan kondisi Anda saat konsultasi.</p>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" id="beardLoadMore" onclick="toggleBeardDescription()">
+        <span id="beardReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </article>
+
+    <section class="sozo-section-card">
+      <h2>Proses dan Cara Kerja Beard Grow Treatment</h2>
+      <p>Prosedur treatment penumbuh brewok ini dilakukan dengan langkah medis yang higienis dan menjaga kenyamanan Anda selama perawatan:</p>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi dan Asesmen</strong>
+          <p>Dokter menilai kondisi pertumbuhan janggut, kondisi kulit, serta faktor yang memengaruhi pertumbuhan rambut wajah Anda.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan Area Wajah</strong>
+          <p>Area janggut dan kumis dibersihkan secara menyeluruh agar serum aktif dapat bekerja dengan lebih optimal.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Tindakan Microneedling</strong>
+          <p>Jarum mikro steril diaplikasikan pada area target untuk membantu membuka jalur mikro dan meningkatkan penyerapan serum ke folikel.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Aplikasi Serum dan Aftercare</strong>
+          <p>Serum nutrisi diaplikasikan dan dokter memberikan arahan perawatan agar kulit tetap nyaman setelah tindakan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sozo-section-card">
+      <h2>Hair Treatment Terkait</h2>
+      <p>Beberapa perawatan rambut berikut dapat menjadi pilihan sesuai kebutuhan Anda.</p>
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Brow-Grow.webp" alt="Brow Grow Treatment Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Brow Grow (Penumbuh Alis)</h3>
+            <p>Treatment penumbuh alis dengan microneedling untuk membantu alis tampak lebih tebal dan rapi.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Hair,%20saya%20mau%20booking%20Brow%20Grow%20Treatment%20%5Bsumber:%20ORG-hair-general%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-treatment/treatment-alis-brow-grow/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Hair-Grow-Booster-1.webp" alt="Hair Grow Booster Treatment Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Hair Grow Booster</h3>
+            <p>Treatment untuk membantu menstimulasi pertumbuhan rambut dan menutrisi folikel di area kepala.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Hair,%20saya%20mau%20booking%20Hair%20Grow%20Booster%20%5Bsumber:%20ORG-hair-general%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-treatment/hair-grow-booster-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_PRP-Hair.webp" alt="PRP Hair Treatment Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>PRP Hair Treatment</h3>
+            <p>Perawatan rambut rontok dengan PRP untuk membantu menutrisi folikel dan mendukung pertumbuhan rambut.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Hair,%20saya%20mau%20booking%20PRP%20Hair%20Treatment%20%5Bsumber:%20ORG-hair-general%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Treatment Penumbuh Brewok</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBeardFaq(this)">
+          <span>Apa itu Beard Grow atau treatment penumbuh brewok?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Beard Grow atau treatment penumbuh brewok adalah perawatan penumbuh janggut dan kumis untuk pria yang menggunakan teknik microneedling. Prosedur ini membantu membuka jalur mikro pada kulit agar serum nutrisi terserap lebih optimal ke folikel rambut wajah, sehingga dapat membantu merangsang pertumbuhan janggut secara bertahap.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBeardFaq(this)">
+          <span>Bagaimana cara kerja microneedling untuk menumbuhkan brewok?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Microneedling menciptakan stimulasi mikro pada kulit yang membantu memicu respons regenerasi dan meningkatkan penyerapan serum nutrisi ke folikel rambut wajah. Stimulasi ini diharapkan dapat membantu mengaktifkan folikel yang pasif, sehingga pertumbuhan janggut dan kumis menjadi lebih merata secara bertahap.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBeardFaq(this)">
+          <span>Masalah brewok apa saja yang bisa dibantu treatment ini?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Treatment penumbuh brewok dapat membantu kondisi janggut yang tipis, area brewok yang kosong atau patchy, pertumbuhan kumis dan janggut yang lambat, serta bentuk janggut yang kurang merata. Dokter akan membantu menilai kondisi Anda dan menentukan pendekatan yang sesuai saat konsultasi.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBeardFaq(this)">
+          <span>Kapan hasil pertumbuhan brewok mulai terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Hasil biasanya mulai terlihat secara bertahap setelah beberapa sesi rutin. Kecepatan dan hasil pertumbuhan sangat bergantung pada kondisi folikel dasar, faktor genetik, dan hormonal masing-masing pria, sehingga hasilnya dapat berbeda pada setiap orang.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBeardFaq(this)">
+          <span>Apakah Beard Grow Treatment aman dan ada efek sampingnya?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Treatment ini umumnya aman bila dilakukan oleh tenaga profesional dengan alat steril dan prosedur yang tepat. Efek samping ringan seperti kemerahan sementara pada area wajah dapat terjadi setelah tindakan dan biasanya mereda dengan sendirinya. Konsultasi diperlukan untuk memastikan tindakan sesuai dengan kondisi kulit Anda.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBeardFaq(this)">
+          <span>Apakah treatment penumbuh brewok terasa sakit?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Sebagian besar pasien hanya merasakan sensasi ringan selama tindakan microneedling. Untuk kenyamanan, krim anestesi topikal umumnya diaplikasikan terlebih dahulu sebelum prosedur dimulai, sehingga rasa tidak nyaman dapat diminimalkan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBeardFaq(this)">
+          <span>Berapa harga treatment penumbuh brewok di SOZO?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Harga Beard Grow Treatment di SOZO Skin Clinic mulai dari Rp 999.000 per sesi (dengan durasi sekitar 45 menit). Karena kebutuhan setiap orang berbeda, kami menyarankan konsultasi terlebih dahulu agar dokter dapat menyesuaikan rencana perawatan dan menginformasikan estimasi biaya secara transparan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBeardFaq(this)">
+          <span>Apakah hasil treatment penumbuh brewok permanen?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Beard Grow membantu menstimulasi folikel rambut wajah, namun pertumbuhan brewok tetap dipengaruhi faktor genetik dan hormonal. Untuk menjaga hasil tetap optimal, perawatan rutin dan pemeliharaan biasanya disarankan. Hasil dapat berbeda pada setiap pria dan tidak dapat dijamin permanen.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBeardFaq(this)">
+          <span>Di mana lokasi treatment penumbuh brewok atau beard treatment terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Jika Anda sedang mencari klinik kecantikan untuk treatment penumbuh brewok atau beard treatment terdekat, Anda bisa mengunjungi seluruh cabang SOZO Skin Clinic. Setiap klinik kami didukung fasilitas medis modern, menggunakan produk berkualitas tinggi, dan ditangani langsung oleh terapis serta Dokter Kecantikan profesional. Klinik kami tersebar di berbagai wilayah Jabodetabek, termasuk Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Untuk menemukan cabang yang paling mudah dijangkau dari domisili Anda, silakan cek halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a>.</p></div>
+      </div>
+
+    </section>
+  </div>
+
+</div>
+
+<script>
+  function toggleBeardDescription() {
+    const content = document.getElementById('treatmentDescriptionBeard');
+    const btn = document.getElementById('beardLoadMore');
+    const btnText = document.getElementById('beardReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function toggleBeardFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px";
+  }
+</script>
