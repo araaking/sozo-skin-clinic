@@ -4,9 +4,9 @@ Sozo Skin Clinic — sozoskinclinic.com
 
 *Migrasi dari Yoast SEO ke Custom Schema (JSON-LD)*
 
-Versi 1.0  •  23 Juni 2026
+Versi 1.1  •  2 Juli 2026
 
-**Status: 28 dari 133 halaman selesai**
+**Status: 33 dari 133 halaman selesai**
 
 # **1\. Ringkasan Proyek**
 
@@ -586,6 +586,86 @@ Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah diha
 
 Dipasang via WPCode tipe HTML, kondisi: Page URL contains laser-rejuve.
 
+## **5.30 Pores Treatment — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/scar-treatment/pores-treatment/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: http://schema.org/Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Scar Treatment › Pores Treatment (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 1.499.000 (Harga Mulai).
+
+* **FAQPage** — 9 pertanyaan dari konten existing (definisi, kemampuan mengecilkan pori, harga, penyebab, kandidat, sesi, keamanan, beda dengan skincare, lokasi cabang).
+
+Microdata breadcrumb (itemscope/itemtype) dan Product/Offer telah dihapus dari HTML body. Dipasang via WPCode tipe HTML, kondisi: Page URL contains pores-treatment.
+
+## **5.31 PRP Treatment (Scar) — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: http://schema.org/Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Scar Treatment › PRP Treatment (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 1.079.000 (Harga Promo). Service.alternateName: "PRP Treatment".
+
+* **FAQPage** — 9 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan Product/Offer telah dihapus dari HTML body. Dipasang via WPCode tipe HTML, kondisi: Page URL contains prp-treatment.
+
+## **5.32 Rejuran Scar Treatment — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/scar-treatment/rejuran-scar-treatment/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: http://schema.org/Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Scar Treatment › Rejuran Scar (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 3.099.000 (Harga Mulai). Service.alternateName: "Rejuran Scar".
+
+* **FAQPage** — 9 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan Product/Offer telah dihapus dari HTML body. Schema awal tidak memiliki node BreadcrumbList di @graph — diperbaiki dengan menambahkan 4-level breadcrumb lengkap. Dipasang via WPCode tipe HTML, kondisi: Page URL contains rejuran-scar-treatment.
+
+## **5.33 Restylane Scar — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/scar-treatment/restylane-scar/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: http://schema.org/Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Scar Treatment › Restylane Scar (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 3.999.000 (Harga Promo).
+
+* **FAQPage** — 4 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan Product/Offer telah dihapus dari HTML body. Schema awal tidak memiliki node BreadcrumbList di @graph — diperbaiki. Dipasang via WPCode tipe HTML, kondisi: Page URL contains restylane-scar.
+
+## **5.34 Subcision Treatment — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/scar-treatment/subcision-treatment/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: http://schema.org/Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Scar Treatment › Subcision Treatment (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 299.000 (Harga Mulai, dari harga coret Rp 459.000). Service.alternateName: "Subcision".
+
+* **FAQPage** — 8 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan Product/Offer telah dihapus dari HTML body. Schema awal tidak memiliki node BreadcrumbList di @graph, harga di schema masih angka lama (459.000), FAQ Q7 menyebut harga lama, deskripsi Service & MedicalWebPage berbeda, dan URL di schema menggunakan typo "subsicion" (dobel s). Semua diperbaiki: URL dikoreksi ke "subcision" (sinkron dengan folder), harga di schema dan FAQ disamakan ke Rp 299.000 (halaman aktif), deskripsi Service diselaraskan dengan MedicalWebPage, dan 4-level breadcrumb lengkap ditambahkan. Dipasang via WPCode tipe HTML, kondisi: Page URL contains subcision-treatment.
+
 # **6\. Cara Memasang Schema (WPCode)**
 
 ## **Untuk Schema Baru (HTML)**
@@ -664,7 +744,12 @@ Sebelum menandai sebuah halaman "selesai", pastikan:
 | Pink Lips Laser | 1 | SELESAI |
 | Tattoo Removal | 1 | SELESAI |
 | Laser Rejuve | 1 | SELESAI |
-| Halaman treatment lain (LP) | \~105 | Belum — pakai template Hair Removal |
+| Pores Treatment | 1 | SELESAI |
+| PRP Treatment (Scar) | 1 | SELESAI |
+| Rejuran Scar Treatment | 1 | SELESAI |
+| Restylane Scar | 1 | SELESAI |
+| Subcision Treatment | 1 | SELESAI |
+| Halaman treatment lain (LP) | \~100 | Belum — pakai template Hair Removal |
 | Benerin nama breadcrumb "SEO –" | 114 halaman | Belum (jika masih relevan setelah custom) |
 | Schema blog / Article | — | Belum — pertimbangkan dynamic PHP |
 | Schema cabang (LocalBusiness) | 60+ cabang | Belum |

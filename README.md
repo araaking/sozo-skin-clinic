@@ -1,6 +1,6 @@
 # 📝 Sozo Skin Clinic - Schema Markup Migration Project
 
-> **Versi:** 1.1 | **Tanggal Update:** 30 Juni 2026
+> **Versi:** 1.2 | **Tanggal Update:** 2 Juli 2026
 > **Fokus Utama:** Migrasi dari Yoast SEO ke Custom Schema (JSON-LD) via `@graph`[cite: 1]
 
 Proyek ini bertujuan untuk mengontrol penuh struktur schema markup di `sozoskinclinic.com`, mengeliminasi error bawaan Yoast, dan membangun *Knowledge Graph* terpusat per tipe halaman untuk memaksimalkan SEO[cite: 1]. Seluruh schema Yoast telah dimatikan secara global via WPCode[cite: 1].
@@ -132,13 +132,13 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [x] Pico Laser (`https://sozoskinclinic.com/skin-treatment/laser-treatment/pico-laser-treatment/`)
     - [x] Pink Lips Laser (`https://sozoskinclinic.com/skin-treatment/laser-treatment/pink-lips-laser-treatment/`)
     - [x] Laser Tattoo Removal (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-tattoo-removal-treatment/`)
-- [ ] **Scar & Pores Hub** (`https://sozoskinclinic.com/skin-treatment/scar-treatment/`)
+- [x] **Scar & Pores Hub** (`https://sozoskinclinic.com/skin-treatment/scar-treatment/`)
     - [ ] Laser CO2 Scar (`https://sozoskinclinic.com/skin-treatment/scar-treatment/laser-co2-treatment/`)
-    - [ ] Pores Treatment (`https://sozoskinclinic.com/skin-treatment/scar-treatment/pores-treatment/`)
-    - [ ] PRP Treatment Scar (`https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/`)
-    - [ ] Rejuran Scar (`https://sozoskinclinic.com/skin-treatment/scar-treatment/rejuran-scar-treatment/`)
-    - [ ] Restylane Scar (`https://sozoskinclinic.com/skin-treatment/scar-treatment/restylane-scar/`)
-    - [ ] Subsicion (`https://sozoskinclinic.com/skin-treatment/scar-treatment/subsicion-treatment/`)
+    - [x] Pores Treatment (`https://sozoskinclinic.com/skin-treatment/scar-treatment/pores-treatment/`)
+    - [x] PRP Treatment Scar (`https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/`)
+    - [x] Rejuran Scar (`https://sozoskinclinic.com/skin-treatment/scar-treatment/rejuran-scar-treatment/`)
+    - [x] Restylane Scar (`https://sozoskinclinic.com/skin-treatment/scar-treatment/restylane-scar/`)
+    - [x] Subcision (`https://sozoskinclinic.com/skin-treatment/scar-treatment/subcision-treatment/`)
 
 ### 🛒 7. Product Pages (Skincare E-Commerce Schema)
 *Catatan: Gunakan tipe schema `Product` khusus untuk rumpun URL ini.*
