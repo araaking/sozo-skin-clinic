@@ -1,0 +1,719 @@
+<style>
+  .sozo-sku-acne-laser-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-acne-laser-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-acne-laser-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-acne-laser-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  .sozo-sku-acne-laser-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-acne-laser-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important;
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  .sozo-sku-acne-laser-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important;
+    font-weight: 700 !important;
+  }
+
+  .sozo-sku-acne-laser-wrapper .sozo-btn,
+  .sozo-sku-acne-laser-wrapper .sozo-related-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-btn:hover,
+  .sozo-sku-acne-laser-wrapper .sozo-related-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+  }
+
+  .sozo-sku-acne-laser-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-acne-laser-wrapper .sozo-cta-banner {
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 650px;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    border: 2px solid #ffffff !important;
+  }
+
+  .sozo-sku-acne-laser-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-acne-laser-wrapper .sozo-section-card,
+  .sozo-sku-acne-laser-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-section-card h2,
+  .sozo-sku-acne-laser-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-section-card h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-section-card p,
+  .sozo-sku-acne-laser-wrapper .sozo-section-card li {
+    color: #475569 !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-section-card ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .sozo-sku-acne-laser-wrapper .sozo-problem-grid,
+  .sozo-sku-acne-laser-wrapper .sozo-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-problem-card strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-problem-card span {
+    color: #475569;
+    font-size: 14px;
+  }
+
+  .sozo-sku-acne-laser-wrapper .sozo-process-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-step-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-step-text strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-step-text p {
+    margin: 0 !important;
+    color: #475569 !important;
+    font-size: 15px !important;
+  }
+
+  .sozo-sku-acne-laser-wrapper .sozo-related-card {
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-related-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-related-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-related-body h3 {
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin: 0 !important;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-related-body p {
+    font-size: 14px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    flex: 1;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-related-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-related-btn {
+    max-width: none;
+    padding: 11px 16px;
+    font-size: 14px !important;
+    box-shadow: none;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-related-link {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    text-align: center;
+  }
+
+  .sozo-sku-acne-laser-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-acne-laser-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-acne-laser-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-acne-laser-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-acne-laser-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-acne-laser-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-faq-question svg { flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; }
+  .sozo-sku-acne-laser-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-acne-laser-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-acne-laser-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-acne-laser-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-acne-laser-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-acne-laser-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-acne-laser-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-acne-laser-wrapper .sozo-btn,
+    .sozo-sku-acne-laser-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-acne-laser-wrapper .sozo-section-card,
+    .sozo-sku-acne-laser-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-acne-laser-wrapper .sozo-problem-grid,
+    .sozo-sku-acne-laser-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-acne-laser-wrapper" id="sozo-acne-laser-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/">Facial Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Acne Laser Facial</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Acne Laser Facial untuk Jerawat dan Bekas Jerawat</h1>
+      <p>Acne laser facial adalah perawatan kombinasi Massage, Comedo Extraction, Acne Laser, dan Enzyme Peel yang membantu mengatasi komedo, jerawat, dan bekas jerawat, sehingga wajah dapat tampak lebih bersih dan cerah secara bertahap.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">60 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Promo</span>
+            <span class="sozo-info-value">Rp 1.499.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Acne%20Laser%20Facial%20%5Bsumber:%20ORG-acne%20laser%20facial%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Laser-Facial.webp" alt="Acne Laser Facial untuk jerawat dan bekas jerawat di Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Atasi Jerawat dan Komedo dengan Acne Laser Facial</h2>
+      <p>Acne laser facial mengombinasikan facial dan laser untuk membantu membunuh bakteri penyebab jerawat, meredakan peradangan, dan mendukung proses pemulihan kulit secara bertahap.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20Acne%20Laser%20Facial%20%5Bsumber:%20ORG-acne%20laser%20facial%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <div class="sozo-section-card">
+      <h2>Masalah Kulit yang Dapat Dibantu Acne Laser Facial</h2>
+      <p>Acne laser facial dapat menjadi pilihan untuk membantu mengatasi keluhan kulit berjerawat berikut:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Jerawat Aktif</strong>
+          <span>Jerawat yang sedang muncul dan membutuhkan penanganan yang lebih terarah.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Komedo</strong>
+          <span>Komedo hitam dan putih yang menyumbat pori dan memicu jerawat.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bekas Jerawat Kemerahan</strong>
+          <span>Bekas jerawat yang membuat warna kulit terlihat kurang merata.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kulit Berminyak</strong>
+          <span>Produksi minyak berlebih yang memicu pori tersumbat dan jerawat.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Pori Tersumbat</strong>
+          <span>Pori tersumbat oleh minyak, sel kulit mati, dan kotoran.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tekstur Tidak Rata</strong>
+          <span>Permukaan kulit tampak kurang halus akibat jerawat dan bekasnya.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Acne Laser Facial, Kombinasi Facial dan Laser untuk Jerawat</h2>
+      <p>Acne laser facial adalah perawatan yang menggabungkan teknik facial dan teknologi laser untuk membantu mengatasi jerawat membandel. Kombinasi ini bekerja secara bertahap untuk membantu membersihkan komedo, membunuh bakteri penyebab jerawat, dan mendukung perbaikan tampilan bekas jerawat.</p>
+      <p>Di SOZO Skin Clinic, acne laser facial dilakukan melalui evaluasi kondisi kulit terlebih dahulu agar tingkat keparahan jerawat dan kebutuhan perawatan dapat dinilai dengan lebih tepat. Hasil perawatan dapat berbeda pada setiap orang tergantung kondisi kulit awal, jenis jerawat, dan respons kulit terhadap perawatan.</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionAcneLaser">
+        <div class="sozo-expandable-inner">
+          <h3>Apa Itu Acne Laser Facial?</h3>
+          <p>Acne laser facial adalah rangkaian facial yang dikombinasikan dengan tindakan laser untuk kulit berjerawat. Perawatan ini umumnya mencakup pijatan, pengangkatan komedo, tindakan laser pada area jerawat, dan enzyme peel untuk membantu menyegarkan kulit.</p>
+
+          <h3>Kombinasi Perawatan dalam Acne Laser Facial</h3>
+          <ul>
+            <li><strong>Massage:</strong> pijatan ringan untuk membantu relaksasi dan melancarkan sirkulasi.</li>
+            <li><strong>Comedo Extraction:</strong> pengangkatan komedo untuk membantu membersihkan pori yang tersumbat.</li>
+            <li><strong>Acne Laser:</strong> tindakan laser untuk membantu membunuh bakteri penyebab jerawat dan meredakan peradangan.</li>
+            <li><strong>Enzyme Peel:</strong> peeling enzim ringan untuk membantu mengangkat sel kulit mati dan menyegarkan kulit.</li>
+          </ul>
+
+          <h3>Manfaat Acne Laser Facial</h3>
+          <p>Acne laser facial dapat membantu mengatasi komedo dan jerawat, mengurangi tampilan bekas jerawat kemerahan, serta mendukung kulit agar tampak lebih bersih dan cerah secara bertahap. Tingkat perbaikan berbeda pada setiap orang dan biasanya membutuhkan rangkaian perawatan.</p>
+
+          <h3>Siapa yang Cocok Melakukan Acne Laser Facial?</h3>
+          <p>Perawatan ini umumnya cocok untuk Anda yang memiliki jerawat aktif ringan sampai sedang, komedo, atau bekas jerawat kemerahan. Untuk jerawat yang sedang meradang parah, disarankan berkonsultasi dengan dokter terlebih dahulu agar perawatan dapat disesuaikan dengan kondisi kulit Anda.</p>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="toggleAcneLaserDescription()">
+        <span id="acneLaserReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Proses dan Cara Kerja Acne Laser Facial</h2>
+      <p>Acne laser facial dilakukan secara bertahap dengan prosedur yang terkontrol untuk menjaga kenyamanan pasien.</p>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan dan Massage</strong>
+          <p>Wajah dibersihkan dan diberi pijatan ringan untuk membantu melancarkan sirkulasi.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Comedo Extraction</strong>
+          <p>Komedo diangkat secara hati hati untuk membantu membersihkan pori yang tersumbat.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Tindakan Acne Laser</strong>
+          <p>Laser diaplikasikan pada area jerawat sesuai evaluasi untuk membantu membunuh bakteri dan peradangan.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Enzyme Peel dan Finishing</strong>
+          <p>Enzyme peel ringan dan pelembap diaplikasikan untuk membantu menyegarkan kulit setelah tindakan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Treatment Terkait untuk Kulit Berjerawat</h2>
+      <p>Beberapa perawatan berikut dapat menjadi pilihan lanjutan atau kombinasi sesuai evaluasi dokter.</p>
+
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.webp" alt="Acne Clear Facial Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Acne Clear Facial</h3>
+            <p>Facial untuk membantu mengatasi jerawat, membersihkan pori, dan mengontrol minyak berlebih.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Acne%20Clear%20Facial%20%5Bsumber:%20ORG-acne%20laser%20facial%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-clear-facial/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Acne-Peel.webp" alt="Acne Peel Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Acne Peel</h3>
+            <p>Chemical peeling untuk membantu mengatasi jerawat, minyak berlebih, dan pori tersumbat secara bertahap.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Acne%20Peel%20%5Bsumber:%20ORG-acne%20laser%20facial%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/acne-peel/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Mini-Facial.webp" alt="Mini Facial Treatment Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Mini Facial Treatment</h3>
+            <p>Facial cepat untuk membantu membersihkan komedo dan menyegarkan wajah dalam waktu singkat.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Mini%20Facial%20Treatment%20%5Bsumber:%20ORG-acne%20laser%20facial%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/mini-facial-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Acne Laser Facial</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneLaserFaq(this)">
+          <span>Apa itu acne laser facial?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Acne laser facial adalah perawatan kombinasi facial dan laser untuk kulit berjerawat yang umumnya mencakup massage, comedo extraction, acne laser, dan enzyme peel. Tujuannya membantu mengatasi komedo, jerawat, dan bekas jerawat agar wajah tampak lebih bersih dan cerah secara bertahap.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneLaserFaq(this)">
+          <span>Apa saja kombinasi dalam acne laser facial?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Acne laser facial umumnya menggabungkan massage, comedo extraction, tindakan acne laser pada area jerawat, dan enzyme peel. Kombinasi ini bekerja secara bertahap untuk membantu membersihkan dan menyegarkan kulit berjerawat.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneLaserFaq(this)">
+          <span>Apakah acne laser facial bisa membantu jerawat dan bekasnya?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Acne laser facial dapat membantu mengatasi komedo dan jerawat, serta mendukung perbaikan tampilan bekas jerawat kemerahan secara bertahap. Tingkat perbaikan dapat berbeda pada setiap orang dan biasanya membutuhkan rangkaian perawatan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneLaserFaq(this)">
+          <span>Berapa harga acne laser facial di SOZO?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Harga promo acne laser facial di SOZO Skin Clinic mulai dari Rp 1.499.000. Untuk informasi promo terbaru dan rekomendasi paket perawatan, Anda dapat menghubungi tim SOZO melalui WhatsApp.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneLaserFaq(this)">
+          <span>Berapa kali sesi acne laser facial yang disarankan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Jumlah sesi acne laser facial disesuaikan dengan tingkat keparahan jerawat dan respons kulit. Dokter akan memberikan rekomendasi rangkaian perawatan yang paling sesuai setelah evaluasi kondisi kulit Anda.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneLaserFaq(this)">
+          <span>Apakah ada downtime setelah acne laser facial?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setelah acne laser facial, kulit dapat tampak kemerahan ringan dan terasa lebih sensitif selama beberapa hari. Reaksi ini umumnya bersifat sementara. Dokter akan memberikan arahan perawatan setelah tindakan agar pemulihan lebih nyaman.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneLaserFaq(this)">
+          <span>Apakah acne laser facial aman dilakukan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Acne laser facial umumnya aman bila dilakukan dengan prosedur yang tepat dan evaluasi kondisi kulit. Konsultasi diperlukan untuk memastikan tindakan sesuai dengan jenis kulit dan kondisi jerawat Anda, terutama untuk jerawat yang sedang meradang.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneLaserFaq(this)">
+          <span>Apa bedanya acne laser facial dengan facial biasa?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Acne laser facial menambahkan tindakan laser pada rangkaian facial untuk kulit berjerawat, sehingga penanganannya lebih terarah pada jerawat dibandingkan facial biasa yang umumnya berfokus pada pembersihan dan relaksasi.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneLaserFaq(this)">
+          <span>Di mana lokasi acne laser facial terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Jika Anda sedang mencari klinik kecantikan untuk acne laser facial terdekat dengan prosedur yang aman dan nyaman, Anda bisa mengunjungi seluruh cabang SOZO Skin Clinic. Setiap klinik kami didukung fasilitas medis modern, menggunakan produk berkualitas tinggi, dan ditangani langsung oleh terapis serta Dokter Kecantikan profesional. Klinik kami tersebar di berbagai wilayah Jabodetabek, termasuk Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Untuk menemukan cabang yang paling mudah dijangkau dari domisili Anda, silakan cek halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a>.</p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleAcneLaserDescription() {
+    const content = document.getElementById('treatmentDescriptionAcneLaser');
+    const btn = document.querySelector('.sozo-load-more-btn');
+    const btnText = document.getElementById('acneLaserReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function toggleAcneLaserFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
+

@@ -1,0 +1,731 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-pink-lips-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+
+  .sozo-sku-pink-lips-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-pink-lips-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-pink-lips-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-pink-lips-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-pink-lips-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-pink-lips-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-pink-lips-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-pink-lips-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- NEW SECTIONS STYLING (Cards, Grids, Steps) --- */
+  .sozo-sku-pink-lips-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-section-card > h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-section-card > p {
+    color: #475569 !important;
+    font-size: 16px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Problem Grid Styling (2x2) */
+  .sozo-sku-pink-lips-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-problem-card span {
+    font-size: 14px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Process Steps Styling */
+  .sozo-sku-pink-lips-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-step-num {
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-step-text p {
+    font-size: 15px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-pink-lips-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-description-section h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-description-section p, 
+  .sozo-sku-pink-lips-wrapper .sozo-description-section li {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-description-section ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .sozo-sku-pink-lips-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-pink-lips-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-pink-lips-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-pink-lips-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-pink-lips-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-pink-lips-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pink-lips-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 600;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-pink-lips-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-pink-lips-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-pink-lips-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-pink-lips-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-pink-lips-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-pink-lips-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-pink-lips-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-pink-lips-wrapper .sozo-description-section, 
+    .sozo-sku-pink-lips-wrapper .sozo-faq-section,
+    .sozo-sku-pink-lips-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+    
+    .sozo-sku-pink-lips-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .sozo-sku-pink-lips-wrapper .sozo-hero-image img {
+        aspect-ratio: 16 / 9;
+        max-height: none;
+    }
+  }
+</style>
+
+<div class="sozo-sku-pink-lips-wrapper" id="sozo-pink-lips-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/laser-treatment/">Laser Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Pink Lips Laser</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Pink Lips Laser Treatment: Solusi Cerahkan Bibir Gelap & Kusam</h1>
+      <p>
+        Kembalikan rona merah alami bibir Anda tanpa perlu repot menggunakan lipstik setiap hari. Pink Lips Laser Treatment adalah prosedur medis mutakhir yang menggunakan teknologi cahaya laser spesifik untuk memecah pigmen melanin penyebab bibir hitam. Solusi cepat, minim rasa sakit, dan tanpa operasi untuk mendapatkan bibir yang cerah merona, kenyal, dan tampak sehat memikat.
+      </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">15 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Promo</span>
+            <span class="sozo-info-value">Rp 499.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Pink%20Lips%20499rb%20[sumber:%20ORG-Pink%20lips]" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2026/04/pink-lips-laser-treatment.avif" alt="Pink Lips Laser Treatment Sozo Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Wujudkan Bibir Merah Merona Alami</h2>
+      <p>Bebaskan diri dari bibir gelap dan kusam. Dapatkan senyum lebih menawan dengan perawatan Pink Lips Laser yang cepat dan nyaman bersama tim medis kami.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Pink%20Lips%20499rb%20[sumber:%20ORG-Pink%20lips]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+    
+    <!-- SECTION 2: Masalah Bibir Gelap -->
+    <div class="sozo-section-card">
+      <h2>Masalah Bibir Gelap yang Sering Dialami</h2>
+      <p>Warna bibir yang hitam dan kusam sering kali membuat wajah terlihat pucat, lelah, dan menurunkan rasa percaya diri. Pink Lips Laser hadir sebagai penanganan paling efektif untuk berbagai penyebab bibir gelap berikut:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Bibir Hitam Akibat Merokok (Smoker's Melanosis)</strong>
+          <span>Penumpukan racun nikotin dan tar secara terus-menerus yang memicu sel melanosit memproduksi pigmen gelap berlebih pada jaringan mukosa bibir.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Hiperpigmentasi Kosmetik</strong>
+          <span>Paparan bahan kimia dari lipstik, lip matte, atau lip tint abal-abal yang tidak dibersihkan secara maksimal, menyebabkan sisa pigmen terserap jauh ke dalam pori-pori bibir.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bibir Gelap Bawaan (Genetik/Hormonal)</strong>
+          <span>Warna dasar bibir yang memang gelap secara alami akibat faktor genetik atau ketidakseimbangan hormon yang tidak bisa diatasi hanya dengan pelembap (lip balm).</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bibir Kering, Kasar & Bergaris</strong>
+          <span>Kehilangan kelembapan alami dan penyusutan kolagen, membuat tekstur bibir menjadi kering, pecah-pecah, dan banyak garis halus sehingga lipstik sulit menempel sempurna.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Rich Description -->
+    <div class="sozo-description-section">
+      <h2>Pink Lips Laser Treatment: Kembalikan Senyum Merah Merona Alami</h2>
+      <p>Selama ini banyak orang mengandalkan lipstik tebal atau prosedur sulam bibir yang menyakitkan untuk menyembunyikan bibir gelap. Sebagai alternatif medis estetika yang jauh lebih aman, Pink Lips Laser Treatment di SOZO Skin Clinic menggunakan energi cahaya laser presisi untuk menargetkan langsung penumpukan melanin di bawah mukosa bibir tanpa melukai jaringan kulit di sekitarnya.</p>
+      
+      <div class="sozo-expandable-content" id="treatmentDescriptionLips">
+        <div class="sozo-expandable-inner">
+          <h3>Bagaimana Cara Laser Mencerahkan Bibir?</h3>
+          <p>Energi panas dari tembakan laser akan memecah tumpukan pigmen gelap menjadi partikel berukuran super kecil, yang kemudian akan dibuang secara alami oleh sistem metabolisme tubuh. Selain memberikan efek mencerahkan warna bibir dari dalam, suhu hangat dari laser juga menstimulasi sel fibroblast untuk memproduksi kolagen dan elastin baru. Hasilnya, bibir tidak hanya memudar dari warna kehitaman, tetapi juga terasa lebih kenyal (plump), lembap, dan garis-garis kerutan bibir memudar.</p>
+          
+          <h3>3 Keunggulan Pink Lips Laser Dibanding Sulam Bibir</h3>
+          <ul>
+            <li><strong>Hasil Warna Natural (Bukan Tinta Buatan):</strong> Warna yang dihasilkan adalah rona asli biologis bibir Anda yang sehat, bukan warna tinta buatan yang kaku dan berisiko memudar menjadi kebiruan.</li>
+            <li><strong>Minim Rasa Sakit & Tanpa Perlukaan:</strong> Tidak ada proses tusukan jarum berkali-kali seperti pada sulam bibir, sehingga risiko infeksi, bengkak parah, atau bibir melepuh sangat terminimalisir.</li>
+            <li><strong>Waktu Tindakan Super Cepat:</strong> Prosedur tembakan laser inti hanya memakan waktu sekitar 10 hingga 15 menit, menjadikannya pilihan lunchtime treatment yang sempurna di sela kesibukan Anda.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn" onclick="toggleLipsDescription()">
+        <span id="lipsReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <!-- SECTION 4: Proses & Cara Kerja -->
+    <div class="sozo-section-card">
+      <h2>Proses & Cara Kerja Pink Lips Laser</h2>
+      <p>Prosedur ini dilakukan langsung oleh dokter medis kami dengan mengutamakan standar sterilisasi dan kenyamanan pasien:</p>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi & Pembersihan Bibir</strong>
+          <p>Dokter akan mengevaluasi kondisi hiperpigmentasi bibir Anda dan memastikan tidak ada infeksi aktif (seperti herpes) di area bibir. Bibir kemudian dibersihkan dari sisa riasan, debu, dan kulit mati.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Aplikasi Krim Anestesi (Numbing Cream)</strong>
+          <p>Untuk menjamin kenyamanan Anda, krim anestesi lokal akan dioleskan dan didiamkan selama sekitar 15-20 menit agar area bibir menjadi kebas atau mati rasa.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Tindakan Laser Spesifik</strong>
+          <p>Mata Anda akan ditutup dengan kacamata pelindung. Dokter akan menembakkan energi laser secara merata pada seluruh area bibir atas dan bawah. Anda umumnya hanya akan merasakan sensasi hangat atau jepretan yang sangat ringan.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Aplikasi Soothing & Lip Care</strong>
+          <p>Setelah tindakan laser selesai, area bibir dibersihkan kembali dan dioleskan krim penenang (soothing cream) atau pelembap bibir medis khusus untuk mencegah kekeringan pasca-tindakan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: FAQ Section -->
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Pink Lips Laser</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleLipsFaq(this)">
+          <span>Apa itu Pink Lips Laser Treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Pink Lips Laser Treatment adalah perawatan estetika non-invasif (tanpa bedah) yang menggunakan teknologi sinar laser untuk mencerahkan bibir yang gelap, hitam, atau kusam. Laser ini bekerja memecah pigmen melanin berlebih di area bibir sekaligus merangsang produksi kolagen, sehingga bibir tampak lebih merah muda, sehat, dan kenyal secara alami.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleLipsFaq(this)">
+          <span>Apakah prosedur Pink Lips Laser sakit?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Anda tidak perlu khawatir karena prosedur ini sangat minim rasa sakit. Sebelum tindakan laser dimulai, dokter selalu mengaplikasikan krim anestesi (numbing cream) pada bibir Anda. Sebagian besar pasien hanya merasakan sensasi hangat ringan atau seperti jepretan karet gelang kecil yang sangat bisa ditoleransi.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleLipsFaq(this)">
+          <span>Berapa lama hasilnya bisa terlihat dan apakah permanen?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Warna bibir biasanya akan terlihat setingkat lebih cerah dan segar setelah sesi pertama. Namun, untuk hasil bibir merah merona yang maksimal dan awet, dokter umumnya menyarankan perawatan rutin sebanyak 3 hingga 5 sesi, tergantung seberapa gelap bibir Anda. Hasilnya bertahan sangat lama asalkan Anda menjaga gaya hidup (mengurangi merokok) dan menghindari penggunaan lipstik murah bermerkuri.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleLipsFaq(this)">
+          <span>Apa saja pantangan setelah melakukan laser bibir?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Selama 3 hingga 5 hari pertama pasca-treatment, bibir Anda mungkin terasa sedikit lebih kering. Anda diwajibkan untuk rajin menggunakan lip balm ber-SPF, menghindari paparan sinar matahari langsung, menunda pemakaian lip matte berbahan kimia keras, menghindari makanan yang terlalu pedas/panas, dan sangat dilarang mengelupas atau menarik kulit bibir yang sedang mengelupas secara paksa.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleLipsFaq(this)">
+          <span>Apakah aman untuk bibir yang sensitif dan mudah pecah-pecah?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Ya, perawatan ini sangat aman bahkan untuk bibir sensitif karena intensitas dan panjang gelombang laser dapat disesuaikan oleh dokter ahli kami dengan kondisi kulit bibir Anda. Justru, stimulasi kolagen dari laser ini akan membantu memperbaiki sel kulit bibir yang pecah-pecah agar kembali halus dan lembap.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleLipsFaq(this)">
+          <span>Berapa harga Pink Lips Laser Treatment di SOZO Skin Clinic?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>SOZO Skin Clinic menawarkan harga promo spesial untuk Pink Lips Laser Treatment, yaitu hanya Rp 499.000 per sesinya. Harga ini sangat terjangkau jika dibandingkan dengan manfaat medis dan tingkat keamanan yang jauh lebih tinggi daripada perawatan sulam bibir di salon kecantikan biasa.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleLipsFaq(this)">
+          <span>Di mana saya bisa melakukan Pink Lips Laser Treatment terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Untuk mendapatkan bibir merah merona dengan teknologi laser yang steril dan ditangani oleh dokter bersertifikat, Anda dapat mengunjungi seluruh cabang SOZO Skin Clinic yang tersebar di wilayah Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Cek alamat lengkapnya di halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleLipsDescription() {
+    const content = document.getElementById('treatmentDescriptionLips');
+    const btn = content.nextElementSibling;
+    const btnText = document.getElementById('lipsReadMoreText');
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+
+  function toggleLipsFaq(button) {
+    const answer = button.nextElementSibling;
+    button.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>

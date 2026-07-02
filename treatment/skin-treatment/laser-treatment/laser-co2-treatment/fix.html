@@ -1,0 +1,879 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-co2-laser-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+
+  .sozo-sku-co2-laser-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-co2-laser-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-co2-laser-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-co2-laser-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-co2-laser-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-co2-laser-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-co2-laser-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-co2-laser-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- SECTIONS STYLING (Cards, Grids, Steps) --- */
+  .sozo-sku-co2-laser-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-section-card > h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-section-card > p {
+    color: #475569 !important;
+    font-size: 16px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  /* Problem Grid Styling - fix 2 kolom, otomatis 3 baris untuk 6 kartu */
+  .sozo-sku-co2-laser-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-problem-card span {
+    font-size: 14px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Process Steps Styling */
+  .sozo-sku-co2-laser-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-step-num {
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-step-text p {
+    font-size: 15px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- STYLING RELATED TREATMENT (baru, dipindah dari versi scar-treatment) --- */
+  .sozo-sku-co2-laser-wrapper .sozo-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-related-card {
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-related-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-related-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-related-body h3 {
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin: 0 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-related-body p {
+    font-size: 14px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    flex: 1;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-related-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-related-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 11px 16px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    border: 2px solid #1A2080 !important;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-related-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-related-link {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    text-align: center;
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-co2-laser-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-description-section h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-description-section p,
+  .sozo-sku-co2-laser-wrapper .sozo-description-section li {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-description-section ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .sozo-sku-co2-laser-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-co2-laser-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-co2-laser-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-co2-laser-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-co2-laser-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-co2-laser-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-co2-laser-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-co2-laser-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-co2-laser-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-co2-laser-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-co2-laser-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-co2-laser-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-co2-laser-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-co2-laser-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-co2-laser-wrapper .sozo-description-section, 
+    .sozo-sku-co2-laser-wrapper .sozo-faq-section,
+    .sozo-sku-co2-laser-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+
+    .sozo-sku-co2-laser-wrapper .sozo-problem-grid,
+    .sozo-sku-co2-laser-wrapper .sozo-related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="sozo-sku-co2-laser-wrapper" id="sozo-co2-laser-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/laser-treatment/">Laser Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Laser CO2 Treatment</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Laser CO2 Treatment untuk Bopeng dan Bekas Jerawat</h1>
+      <p>
+        Laser CO2 Fractional adalah treatment laser ablatif yang banyak digunakan di dunia estetika medis untuk membantu memperbaiki tekstur kulit wajah yang tidak rata, bopeng bekas jerawat (acne scar), dan pori-pori yang tampak besar. Teknologi ini bekerja dengan merangsang produksi kolagen baru di lapisan kulit, sehingga kulit dapat tampak lebih halus, kencang, dan segar secara bertahap.
+      </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <!-- CEK DULU: sumber laser-treatment nulis 60 menit, sumber scar-treatment nulis 75 menit. Pilih angka yang akurat sebelum publish. -->
+            <span class="sozo-info-value">60 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Promo</span>
+            <!-- CEK DULU: kalau harga ini bukan promo berbatas waktu (evergreen price), label "Harga Promo" sebaiknya diganti "Harga Mulai" biar lebih akurat -->
+            <span class="sozo-info-value">Rp 799.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20laser%20co2%20treatment%20[sumber:%20ORG-LaserCO2]" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Scar-Single-Treatment-Laser-Co2-Full-Face.webp" alt="Laser CO2 Treatment untuk bopeng dan bekas jerawat di Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Wujudkan Kulit Lebih Halus, Samarkan Bopeng dengan Laser CO2</h2>
+      <p>Laser CO2 bekerja mengangkat lapisan kulit terluar dan merangsang kolagen dari dalam, membantu tekstur kulit yang tidak rata dan bopeng bekas jerawat tersamarkan secara bertahap.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20laser%20co2%20treatment%20[sumber:%20ORG-LaserCO2]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <div class="sozo-section-card">
+      <h2>Masalah Kulit yang Sering Dialami</h2>
+      <p>Tekstur kulit wajah yang tidak rata tentu dapat menurunkan rasa percaya diri Anda. Perawatan Laser CO2 hadir untuk membantu mengatasi berbagai keluhan berikut:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Bopeng Bekas Jerawat (Acne Scars)</strong>
+          <span>Permukaan kulit wajah berlubang, bergelombang, atau mencekung ke dalam akibat peradangan jerawat parah di masa lalu.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Pori-pori Besar</strong>
+          <span>Ukuran pori-pori kulit tampak melebar dan terbuka secara signifikan, sehingga tekstur wajah terlihat kasar dan riasan (makeup) sulit menempel sempurna.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tekstur Kulit Kasar & Kusam</strong>
+          <span>Adanya tumpukan sel kulit mati dan kerusakan jaringan di lapisan atas (epidermis) yang membuat kulit terasa kasar saat disentuh dan tampak tidak bercahaya.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Garis Halus & Tanda Penuaan</strong>
+          <span>Munculnya kerutan atau garis-garis halus pada area wajah akibat menurunnya produksi kolagen dan hilangnya elastisitas kulit seiring berjalannya waktu.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bekas Jerawat Kemerahan</strong>
+          <span>Bekas jerawat yang membuat warna kulit terlihat kurang merata, meski permukaan kulit belum tentu berlubang.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bekas Luka Ringan</strong>
+          <span>Bekas luka ringan pada permukaan kulit yang membuat tekstur wajah tampak kurang merata.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-description-section">
+      <h2>Perawatan Laser CO2: Solusi Resurfacing untuk Bopeng Jerawat & Peremajaan Kulit</h2>
+      <p>Laser CO2 Fractional bekerja dengan cara memancarkan sinar energi mikro secara presisi ke dalam lapisan dermis kulit. Proses ini menciptakan luka-luka mikro yang terkontrol untuk mengangkat sel-sel kulit mati di permukaan (skin resurfacing). Secara bersamaan, energi panas yang dihantarkan akan merangsang produksi kolagen dan elastin dari dalam tubuh, sehingga jaringan kulit yang rusak seperti bopeng dapat perlahan tergantikan oleh sel kulit baru yang lebih sehat dan rata.</p>
+      
+      <div class="sozo-expandable-content" id="treatmentDescriptionCo2">
+        <div class="sozo-expandable-inner">
+          <h3>Manfaat Utama Laser CO2 Fractional untuk Kulit</h3>
+          <p>Perawatan ini banyak dipilih di klinik kecantikan karena membantu memberikan perubahan yang cukup terlihat pada tekstur kulit:</p>
+          <ul>
+            <li><strong>Membantu menyamarkan bopeng (acne scars):</strong> mendukung pertumbuhan jaringan baru untuk membantu meratakan kembali tekstur kulit yang berlubang atau bergelombang akibat jerawat meradang di masa lalu.</li>
+            <li><strong>Membantu mengecilkan tampilan pori besar:</strong> energi panas laser membantu mengencangkan kembali struktur penyangga di sekitar pori, sehingga tampilannya menjadi lebih rapat dan samar.</li>
+            <li><strong>Mendukung produksi kolagen:</strong> membantu memperbaiki tekstur kulit dari dalam secara bertahap.</li>
+            <li><strong>Membantu kulit tampak lebih cerah dan segar:</strong> mengelupas lapisan kulit luar yang kusam, sekaligus membantu menyamarkan garis halus dan noda hitam.</li>
+          </ul>
+
+          <h3>Masa Pemulihan (Downtime) yang Sebanding dengan Hasilnya</h3>
+          <p>Karena Laser CO2 merupakan prosedur resurfacing yang cukup mendalam, treatment ini memiliki waktu pemulihan (downtime) sekitar 5 hingga 7 hari. Kulit wajah Anda akan mengalami kemerahan yang wajar, diikuti dengan proses pengelupasan halus (micro-crusting) beberapa hari setelahnya. Ini adalah respons alami tubuh saat mengganti sel kulit lama dengan yang baru. Selama masa ini, dokter akan meresepkan krim pelembap khusus (post-laser cream) untuk mendukung proses penyembuhan.</p>
+
+          <h3>Laser CO2 Ablatif dan Non Ablatif, Apa Bedanya?</h3>
+          <p>Laser CO2 termasuk laser ablatif, yaitu laser yang mengangkat lapisan kulit terluar sehingga stimulasi perbaikannya lebih kuat dan biasanya disertai masa pemulihan. Laser non ablatif bekerja tanpa mengangkat lapisan kulit, dengan masa pemulihan lebih singkat namun stimulasi yang lebih ringan. Pemilihan jenis laser disesuaikan dengan kondisi kulit melalui evaluasi dokter.</p>
+
+          <h3>Siapa yang Cocok Melakukan Laser CO2?</h3>
+          <p>Perawatan ini umumnya cocok untuk Anda yang memiliki bopeng bekas jerawat ringan sampai sedang, pori tampak besar, tekstur kulit tidak rata, atau garis halus. Untuk memastikan kesesuaian tindakan, dokter akan memeriksa kondisi kulit dan riwayat kesehatan terlebih dahulu sebelum perawatan dilakukan.</p>
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn" onclick="toggleCo2Description()">
+        <span id="co2ReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Proses & Cara Kerja Laser CO2</h2>
+      <p>Prosedur Laser CO2 dilakukan secara bertahap langsung oleh dokter estetika profesional, dengan mengutamakan standar keamanan medis, kebersihan, dan kenyamanan pasien:</p>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi & Asesmen Dokter</strong>
+          <p>Dokter akan memeriksa kondisi kulit dan mengukur tingkat kedalaman scar atau bopeng Anda untuk menentukan pengaturan energi laser (parameter) yang paling sesuai.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan & Anestesi Lokal</strong>
+          <p>Area wajah dibersihkan secara menyeluruh dari debu dan riasan. Kemudian, krim anestesi (numbing cream) diaplikasikan dan didiamkan selama 30-45 menit agar prosedur laser terasa lebih nyaman dan minim rasa sakit.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Tindakan Laser CO2 Fractional</strong>
+          <p>Mata Anda akan dilindungi dengan kacamata khusus. Dokter kemudian menembakkan sinar energi mikro ke area target untuk mengelupas sel kulit yang rusak (resurfacing) sekaligus memanaskan lapisan bawah kulit untuk merangsang produksi kolagen baru.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Aftercare & Panduan Pemulihan</strong>
+          <p>Setelah tindakan, dokter akan mengoleskan krim penenang (soothing cream) untuk meredakan kemerahan. Anda juga akan diberikan instruksi perawatan ketat pasca-tindakan di rumah untuk mendukung masa pemulihan (downtime) dan mendapatkan hasil yang optimal.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Treatment Terkait untuk Bekas Jerawat dan Tekstur Kulit</h2>
+      <p>Beberapa perawatan berikut dapat menjadi pilihan lanjutan atau kombinasi sesuai evaluasi dokter.</p>
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Rejuran-Scar-2048x2048.webp" alt="Rejuran Scar Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Rejuran Scar</h3>
+            <p>Membantu memperbaiki tekstur kulit dan bekas jerawat dengan polinukleotida untuk mendukung regenerasi kulit secara bertahap.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Rejuran%20Scar%20%5Bsumber:%20ORG-LaserCO2%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/rejuran-scar-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Scar-Single-Treatment-PRP-Wajah.webp" alt="PRP Treatment Wajah Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>PRP Treatment</h3>
+            <p>Memanfaatkan plasma darah sendiri untuk membantu regenerasi kulit dan menyamarkan bopeng bekas jerawat secara bertahap.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20PRP%20Treatment%20%5Bsumber:%20ORG-LaserCO2%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Restylance-Scar.webp" alt="Restylane Scar Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Restylane Scar</h3>
+            <p>Treatment berbasis hyaluronic acid untuk membantu mengisi area bekas luka cekung dan membuat tekstur kulit tampak lebih merata.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Restylane%20Scar%20%5Bsumber:%20ORG-LaserCO2%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/restylane-scar/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Laser CO2</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCo2Faq(this)">
+          <span>Apa fungsi utama dari Laser CO2 untuk wajah?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Fungsi utama Laser CO2 adalah untuk pelapisan ulang kulit (skin resurfacing). Laser ini efektif membantu memperbaiki masalah tekstur kulit yang tidak rata, seperti bopeng bekas jerawat (atrophic scars), mengecilkan tampilan pori besar, menyamarkan kerutan halus, serta mengangkat sel kulit mati yang membuat wajah tampak kusam.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCo2Faq(this)">
+          <span>Masalah kulit apa saja yang bisa dibantu Laser CO2?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Laser CO2 dapat membantu mengatasi bopeng bekas jerawat, bekas luka ringan, pori tampak besar, tekstur kulit tidak rata, bekas jerawat kemerahan, dan garis halus. Tingkat perbaikan dapat berbeda pada setiap orang tergantung kondisi kulit awal.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCo2Faq(this)">
+          <span>Apakah perawatan Laser CO2 terasa sakit?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Prosedur ini umumnya bisa ditoleransi dengan baik. Sebelum tindakan laser dimulai, dokter atau perawat akan mengoleskan krim anestesi lokal (krim kebas) pada area wajah Anda dan menunggunya selama 30-45 menit, sehingga Anda merasa lebih nyaman dan minim rasa sakit selama dokter menembakkan sinar energi laser.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCo2Faq(this)">
+          <span>Apa bedanya Laser CO2 ablatif dengan laser non ablatif?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Laser CO2 termasuk laser ablatif yang mengangkat lapisan kulit terluar sehingga stimulasi perbaikannya lebih kuat dan disertai masa pemulihan. Laser non ablatif bekerja tanpa mengangkat lapisan kulit dengan masa pemulihan lebih singkat. Pemilihan jenis laser disesuaikan dengan kondisi kulit melalui evaluasi dokter.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCo2Faq(this)">
+          <span>Berapa lama waktu pemulihan (downtime) setelah Laser CO2?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Umumnya, downtime berlangsung sekitar 5 hingga 7 hari bergantung pada intensitas energi laser yang digunakan dan respons kulit masing-masing pasien. Anda akan mengalami kemerahan seperti terbakar sinar matahari (sunburn), tekstur kulit yang terasa kasar (sandpaper-like), lalu diikuti dengan pengelupasan halus. Kulit baru yang lebih cerah dan halus akan mulai terlihat setelah proses pengelupasan selesai.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCo2Faq(this)">
+          <span>Berapa kali sesi Laser CO2 yang diperlukan untuk bopeng?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <!-- CEK DULU: sumber laser-treatment merekomendasikan 3-5 sesi, sumber scar-treatment bilang 1-3 sesi. Konfirmasi ke dokter/tim medis angka mana yang berlaku sekarang. -->
+          <p>Perbaikan tekstur kulit biasanya sudah mulai terlihat setelah 1 kali sesi, setelah proses pengelupasan selesai. Untuk bopeng atau scar jerawat yang cukup dalam, dokter umumnya merekomendasikan program perawatan berkelanjutan beberapa sesi dengan interval 4-6 minggu untuk hasil perataan tekstur yang lebih maksimal.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCo2Faq(this)">
+          <span>Apa pantangan dan perawatan setelah Laser CO2?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Masa perawatan pasca-laser (aftercare) sangat krusial. Anda perlu menghindari paparan sinar matahari langsung, menghentikan penggunaan skincare berbahan aktif (seperti Retinol, AHA/BHA, atau Vitamin C) selama 5-7 hari, dan tidak mengelupas atau menggaruk kulit wajah yang sedang crusting secara paksa. Fokus menggunakan sabun cuci muka yang lembut, krim anti-iritasi dari dokter, dan sunscreen secara rutin.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCo2Faq(this)">
+          <span>Apakah Laser CO2 aman dilakukan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Laser CO2 umumnya aman bila dilakukan dengan prosedur yang tepat dan evaluasi dokter. Konsultasi diperlukan untuk memastikan tindakan sesuai dengan kondisi kulit dan riwayat kesehatan Anda, serta untuk menentukan pengaturan laser yang sesuai.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCo2Faq(this)">
+          <span>Berapa harga treatment Laser CO2 per sesi?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Harga treatment Laser CO2 Fractional di Sozo Skin Clinic saat ini Rp 799.000 per sesi dengan durasi tindakan sekitar 60 menit. Untuk informasi promo terbaru dan rekomendasi paket perawatan, Anda dapat menghubungi tim SOZO melalui WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCo2Faq(this)">
+          <span>Di mana saya bisa melakukan Laser CO2 terdekat dari lokasi saya?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Jika Anda sedang mencari klinik kecantikan untuk Laser CO2 terdekat dengan prosedur yang aman dan nyaman, Anda bisa mengunjungi seluruh cabang SOZO Skin Clinic. Setiap klinik kami didukung fasilitas medis modern dan ditangani langsung oleh terapis serta Dokter Kecantikan profesional. Klinik kami tersebar di berbagai wilayah Jabodetabek, termasuk Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Untuk menemukan cabang yang paling mudah dijangkau dari domisili Anda, silakan cek halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang Sozo Skin Clinic</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleCo2Description() {
+    const content = document.getElementById('treatmentDescriptionCo2');
+    const btn = document.querySelector('#sozo-co2-laser-widget .sozo-load-more-btn');
+    const btnText = document.getElementById('co2ReadMoreText');
+    if (!content || !btn) return;
+
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+
+  function toggleCo2Faq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>

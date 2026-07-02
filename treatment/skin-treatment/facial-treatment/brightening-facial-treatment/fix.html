@@ -1,0 +1,748 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-skin-bright-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+
+  .sozo-sku-skin-bright-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-skin-bright-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-skin-bright-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-skin-bright-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-skin-bright-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-skin-bright-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-skin-bright-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-skin-bright-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- SECTIONS CARD STYLING (Grids & Steps) --- */
+  .sozo-sku-skin-bright-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-section-card > h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-section-card > p {
+    color: #475569 !important;
+    font-size: 16px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  /* Problem Grid Layout (2x2) */
+  .sozo-sku-skin-bright-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-problem-card span {
+    font-size: 14px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Process Steps Layout */
+  .sozo-sku-skin-bright-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-step-num {
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-step-text p {
+    font-size: 15px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-skin-bright-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-description-section h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-description-section p,
+  .sozo-sku-skin-bright-wrapper .sozo-description-section li {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-description-section ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .sozo-sku-skin-bright-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-skin-bright-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-skin-bright-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-skin-bright-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-skin-bright-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 600;
+  }
+  .sozo-sku-skin-bright-wrapper .sozo-faq-answer a:hover {
+    color: #2e38b5 !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-skin-bright-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-skin-bright-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-skin-bright-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-skin-bright-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-skin-bright-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-skin-bright-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-skin-bright-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-skin-bright-wrapper .sozo-description-section, 
+    .sozo-sku-skin-bright-wrapper .sozo-faq-section,
+    .sozo-sku-skin-bright-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+    
+    .sozo-sku-skin-bright-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="sozo-sku-skin-bright-wrapper" id="sozo-skin-bright-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/">Facial Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Skin Brightening Facial</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Skin Brightening Facial</h1>
+      <p>
+        Kembalikan kilau alami wajah Anda dengan brightening facial terbaik. Treatment skin bright facial dirancang secara khusus untuk mengangkat sel kulit mati, meratakan warna kulit, dan memberikan efek glowing instan. Nikmati perawatan wajah relaksasi dengan nutrisi Masker Vitamin C dan serum eksklusif yang membuat wajah tampak lebih bersih, sehat, dan segar alami.
+      </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">60 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 499.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20skin%20bright%20facial%20199rb%20[sumber:%20ORG-skin%20bright%20facial]" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Skin-Bright-Facial-Medical-1.avif" alt="Skin Bright Facial Sozo Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Manjakan Wajah Anda dengan Skin Brightening Facial</h2>
+      <p>Dapatkan kulit wajah yang lebih bersih, sehat, dan bebas dari kusam. Kembalikan rasa percaya diri Anda hari ini bersama ahlinya.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20skin%20bright%20facial%20199rb%20[sumber:%20ORG-skin%20bright%20facial]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <!-- SECTION 2: Masalah yang Sering Dialami -->
+    <div class="sozo-section-card">
+      <h2>Masalah Kulit Kusam yang Sering Dialami & Membutuhkan Brightening Facial</h2>
+      <p>Paparan polusi harian, sinar UV, dan sisa makeup sering kali menumpuk tanpa disadari. Anda sangat membutuhkan perawatan face brightening jika rutin mengalami keluhan berikut yang membuat wajah terlihat lelah:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Kulit Wajah Kusam & Tidak Bercahaya</strong>
+          <span>Penumpukan sel kulit mati di lapisan teratas epidermis yang menghalangi pantulan cahaya alami kulit, membuat wajah selalu terlihat letih meskipun sudah cukup tidur.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Warna Kulit Tidak Merata (Belang)</strong>
+          <span>Hiperpigmentasi ringan akibat paparan sinar matahari terik atau bekas jerawat yang meninggalkan noda gelap pada area wajah tertentu.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tekstur Kasar & Pori-Pori Tersumbat</strong>
+          <span>Permukaan kulit yang terasa kasar saat disentuh akibat tumpukan komedo (blackheads dan whiteheads) yang menyumbat pori-pori dan menghambat penyerapan skincare harian Anda.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kehilangan Kelembapan & Kekenyalan</strong>
+          <span>Kondisi kulit yang mengalami dehidrasi sehingga tampak kering, kaku, dan membutuhkan asupan nutrisi instan yang menyegarkan.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Body Text (Rich Description) -->
+    <article class="sozo-description-section">
+      <h2>Skin Brightening Facial: Kunci Mengembalikan Kilau Alami dan Bebas Kusam</h2>
+      <p>Merawat wajah ternyata tidak cukup hanya dengan rutinitas mencuci muka atau mengaplikasikan skincare berlapis setiap malam. Tahukah Anda? Sel kulit mati, sisa makeup, dan debu polusi yang mengendap setiap hari dapat membentuk "tembok penghalang" mikroskopis di permukaan epidermis. Inilah alasan utama mengapa wajah Anda sering kali tetap terlihat kusam, lelah, bertekstur kasar, dan produk perawatan semahal apa pun terasa tidak menyerap dengan maksimal.</p>
+      
+      <div class="sozo-expandable-content" id="treatmentDescriptionSkinBright">
+        <div class="sozo-expandable-inner">
+          <p>Di sinilah skin brightening facial Sozo hadir sebagai intervensi yang tepat. Berbeda dengan facial salon pada umumnya, perawatan ini difokuskan sebagai terapi pembersihan medis mendalam (deep cleansing therapy) yang dirancang secara khusus untuk "mereset" kondisi kulit Anda. Memadukan teknik ekstraksi komedo yang minim rasa sakit dengan infus nutrisi tinggi antioksidan, treatment ini bekerja efektif merangsang pergantian sel kulit baru dan mengembalikan kilau sehat wajah Anda dari dalam.</p>
+          
+          <h3>4 Alasan Mengapa Anda Membutuhkan Skin Bright Facial Kami</h3>
+          <p>Sebagai perawatan andalan bagi mereka yang menginginkan wajah fresh, bersih, dan radiant secara instan, treatment ini menawarkan manfaat yang jauh melebihi ekspektasi Anda:</p>
+          <ul>
+            <li><strong>Eksfoliasi Tuntas & Bebas Sumbatan pori (Clear Pores):</strong> Tahapan eksfoliasi kami mengangkat seluruh tumpukan kotoran, minyak berlebih (sebum), dan sel kulit mati yang membandel secara aman. Hasilnya? Wajah langsung terasa jauh lebih ringan, pori-pori kembali bernapas, dan tekstur kulit menjadi sangat halus—menciptakan "kanvas" yang sempurna dan flawless saat Anda mengaplikasikan makeup sehari-hari.</li>
+            <li><strong>Meningkatkan Efektivitas Skincare di Rumah:</strong> Setelah lapisan kulit mati terangkat sempurna melalui sesi facial bright ini, jalan masuk untuk nutrisi akan terbuka lebar. Produk skincare harian Anda (seperti serum pencerah dan pelembap malam) akan mampu menyerap hingga ke lapisan kulit yang tepat. Investasi skincare Anda tidak akan terbuang sia-sia lagi di permukaan kulit!</li>
+            <li><strong>Infus Nutrisi Maksimal dari Vitamin C:</strong> Kami tidak hanya membersihkan, tapi juga "memberi makan" kulit Anda. Penggunaan masker Vitamin C dan serum face brightening spesifik memastikan kulit mendapatkan asupan antioksidan dosis tinggi. Formula ini sangat ampuh untuk melawan radikal bebas, memudarkan noda/belang ringan, dan mempercepat efek pencerahan sejak sesi pertama selesai.</li>
+            <li><strong>Relaksasi Optimal & Rona Wajah Alami:</strong> Kami memahami Anda butuh jeda dari rutinitas yang padat. Rangkaian pijatan (face massage) dalam treatment ini tidak hanya memberikan efek rileks, tetapi terbukti melancarkan sirkulasi peredaran darah, meredakan stres dan ketegangan pada otot wajah, serta menstimulasi drainase limfatik untuk memberikan rona pipi yang sehat merona seketika tanpa perlu blush on.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn" onclick="toggleBrightDescription()">
+        <span id="brightReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </article>
+
+    <!-- SECTION 4: Proses & Cara Kerja Treatment -->
+    <div class="sozo-section-card">
+      <h2>Proses & Cara Kerja Treatment Brightening Facial</h2>
+      <p>Setiap sesi sozo skin bright facial dilakukan secara teliti dengan standar kebersihan klinik medis, memastikan Anda mendapatkan pengalaman yang nyaman dengan hasil maksimal:</p>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Double Cleansing & Toning</strong>
+          <p>Wajah akan dibersihkan secara menyeluruh dari sisa makeup, debu, dan polusi menggunakan pembersih ganda, dilanjutkan dengan toner untuk menyeimbangkan pH kulit.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Soft Exfoliation & Vapozone (Steam)</strong>
+          <p>Proses pengangkatan sel kulit mati secara lembut yang diiringi dengan penguapan hangat (steam) untuk membuka pori-pori, sehingga proses ekstraksi nantinya lebih mudah dan tidak sakit.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Ekstraksi Komedo Menyeluruh</strong>
+          <p>Terapis profesional akan membersihkan area wajah dari sumbatan komedo, baik itu komedo hitam maupun putih, menjadikan pori-pori kembali bersih dan bernapas.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Face Massage & Relaksasi</strong>
+          <p>Pijatan ritmis pada titik-titik meridian wajah untuk melancarkan peredaran darah, merelaksasi otot wajah yang tegang, dan menstimulasi drainase limfatik.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">5</div>
+        <div class="sozo-step-text">
+          <strong>Aplikasi Serum Pencerah & Masker Vitamin C</strong>
+          <p>Langkah pamungkas dengan mengoleskan serum khusus dan masker Vitamin C yang dikunci pada kulit, memberikan kelembapan ekstra dan menutrisi wajah agar memancarkan glowing alami setelah perawatan selesai.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: FAQ Section -->
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Skin Bright Facial</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBrightFaq(this)">
+          <span>Apa itu skin brightening facial dan apa bedanya dengan facial biasa?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Skin bright facial adalah perawatan eksfoliasi dan ekstraksi berstandar medis yang difokuskan khusus untuk mengatasi kekusaman. Jika facial biasa umumnya hanya membersihkan permukaan luar, treatment ini menggunakan teknik ekstraksi mendalam yang dipadukan dengan penguncian nutrisi tinggi dari serum pencerah dan masker Vitamin C, memberikan efek glowing seketika yang bertahan lebih lama.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBrightFaq(this)">
+          <span>Siapa yang paling direkomendasikan mengambil treatment facial brightening ini?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Perawatan ini adalah "penyelamat" bagi Anda yang memiliki aktivitas padat, sering terpapar polusi atau AC, dan mulai merasa warna kulit tidak merata. Sangat cocok untuk kulit pria maupun wanita. Namun, jika Anda sedang memiliki jerawat meradang atau kistik, dokter kami biasanya akan merekomendasikan penanganan jerawat terlebih dahulu sebelum beralih ke treatment pencerahan.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBrightFaq(this)">
+          <span>Kapan saya bisa melihat hasilnya dan seberapa sering brightening facial ini harus diulang?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Anda akan langsung melihat kulit yang lebih fresh, cerah, dan bersih dari komedo tepat setelah 60 menit sesi perawatan selesai. Untuk menjaga agar kulit tidak kembali kusam dan proses regenerasi sel tetap optimal, kami menyarankan Anda untuk menjadikan bright facial ini sebagai rutinitas perawatan bulanan (idealnya setiap 3 hingga 4 minggu sekali).</p>
+        </div>
+      </div>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBrightFaq(this)">
+          <span>Apakah skin bright facial aman untuk ibu hamil dan menyusui?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Pada dasarnya, tindakan pembersihan wajah sangat aman. Namun, karena kondisi kulit saat hamil dan menyusui bisa lebih sensitif terhadap bahan aktif tertentu (seperti serum konsentrasi tinggi), kami sangat menyarankan Anda untuk menginformasikan kondisi kehamilan Anda kepada staf kami saat reservasi. Tim kami akan menyesuaikan produk yang digunakan agar 100% aman untuk Anda dan buah hati.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBrightFaq(this)">
+          <span>Apakah treatment brightening facial ini menimbulkan kemerahan atau "downtime"?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sama sekali tidak ada downtime (waktu pemulihan). Berbeda dengan peeling kimiawi tingkat dalam, sozo skin bright facial dirancang agar Anda bisa langsung kembali beraktivitas, bekerja, atau hangout setelah perawatan. Kemerahan ringan akibat proses ekstraksi komedo adalah hal yang wajar dan akan cepat mereda berkat aplikasi masker penenang (soothing mask) di tahap akhir.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBrightFaq(this)">
+          <span>Apa saja pantangan setelah melakukan brightening facial?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Untuk mempertahankan hasil brightening facial yang optimal, hindari paparan sinar matahari terik secara langsung setidaknya selama 2-3 hari dan wajib menggunakan sunscreen. Selain itu, hindari penggunaan produk eksfoliasi mandiri di rumah (seperti scrub wajah atau toner eksfoliasi AHA/BHA) selama 3 hari pasca-perawatan agar kulit tidak mengalami iritasi akibat pengelupasan berlebih.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBrightFaq(this)">
+          <span>Berapa harga facial brightening di Sozo Clinic, dan apakah sepadan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Harga facial brightening kami sangat terjangkau, yakni mulai dari Rp 499.000. Harga ini merupakan investasi yang sangat sepadan karena Anda mendapatkan perawatan lengkap dengan tahapan medis yang komprehensif, ditangani langsung oleh terapis bersertifikat, dan menggunakan bahan-bahan berstandar klinis untuk mencegah penuaan dini pada kulit Anda.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleBrightFaq(this)">
+          <span>Di mana saya bisa mendapatkan perawatan Sozo Skin Brightening Facial terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Anda bisa mendapatkan penanganan skin bright facial sozo yang steril, nyaman, dan profesional di seluruh cabang klinik kami. Layanan ini tersedia di berbagai lokasi strategis Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Temukan informasi lengkap mengenai rute dan jadwal operasional klinik kami di halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleBrightDescription() {
+    const content = document.getElementById('treatmentDescriptionSkinBright');
+    const btn = content.nextElementSibling;
+    const btnText = document.getElementById('brightReadMoreText');
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+
+  function toggleBrightFaq(button) {
+    const answer = button.nextElementSibling;
+    button.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>

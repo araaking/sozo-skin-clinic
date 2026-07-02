@@ -1,0 +1,347 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-nano-laser-wrapper { font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif; max-width: 1200px; margin: 0 auto; color: #333; line-height: 1.6; background-color: #ffffff; }
+  .sozo-sku-nano-laser-wrapper * { box-sizing: border-box; }
+  /* --- BREADCRUMB --- */
+  .sozo-sku-nano-laser-wrapper .sozo-breadcrumb { padding: 15px 20px 25px 20px; width: 100%; }
+  .sozo-sku-nano-laser-wrapper .sozo-breadcrumb ol { list-style: none !important; margin: 0 !important; padding: 0 !important; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .sozo-sku-nano-laser-wrapper .sozo-breadcrumb li { display: flex; align-items: center; font-size: 14px; color: #1A2080; }
+  .sozo-sku-nano-laser-wrapper .sozo-breadcrumb a { text-decoration: none !important; color: #64748b !important; font-weight: 500; transition: color 0.2s ease; }
+  .sozo-sku-nano-laser-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-breadcrumb .separator { color: #cbd5e1; margin: 0 4px; font-size: 12px; user-select: none; }
+  /* --- HERO --- */
+  .sozo-sku-nano-laser-wrapper .sozo-treatment-hero { display: flex; flex-wrap: nowrap; gap: 50px; align-items: center; margin-bottom: 50px; padding: 0 20px; }
+  .sozo-sku-nano-laser-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-nano-laser-wrapper .sozo-hero-text h1 { font-size: clamp(32px, 4vw, 42px) !important; color: #1A2080 !important; margin: 0 0 16px 0 !important; line-height: 1.2 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-nano-laser-wrapper .sozo-hero-text p { font-size: 16px !important; color: #475569 !important; margin: 0 0 30px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-hero-image { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; }
+  .sozo-sku-nano-laser-wrapper .sozo-hero-image img { width: 100%; max-width: 480px; height: 340px; border-radius: 24px; object-fit: cover; object-position: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); display: block; }
+  .sozo-sku-nano-laser-wrapper .sozo-info-row { display: flex; gap: 40px; margin-bottom: 35px; padding: 24px; background-color: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9; }
+  .sozo-sku-nano-laser-wrapper .sozo-info-col { display: flex; align-items: flex-start; gap: 15px; }
+  .sozo-sku-nano-laser-wrapper .sozo-info-icon { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #EEF2FF; border-radius: 12px; color: #1A2080; }
+  .sozo-sku-nano-laser-wrapper .sozo-info-text { display: flex; flex-direction: column; gap: 2px; }
+  .sozo-sku-nano-laser-wrapper .sozo-info-label { font-size: 13px !important; color: #64748b !important; font-weight: 600 !important; text-transform: uppercase; letter-spacing: 0.5px; }
+  .sozo-sku-nano-laser-wrapper .sozo-info-value { font-size: 20px !important; color: #1A2080 !important; font-weight: 700 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background-color: #1A2080 !important; color: #ffffff !important; text-decoration: none !important; font-size: 16px !important; font-weight: 600 !important; border-radius: 100px; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2); border: 2px solid #1A2080 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; transform: translateY(-3px); box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15); }
+  /* --- CTA BANNER --- */
+  .sozo-sku-nano-laser-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-nano-laser-wrapper .sozo-cta-banner { background-color: #1A2080; background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%); border-radius: 24px; padding: 50px 30px; margin-bottom: 50px; text-align: center; color: #ffffff; box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15); }
+  .sozo-sku-nano-laser-wrapper .sozo-cta-banner h2 { font-size: clamp(24px, 3vw, 32px) !important; color: #ffffff !important; margin: 0 0 15px 0 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-nano-laser-wrapper .sozo-cta-banner p { font-size: 16px !important; color: #e2e8f0 !important; margin: 0 auto 30px auto !important; max-width: 600px; line-height: 1.6 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background-color: #ffffff !important; color: #1A2080 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 100px; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); border: 2px solid #ffffff !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-btn-secondary:hover { background-color: transparent !important; color: #ffffff !important; transform: translateY(-3px); }
+  /* --- SECTION CARD --- */
+  .sozo-sku-nano-laser-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-nano-laser-wrapper .sozo-section-card { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-nano-laser-wrapper .sozo-section-card h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 20px !important; font-weight: 800 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-section-card h3 { font-size: 18px !important; color: #1A2080 !important; margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 700 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-section-card p { color: #475569 !important; margin-bottom: 16px !important; font-size: 16px !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-section-card ul { padding-left: 20px !important; margin-bottom: 20px !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-section-card li { color: #475569 !important; margin-bottom: 12px !important; font-size: 16px !important; }
+  /* --- PROBLEM GRID --- */
+  .sozo-sku-nano-laser-wrapper .sozo-problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 8px; }
+  .sozo-sku-nano-laser-wrapper .sozo-problem-card { background-color: #f8fafc; border: 1px solid #f1f5f9; border-radius: 14px; padding: 20px; }
+  .sozo-sku-nano-laser-wrapper .sozo-problem-card strong { display: block; color: #1A2080; font-size: 16px; margin-bottom: 6px; }
+  .sozo-sku-nano-laser-wrapper .sozo-problem-card span { color: #475569; font-size: 14px; line-height: 1.6; }
+  /* --- PROSES --- */
+  .sozo-sku-nano-laser-wrapper .sozo-process-step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
+  .sozo-sku-nano-laser-wrapper .sozo-process-step:last-child { margin-bottom: 0; }
+  .sozo-sku-nano-laser-wrapper .sozo-step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background-color: #EEF2FF; color: #1A2080; font-weight: 800; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .sozo-sku-nano-laser-wrapper .sozo-step-text strong { display: block; color: #1A2080; font-size: 16px; margin-bottom: 4px; }
+  .sozo-sku-nano-laser-wrapper .sozo-step-text p { margin: 0 !important; color: #475569 !important; font-size: 15px !important; }
+  /* --- RELATED --- */
+  .sozo-sku-nano-laser-wrapper .sozo-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px; }
+  .sozo-sku-nano-laser-wrapper .sozo-related-card { border: 1px solid #f1f5f9; border-radius: 16px; overflow: hidden; background-color: #ffffff; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .sozo-sku-nano-laser-wrapper .sozo-related-card:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(26, 32, 128, 0.1); }
+  .sozo-sku-nano-laser-wrapper .sozo-related-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+  .sozo-sku-nano-laser-wrapper .sozo-related-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .sozo-sku-nano-laser-wrapper .sozo-related-body h3 { font-size: 16px !important; color: #1A2080 !important; margin: 0 !important; font-weight: 700 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-related-body p { font-size: 14px !important; color: #475569 !important; margin: 0 !important; flex: 1; }
+  .sozo-sku-nano-laser-wrapper .sozo-related-link { display: inline-flex; align-items: center; gap: 6px; color: #1A2080 !important; font-weight: 600 !important; font-size: 14px !important; text-decoration: none !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-related-link:hover { text-decoration: underline !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-related-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+  .sozo-sku-nano-laser-wrapper .sozo-related-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 11px 16px; background-color: #1A2080 !important; color: #ffffff !important; text-decoration: none !important; font-size: 14px !important; font-weight: 600 !important; border-radius: 100px; border: 2px solid #1A2080 !important; transition: all 0.3s ease; }
+  .sozo-sku-nano-laser-wrapper .sozo-related-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; }
+  /* --- EXPANDABLE --- */
+  .sozo-sku-nano-laser-wrapper .sozo-expandable-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease-out; }
+  .sozo-sku-nano-laser-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-nano-laser-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-nano-laser-wrapper .sozo-load-more-btn { background: none !important; border: none !important; color: #1A2080 !important; font-size: 15px !important; font-weight: 600 !important; padding: 0 !important; margin-top: 15px !important; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s ease; }
+  .sozo-sku-nano-laser-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-nano-laser-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-nano-laser-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+  /* --- FAQ --- */
+  .sozo-sku-nano-laser-wrapper .sozo-faq-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 24px !important; font-weight: 800 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-item { border-bottom: 1px solid #f1f5f9; padding: 16px 0; }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-question { width: 100%; background: none !important; border: none !important; text-align: left; font-size: 16px !important; font-weight: 600 !important; color: #1e293b !important; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0 0 8px 0 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-question svg { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-answer p { color: #475569 !important; font-size: 15px !important; margin: 8px 0 16px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-answer a { color: #1A2080 !important; text-decoration: underline !important; font-weight: 500; }
+  .sozo-sku-nano-laser-wrapper .sozo-faq-answer a:hover { color: #2e38b5 !important; }
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    .sozo-sku-nano-laser-wrapper .sozo-treatment-hero { flex-direction: column-reverse; gap: 30px; }
+    .sozo-sku-nano-laser-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-nano-laser-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-nano-laser-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-nano-laser-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-nano-laser-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-nano-laser-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-nano-laser-wrapper .sozo-section-card, .sozo-sku-nano-laser-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-nano-laser-wrapper .sozo-problem-grid { grid-template-columns: 1fr; }
+    .sozo-sku-nano-laser-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-nano-laser-wrapper" id="sozo-nano-laser-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/laser-treatment/">Laser Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Nano Laser Treatment</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Nano Laser Treatment</h1>
+      <p>
+        Nano Laser atau laser Q-switched Nd:YAG adalah treatment laser presisi yang membantu menyamarkan flek hitam, melasma, dan hiperpigmentasi dengan menargetkan pigmen hingga lapisan dalam kulit, sehingga warna kulit tampak lebih merata.
+      </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+          <div class="sozo-info-text"><span class="sozo-info-label">Durasi</span><span class="sozo-info-value">30 Menit</span></div>
+        </div>
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" x2="7.01" y1="7" y2="7"></line></svg></div>
+          <div class="sozo-info-text"><span class="sozo-info-label">Harga Promo</span><span class="sozo-info-value">Rp 1.199.000</span></div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Nano%20Laser%20%5Bsumber:%20ORG-laser%20treatment%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2022/05/Nano-laser2-2.webp" alt="Nano Laser treatment untuk flek hitam dan melasma di Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Wujudkan Wajah Lebih Cerah & Merata dengan Nano Laser</h2>
+      <p>Bantu samarkan flek hitam, melasma, dan pigmentasi membandel dengan teknologi laser yang menargetkan pigmen secara presisi. Konsultasikan kondisi kulit Anda dengan tim medis SOZO untuk rencana perawatan yang sesuai.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20Nano%20Laser%20%5Bsumber:%20ORG-laser%20treatment%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <div class="sozo-section-card">
+      <h2>Masalah Kulit yang Sering Dialami</h2>
+      <p>Flek hitam dan pigmentasi sering sulit diatasi hanya dengan skincare biasa. Nano Laser hadir untuk membantu mengatasi keluhan berikut:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Flek Hitam & Noda Membandel</strong>
+          <span>Flek hitam dan noda bekas paparan sinar matahari yang sulit memudar dengan skincare biasa.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Melasma</strong>
+          <span>Pigmentasi berupa melasma yang cenderung berulang dan membutuhkan perawatan khusus.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Hiperpigmentasi & Warna Tidak Merata</strong>
+          <span>Warna kulit yang tidak merata akibat penumpukan pigmen di beberapa area wajah.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kulit Kusam Akibat Pigmentasi</strong>
+          <span>Kulit yang tampak kusam dan kurang bercahaya karena masalah pigmentasi.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Nano Laser: Atasi Flek Hitam & Pigmentasi hingga Lapisan Dalam</h2>
+      <p>Nano Laser adalah perawatan laser dengan teknologi Q-switched Nd:YAG yang menggunakan energi laser presisi untuk menargetkan pigmen gelap hingga ke lapisan dalam kulit. Treatment ini bekerja membantu memecah pigmen seperti flek hitam dan melasma tanpa melukai permukaan luar kulit.</p>
+      <p>Prosesnya relatif singkat dengan downtime yang minimal. Hasilnya, kulit cenderung tampak lebih cerah dan merata, serta tekstur wajah lebih halus secara bertahap. Hasil setiap orang dapat berbeda tergantung kondisi awal kulit.</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionNano">
+        <div class="sozo-expandable-inner">
+          <h3>Apa Itu Nano Laser?</h3>
+          <p>Nano Laser adalah perawatan laser Q-switched Nd:YAG yang menghantarkan energi cahaya dalam pulsa sangat singkat untuk membantu memecah partikel pigmen di kulit. Karena bekerja secara terarah, treatment ini berguna untuk menyamarkan flek hitam, melasma, dan hiperpigmentasi sambil menjaga permukaan kulit tetap aman.</p>
+
+          <h3>Manfaat Nano Laser</h3>
+          <ul>
+            <li><strong>Membantu menyamarkan flek hitam:</strong> menargetkan pigmen gelap secara presisi.</li>
+            <li><strong>Membantu mengatasi melasma:</strong> mendukung perbaikan pigmentasi yang membandel secara bertahap.</li>
+            <li><strong>Meratakan warna kulit:</strong> membantu kulit tampak lebih cerah dan merata.</li>
+            <li><strong>Memperbaiki tekstur kulit:</strong> mendukung kulit yang lebih halus dengan downtime minimal.</li>
+          </ul>
+
+          <h3>Nano Laser dan Pico Laser: Apa Bedanya?</h3>
+          <p>Keduanya sama-sama menangani pigmentasi, namun memiliki pendekatan yang berbeda sehingga dapat dipilih sesuai kebutuhan kulit:</p>
+          <ul>
+            <li><strong>Nano Laser:</strong> menggunakan teknologi Q-switched Nd:YAG dengan pulsa nanosecond untuk memecah pigmen.</li>
+            <li><strong>Pico Laser:</strong> menggunakan teknologi picosecond yang lebih cepat untuk pigmentasi dan meratakan warna kulit. Tersedia pada layanan <a href="https://sozoskinclinic.com/skin-treatment/laser-treatment/pico-laser-treatment/" target="_blank" rel="noopener noreferrer">Pico Laser</a> SOZO.</li>
+          </ul>
+
+          <h3>Siapa yang Cocok Melakukan Nano Laser?</h3>
+          <p>Treatment ini umumnya cocok bagi Anda yang memiliki flek hitam, melasma, hiperpigmentasi, atau warna kulit yang tidak merata. Untuk memastikan keamanan dan kesesuaian, kondisi kulit Anda akan diperiksa terlebih dahulu oleh tenaga medis sebelum perawatan dilakukan.</p>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="toggleNanoDescription()">
+        <span id="nanoReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Proses & Cara Kerja Nano Laser</h2>
+      <p>Prosedur Nano Laser dilakukan oleh tenaga medis secara bertahap dengan standar kebersihan dan kenyamanan pasien sebagai prioritas:</p>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text"><strong>Konsultasi Dokter</strong><p>Tenaga medis memeriksa kondisi kulit dan jenis pigmentasi Anda, lalu menentukan rencana perawatan yang sesuai.</p></div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text"><strong>Pembersihan Wajah</strong><p>Wajah dibersihkan secara menyeluruh untuk mengangkat kotoran dan minyak sebelum tindakan laser.</p></div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text"><strong>Tindakan Nano Laser</strong><p>Energi laser dihantarkan secara presisi ke area pigmentasi oleh tenaga medis untuk membantu memecah pigmen.</p></div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text"><strong>Cooling & Aftercare</strong><p>Wajah diberikan pendinginan dan tenaga medis memberikan arahan perawatan beserta rekomendasi jadwal sesi berikutnya.</p></div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Treatment Terkait di SOZO Skin Clinic</h2>
+      <p>Ingin mengeksplorasi perawatan laser lain sesuai kebutuhan kulit Anda? Berikut treatment yang relevan:</p>
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pico-Laser.webp" alt="Pico Laser Treatment Sozo Skin Clinic" loading="lazy">
+          <div class="sozo-related-body">
+            <h3>Pico Laser</h3>
+            <p>Teknologi picosecond untuk membantu menyamarkan pigmentasi dan meratakan warna kulit.</p>
+            <div class="sozo-related-actions">
+              <a class="sozo-related-btn" href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Pico%20Laser%20%5Bsumber:%20ORG-laser%20treatment%5D" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a class="sozo-related-link" href="https://sozoskinclinic.com/skin-treatment/laser-treatment/pico-laser-treatment/">Lihat Selengkapnya &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Laser-CO2.webp" alt="Laser CO2 Treatment Sozo Skin Clinic" loading="lazy">
+          <div class="sozo-related-body">
+            <h3>Laser CO2</h3>
+            <p>Resurfacing kulit untuk membantu memperbaiki bekas jerawat, bopeng, dan tekstur kulit.</p>
+            <div class="sozo-related-actions">
+              <a class="sozo-related-btn" href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Laser%20CO2%20%5Bsumber:%20ORG-laser%20treatment%5D" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a class="sozo-related-link" href="https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-co2-treatment/">Lihat Selengkapnya &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/09/young-beautiful-girl-lies-beautician-s-table-receives-procedures-scaled.webp" alt="Laser Rejuve Treatment Sozo Skin Clinic" loading="lazy">
+          <div class="sozo-related-body">
+            <h3>Laser Rejuve</h3>
+            <p>Perawatan laser untuk membantu peremajaan kulit dan menstimulasi kolagen.</p>
+            <div class="sozo-related-actions">
+              <a class="sozo-related-btn" href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Laser%20Rejuve%20%5Bsumber:%20ORG-laser%20treatment%5D" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a class="sozo-related-link" href="https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-rejuve-treatment/">Lihat Selengkapnya &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Nano Laser</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleNanoFaq(this)"><span>Apa itu Nano Laser dan bagaimana cara kerjanya?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="sozo-faq-answer"><p>Nano Laser adalah perawatan laser Q-switched Nd:YAG yang menghantarkan energi cahaya dalam pulsa sangat singkat untuk membantu memecah partikel pigmen di kulit. Treatment ini menargetkan pigmen seperti flek hitam dan melasma hingga lapisan dalam kulit tanpa melukai permukaan luar kulit.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleNanoFaq(this)"><span>Apa manfaat Nano Laser?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="sozo-faq-answer"><p>Nano Laser membantu menyamarkan flek hitam, mengatasi melasma, meratakan warna kulit, serta memperbaiki tekstur kulit agar tampak lebih cerah dan halus. Manfaat yang dirasakan dapat berbeda pada setiap orang tergantung kondisi kulit.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleNanoFaq(this)"><span>Apakah Nano Laser sakit saat dilakukan?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="sozo-faq-answer"><p>Prosedur ini umumnya menimbulkan rasa tidak nyaman yang minimal karena Nano Laser bekerja dengan pulsa yang sangat cepat. Sensasi hangat ringan mungkin terasa selama proses, dan tenaga medis akan menyesuaikan agar perawatan tetap nyaman.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleNanoFaq(this)"><span>Apa beda Nano Laser dengan Pico Laser?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="sozo-faq-answer"><p>Nano Laser menggunakan teknologi Q-switched Nd:YAG dengan pulsa nanosecond untuk memecah pigmen, sedangkan Pico Laser menggunakan teknologi picosecond yang lebih cepat. Keduanya sama-sama menangani pigmentasi, dan tenaga medis kami akan membantu menentukan perawatan yang paling sesuai dengan kondisi kulit Anda.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleNanoFaq(this)"><span>Kapan flek hitam mulai memudar setelah Nano Laser?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="sozo-faq-answer"><p>Sebagian pasien merasakan kulit tampak lebih cerah setelah beberapa sesi awal. Untuk pigmentasi yang lebih membandel seperti melasma, perbaikan umumnya terlihat secara bertahap dengan perawatan rutin sesuai anjuran tenaga medis. Hasil dapat berbeda pada setiap orang.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleNanoFaq(this)"><span>Berapa kali Nano Laser diperlukan untuk hasil optimal?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="sozo-faq-answer"><p>Untuk hasil yang lebih optimal, umumnya disarankan beberapa sesi perawatan dengan interval waktu yang ditentukan oleh tenaga medis. Jumlah sesi yang ideal akan disesuaikan dengan kondisi kulit dan jenis pigmentasi masing-masing pasien.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleNanoFaq(this)"><span>Apakah ada downtime atau efek samping Nano Laser?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="sozo-faq-answer"><p>Downtime Nano Laser umumnya minimal. Efek samping yang mungkin muncul seperti kemerahan ringan biasanya bersifat sementara. Prosedur dilakukan oleh tenaga medis profesional, dan konsultasi dengan dokter sebelum tindakan membantu memastikan perawatan ini sesuai untuk kondisi kulit Anda.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleNanoFaq(this)"><span>Berapa harga Nano Laser di SOZO?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="sozo-faq-answer"><p>Harga Nano Laser di SOZO Skin Clinic mulai dari Rp 1.199.000 per sesi, dengan durasi tindakan sekitar 30 menit. Untuk informasi promo terbaru dan paket perawatan, Anda dapat menghubungi tim kami melalui WhatsApp.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleNanoFaq(this)"><span>Di mana lokasi Nano Laser atau laser flek hitam terdekat?</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="sozo-faq-answer"><p>Jika Anda sedang mencari klinik kecantikan untuk Nano Laser atau laser flek hitam terdekat dengan prosedur yang aman dan nyaman, Anda bisa mengunjungi seluruh cabang SOZO Skin Clinic. Setiap klinik kami didukung fasilitas medis modern, menggunakan teknologi laser berkualitas, dan ditangani langsung oleh terapis serta Dokter Kecantikan profesional. Klinik kami tersebar di berbagai wilayah Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Untuk menemukan cabang yang paling mudah dijangkau dari domisili Anda, silakan cek halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a>.</p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleNanoDescription() {
+    const content = document.getElementById('treatmentDescriptionNano');
+    const btn = content.nextElementSibling;
+    const btnText = document.getElementById('nanoReadMoreText');
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    if (content.classList.contains('expanded')) { btnText.textContent = 'Tampilkan Lebih Sedikit'; } else { btnText.textContent = 'Baca Selengkapnya'; }
+  }
+  function toggleNanoFaq(button) {
+    const answer = button.nextElementSibling;
+    button.classList.toggle('active');
+    if (answer.style.maxHeight) { answer.style.maxHeight = null; } else { answer.style.maxHeight = answer.scrollHeight + "px"; }
+  }
+</script>
+

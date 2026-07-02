@@ -1,6 +1,6 @@
 # 📝 Sozo Skin Clinic - Schema Markup Migration Project
 
-> **Versi:** 1.0 | **Tanggal Mulai:** 23 Juni 2026
+> **Versi:** 1.1 | **Tanggal Update:** 30 Juni 2026
 > **Fokus Utama:** Migrasi dari Yoast SEO ke Custom Schema (JSON-LD) via `@graph`[cite: 1]
 
 Proyek ini bertujuan untuk mengontrol penuh struktur schema markup di `sozoskinclinic.com`, mengeliminasi error bawaan Yoast, dan membangun *Knowledge Graph* terpusat per tipe halaman untuk memaksimalkan SEO[cite: 1]. Seluruh schema Yoast telah dimatikan secara global via WPCode[cite: 1].
@@ -108,15 +108,15 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [x] **Skin Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/`)
 - [ ] **HIFU Treatment Hub** (`https://sozoskinclinic.com/hifu-treatment/`)
     - [ ] Liftera HIFU (`https://sozoskinclinic.com/hifu-treatment/liftera-hifu/`)
-- [ ] **Facial Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/facial-treatment/`)
-    - [ ] Signature Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/signature-facial/`)
+- [x] **Facial Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/facial-treatment/`)
+    - [x] Signature Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/signature-facial/`)
     - [x] Mini Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/mini-facial-treatment/`)
-    - [ ] Acne Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-clear-facial/`)
-    - [ ] Acne Laser Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-laser-facial/`)
-    - [ ] Brightening Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/brightening-facial/`)
-    - [ ] Diamond Laser Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/diamond-laser-facial/`)
+    - [x] Acne Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-clear-facial/`)
+    - [x] Acne Laser Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-laser-facial/`)
+    - [x] Brightening Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/brightening-facial/`)
+    - [x] Diamond Laser Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/diamond-laser-facial/`)
     - [ ] Collagen Mask (`https://sozoskinclinic.com/skin-treatment/facial-treatment/collagen-mask/`)
-    - [ ] Sylfirm X (`https://sozoskinclinic.com/skin-treatment/facial-treatment/sylfirm-x/`)
+    - [x] Sylfirm X (`https://sozoskinclinic.com/skin-treatment/facial-treatment/sylfirm-x/`)
 - [ ] **Acne Treatment (Non-Facial)** (`https://sozoskinclinic.com/skin-treatment/acne-treatment/`)
 - [ ] **IPL Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/`)
     - [ ] IPL Acne (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/ipl-acne/`)
@@ -125,13 +125,13 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [ ] Acne Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/acne-peel/`)
     - [ ] Glow Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/glow-peel/`)
     - [ ] Dazzling Glow Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/dazling-glow-peel/`)
-- [ ] **Laser Treatment Hub (Laser Wajah)** (`https://sozoskinclinic.com/skin-treatment/laser-treatment/`)
-    - [ ] Laser CO2 (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-co2-treatment/`)
-    - [ ] Laser Rejuve (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-rejuve-treatment/`)
-    - [ ] Nano Laser (`https://sozoskinclinic.com/skin-treatment/laser-treatment/nano-laser-treatment/`)
-    - [ ] Pico Laser (`https://sozoskinclinic.com/skin-treatment/laser-treatment/pico-laser-treatment/`)
-    - [ ] Pink Lips Laser (`https://sozoskinclinic.com/skin-treatment/laser-treatment/pink-lips-laser-treatment/`)
-    - [ ] Laser Tattoo Removal (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-tattoo-removal-treatment/`)
+- [x] **Laser Treatment Hub (Laser Wajah)** (`https://sozoskinclinic.com/skin-treatment/laser-treatment/`)
+    - [x] Laser CO2 (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-co2-treatment/`)
+    - [x] Laser Rejuve (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-rejuve-treatment/`)
+    - [x] Nano Laser (`https://sozoskinclinic.com/skin-treatment/laser-treatment/nano-laser-treatment/`)
+    - [x] Pico Laser (`https://sozoskinclinic.com/skin-treatment/laser-treatment/pico-laser-treatment/`)
+    - [x] Pink Lips Laser (`https://sozoskinclinic.com/skin-treatment/laser-treatment/pink-lips-laser-treatment/`)
+    - [x] Laser Tattoo Removal (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-tattoo-removal-treatment/`)
 - [ ] **Scar & Pores Hub** (`https://sozoskinclinic.com/skin-treatment/scar-treatment/`)
     - [ ] Laser CO2 Scar (`https://sozoskinclinic.com/skin-treatment/scar-treatment/laser-co2-treatment/`)
     - [ ] Pores Treatment (`https://sozoskinclinic.com/skin-treatment/scar-treatment/pores-treatment/`)

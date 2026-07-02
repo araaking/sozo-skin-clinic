@@ -6,7 +6,7 @@ Sozo Skin Clinic — sozoskinclinic.com
 
 Versi 1.0  •  23 Juni 2026
 
-**Status: 16 dari 133 halaman selesai**
+**Status: 28 dari 133 halaman selesai**
 
 # **1\. Ringkasan Proyek**
 
@@ -370,6 +370,222 @@ Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah diha
 
 Dipasang via WPCode tipe HTML, kondisi: Page URL contains mini-facial-treatment.
 
+## **5.18 Acne Clear Facial — SELESAI**
+
+URL: https://sozoskinclinic.com/facial-treatment/acne-clear-facial/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Facial Treatment › Acne Clear Facial (URL flat, hierarki sesuai konten).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 449.000 (Mulai dari).
+
+* **FAQPage** — 6 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah dihapus dari HTML body untuk mencegah duplikasi.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains acne-clear-facial.
+
+## **5.19 Brightening Facial — SELESAI**
+
+URL: https://sozoskinclinic.com/facial-treatment/brightening-facial/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Facial Treatment › Skin Brightening Facial (URL flat, hierarki sesuai konten).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 499.000 (Mulai dari). Schema sebelumnya menggunakan `Product` + `Offer` + `availability: InStock` yang merupakan red flag. Dioptimasi menggunakan `Service` + `Offer` + `PriceSpecification` yang clean.
+
+* **FAQPage** — 8 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah dihapus dari HTML body untuk mencegah duplikasi.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains brightening-facial.
+
+## **5.20 Signature Facial — SELESAI**
+
+URL: https://sozoskinclinic.com/facial-treatment/signature-facial/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Facial Treatment › Signature Facial (URL flat, hierarki sesuai konten).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 699.000 (Harga Promo).
+
+* **FAQPage** — 3 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah dihapus dari HTML body untuk mencegah duplikasi.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains signature-facial.
+
+## **5.21 Diamond Laser Facial — SELESAI**
+
+URL: https://sozoskinclinic.com/facial-treatment/diamond-laser-facial/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Facial Treatment › Diamond Laser Facial (URL flat, hierarki sesuai konten).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 999.000 (Harga Promo).
+
+* **FAQPage** — 3 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah dihapus dari HTML body untuk mencegah duplikasi.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains diamond-laser-facial.
+
+## **5.22 Sylfirm X — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/facial-treatment/sylfirm-x/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Facial Treatment › Sylfirm X (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 3.999.000 (Mulai dari). Schema sebelumnya menggunakan `Product` + `AggregateOffer` + `availability: InStock` yang merupakan red flag. Dioptimasi menggunakan `Service` + `Offer` + `PriceSpecification` yang clean.
+
+* **FAQPage** — 9 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah dihapus dari HTML body.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains sylfirm-x.
+
+## **5.23 Acne Laser Facial — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-laser-facial/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Facial Treatment › Acne Laser Facial (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 1.499.000 (Harga Promo).
+
+* **FAQPage** — 9 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah dihapus dari HTML body.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains acne-laser-facial.
+
+## **5.24 Nano Laser — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/laser-treatment/nano-laser-treatment/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Laser Treatment › Nano Laser Treatment (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 1.199.000 (Harga Promo).
+
+* **FAQPage** — 9 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah dihapus dari HTML body. Breadcrumb sebelumnya memiliki item "Treatment" ekstra yang sudah diperbaiki.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains nano-laser.
+
+## **5.25 Pico Laser — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/laser-treatment/pico-laser-treatment/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Laser Treatment › Pico Laser Treatment (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 1.199.000 (Harga Promo).
+
+* **FAQPage** — 9 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah dihapus dari HTML body. Breadcrumb sebelumnya memiliki item "Treatment" ekstra yang sudah diperbaiki.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains pico-laser.
+
+## **5.26 Laser CO2 — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-co2-treatment/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Laser Treatment › Laser CO2 Treatment (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 799.000 (Harga Promo).
+
+* **FAQPage** — 10 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer/FAQPage telah dihapus dari HTML body. URL breadcrumb sebelumnya salah (kurang `/skin-treatment/`) sudah diperbaiki.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains laser-co2.
+
+## **5.27 Pink Lips Laser — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/laser-treatment/pink-lips-laser-treatment/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Laser Treatment › Pink Lips Laser (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 499.000 (Harga Promo).
+
+* **FAQPage** — 7 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer/FAQPage telah dihapus dari HTML body. URL breadcrumb sebelumnya salah (kurang `/skin-treatment/`) sudah diperbaiki.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains pink-lips-laser.
+
+## **5.28 Tattoo Removal — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/laser-treatment/tattoo-removal/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Laser Treatment › Tattoo Removal (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 499.000 (Harga Promo).
+
+* **FAQPage** — 2 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer/FAQPage telah dihapus dari HTML body. URL breadcrumb dan position sebelumnya salah, sudah diperbaiki.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains tattoo-removal.
+
+## **5.29 Laser Rejuve — SELESAI**
+
+URL: https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-rejuve-treatment/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: Dermatology.
+
+* **BreadcrumbList** — Home › Skin Treatment › Laser Treatment › Laser Rejuve (4 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 1.199.000 (Harga Promo).
+
+* **FAQPage** — 9 pertanyaan dari konten existing.
+
+Microdata breadcrumb (itemscope/itemtype) dan microdata Product/Offer telah dihapus dari HTML body. Breadcrumb sebelumnya memiliki item "Treatment" ekstra yang sudah diperbaiki.
+
+Dipasang via WPCode tipe HTML, kondisi: Page URL contains laser-rejuve.
+
 # **6\. Cara Memasang Schema (WPCode)**
 
 ## **Untuk Schema Baru (HTML)**
@@ -436,7 +652,19 @@ Sebelum menandai sebuah halaman "selesai", pastikan:
 | Brazilian Hair Removal | 1 | SELESAI |
 | Body Hair Removal | 1 | SELESAI |
 | Mini Facial Treatment | 1 | SELESAI |
-| Halaman treatment lain (LP) | \~117 | Belum — pakai template Hair Removal |
+| Acne Clear Facial | 1 | SELESAI |
+| Brightening Facial | 1 | SELESAI |
+| Signature Facial | 1 | SELESAI |
+| Diamond Laser Facial | 1 | SELESAI |
+| Sylfirm X | 1 | SELESAI |
+| Acne Laser Facial | 1 | SELESAI |
+| Nano Laser | 1 | SELESAI |
+| Pico Laser | 1 | SELESAI |
+| Laser CO2 | 1 | SELESAI |
+| Pink Lips Laser | 1 | SELESAI |
+| Tattoo Removal | 1 | SELESAI |
+| Laser Rejuve | 1 | SELESAI |
+| Halaman treatment lain (LP) | \~105 | Belum — pakai template Hair Removal |
 | Benerin nama breadcrumb "SEO –" | 114 halaman | Belum (jika masih relevan setelah custom) |
 | Schema blog / Article | — | Belum — pertimbangkan dynamic PHP |
 | Schema cabang (LocalBusiness) | 60+ cabang | Belum |

@@ -1,0 +1,550 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-acne-facial-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+
+  .sozo-sku-acne-facial-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-acne-facial-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-acne-facial-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-acne-facial-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-acne-facial-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-acne-facial-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-acne-facial-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-acne-facial-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-acne-facial-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-description-section p {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  
+  .sozo-sku-acne-facial-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-acne-facial-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-acne-facial-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-acne-facial-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-acne-facial-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-acne-facial-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-acne-facial-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-acne-facial-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-acne-facial-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-acne-facial-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-acne-facial-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-acne-facial-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-acne-facial-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-acne-facial-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-acne-facial-wrapper .sozo-description-section, 
+    .sozo-sku-acne-facial-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+  }
+</style>
+
+<div class="sozo-sku-acne-facial-wrapper" id="sozo-acne-facial-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/">Facial Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Acne Clear Facial</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Acne Clear Facial</h1>
+      <p>
+        Atasi masalah jerawat meradang, komedo membandel, dan minyak berlebih dengan Acne Facial. Perawatan wajah khusus ini dirancang dengan tahapan ekstraksi higienis dan formulasi anti-acne untuk membersihkan pori-pori secara mendalam. Dapatkan kulit wajah yang lebih bersih, segar, tenang, dan bebas dari risiko breakout yang parah.
+      </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">60 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 449.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20promo%20facial%20treatment%20%5Bsumber:%20ORG-facial-general%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.avif" alt="Acne Clear Facial Sozo Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Manjakan Wajah Anda dengan Acne Clear Facial</h2>
+      <p>Dapatkan kulit wajah yang lebih bersih, sehat, dan bebas dari jerawat. Kembalikan rasa percaya diri Anda hari ini bersama ahlinya.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20promo%20facial%20treatment%20%5Bsumber:%20ORG-facial-general%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+    <div class="sozo-description-section">
+      <h2>Apa Itu Acne Clear Facial? Solusi Tuntas untuk Kulit Bersih & Bebas Jerawat</h2>
+      <p>Acne Clear Facial adalah perawatan wajah (acne facial treatment) komprehensif yang berfokus pada deep cleansing atau pembersihan mendalam. Berbeda dengan facial biasa, Acne facial ini secara spesifik menargetkan akar penyebab jerawat: penumpukan sel kulit mati, penyumbatan pori-pori oleh sebum, dan peradangan. Dengan prosedur yang steril, perawatan ini menjaga kulit Anda tetap bersih tanpa memicu iritasi lanjutan.</p>
+      
+      <div class="sozo-expandable-content" id="treatmentDescriptionAcne">
+        <div class="sozo-expandable-inner">
+          <h3 style="font-size: 18px; color: #1A2080; margin-top: 24px; margin-bottom: 12px; font-weight: 700;">Tahapan dan Manfaat Utama Acne Clear Facial</h3>
+          <ul style="color: #475569; font-size: 16px; padding-left: 20px; margin-bottom: 24px; line-height: 1.6;">
+            <li style="margin-bottom: 8px;"><strong>Pembersihan & Eksfoliasi Ringan:</strong> Mengangkat kotoran, sisa makeup, dan sel kulit mati yang menutupi permukaan kulit.</li>
+            <li style="margin-bottom: 8px;"><strong>Ekstraksi Komedo Higienis:</strong> Proses mengeluarkan komedo hitam (blackheads) dan putih (whiteheads) secara aman oleh terapis profesional, guna mencegah sumbatan tersebut berkembang menjadi jerawat meradang.</li>
+            <li style="margin-bottom: 8px;"><strong>Relaksasi & Aplikasi Masker Anti-Acne:</strong> Menenangkan kemerahan pada kulit, merelaksasi otot wajah, serta mengontrol produksi kelenjar minyak berlebih.</li>
+          </ul>
+
+          <h3 style="font-size: 18px; color: #1A2080; margin-top: 24px; margin-bottom: 12px; font-weight: 700;">Siapa yang Sangat Membutuhkan Treatment Ini?</h3>
+          <p>Perawatan rutin ini sangat direkomendasikan bagi Anda yang memiliki keluhan:</p>
+          <ul style="color: #475569; font-size: 16px; padding-left: 20px; margin-bottom: 16px; line-height: 1.6;">
+            <li style="margin-bottom: 8px;">Kulit sangat berminyak (oily skin) yang rentan terlihat kusam.</li>
+            <li style="margin-bottom: 8px;">Penumpukan komedo di area T-zone (hidung, dahi, dagu).</li>
+            <li style="margin-bottom: 8px;">Kulit rentan berjerawat (acne-prone skin) ringan hingga sedang.</li>
+          </ul>
+          
+          <p><em>(Catatan: Jika Anda sedang mengalami jerawat kistik/batu yang sangat meradang, kami sangat menyarankan Anda berkonsultasi dengan dokter kami terlebih dahulu untuk menyesuaikan tahapan facial yang aman).</em></p>
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn" onclick="toggleAcneDescription()">
+        <span id="acneReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Acne Clear Facial</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneFaq(this)">
+          <span>Apa bedanya Acne Facial dengan facial biasa?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Acne Clear Facial diformulasikan secara khusus untuk kulit berjerawat dan berminyak. Perawatan ini menggunakan produk berbahan dasar anti-bakteri dan anti-inflammatory yang menenangkan. Selain itu, teknik ekstraksi komedonya dilakukan dengan sangat berhati-hati untuk meminimalisir penyebaran bakteri yang sering memicu breakout setelah facial.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneFaq(this)">
+          <span>Berapa harga Acne Clear Facial untuk satu kali perawatan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Harga Acne Clear Facial di klinik kami sangat terjangkau, yaitu mulai dari Rp 449.000 untuk satu sesi berdurasi 60 menit. Perawatan ini sudah mencakup tahapan pembersihan mendalam, ekstraksi komedo yang higienis, dan aplikasi produk khusus anti-acne oleh terapis profesional kami.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneFaq(this)">
+          <span>Berapa kali acne facial treatment yang disarankan agar wajah bebas komedo?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Untuk hasil yang optimal dalam menjaga kebersihan kulit dan mencegah penumpukan sebum, Acne Clear Facial sangat disarankan untuk dilakukan secara rutin minimal 1 kali setiap bulan.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneFaq(this)">
+          <span>Apakah cocok untuk kulit sensitif?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Ya, Acne Clear Facial aman untuk kulit sensitif. Namun, kami sangat menyarankan untuk berkonsultasi dengan dokter kami terlebih dahulu untuk menyesuaikan produk yang digunakan.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneFaq(this)">
+          <span>Apakah ekstraksi komedo saat facial akan membuat pori-pori membesar?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Tidak. Pembersihan dan ekstraksi komedo yang dilakukan secara higienis dan profesional justru membersihkan kotoran yang menyumbat folikel. Ketika sumbatannya hilang, pori-pori justru dapat kembali ke ukuran normalnya, bukan semakin membesar.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleAcneFaq(this)">
+          <span>Di mana saya bisa melakukan Acne Clear Facial terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Anda bisa mendapatkan perawatan Acne Clear Facial dengan standar kebersihan tinggi di seluruh cabang Sozo Skin Clinic. Klinik kami tersebar di berbagai wilayah strategis di Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Silakan cek halaman <a href="https://sozoskinclinic.com/lokasi/" style="color: #1A2080; font-weight: 600; text-decoration: underline;">Lokasi Cabang Sozo Skin Clinic</a> untuk menemukan klinik terdekat dan segera jadwalkan me-time Anda.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleAcneDescription() {
+    const content = document.getElementById('treatmentDescriptionAcne');
+    const btn = content.nextElementSibling;
+    const btnText = document.getElementById('acneReadMoreText');
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+
+  function toggleAcneFaq(button) {
+    const answer = button.nextElementSibling;
+    button.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
