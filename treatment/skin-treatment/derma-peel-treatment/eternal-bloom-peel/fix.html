@@ -1,0 +1,834 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-exosome-hair-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+
+  .sozo-sku-exosome-hair-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-exosome-hair-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-exosome-hair-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- NEW SECTIONS STYLING (Cards, Grids, Steps) --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-section-card > h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-section-card > p {
+    color: #475569 !important;
+    font-size: 16px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  /* Problem Grid Styling (2x2) */
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-card span {
+    font-size: 14px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Process Steps Styling */
+  .sozo-sku-exosome-hair-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-step-num {
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-step-text p {
+    font-size: 15px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section p,
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section li {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer a:hover {
+    color: #2e38b5 !important;
+  }
+
+  /* Reset layout heading H3 dalam button FAQ agar ukuran font-size tidak berubah */
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question h3 {
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    display: inline !important;
+    line-height: inherit !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-exosome-hair-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-exosome-hair-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-exosome-hair-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-exosome-hair-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-exosome-hair-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-exosome-hair-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-exosome-hair-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-exosome-hair-wrapper .sozo-description-section, 
+    .sozo-sku-exosome-hair-wrapper .sozo-faq-section,
+    .sozo-sku-exosome-hair-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+
+    .sozo-sku-exosome-hair-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="sozo-sku-exosome-hair-wrapper" id="sozo-exosome-hair-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li><a href="https://sozoskinclinic.com/"><span>Home</span></a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/skin-treatment/"><span>Skin Treatment</span></a></li>
+        <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/"><span>Derma Peel Treatment</span></a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      
+      <li aria-current="page"><span style="color: #1A2080; font-weight: 600;">Eternal Bloom Peel Treatment</span></li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Eternal Bloom Peel – Treatment Pengelupasan Kulit Intensif untuk Kulit Lebih Muda, Cerah, dan Bebas Noda
+</h1>
+      <p>
+        Eternal Bloom Peel adalah treatment inovatif berbasis pengelupasan kulit (chemical peel) yang bekerja secara intensif untuk mempercepat regenerasi sel kulit, melawan tanda-tanda penuaan, dan meredakan hiperpigmentasi membandel — termasuk bekas jerawat, kerutan dalam, dan noda hitam yang sulit hilang dengan perawatan biasa.
+
+      </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">45 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value"> Rp 599.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20treatment%20eternal%20bloom%20peel%20[sumber:%20ORG-eternal%20bloom%20peel] 
+" class="sozo-btn" target="_blank" rel="noopener">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Exosome-Hair-5cc.webp" 
+           alt="Prosedur Advanced Exosome Hair Treatment di Sozo Skin Clinic"
+           width="480"
+           height="340"
+           fetchpriority="high">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Kembalikan Kecerahan Kulit Wajah dengan Eternal Bloom Peel</h2>
+      <p>Jangan biarkan masalah kulit kusam mengganggu rasa percaya diri Anda. Jalani perawatan skincare tingkat lanjut beserta diagnosis presisi langsung dari tim dokter ahli kami.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20treatment%20eternal%20bloom%20peel%20[sumber:%20ORG-eternal%20bloom%20peel] 
+" class="sozo-btn-secondary" target="_blank" rel="noopener">Konsultasi Dokter Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <!-- SECTION: Masalah Kerontokan yang Sering Dialami -->
+    <div class="sozo-section-card">
+      <h2>Masalah Pada Kulit Wajah yang Sering Dialami
+</h2>
+      <p>Kulit Wajah Anda Layak Mendapatkan yang Lebih dari Sekadar Skincare Biasa
+Seiring waktu, kulit wajah menghadapi berbagai tantangan yang tidak selalu bisa diatasi hanya dengan rangkaian skincare harian:
+</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Bekas jerawat dan PIH (Post-Inflammatory Hyperpigmentation) yang bertahan berbulan-bulan bahkan bertahun-tahun</strong>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kerutan halus hingga dalam yang muncul akibat penurunan produksi kolagen</strong>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kulit kusam dan tidak merata karena penumpukan sel kulit mati di permukaan</strong>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Flek hitam dan hiperpigmentasi akibat paparan sinar UV dan peradangan berulang</strong>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tekstur kulit kasar dan pori-pori besar yang membuat tampilan makeup tidak merata</strong>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tanda-tanda penuaan dini seperti kulit kendur dan warna kulit tidak merata
+</strong>
+        </div>
+        </div>
+        <p>Jika kondisi di atas terasa familiar, kulit Anda membutuhkan intervensi yang lebih dalam — dan Eternal Bloom Peel hadir sebagai jawabannya.</p>
+      </div>
+    </div>
+
+    <!-- SECTION: Rich Description -->
+    <article class="sozo-description-section">
+      <h2>Eternal Bloom Peel: Ketika Teknologi Peeling Bertemu Presisi Medis</h2>
+        <h3>Apa Itu Eternal Bloom Peel?</h3>
+      <p>Eternal Bloom Peel adalah tindakan pengelupasan kulit (chemical peel) yang inovatif dan intensif, dirancang untuk bekerja lebih dalam dibandingkan chemical peel konvensional. Berbeda dengan peeling ringan yang hanya menyentuh lapisan epidermis terluar, Eternal Bloom Peel menembus ke lapisan kulit yang lebih dalam untuk memicu proses regenerasi sel secara menyeluruh.</p>
+      <p>Treatment ini memanfaatikan kombinasi agen peeling aktif yang telah diformulasikan secara khusus untuk menargetkan tiga masalah utama sekaligus: tanda-tanda penuaan (aging), hiperpigmentasi, dan bekas luka atau jerawat. Dengan pendekatan yang terstandarisasi secara medis, Eternal Bloom Peel memberikan hasil yang jauh melampaui apa yang bisa dicapai oleh produk perawatan rumahan.</p>
+      <p>Prosedur ini hanya tersedia dan dilakukan oleh dokter terlatih di SOZO Skin Clinic untuk memastikan keamanan dan efektivitas hasil yang optimal bagi setiap pasien.</p>
+      
+      <div class="sozo-expandable-content" id="treatmentDescriptionExo">
+        <div class="sozo-expandable-inner">
+          <h3>Bagaimana Eternal Bloom Peel Bekerja pada Kulit?</h3>
+          <p>Prinsip utama chemical peel adalah controlled injury — menciptakan respons penyembuhan yang terukur di dalam lapisan kulit untuk memicu regenerasi alami tubuh. Eternal Bloom Peel melakukan ini melalui tiga mekanisme:
+</p>
+          <ul>
+            <li><strong>Eksfoliasi Lapisan Sel Kulit Mati : </strong><span>Formula aktif melarutkan ikatan antar sel kulit mati di permukaan, mengangkatnya secara menyeluruh sehingga lapisan kulit baru yang lebih segar dapat muncul ke permukaan.</span></li>
+            <li><strong>Stimulasi Produksi Kolagen dan Elastin : </strong><span>Sinyal penyembuhan yang ditrigerkan oleh proses peeling merangsang fibroblas di lapisan dermis untuk memproduksi lebih banyak kolagen dan elastin — protein struktural yang bertanggung jawab atas kekencangan dan elastisitas kulit.</span></li>
+            <li><strong>Penghambatan Melanogenesis : </strong><span>Bahan aktif dalam formula Eternal Bloom Peel bekerja menghambat produksi melanin berlebih di lapisan epidermis, secara bertahap memudarkan hiperpigmentasi dan menyeragamkan warna kulit secara keseluruhan.</span></li>
+          </ul>
+
+          <h3>Manfaat Eternal Bloom Peel untuk Kulit Wajah</h3>
+          <ul>
+        <li><strong>Mempercepat regenerasi sel kulit untuk tampilan kulit yang lebih segar dan muda</strong></li>
+        <li><strong>Memudarkan bekas jerawat dan PIH yang membandel secara efektif</strong></li>
+        <li><strong>Mengurangi kerutan halus dan dalam dengan stimulasi kolagen</strong></li>
+        <li><strong>Mencerahkan kulit secara merata dan menghilangkan kusam</strong></li>
+        <li><strong>Mengatasi hiperpigmentasi akibat jerawat, luka, maupun paparan sinar matahari</strong></li>
+         <li><strong>Menghaluskan tekstur kulit dan memperkecil tampilan pori-pori</strong></li>
+         <li><strong>Melawan tanda-tanda penuaan dini secara menyeluruh</strong></li>
+         <li><strong>Meremajakan kulit wajah sehingga tampak lebih muda dan bercahaya</strong></li>
+         <li><strong>Cocok untuk kulit aging, acne-prone, maupun kulit sensitif dengan protokol yang disesuaikan</strong></li>
+          </ul>
+          <h3>Kondisi Kulit yang Efektif Ditangani Eternal Bloom Peel</h3>
+          <p>Eternal Bloom Peel secara klinis terbukti efektif untuk menangani kondisi kulit seperti:</p>
+          <ul>
+            <li><strong>Hiperpigmentasi dan Noda Kulit : </strong><span>Meliputi Post-Inflammatory Hyperpigmentation (PIH) bekas jerawat, melasma ringan hingga sedang, sun spots akibat paparan UV, dan warna kulit tidak merata secara umum.</span></li>
+            <li><strong>Tanda-Tanda Penuaan (Aging Skin) : </strong><span>Kerutan halus di area mata dan dahi, garis senyum yang dalam, kulit kendur akibat penurunan kolagen, serta tekstur kulit yang kasar dan tidak elastis.</span></li>
+            <li><strong>Bekas Jerawat dan Luka : </strong><span>Scar post-acne yang sudah lama, atrophic scar ringan, serta bekas luka superfisial di area wajah yang mengganggu penampilan.</span></li>
+            <li><strong>Kulit Kusam dan Tidak Merata : </strong><span>Penumpukan sel kulit mati yang membuat kulit terlihat lelah, tidak bercahaya, dan foundation tidak menempel dengan baik.</span></li>
+          </ul>
+    <h3>Tips Penting Sebelum dan Sesudah Eternal Bloom Peel
+Persiapan sebelum treatment :
+</h3>
+          <ul>
+        <li><strong>Hindari eksfoliasi (scrub, AHA/BHA) 7 hari sebelum treatment</strong></li>
+        <li><strong>Stop penggunaan retinol atau retinoid minimal 5–7 hari sebelumnya</strong></li>
+        <li><strong>Informasikan kepada dokter jika sedang konsumsi obat tertentu atau memiliki riwayat kulit sensitif</strong></li>
+        <li><strong>Gunakan sunscreen setiap hari selama 2 minggu sebelum treatment untuk mempersiapkan kondisi kulit</strong></li>
+        </ul>
+    <h3>Perawatan pasca treatment :</h3>
+          <ul>
+        <li><strong>Sunscreen SPF 50+ wajib digunakan setiap hari tanpa pengecualian</strong></li>
+        <li><strong>Hindari paparan sinar matahari langsung selama minimal 2 minggu</strong></li>
+        <li><strong>Jangan memencet atau mengupas kulit yang mengelupas secara paksa</strong></li>
+        <li><strong>Hindari aktivitas yang menyebabkan keringat berlebih (olahraga berat, sauna) selama 3–5 hari</strong></li>
+        </ul>
+     <h3>Kapan Hasil Eternal Bloom Peel Mulai Terlihat?</h3>
+          <p>Proses pemulihan dan munculnya hasil berjalan secara bertahap:</p>
+          <ul>
+            <li><strong>Hari 1–3: </strong><span>Kulit mungkin terasa kencang, sedikit kemerahan, dan mulai mengelupas — ini adalah proses normal yang menandakan regenerasi sedang berjalan</span></li>
+            <li><strong>Hari 4–7: </strong><span> Pengelupasan berlanjut, lapisan kulit baru yang lebih cerah mulai terlihat.</span></li>
+            <li><strong>Hari 7–14: </strong><span>Kulit terasa lebih halus, lebih cerah, dan noda mulai memudar secara signifikan.</span></li>
+            <li><strong>4–6 minggu setelah treatment: </strong><span> Hasil kolagen stimulation mulai terasa — kulit lebih kencang, kerutan lebih samar, tekstur lebih merata</span></li>
+          </ul> 
+    <p>Untuk kondisi hiperpigmentasi berat atau aging skin, dokter mungkin merekomendasikan <strong>seri 2–4 sesi</strong> dengan interval 4–6 minggu untuk hasil yang optimal dan long-lasting
+</p>
+        </div>
+      </div>
+    
+      <button class="sozo-load-more-btn" id="exoLoadMore" onclick="toggleExoDescription()">
+        <span id="exoReadMoreText">Baca Selengkapnya</span>
+        
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      
+    </article>
+
+    <!-- SECTION: Proses & Cara Kerja -->
+    <div class="sozo-section-card">
+      <h2>Proses Eternal Bloom Peel di SOZO Skin Clinic</h2>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi dan Analisis Kulit</strong>
+          <p>Dokter akan melakukan evaluasi menyeluruh terhadap kondisi kulit, jenis kulit, riwayat perawatan sebelumnya, dan target hasil yang ingin dicapai. Tahap ini penting untuk menentukan konsentrasi dan kedalaman peeling yang paling sesuai.
+</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong> Persiapan Kulit (Skin Prep)</strong>
+          <p>Wajah dibersihkan dengan pembersih medis untuk mengangkat semua kotoran, minyak, dan sisa makeup. Kulit juga di-degreasing untuk memastikan penetrasi formula peeling yang merata dan optimal.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Aplikasi Formula Eternal Bloom Peel</strong>
+          <p>Formula peeling aktif diaplikasikan secara merata ke seluruh area wajah yang ditargetkan. Dokter akan memantau respons kulit secara real-time dan mengontrol waktu aplikasi dengan presisi untuk hasil yang aman dan efektif.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Netralisasi dan Soothing</strong>
+          <p>Setelah waktu yang ditentukan, formula dinetralkan dan kulit diberikan perawatan penenang untuk meminimalkan kemerahan serta mempercepat proses pemulihan.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">5</div>
+        <div class="sozo-step-text">
+          <strong>Post-Treatment Skincare dan Edukasi</strong>
+          <p>Dokter akan merekomendasikan rangkaian skincare pasca treatment yang tepat — termasuk penggunaan sunscreen yang wajib — serta memberikan panduan lengkap tentang hal-hal yang perlu dihindari selama masa pemulihan.
+</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: FAQ Section -->
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Eternal Bloom Peel Treatment</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3>Apa itu Eternal Bloom Peel?</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <div>
+            <p>Eternal Bloom Peel adalah treatment chemical peel intensif yang dirancang untuk mempercepat regenerasi sel kulit, memudarkan hiperpigmentasi dan bekas jerawat, serta melawan tanda-tanda penuaan seperti kerutan dan kulit kusam. Treatment ini bekerja lebih dalam dibandingkan peeling konvensional dan dilakukan oleh dokter terlatih.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3>Apakah Eternal Bloom Peel sakit?</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <div>
+            <p>Selama aplikasi, Anda mungkin merasakan sensasi hangat atau sedikit perih yang bersifat sementara. Sensasi ini normal dan menandakan formula bekerja aktif. Dokter akan memastikan proses berlangsung aman dan senyaman mungkin.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3>Berapa lama downtime Eternal Bloom Peel?
+</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <div>
+            <p>Downtime umumnya berlangsung 5–10 hari, di mana kulit akan mengalami pengelupasan. Selama periode ini, aktivitas sehari-hari tetap dapat dilakukan dengan perlindungan sunscreen yang memadai.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3>Apakah Eternal Bloom Peel aman untuk kulit sensitif?</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <div>
+            <p>Dokter akan melakukan evaluasi jenis kulit sebelum treatment dan dapat menyesuaikan konsentrasi formula agar tetap aman. Konsultasi awal sangat penting untuk memastikan kesesuaian treatment dengan kondisi kulit Anda.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3>Berapa sesi yang dibutuhkan untuk hasil optimal?
+</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <div>
+            <p>Untuk masalah ringan, 1–2 sesi sudah memberikan perbedaan nyata. Untuk hiperpigmentasi berat, bekas jerawat dalam, atau aging skin, dokter umumnya merekomendasikan seri 3–4 sesi dengan interval 4–6 minggu.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3>Apakah Eternal Bloom Peel bisa dikombinasikan dengan treatment lain?
+</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <div>
+            <p>Ya. Eternal Bloom Peel dapat dikombinasikan dengan treatment lain seperti skin booster atau microneedling sesuai rekomendasi dokter. Namun, kombinasi treatment memerlukan jeda waktu yang cukup dan harus direncanakan dengan dokter untuk menghindari iritasi berlebih.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3>Di mana bisa mendapatkan Eternal Bloom Peel?</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <div>
+            <p>Eternal Bloom Peel tersedia eksklusif di SOZO Skin Clinic. Kunjungi cabang terdekat atau lakukan reservasi online untuk konsultasi gratis dengan dokter kami.
+ <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang Sozo Skin Clinic</a>.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleExoDescription() {
+    const content = document.getElementById('treatmentDescriptionExo');
+    const btn = document.getElementById('exoLoadMore');
+    const btnText = document.getElementById('exoReadMoreText');
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+
+  // FIKSASI ACCORDION: Mengincar elemen bungkus induk FAQ secara spesifik 
+  // untuk mencegah error akibat wpautop atau rendering kosong di Elementor
+  function toggleExoFaq(button) {
+    const faqItem = button.closest('.sozo-faq-item');
+    const answer = faqItem.querySelector('.sozo-faq-answer');
+    
+    // Toggle state class active
+    button.classList.toggle('active');
+    
+    // Validasi eksplisit menggunakan boolean class, bukan text style
+    if (button.classList.contains('active')) {
+      answer.style.maxHeight = answer.scrollHeight + 50 + "px"; // Tambah sedikit buffer aman
+    } else {
+      answer.style.maxHeight = "0px"; // Memaksa reset ke 0px agar benar-benar tertutup
+    }
+  }
+</script>
+
