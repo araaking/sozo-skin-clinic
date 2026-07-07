@@ -1,0 +1,511 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-exosome-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-exosome-wrapper * { 
+    box-sizing: border-box; 
+  }
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-exosome-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-exosome-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-exosome-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-exosome-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-exosome-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-exosome-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-exosome-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-exosome-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-exosome-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-exosome-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-exosome-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-exosome-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-exosome-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-exosome-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-exosome-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+  /* Styling Tombol Primary */
+  .sozo-sku-exosome-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-exosome-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-exosome-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-exosome-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-exosome-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-exosome-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-exosome-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-exosome-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-wrapper .sozo-description-section p {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  
+  .sozo-sku-exosome-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-exosome-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-exosome-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-exosome-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-exosome-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-exosome-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-exosome-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-exosome-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-exosome-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-exosome-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-exosome-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-exosome-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-exosome-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-exosome-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-exosome-wrapper .sozo-treatment-hero {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .sozo-sku-exosome-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-exosome-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+    .sozo-sku-exosome-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-exosome-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-exosome-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-exosome-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-exosome-wrapper .sozo-description-section, 
+    .sozo-sku-exosome-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+  }
+</style>
+<div class="sozo-sku-exosome-wrapper" id="sozo-exosome-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/">
+          <span>Injectable Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/">
+          <span>Skin Booster Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Exosome Face</span>
+      </li>
+    </ol>
+  </nav>
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Exosome Face Treatment</h1>
+      <p>
+        Exosome skin booster membantu regenerasi sel kulit, mengurangi peradangan, serta mencerahkan wajah agar tampak lebih sehat, halus, dan bercahaya alami.
+      </p>
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">90 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga</span>
+            <span class="sozo-info-value">Rp 4,899,000
+</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Exosome%20Treatment%20[sumber:%20ORG-exosome]" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Exosome-Face.webp" alt="Exosome Face Treatment Sozo Skin Clinic">
+    </div>
+  </div>
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Exosome Skin Booster untuk Regenerasi & Kulit Lebih Cerah</h2>
+      <p>Manfaatkan teknologi komunikasi seluler terbaru untuk mempercepat pemulihan jaringan kulit Anda. Konsultasikan kulit sensitif atau berjerawat Anda dengan dokter ahli kami.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20Exosome%20Treatment%20[sumber:%20ORG-exosome]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+  <div class="sozo-content-wrapper">
+    <div class="sozo-description-section">
+      <h2>Teknologi Regenerasi Sel Terkini untuk Kualitas Kulit Optimal</h2>
+      <p>Exosome Face adalah treatment skin booster terbaru yang memanfaatkan teknologi exosome untuk mempercepat regenerasi sel kulit secara mendalam. Kandungan ini bekerja dengan cara memperbaiki komunikasi antar sel, sehingga sel kulit yang rusak dapat segera diperbaiki.</p>
+      <p>Perawatan ini sangat efektif dalam mengurangi peradangan (anti-inflamasi), memperkuat skin barrier, serta meningkatkan kualitas tekstur kulit secara menyeluruh. Hal ini menjadikan Exosome solusi ideal untuk kulit sensitif, berjerawat, maupun kulit kusam yang membutuhkan pemulihan dari dalam.</p>
+      
+      <div class="sozo-expandable-content sozo-exosome-desc-content" id="treatmentDescriptionExosome">
+        <div class="sozo-expandable-inner">
+          <p>Kekuatan utama Exosome terletak pada kemampuannya mengirimkan sinyal pertumbuhan kolagen dan elastin secara lebih efektif dibanding booster konvensional. Dengan injeksi langsung ke lapisan kulit, wajah Anda akan tampak lebih cerah, halus, dan memiliki pancaran glowing sehat yang natural.</p>
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn sozo-exosome-read-more" onclick="toggleExosomeDescription()">
+        <span id="exosomeReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Exosome Face</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExosomeFaq(this)">
+          <span>Apa itu exosome skin booster dan bagaimana cara kerjanya?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Exosome skin booster adalah teknologi perawatan kulit terbaru yang menggunakan exosome untuk mempercepat komunikasi antar sel, sehingga membantu regenerasi kulit dan memperbaiki jaringan secara lebih efektif dari dalam.</p>
+        </div>
+      </div>
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExosomeFaq(this)">
+          <span>Apa manfaat utama exosome untuk kulit wajah?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Manfaat utamanya meliputi mempercepat penyembuhan kulit, mengurangi peradangan (kemerahan), memperbaiki tekstur kulit yang rusak, serta membuat kulit tampak lebih cerah dan sehat.</p>
+        </div>
+      </div>
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExosomeFaq(this)">
+          <span>Apakah exosome efektif untuk kulit berjerawat atau sensitif?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Ya, exosome sangat efektif untuk kulit berjerawat dan sensitif karena membantu menenangkan inflamasi aktif dan memperbaiki skin barrier yang rusak.</p>
+        </div>
+      </div>
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExosomeFaq(this)">
+          <span>Kapan hasil exosome mulai terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Hasil biasanya mulai terlihat dalam beberapa minggu setelah tindakan pertama, dengan perbaikan bertahap pada tekstur, warna, dan kelembapan kulit seiring proses regenerasi sel.</p>
+        </div>
+      </div>
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleExosomeFaq(this)">
+          <span>Apa keunggulan exosome dibanding skin booster lain?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Exosome lebih unggul dalam hal regenerasi sel dan penyembuhan jaringan (reparasi), bukan hanya sekadar memberikan hidrasi atau stimulasi kolagen biasa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleExosomeDescription() {
+    const content = document.getElementById('treatmentDescriptionExosome');
+    const btn = document.querySelector('.sozo-exosome-read-more');
+    const btnText = document.getElementById('exosomeReadMoreText');
+    
+    if (!content || !btn) return;
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+  function toggleExosomeFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    
+    button.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>

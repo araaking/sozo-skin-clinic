@@ -1,0 +1,547 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-juvelook-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-juvelook-wrapper * { 
+    box-sizing: border-box; 
+  }
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-juvelook-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-juvelook-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-juvelook-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-juvelook-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-juvelook-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-juvelook-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-juvelook-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+  /* Styling Tombol Primary */
+  .sozo-sku-juvelook-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-juvelook-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-juvelook-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-juvelook-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-juvelook-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-juvelook-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-description-section p {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  
+  .sozo-sku-juvelook-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-juvelook-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-juvelook-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-juvelook-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-juvelook-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-juvelook-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-juvelook-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-juvelook-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-juvelook-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-juvelook-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-juvelook-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+    .sozo-sku-juvelook-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-juvelook-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-juvelook-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-juvelook-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-juvelook-wrapper .sozo-description-section, 
+    .sozo-sku-juvelook-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+  }
+</style>
+
+<div class="sozo-sku-juvelook-wrapper" id="sozo-juvelook-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/">
+          <span>Injectable Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/">
+          <span>Skin Booster Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Juvelook</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Juvelook Treatment</h1>
+      <p>
+        Atasi kulit kendur dan hilangnya volume wajah dengan Juvelook, hybrid collagen stimulator premium dari Korea Selatan. Menggabungkan teknologi Hyaluronic Acid (HA) dan Poly-D-L-Lactic Acid (PDLLA), treatment ini memberikan efek pengisian volume secara instan layaknya filler, sekaligus merangsang produksi kolagen alami jangka panjang. Dapatkan kontur wajah awet muda yang tampak sangat natural tanpa kesan kaku (overfilled).
+      </p>
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">75 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga</span>
+            <span class="sozo-info-value">
+              Rp 5,599,000
+            </span>
+          </div>
+        </div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Juvelook%20Treatment%20[sumber:%20ORG-juvelook]" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Juvelook.webp" alt="Juvelook Treatment Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Juvelook untuk Volume Instan & Stimulasi Kolagen</h2>
+      <p>Dapatkan hasil wajah lebih bervolume secara alami dengan perbaikan struktur kulit jangka panjang. Konsultasikan kulit kendur Anda dengan dokter ahli SOZO hari ini.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20Juvelook%20Treatment%20[sumber:%20ORG-juvelook]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+    <div class="sozo-description-section">
+      <h2>Apa Itu Juvelook? Inovasi Hybrid Skin Booster & Kolagen Stimulator</h2>
+      <p>Juvelook adalah injeksi estetika revolusioner berlisensi KFDA (Korea) yang mendefinisikan ulang cara kita melawan penuaan. Jika skin booster tradisional hanya memberikan hidrasi, dan filler konvensional hanya mengisi ruang kosong sementara, Juvelook bekerja sebagai hybrid.</p>
+      <p>Produk ini memadukan Hyaluronic Acid (HA) yang tidak berikatan silang (non-crosslinked) untuk memberikan kelembapan dan volume instan, dengan micro-molekul PDLLA (Poly-D-L-Lactic Acid) yang dirancang khusus untuk area wajah. Partikel PDLLA ini secara bertahap akan merangsang sel kulit Anda sendiri untuk memproduksi kolagen dan elastin baru selama berbulan-bulan.</p>
+      
+      <div class="sozo-expandable-content sozo-juvelook-desc-content" id="treatmentDescriptionJuvelook">
+        <div class="sozo-expandable-inner">
+          
+          <h3 style="font-size: 18px; color: #1A2080; margin-top: 24px; margin-bottom: 12px; font-weight: 700;">Keunggulan Formula Dual-Action (Volume & Regenerasi)</h3>
+          <p>Mengapa Juvelook sangat diminati di dunia estetik medis saat ini?</p>
+          <ul style="color: #475569; font-size: 16px; padding-left: 20px; margin-bottom: 24px; line-height: 1.6;">
+            <li style="margin-bottom: 8px;"><strong>Efek Langsung & Jangka Panjang:</strong> Kandungan HA memberikan efek kulit plump (berisi) dan cerah segera setelah tindakan. Seiring HA menyerap, PDLLA mulai bekerja membangun kerangka kolagen baru, sehingga volume wajah tidak akan tiba-tiba "kempis".</li>
+            <li style="margin-bottom: 8px;"><strong>Hasil Sangat Natural:</strong> Juvelook menstimulasi jaringan kulit Anda sendiri untuk tumbuh. Ini menghindari risiko wajah terlihat bengkak buatan (pillow face) yang sering ditakuti pada penggunaan filler berlebihan.</li>
+            <li style="margin-bottom: 8px;"><strong>Aman & Dapat Diserap Tubuh:</strong> Material PDLLA sangat biocompatible dan biodegradable. Seiring waktu, bahan ini akan terurai sempurna menjadi air dan karbon dioksida di dalam tubuh tanpa meninggalkan residu berbahaya.</li>
+          </ul>
+
+          <h3 style="font-size: 18px; color: #1A2080; margin-top: 24px; margin-bottom: 12px; font-weight: 700;">Kondisi Kulit yang Sangat Terbantu dengan Juvelook</h3>
+          <p>Perawatan peremajaan kulit ini dirancang khusus sebagai solusi efektif bagi pasien yang menghadapi beberapa masalah kulit berikut:</p>
+          <ul style="color: #475569; font-size: 16px; padding-left: 20px; margin-bottom: 24px; line-height: 1.6;">
+            <li style="margin-bottom: 8px;"><strong>Kehilangan Volume Wajah:</strong> Pasien dengan area wajah yang tampak cekung, seperti area pipi kawah atau bawah mata (tear trough) yang kosong akibat penuaan.</li>
+            <li style="margin-bottom: 8px;"><strong>Kerutan dan Garis Halus Mendalam:</strong> Pasien yang ingin menyamarkan tampilan garis senyum (smile lines / nasolabial folds) yang kian tegas.</li>
+            <li style="margin-bottom: 8px;"><strong>Kulit Kendur dan Menipis:</strong> Pasien yang mengeluhkan hilangnya elastisitas kulit di area wajah maupun leher (sagging skin).</li>
+            <li style="margin-bottom: 8px;"><strong>Tekstur Kulit Rusak / Bopeng:</strong> Pasien yang ingin memperbaiki tekstur permukaan kulit tidak merata, termasuk menyamarkan bekas jerawat mendalam (acne scars) secara signifikan.</li>
+          </ul>
+
+          <h3 style="font-size: 18px; color: #1A2080; margin-top: 24px; margin-bottom: 12px; font-weight: 700;">Prosedur dan Masa Pemulihan (Downtime)</h3>
+          <ul style="color: #475569; font-size: 16px; padding-left: 20px; margin-bottom: 16px; line-height: 1.6;">
+            <li style="margin-bottom: 8px;"><strong>Proses Tindakan:</strong> Berlangsung sekitar 75 menit (termasuk proses anestesi topikal). Dokter akan menyuntikkan Juvelook menggunakan teknik mikro-injeksi atau kanula pada lapisan dermis secara presisi.</li>
+            <li style="margin-bottom: 8px;"><strong>Masa Pemulihan:</strong> Waktu pemulihan tergolong sangat minim (minimal downtime). Sedikit kemerahan, bengkak ringan, atau titik kebiruan mungkin muncul, namun umumnya akan mereda dalam hitungan hari dan bisa langsung ditutupi dengan riasan setelah 24 jam.</li>
+          </ul>
+
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn sozo-juvelook-read-more" onclick="toggleJuvelookDescription()">
+        <span id="juvelookReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Juvelook Treatment</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleJuvelookFaq(this)">
+          <span>Apa itu Juvelook dan bagaimana cara kerjanya?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Juvelook adalah injeksi hybrid skin booster yang memadukan asam hialuronat (HA) dan PDLLA (Poly-D-L-Lactic Acid). Cara kerjanya terbagi dua fase: fase instan di mana HA memberikan hidrasi dan mengisi volume wajah yang cekung secara langsung, lalu disusul fase jangka panjang di mana partikel mikro PDLLA merangsang sel kulit (fibroblas) untuk memproduksi kolagen tipe I dan III secara mandiri.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleJuvelookFaq(this)">
+          <span>Apakah hasil Juvelook langsung terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Anda akan melihat efek perbaikan volume wajah dan kulit yang lebih cerah secara instan berkat kandungan HA-nya. Namun, keajaiban sesungguhnya (efek pengencangan dan produksi kolagen dari PDLLA) akan mulai terlihat nyata dalam 2 hingga 4 minggu, dan terus berkembang menjadi lebih baik hingga bulan keenam pasca-tindakan.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleJuvelookFaq(this)">
+          <span>Berapa lama hasil Juvelook bisa bertahan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Keunggulan utama dari PDLLA adalah ketahanannya. Hasil stimulasi kolagen dari Juvelook dapat bertahan sangat lama, berkisar antara 18 hingga 24 bulan (hampir 2 tahun), jauh melebihi rata-rata skin booster biasa. Ketahanan ini bergantung pada kondisi awal kulit, metabolisme, dan gaya hidup pasien.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleJuvelookFaq(this)">
+          <span>Apa perbedaan Juvelook dengan filler biasa?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p><a href="https://sozoskinclinic.com/injectable-treatment/filler-treatment/" style="color: #1A2080; font-weight: 600; text-decoration: underline;">Filler</a> biasa yang berbahan murni Hyaluronic Acid (HA) berfokus hanya pada pengisian volume secara fisik ("menambal" area yang cekung), dan perlahan akan habis diserap tubuh. Juvelook melangkah lebih jauh; selain mengisi volume di awal, kandungan PDLLA-nya secara aktif merangsang kulit Anda untuk meregenerasi jaringannya sendiri. Hasil Juvelook jauh lebih natural dan berfungsi memperbaiki kualitas kulit secara keseluruhan, bukan sekadar mengisi ruang.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleJuvelookFaq(this)">
+          <span>Di mana saya bisa melakukan Juvelook Treatment terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sebagai salah satu klinik yang mengedepankan inovasi estetik, Sozo Skin Clinic menyediakan layanan Juvelook orisinal di puluhan cabang kami yang tersebar di Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Anda dapat dengan mudah menemukan fasilitas medis kami yang terdekat dari lokasi Anda dengan mengunjungi halaman <a href="https://sozoskinclinic.com/lokasi/" style="color: #1A2080; font-weight: 600; text-decoration: underline;">Lokasi Cabang Sozo Skin Clinic</a> untuk berkonsultasi langsung dengan dokter ahli kami.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleJuvelookDescription() {
+    const content = document.getElementById('treatmentDescriptionJuvelook');
+    const btn = document.querySelector('.sozo-juvelook-read-more');
+    const btnText = document.getElementById('juvelookReadMoreText');
+    
+    if (!content || !btn) return;
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+  function toggleJuvelookFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    
+    button.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
+

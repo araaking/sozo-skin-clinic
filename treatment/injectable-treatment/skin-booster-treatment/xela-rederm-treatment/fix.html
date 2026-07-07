@@ -1,0 +1,510 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-xelarederm-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-xelarederm-wrapper * { 
+    box-sizing: border-box; 
+  }
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-xelarederm-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-xelarederm-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-xelarederm-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-xelarederm-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+  /* Styling Tombol Primary */
+  .sozo-sku-xelarederm-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-xelarederm-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-xelarederm-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-xelarederm-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-description-section p {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  
+  .sozo-sku-xelarederm-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-xelarederm-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-xelarederm-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-xelarederm-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-xelarederm-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-xelarederm-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-xelarederm-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-xelarederm-wrapper .sozo-treatment-hero {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .sozo-sku-xelarederm-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-xelarederm-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+    .sozo-sku-xelarederm-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-xelarederm-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-xelarederm-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-xelarederm-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-xelarederm-wrapper .sozo-description-section, 
+    .sozo-sku-xelarederm-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+  }
+</style>
+<div class="sozo-sku-xelarederm-wrapper" id="sozo-xelarederm-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/">
+          <span>Injectable Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/">
+          <span>Skin Booster Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Xela Rederm</span>
+      </li>
+    </ol>
+  </nav>
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Xela Rederm Treatment</h1>
+      <p>
+        Xela Rederm membantu melawan penuaan, mencerahkan kulit, serta memperbaiki kualitas dan elastisitas kulit dari dalam untuk tampilan lebih sehat dan muda.
+      </p>
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">75 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga</span>
+            <span class="sozo-info-value">Rp 4.499.000</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Xela%20Rederm%20Treatment%20[sumber:%20ORG-xelarederm]" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+    <div class="sozo-hero-image">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2025/10/Rejuran-Scar-scaled.webp" alt="Xela Rederm Treatment Sozo Skin Clinic">
+    </div>
+  </div>
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Xela Rederm untuk Anti Aging & Perbaikan Kulit Optimal</h2>
+      <p>Kombinasi Hyaluronic Acid dan Succinic Acid untuk mencerahkan, mengencangkan, dan meremajakan sel kulit Anda secara mendalam. Konsultasikan kulit Anda hari ini.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20Xela%20Rederm%20Treatment%20[sumber:%20ORG-xelarederm]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+  <div class="sozo-content-wrapper">
+    <div class="sozo-description-section">
+      <h2>Redermalisasi Kulit dengan Succinic Acid & Hyaluronic Acid</h2>
+      <p>Xela Rederm adalah treatment skin booster revolusioner yang mengombinasikan hyaluronic acid dan succinic acid untuk memperbaiki kualitas kulit secara menyeluruh. Perawatan ini bekerja di tingkat seluler dengan meningkatkan hidrasi, merangsang regenerasi sel, serta melawan tanda penuaan dari sumbernya.</p>
+      <p>Succinic Acid bertindak sebagai antioksidan kuat yang meningkatkan metabolisme sel, sementara Hyaluronic Acid menjaga kadar air kulit tetap optimal. Perpaduan ini sangat efektif untuk mencerahkan kulit yang kusam, memperbaiki elastisitas, dan menghaluskan garis-garis halus.</p>
+      
+      <div class="sozo-expandable-content sozo-xela-desc-content" id="treatmentDescriptionXela">
+        <div class="sozo-expandable-inner">
+          <p>Treatment ini sangat cocok bagi Anda yang menginginkan wajah tampak lebih muda dan sehat secara alami. Prosedur di SOZO Skin Clinic umumnya melibatkan proses anestesi topikal selama kurang lebih 30 menit sebelum tindakan dimulai untuk memastikan kenyamanan maksimal pasien.</p>
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn sozo-xela-read-more" onclick="toggleXelaDescription()">
+        <span id="xelaReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Xela Rederm</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleXelaFaq(this)">
+          <span>Apa itu Xela Rederm dan bagaimana cara kerjanya?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Xela Rederm adalah skin booster yang menggabungkan Hyaluronic Acid dan Succinic Acid. Succinic Acid bekerja merangsang metabolisme sel (ATP), sementara Hyaluronic Acid memberikan hidrasi instan. Kombinasi ini memperbaiki struktur sel kulit dan melawan penuaan dari dalam.</p>
+        </div>
+      </div>
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleXelaFaq(this)">
+          <span>Apa manfaat utama Xela Rederm untuk kulit wajah?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Manfaat utamanya meliputi mencerahkan kulit (efek Succinic Acid), mengencangkan wajah yang kendur, meningkatkan elastisitas, serta memperbaiki tekstur kulit yang tidak merata.</p>
+        </div>
+      </div>
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleXelaFaq(this)">
+          <span>Siapa yang cocok melakukan treatment ini?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sangat cocok untuk pemilik kulit kusam, dehidrasi, serta pasien yang mulai menunjukkan tanda-tanda penuaan seperti garis halus, kulit kendur, dan hilangnya elastisitas kulit.</p>
+        </div>
+      </div>
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleXelaFaq(this)">
+          <span>Berapa kali treatment diperlukan untuk hasil optimal?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Disarankan melakukan 2–4 sesi perawatan dengan interval waktu tertentu sesuai dengan anjuran dokter setelah menganalisis kondisi kulit Anda secara personal.</p>
+        </div>
+      </div>
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleXelaFaq(this)">
+          <span>Apakah prosedurnya nyaman?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Ya, sebelum tindakan medis dilakukan, wajah Anda akan diberikan krim anestesi selama 30 menit untuk meminimalkan rasa sakit sehingga prosedur penyuntikan terasa nyaman.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleXelaDescription() {
+    const content = document.getElementById('treatmentDescriptionXela');
+    const btn = document.querySelector('.sozo-xela-read-more');
+    const btnText = document.getElementById('xelaReadMoreText');
+    
+    if (!content || !btn) return;
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+  function toggleXelaFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    
+    button.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>

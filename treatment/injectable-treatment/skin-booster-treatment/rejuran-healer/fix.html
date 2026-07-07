@@ -1,0 +1,791 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-rejuran-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-rejuran-wrapper * { 
+    box-sizing: border-box; 
+  }
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-rejuran-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-rejuran-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-rejuran-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-rejuran-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-rejuran-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-rejuran-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-rejuran-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+  /* Styling Tombol Primary */
+  .sozo-sku-rejuran-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-rejuran-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-rejuran-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-rejuran-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+  /* --- STYLING GENERAL SECTIONS --- */
+  .sozo-sku-rejuran-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-section-card,
+  .sozo-sku-rejuran-wrapper .sozo-description-section,
+  .sozo-sku-rejuran-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-rejuran-wrapper .sozo-section-card h2,
+  .sozo-sku-rejuran-wrapper .sozo-description-section h2,
+  .sozo-sku-rejuran-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 35px !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-section-card h2:first-child,
+  .sozo-sku-rejuran-wrapper .sozo-description-section h2:first-child,
+  .sozo-sku-rejuran-wrapper .sozo-faq-section h2:first-child {
+    margin-top: 0 !important;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-section-card > p,
+  .sozo-sku-rejuran-wrapper .sozo-description-section p {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-description-section ul,
+  .sozo-sku-rejuran-wrapper .sozo-description-section ol {
+    color: #475569 !important;
+    margin-bottom: 24px !important;
+    padding-left: 20px !important;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-description-section li {
+    margin-bottom: 10px !important;
+    font-size: 16px !important;
+  }
+  
+  /* --- STYLING PROBLEM GRID (MASALAH) --- */
+  .sozo-sku-rejuran-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-problem-card:hover {
+    transform: translateY(-3px);
+  }
+  .sozo-sku-rejuran-wrapper .sozo-problem-card strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-problem-card span {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* --- STYLING PROCESS STEP --- */
+  .sozo-sku-rejuran-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-process-step:last-child {
+    margin-bottom: 0;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-step-num {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    background-color: #1A2080;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(26, 32, 128, 0.2);
+  }
+  .sozo-sku-rejuran-wrapper .sozo-step-text strong {
+    display: block;
+    color: #1A2080;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-step-text p {
+    color: #475569 !important;
+    margin: 0 !important;
+    font-size: 15px !important;
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-rejuran-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-rejuran-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-rejuran-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-rejuran-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+  
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-rejuran-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-faq-question h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    line-height: 1.5 !important;
+    text-align: left;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-faq-question:hover h3 { color: #1A2080 !important; }
+  .sozo-sku-rejuran-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+    color: #1e293b;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-faq-question.active h3,
+  .sozo-sku-rejuran-wrapper .sozo-faq-question.active svg {
+    color: #1A2080 !important;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+  }
+  .sozo-sku-rejuran-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-rejuran-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-rejuran-wrapper .sozo-treatment-hero {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .sozo-sku-rejuran-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-rejuran-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+    .sozo-sku-rejuran-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-rejuran-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-rejuran-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-rejuran-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-rejuran-wrapper .sozo-section-card,
+    .sozo-sku-rejuran-wrapper .sozo-description-section, 
+    .sozo-sku-rejuran-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-rejuran-wrapper .sozo-problem-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<div class="sozo-sku-rejuran-wrapper" id="sozo-rejuran-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/">
+          <span>Injectable Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/">
+          <span>Skin Booster Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Rejuran Healer</span>
+      </li>
+    </ol>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Rejuran Healer Treatment</h1>
+      <p>
+        Rejuran Healer adalah treatment skin booster berbasis polinukleotida (PN) dari DNA salmon yang membantu merangsang regenerasi kulit dari dalam. Treatment ini bekerja memperbaiki skin barrier, meningkatkan produksi kolagen, menyamarkan bekas jerawat, memperbaiki tekstur kulit, serta membantu mengurangi tanda-tanda penuaan sehingga kulit tampak lebih sehat, kenyal, dan bercahaya secara alami.
+      </p>
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">90 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga</span>
+            <span class="sozo-info-value">Rp 3.999.000</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Rejuran%20Healer%20[sumber:%20ORG-rejuran-healer]" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/rejuran-healer-1.webp" alt="Rejuran Healer Treatment Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Rejuran Healer untuk Regenerasi Kulit & Anti Aging Maksimal</h2>
+      <p>Kembalikan keremajaan kulit Anda dengan kekuatan Polinukleotida (PN). Konsultasikan kebutuhan kulit Anda dengan dokter ahli kami untuk hasil wajah yang lebih kencang dan sehat.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20Rejuran%20Healer%20[sumber:%20ORG-rejuran-healer]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <!-- SECTION 2: MASALAH KULIT -->
+    <div class="sozo-section-card">
+      <h2>Masalah Kulit yang Sering Menjadi Alasan Menjalani Rejuran Healer</h2>
+      <p>Seiring bertambahnya usia maupun akibat paparan faktor lingkungan, kualitas kulit dapat mengalami penurunan secara bertahap. Kondisi ini membuat kulit tampak kurang sehat meskipun sudah menggunakan berbagai produk skincare. Berikut beberapa keluhan yang paling sering menjadi alasan seseorang memilih Rejuran Healer.</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Kulit Kusam dan Kehilangan Cahaya Alami</strong>
+          <span>Regenerasi sel kulit yang melambat dapat membuat wajah tampak kusam dan kurang segar. Rejuran Healer membantu mendukung proses regenerasi sehingga kulit terlihat lebih sehat dan bercahaya secara bertahap.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bekas Jerawat yang Sulit Memudar</strong>
+          <span>Bekas jerawat, terutama yang menyebabkan tekstur kulit tidak rata, sering kali membutuhkan waktu lama untuk membaik. Rejuran Healer membantu meningkatkan kualitas jaringan kulit sehingga tampilan acne scar dapat menjadi lebih halus.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Garis Halus dan Tanda Penuaan Dini</strong>
+          <span>Berkurangnya produksi kolagen membuat garis-garis halus mulai muncul di area wajah. Melalui proses regenerasi kulit, Rejuran Healer membantu meningkatkan elastisitas sehingga tanda-tanda penuaan tampak lebih tersamarkan.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Pori-Pori Besar</strong>
+          <span>Pori-pori yang tampak besar sering berkaitan dengan berkurangnya elastisitas kulit. Dengan meningkatnya produksi kolagen, kulit menjadi lebih padat sehingga tampilan pori-pori dapat terlihat lebih kecil.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kulit Kering dan Skin Barrier Melemah</strong>
+          <span>Skin barrier yang terganggu membuat kulit lebih mudah kehilangan kelembapan dan terasa kering. Rejuran Healer membantu memperbaiki fungsi lapisan pelindung kulit sehingga kelembapan alami lebih terjaga.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tekstur Kulit Kasar dan Tidak Merata</strong>
+          <span>Permukaan kulit yang terasa kasar atau tidak rata dapat mengurangi tampilan kulit yang sehat. Rejuran Healer membantu memperbaiki kualitas kulit secara bertahap sehingga teksturnya terasa lebih halus dan merata.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: BODY TEXT / RICH DESCRIPTION -->
+    <div class="sozo-description-section">
+      <h2>Mengapa Kulit Mengalami Penuaan dan Kehilangan Elastisitas?</h2>
+      <p>Seiring bertambahnya usia, produksi kolagen dan elastin di dalam kulit akan menurun secara alami. Paparan sinar UV, polusi, stres, kurang tidur, serta peradangan akibat jerawat juga dapat mempercepat kerusakan skin barrier dan menurunkan kemampuan regenerasi sel kulit.</p>
+      <p>Akibatnya, kulit mulai tampak kusam, muncul garis halus, pori-pori terlihat lebih besar, tekstur menjadi tidak merata, dan elastisitas kulit berkurang. Rejuran Healer dirancang untuk membantu memperbaiki kualitas kulit dari dalam dengan pendekatan regeneratif yang bekerja langsung pada lapisan kulit tempat proses perbaikan berlangsung.</p>
+      
+      <h2>Apa Itu Rejuran Healer?</h2>
+      <p>Rejuran Healer adalah treatment skin booster berbasis polinukleotida (PN) yang berasal dari DNA salmon yang telah dimurnikan. Kandungan PN dikenal memiliki kemampuan mendukung regenerasi jaringan kulit, memperbaiki skin barrier, dan merangsang produksi kolagen secara bertahap.</p>
+      <p>Berbeda dengan treatment yang hanya memberikan efek lembap sementara di permukaan kulit, Rejuran bekerja pada lapisan dermis untuk membantu memperbaiki fondasi kulit sehingga hasil yang diperoleh cenderung terlihat lebih natural dan bertahan lebih lama.</p>
+      
+      <div class="sozo-expandable-content sozo-rejuran-desc-content" id="treatmentDescriptionRejuran">
+        <div class="sozo-expandable-inner">
+          
+          <h2>Bagaimana Cara Kerja Rejuran Healer?</h2>
+          <p>Rejuran Healer bekerja melalui beberapa tahapan regenerasi kulit:</p>
+          <ol>
+            <li>Disuntikkan ke lapisan dermis menggunakan teknik injectable skin booster.</li>
+            <li>Polinukleotida (PN) membantu memperbaiki jaringan kulit yang mengalami kerusakan.</li>
+            <li>Fibroblast dirangsang untuk meningkatkan produksi kolagen dan elastin.</li>
+            <li>Skin barrier menjadi lebih kuat sehingga kemampuan kulit mempertahankan kelembapan meningkat.</li>
+            <li>Regenerasi kulit berlangsung bertahap dan kualitas kulit tampak semakin membaik dari waktu ke waktu.</li>
+          </ol>
+          <p>Karena prosesnya mengikuti mekanisme alami regenerasi kulit, perubahan biasanya tidak terjadi secara instan, tetapi berkembang secara progresif setelah beberapa minggu.</p>
+
+          <h2>Masalah Kulit yang Dapat Diatasi Rejuran Healer</h2>
+          <p>Rejuran Healer cocok untuk berbagai masalah kulit yang berkaitan dengan penurunan kualitas kulit dan proses penuaan:</p>
+          <ul>
+            <li><strong>Kulit Kusam:</strong> Membantu meningkatkan regenerasi sel sehingga kulit tampak lebih cerah dan bercahaya.</li>
+            <li><strong>Bekas Jerawat (Acne Scar):</strong> Membantu memperbaiki kualitas jaringan kulit sehingga tekstur bekas jerawat tampak lebih halus.</li>
+            <li><strong>Pori-Pori Besar:</strong> Peningkatan kolagen membantu kulit tampak lebih padat sehingga pori terlihat lebih kecil.</li>
+            <li><strong>Garis Halus dan Kerutan:</strong> Membantu menyamarkan tanda awal penuaan dengan meningkatkan elastisitas kulit.</li>
+            <li><strong>Kulit Kering:</strong> Perbaikan skin barrier membantu kulit mempertahankan kelembapan lebih baik.</li>
+            <li><strong>Tekstur Kulit Tidak Merata:</strong> Regenerasi kulit membantu permukaan kulit terasa lebih halus dan tampak lebih sehat.</li>
+          </ul>
+
+          <h2>Manfaat Utama Rejuran Healer</h2>
+          <ul>
+            <li><strong>Memperbaiki Skin Barrier:</strong> Membantu memperkuat lapisan pelindung kulit agar lebih tahan terhadap iritasi dan kehilangan kelembapan.</li>
+            <li><strong>Meningkatkan Produksi Kolagen:</strong> Kolagen baru membantu kulit tampak lebih kenyal dan elastis.</li>
+            <li><strong>Meningkatkan Kelembapan Kulit:</strong> Kulit terasa lebih lembap dan sehat dari dalam.</li>
+            <li><strong>Membantu Menyamarkan Bekas Jerawat:</strong> Perbaikan kualitas jaringan kulit membantu tampilan acne scar menjadi lebih halus secara bertahap.</li>
+            <li><strong>Mencerahkan Kulit Kusam:</strong> Regenerasi sel yang lebih baik membuat kulit tampak lebih segar dan bercahaya.</li>
+            <li><strong>Memperbaiki Tekstur Kulit:</strong> Kulit terasa lebih halus dan tampak lebih merata.</li>
+          </ul>
+
+          <h2>Siapa yang Cocok Menjalani Rejuran Healer?</h2>
+          <p>Treatment ini umumnya cocok untuk:</p>
+          <ul>
+            <li>Usia 25 tahun ke atas yang mulai mengalami tanda penuaan dini.</li>
+            <li>Memiliki kulit kusam dan kehilangan elastisitas.</li>
+            <li>Terdapat bekas jerawat dan tekstur kulit tidak rata.</li>
+            <li>Memiliki pori-pori besar.</li>
+            <li>Kulit wajah yang kering akibat skin barrier yang melemah.</li>
+            <li>Pasien yang menginginkan hasil perbaikan kulit secara bertahap dan natural.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn sozo-rejuran-read-more" onclick="toggleRejuranDescription()">
+        <span id="rejuranReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <!-- SECTION 4: PROSES TREATMENT -->
+    <div class="sozo-section-card">
+      <h2>Proses Treatment Rejuran Healer di SOZO Skin Clinic</h2>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi dan Analisis Kondisi Kulit</strong>
+          <p>Dokter akan mengevaluasi kondisi kulit secara menyeluruh, termasuk tingkat elastisitas, tekstur, kelembapan, bekas jerawat, serta tanda-tanda penuaan yang muncul. Dari hasil pemeriksaan tersebut, dokter akan menentukan apakah Rejuran Healer merupakan treatment yang sesuai dengan kebutuhan kulit Anda.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Persiapan Area Treatment</strong>
+          <p>Kulit wajah dibersihkan terlebih dahulu untuk menjaga kebersihan selama prosedur. Krim anestesi umumnya diaplikasikan sebelum tindakan agar proses penyuntikan terasa lebih nyaman.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Penyuntikan Rejuran Healer</strong>
+          <p>Rejuran Healer disuntikkan menggunakan jarum berukuran sangat halus ke lapisan dermis pada area yang membutuhkan perbaikan. Prosedur biasanya berlangsung sekitar 30–45 menit, tergantung luas area yang ditreatment.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Regenerasi Kulit Berlangsung Secara Bertahap</strong>
+          <p>Setelah penyuntikan, kandungan polinukleotida (PN) mulai mendukung proses regenerasi jaringan kulit, memperbaiki skin barrier, dan merangsang pembentukan kolagen baru. Hasil tidak muncul secara instan, melainkan berkembang secara bertahap dalam beberapa minggu berikutnya.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">5</div>
+        <div class="sozo-step-text">
+          <strong>Perawatan Setelah Treatment</strong>
+          <p>Dokter akan memberikan panduan perawatan setelah tindakan, seperti menghindari paparan sinar matahari secara langsung, tidak menggunakan produk skincare yang bersifat iritatif selama beberapa waktu, serta menjaga kelembapan kulit agar proses regenerasi berlangsung secara optimal.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: FAQ -->
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Rejuran Healer</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Apa itu Rejuran Healer dan bagaimana cara kerjanya?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Rejuran Healer adalah skin booster berbasis polinukleotida (PN) dari DNA salmon yang bekerja meregenerasi sel kulit, memperbaiki jaringan rusak, dan meningkatkan kolagen dari dalam.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Rejuran Healer cocok untuk masalah kulit apa saja?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Cocok untuk mengatasi kulit kusam, bekas jerawat, tekstur tidak rata, pori-pori besar, hingga tanda penuaan seperti garis halus dan kerutan.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Berapa kali treatment Rejuran Healer agar hasil maksimal?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Umumnya disarankan 3–4 sesi dengan interval 3–4 minggu untuk hasil regenerasi kulit yang optimal dan bertahap.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Kapan hasil Rejuran mulai terlihat?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Hasil mulai terlihat dalam 2–4 minggu, dengan perbaikan bertahap pada tekstur, kelembapan, dan elastisitas kulit.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Apakah Rejuran Healer aman dan ada efek samping?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Aman jika dilakukan oleh tenaga profesional, dengan efek samping ringan seperti kemerahan atau bengkak sementara yang biasanya hilang dalam beberapa hari.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Apakah Rejuran Healer bisa dikombinasikan dengan treatment lain?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Rejuran Healer sering dikombinasikan dengan treatment lain sesuai kondisi kulit dan tujuan perawatan, seperti laser, microneedling, atau skin booster lainnya. Kombinasi treatment sebaiknya ditentukan melalui konsultasi dengan dokter agar urutan dan jeda antar tindakan sesuai serta hasil yang diperoleh lebih optimal.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Berapa lama hasil Rejuran Healer dapat bertahan?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Hasil Rejuran Healer dapat bertahan selama beberapa bulan, tergantung kondisi kulit, usia, gaya hidup, serta rutinitas perawatan setelah treatment. Untuk menjaga kualitas kulit tetap optimal, dokter biasanya menyarankan sesi maintenance secara berkala sesuai kebutuhan masing-masing pasien.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Apakah setelah Rejuran Healer saya bisa langsung beraktivitas?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sebagian besar pasien dapat kembali beraktivitas setelah treatment. Namun, sebaiknya hindari olahraga berat, sauna, paparan sinar matahari berlebihan, serta penggunaan skincare yang bersifat iritatif selama 24–48 jam pertama agar proses regenerasi kulit berlangsung dengan baik.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Apakah Rejuran Healer terasa sakit saat dilakukan?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sebelum prosedur dimulai, dokter biasanya mengoleskan krim anestesi untuk membantu mengurangi rasa tidak nyaman selama penyuntikan. Setelah treatment, Anda mungkin merasakan sedikit sensasi perih atau muncul benjolan kecil di area suntikan, tetapi kondisi ini umumnya akan membaik dalam beberapa hari.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Apakah Rejuran Healer bisa dilakukan untuk semua jenis kulit?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Pada umumnya, Rejuran Healer dapat dilakukan pada berbagai jenis kulit, termasuk kulit kering, berminyak, maupun kombinasi. Meski demikian, dokter tetap akan melakukan evaluasi kondisi kulit terlebih dahulu untuk memastikan treatment sesuai dengan kebutuhan dan aman dilakukan.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleRejuranFaq(this)">
+          <h3>Di mana bisa mendapatkan treatment Rejuran Healer?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Jika Anda ingin melakukan Rejuran Healer Treatment, Anda bisa mendatangi Lokasi cabang SOZO Skin Clinic. Dengan lokasi yang tersebar di berbagai kota, Anda dapat dengan mudah menemukan klinik SOZO terdekat dari tempat tinggal Anda. Kunjungi halaman Lokasi di website kami atau hubungi tim kami untuk informasi cabang, jadwal dokter, dan ketersediaan kuota reservasi di <a href="https://sozoskinclinic.com/lokasi/" style="color: #1A2080; font-weight: 600; text-decoration: underline;">Klinik SOZO Terdekat</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleRejuranDescription() {
+    const content = document.getElementById('treatmentDescriptionRejuran');
+    const btn = document.querySelector('.sozo-rejuran-read-more');
+    const btnText = document.getElementById('rejuranReadMoreText');
+    
+    if (!content || !btn) return;
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+  function toggleRejuranFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    
+    button.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
+
