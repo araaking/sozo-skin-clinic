@@ -1,0 +1,776 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-ipl-acne-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+
+  .sozo-sku-ipl-acne-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-ipl-acne-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-ipl-acne-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-ipl-acne-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-ipl-acne-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-price-old {
+    font-size: 14px !important;
+    color: #94a3b8 !important;
+    text-decoration: line-through;
+    margin-right: 8px;
+    font-weight: 500 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-ipl-acne-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-ipl-acne-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-ipl-acne-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- NEW COMPONENT LAYOUT STYLING (Cards, Grids, Steps) --- */
+  .sozo-sku-ipl-acne-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-section-card > h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-section-card > p {
+    color: #475569 !important;
+    font-size: 16px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Problem Card Grid (2x2) */
+  .sozo-sku-ipl-acne-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-problem-card span {
+    font-size: 14px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Action Process Steps */
+  .sozo-sku-ipl-acne-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-step-num {
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-step-text p {
+    font-size: 15px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-ipl-acne-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-description-section h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-description-section p, 
+  .sozo-sku-ipl-acne-wrapper .sozo-description-section li {
+    color: #475569 !important;
+    margin-bottom: 12px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-description-section ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .sozo-sku-ipl-acne-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-ipl-acne-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-ipl-acne-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-ipl-acne-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-answer p, 
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-answer ul {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-answer ul {
+    padding-left: 20px;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-answer a:hover {
+    color: #2e38b5 !important;
+  }
+
+  /* Reset layout heading H3 dalam button FAQ agar font-size tidak berubah */
+  .sozo-sku-ipl-acne-wrapper .sozo-faq-question h3 {
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    display: inline !important;
+    line-height: inherit !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-ipl-acne-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-ipl-acne-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-ipl-acne-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-ipl-acne-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-ipl-acne-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-ipl-acne-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-ipl-acne-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-ipl-acne-wrapper .sozo-description-section, 
+    .sozo-sku-ipl-acne-wrapper .sozo-faq-section,
+    .sozo-sku-ipl-acne-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+
+    .sozo-sku-ipl-acne-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="sozo-sku-ipl-acne-wrapper" id="sozo-ipl-acne-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">
+          <span>Home</span>
+        </a>
+      </li>
+       <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/">
+          <span>Skin Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/ipl-treatment/">
+          <span>IPL Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">IPL Acne</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>IPL Acne Treatment: Solusi Medis Atasi Jerawat Aktif & Bekas Kemerahan</h1>
+      <p>
+        Tuntaskan jerawat meradang dan bekas kemerahan (redness) secara instan dengan IPL Acne Treatment. Menggunakan teknologi Intense Pulsed Light berenergi tinggi dengan panjang gelombang presisi (430-1200nm), perawatan non-invasif ini efektif membunuh bakteri P. acnes langsung dari akarnya. Solusi medis cerdas tanpa waktu pemulihan (zero downtime) untuk mengeringkan jerawat aktif, mengontrol produksi minyak berlebih (sebum), serta memudarkan bekas kemerahan pasca-jerawat demi kulit wajah yang bersih dan sehat.
+      </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">30 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">
+              <span class="sozo-price-old">Rp 459.000</span>
+              Rp 399.000
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20IPL%20treatment%20[sumber:%20ORG-ipl%20treatment]" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2025/08/DSC06473-edit-IPL-Glow_Acne-scaled.webp" alt="IPL Acne Treatment Sozo Skin Clinic" fetchpriority="high" loading="eager">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Tuntaskan Masalah Jerawat dengan IPL Acne</h2>
+      <p>Bebaskan kulit wajah Anda dari jerawat meradang dan bakteri membandel. Dapatkan kembali kulit bersih dan rasa percaya diri Anda bersama ahlinya.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20IPL%20treatment%20[sumber:%20ORG-ipl%20treatment]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+    
+    <div class="sozo-section-card">
+      <h2>Masalah Kulit Berjerawat yang Sering Dialami</h2>
+      <p>Masalah jerawat tidak hanya terjadi di permukaan luar kulit, melainkan berakar dari kombinasi penyumbatan pori-pori, produksi minyak yang tidak terkontrol, serta infeksi bakteri di dalam lapisan kulit. IPL Acne Treatment hadir sebagai solusi medis yang sangat direkomendasikan jika Anda sering mengalami keluhan berikut:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Jerawat Aktif & Meradang (Papul & Pustul)</strong>
+          <span>Kondisi bentol kemerahan yang terasa nyeri, meradang, bahkan berbernan akibat infeksi bakteri P. acnes yang berkembang biak di dalam pori-pori yang tersumbat.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bekas Jerawat Kemerahan (Redness / PIE)</strong>
+          <span>Noda atau bercak kemerahan (Post-Inflammatory Erythema) yang tertinggal setelah jerawat mengering akibat pelebaran pembuluh darah kapiler selama fase inflamasi.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Produksi Sebum/Minyak Berlebih</strong>
+          <span>Aktivitas kelenjar minyak (sebaceous glands) yang terlalu aktif, memicu wajah tampak mengkilap, kusam, dan mempermudah kotoran serta sel kulit mati menempel.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Penyumbatan Pori-Pori & Komedo (Blackheads & Whiteheads)</strong>
+          <span>Akumulasi minyak berlebih dan sel kulit mati yang mengeras di muara folikel, menjadi cikal bakal munculnya jerawat meradang baru jika tidak segera dieksfoliasi secara medis.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-description-section">
+      <h2>Apa Itu IPL Acne? Terapi Gelombang Cahaya Spesifik untuk Jerawat Meradang</h2>
+      <p>Bagi para pejuang jerawat (acne-fighter), perawatan menggunakan krim oles topikal terkadang membutuhkan waktu lama karena hanya bekerja di lapisan luar kulit. Sebagai solusi medis yang lebih progresif, IPL Acne Treatment (Intense Pulsed Light) hadir memanfaatkan teknologi spektrum cahaya intensitas tinggi dari lampu xenon yang dipadukan dengan filter khusus. Energi cahaya ini dirancang untuk menembus langsung ke lapisan dermis kulit guna menghancurkan target kromofor (komponen target pada kulit) tanpa melukai jaringan sehat di sekitarnya.</p>
+      
+      <div class="sozo-expandable-content" id="treatmentDescriptionIPL">
+        <div class="sozo-expandable-inner">
+          <h3>Perbedaan Mendasar Antara Terapi IPL Acne dan Teknologi Laser</h3>
+          <p>Banyak orang menganggap bahwa terapi IPL sama dengan terapi laser wajah. Faktanya, kedua teknologi medis ini memiliki karakteristik dan cara kerja yang berbeda:</p>
+          <ul>
+            <li><strong>Terapi Laser:</strong> Bekerja menggunakan satu panjang gelombang cahaya tunggal (monokromatik) yang terfokus secara sempit pada satu titik sel saja, mirip dengan prinsip kerja sinar penunjuk (laser pointer).</li>
+            <li><strong>IPL Treatment:</strong> Menggunakan spektrum broad-spectrum (berbagai macam gelombang cahaya) yang dipancarkan secara simultan. Karakteristik ini membuat IPL mampu menjangkau area kulit berjerawat yang jauh lebih luas dalam satu kali tembakan, memiliki fleksibilitas tinggi, serta memiliki risiko efek samping yang jauh lebih minimal dibandingkan laser konvensional.</li>
+          </ul>
+
+          <h3>4 Manfaat Utama Perawatan IPL Acne untuk Kesehatan Kulit</h3>
+          <p>Perawatan IPL acne di SOZO Skin Clinic menjadi pilihan utama karena memberikan aksi ganda pencerahan dan penyembuhan secara komprehensif langsung pada sumber masalah:</p>
+          <ul>
+            <li><strong>Eradikasi Bakteri P. acnes secara Instan:</strong> Cahaya IPL memicu reaksi foto-kimia yang melepaskan oksigen di dalam pori-pori. Kondisi kaya oksigen ini secara efektif mematikan bakteri Propionibacterium acnes (P. acnes)—bakteri anaerob pemicu utama jerawat meradang—sehingga infeksi langsung terhenti.</li>
+            <li><strong>Meredakan Inflamasi & Kemerahan (Redness):</strong> Gelombang cahaya IPL secara spesifik menargetkan pembuluh darah kapiler kecil yang melebar di sekitar area jerawat aktif. Energi panasnya menyusutkan pembuluh darah tersebut, sehingga pembengkakan dan noda kemerahan (redness) pasca-jerawat mereda secara signifikan.</li>
+            <li><strong>Mengurangi Produksi Minyak dengan Mengecilkan Kelenjar Sebasea:</strong> IPL menghantarkan energi termal yang dapat memperkecil ukuran kelenjar minyak (sebaceous glands) yang terlalu aktif. Ketika kelenjar mengecil, produksi sebum berlebih berkurang drastis, sehingga pori-pori tidak lagi tersumbat oleh kombinasi minyak dan penumpukan sel kulit mati.</li>
+            <li><strong>Ampuh Mengatasi Komedo (Blackheads & Whiteheads):</strong> Telah dinilai sangat efektif membersihkan sumbatan pori-pori akibat komedo terbuka maupun tertutup. (Catatan Medis: IPL Acne sangat ideal untuk jerawat ringan hingga meradang sedang, namun tidak dianjurkan untuk jenis jerawat batu/kistik berat yang membutuhkan kombinasi obat oral atau injeksi kortikosteroid).</li>
+          </ul>
+          
+          <h3>Prosedur Cepat, Keamanan Jangka Panjang & Tanpa Waktu Pemulihan</h3>
+          <ul>
+            <li><strong>Prosedur Tindakan ("Lunchtime Treatment"):</strong> Sesi pengerjaan hanya berlangsung sekitar 20 hingga 30 menit. Mata Anda akan dilindungi dengan kacamata medis khusus, lalu gel dingin diaplikasikan ke wajah untuk membantu penyerapan energi cahaya. Sensasi yang dirasakan sangat minim, hanya seperti jepretan karet gelang hangat yang ringan pada kulit.</li>
+            <li><strong>Faktor Keamanan Tingkat Tinggi:</strong> Terapi IPL telah digunakan secara aman di dunia estetika medis global selama lebih dari 30 tahun. Teknologi ini tidak memancarkan radiasi berbahaya, sehingga tidak memiliki risiko memicu kanker kulit jika dilakukan oleh dokter dan profesional terlatih.</li>
+            <li><strong>Zero Downtime (Bebas Waktu Pemulihan):</strong> Perawatan ini tidak memerlukan masa penyembuhan. Gejala pasca-tindakan umumnya hanya berupa kemerahan ringan (flushing) sementara yang akan mereda dalam hitungan jam. Pasien dapat langsung menggunakan sunscreen, mengaplikasikan makeup, dan kembali melanjutkan aktivitas normal sehari-hari tanpa hambatan.</li>
+            <li><strong>Ekspektasi Hasil yang Progresif:</strong> Rata-rata perubahan positif pada jerawat yang mengering dan kulit yang lebih tenang dapat terlihat dalam waktu 1 hingga beberapa minggu setelah sesi pertama. Namun, untuk mendapatkan eliminasi jerawat secara total dan peremajaan kulit yang optimal, Anda disarankan menjalani program rutin sebanyak 3 hingga 6 sesi dengan interval waktu sesuai anjuran dokter.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn" onclick="toggleIPLDescription()">
+        <span id="iplReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Proses & Cara Kerja IPL Acne Treatment</h2>
+      <p>Di SOZO Skin Clinic, seluruh rangkaian prosedur IPL Acne dilakukan sesuai dengan protokol medis yang higienis, steril, dan aman untuk kenyamanan kulit wajah Anda:</p>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi Dokter & Analisis Kulit</strong>
+          <p>Dokter akan memeriksa kondisi wajah Anda untuk menentukan tingkat keparahan jerawat. Tahap ini penting untuk memastikan jenis jerawat Anda adalah tipe ringan hingga meradang sedang yang ideal untuk tindakan IPL (bukan jenis jerawat kistik/batu yang memerlukan perawatan lanjutan).</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan Wajah & Aplikasi Gel Dingin</strong>
+          <p>Wajah Anda akan dibersihkan secara menyeluruh (cleansing) dari sisa makeup, debu, dan sebum. After kulit steril, lapisan gel pendingin khusus akan diaplikasikan merata pada wajah untuk melindungi lapisan epidermis kulit sekaligus membantu penetrasi gelombang cahaya.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Tindakan Terapi Gelombang Cahaya IPL</strong>
+          <p>Mata Anda akan ditutup dengan kacamata medis pelindung. Dokter atau profesional terlatih akan mengalirkan kilatan cahaya broad-spectrum (430-1200nm) menggunakan alat IPL ke area kulit yang berjerawat. Pada tahap ini, energi cahaya diubah menjadi energi panas untuk mematikan bakteri dan menyusutkan kelenjar minyak.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan Akhir & Langkah Aftercare</strong>
+          <p>Setelah proses penyinaran selesai, gel dingin akan dibersihkan dari wajah Anda hingga bersih. Dokter kemudian mengaplikasikan krim penenang (soothing cream) serta sunscreen medis untuk memproteksi kulit wajah Anda agar siap kembali beraktivitas normal (zero downtime).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar IPL Acne</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleIPLFaq(this)">
+          <h3>Apa bedanya IPL Acne dengan perawatan jerawat biasa?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Perawatan jerawat biasa (seperti facial dasar atau krim) umumnya berfokus pada pembersihan permukaan dan pengangkatan komedo. Sedangkan IPL Acne bekerja menembus ke dalam pori-pori menggunakan energi cahaya untuk membunuh bakteri penyebab jerawat langsung dari akarnya sekaligus meredakan kemerahan dari dalam.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleIPLFaq(this)">
+          <h3>Apakah IPL Acne efektif untuk jerawat yang sedang meradang parah?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Ya, sangat efektif. IPL sangat direkomendasikan untuk jerawat aktif dan meradang karena fungsinya yang langsung menenangkan inflamasi (bengkak merah). Terapi cahaya ini mempercepat proses pengeringan dan penyembuhan jerawat jauh lebih cepat dibandingkan hanya menunggu reaksi dari krim anti-acne oles.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleIPLFaq(this)">
+          <h3>Apa efek samping dari prosedur IPL Acne?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>IPL Acne merupakan prosedur non-invasif yang sangat aman dan memiliki downtime (waktu pemulihan) yang minim. Sebagian besar pasien dapat langsung beraktivitas normal setelah perawatan. Namun, terdapat beberapa efek samping ringan dan sementara yang wajar terjadi, antara lain:</p>
+          <ul>
+            <li><strong>Kemerahan ringan:</strong> Area yang dirawat mungkin tampak sedikit kemerahan, yang biasanya mereda dalam waktu 2 hingga 24 jam.</li>
+            <li><strong>Sensasi hangat:</strong> Kulit mungkin terasa sedikit hangat atau seperti terbakar sinar matahari ringan sesaat setelah tindakan.</li>
+            <li><strong>Sensitivitas terhadap cahaya:</strong> Kulit akan menjadi lebih sensitif terhadap sinar UV pasca-perawatan. Anda sangat diwajibkan untuk rutin mengoleskan sunscreen dan menghindari paparan matahari langsung untuk mencegah hiperpigmentasi.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleIPLFaq(this)">
+          <h3>Berapa sesi yang dibutuhkan hingga wajah bersih dari jerawat?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Meskipun jerawat akan terlihat mulai mengering setelah 1 kali sesi, umumnya dibutuhkan sekitar 2 hingga 4 kali sesi perawatan (dengan interval jarak waktu 1-2 minggu) untuk hasil penyembuhan yang maksimal. Jumlah sesi ini sangat bergantung pada tingkat keparahan jerawat dan respons kulit masing-masing pasien.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleIPLFaq(this)">
+          <h3>Berapa harga IPL Acne Treatment untuk satu kali sesi?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Harga IPL Acne di Sozo Skin Clinic saat ini sedang dalam harga promo spesial, yaitu hanya Rp 399.000 per sesi berdurasi 30 menit. Harga yang sangat terjangkau ini menjadikannya pilihan perawatan rutin yang ideal untuk menjaga kulit agar tetap bersih dan bebas jerawat aktif.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleIPLFaq(this)">
+          <h3>Berapa lama hasil IPL Acne bertahan di wajah?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Hasil perawatan IPL Acne dapat bertahan selama beberapa minggu hingga beberapa bulan, bergantung pada tingkat keparahan jerawat, gaya hidup, dan rutinitas skincare Anda di rumah. Untuk menuntaskan bakteri penyebab jerawat secara optimal, dokter umumnya merekomendasikan serangkaian sesi awal (diulang setiap 2–4 minggu). Setelah mereda, Anda dapat melakukan sesi maintenance berkala untuk mencegah breakout kembali.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleIPLFaq(this)">
+          <h3>Di mana saya bisa melakukan IPL Acne terdekat?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Anda dapat melakukan prosedur IPL Acne yang aman dengan teknologi modern di seluruh jaringan cabang Sozo Skin Clinic. Kami hadir di berbagai titik strategis di wilayah Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Temukan lokasi klinik terdekat Anda di halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Locations Cabang Sozo Skin Clinic</a> dan jadwalkan perawatan jerawat Anda segera.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleIPLDescription() {
+    const content = document.getElementById('treatmentDescriptionIPL');
+    const btnText = document.getElementById('iplReadMoreText');
+    const btn = btnText.parentElement;
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+
+  function toggleIPLFaq(button) {
+    const answer = button.nextElementSibling;
+    button.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>

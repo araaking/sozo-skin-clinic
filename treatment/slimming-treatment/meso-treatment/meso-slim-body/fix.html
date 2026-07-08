@@ -1,0 +1,844 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-glow-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+
+  .sozo-sku-glow-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-glow-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-glow-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-glow-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-glow-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-glow-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-glow-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-glow-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-glow-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-glow-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-glow-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-glow-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-glow-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-glow-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-glow-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-glow-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-glow-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-glow-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-glow-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-glow-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-glow-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-glow-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-glow-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-glow-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-glow-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- STYLING STRUCTURAL CONTENT SECTIONS --- */
+  .sozo-sku-glow-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-glow-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-glow-wrapper .sozo-section-card h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-section-card h3 {
+    font-size: 20px !important;
+    color: #1A2080 !important;
+    margin-top: 25px !important;
+    margin-bottom: 15px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-section-card p {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-section-card ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: #475569;
+  }
+  .sozo-sku-glow-wrapper .sozo-section-card li {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  /* --- PROBLEM GRID & CARDS SYSTEM --- */
+  .sozo-sku-glow-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .sozo-sku-glow-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+  .sozo-sku-glow-wrapper .sozo-problem-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    border-color: #cbd5e1;
+  }
+  .sozo-sku-glow-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 18px;
+    color: #1A2080;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .sozo-sku-glow-wrapper .sozo-problem-card span {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.5;
+    display: block;
+  }
+
+  /* --- PROCESS STEPS STYLING --- */
+  .sozo-sku-glow-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+  .sozo-sku-glow-wrapper .sozo-process-step:last-child {
+    margin-bottom: 0;
+  }
+  .sozo-sku-glow-wrapper .sozo-step-num {
+    background-color: #EEF2FF;
+    color: #1A2080;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+    border: 1px solid #e0e7ff;
+  }
+  .sozo-sku-glow-wrapper .sozo-step-text {
+    flex: 1;
+  }
+  .sozo-sku-glow-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .sozo-sku-glow-wrapper .sozo-step-text p {
+    margin: 0 !important;
+    font-size: 15px !important;
+    color: #475569 !important;
+  }
+
+  /* --- LOAD MORE ANIMATION BOX --- */
+  .sozo-sku-glow-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-glow-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-glow-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  .sozo-sku-glow-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-glow-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-glow-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-glow-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-glow-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-question h3 {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-question:hover h3 { color: #1A2080 !important; }
+  .sozo-sku-glow-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+    color: #64748b;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 600;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-glow-wrapper .sozo-treatment-hero {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .sozo-sku-glow-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-glow-wrapper .sozo-hero-image img {
+      height: 250px;
+      max-width: 100%;
+    }
+    .sozo-sku-glow-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-glow-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-glow-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-glow-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-glow-wrapper .sozo-section-card, 
+    .sozo-sku-glow-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-glow-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+</style>
+
+<div class="sozo-sku-glow-wrapper" id="sozo-glow-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/slimming-treatment/">
+          <span>Slimming Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/meso-treatment/">
+          <span>Meso Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Meso Slim Body</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Meso Slim Body</h1>
+      <p>
+        Meso Slim Body adalah treatment slimming berbasis mesoterapi yang membantu mengurangi lemak membandel pada area tubuh tertentu seperti perut, paha, lengan, maupun pinggang. Dengan teknik injeksi menggunakan formula aktif lipolisis, treatment ini bekerja membantu memecah lemak lokal, meningkatkan metabolisme, serta membentuk kontur tubuh lebih proporsional tanpa prosedur operasi dan dengan downtime yang minimal.
+      </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">30 - 45 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga</span>
+            <span class="sozo-info-value">
+              Mulai Rp 1.499.000
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20tanya%20mengenai%20treatment%20Meso%20Slim%20Body" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Before-After-3.webp" alt="Meso Slim Body Treatment Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Hancurkan Lemak Membandel dan Raih Tubuh Ideal dengan Meso Slim Body</h2>
+      <p>Solusi non-bedah untuk menargetkan lemak lokal di area perut, paha, hingga lengan. Dapatkan siluet tubuh yang lebih ramping dan proporsional melalui teknik mesoterapi yang aman dan efektif bersama tim medis kami.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20mengenai%20Meso%20Slim%20Body" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+    
+    <!-- SECTION 1: MASALAH YANG DIHADAPI (POSISI DI ATAS DESKRIPSI) -->
+    <div class="sozo-section-card">
+      <h2>Area Lemak Membandel yang Sering Menjadi Keluhan</h2>
+      <p>Banyak orang merasa kurang percaya diri karena penumpukan lemak lokal yang sulit hilang akibat faktor genetik, hormon, usia, maupun gaya hidup. Meso Slim Body hadir untuk membantu mengatasi keluhan pada area-area berikut:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Lemak Perut Membandel</strong>
+          <span>Penumpukan lemak di perut bagian atas maupun bawah yang membuat tubuh terlihat kurang proporsional dan sulit dikecilkan hanya dengan diet biasa.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Love Handles (Lemak Pinggang)</strong>
+          <span>Lemak menonjol di sisi kanan dan kiri pinggang yang mengurangi definisi siluet tubuh serta tetap bertahan meski telah rutin berolahraga.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Lengan Atas Bergelambir</strong>
+          <span>Penumpukan lemak subkutan di area lengan atas yang menyebabkan lengan tampak besar, kurang kencang, dan menggelambir.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Lemak Paha & Punggung</strong>
+          <span>Lipatan lemak berlebih di paha dalam/luar serta area punggung (sekitar garis bra) yang mengganggu estetika penampilan saat berpakaian.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: DESCRIPTION WITH LOAD MORE ANIMATION -->
+    <!-- SECTION 2: DESCRIPTION WITH ADJUSTED RICH TEXT & LOAD MORE ANIMATION -->
+    <div class="sozo-section-card">
+      <h2>Kenapa Lemak di Area Tertentu Sulit Hilang — dan Bagaimana Meso Slim Body Mengatasinya</h2>
+      
+      <h3>Apa Itu Meso Slim Body?</h3>
+      <p>Meso Slim Body adalah prosedur slimming non-bedah yang menggunakan teknik mesoterapi — metode injeksi medis yang menyuntikkan formula bahan aktif lipolisis langsung ke lapisan lemak subkutan di area tubuh yang ditargetkan. Berbeda dengan diet atau olahraga yang menurunkan berat badan secara general, Meso Slim Body bekerja secara spesifik dan lokal — menargetkan kantong lemak membandel yang tidak merespons perubahan gaya hidup sekalipun.</p>
+      <p>Formula aktif yang diinjeksikan bekerja melalui dua mekanisme utama: memecah sel lemak (lipolysis) sehingga trigliserida di dalam sel lemak terurai menjadi asam lemak bebas, dan meningkatkan metabolisme lokal agar asam lemak tersebut dibuang secara alami melalui sistem limfatik dan peredaran darah tubuh.</p>
+      
+      <!-- Batas awal konten yang disembunyikan sebelum tombol klik -->
+      <div class="sozo-expandable-content sozo-glow-desc-content" id="treatmentDescriptionGlow">
+        <div class="sozo-expandable-inner">
+          <p>Hasilnya bukan hanya pengurangan volume lemak, tetapi juga perbaikan kontur tubuh yang terlihat lebih proporsional dan ideal — terutama di area yang selama ini paling sulit dibentuk meski sudah rutin berolahraga.</p>
+
+          <h3>Bagaimana Cara Kerja Meso Slim Body?</h3>
+          <p>Meso Slim Body menggunakan teknik mesoterapi, yaitu prosedur dengan menyuntikkan formula aktif ke lapisan lemak subkutan pada area tubuh yang menjadi target treatment. Berbeda dengan program penurunan berat badan secara menyeluruh, treatment ini dirancang untuk membantu mengatasi lemak lokal yang sulit berkurang meski sudah menjalani pola makan sehat dan olahraga secara rutin.</p>
+          <p>Secara umum, Meso Slim Body bekerja melalui beberapa tahapan berikut.</p>
+          
+          <p><strong>Membantu Menargetkan Lemak pada Area Tertentu</strong><br>
+          Dokter akan menentukan area treatment berdasarkan hasil konsultasi, seperti perut, paha, lengan atas, pinggang, atau area lain yang memiliki penumpukan lemak membandel. Formula kemudian diinjeksikan langsung ke area tersebut menggunakan teknik mesoterapi.</p>
+          
+          <p><strong>Mendukung Proses Lipolisis</strong><br>
+          Formula aktif membantu mendukung proses lipolisis, yaitu proses alami pemecahan cadangan lemak menjadi bentuk yang lebih mudah diproses oleh tubuh. Karena bekerja pada area yang ditargetkan, treatment ini lebih berfokus pada pembentukan kontur tubuh dibandingkan menurunkan berat badan secara keseluruhan.</p>
+          
+          <p><strong>Diproses Melalui Mekanisme Alami Tubuh</strong><br>
+          Setelah proses lipolisis berlangsung, tubuh secara alami akan memproses hasil pemecahan lemak melalui sistem metabolisme dan limfatik. Perubahan biasanya terjadi secara bertahap sehingga hasilnya terlihat lebih natural.</p>
+          
+          <p><strong>Membantu Membentuk Kontur Tubuh</strong><br>
+          Dengan berkurangnya penumpukan lemak di area tertentu, siluet tubuh dapat terlihat lebih proporsional. Agar hasil treatment lebih optimal, Meso Slim Body sebaiknya tetap didukung dengan pola makan seimbang, aktivitas fisik yang teratur, dan gaya hidup sehat.</p>
+
+          <h3>Mengapa Meso Slim Body Berbeda dari Metode Slimming Lain?</h3>
+          <p>Banyak prosedur slimming tersedia di pasaran, namun Meso Slim Body memiliki keunggulan yang membedakannya secara signifikan:</p>
+          <ul>
+            <li>Non-bedah dan minim invasif — tidak ada sayatan, tidak ada anestesi umum, tidak ada risiko bedah</li>
+            <li>Downtime sangat minimal — pasien dapat langsung beraktivitas setelah sesi selesai</li>
+            <li>Hasil terlihat natural — pengurangan lemak berlangsung bertahap dan proporsional, tidak terlihat "tiba-tiba"</li>
+            <li>Dapat menargetkan area spesifik — perut, paha, lengan, pinggang, love handles, hingga punggung</li>
+            <li>Meningkatkan metabolisme — manfaat tidak hanya lokal, tetapi juga membantu perbaikan metabolisme tubuh secara keseluruhan</li>
+            <li>Dilakukan oleh dokter terlatih di SOZO Skin Clinic dengan protokol medis yang terstandarisasi</li>
+          </ul>
+
+          <h3>Siapa yang Cocok Menjalani Meso Slim Body?</h3>
+          <p>Meso Slim Body paling efektif untuk Anda yang:</p>
+          <ul>
+            <li>Memiliki lemak lokal membandel di area tertentu yang tidak berkurang meski diet dan olahraga</li>
+            <li>Ingin membentuk kontur tubuh tanpa harus menjalani prosedur bedah invasif</li>
+            <li>Sudah dalam berat badan mendekati ideal namun ingin merapikan area tertentu</li>
+            <li>Tidak memiliki kontraindikasi medis terhadap prosedur injeksi</li>
+            <li>Menginginkan alternatif yang lebih aman dibandingkan sedot lemak (liposuction)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn sozo-glow-read-more" onclick="toggleGlowDescription()">
+        <span id="glowReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+      
+      <button class="sozo-load-more-btn sozo-glow-read-more" onclick="toggleGlowDescription()">
+        <span id="glowReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <!-- SECTION 3: PROSES & CARA KERJA (POSISI DI BAWAH DESKRIPSI) -->
+    <div class="sozo-section-card">
+      <h2>Proses & Cara Kerja Meso Slim Body</h2>
+      <p>Prosedur Meso Slim Body dilakukan oleh dokter secara bertahap dengan standar kebersihan dan kenyamanan pasien sebagai prioritas:</p>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi & Pemetaan Target</strong>
+          <p>Dokter mengevaluasi ketebalan lemak subkutan, menandai (marking) area target, serta merancang rencana perawatan terukur sesuai kebutuhan profil tubuh Anda.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan & Persiapan Tindakan</strong>
+          <p>Area kulit yang akan ditindak dibersihkan dengan antiseptik medis. Jika diperlukan, krim anestesi/numbing dapat diaplikasikan agar prosedur terasa jauh lebih nyaman.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Aplikasi Injeksi Lipolisis via Mesoterapi</strong>
+          <p>Dokter menyuntikkan formula aktif langsung ke lapisan subkutan. Formula ini bekerja memicu lipolisis (pemecahan sel lemak) dan merangsang sistem limfatik untuk pembuangan alami tubuh.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Aftercare & Rekomendasi Lanjutan</strong>
+          <p>Dokter memberikan instruksi pasca tindakan (seperti hidrasi air putih yang cukup) serta menyusun interval jadwal kunjungan sesi berikutnya demi mempertahankan kontur tubuh yang ideal.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: FAQ SECTION WITH SCHEMA MARKUP -->
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Meso Slim Body</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Apa itu Meso Slim Body dan bagaimana cara kerjanya?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Meso Slim Body adalah treatment slimming non-bedah yang menggunakan teknik mesoterapi untuk membantu mengurangi lemak membandel pada area tubuh tertentu. Dalam prosedur ini, dokter menyuntikkan formula aktif ke lapisan lemak subkutan agar bekerja membantu proses lipolisis atau pemecahan lemak. Selanjutnya, hasil pemecahan lemak akan diproses tubuh melalui mekanisme metabolisme alami sehingga kontur tubuh dapat terlihat lebih proporsional secara bertahap.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Apa saja manfaat utama Meso Slim Body dibanding metode slimming lain?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Beside non-bedah, Meso Slim Body memiliki beberapa keunggulan seperti mampu menargetkan area lemak tertentu secara spesifik, downtime yang relatif singkat, serta membantu membentuk siluet kontur tubuh secara bertahap tanpa risiko komplikasi operasi bedah besar.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Area tubuh mana saja yang bisa ditreatment dengan Meso Slim Body?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Area yang umum ditreatment meliputi perut, paha bagian dalam maupun luar, lengan atas, pinggang, punggung, bokong, hingga double chin. Dokter akan menentukan area yang sesuai berdasarkan distribusi lemak dan tujuan body contouring masing-masing pasien. Treatment ini sangat efektif untuk lemak membandel yang sulit dihilangkan meski sudah rutin berolahraga.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Berapa sesi yang dibutuhkan untuk hasil optimal?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Umumnya direkomendasikan 6–8 sesi dengan interval 1–2 minggu antar sesi, tergantung volume lemak, area target, dan respons tubuh masing-masing individu. Dokter akan menentukan jumlah sesi yang paling sesuai setelah konsultasi awal.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Kapan hasil Meso Slim Body mulai terlihat?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Perubahan awal biasanya mulai terlihat dalam 2–3 minggu setelah sesi pertama. Hasil semakin optimal seiring bertambahnya sesi, dengan puncak hasil yang terlihat jelas sekitar 4–6 minggu setelah program selesai dijalani.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Apakah hasilnya permanen?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sel lemak yang telah dihancurkan secara permanen tidak akan kembali. Namun, sel lemak yang tersisa di area tersebut tetap dapat membesar jika pola makan tidak dijaga. Untuk hasil yang tahan lama, disarankan mengimbangi treatment dengan pola makan sehat dan aktivitas fisik rutin.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Apakah Meso Slim Body aman dan adakah efek sampingnya?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Meso Slim Body umumnya aman apabila dilakukan oleh dokter yang berkompeten dengan indikasi dan protokol medis yang tepat. Efek samping yang mungkin muncul bersifat ringan dan sementara, seperti bengkak, kemerahan, memar kecil, atau rasa nyeri di area suntikan dan umumnya mereda dalam 2–5 hari setelah treatment.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Siapa yang cocok dan tidak cocok menjalani Meso Slim Body?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Treatment ini cocok untuk individu dewasa dengan lemak lokal membandel yang ingin membentuk tubuh tanpa bedah. Tidak direkomendasikan untuk ibu hamil atau menyusui, penderita diabetes tidak terkontrol, gangguan koagulasi darah, atau mereka yang memiliki alergi terhadap komponen formula aktif. Konsultasi dokter wajib dilakukan sebelum memulai.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Di mana bisa mendapatkan treatment Meso Slim Body?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Meso Slim Body tersedia di seluruh cabang SOZO Skin Clinic. Dengan lokasi yang tersebar di berbagai kota, Anda dapat dengan mudah menemukan <a href="https://sozoskinclinic.com/lokasi/">klinik SOZO terdekat</a> dari tempat tinggal Anda. Kunjungi halaman Lokasi di website kami atau hubungi tim kami untuk informasi cabang, jadwal dokter, dan ketersediaan kuota reservasi.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Apakah Meso Slim Body bisa menurunkan berat badan?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Meso Slim Body bukan merupakan treatment utama untuk menurunkan berat badan secara keseluruhan. Treatment ini lebih berfokus pada body contouring, yaitu membantu mengurangi lemak membandel di area tubuh tertentu seperti perut, paha, lengan atas, atau pinggang sehingga bentuk tubuh tampak lebih proporsional. Jika tujuan utama Anda adalah menurunkan berat badan dalam jumlah besar, dokter biasanya akan menyarankan kombinasi pola makan sehat, olahraga, dan program penurunan berat badan yang sesuai. Setelah berat badan mendekati ideal, Meso Slim Body dapat membantu menyempurnakan kontur tubuh pada area yang masih sulit dibentuk.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Apakah Meso Slim Body sama dengan sedot lemak (liposuction)?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Tidak. Meskipun sama-sama bertujuan membantu mengurangi lemak pada area tertentu, kedua prosedur ini memiliki metode yang berbeda. Liposuction merupakan tindakan bedah yang mengangkat lemak menggunakan alat khusus sehingga memerlukan proses pemulihan yang lebih lama. Sementara itu, Meso Slim Body merupakan treatment non-bedah menggunakan teknik mesoterapi yang membantu proses pemecahan lemak secara bertahap melalui mekanisme alami tubuh. Karena tidak memerlukan sayatan maupun anestesi umum, downtime Meso Slim Body umumnya lebih singkat dibandingkan prosedur bedah.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Berapa lama satu sesi Meso Slim Body berlangsung?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Satu sesi Meso Slim Body umumnya berlangsung sekitar 30–45 menit, tergantung luas area yang ditreatment dan jumlah titik injeksi yang diperlukan. Sebelum tindakan dilakukan, dokter akan melakukan konsultasi untuk mengevaluasi kondisi tubuh dan menentukan area yang paling sesuai dengan tujuan treatment. Setelah prosedur selesai, sebagian besar pasien dapat langsung kembali beraktivitas dengan mengikuti anjuran dokter mengenai perawatan setelah treatment.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Apakah treatment Meso Slim Body terasa sakit?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Setiap orang memiliki tingkat toleransi nyeri yang berbeda. Selama prosedur, Anda mungkin akan merasakan sensasi seperti tusukan kecil atau rasa tidak nyaman ringan pada area suntikan. Namun, prosedur umumnya masih dapat ditoleransi oleh sebagian besar pasien. Setelah treatment selesai, dapat muncul kemerahan, bengkak ringan, atau rasa pegal pada area yang ditreatment, tetapi kondisi tersebut biasanya bersifat sementara dan akan membaik dalam beberapa hari.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(buttonSelf=this)">
+          <h3>Apa yang perlu dilakukan setelah menjalani Meso Slim Body?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Untuk membantu mendukung hasil treatment, dokter biasanya menyarankan pasien memperbanyak konsumsi air putih, menjaga pola makan seimbang, serta tetap aktif bergerak atau berolahraga sesuai kondisi tubuh. Selama beberapa waktu setelah tindakan, pasien juga mungkin diminta menghindari konsumsi alkohol, aktivitas fisik yang terlalu berat, atau paparan panas berlebih apabila memang diperlukan. Mengikuti seluruh instruksi dokter akan membantu proses pemulihan berjalan optimal sekaligus mempertahankan hasil treatment dalam jangka panjang.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Fungsi global untuk toggle "Baca Selengkapnya" pada Deskripsi Rich Text
+  function toggleGlowDescription() {
+    const content = document.getElementById('treatmentDescriptionGlow');
+    const btn = document.querySelector('.sozo-glow-read-more');
+    const btnText = document.getElementById('glowReadMoreText');
+    
+    if (!content || !btn) return;
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+
+  // Fungsi global untuk toggle Accordion FAQ
+  function toggleGlowFaq(buttonSelf) {
+    const answer = buttonSelf.nextElementSibling;
+    if (!answer) return;
+    
+    buttonSelf.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>

@@ -1,0 +1,407 @@
+<style>
+  .sozo-sku-filler-dagu-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-filler-dagu-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-breadcrumb { padding: 15px 20px 25px 20px; width: 100%; }
+  .sozo-sku-filler-dagu-wrapper .sozo-breadcrumb ol { list-style: none !important; margin: 0 !important; padding: 0 !important; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-breadcrumb li { display: flex; align-items: center; font-size: 14px; color: #1A2080; }
+  .sozo-sku-filler-dagu-wrapper .sozo-breadcrumb a { text-decoration: none !important; color: #64748b !important; font-weight: 500; transition: color 0.2s ease; }
+  .sozo-sku-filler-dagu-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-breadcrumb .separator { color: #cbd5e1; margin: 0 4px; font-size: 12px; user-select: none; }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-treatment-hero { display: flex; flex-wrap: nowrap; gap: 50px; align-items: center; margin-bottom: 50px; padding: 0 20px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-filler-dagu-wrapper .sozo-hero-text h1 { font-size: clamp(32px, 4vw, 42px) !important; color: #1A2080 !important; margin: 0 0 16px 0 !important; line-height: 1.2 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-hero-text p { font-size: 16px !important; color: #475569 !important; margin: 0 0 30px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-hero-image { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; }
+  .sozo-sku-filler-dagu-wrapper .sozo-hero-image img { width: 100%; max-width: 480px; height: 340px; border-radius: 24px; object-fit: cover; object-position: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); display: block; }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-info-row { display: flex; gap: 40px; margin-bottom: 35px; padding: 24px; background-color: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9; }
+  .sozo-sku-filler-dagu-wrapper .sozo-info-col { display: flex; align-items: flex-start; gap: 15px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-info-icon { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #EEF2FF; border-radius: 12px; color: #1A2080; }
+  .sozo-sku-filler-dagu-wrapper .sozo-info-text { display: flex; flex-direction: column; gap: 2px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-info-label { font-size: 13px !important; color: #64748b !important; font-weight: 600 !important; text-transform: uppercase; letter-spacing: 0.5px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-info-value { font-size: 20px !important; color: #1A2080 !important; font-weight: 700 !important; }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-btn,
+  .sozo-sku-filler-dagu-wrapper .sozo-related-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background-color: #1A2080 !important; color: #ffffff !important; text-decoration: none !important; font-size: 16px !important; font-weight: 600 !important; border-radius: 100px; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2); border: 2px solid #1A2080 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-btn:hover,
+  .sozo-sku-filler-dagu-wrapper .sozo-related-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; transform: translateY(-3px); }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-cta-banner { background-color: #1A2080; background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%); border-radius: 24px; padding: 50px 30px; margin-bottom: 50px; text-align: center; color: #ffffff; box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15); }
+  .sozo-sku-filler-dagu-wrapper .sozo-cta-banner h2 { font-size: clamp(24px, 3vw, 32px) !important; color: #ffffff !important; margin: 0 0 15px 0 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-cta-banner p { font-size: 16px !important; color: #e2e8f0 !important; margin: 0 auto 30px auto !important; max-width: 650px; line-height: 1.6 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background-color: #ffffff !important; color: #1A2080 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 100px; border: 2px solid #ffffff !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-btn-secondary:hover { background-color: transparent !important; color: #ffffff !important; transform: translateY(-3px); }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-section-card,
+  .sozo-sku-filler-dagu-wrapper .sozo-description-section,
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-filler-dagu-wrapper .sozo-section-card > h2,
+  .sozo-sku-filler-dagu-wrapper .sozo-description-section h2,
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 16px !important; font-weight: 800 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-section-card > p { color: #475569 !important; font-size: 16px !important; margin-bottom: 24px !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-description-section h3 { font-size: 18px !important; color: #1A2080 !important; margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 700 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-description-section p,
+  .sozo-sku-filler-dagu-wrapper .sozo-description-section li { color: #475569 !important; margin-bottom: 16px !important; font-size: 16px !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-description-section ul { padding-left: 20px !important; margin-bottom: 20px !important; }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-problem-card { background-color: #f8fafc; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; }
+  .sozo-sku-filler-dagu-wrapper .sozo-problem-card strong { display: block; font-size: 16px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-problem-card span { font-size: 14px !important; color: #475569 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-process-step { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; }
+  .sozo-sku-filler-dagu-wrapper .sozo-process-step:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .sozo-sku-filler-dagu-wrapper .sozo-step-num { width: 45px; height: 45px; background-color: #EEF2FF; color: #1A2080; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px !important; font-weight: 700 !important; flex-shrink: 0; }
+  .sozo-sku-filler-dagu-wrapper .sozo-step-text strong { display: block; font-size: 18px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-step-text p { font-size: 15px !important; color: #475569 !important; margin: 0 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-related-card { border: 1px solid #f1f5f9; border-radius: 16px; overflow: hidden; background-color: #ffffff; display: flex; flex-direction: column; }
+  .sozo-sku-filler-dagu-wrapper .sozo-related-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+  .sozo-sku-filler-dagu-wrapper .sozo-related-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .sozo-sku-filler-dagu-wrapper .sozo-related-body h3 { font-size: 16px !important; color: #1A2080 !important; margin: 0 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-related-body p { font-size: 14px !important; color: #475569 !important; margin: 0 !important; flex: 1; }
+  .sozo-sku-filler-dagu-wrapper .sozo-related-actions { display: flex; flex-direction: column; gap: 10px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-related-btn { max-width: none; padding: 11px 16px; font-size: 14px !important; box-shadow: none; }
+  .sozo-sku-filler-dagu-wrapper .sozo-related-link { color: #1A2080 !important; font-weight: 600 !important; font-size: 14px !important; text-decoration: none !important; text-align: center; }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-expandable-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease-out; }
+  .sozo-sku-filler-dagu-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-filler-dagu-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-filler-dagu-wrapper .sozo-load-more-btn { background: none !important; border: none !important; color: #1A2080 !important; font-size: 15px !important; font-weight: 600 !important; padding: 0 !important; margin-top: 15px !important; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-filler-dagu-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-item { border-bottom: 1px solid #f1f5f9; padding: 16px 0; }
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-question { width: 100%; background: none !important; border: none !important; text-align: left; font-size: 16px !important; font-weight: 600 !important; color: #1e293b !important; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0 0 8px 0 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-question svg { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-answer p { color: #475569 !important; font-size: 15px !important; margin: 8px 0 16px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-filler-dagu-wrapper .sozo-faq-answer a { color: #1A2080 !important; text-decoration: underline !important; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .sozo-sku-filler-dagu-wrapper .sozo-treatment-hero { flex-direction: column; gap: 30px; }
+    .sozo-sku-filler-dagu-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-filler-dagu-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-filler-dagu-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-filler-dagu-wrapper .sozo-btn,
+    .sozo-sku-filler-dagu-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-filler-dagu-wrapper .sozo-description-section,
+    .sozo-sku-filler-dagu-wrapper .sozo-faq-section,
+    .sozo-sku-filler-dagu-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+    .sozo-sku-filler-dagu-wrapper .sozo-problem-grid,
+    .sozo-sku-filler-dagu-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-filler-dagu-wrapper" id="sozo-filler-dagu-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li><a href="https://sozoskinclinic.com/">Home</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/injectable-treatment/">Injectable Treatment</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/injectable-treatment/filler-treatment/">Filler Treatment</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><span style="color: #1A2080; font-weight: 600;">Filler Dagu</span></li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Suntik Filler Dagu untuk Wajah Lebih Proporsional dan Tegas</h1>
+      <p>Filler dagu (suntik filler dagu) membantu memperbaiki kontur wajah dan menambah volume dagu, sehingga tampilan wajah terlihat lebih proporsional, tegas, dan harmonis. Hasilnya dapat langsung terlihat tanpa prosedur operasi.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">90 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 5.499.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Filler%20Dagu%20%5Bsumber:%20ORG-filler%20treatment%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2022/05/P1134552-Filler-scaled.webp"
+           alt="Suntik filler dagu untuk dagu lebih proporsional di Sozo Skin Clinic"
+           width="480"
+           height="340"
+           fetchpriority="high"
+           decoding="async">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Dapatkan Bentuk Wajah Lebih Ideal dengan Filler Dagu</h2>
+      <p>Pertegas kontur wajah dan buat tampilan dagu lebih proporsional tanpa operasi. Konsultasikan kebutuhan profil wajah Anda dengan dokter ahli kami terlebih dahulu.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20Filler%20Dagu%20%5Bsumber:%20ORG-filler%20treatment%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Dokter Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <section class="sozo-section-card">
+      <h2>Keluhan yang Dapat Dibantu Filler Dagu</h2>
+      <p>Suntik filler dagu dapat menjadi pilihan untuk membantu mengatasi keluhan berikut pada area dagu dan profil wajah:</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Dagu Pendek atau Mundur</strong>
+          <span>Dagu yang pendek atau cenderung mundur sehingga profil wajah terlihat kurang seimbang.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Dagu Kurang Tegas</strong>
+          <span>Garis dagu yang kurang tegas sehingga kontur wajah tampak kurang terdefinisi.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Wajah Kurang Proporsional</strong>
+          <span>Proporsi wajah yang kurang seimbang antara dagu, rahang, dan bagian tengah wajah.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Ingin Tampilan Lebih Tirus</strong>
+          <span>Menginginkan tampilan wajah yang lebih tirus dan profil samping yang lebih ideal tanpa operasi.</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="sozo-description-section">
+      <h2>Filler Dagu untuk Bentuk Wajah Lebih Proporsional dan Tirus</h2>
+      <p>Filler dagu adalah treatment injectable menggunakan hyaluronic acid untuk membantu membentuk dan mempertegas kontur dagu. Perawatan ini ditujukan untuk membantu memperbaiki tampilan bentuk wajah yang kurang simetris, dagu pendek, atau dagu yang kurang tegas, tanpa prosedur operasi.</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionFiller">
+        <div class="sozo-expandable-inner">
+          <h3>Apa Itu Suntik Filler Dagu?</h3>
+          <p>Suntik filler dagu adalah prosedur injeksi hyaluronic acid pada area dagu untuk menambah volume dan membentuk kontur. Dengan teknik injeksi yang tepat oleh dokter, filler dapat memberikan hasil yang natural dan dapat langsung terlihat tanpa operasi. Selain membentuk kontur, hyaluronic acid juga membantu menjaga hidrasi kulit di area tindakan.</p>
+
+          <h3>Manfaat Filler Dagu</h3>
+          <ul>
+            <li>Membantu membuat profil wajah tampak lebih proporsional dan seimbang.</li>
+            <li>Membantu mempertegas garis dagu dan kontur rahang.</li>
+            <li>Membantu memperbaiki tampilan dagu yang pendek atau kurang tegas.</li>
+            <li>Hasil dapat langsung terlihat tanpa prosedur operasi.</li>
+          </ul>
+
+          <h3>Berapa Lama Hasilnya Bertahan?</h3>
+          <p>Hasil filler dagu umumnya bertahan sekitar 6 sampai 12 bulan, tergantung jenis filler yang digunakan, metabolisme tubuh, dan gaya hidup. Perawatan ulang secara berkala dapat dilakukan untuk menjaga hasil tetap optimal sesuai anjuran dokter.</p>
+
+          <h3>Siapa yang Cocok untuk Filler Dagu?</h3>
+          <p>Filler dagu cocok untuk Anda yang memiliki dagu pendek, kurang tegas, atau bentuk wajah yang kurang proporsional dan ingin perbaikan tanpa operasi. Konsultasi dengan dokter diperlukan untuk menilai kondisi wajah dan menentukan rencana perawatan yang sesuai.</p>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="toggleFillerDescription()">
+        <span id="fillerReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </article>
+
+    <section class="sozo-section-card">
+      <h2>Proses dan Cara Kerja Filler Dagu</h2>
+      <p>Prosedur suntik filler dagu dilakukan langsung oleh dokter dengan langkah yang terkontrol untuk menjaga keamanan dan kenyamanan Anda:</p>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi dan Analisis Wajah</strong>
+          <p>Dokter menganalisis proporsi wajah dan bentuk dagu untuk menentukan rencana dan jumlah filler yang sesuai.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan dan Penandaan Area</strong>
+          <p>Area dagu dibersihkan dan ditandai. Krim anestesi topikal umumnya diaplikasikan terlebih dahulu untuk kenyamanan.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Injeksi Filler</strong>
+          <p>Dokter menyuntikkan hyaluronic acid pada titik yang telah ditentukan dan membentuk kontur dagu secara bertahap.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Evaluasi dan Aftercare</strong>
+          <p>Dokter mengevaluasi hasil dan memberikan arahan perawatan pasca tindakan agar hasil filler tetap optimal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sozo-section-card">
+      <h2>Treatment Wajah Terkait</h2>
+      <p>Beberapa perawatan injectable berikut sering dipertimbangkan untuk membantu membentuk profil wajah.</p>
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2022/05/P1134552-Filler-scaled.webp" alt="Korean Filler Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Korean Filler</h3>
+            <p>Filler dengan pendekatan natural untuk membantu membentuk kontur wajah secara halus.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Korean%20Filler%20%5Bsumber:%20ORG-filler%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/filler-treatment/korean-filler/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Nose-Job-2-benang.webp" alt="Tanam Benang Hidung Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Tanam Benang Hidung</h3>
+            <p>Threadlift untuk membantu membentuk dan mempertegas profil hidung tanpa operasi.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Tanam%20Benang%20Hidung%20%5Bsumber:%20ORG-filler%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/zo-tox-treatment-standar-10u.webp" alt="Zo-Tox Treatment Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Zo-Tox Treatment</h3>
+            <p>Suntik botox dengan Zo-Tox untuk membantu menyamarkan kerutan dan mendukung tampilan V-shape.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Zo-Tox%20Treatment%20%5Bsumber:%20ORG-filler%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Suntik Filler Dagu</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleFillerFaq(this)">
+          <span>Apa itu filler dagu dan bagaimana cara kerjanya dalam membentuk wajah?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Filler dagu (suntik filler dagu) adalah prosedur injeksi menggunakan hyaluronic acid untuk menambah volume dan membentuk dagu, sehingga profil wajah terlihat lebih proporsional dan seimbang. Filler bekerja dengan mengisi dan membentuk kontur area dagu sesuai analisis dokter.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleFillerFaq(this)">
+          <span>Apa manfaat utama suntik filler dagu untuk tampilan wajah?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Filler dagu membantu membuat profil wajah tampak lebih proporsional, mempertegas garis dagu dan rahang, memperbaiki simetri wajah, serta mendukung tampilan profil samping yang lebih ideal.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleFillerFaq(this)">
+          <span>Berapa harga suntik filler dagu di SOZO?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Harga filler dagu di SOZO Skin Clinic mulai dari Rp 5.499.000. Biaya dapat berbeda tergantung jenis dan jumlah filler yang dibutuhkan sesuai kondisi wajah Anda. Kami menyarankan konsultasi terlebih dahulu agar dokter dapat menyesuaikan rencana perawatan dan menginformasikan estimasi biaya secara transparan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleFillerFaq(this)">
+          <span>Apakah hasil filler dagu langsung terlihat setelah treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Ya, hasil filler dagu umumnya dapat langsung terlihat setelah prosedur. Bentuk akhir akan tampak lebih menyatu dalam beberapa hari hingga sekitar dua minggu, setelah filler menyesuaikan dengan jaringan di sekitarnya dan bengkak ringan mereda.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleFillerFaq(this)">
+          <span>Filler dagu bertahan berapa lama?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Hasil filler dagu umumnya bertahan sekitar 6 sampai 12 bulan, tergantung jenis filler, metabolisme tubuh, dan gaya hidup. Karena hyaluronic acid akan diserap tubuh secara bertahap, perawatan ulang dapat dilakukan untuk menjaga hasil tetap optimal.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleFillerFaq(this)">
+          <span>Apa saja pantangan setelah filler dagu?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Selama 24 sampai 48 jam pertama, sebaiknya hindari menyentuh atau memijat area dagu, hindari paparan panas berlebih seperti sauna, mandi air panas, dan sinar matahari langsung, tunda olahraga berat, serta hindari konsumsi alkohol. Penggunaan makeup pada area suntikan juga sebaiknya ditunda selama beberapa jam. Anjuran ini membantu mengurangi risiko bengkak dan menjaga posisi filler.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleFillerFaq(this)">
+          <span>Bagaimana posisi tidur yang dianjurkan setelah filler dagu?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Pada beberapa malam pertama, sebaiknya tidur dalam posisi telentang dengan kepala sedikit lebih tinggi, serta hindari tidur tengkurap atau menyamping yang menekan area dagu. Hal ini membantu menjaga posisi filler agar tidak bergeser dan mendukung hasil yang tetap optimal.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleFillerFaq(this)">
+          <span>Apakah filler dagu aman dan ada efek sampingnya?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Filler dagu umumnya aman bila dilakukan oleh dokter atau tenaga medis profesional dengan produk yang sesuai. Efek samping yang muncul biasanya ringan dan sementara, seperti bengkak, kemerahan, atau memar di area suntikan. Konsultasi dengan dokter diperlukan untuk menilai kondisi Anda dan meminimalkan risiko.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleFillerFaq(this)">
+          <span>Apa perbedaan filler dagu dengan implan dagu?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Filler dagu bersifat non-bedah dan hasilnya tidak permanen karena hyaluronic acid diserap tubuh secara bertahap, sedangkan implan dagu adalah prosedur bedah dengan hasil yang lebih permanen. Filler dagu menjadi pilihan bagi yang menginginkan perbaikan kontur tanpa operasi.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleFillerFaq(this)">
+          <span>Di mana lokasi suntik filler dagu terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Jika Anda sedang mencari klinik kecantikan untuk suntik filler dagu terdekat, Anda bisa mengunjungi seluruh cabang SOZO Skin Clinic. Setiap klinik kami didukung fasilitas medis modern, menggunakan produk berkualitas tinggi, dan ditangani langsung oleh terapis serta Dokter Kecantikan profesional. Klinik kami tersebar di berbagai wilayah Jabodetabek, termasuk Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Untuk menemukan cabang yang paling mudah dijangkau dari domisili Anda, silakan cek halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a>.</p></div>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+<script>
+  function toggleFillerDescription() {
+    const content = document.getElementById('treatmentDescriptionFiller');
+    const btn = document.querySelector('.sozo-sku-filler-dagu-wrapper .sozo-load-more-btn');
+    const btnText = document.getElementById('fillerReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function toggleFillerFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px";
+  }
+</script>
+
+
