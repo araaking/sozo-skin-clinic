@@ -1,0 +1,573 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-collagen-mask-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+
+  .sozo-sku-collagen-mask-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-collagen-mask-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-collagen-mask-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-collagen-mask-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-collagen-mask-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-collagen-mask-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-collagen-mask-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-collagen-mask-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-collagen-mask-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  /* Mengatur h3 agar senada dengan h2 */
+  .sozo-sku-collagen-mask-wrapper .sozo-description-section h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-description-section p,
+  .sozo-sku-collagen-mask-wrapper .sozo-description-section li {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-description-section ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .sozo-sku-collagen-mask-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-collagen-mask-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-collagen-mask-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-collagen-mask-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+  .sozo-sku-collagen-mask-wrapper .sozo-faq-answer a:hover {
+    color: #2e38b5 !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-collagen-mask-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-collagen-mask-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-collagen-mask-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-collagen-mask-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-collagen-mask-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-collagen-mask-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-collagen-mask-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-collagen-mask-wrapper .sozo-description-section, 
+    .sozo-sku-collagen-mask-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+  }
+</style>
+
+<div class="sozo-sku-collagen-mask-wrapper" id="sozo-collagen-mask-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/">
+          <span>Skin Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/">
+          <span>Facial Treatment</span>
+        </a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Collagen Mask Treatment</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Collagen Mask Treatment</h1>
+      <p>
+        Kembalikan kelembapan alami dan elastisitas kulit Anda secara instan dengan Collagen Mask Treatment. Perawatan facial premium ini diformulasikan khusus untuk memberikan hidrasi mendalam (deep hydration), mengunci nutrisi, serta merangsang kekenyalan kulit wajah. Solusi anti-aging praktis dan menenangkan untuk mengatasi kulit kering, kusam, dan lelah, sehingga wajah kembali tampak halus, sehat, dan glowing bercahaya hanya dalam hitungan menit.
+      </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">15 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga</span>
+            <span class="sozo-info-value">
+              Rp 199.000
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20promo%20facial%20treatment%20%5Bsumber:%20ORG-facial-general%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2026/04/collagen-mask-scaled.avif" alt="Collagen Mask Treatment Sozo Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Kembalikan Kelembapan & Elastisitas Kulit Anda</h2>
+      <p>Jangan biarkan kulit kering dan kusam mengurangi kepercayaan diri Anda. Dapatkan hidrasi mendalam untuk wajah yang lebih kenyal dan bercahaya.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Clinic,%20saya%20mau%20booking%20promo%20facial%20treatment%20%5Bsumber:%20ORG-facial-general%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+    <div class="sozo-description-section">
+      <h2>Perawatan Collagen Mask: Solusi Instan untuk Kulit Lembap & Kenyal</h2>
+      <p>Collagen Mask adalah perawatan facial berfokus pada hidrasi dan anti-aging yang menggunakan lembaran masker (atau hydrogel mask) dengan konsentrasi ekstrak kolagen murni yang tinggi. Berbeda dengan masker rumahan biasa, masker kolagen di klinik dirancang untuk penetrasi nutrisi yang lebih optimal ke dalam lapisan epidermis kulit. Treatment ini bekerja efektif mengisi kembali kadar air yang hilang, menyamarkan garis halus, dan memperbaiki tekstur kulit yang kasar.</p>
+      
+      <div class="sozo-expandable-content" id="treatmentDescriptionCollagen">
+        <div class="sozo-expandable-inner">
+          <h3>3 Manfaat Utama Collagen Mask untuk Wajah Anda</h3>
+          <p>Menambahkan masker kolagen ke dalam rutinitas perawatan kulit Anda akan memberikan transformasi yang langsung terasa:</p>
+          <ul>
+            <li><strong>Hidrasi Ekstra Mendalam (Deep Moisturizing):</strong> Kolagen memiliki kemampuan luar biasa dalam mengikat air. Masker ini memastikan kulit Anda terhidrasi secara maksimal, menjadikannya penyelamat utama bagi tipe kulit yang sangat kering atau dehidrasi.</li>
+            <li><strong>Meningkatkan Elastisitas (Efek Anti-Aging):</strong> Paparan polusi dan bertambahnya usia menurunkan produksi kolagen alami. Masker ini menyuplai kolagen ekstra untuk menjaga kulit tetap kencang, kenyal (plump), dan mencegah munculnya tanda penuaan dini (kerutan halus).</li>
+            <li><strong>Menenangkan Kulit (Soothing & Calming):</strong> Memberikan sensasi dingin yang sangat nyaman untuk meredakan kemerahan atau iritasi ringan, sekaligus membuat wajah tampak jauh lebih cerah (glowing) dan segar setelah perawatan.</li>
+          </ul>
+
+          <h3>Pilihan Pendamping Treatment Terbaik</h3>
+          <p>Meskipun dapat dilakukan secara mandiri, Collagen Mask sangat direkomendasikan sebagai perawatan penutup (finishing step) setelah Anda melakukan tindakan lain, seperti Basic Facial, Peeling, atau ekstraksi komedo. Masker ini akan membantu menenangkan pori-pori yang terbuka dan memaksimalkan penyerapan serum yang diaplikasikan sebelumnya.</p>
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn" onclick="toggleCollagenDescription()">
+        <span id="collagenReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Collagen Mask</h2>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCollagenFaq(this)">
+          <span>Apa itu perawatan Collagen Mask?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Collagen Mask adalah perawatan facial non-invasif yang mengaplikasikan masker dengan kandungan kolagen murni berintensitas tinggi pada wajah. Tujuannya adalah untuk membanjiri kulit dengan hidrasi ekstra, mengunci kelembapan, serta meningkatkan elastisitas kulit agar wajah kembali kenyal dan tidak kusam.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCollagenFaq(this)">
+          <span>Siapa yang cocok untuk melakukan perawatan Collagen Mask?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Perawatan ini sangat aman dan cocok untuk semua jenis kulit, namun sangat direkomendasikan bagi individu yang memiliki permasalahan kulit kering, dehidrasi, kusam, atau yang mulai menyadari munculnya tanda-tanda penuaan dini (aging) seperti garis-garis halus.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCollagenFaq(this)">
+          <span>Apakah hasil dari Collagen Mask bisa langsung terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Ya, hasilnya sangat instan. Segera setelah masker diangkat (sekitar 15 menit perawatan), Anda akan langsung merasakan tekstur kulit wajah yang jauh lebih lembap, halus, sejuk, dan kenyal (plump). Wajah juga akan memancarkan efek glowing alami yang sehat.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCollagenFaq(this)">
+          <span>Berapa kali saya harus melakukan perawatan Collagen Mask?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Untuk menjaga tingkat hidrasi dan elastisitas kulit yang optimal, Anda dapat melakukan perawatan Collagen Mask secara rutin setiap 1 hingga 2 minggu sekali. Perawatan ini sangat aman dijadikan rutinitas mingguan untuk menjaga keremajaan kulit Anda.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCollagenFaq(this)">
+          <span>Berapa harga treatment Collagen Mask per sesi?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Harga treatment Collagen Mask di Sozo Skin Clinic sangat terjangkau, yaitu hanya Rp 199.000 per sesi dengan durasi tindakan sekitar 15 menit. Anda juga dapat dengan mudah mengombinasikan masker ini sebagai tambahan (add-on) saat melakukan treatment facial lainnya di klinik kami.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleCollagenFaq(this)">
+          <span>Di mana saya bisa mendapatkan perawatan Collagen Mask terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Anda dapat menikmati sensasi menenangkan dari perawatan Collagen Mask di seluruh jaringan cabang Sozo Skin Clinic. Kami berlokasi di berbagai titik strategis di wilayah Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Silakan kunjungi halaman Lokasi Cabang Sozo Skin Clinic untuk menemukan klinik terdekat dari domisili Anda dan lakukan reservasi sekarang juga.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleCollagenDescription() {
+    const content = document.getElementById('treatmentDescriptionCollagen');
+    const btn = content.nextElementSibling;
+    const btnText = document.getElementById('collagenReadMoreText');
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+
+  function toggleCollagenFaq(button) {
+    const answer = button.nextElementSibling;
+    button.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
