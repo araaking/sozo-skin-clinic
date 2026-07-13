@@ -1,6 +1,6 @@
 # 📝 Sozo Skin Clinic - Schema Markup Migration Project
 
-> **Versi:** 1.2 | **Tanggal Update:** 2 Juli 2026
+> **Versi:** 1.7 | **Tanggal Update:** 13 Juli 2026
 > **Fokus Utama:** Migrasi dari Yoast SEO ke Custom Schema (JSON-LD) via `@graph`[cite: 1]
 
 Proyek ini bertujuan untuk mengontrol penuh struktur schema markup di `sozoskinclinic.com`, mengeliminasi error bawaan Yoast, dan membangun *Knowledge Graph* terpusat per tipe halaman untuk memaksimalkan SEO[cite: 1]. Seluruh schema Yoast telah dimatikan secara global via WPCode[cite: 1].
@@ -51,6 +51,7 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [x] Body Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/hair-removal-body-treatment/`)
 - [x] Underarm Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/underarm-hair-removal-treatment/`)
 - [x] Underarm Brightening (`https://sozoskinclinic.com/hair-removal-treatment/underarm-brightening-treatment/`)
+- [ ] DPL Treatment (`https://sozoskinclinic.com/hair-removal-treatment/dpl-treatment/`) — *sub-treatment baru, schema belum dibuat*
 
 ### 🦱 3. Hair Treatment (Category Hub & Subs)
 - [x] **Main Hub: Hair Treatment** (`https://sozoskinclinic.com/hair-treatment/`)[cite: 1]
@@ -61,53 +62,58 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [x] Biolight Hair (`https://sozoskinclinic.com/hair-treatment/biolight-hair-treatment/`)
 - [x] Beard Treatment (`https://sozoskinclinic.com/hair-treatment/beard-grow-treatment/`)
 - [x] Treatment Alis - Brow Grow (`https://sozoskinclinic.com/hair-treatment/brow-grow/`)
+- [x] Salmon DNA Hair Treatment (`https://sozoskinclinic.com/hair-treatment/salmon-dna-hair-treatment/`)
+- [x] Express Hair Therapy (`https://sozoskinclinic.com/hair-treatment/express-hair-therapy/`)
+- [ ] Treatment Alis - Brow Grow (varian URL) (`https://sozoskinclinic.com/hair-treatment/treatment-alis-brow-grow/`) — *alias URL, canonical `brow-grow`*
 
 ### 💃 4. Slimming, RF, & Meso Treatment (Shape & Contouring)
 - [x] **Main Hub: Slimming Treatment** (`https://sozoskinclinic.com/slimming-treatment/`)[cite: 1]
 - [ ] Caloburn Treatment (`https://sozoskinclinic.com/caloburn-treatment/`)
-- [ ] UltraSculpt Treatment (`https://sozoskinclinic.com/ultrascrupt-treatment/`)
-- [ ] **Meso Treatment Hub** (`https://sozoskinclinic.com/meso-treatment/`)
-    - [ ] Meso Slim Body (`https://sozoskinclinic.com/meso-treatment/meso-slim-body/`)
-    - [ ] Meso V Line (`https://sozoskinclinic.com/meso-treatment/meso-v-line/`)
-    - [ ] Meso Bloataway (`https://sozoskinclinic.com/meso-treatment/meso-bloataway/`)
-    - [ ] Meso Cellulift (`https://sozoskinclinic.com/meso-treatment/meso-cellulift/`)
-    - [ ] Meso Metabolic Boost (`https://sozoskinclinic.com/meso-treatment/meso-metabolic-boost/`)
-- [ ] **RF Treatment Hub** (`https://sozoskinclinic.com/radiofrequency-treatment/`)
-    - [ ] RF Face / Wajah (`https://sozoskinclinic.com/radiofrequency-treatment/rf-face/`)
-    - [ ] RF Body (`https://sozoskinclinic.com/radiofrequency-treatment/rf-body/`)
+- [ ] UltraSculpt Treatment (`https://sozoskinclinic.com/ultrasculpt-treatment/`) — *URL live benar `ultrasculpt`, README lama pakai typo `ultrascrupt`*
+- [x] **Meso Treatment Hub** (`https://sozoskinclinic.com/meso-treatment/`)
+    - [x] Meso Slim Body (`https://sozoskinclinic.com/meso-treatment/meso-slim-body/`) — Rp 1.499.000
+    - [x] Meso V Line (`https://sozoskinclinic.com/meso-treatment/meso-v-line/`) — Rp 299.000
+    - [x] Meso Bloatway (`https://sozoskinclinic.com/meso-treatment/meso-bloataway/`) — Rp 949.000
+    - [x] Meso Cellulift (`https://sozoskinclinic.com/meso-treatment/meso-cellulift/`) — Rp 1.299.000
+    - [x] Meso Metabolic Boost (`https://sozoskinclinic.com/meso-treatment/meso-metabolic-boost/`) — Rp 1.499.000
+- [x] **RF Treatment Hub** (`https://sozoskinclinic.com/radiofrequency-treatment/`)
+    - [x] RF Face / Wajah (`https://sozoskinclinic.com/radiofrequency-treatment/rf-face/`) — Rp 299.000
+    - [x] RF Body (`https://sozoskinclinic.com/radiofrequency-treatment/rf-body/`) — Rp 299.000
 
 ### 💉 5. Injectable & Anti-Aging Treatment
 - [x] **Main Hub: Injectable Treatment** (`https://sozoskinclinic.com/injectable-treatment/`)
 - [ ] **Botox:** Zo-Tox Treatment (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/`)
-- [ ] **Threadlift:** Tanam Benang Hub (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/`)
-    - [ ] Tanam Benang Hidung (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/`)
-- [ ] **Infus Whitening Hub** (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/`)
-    - [ ] Infus Vitamin C Immune Glow (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow-injection/`)
-- [ ] **Filler Treatment Hub** (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/`)
-    - [ ] Filler Dagu (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/filler-dagu/`)
-    - [ ] Korean Filler (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/korean-filler/`)
-- [ ] **Skin Booster Hub** (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/`)
-    - [ ] Skin Booster DNA Salmon (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/dna-glow/`)
-    - [ ] Exosome Skin Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/exosome-skin-booster/`)
-    - [ ] Profhilo (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/profhilo/`)
-    - [ ] Jalupro (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/jalupro-treatment/`)
-    - [ ] Juvelook (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/juvelook/`)
-    - [ ] Nucleofill (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/nucleofil-treatment/`)
-    - [ ] Rejuran Healer (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-healer/`)
-    - [ ] Rejuran HB (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-hb-treatment/`)
-    - [ ] Rejuran Eye (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-eye/`)
-    - [ ] Rejuran Skin Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-skin-booster/`)
-    - [ ] Restylane Skinbooster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/restylane-skinbooster/`)
-    - [ ] Xela Rederm (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/xela-rederm-treatment/`)
-    - [ ] Glass Skin Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/glass-skin-booster/`)
-    - [ ] Treatment Mata Panda (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/eye-booster/`)
-    - [ ] Pink Bomb Booster / Lips (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-lips-booster/`)
+- [x] **Threadlift:** Tanam Benang Hub (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/`)
+    - [x] Tanam Benang Hidung (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/`) — Rp 2.499.000
+- [x] **Infus Whitening Hub** (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/`)
+    - [x] Infus Vitamin C Immune Glow (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow-injection/`) — Rp 1.099.000
+- [x] **Filler Treatment Hub** (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/`)
+    - [x] Filler Dagu (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/filler-dagu/`) — Rp 5.499.000
+    - [x] Korean Filler (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/korean-filler/`) — Rp 2.999.000
+- [x] **Skin Booster Hub** (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/`)
+    - [x] Aquashine Treatment (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/aquashine-treatment/`) — Rp 799.000
+    - [x] Skin Booster DNA Salmon (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/dna-glow/`) — Rp 1.749.000
+    - [x] Exosome Skin Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/exosome-skin-booster/`) — Rp 4.899.000
+    - [x] Profhilo (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/profhilo/`) — Rp 6.999.000
+    - [x] Jalupro (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/jalupro-treatment/`) — Rp 8.598.000
+    - [x] Juvelook (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/juvelook/`) — Rp 5.599.000
+    - [x] Nucleofill (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/nucleofil-treatment/`) — Rp 6.499.000
+    - [x] Rejuran Healer (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-healer/`) — Rp 3.999.000
+    - [x] Rejuran HB (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-hb-treatment/`) — Rp 4.099.000
+    - [x] Rejuran Eye (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-eye/`) — Rp 3.099.000
+    - [x] Rejuran Skin Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-skin-booster/`) — Rp 2.999.000 (schema siap, WPCode belum dipasang)
+    - [x] Restylane Skinbooster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/restylane-skinbooster/`) — Rp 3.999.000
+    - [x] Xela Rederm (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/xela-rederm-treatment/`) — Rp 4.499.000
+    - [x] Glass Skin Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/glass-skin-booster/`) — Rp 2.199.000
+    - [x] Treatment Mata Panda (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/eye-booster/`) — Rp 1.799.000
+    - [x] Pink Bomb Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-bomb-booster/`) — Rp 2.999.000
+    - [x] Pink Lips Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-lips-booster/`) — Rp 1.799.000
 
 ### 🧪 6. Advanced Skin & Facial Treatment
 - [ ] **Main Hub: Beauty Treatment** (`https://sozoskinclinic.com/treatment/`)
 - [x] **Skin Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/`)
-- [ ] **HIFU Treatment Hub** (`https://sozoskinclinic.com/hifu-treatment/`)
-    - [ ] Liftera HIFU (`https://sozoskinclinic.com/hifu-treatment/liftera-hifu/`)
+- [x] **HIFU Treatment Hub** (`https://sozoskinclinic.com/hifu-treatment/`)
+    - [x] Liftera HIFU (`https://sozoskinclinic.com/hifu-treatment/liftera-hifu/`) — Rp 699.000
 - [x] **Facial Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/facial-treatment/`)
     - [x] Signature Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/signature-facial/`)
     - [x] Mini Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/mini-facial-treatment/`)
@@ -115,16 +121,18 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [x] Acne Laser Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-laser-facial/`)
     - [x] Brightening Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/brightening-facial/`)
     - [x] Diamond Laser Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/diamond-laser-facial/`)
-    - [ ] Collagen Mask (`https://sozoskinclinic.com/skin-treatment/facial-treatment/collagen-mask/`)
+    - [x] Collagen Mask (`https://sozoskinclinic.com/skin-treatment/facial-treatment/collagen-mask/`) — Rp 199.000 (schema siap, WPCode belum dipasang)
     - [x] Sylfirm X (`https://sozoskinclinic.com/skin-treatment/facial-treatment/sylfirm-x/`)
 - [ ] **Acne Treatment (Non-Facial)** (`https://sozoskinclinic.com/skin-treatment/acne-treatment/`)
-- [ ] **IPL Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/`)
-    - [ ] IPL Acne (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/ipl-acne/`)
-    - [ ] IPL Glow (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/ipl-glow/`)
-- [ ] **Derma Peel Hub** (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/`)
-    - [ ] Acne Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/acne-peel/`)
-    - [ ] Glow Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/glow-peel/`)
-    - [ ] Dazzling Glow Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/dazling-glow-peel/`)
+    - [x] Pore Detox (`https://sozoskinclinic.com/skin-treatment/acne-treatment/pore-detox/`) — Rp 799.000 (schema siap, WPCode belum dipasang)
+- [x] **IPL Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/`)
+    - [x] IPL Acne (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/ipl-acne/`) — Rp 399.000
+    - [x] IPL Glow (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/ipl-glow/`) — Rp 399.000
+- [x] **Derma Peel Hub** (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/`)
+    - [x] Acne Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/acne-peel/`) — Rp 299.000
+    - [x] Glow Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/glow-peel/`) — Rp 299.000
+    - [x] Dazzling Glow Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/dazling-glow-peel/`) — Rp 889.000
+    - [x] Eternal Bloom Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/eternal-bloom-peel/`) — Rp 599.000
 - [x] **Laser Treatment Hub (Laser Wajah)** (`https://sozoskinclinic.com/skin-treatment/laser-treatment/`)
     - [x] Laser CO2 (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-co2-treatment/`)
     - [x] Laser Rejuve (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-rejuve-treatment/`)
@@ -150,6 +158,7 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [ ] Pembersih Wajah (`https://sozoskinclinic.com/product/pembersih-wajah-toner/`)
 - [ ] Day Cream (`https://sozoskinclinic.com/product/pelembap-wajah/`)
 - [ ] Moisturizer (`https://sozoskinclinic.com/product/moisturizer-luminous-silk/`)
+- [ ] Suplemen Pelangsing (`https://sozoskinclinic.com/suplemen-pelangsing/`) — *landing page suplemen, di luar rumpun `/product/*`*
 
 ### 📍 8. Local Business / Medical Clinic Pages (Cabang Lokasi)
 *Catatan: Gunakan kombinasi `MedicalClinic` + `LocalBusiness` per cabang lokasi.*
@@ -165,10 +174,17 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [ ] Klinik Kecantikan Semarang (`https://sozoskinclinic.com/lokasi/semarang/`)
 - [ ] Klinik Kecantikan Surabaya (`https://sozoskinclinic.com/lokasi/surabaya/`)
 - [ ] Klinik Kecantikan Tangerang (`https://sozoskinclinic.com/lokasi/tangerang/`)
+    - [ ] Karawaci (`https://sozoskinclinic.com/lokasi/tangerang/karawaci/`)
+    - [ ] Greenlake (`https://sozoskinclinic.com/lokasi/tangerang/greenlake/`)
+    - [ ] Gading Serpong (`https://sozoskinclinic.com/lokasi/tangerang/gading-serpong/`)
 - [ ] Klinik Kecantikan Cirebon (`https://sozoskinclinic.com/lokasi/cirebon/`)
 - [ ] Klinik Kecantikan Solo (`https://sozoskinclinic.com/lokasi/solo/`)
 - [ ] Klinik Kecantikan Balikpapan (`https://sozoskinclinic.com/lokasi/balikpapan/`)
 - [ ] Klinik Kecantikan Cikarang (`https://sozoskinclinic.com/lokasi/cikarang/`)
+- [ ] Klinik Kecantikan Palembang (`https://sozoskinclinic.com/lokasi/palembang/`)
+- [ ] Klinik Kecantikan Pekanbaru (`https://sozoskinclinic.com/lokasi/pekanbaru/`)
+- [ ] Klinik Kecantikan Manado (`https://sozoskinclinic.com/lokasi/manado/`)
+- [ ] Klinik Kecantikan Batam (`https://sozoskinclinic.com/lokasi/batam/`)
 - [ ] **Kluster Jabodetabek Tambahan:**
     - [ ] Klinik Kecantikan Jakarta (`https://sozoskinclinic.com/lokasi/jakarta/`)
     - [ ] Jakarta Selatan (`https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/`)
@@ -188,6 +204,7 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [ ] Tangerang Selatan (`https://sozoskinclinic.com/lokasi/tangerang-selatan/`)
     - [ ] Bintaro (`https://sozoskinclinic.com/lokasi/tangerang-selatan/bintaro/`)
     - [ ] BSD (`https://sozoskinclinic.com/lokasi/tangerang-selatan/bsd/`)
+    - [ ] Bali (`https://sozoskinclinic.com/lokasi/bali/`) — *cabang di luar Jawa*
 
 ---
 

@@ -4,9 +4,9 @@ Sozo Skin Clinic — sozoskinclinic.com
 
 *Migrasi dari Yoast SEO ke Custom Schema (JSON-LD)*
 
-Versi 1.1  •  2 Juli 2026
+Versi 1.6  •  13 Juli 2026
 
-**Status: 33 dari 133 halaman selesai**
+**Status: 72 dari 137 halaman memiliki custom schema + 1 README sync (DPL, alias URL Brow Grow, cabang Tangerang/Palembang/Pekanbaru/Manado/Batam, suplemen-pelangsing)**
 
 # **1\. Ringkasan Proyek**
 
@@ -666,6 +666,225 @@ Struktur @graph (4 node):
 
 Microdata breadcrumb (itemscope/itemtype) dan Product/Offer telah dihapus dari HTML body. Schema awal tidak memiliki node BreadcrumbList di @graph, harga di schema masih angka lama (459.000), FAQ Q7 menyebut harga lama, deskripsi Service & MedicalWebPage berbeda, dan URL di schema menggunakan typo "subsicion" (dobel s). Semua diperbaiki: URL dikoreksi ke "subcision" (sinkron dengan folder), harga di schema dan FAQ disamakan ke Rp 299.000 (halaman aktif), deskripsi Service diselaraskan dengan MedicalWebPage, dan 4-level breadcrumb lengkap ditambahkan. Dipasang via WPCode tipe HTML, kondisi: Page URL contains subcision-treatment.
 
+## **5.35 Salmon DNA Hair Treatment — SELESAI**
+
+URL: https://sozoskinclinic.com/hair-treatment/salmon-dna-hair-treatment/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: http://schema.org/Dermatology.
+
+* **BreadcrumbList** — Home › Hair Treatment › Salmon DNA Hair (3 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 2.199.000 (Mulai dari). Service.alternateName: "PDRN Hair Treatment". Treatment injeksi mesoterapi PDRN (Polydeoxyribonucleotide) dari DNA salmon untuk regenerasi folikel.
+
+* **FAQPage** — 6 pertanyaan dari konten existing (keamanan PDRN, rasa sakit, jumlah sesi optimal, kombinasi dengan PRP, harga, lokasi cabang).
+
+Microdata breadcrumb (itemscope/itemtype) dan Product/Offer telah dihapus dari HTML body. Dipasang via WPCode tipe HTML, kondisi: Page URL contains salmon-dna-hair-treatment.
+
+## **5.36 Express Hair Therapy — SELESAI**
+
+URL: https://sozoskinclinic.com/hair-treatment/express-hair-therapy/
+
+Struktur @graph (4 node):
+
+* **MedicalWebPage** — subtipe khusus halaman medis, dengan specialty: http://schema.org/Dermatology.
+
+* **BreadcrumbList** — Home › Hair Treatment › Express Hair Therapy (3 level, URL sesuai hierarki).
+
+* **Service + offers** — Single treatment dengan PriceSpecification: Rp 699.000 (Mulai dari). Service.alternateName: "Express Hair Treatment". Treatment non-invasif (deep cleansing kulit kepala) — tidak menggunakan jarum atau bahan kimia keras, tidak ada downtime.
+
+* **FAQPage** — 9 pertanyaan dari konten existing (definisi, keamanan, durasi 30–45 menit, efek samping, frekuensi maintenance, jenis rambut yang cocok, harga, persiapan, lokasi cabang).
+
+Microdata breadcrumb (itemscope/itemtype) dan Product/Offer telah dihapus dari HTML body. Dipasang via WPCode tipe HTML, kondisi: Page URL contains express-hair-therapy.
+
+## **5.37 Batch Pull 10 Juli 2026 — SELESAI (34 halaman)**
+
+Commit pull `624c06a` menambahkan 34 halaman schema sekaligus dari satu sprint. Pola `MedicalWebPage` + `BreadcrumbList` + `Service` + `FAQPage` sudah jadi standar dan dipakai konsisten di seluruh batch. Tidak ada lagi schema Product/Offer yang lolos.
+
+### **A. Slimming, RF & Meso (8 halaman, Rp 299.000–1.499.000)**
+
+| # | Treatment | URL Slug | Harga | FAQ |
+| :- | :-- | :-- | --: | :-: |
+| 1 | Meso Slim Body | meso-slim-body | Rp 1.499.000 | 14 |
+| 2 | Meso V Line | meso-v-line | Rp 299.000 | 8 |
+| 3 | Meso Bloatway | meso-bloataway | Rp 949.000 | 8 |
+| 4 | Meso Cellulift | meso-cellulift | Rp 1.299.000 | 8 |
+| 5 | Meso Metabolic Boost | meso-metabolic-boost | Rp 1.499.000 | 8 |
+| 6 | Liftera HIFU | liftera-hifu | Rp 699.000 | 6 |
+| 7 | Radiofrequency Face | rf-face | Rp 299.000 | 8 |
+| 8 | Radiofrequency Body | rf-body | Rp 299.000 | 8 |
+
+Catatan: folder lokal `slimming-treatment/meso-treatment/meso-bloatway/` (tanpa huruf 'a' di "bloatway") tapi URL live pakai `meso-bloataway` (dengan 'a'). Penulisan README konsisten ke URL live.
+
+### **B. Injectable — Filler, Threadlift, Infus (4 halaman, Rp 1.099.000–5.499.000)**
+
+| # | Treatment | URL Slug | Harga | FAQ |
+| :- | :-- | :-- | --: | :-: |
+| 9 | Filler Dagu | filler-dagu | Rp 5.499.000 | 10 |
+| 10 | Korean Filler | korean-filler | Rp 2.999.000 | 10 |
+| 11 | Tanam Benang Hidung (Nose Threadlift) | threadlift-treatment/tanam-benang-hidung | Rp 2.499.000 | 9 |
+| 12 | Infus Vitamin C (Immune Glow Injection) | infus-whitening-treatment/infus-vitamin-c-immune-glow-injection | Rp 1.099.000 | 9 |
+
+Catatan: folder lokal `treadlift-treatment/` (typo, tanpa 'h'). URL live dan penulisan schema pakai `threadlift-treatment` (dengan 'h') sesuai konsensus dokumentasi. Typo tidak menyebabkan error teknis, hanya rapikan saat refactor berikutnya.
+
+### **C. Injectable — Skin Booster (16 halaman, Rp 799.000–8.598.000)**
+
+| # | Treatment | URL Slug | Harga | FAQ |
+| :- | :-- | :-- | --: | :-: |
+| 13 | Aquashine Treatment | aquashine-treatment | Rp 799.000 | 14 |
+| 14 | DNA Glow (Skin Booster DNA Salmon) | dna-glow | Rp 1.749.000 | 10 |
+| 15 | Exosome Face Treatment | exosome-skin-booster | Rp 4.899.000 | 5 |
+| 16 | Panda Eye Booster | eye-booster | Rp 1.799.000 | 9 |
+| 17 | Glass Skin Booster | glass-skin-booster | Rp 2.199.000 | 9 |
+| 18 | Jalupro Treatment | jalupro-treatment | Rp 8.598.000 | 5 |
+| 19 | Juvelook | juvelook | Rp 5.599.000 | 5 |
+| 20 | Nucleofill | nucleofil-treatment | Rp 6.499.000 | 6 |
+| 21 | Pink Bomb Booster | pink-bomb-booster | Rp 2.999.000 | 14 |
+| 22 | Pink Lips Booster | pink-lips-booster | Rp 1.799.000 | 9 |
+| 23 | Profhilo Treatment | profhilo | Rp 6.999.000 | 6 |
+| 24 | Rejuran Eye | rejuran-eye | Rp 3.099.000 | 9 |
+| 25 | Rejuran HB | rejuran-hb-treatment | Rp 4.099.000 | 5 |
+| 26 | Rejuran Healer | rejuran-healer | Rp 3.999.000 | 11 |
+| 27 | Restylane Skinbooster | restylane-skinbooster | Rp 3.999.000 | 7 |
+| 28 | Xela Rederm | xela-rederm-treatment | Rp 4.499.000 | 5 |
+
+Catatan: range harga skin booster paling lebar di antara semua batch (799rb–8,5 juta). Variation ini karena beda generasi produk (Aquashine entry-level vs Jalupro premium). Di FAQ biasanya sudah eksplisit menyebut jumlah sesi & kombinasi treatment untuk tiap use case.
+
+### **D. Advanced Skin — IPL & Derma Peel (6 halaman, Rp 299.000–889.000)**
+
+| # | Treatment | URL Slug | Harga | FAQ |
+| :- | :-- | :-- | --: | :-: |
+| 29 | IPL Acne Treatment | skin-treatment/ipl-treatment/ipl-acne | Rp 399.000 | 7 |
+| 30 | IPL Glow | skin-treatment/ipl-treatment/ipl-glow | Rp 399.000 | 4 |
+| 31 | Acne Peel | skin-treatment/derma-peel-treatment/acne-peel | Rp 299.000 | 9 |
+| 32 | Glow Peel | skin-treatment/derma-peel-treatment/glow-peel | Rp 299.000 | 9 |
+| 33 | Dazzling Glow Peel | skin-treatment/derma-peel-treatment/dazling-glow-peel | Rp 889.000 | 3 |
+| 34 | Eternal Bloom Peel | skin-treatment/derma-peel-treatment/eternal-bloom-peel | Rp 599.000 | 7 |
+
+**Catatan penting — IPL Acne pakai pola Offer langsung, bukan PriceSpecification.** Schema Service untuk IPL Acne menulis `offers` sebagai `Offer` langsung dengan field `price`/`priceCurrency`/`priceValidUntil`/`itemCondition`, tanpa membungkus di `PriceSpecification`. Sepuluh file lain di batch ini konsisten pakai pola `PriceSpecification` di dalam `Offer` (mengikuti template Hair Removal).
+
+Pola IPL Acne tetap valid (Offer dengan price adalah bentuk dasar yang legal), tapi **tidak konsisten** dengan standar tim. Rekomendasi: refactor IPL Acne ke pola `PriceSpecification` saat sentuhan berikutnya untuk konsistensi penuh. Jangan refactor dalam sprint ini — risiko regression tidak sebanding benefit.
+
+Derma Peel entry price (Rp 299.000) dipasang sebagai "Mulai dari" untuk Acne Peel & Glow Peel. Eternal Bloom Peel diposisikan sebagai varian premium entry (Rp 599.000), Dazzling Glow Peel sebagai varian tertinggi (Rp 889.000).
+
+## **5.38 Pore Detox Treatment — SCHEMA SIAP, WPCODE BELUM**
+
+URL: https://sozoskinclinic.com/skin-treatment/acne-treatment/pore-detox/
+
+Commit pull `fbc772f` (13 Juli 2026) menyertakan dua file:
+
+* `treatment/skin-treatment/acne-treatment/pore-detox/index.html` — layout halaman (breadcrumb visual, hero, FAQ accordion, dll).
+* `treatment/skin-treatment/acne-treatment/pore-detox/schema-markup.html` — blok `<script type="application/ld+json">` lengkap.
+
+Struktur `@graph` (4 node):
+
+* **MedicalWebPage** — specialty: Dermatology, pointer `isPartOf` → `#website`, `about` → `#organization`, `breadcrumb` → `#breadcrumb`.
+
+* **BreadcrumbList** — Home › Skin Treatment › Acne Treatment › Pore Detox Treatment (4 level).
+
+* **Service + offers** — Single paket (bukan `hasOfferCatalog`) dengan `Offer` + `PriceSpecification` Rp 799.000 (Mulai dari). Paket mengombinasikan Biolight Acne, IPL Acne, Acne Peel, dan rangkaian skincare.
+
+* **FAQPage** — 14 pertanyaan dari konten.
+
+**Catatan untuk QC sebelum WPCode:**
+
+* `PriceSpecification` belum memuat `priceValidUntil` (lihat AGENTS.md §"Advanced Skin"). Tambahkan sebelum aktivasi.
+* Validasi di validator.schema.org dan Rich Results Test belum dijalankan di sini.
+* Snippet WPCode belum dibuat di lingkungan produksi; pasang dengan kondisi **Page URL contains `pore-detox`**.
+
+### **Checklist WPCode untuk Batch Ini**
+
+| Kategori | Slug kondisi WPCode |
+| :-- | :-- |
+| Meso | `meso-slim-body`, `meso-v-line`, `meso-bloataway`, `meso-cellulift`, `meso-metabolic-boost` |
+| HIFU | `liftera-hifu` |
+| RF | `rf-face`, `rf-body` |
+| Filler | `filler-dagu`, `korean-filler` |
+| Threadlift | `tanam-benang-hidung` |
+| Infus | `infus-vitamin-c-immune-glow-injection` |
+| Skin Booster (16) | slug masing-masing, lihat tabel di atas |
+| IPL | `ipl-acne`, `ipl-glow` |
+| Derma Peel (4) | slug masing-masing, lihat tabel di atas |
+
+**Catatan tambahan:** Pore Detox menggunakan slug `pore-detox` (lihat §5.38) — snippet WPCode-nya belum dibuat saat dokumen ini diperbarui.
+
+## **5.39 Collagen Mask Treatment — SCHEMA SIAP, WPCODE BELUM**
+
+URL: https://sozoskinclinic.com/skin-treatment/facial-treatment/collagen-mask/
+
+Commit pull `3e28a28` (13 Juli 2026) menambahkan dua file:
+
+* `treatment/skin-treatment/facial-treatment/collagen-mask/index.html` — layout halaman (breadcrumb visual, hero, FAQ accordion).
+* `treatment/skin-treatment/facial-treatment/collagen-mask/schema-markup.html` — blok `<script type="application/ld+json">` lengkap.
+
+Struktur `@graph` (4 node):
+
+* **MedicalWebPage** — specialty: Dermatology, pointer `isPartOf` → `#website`, `about` → `#organization`.
+
+* **BreadcrumbList** — Home › Skin Treatment › Facial Treatment › Collagen Mask Treatment (4 level).
+
+* **Service + offers** — Single treatment dengan `Offer` + `PriceSpecification` Rp 199.000 (Mulai dari).
+
+* **FAQPage** — 6 pertanyaan dari konten (definisi, kandidat, hasil terlihat, jumlah sesi, harga, lokasi).
+
+Catatan: di README.md dan AGENTS.md halaman ini sebelumnya salah dikategorikan di bawah "Skin Booster Hub". Posisi sebenarnya: **Facial Treatment Hub** (bukan injeksi, treatment topikal).
+
+## **5.40 Rejuran Skin Booster — SCHEMA SIAP, WPCODE BELUM**
+
+URL: https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-skin-booster/
+
+Commit pull `3e28a28` (13 Juli 2026) menambahkan dua file:
+
+* `treatment/injectable-treatment/skin-booster-treatment/rejuran-skin-booster/index.html` — layout halaman.
+* `treatment/injectable-treatment/skin-booster-treatment/rejuran-skin-booster/schema-markup.html` — JSON-LD schema markup.
+
+Struktur `@graph` (4 node):
+
+* **MedicalWebPage** — specialty: Dermatology, pointer `isPartOf` → `#website`, `about` → `#organization`.
+
+* **BreadcrumbList** — Home › Injectable Treatment › Skin Booster Treatment › Rejuran Skin Booster (4 level).
+
+* **Service + offers** — Single treatment dengan `Offer` + `PriceSpecification` Rp 2.999.000 (Mulai dari).
+
+* **FAQPage** — 9 pertanyaan dari konten (definisi & cara kerja, manfaat utama, beda dengan Rejuran Healer, kandidat, jumlah sesi, durasi hasil, harga, keamanan, lokasi).
+
+Catatan: FAQ Q3 secara eksplisit membedakan Rejuran Skin Booster (formulasi polynucleotide untuk hidrasi) dengan Rejuran Healer (regenerasi kulit rusak). Pastikan jawaban di schema match dengan positioning produk di halaman.
+
+## **5.41 Rename File Batch 13 Juli 2026 — SELESAI**
+
+Commit `3608483` men-swap seluruh folder tracked dari pola lama (`fix.html` body + `index.html` JSON-LD) ke pola baru (`index.html` body + `schema-markup.html` JSON-LD).
+
+* **Total folder ter-rename:** 70+ folder tracked (lihat git log untuk detail).
+* **Folder dari pull `3e28a28`** (Collagen Mask & Rejuran Skin Booster): langsung ditulis dengan pola baru, swap tidak diperlukan.
+* **Konvensi final:** lihat AGENTS.md §4 untuk definisi peran masing-masing file.
+
+Implikasi operasional: snippet WPCode untuk `schema-markup.html` perlu diperbarui path kondisinya jika ada snippet lama yang merujuk ke `fix.html` atau `index.html` sebagai sumber schema. Audit snippet WPCode sebelum push.
+
+## **5.42 URL Baru Audit 13 Juli 2026 — README SYNC**
+
+Audit silang antara daftar URL yang harus ada di README.md dengan isi dokumen. Hasilnya, 11 URL missing ditambah 2 anomali ejaan:
+
+* **Missing dari checklist README.md** (semua status BELUM, schema belum dibuat):
+  - `hair-removal-treatment/dpl-treatment/` (sub-treatment baru)
+  - `hair-treatment/treatment-alis-brow-grow/` (alias URL untuk `brow-grow/`)
+  - `suplemen-pelangsing/` (landing page suplemen, di luar rumpun `/product/*`)
+  - `lokasi/tangerang/karawaci/`, `greenlake/`, `gading-serpong/` (sub-cabang Tangerang)
+  - `lokasi/palembang/`, `pekanbaru/`, `manado/`, `batam/` (cabang baru di luar Jawa)
+* **Anomali ejaan** (sudah dikoreksi di README.md):
+  - `ultrascrupt-treatment/` → `ultrasculpt-treatment/` (typo lama)
+  - `salmon-dna-hair/` (versi URL user tanpa `-treatment`) → dokumentasi & repo pakai `salmon-dna-hair-treatment/`
+* **Anomali URL user** (tidak perlu dikoreksi di README, hanya dicatat):
+  - `skin-treatment/scar-treatment/subsicion-treatment/` (typo dobel 's') — URL live benar `subcision-treatment/`, dokumentasi §5.34 sudah benar.
+
+URL baru di atas tidak punya schema JSON-LD sendiri di repo (belum ada folder). Status tunggu Generate.
+
+## **5.43 Alias URL Brow Grow — CATATAN**
+
+URL `https://sozoskinclinic.com/hair-treatment/treatment-alis-brow-grow/` kemungkinan adalah alias/redirect dari `brow-grow/` (canonical). Sebelum generate schema, verifikasi dulu apakah URL ini return 200 atau 301/302 ke canonical. Jika 301, cukup satu schema di URL canonical — tidak perlu duplikasi. Schema.org duplicate content pada URL berbeda meski dengan entity sama tetap memicu warning.
+
+Pemeriksaan cepat via curl/HEAD: cek HTTP status + Location header. Dokumentasikan hasilnya sebelum commit keputusan schema.
+
 # **6\. Cara Memasang Schema (WPCode)**
 
 ## **Untuk Schema Baru (HTML)**
@@ -749,10 +968,23 @@ Sebelum menandai sebuah halaman "selesai", pastikan:
 | Rejuran Scar Treatment | 1 | SELESAI |
 | Restylane Scar | 1 | SELESAI |
 | Subcision Treatment | 1 | SELESAI |
-| Halaman treatment lain (LP) | \~100 | Belum — pakai template Hair Removal |
+| Salmon DNA Hair Treatment | 1 | SELESAI |
+| Express Hair Therapy | 1 | SELESAI |
+| **Batch 10 Juli 2026 — Slimming/RF/Meso** | **8** | **SELESAI** (Meso Slim Body, V Line, Bloatway, Cellulift, Metabolic Boost, Liftera HIFU, RF Face, RF Body) |
+| **Batch 10 Juli 2026 — Injectable** | **20** | **SELESAI** (Filler Dagu, Korean Filler, Tanam Benang Hidung, Infus Vitamin C, 16 Skin Booster) |
+| **Batch 10 Juli 2026 — Advanced Skin** | **6** | **SELESAI** (IPL Acne, IPL Glow, Acne Peel, Glow Peel, Dazzling Glow Peel, Eternal Bloom Peel) |
+| Pore Detox Treatment | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.38) |
+| Collagen Mask Treatment | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.39) |
+| Rejuran Skin Booster | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.40) |
+| DPL Treatment | 1 | Belum ada schema — lihat §5.42 |
+| Treatment Alis Brow Grow (alias URL) | 1 | Verifikasi canonical dulu — lihat §5.43 |
+| Sublemen Pelangsing (landing page) | 1 | Belum ada schema |
+| Halaman cabang baru: Tangerang (3 sub), Palembang, Pekanbaru, Manado, Batam | 7 | Belum ada schema |
+| Halaman treatment lain (LP) | \~64 | Belum — pakai template Hair Removal |
 | Benerin nama breadcrumb "SEO –" | 114 halaman | Belum (jika masih relevan setelah custom) |
 | Schema blog / Article | — | Belum — pertimbangkan dynamic PHP |
 | Schema cabang (LocalBusiness) | 60+ cabang | Belum |
+| Refactor IPL Acne ke PriceSpecification | 1 | Inkonsisten dengan standar tim — bukan error, hanya stylistic |
 
 ## **Template untuk Halaman Treatment Berikutnya**
 

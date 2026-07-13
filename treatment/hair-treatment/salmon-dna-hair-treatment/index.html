@@ -1,0 +1,801 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-exosome-hair-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+
+  .sozo-sku-exosome-hair-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-exosome-hair-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-exosome-hair-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- NEW SECTIONS STYLING (Cards, Grids, Steps) --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-section-card > h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-section-card > p {
+    color: #475569 !important;
+    font-size: 16px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  /* Problem Grid Styling (2x2) */
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-card span {
+    font-size: 14px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Process Steps Styling */
+  .sozo-sku-exosome-hair-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-step-num {
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-step-text p {
+    font-size: 15px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section p,
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section li {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer a:hover {
+    color: #2e38b5 !important;
+  }
+
+  /* Reset layout heading H3 dalam button FAQ agar ukuran font-size tidak berubah */
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question h3 {
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    display: inline !important;
+    line-height: inherit !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-exosome-hair-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-exosome-hair-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-exosome-hair-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-exosome-hair-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-exosome-hair-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-exosome-hair-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-exosome-hair-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-exosome-hair-wrapper .sozo-description-section, 
+    .sozo-sku-exosome-hair-wrapper .sozo-faq-section,
+    .sozo-sku-exosome-hair-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+
+    .sozo-sku-exosome-hair-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="sozo-sku-exosome-hair-wrapper" id="sozo-exosome-hair-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li><a href="https://sozoskinclinic.com/"><span>Home</span></a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/hair-treatment/"><span>Hair Treatment</span></a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li aria-current="page"><span style="color: #1A2080; font-weight: 600;">Salmon DNA Hair</span></li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1> Treatment Salmon DNA Hair – Solusi Rambut Rontok, Tipis, dan Botak dengan Teknologi PDRN</h1>
+      <p>
+        Salmon DNA Hair adalah treatment inovatif berbasis Polydeoxyribonucleotide (PDRN) yang diekstrak dari DNA salmon untuk meregenerasi folikel rambut, memperkuat akar, dan merangsang pertumbuhan rambut baru secara optimal.
+
+      </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">45 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 2.199.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Hair,%20saya%20mau%20booking%20promo%20hair%20treatment%20%5Bsumber:%20ORG-hair-general%5D" class="sozo-btn" target="_blank" rel="noopener">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Exosome-Hair-5cc.webp" 
+           alt="Prosedur Advanced Exosome Hair Treatment di Sozo Skin Clinic"
+           width="480"
+           height="340"
+           fetchpriority="high">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Kembalikan Ketebalan Rambut dengan Salmon DNA Hair</h2>
+      <p>Jangan biarkan penipisan rambut mengganggu rasa percaya diri Anda. Jalani perawatan rambut medis tingkat lanjut beserta diagnosis presisi langsung dari tim dokter profesional kami</p>
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%20SOZO%20Hair,%20saya%20mau%20booking%20promo%20hair%20treatment%20%5Bsumber:%20ORG-hair-general%5D" class="sozo-btn-secondary" target="_blank" rel="noopener">Konsultasi Dokter Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <!-- SECTION: Masalah Kerontokan yang Sering Dialami -->
+    <div class="sozo-section-card">
+      <h2>Jangan Biarkan Rambut Terus Rontok dan Menipis
+</h2>
+      <p>Banyak orang mengabaikan tanda-tanda awal kerusakan rambut hingga kondisinya semakin parah. Apakah Anda mengalami salah satu masalah ini ?
+</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Rambut Rontok Berlebih</strong>
+          <span>Rambut gugur lebih dari 100 helai per hari
+</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Rambut Makin Tipis</strong>
+          <span>Kulit kepala semakin terlihat di area tertentu</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Garis Rambut Mundur</strong>
+          <span> Area depan atau mahkota kepala mulai botak</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Folikel Melemah</strong>
+          <span> Rambut mudah patah, kusam, dan tidak bervolume
+</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: Rich Description -->
+    <article class="sozo-description-section">
+      <h2>Apa Itu Salmon DNA Hair Treatment?</h2>
+      <p>Salmon DNA Hair Treatment adalah prosedur perawatan rambut medis yang menggunakan PDRN (Polydeoxyribonucleotide) — senyawa bioaktif yang diekstrak dari DNA ikan salmon. PDRN telah terbukti secara klinis mampu merangsang regenerasi sel, meningkatkan sirkulasi darah di kulit kepala, dan mengaktifkan kembali folikel rambut yang tidak aktif.
+</p>
+      <p>Berbeda dengan treatment rambut biasa, Salmon DNA Hair bekerja langsung di tingkat seluler dan molekuler, sehingga hasilnya lebih optimal dan tahan lama. Teknologi ini sudah banyak digunakan di Korea Selatan dan kini tersedia di SOZO Skin Clinic untuk Anda.
+</p>
+      
+      <div class="sozo-expandable-content" id="treatmentDescriptionExo">
+        <div class="sozo-expandable-inner">
+          <h3>Bagaimana Cara Kerja Salmon DNA Hair?
+</h3>
+          <p>Mekanisme Kerja Salmon DNA (PDRN) pada Rambut. PDRN bekerja melalui dua jalur utama di dalam kulit kepala:
+</p>
+    <ul>
+    <li><strong>Aktivasi Reseptor A2A (Adenosine Receptor) :
+</strong>PDRN mengaktifkan reseptor adenosin A2A yang berperan dalam merangsang proliferasi sel dan regenerasi jaringan di sekitar folikel rambut.
+</li>
+            <li><strong>Scavenger Effect (Daur Ulang Nukleotida) : </strong></strong> DNA salmon dipecah menjadi nukleotida bebas yang diserap langsung oleh sel-sel kulit kepala sebagai "bahan bangunan" untuk memperbaiki jaringan yang rusak.</li>
+    <p>Hasilnya: folikel rambut yang sebelumnya dorman (tidak aktif) kembali terangsang untuk tumbuh, dan rambut yang ada menjadi lebih kuat serta lebih tebal.
+</p>
+          </ul>
+
+          <h3>Manfaat Salmon DNA Hair untuk Rambut Anda</h3>
+          <ul>
+    <li>
+        <strong>Merangsang pertumbuhan rambut baru di area yang menipis atau botak</strong>
+    <li><strong>Mengurangi kerontokan rambut secara signifikan sejak sesi pertama</strong>
+     <li><strong>Memperkuat akar dan batang rambut agar tidak mudah patah</strong>
+     <li><strong>Meningkatkan ketebalan rambut secara keseluruhan</strong>
+     <li><strong>Menyehatkan kulit kepala dengan meningkatkan sirkulasi mikro</strong>
+     <li><strong>Mempercepat fase pertumbuhan rambut (anagen) secara alami</strong>
+     <li><strong>Aman dan minim efek samping karena bahan bersifat biokompatibel</strong>
+     <li><strong>Cocok untuk pria dan wanita di semua jenis rambut</strong>
+          </ul>
+          
+<h3>Apakah Salmon DNA Hair Cocok untuk Anda?</h3>
+<p>Salmon DNA Hair Treatment direkomendasikan untuk Anda yang:
+</p>
+    <ul>
+    <li><strong>Mengalami kerontokan rambut difus (menyeluruh di seluruh kepala)</strong>
+    <li><strong>Memiliki kondisi Androgenetic Alopecia (kebotakan pola pria/wanita)</strong>
+     <li><strong>Rambut rontok akibat stres, hormonal, atau pasca melahirkan</strong>
+     <li><strong>Ingin merawat rambut secara preventif sebelum kerontokan semakin parah
+</strong>
+     <li><strong>Tidak cocok atau ingin alternatif selain PRP</strong>
+     <li><strong>Sudah menjalani PRP namun ingin hasil yang lebih optimal
+</strong>
+          </ul>
+    
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn" id="exoLoadMore" onclick="toggleExoDescription()">
+        <span id="exoReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </article>
+
+    <!-- SECTION: Proses & Cara Kerja -->
+    <div class="sozo-section-card">
+      <h2>Proses dan Tahapan Treatment Salmon DNA Hair
+</h2>
+      <p>Di Sozo Skin Clinic, protokol perawatan ini dilakukan langsung oleh dokter profesional dengan mengedepankan presisi dan kenyamanan pasien:</p>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi dan Analisis Kulit Kepala</strong>
+          <p>Dokter akan mengevaluasi kondisi rambut dan kulit kepala Anda, termasuk tingkat kerontokan, kondisi folikel, serta riwayat kesehatan yang relevan untuk menentukan protokol treatment terbaik.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Pembersihan Kulit Kepala</strong>
+          <p>Area kulit kepala dibersihkan secara menyeluruh untuk mengangkat kotoran, minyak berlebih, dan sisa produk styling yang dapat menghambat penyerapan PDRN.
+</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong> Aplikasi Topikal Anestesi (Opsional)
+</strong>
+          <p>Krim anestesi topikal dapat diaplikasikan untuk memastikan kenyamanan maksimal selama prosedur injeksi.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong> Injeksi Salmon DNA (PDRN) ke Kulit Kepala
+</strong>
+          <p>Serum PDRN konsentrasi tinggi diinjeksikan secara mesoterapi langsung ke lapisan dermis kulit kepala — menargetkan area folikel yang membutuhkan regenerasi.
+</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">5</div>
+        <div class="sozo-step-text">
+          <strong> Post-Treatment Care
+
+</strong>
+          <p>Dokter akan memberikan panduan perawatan pasca tindakan, termasuk produk yang boleh dan tidak boleh digunakan, serta jadwal sesi berikutnya untuk hasil optimal.
+</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: FAQ Section -->
+    <div class="sozo-faq-section" itemscope itemtype="https://schema.org/FAQPage">
+      <h2>Pertanyaan Seputar Salmon DNA Hair</h2>
+      
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3 itemprop="name">Apakah Salmon DNA Hair treatment aman?</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Ya, PDRN dari DNA salmon adalah bahan yang sudah digunakan secara medis selama lebih dari 20 tahun dan telah mendapat persetujuan dari berbagai otoritas kesehatan internasional. Prosedur ini aman, biokompatibel, dan minim risiko alergi karena DNA salmon sangat mirip secara struktur dengan DNA manusia.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3 itemprop="name">Apakah Salmon DNA Hair treatment sakit?</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Prosedur injeksi umumnya hanya menimbulkan rasa tidak nyaman yang ringan. Untuk pasien dengan sensitivitas tinggi, dokter dapat mengaplikasikan anestesi topikal terlebih dahulu sehingga prosedur berlangsung dengan nyaman.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3 itemprop="name">Berapa sesi yang dibutuhkan untuk hasil optimal?</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Umumnya direkomendasikan 4–6 sesi dengan interval 3–4 minggu antar sesi. Setelah itu, sesi maintenance dapat dilakukan setiap 3–6 bulan sekali untuk mempertahankan hasilnya.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3 itemprop="name">Apakah Salmon DNA Hair bisa dikombinasikan dengan PRP?
+</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Ya, kombinasi Salmon DNA (PDRN) dengan PRP sering direkomendasikan karena keduanya bekerja melalui mekanisme berbeda dan saling melengkapi untuk hasil yang lebih maksimal.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3 itemprop="name">Berapa harga Salmon DNA Hair Treatment di SOZO?</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Harga mulai dari Rp 2.199.000 per sesi. Untuk informasi paket dan promo terkini, silakan hubungi kami atau kunjungi klinik SOZO terdekat.
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+          <span><h3 itemprop="name">Di mana bisa mendapatkan Salmon DNA Hair Treatment?
+</h3></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Treatment ini tersedia di seluruh cabang SOZO Skin Clinic. Cek lokasi klinik SOZO terdekat dan lakukan reservasi online melalui website kami.<a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang Sozo Skin Clinic</a>
+</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleExoDescription() {
+    const content = document.getElementById('treatmentDescriptionExo');
+    const btn = document.getElementById('exoLoadMore');
+    const btnText = document.getElementById('exoReadMoreText');
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+
+  // FIKSASI ACCORDION: Mengincar elemen bungkus induk FAQ secara spesifik 
+  // untuk mencegah error akibat wpautop atau rendering kosong di Elementor
+  function toggleExoFaq(button) {
+    const faqItem = button.closest('.sozo-faq-item');
+    const answer = faqItem.querySelector('.sozo-faq-answer');
+    
+    // Toggle state class active
+    button.classList.toggle('active');
+    
+    // Validasi eksplisit menggunakan boolean class, bukan text style
+    if (button.classList.contains('active')) {
+      answer.style.maxHeight = answer.scrollHeight + 50 + "px"; // Tambah sedikit buffer aman
+    } else {
+      answer.style.maxHeight = "0px"; // Memaksa reset ke 0px agar benar-benar tertutup
+    }
+  }
+</script>
+
