@@ -1,0 +1,800 @@
+<style>
+  .sozo-sku-pores-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-pores-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-pores-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-pores-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important;
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important;
+    font-weight: 700 !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-btn,
+  .sozo-sku-pores-wrapper .sozo-related-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-btn:hover,
+  .sozo-sku-pores-wrapper .sozo-related-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+  }
+
+  .sozo-sku-pores-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-pores-wrapper .sozo-cta-banner {
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-pores-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 650px;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    border: 2px solid #ffffff !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-pores-wrapper .sozo-section-card,
+  .sozo-sku-pores-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card h2,
+  .sozo-sku-pores-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card p,
+  .sozo-sku-pores-wrapper .sozo-section-card li {
+    color: #475569 !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-problem-grid,
+  .sozo-sku-pores-wrapper .sozo-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card span {
+    color: #475569;
+    font-size: 14px;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-process-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-text strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-text p {
+    margin: 0 !important;
+    color: #475569 !important;
+    font-size: 15px !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-related-card {
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body h3 {
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin: 0 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body p {
+    font-size: 14px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    flex: 1;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-btn {
+    max-width: none;
+    padding: 11px 16px;
+    font-size: 14px !important;
+    box-shadow: none;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-link {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    text-align: center;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-pores-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-pores-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-pores-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-pores-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-question svg { flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; }
+  .sozo-sku-pores-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-pores-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-pores-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-pores-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-pores-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-pores-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-pores-wrapper .sozo-btn,
+    .sozo-sku-pores-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-pores-wrapper .sozo-section-card,
+    .sozo-sku-pores-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-pores-wrapper .sozo-problem-grid,
+    .sozo-sku-pores-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-pores-wrapper" id="sozo-pores-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/skin-treatment/acne-treatment/">Acne Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Pore Detox Treatment</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Paket Pore Detox untuk Kulit Bersih, Pori Lebih Sehat & Bebas Sumbatan</h1>
+      <p>Pore Detox adalah paket perawatan yang mengombinasikan Biolight Acne, IPL Acne, Acne Peel, serta rangkaian skincare pendukung untuk membantu membersihkan pori-pori secara menyeluruh, mengurangi minyak berlebih, mengatasi komedo dan jerawat, serta menjaga kulit tetap bersih dan sehat dengan perawatan berkelanjutan di rumah.
+</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">90 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">
+              Rp 799.000
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D " class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Clear-Facial-2.webp" alt="Perawatan pori pori besar wajah untuk mengecilkan pori di Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Treatment Mengecilkan Pori-Pori Wajah yang Tampak Besar secara Efektif</h2>
+<p>Pore Detox Treatment dirancang khusus sebagai solusi medis untuk membersihkan kulit secara mendalam (deep cleansing). Perawatan ini bekerja mengangkat kotoran yang menyumbat folikel dan meremajakan lapisan kulit. Dengan ekstraksi dan pembersihan yang tepat, tampilan pori-pori akan tampak lebih rapat dan kecil, menjadikan tekstur kulit wajah Anda lebih halus, bersih, dan sehat terawat.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D " class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <div class="sozo-section-card">
+      <h2>Masalah Kulit yang Dapat Dibantu Paket Pore Detox</h2>
+      <p>Pori-pori yang tersumbat oleh minyak, kotoran, dan sel kulit mati dapat memicu berbagai masalah kulit. Paket Pore Detox dirancang untuk membantu membersihkan pori secara menyeluruh sekaligus merawat kulit melalui kombinasi treatment di klinik dan skincare pendukung.
+</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Pori Tersumbat</strong>
+          <span>Penumpukan minyak, sel kulit mati, dan kotoran di dalam pori dapat membuat kulit terasa kurang bersih serta menjadi penyebab munculnya berbagai masalah kulit.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Komedo Hitam & Komedo Putih</strong>
+          <span>Komedo yang menumpuk membuat kulit tampak kurang halus dan dapat berkembang menjadi jerawat apabila tidak ditangani dengan tepat.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kulit Berminyak</strong>
+          <span>Produksi minyak berlebih membuat wajah mudah mengilap dan meningkatkan risiko pori tersumbat serta timbulnya komedo.
+</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Jerawat Aktif</strong>
+          <span>Jerawat dapat muncul akibat pori yang tersumbat dan bakteri. Perawatan yang tepat membantu menjaga kebersihan kulit sekaligus mengurangi faktor pemicunya.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bekas Jerawat Ringan</strong>
+          <span>Setelah jerawat mereda, kulit sering kali masih tampak kemerahan atau memiliki tekstur yang belum merata sehingga membutuhkan perawatan lanjutan.
+</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tekstur Kulit Kasar</strong>
+          <span>Kulit yang terasa kasar akibat penumpukan sel kulit mati dan komedo dapat tampak lebih halus setelah pori dibersihkan dan kulit dirawat secara rutin.
+</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Pore Detox: Paket Perawatan untuk Membersihkan Pori & Menjaga Kulit Tetap Sehat
+</h2>
+      <p>Pore Detox merupakan paket perawatan yang dirancang untuk membantu membersihkan pori-pori secara menyeluruh sekaligus mengatasi faktor penyebab munculnya komedo, minyak berlebih, dan jerawat. Program ini mengombinasikan beberapa treatment di klinik, yaitu Biolight Acne, IPL Acne, dan Acne Peel, serta dilengkapi dengan rangkaian skincare yang digunakan di rumah agar hasil perawatan dapat terjaga secara berkelanjutan.
+</p>
+      <p>Di SOZO Skin Clinic, setiap pasien akan menjalani konsultasi dengan dokter terlebih dahulu untuk mengetahui kondisi kulit, tingkat keparahan jerawat, produksi minyak, hingga kebutuhan perawatan yang paling sesuai. Berdasarkan hasil pemeriksaan tersebut, dokter akan menentukan apakah Paket Pore Detox merupakan pilihan yang tepat untuk kondisi kulit Anda.</p>
+
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionPores">
+          
+        <div class="sozo-expandable-inner">
+            
+    <p>Karena menggabungkan treatment profesional dan skincare harian, Pore Detox tidak hanya membantu membersihkan pori saat berada di klinik, tetapi juga mendukung proses perawatan kulit setiap hari agar kulit tetap bersih, sehat, dan terawat.
+</p>
+        
+          <h3>Apa Itu Pore Detox?</h3>
+          <p>Pore Detox adalah paket perawatan kulit yang bertujuan membantu membersihkan pori-pori dari penumpukan minyak, sel kulit mati, komedo, dan kotoran yang dapat memicu berbagai masalah kulit. Paket ini menggabungkan beberapa prosedur yang saling melengkapi untuk membantu menjaga kebersihan pori sekaligus merawat kulit yang rentan berjerawat.
+</p>
+
+          <h3>Manfaat Paket Pore Detox</h3>
+          <ul>
+            <li><strong>Membantu membersihkan pori-pori secara lebih menyeluruh.</strong> </li>
+            <li><strong>Membantu mengurangi komedo hitam maupun komedo putih.</strong> </li>
+            <li><strong>Membantu mengontrol produksi minyak berlebih pada wajah.</strong> </li>
+            <li><strong>Membantu mengurangi jerawat aktif dan membantu menjaga kulit tetap bersih.</strong> </li>
+            <li><strong>Membantu memperbaiki tekstur kulit agar terasa lebih halus.</strong> </li>
+            <li><strong>Mendukung hasil treatment melalui penggunaan skincare harian yang direkomendasikan.
+</strong> </li>
+
+          </ul>
+
+          <h3>Mengapa Pori Mudah Tersumbat?</h3>
+          <p>Pori-pori dapat tersumbat akibat produksi minyak berlebih yang bercampur dengan sel kulit mati, debu, sisa makeup, maupun kotoran dari lingkungan. Jika tidak dibersihkan dengan baik, kondisi ini dapat memicu munculnya komedo, jerawat, hingga membuat kulit terasa kasar. Oleh karena itu, perawatan yang menggabungkan tindakan di klinik dan rutinitas skincare di rumah dapat membantu menjaga kebersihan pori secara lebih optimal.</p>
+
+          <h3>Siapa yang Cocok Menjalani Pore Detox?</h3>
+          <p>Paket Pore Detox umumnya cocok bagi Anda yang memiliki kulit berminyak atau kombinasi, sering mengalami komedo, pori yang mudah tersumbat, maupun jerawat ringan hingga sedang. Sebelum menjalani perawatan, dokter akan melakukan pemeriksaan untuk memastikan kondisi kulit serta menentukan apakah paket ini sesuai dengan kebutuhan Anda.
+</p>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="togglePoresDescription()">
+        <span id="poresReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Proses Pore Detox di SOZO Skin Clinic
+</h2>
+      <p>Paket Pore Detox dilakukan melalui beberapa tahapan yang dirancang untuk membantu membersihkan pori sekaligus mendukung kesehatan kulit secara menyeluruh.</p>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi Dengan Dokter</strong>
+          <p>Dokter akan mengevaluasi kondisi kulit, tingkat produksi minyak, keberadaan komedo maupun jerawat, serta menentukan apakah Paket Pore Detox sesuai dengan kebutuhan kulit Anda.
+</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Kombinasi Treatment Pore Detox
+</strong>
+          <p>Perawatan dilakukan menggunakan kombinasi Biolight Acne, IPL Acne, dan Acne Peel sesuai hasil konsultasi dokter. Setiap treatment memiliki fungsi yang saling melengkapi untuk membantu membersihkan pori, mengurangi minyak berlebih, serta merawat kulit yang rentan berjerawat.
+</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Pemberian Skincare Pendukung</strong>
+          <p>Setelah treatment selesai, pasien akan mendapatkan rangkaian skincare yang terdiri dari facial wash, acne solution, day cream, night cream, moisturizer, sunscreen, dan acne spot treatment untuk membantu menjaga hasil perawatan di rumah.
+</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Kontrol & Perawatan Berkelanjutan</strong>
+          <p>Dokter akan memberikan panduan penggunaan skincare dan menyarankan jadwal kontrol apabila diperlukan agar kondisi kulit dapat terus dipantau serta hasil perawatan tetap optimal.
+</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Treatment Terkait untuk Pori dan Tekstur Kulit</h2>
+      <p>Beberapa perawatan berikut dapat menjadi pilihan lanjutan atau kombinasi sesuai evaluasi dokter.</p>
+
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Micro-Botox.webp" alt="Laser CO2 Full Face Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Acne Micro Botox Standard</h3>
+            <p>Injeksi toksin botulinum tipe A secara superfisial. Mengurangi inflamasi, serta memperbaiki tekstur dan elastisitas kulit.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Injection.webp" alt="Acne Micro Botox Hydration">
+          <div class="sozo-related-body">
+            <h3>Acne Micro Botox Hydration</h3>
+            <p>Memanfaatkan plasma darah sendiri untuk membantu memperbaiki tekstur kulit dan menyamarkan bekas jerawat secara bertahap.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sozo-related-card">
+          <img src="https://sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Clear-Facial-2.webp" alt="Acne Micro Botox Hydration">
+          <div class="sozo-related-body">
+            <h3>Acne Clear Facial - Medical</h3>
+            <p>Prosedur higienis membersihkan komedo dengan panduan medis, mengatasi inflamasi jerawat sekaligus memberi efek relaksasi pada kulit wajah.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Pore Detox</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa itu Pore Detox?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Pore Detox adalah paket perawatan di SOZO Skin Clinic yang dirancang untuk membantu membersihkan pori-pori secara menyeluruh melalui kombinasi treatment di klinik dan penggunaan skincare di rumah. Paket ini menggabungkan Biolight Acne, IPL Acne, dan Acne Peel yang dilengkapi dengan rangkaian skincare untuk membantu mengurangi penumpukan minyak, komedo, serta menjaga kulit tetap bersih setelah treatment.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa manfaat Pore Detox untuk kulit?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Pore Detox membantu membersihkan pori-pori yang tersumbat oleh minyak, sel kulit mati, dan kotoran yang dapat memicu komedo maupun jerawat. Selain itu, paket ini juga membantu mengontrol produksi minyak berlebih, memperbaiki tekstur kulit, serta mendukung rutinitas perawatan kulit melalui penggunaan skincare yang direkomendasikan oleh dokter.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa perbedaan Pore Detox dengan facial biasa?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Facial umumnya berfokus pada pembersihan wajah dan komedo dalam satu sesi perawatan. Pore Detox memiliki pendekatan yang lebih menyeluruh karena menggabungkan beberapa treatment profesional seperti Biolight Acne, IPL Acne, dan Acne Peel, kemudian dilanjutkan dengan penggunaan skincare di rumah agar hasil perawatan dapat dipertahankan dalam jangka waktu yang lebih optimal.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Siapa yang cocok menjalani Pore Detox?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Paket Pore Detox umumnya direkomendasikan bagi pemilik kulit berminyak atau kombinasi yang sering mengalami pori tersumbat, komedo, maupun jerawat ringan hingga sedang. Sebelum menjalani treatment, dokter akan melakukan konsultasi untuk menilai kondisi kulit sehingga perawatan yang diberikan benar-benar sesuai dengan kebutuhan masing-masing pasien.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Bagaimana Pore Detox membantu mengatasi komedo?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Komedo terbentuk ketika minyak, sel kulit mati, dan kotoran menumpuk di dalam pori-pori. Melalui kombinasi treatment dalam Paket Pore Detox, pori dibantu dibersihkan secara lebih menyeluruh sehingga penumpukan tersebut dapat berkurang. Perawatan ini juga didukung dengan skincare yang membantu menjaga kebersihan pori setelah treatment selesai dilakukan.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Pore Detox dapat membantu kulit yang berjerawat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Kulit yang berjerawat sering kali berkaitan dengan pori yang tersumbat dan produksi minyak berlebih. Paket Pore Detox dirancang untuk membantu mengatasi faktor-faktor tersebut melalui kombinasi treatment dan skincare yang saling melengkapi. Dokter akan mengevaluasi kondisi kulit terlebih dahulu untuk menentukan apakah paket ini sesuai dengan jenis dan tingkat keparahan jerawat yang dialami.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Berapa kali Pore Detox perlu dilakukan agar hasilnya optimal?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Jumlah sesi yang dibutuhkan bergantung pada kondisi kulit setiap orang, seperti tingkat produksi minyak, jumlah komedo, kondisi jerawat, serta respons kulit terhadap treatment. Setelah konsultasi, dokter akan menyusun rekomendasi jumlah sesi dan interval perawatan yang sesuai agar hasil yang diperoleh lebih optimal.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Mengapa Paket Pore Detox juga dilengkapi dengan skincare?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perawatan di klinik membantu membersihkan dan merawat kulit, sedangkan skincare berfungsi menjaga hasil tersebut dalam rutinitas sehari-hari. Rangkaian skincare dalam Paket Pore Detox membantu membersihkan wajah, menjaga kelembapan kulit, melindungi kulit dari paparan sinar matahari, serta mendukung perawatan kulit yang rentan berjerawat sesuai anjuran dokter.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Berapa lama proses Pore Detox berlangsung?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Durasi treatment dapat berbeda pada setiap pasien karena disesuaikan dengan kondisi kulit dan tindakan yang dilakukan selama sesi perawatan. Saat konsultasi, dokter akan menjelaskan tahapan treatment beserta estimasi waktu yang dibutuhkan sehingga pasien dapat mengetahui proses yang akan dijalani.</p></div>
+      </div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah hasil Pore Detox bisa langsung terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setelah treatment, sebagian pasien dapat merasakan kulit terasa lebih bersih, segar, dan nyaman. Sementara itu, perubahan pada komedo, minyak berlebih, maupun kondisi kulit biasanya membutuhkan beberapa kali perawatan yang disertai penggunaan skincare secara rutin. Hasil yang diperoleh dapat berbeda pada setiap orang tergantung kondisi kulit dan kepatuhan dalam menjalani perawatan.</p></div>
+      </div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa saja yang termasuk dalam Paket Pore Detox?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Paket Pore Detox terdiri dari kombinasi treatment Biolight Acne, IPL Acne, dan Acne Peel yang dilakukan di klinik. Selain itu, pasien juga memperoleh rangkaian skincare yang terdiri dari facial wash, acne solution, day cream, night cream, moisturizer, sunscreen, dan acne spot treatment untuk membantu menjaga kondisi kulit setelah menjalani treatment.</p></div>
+      </div>
+      
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Pore Detox dapat membantu mengurangi minyak berlebih pada wajah?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Produksi minyak yang berlebihan menjadi salah satu penyebab utama pori mudah tersumbat dan munculnya komedo maupun jerawat. Paket Pore Detox dirancang untuk membantu menjaga kebersihan pori sekaligus mendukung kontrol minyak melalui kombinasi treatment di klinik dan penggunaan skincare yang sesuai dengan kondisi kulit.
+</p></div>
+      </div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Pore Detox aman untuk semua jenis kulit?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Keamanan treatment bergantung pada kondisi kulit masing-masing pasien. Oleh karena itu, setiap pasien akan menjalani konsultasi dan pemeriksaan kulit terlebih dahulu agar dokter dapat menentukan apakah Paket Pore Detox sesuai dengan kebutuhan serta kondisi kulit yang dimiliki sebelum treatment dilakukan
+</p></div>
+      </div>
+      
+    <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Di mana saya bisa melakukan Pore Detox?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Pore Detox tersedia di seluruh cabang SOZO Skin Clinic. Setiap pasien akan mendapatkan konsultasi dengan dokter sebelum treatment dimulai sehingga kondisi kulit dapat dievaluasi dan paket perawatan yang diberikan sesuai dengan kebutuhan kulit masing-masing.
+</p></div>
+      </div>  
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePoresDescription() {
+    const content = document.getElementById('treatmentDescriptionPores');
+    const btn = document.querySelector('.sozo-load-more-btn');
+    const btnText = document.getElementById('poresReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function togglePoresFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
+
+
