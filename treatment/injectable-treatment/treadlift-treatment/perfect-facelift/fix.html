@@ -1,0 +1,803 @@
+<style>
+  .sozo-sku-pores-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-pores-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-pores-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-pores-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important;
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important;
+    font-weight: 700 !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-btn,
+  .sozo-sku-pores-wrapper .sozo-related-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-btn:hover,
+  .sozo-sku-pores-wrapper .sozo-related-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+  }
+
+  .sozo-sku-pores-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-pores-wrapper .sozo-cta-banner {
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-pores-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 650px;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    border: 2px solid #ffffff !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-pores-wrapper .sozo-section-card,
+  .sozo-sku-pores-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card h2,
+  .sozo-sku-pores-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card p,
+  .sozo-sku-pores-wrapper .sozo-section-card li {
+    color: #475569 !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-problem-grid,
+  .sozo-sku-pores-wrapper .sozo-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card span {
+    color: #475569;
+    font-size: 14px;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-process-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-text strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-text p {
+    margin: 0 !important;
+    color: #475569 !important;
+    font-size: 15px !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-related-card {
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body h3 {
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin: 0 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body p {
+    font-size: 14px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    flex: 1;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-btn {
+    max-width: none;
+    padding: 11px 16px;
+    font-size: 14px !important;
+    box-shadow: none;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-link {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    text-align: center;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-pores-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-pores-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-pores-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-pores-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-question svg { flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; }
+  .sozo-sku-pores-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-pores-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-pores-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-pores-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-pores-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-pores-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-pores-wrapper .sozo-btn,
+    .sozo-sku-pores-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-pores-wrapper .sozo-section-card,
+    .sozo-sku-pores-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-pores-wrapper .sozo-problem-grid,
+    .sozo-sku-pores-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-pores-wrapper" id="sozo-pores-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/">Injectable Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/">Threadlift Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Perfect Facelift Treatment</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Perfect Facelift untuk Membantu Mengencangkan Area Bawah Wajah
+</h1>
+      <p>Perfect Facelift merupakan treatment pengencangan wajah tanpa operasi menggunakan benang medis (threadlift) yang difokuskan pada area bawah wajah, seperti smile line, marionette line, dan sagging jowl. Dengan menggunakan 8 benang, treatment ini membantu mengangkat jaringan kulit yang mulai mengendur, membuat kontur wajah tampak lebih tegas, serta merangsang pembentukan kolagen untuk membantu menjaga kekencangan kulit. Sebagian efek lifting dapat terlihat segera setelah tindakan, sementara hasil biasanya semakin optimal dalam waktu sekitar 2 hingga 4 minggu.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">105 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">
+              Rp 7.999.000
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20threadlift%20%5Bsumber:%20ORG-threadlift%20treatment%5D " class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/perfect-facelift-sozo-skin-clinic.webp" alt="Perawatan pori pori besar wajah untuk mengecilkan pori di Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Wajah Lebih Kencang, Tirus & Awet Muda Tanpa Operasi!</h2>
+      <p>Kembalikan kontur wajah ideal dan kekencangan kulitmu dengan Perfect Facelift di SOZO Skin Clinic. Ditangani oleh dokter profesional, nikmati hasil lifting yang natural, aman, dan tahan lama.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20threadlift%20%5Bsumber:%20ORG-threadlift%20treatment%5D " class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <div class="sozo-section-card">
+      <h2>Masalah Wajah yang Dapat Dibantu Perfect Facelift </h2>
+      <p>Seiring bertambahnya usia, area bawah wajah menjadi salah satu bagian yang paling sering mengalami penurunan elastisitas. Berkurangnya produksi kolagen dan elastin dapat membuat smile line, marionette line, maupun jowl terlihat semakin jelas sehingga wajah tampak lebih lelah atau terlihat lebih tua. Perfect Facelift dirancang untuk membantu mengatasi beberapa kondisi berikut.
+</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong> Smile Line yang Semakin Terlihat</strong>
+          <span>Smile line atau garis yang membentang dari sisi hidung ke sudut bibir dapat terlihat semakin dalam akibat berkurangnya elastisitas kulit dan penurunan jaringan wajah. Perfect Facelift membantu memberikan efek lifting sehingga area tersebut tampak lebih terangkat dan kontur wajah terlihat lebih segar.
+</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Marionette Line yang Membuat Wajah Tampak Lebih Tua</strong>
+          <span>Marionette line merupakan garis yang memanjang dari sudut bibir menuju dagu. Garis ini dapat memberikan kesan wajah yang lelah atau tampak lebih tua. Perfect Facelift membantu menopang jaringan kulit pada area tersebut sehingga tampilannya terlihat lebih halus dan proporsional.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Sagging Jowl atau Kulit Mengendur di Garis Rahang</strong>
+          <span>Kulit yang mulai turun di sekitar garis rahang (sagging jowl) dapat membuat kontur wajah kehilangan definisinya. Perfect Facelift membantu mengangkat jaringan pada area bawah wajah sehingga garis rahang tampak lebih tegas dan wajah terlihat lebih berbentuk.
+</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kontur Area Bawah Wajah Terlihat Kurang Tegas</strong>
+          <span>Perubahan struktur jaringan wajah dapat menyebabkan batas antara pipi, rahang, dan dagu menjadi kurang jelas. Perfect Facelift membantu membentuk kembali kontur area bawah wajah sehingga wajah tampak lebih proporsional dan terdefinisi.
+</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong> Wajah Tampak Lelah Akibat Kulit Mulai Mengendur</strong>
+          <span>Tidak semua orang ingin menjalani prosedur bedah untuk mendapatkan wajah yang lebih kencang. Facelift dengan benang menjadi alternatif minim invasif bagi pasien yang menginginkan efek lifting tanpa melalui tindakan operasi dengan waktu pemulihan yang relatif lebih singkat.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Ingin Menjaga Kontur Wajah Tetap Proporsional
+</strong>
+          <span>Selain membantu mengencangkan kulit yang mulai kendur, Facelift juga dapat menjadi pilihan bagi Anda yang ingin mempertahankan bentuk dan kontur wajah agar tetap terlihat lebih tegas seiring bertambahnya usia.
+</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Perfect Facelift untuk Membantu Mengencangkan Area Bawah Wajah</h2>
+      <p>Perfect Facelift merupakan treatment pengencangan wajah tanpa operasi yang menggunakan benang medis (threadlift) untuk membantu mengangkat jaringan kulit pada area bawah wajah yang mulai mengendur. Dengan menggunakan 8 benang, treatment ini difokuskan pada area smile line, marionette line, dan sagging jowl sehingga membantu membuat kontur wajah tampak lebih tegas serta mengurangi kesan wajah yang terlihat lelah akibat penurunan jaringan kulit.
+</p>
+      <p>Selain memberikan efek lifting pada area yang dirawat, benang yang digunakan juga membantu merangsang pembentukan kolagen alami di dalam kulit. Kolagen berperan penting dalam menjaga kekencangan dan elastisitas kulit sehingga hasil treatment tidak hanya bergantung pada efek pengangkatan benang, tetapi juga berkembang secara bertahap seiring proses regenerasi kulit. Oleh karena itu, hasil Perfect Facelift umumnya akan terlihat semakin optimal dalam waktu sekitar 2 hingga 4 minggu setelah tindakan.
+    </p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionPores">
+        <div class="sozo-expandable-inner">
+            
+        <p>Di SOZO Skin Clinic, setiap pasien akan menjalani konsultasi dengan dokter sebelum treatment dilakukan. Dokter akan mengevaluasi kondisi kulit, tingkat hidrasi, produksi minyak, serta kebutuhan kulit untuk menentukan apakah Aquashine Treatment merupakan pilihan yang sesuai. Hasil perawatan dapat berbeda pada setiap orang tergantung kondisi kulit, gaya hidup, dan respons masing-masing terhadap treatment.</p>
+        
+          <h3>Apa Itu Perfect Facelift?</h3>
+          <p>Perfect Facelift adalah treatment threadlift yang dirancang khusus untuk membantu mengencangkan area bawah wajah menggunakan 8 benang medis. Treatment ini membantu mengangkat jaringan kulit yang mulai turun pada area smile line, marionette line, dan garis rahang, sehingga wajah tampak lebih proporsional dan terdefinisi tanpa melalui prosedur operasi.
+</p>
+
+<p>Sebagian efek lifting dapat terlihat segera setelah tindakan dilakukan. Seiring pembengkakan berkurang dan proses pembentukan kolagen berlangsung, hasil treatment biasanya tampak semakin natural dan optimal dalam waktu sekitar 2 hingga 4 minggu, dengan hasil yang dapat bertahan sekitar 6 hingga 8 bulan sesuai kondisi masing-masing pasien.</p>
+
+          <h3>Manfaat Perfect  Facelift</h3>
+          <p>Perfect Facelift membantu memberikan berbagai manfaat pada area bawah wajah, di antaranya:</p>
+          <ul>
+              
+            <li><strong>Membantu mengangkat kulit wajah yang mulai mengendur pada area bawah wajah.</strong></li>
+            <li><strong>Membantu menyamarkan tampilan smile line yang semakin terlihat.</strong></li>
+            <li><strong>Membantu memperbaiki tampilan marionette line agar wajah terlihat lebih segar.</strong></li>
+            <li><strong>Membantu mengangkat sagging jowl sehingga garis rahang tampak lebih tegas.</strong></li>
+            <li><strong>Membantu membentuk kontur wajah agar terlihat lebih proporsional.</strong></li>
+            <li><strong>Membantu merangsang pembentukan kolagen alami untuk mendukung kekencangan kulit.</strong></li>
+            <li><strong>Membantu memberikan efek lifting tanpa prosedur operasi.</strong></li>
+            <li><strong>Membantu membuat wajah tampak lebih muda dengan hasil yang tetap natural.</strong></li>
+            
+          </ul>
+          
+          <h3> Mengapa Area Bawah Wajah Lebih Cepat Mengendur?</h3>
+          <p>Area bawah wajah merupakan salah satu bagian yang paling sering mengalami perubahan seiring bertambahnya usia. Penurunan produksi kolagen dan elastin menyebabkan jaringan kulit kehilangan kekuatan penyangganya sehingga smile line, marionette line, dan jowl menjadi lebih jelas. Selain faktor penuaan alami, paparan sinar matahari, perubahan berat badan, kebiasaan merokok, serta gaya hidup yang kurang sehat juga dapat mempercepat berkurangnya elastisitas kulit.</p>
+          <p>Ketika jaringan pada area bawah wajah mulai turun, kontur wajah dapat terlihat kurang tegas dan wajah tampak lebih lelah. Oleh karena itu, treatment yang membantu mengangkat jaringan sekaligus merangsang pembentukan kolagen dapat menjadi salah satu pilihan untuk membantu mempertahankan tampilan wajah yang lebih kencang dan proporsional.
+</p>
+          
+    <h3>Siapa yang Cocok Menjalani Perfect Facelift?</h3>
+    
+    <p>Perfect Facelift umumnya cocok bagi Anda yang mulai melihat perubahan pada area bawah wajah, seperti smile line yang semakin dalam, marionette line yang terlihat jelas, atau kulit di sekitar garis rahang yang mulai mengendur. Treatment ini juga dapat menjadi pilihan bagi pasien yang ingin mendapatkan efek lifting yang lebih terfokus pada area bawah wajah tanpa menjalani prosedur operasi.
+</p>
+<p>Sebelum treatment dilakukan, dokter akan mengevaluasi kondisi kulit, struktur wajah, tingkat elastisitas, serta area yang menjadi keluhan utama. Berdasarkan hasil pemeriksaan tersebut, dokter akan menentukan apakah Perfect Facelift merupakan pilihan treatment yang sesuai dengan kebutuhan dan tujuan perawatan masing-masing pasien.</p>
+          
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="togglePoresDescription()">
+        <span id="poresReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2> Proses Perfect Facelift di SOZO Skin Clinic
+</h2>
+      <p>Perfect Facelift dilakukan melalui beberapa tahapan untuk membantu memastikan treatment berjalan dengan aman, nyaman, dan sesuai dengan kondisi setiap pasien. Sebelum tindakan dilakukan, dokter akan mengevaluasi struktur wajah, tingkat kekenduran kulit, serta area bawah wajah yang memerlukan efek lifting agar hasil treatment terlihat lebih proporsional dan natural.</p>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi & Analisis Area Bawah Wajah</strong>
+          <p>Dokter akan melakukan pemeriksaan terhadap kondisi kulit, elastisitas jaringan, serta area smile line, marionette line, dan garis rahang yang menjadi fokus treatment. Berdasarkan hasil konsultasi tersebut, dokter akan menentukan apakah Perfect Facelift merupakan pilihan yang sesuai serta merencanakan titik pemasangan benang agar hasil lifting mengikuti kontur wajah masing-masing pasien.
+</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Persiapan Sebelum Tindakan</strong>
+          <p>Area wajah akan dibersihkan terlebih dahulu untuk membantu menjaga kebersihan selama prosedur. Dokter kemudian akan menandai area pemasangan benang dan melakukan persiapan tindakan sesuai dengan rencana treatment. Untuk membantu meningkatkan kenyamanan pasien, anestesi lokal dapat diberikan pada area yang akan dilakukan pemasangan benang.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Pemasangan Benang Threadlift
+</strong>
+          <p>Dokter akan memasukkan 8 benang medis ke lapisan kulit melalui titik masuk yang telah ditentukan. Benang diposisikan secara bertahap untuk membantu mengangkat jaringan pada area bawah wajah, termasuk smile line, marionette line, dan sagging jowl, sehingga kontur wajah tampak lebih tegas dan proporsional. Selain memberikan efek lifting, benang juga membantu merangsang pembentukan kolagen yang mendukung kekencangan kulit secara bertahap.
+
+</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Evaluasi Hasil & Edukasi Setelah Treatment</strong>
+          <p>Setelah seluruh benang terpasang, dokter akan mengevaluasi hasil treatment dan memastikan efek lifting telah sesuai dengan rencana tindakan. Pasien kemudian akan mendapatkan edukasi mengenai perawatan setelah treatment, termasuk aktivitas yang perlu dihindari sementara waktu, cara merawat area tindakan, serta jadwal kontrol apabila diperlukan. Sebagian efek lifting dapat terlihat segera setelah tindakan, sementara pembengkakan umumnya mulai berkurang dalam 7 hingga 10 hari, dan hasil biasanya semakin optimal dalam waktu sekitar 2 hingga 4 minggu.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Treatment Skin Booster Terkait Untuk Kulit Anda </h2>
+      <p>Beberapa perawatan berikut dapat menjadi pilihan lanjutan atau kombinasi sesuai evaluasi dokter.</p>
+
+
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/perfect-facelift-sozo-skin-clinic.webp" alt="Laser CO2 Full Face Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Perfect Facelift</h3>
+            <p>Tarik benang wajah dengan 8 benang khusus untuk area smile line dan sagging jowl agar wajah tampak lebih kencang menyeluruh (sekitar 90 menit).</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Perfect%20Facelift%20(Tarik%20Benang%20Wajah)%20%5Bsumber:%20ORG-perfect%20facelift%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/nose-job-sozo-skin-clinic.webp" alt="PRP Treatment Wajah Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Tanam Benang Hidung</h3>
+            <p>Tanam benang hidung untuk membantu meninggikan batang hidung atau mengecilkan cuping tanpa operasi (sekitar 60 menit).</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Tanam%20Benang%20Hidung%20%5Bsumber:%20ORG-nose-job%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Perfect Facelift
+</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa itu Perfect Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Facelift adalah treatment pengencangan wajah tanpa operasi menggunakan benang medis (threadlift) yang difokuskan pada area bawah wajah, seperti smile line, marionette line, dan sagging jowl. Dengan menggunakan 8 benang, treatment ini membantu mengangkat jaringan kulit yang mulai mengendur, mempertegas kontur wajah, sekaligus merangsang pembentukan kolagen agar kulit tampak lebih kencang secara bertahap.
+
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa manfaat Perfect Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Facelift membantu mengangkat jaringan kulit pada area bawah wajah sehingga kontur wajah tampak lebih tegas. Treatment ini juga membantu menyamarkan tampilan smile line, memperbaiki marionette line, mengurangi kesan kulit yang mengendur di sekitar garis rahang, serta mendukung pembentukan kolagen untuk membantu menjaga kekencangan kulit. Hasil yang diperoleh dapat berbeda pada setiap pasien sesuai kondisi kulit dan proses penuaan alami.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Siapa yang cocok menjalani Perfect Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Facelift umumnya cocok bagi Anda yang mulai mengalami perubahan pada area bawah wajah, seperti smile line yang semakin dalam, marionette line yang terlihat jelas, atau kulit di sekitar garis rahang yang mulai mengendur. Treatment ini juga dapat menjadi pilihan bagi pasien yang ingin mendapatkan efek lifting yang lebih terfokus tanpa menjalani prosedur operasi. Dokter akan melakukan evaluasi terlebih dahulu untuk menentukan apakah treatment ini sesuai dengan kebutuhan Anda.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Bagaimana cara kerja Perfect Facelift?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Facelift bekerja dengan memasang benang medis pada lapisan kulit untuk membantu mengangkat jaringan yang mulai turun di area bawah wajah. Selain memberikan efek lifting secara langsung, benang juga membantu merangsang pembentukan kolagen alami sehingga kulit menjadi lebih kencang dan hasil treatment berkembang secara bertahap dalam beberapa minggu setelah tindakan.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span> Area wajah mana saja yang menjadi fokus Perfect Facelift?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Facelift dirancang khusus untuk membantu mengencangkan area bawah wajah, terutama pada smile line, marionette line, sagging jowl, serta area di sekitar garis rahang. Dokter akan menentukan titik pemasangan benang berdasarkan kondisi wajah dan tingkat kekenduran kulit sehingga hasil treatment dapat terlihat lebih proporsional.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Kapan hasil Perfect Facelift mulai terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Sebagian efek lifting dapat terlihat segera setelah tindakan dilakukan. Pada beberapa hari pertama masih dapat terjadi pembengkakan ringan yang merupakan bagian dari proses pemulihan. Pembengkakan biasanya mulai berkurang dalam waktu sekitar 7 hingga 10 hari, sedangkan hasil lifting umumnya tampak semakin optimal dalam waktu 2 hingga 4 minggu seiring proses pembentukan kolagen dan adaptasi jaringan kulit.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Berapa lama hasil Perfect Facelift dapat bertahan?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Hasil Perfect Facelift umumnya dapat bertahan sekitar 6 hingga 8 bulan, tergantung pada kondisi kulit, usia, gaya hidup, serta proses penuaan alami masing-masing pasien. Untuk membantu mempertahankan hasil treatment, dokter dapat memberikan rekomendasi jadwal kontrol atau treatment lanjutan yang disesuaikan dengan kebutuhan setiap pasien.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Berapa banyak benang yang digunakan pada Perfect Facelift?
+
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Pada paket Perfect Facelift digunakan 8 benang medis yang dipasang pada area sesuai kebutuhan pasien. Jumlah tersebut dirancang untuk memberikan efek lifting yang lebih terfokus pada area bawah wajah, terutama untuk membantu memperbaiki tampilan smile line, marionette line, dan garis rahang.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa yang perlu diperhatikan setelah Perfect Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setelah treatment selesai, dokter akan memberikan panduan mengenai aktivitas yang sebaiknya dihindari selama masa pemulihan, cara merawat area tindakan, serta jadwal kontrol apabila diperlukan. Mengikuti seluruh anjuran dokter dapat membantu proses penyembuhan berjalan dengan baik sekaligus mendukung hasil treatment yang lebih optimal.
+</p></div>
+      </div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span> Apakah Perfect Facelift aman?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setiap tindakan di SOZO Skin Clinic diawali dengan konsultasi dan evaluasi menyeluruh oleh dokter. Pemeriksaan dilakukan untuk menilai kondisi kulit, struktur wajah, serta area yang akan diberikan tindakan sehingga dokter dapat menentukan apakah Perfect Facelift merupakan pilihan treatment yang sesuai. Dengan perencanaan yang tepat, prosedur dapat dilakukan sesuai standar medis yang berlaku.
+
+      </div>
+</div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Perfect Facelift dapat dikombinasikan dengan treatment lain?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Dalam beberapa kondisi, Perfect Facelift dapat dikombinasikan dengan treatment estetika lain sesuai dengan tujuan perawatan pasien. Dokter akan mempertimbangkan kondisi kulit, tingkat penuaan, serta hasil yang ingin dicapai sebelum merekomendasikan kombinasi treatment yang paling sesuai agar hasil perawatan lebih optimal.
+</p></div>
+      </div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span> Apa perbedaan Perfect Facelift dengan Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Keduanya merupakan treatment threadlift tanpa operasi, namun memiliki fokus yang berbeda. Facelift umumnya membantu mengencangkan wajah secara menyeluruh menggunakan jumlah benang yang lebih sedikit, sedangkan Perfect Facelift menggunakan 8 benang dengan fokus pada area bawah wajah, seperti smile line, marionette line, dan sagging jowl, sehingga memberikan efek lifting yang lebih spesifik pada area tersebut. Dokter akan membantu menentukan pilihan treatment yang paling sesuai berdasarkan kondisi dan kebutuhan wajah Anda.
+
+</p></div>
+      </div>
+      
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Di mana saya bisa melakukan   Perfect Facelift?
+
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Facelift tersedia di cabang SOZO Skin Clinic. Anda dapat menghubungi tim SOZO melalui WhatsApp untuk mengetahui ketersediaan jadwal treatment di cabang terdekat. Sebelum tindakan dilakukan, dokter akan melakukan konsultasi dan analisis kondisi wajah untuk memastikan treatment yang dipilih sesuai dengan kebutuhan serta tujuan perawatan Anda.
+<a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a></p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePoresDescription() {
+    const content = document.getElementById('treatmentDescriptionPores');
+    const btn = document.querySelector('.sozo-load-more-btn');
+    const btnText = document.getElementById('poresReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function togglePoresFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
+
+

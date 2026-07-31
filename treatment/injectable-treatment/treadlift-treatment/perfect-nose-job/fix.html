@@ -1,0 +1,814 @@
+
+<!-- ================================================================= -->
+<!-- SOZO SKIN CLINIC - PERFECT NOSE JOB TREATMENT WIDGET WITH UPDATED SKU -->
+<!-- ================================================================= -->
+
+<style>
+  /* SECTION 4 - PILIHAN TREATMENT STYLES */
+  .clinic-services-wrapper {
+    --primary-color: #1A2080; --primary-hover: #262d9c; --bg-light: #f8fafc; --text-dark: #1e293b; --text-muted: #475569; --border-color: #e2e8f0; --card-bg: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    max-width: 1200px; margin: 0 auto; padding: 40px 20px;
+  }
+  .clinic-services-wrapper * { box-sizing: border-box !important; }
+  .clinic-services-wrapper h2, .clinic-services-wrapper h3, .clinic-services-wrapper p { margin: 0; padding: 0; line-height: normal; }
+  .clinic-services-wrapper a { text-decoration: none; box-shadow: none; }
+  .clinic-services-wrapper .clinic-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; text-align: left; }
+  .clinic-services-wrapper .clinic-header-text { flex: 1; padding-right: 20px; }
+  .clinic-services-wrapper .clinic-title { color: var(--primary-color) !important; font-size: 28px !important; font-weight: 700 !important; margin: 0 0 8px 0 !important; letter-spacing: -0.5px !important; line-height: 1.3 !important; }
+  .clinic-services-wrapper .clinic-subtitle { color: var(--text-muted) !important; font-size: 15px !important; margin: 0 !important; line-height: 1.5 !important; }
+  .clinic-services-wrapper .header-view-all { display: inline-flex; align-items: center; gap: 6px; color: var(--primary-color) !important; font-size: 15px !important; font-weight: 600 !important; transition: all 0.3s ease; white-space: nowrap; }
+  .clinic-services-wrapper .header-view-all:hover { color: var(--primary-hover) !important; transform: translateX(4px); }
+  .clinic-services-wrapper .clinic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .clinic-services-wrapper .service-card { background: var(--card-bg) !important; border: 1px solid var(--border-color) !important; border-radius: 16px !important; overflow: hidden; display: flex; flex-direction: column; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important; }
+  .clinic-services-wrapper .service-card:hover { box-shadow: 0 12px 24px rgba(26, 32, 128, 0.1) !important; transform: translateY(-4px); border-color: var(--primary-color) !important; }
+  .clinic-services-wrapper .service-image { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background-color: var(--bg-light); }
+  .clinic-services-wrapper .service-image img { width: 100% !important; height: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; object-fit: cover; transition: transform 0.5s ease; display: block; }
+  .clinic-services-wrapper .service-card:hover .service-image img { transform: scale(1.05); }
+  .clinic-services-wrapper .service-badge { position: absolute; top: 12px; left: 12px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(4px); color: var(--primary-color); padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1; }
+  .clinic-services-wrapper .service-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+  .clinic-services-wrapper .service-name { color: var(--primary-color) !important; font-size: 18px !important; font-weight: 700 !important; margin: 0 0 8px 0 !important; line-height: 1.3 !important; }
+  .clinic-services-wrapper .service-desc { color: var(--text-muted) !important; font-size: 14px !important; line-height: 1.5 !important; margin: 0 0 20px 0 !important; flex-grow: 1; }
+  .clinic-services-wrapper .service-actions { margin-top: auto; display: flex; flex-direction: column; gap: 8px; }
+  .clinic-services-wrapper .detail-btn { width: 100%; box-sizing: border-box; border-radius: 8px !important; padding: 10px 16px !important; font-size: 14px !important; font-weight: 600 !important; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s ease; cursor: pointer; }
+  .clinic-services-wrapper .primary-btn { background-color: var(--primary-color) !important; color: #ffffff !important; border: 1px solid var(--primary-color) !important; }
+  .clinic-services-wrapper .primary-btn:hover { background-color: var(--primary-hover) !important; box-shadow: 0 4px 12px rgba(26, 32, 128, 0.25) !important; }
+  .clinic-services-wrapper .secondary-btn { background-color: transparent !important; color: var(--primary-color) !important; border: 1px solid var(--primary-color) !important; }
+  .clinic-services-wrapper .service-card:hover .secondary-btn { background-color: var(--primary-color) !important; color: #ffffff !important; }
+  .clinic-services-wrapper .double-buttons { display: flex; flex-direction: column; gap: 8px; }
+  .clinic-services-wrapper .clinic-view-all-container { text-align: center; margin-top: 40px; }
+  .clinic-services-wrapper .view-all-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: var(--primary-color) !important; color: #ffffff !important; padding: 14px 32px !important; border: 2px solid var(--primary-color) !important; border-radius: 30px !important; font-size: 16px !important; font-weight: 600 !important; transition: all 0.3s ease; box-shadow: 0 4px 14px rgba(26, 32, 128, 0.3) !important; }
+  .clinic-services-wrapper .view-all-btn:hover { background-color: #ffffff !important; color: var(--primary-color) !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26, 32, 128, 0.15) !important; }
+  
+  @media (max-width: 1024px) {
+    .clinic-services-wrapper .clinic-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  }
+
+  @media (max-width: 768px) {
+    .clinic-services-wrapper { padding: 30px 15px; }
+    .clinic-services-wrapper .clinic-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .clinic-services-wrapper .clinic-title { font-size: 22px !important; }
+    .clinic-services-wrapper .clinic-subtitle { font-size: 13px !important; }
+    .clinic-services-wrapper .clinic-grid { grid-template-columns: 1fr; gap: 16px; }
+    .clinic-services-wrapper .service-card { border-radius: 12px !important; }
+    .clinic-services-wrapper .service-image { aspect-ratio: 16/9; }
+    .clinic-services-wrapper .service-info { padding: 16px !important; }
+    .clinic-services-wrapper .service-name { font-size: 16px !important; }
+    .clinic-services-wrapper .service-desc { font-size: 13px !important; }
+    .clinic-services-wrapper .view-all-btn { width: 100% !important; font-size: 14px !important; padding: 14px 20px !important; border-radius: 12px !important; }
+  }
+
+  /* SOZO PAGE MAIN WIDGET STYLES */
+  .sozo-sku-pores-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-pores-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-pores-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-pores-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important;
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important;
+    font-weight: 700 !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-btn,
+  .sozo-sku-pores-wrapper .sozo-related-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-btn:hover,
+  .sozo-sku-pores-wrapper .sozo-related-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+  }
+
+  .sozo-sku-pores-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-pores-wrapper .sozo-cta-banner {
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-pores-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 650px;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    border: 2px solid #ffffff !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-pores-wrapper .sozo-section-card,
+  .sozo-sku-pores-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card h2,
+  .sozo-sku-pores-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card p,
+  .sozo-sku-pores-wrapper .sozo-section-card li {
+    color: #475569 !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card span {
+    color: #475569;
+    font-size: 14px;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-process-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-text strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-text p {
+    margin: 0 !important;
+    color: #475569 !important;
+    font-size: 15px !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-pores-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-pores-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-pores-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-pores-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-question svg { flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; }
+  .sozo-sku-pores-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-pores-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-pores-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-pores-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-pores-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-pores-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-pores-wrapper .sozo-btn,
+    .sozo-sku-pores-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-pores-wrapper .sozo-section-card,
+    .sozo-sku-pores-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-pores-wrapper .sozo-problem-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-pores-wrapper" id="sozo-pores-widget">
+
+  <!-- BREADCRUMB NAVIGATION -->
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/">Injectable Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/">Threadlift Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Perfect Nose Job Treatment</span>
+      </li>
+    </ol>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Perfect Nose Job untuk Membantu Membentuk Hidung Tanpa Operasi</h1>
+      <p>Perfect Nose Job merupakan treatment threadlift yang membantu meninggikan batang hidung dan membentuk cuping hidung tanpa operasi. Menggunakan 4 benang medis (2 benang batang hidung dan 2 benang cuping hidung), treatment ini membantu menciptakan bentuk hidung yang tampak lebih proporsional dan tegas. Sebagian hasil dapat terlihat segera setelah tindakan, sementara pembengkakan umumnya mulai berkurang dalam waktu sekitar 7 hingga 10 hari.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">90 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">
+              Rp 2.499.000
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20threadlift%20%5Bsumber:%20ORG-threadlift%20treatment%5D " class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/perfect-facelift-sozo-skin-clinic.webp" alt="Perawatan Perfect Nose Job Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Hidung Lebih Mancung & Proporsional Tanpa Operasi!</h2>
+      <p>Menonjolkan manfaat spesifik Perfect Nose Job (batang hidung tegas & cuping ramping) dan memberikan rasa aman (prosedur minim invasif & ditangani dokter).</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20threadlift%20%5Bsumber:%20ORG-threadlift%20treatment%5D " class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <!-- PROBLEMS GRID -->
+    <div class="sozo-section-card">
+      <h2>Masalah Hidung yang Dapat Dibantu Perfect Nose Job</h2>
+      <p>Setiap orang memiliki bentuk hidung yang berbeda. Pada beberapa kondisi, bentuk batang hidung maupun cuping hidung dapat memengaruhi keseimbangan proporsi wajah. Perfect Nose Job dirancang untuk membantu mengatasi beberapa kondisi berikut.</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong> Batang Hidung Terlihat Rendah</strong>
+          <span>Batang hidung yang rendah dapat membuat profil wajah terlihat kurang tegas. Perfect Nose Job membantu meninggikan batang hidung sehingga bentuk hidung tampak lebih proporsional.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong> Cuping Hidung Tampak Lebar</strong>
+          <span>Cuping hidung yang lebar dapat membuat hidung terlihat kurang seimbang. Treatment ini membantu membentuk area cuping hidung agar tampilannya tampak lebih ramping dan proporsional.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong> Kontur Hidung Kurang Terdefinisi</strong>
+          <span>Kontur hidung yang kurang tegas dapat memengaruhi harmoni wajah secara keseluruhan. Perfect Nose Job membantu membentuk garis hidung sehingga tampilannya terlihat lebih jelas dan natural.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong> Ingin Membentuk Hidung Tanpa Operasi</strong>
+          <span>Bagi Anda yang ingin memperbaiki bentuk hidung tanpa prosedur bedah, Perfect Nose Job dapat menjadi pilihan treatment minim invasif dengan waktu tindakan yang relatif singkat.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong> Menginginkan Profil Wajah Lebih Proporsional</strong>
+          <span>Bentuk hidung yang lebih seimbang dapat membantu menciptakan profil wajah yang tampak lebih harmonis. Treatment dilakukan dengan menyesuaikan struktur wajah masing-masing pasien.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong> Ingin Hasil yang Tampak Natural</strong>
+          <span>Perfect Nose Job membantu membentuk hidung menggunakan benang medis dengan pendekatan yang disesuaikan pada kondisi setiap pasien sehingga hasil akhir diharapkan tetap terlihat natural.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DETAILED EXPLANATION -->
+    <div class="sozo-section-card">
+      <h2>Perfect Nose Job untuk Membantu Membentuk Hidung Tanpa Operasi</h2>
+      <p>Perfect Nose Job merupakan treatment threadlift yang membantu meninggikan batang hidung dan membentuk cuping hidung tanpa prosedur operasi. Treatment ini menggunakan 4 benang medis, terdiri dari 2 benang pada batang hidung dan 2 benang pada area cuping hidung, untuk membantu menciptakan bentuk hidung yang tampak lebih proporsional dan seimbang dengan kontur wajah.</p>
+      <p>Selain membantu membentuk struktur hidung, pemasangan benang juga memberikan efek penopang pada jaringan sehingga hidung tampak lebih terdefinisi. Sebagian hasil dapat terlihat segera setelah tindakan dilakukan, sementara pembengkakan umumnya mulai berkurang dalam waktu sekitar 7 hingga 10 hari sehingga bentuk hidung terlihat semakin natural.</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionPores">
+        <div class="sozo-expandable-inner">
+          <p>Di SOZO Skin Clinic, setiap pasien akan menjalani konsultasi dengan dokter sebelum treatment dilakukan. Dokter akan mengevaluasi bentuk hidung, struktur wajah, serta tujuan perawatan untuk menentukan apakah Perfect Nose Job merupakan pilihan treatment yang sesuai. Hasil treatment dapat berbeda pada setiap pasien tergantung kondisi anatomi hidung, karakteristik jaringan, serta respons tubuh selama proses penyembuhan.</p>
+        
+          <h3>Apa Itu Perfect Nose Job?</h3>
+          <p>Perfect Nose Job adalah treatment threadlift hidung yang membantu membentuk hidung tanpa operasi menggunakan benang medis. Pada treatment ini, benang dipasang pada batang hidung dan area cuping hidung untuk membantu meninggikan batang hidung sekaligus membentuk kontur hidung agar terlihat lebih proporsional.</p>
+          <p>Dibandingkan prosedur bedah, Perfect Nose Job merupakan tindakan minim invasif dengan waktu pengerjaan yang relatif singkat. Setelah tindakan selesai, sebagian perubahan bentuk hidung dapat langsung terlihat, kemudian hasil akan tampak semakin natural seiring berkurangnya pembengkakan dalam beberapa hari berikutnya.</p>
+
+          <h3>Manfaat Perfect Nose Job</h3>
+          <p>Perfect Nose Job membantu memberikan berbagai manfaat, antara lain:</p>
+          <ul>
+            <li><strong>Membantu meninggikan batang hidung tanpa operasi.</strong></li>
+            <li><strong>Membantu membentuk cuping hidung agar tampak lebih proporsional.</strong></li>
+            <li><strong>Membantu mempertegas kontur hidung sehingga profil wajah terlihat lebih seimbang.</strong></li>
+            <li><strong>Membantu menciptakan bentuk hidung yang lebih harmonis dengan struktur wajah.</strong></li>
+            <li><strong>Membantu memberikan perubahan bentuk hidung melalui tindakan minim invasif.</strong></li>
+            <li><strong>Membantu memberikan hasil yang tampak natural sesuai kondisi masing-masing pasien.</strong></li>
+          </ul>
+          
+          <h3>Mengapa Bentuk Hidung Berbeda pada Setiap Orang?</h3>
+          <p>Bentuk hidung dipengaruhi oleh berbagai faktor, seperti struktur tulang, tulang rawan, jaringan lunak, serta faktor genetik. Karena setiap orang memiliki karakteristik anatomi yang berbeda, tinggi batang hidung, bentuk cuping, maupun kontur hidung juga dapat bervariasi.</p>
+          <p>Pada beberapa orang, batang hidung yang relatif rendah atau cuping hidung yang tampak lebih lebar dapat membuat profil wajah terlihat kurang tegas. Oleh karena itu, treatment seperti threadlift hidung dapat menjadi salah satu pilihan untuk membantu membentuk kontur hidung tanpa melalui prosedur operasi. Sebelum tindakan dilakukan, dokter akan mengevaluasi kondisi hidung secara menyeluruh agar rencana treatment disesuaikan dengan struktur wajah masing-masing pasien.</p>
+          
+          <h3>Siapa yang Cocok Menjalani Perfect Nose Job?</h3>
+          <p>Perfect Nose Job umumnya cocok bagi Anda yang ingin membantu membentuk hidung tanpa menjalani prosedur operasi. Treatment ini dapat menjadi pilihan bagi pasien yang menginginkan batang hidung tampak lebih tinggi, kontur hidung lebih tegas, atau cuping hidung terlihat lebih proporsional dengan tetap mempertahankan hasil yang natural.</p>
+          <p>Sebelum treatment dilakukan, dokter akan melakukan pemeriksaan terhadap bentuk hidung, kondisi jaringan, serta proporsi wajah secara keseluruhan. Berdasarkan hasil evaluasi tersebut, dokter akan menentukan apakah Perfect Nose Job merupakan treatment yang sesuai dengan kebutuhan dan tujuan perawatan setiap pasien.</p>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="togglePoresDescription()">
+        <span id="poresReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <!-- PROCESS STEPS -->
+    <div class="sozo-section-card">
+      <h2>Proses Perfect Nose Job di SOZO Skin Clinic</h2>
+      <p>Perfect Nose Job dilakukan melalui beberapa tahapan untuk membantu memastikan treatment berjalan sesuai dengan kondisi dan bentuk hidung setiap pasien. Sebelum tindakan, dokter akan mengevaluasi struktur hidung dan mendiskusikan hasil yang ingin dicapai agar treatment dapat direncanakan secara tepat.</p>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi & Analisis Bentuk Hidung</strong>
+          <p>Dokter akan memeriksa bentuk batang hidung, cuping hidung, serta proporsi wajah secara keseluruhan. Dari hasil pemeriksaan tersebut, dokter menentukan apakah Perfect Nose Job merupakan treatment yang sesuai sekaligus merencanakan titik pemasangan benang.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Persiapan Sebelum Tindakan</strong>
+          <p>Area hidung dibersihkan, kemudian dokter memberikan anestesi lokal untuk membantu meningkatkan kenyamanan selama prosedur. Setelah itu dilakukan penandaan pada area yang akan dipasang benang.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Pemasangan Benang Threadlift</strong>
+          <p>Dokter memasang 4 benang medis yang terdiri dari 2 benang pada batang hidung dan 2 benang pada cuping hidung. Pemasangan dilakukan secara bertahap untuk membantu meninggikan batang hidung sekaligus membentuk kontur hidung agar tampak lebih proporsional.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Evaluasi Hasil & Edukasi Setelah Treatment</strong>
+          <p>Setelah tindakan selesai, dokter akan mengevaluasi hasil treatment dan memberikan panduan perawatan setelah prosedur. Sebagian hasil dapat terlihat segera setelah tindakan, sedangkan pembengkakan umumnya mulai berkurang dalam waktu sekitar 7 hingga 10 hari.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REPLACED SECTION: PILIHAN TREATMENT TARIK BENANG DI SOZO (CLINIC SERVICES WRAPPER) -->
+    <div class="clinic-services-wrapper">
+      <div class="clinic-header">
+        <div class="clinic-header-text">
+          <h2 class="clinic-title">Pilihan Treatment Tarik Benang di SOZO</h2>
+          <p class="clinic-subtitle">Pilih perawatan tarik benang wajah (facelift) atau tanam benang hidung sesuai kebutuhan estetika Anda.</p>
+        </div>
+        <a href="https://sozoskinclinic.com/treatment/" class="header-view-all">
+          Lihat Treatment Lebih Lengkap
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+
+      <div class="clinic-grid">
+
+        <!-- CARD 1: FACELIFT -->
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/facelift-sozo-skin-clinic.webp" alt="Facelift tarik benang wajah Sozo Skin Clinic" decoding="async" width="600" height="450">
+            <span class="service-badge">Injectable</span>
+          </div>
+          <div class="service-info">
+            <h3 class="service-name">Facelift</h3>
+            <p class="service-desc">Metode tarik benang wajah untuk membantu mengencangkan kulit wajah tanpa operasi menggunakan 4 benang medis berkualitas (sekitar 75 menit).</p>
+            <div class="service-actions double-buttons">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Threadlift%20di%20Sozo%20%5Bsrc%3AORG-Threadlift%5D" target="_blank" rel="noopener noreferrer" class="detail-btn primary-btn">
+                Reservasi Sekarang
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/" class="detail-btn secondary-btn">
+                Lihat Selengkapnya
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: PERFECT FACELIFT -->
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/perfect-facelift-sozo-skin-clinic.webp" alt="Perfect Facelift tarik benang wajah Sozo Skin Clinic" decoding="async" width="600" height="450">
+            <span class="service-badge">Injectable</span>
+          </div>
+          <div class="service-info">
+            <h3 class="service-name">Perfect Facelift</h3>
+            <p class="service-desc">Tarik benang wajah dengan 8 benang khusus untuk area smile line dan sagging jowl agar wajah tampak lebih kencang menyeluruh (sekitar 90 menit).</p>
+            <div class="service-actions double-buttons">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Threadlift%20di%20Sozo%20%5Bsrc%3AORG-Threadlift%5D" target="_blank" rel="noopener noreferrer" class="detail-btn primary-btn">
+                Reservasi Sekarang
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/perfect-facelift/" class="detail-btn secondary-btn">
+                Lihat Selengkapnya
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: TANAM BENANG HIDUNG -->
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/nose-job-sozo-skin-clinic.webp" alt="Tanam benang hidung Sozo Skin Clinic" decoding="async" width="600" height="450">
+            <span class="service-badge">Injectable</span>
+          </div>
+          <div class="service-info">
+            <h3 class="service-name">Tanam Benang Hidung</h3>
+            <p class="service-desc">Tanam benang hidung untuk membantu meninggikan batang hidung atau mengecilkan cuping tanpa operasi (sekitar 60 menit).</p>
+            <div class="service-actions double-buttons">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Threadlift%20di%20Sozo%20%5Bsrc%3AORG-Threadlift%5D" target="_blank" rel="noopener noreferrer" class="detail-btn primary-btn">
+                Reservasi Sekarang
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/" class="detail-btn secondary-btn">
+                Lihat Selengkapnya
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="clinic-view-all-container">
+        <a href="https://sozoskinclinic.com/treatment/" class="view-all-btn">
+          Lihat Semua Treatment Lebih Lengkap
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Perfect Nose Job</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa itu Perfect Nose Job?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Nose Job adalah treatment threadlift yang membantu membentuk hidung tanpa prosedur operasi. Treatment ini menggunakan 4 benang medis, yaitu 2 benang pada batang hidung dan 2 benang pada area cuping hidung, untuk membantu meninggikan batang hidung sekaligus membentuk kontur hidung agar tampak lebih proporsional. Sebelum tindakan dilakukan, dokter akan mengevaluasi bentuk hidung dan struktur wajah untuk menentukan rencana treatment yang sesuai dengan kebutuhan setiap pasien.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa manfaat Perfect Nose Job?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Nose Job membantu memperbaiki tampilan hidung dengan meninggikan batang hidung, membentuk cuping hidung, serta mempertegas kontur hidung agar terlihat lebih seimbang dengan proporsi wajah. Selain memberikan perubahan bentuk secara langsung, treatment ini juga menjadi pilihan bagi pasien yang menginginkan pembentukan hidung tanpa menjalani prosedur operasi. Hasil treatment dapat berbeda pada setiap orang sesuai dengan kondisi anatomi hidung dan respons tubuh terhadap tindakan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Siapa yang cocok menjalani Perfect Nose Job?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Treatment ini umumnya cocok bagi Anda yang memiliki batang hidung relatif rendah, ingin membentuk cuping hidung agar tampak lebih proporsional, atau menginginkan kontur hidung yang lebih tegas tanpa operasi. Sebelum treatment dilakukan, dokter akan melakukan konsultasi dan pemeriksaan untuk menilai kondisi hidung, ketebalan jaringan, serta kesesuaian treatment dengan tujuan perawatan yang diinginkan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Bagaimana cara kerja Perfect Nose Job?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Nose Job bekerja dengan memasang benang medis pada area batang hidung dan cuping hidung sesuai dengan perencanaan dokter. Benang tersebut membantu menopang jaringan sehingga bentuk hidung tampak lebih tinggi, lebih tegas, dan lebih proporsional. Titik pemasangan benang disesuaikan dengan struktur anatomi masing-masing pasien agar hasil treatment terlihat lebih natural.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Berapa banyak benang yang digunakan pada Perfect Nose Job?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Nose Job menggunakan 4 benang medis yang terdiri dari 2 benang pada batang hidung dan 2 benang pada area cuping hidung. Kombinasi tersebut dirancang untuk membantu meninggikan batang hidung sekaligus membentuk cuping hidung sehingga menghasilkan kontur hidung yang lebih seimbang. Jumlah benang yang digunakan telah disesuaikan dengan konsep treatment ini dan akan dipasang oleh dokter sesuai kondisi pasien.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Kapan hasil Perfect Nose Job mulai terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Sebagian perubahan bentuk hidung dapat terlihat segera setelah tindakan selesai karena efek pembentukan dari benang yang dipasang. Setelah prosedur, pembengkakan ringan masih dapat terjadi sebagai bagian dari proses pemulihan. Pembengkakan umumnya mulai berkurang dalam waktu sekitar 7 hingga 10 hari sehingga bentuk hidung terlihat lebih natural. Hasil akhir dapat berbeda pada setiap pasien tergantung kondisi jaringan dan proses penyembuhan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Berapa lama tindakan Perfect Nose Job?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Durasi Perfect Nose Job sekitar 90 menit di luar waktu konsultasi. Waktu tersebut meliputi persiapan tindakan, pemberian anestesi lokal, pemasangan benang, hingga evaluasi hasil setelah prosedur selesai. Lama tindakan dapat sedikit berbeda pada setiap pasien sesuai kondisi hidung dan tingkat kompleksitas treatment yang dilakukan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Perfect Nose Job memerlukan operasi?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Tidak. Perfect Nose Job merupakan treatment minim invasif yang menggunakan benang medis untuk membantu membentuk hidung tanpa prosedur bedah. Karena tidak memerlukan operasi, tindakan ini tidak melibatkan perubahan struktur tulang hidung seperti pada rhinoplasty. Dokter akan menjelaskan prosedur secara menyeluruh sebelum treatment dilakukan agar pasien memahami manfaat serta hasil yang dapat diharapkan.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa perbedaan Perfect Nose Job dengan operasi hidung?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Nose Job menggunakan benang medis untuk membantu membentuk batang hidung dan cuping hidung tanpa tindakan bedah, sehingga prosedurnya lebih minim invasif. Sementara itu, operasi hidung atau rhinoplasty dilakukan melalui prosedur pembedahan untuk mengubah struktur tulang maupun tulang rawan hidung secara lebih menyeluruh. Dokter akan membantu menentukan pilihan treatment yang paling sesuai berdasarkan kondisi anatomi hidung dan hasil yang ingin dicapai.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa yang perlu diperhatikan setelah Perfect Nose Job?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setelah treatment, dokter akan memberikan panduan mengenai cara merawat area hidung selama masa pemulihan, termasuk aktivitas yang sebaiknya dihindari untuk sementara waktu. Mengikuti seluruh anjuran dokter dapat membantu proses penyembuhan berjalan dengan baik dan mendukung hasil treatment yang lebih optimal. Apabila terdapat keluhan selama masa pemulihan, pasien dianjurkan untuk segera berkonsultasi kembali dengan dokter.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Perfect Nose Job aman?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setiap tindakan di SOZO Skin Clinic diawali dengan konsultasi dan pemeriksaan oleh dokter untuk menilai kondisi hidung, struktur wajah, serta kesesuaian treatment dengan kebutuhan pasien. Evaluasi ini membantu dokter menyusun rencana tindakan yang tepat sebelum pemasangan benang dilakukan. Dengan prosedur yang direncanakan sesuai kondisi pasien, treatment dapat dilakukan mengikuti standar medis yang berlaku.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Di mana saya bisa melakukan Perfect Nose Job?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perfect Nose Job tersedia di SOZO Skin Clinic dan dilakukan setelah pasien menjalani konsultasi dengan dokter. Selama sesi konsultasi, dokter akan mengevaluasi bentuk hidung, menjelaskan prosedur treatment, serta memberikan rekomendasi yang sesuai dengan kebutuhan masing-masing pasien. Anda dapat menghubungi tim SOZO Skin Clinic untuk mengetahui informasi jadwal treatment maupun ketersediaan layanan di cabang terdekat.</p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePoresDescription() {
+    const content = document.getElementById('treatmentDescriptionPores');
+    const btn = document.querySelector('.sozo-load-more-btn');
+    const btnText = document.getElementById('poresReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function togglePoresFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
