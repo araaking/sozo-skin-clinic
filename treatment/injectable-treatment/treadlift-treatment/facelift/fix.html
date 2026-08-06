@@ -1,0 +1,811 @@
+<style>
+  .sozo-sku-pores-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-pores-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-pores-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-pores-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important;
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important;
+    font-weight: 700 !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-btn,
+  .sozo-sku-pores-wrapper .sozo-related-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-btn:hover,
+  .sozo-sku-pores-wrapper .sozo-related-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+  }
+
+  .sozo-sku-pores-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-pores-wrapper .sozo-cta-banner {
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-pores-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 650px;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    border: 2px solid #ffffff !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-pores-wrapper .sozo-section-card,
+  .sozo-sku-pores-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card h2,
+  .sozo-sku-pores-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card p,
+  .sozo-sku-pores-wrapper .sozo-section-card li {
+    color: #475569 !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-problem-grid,
+  .sozo-sku-pores-wrapper .sozo-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card span {
+    color: #475569;
+    font-size: 14px;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-process-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-text strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-text p {
+    margin: 0 !important;
+    color: #475569 !important;
+    font-size: 15px !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-related-card {
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body h3 {
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin: 0 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body p {
+    font-size: 14px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    flex: 1;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-btn {
+    max-width: none;
+    padding: 11px 16px;
+    font-size: 14px !important;
+    box-shadow: none;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-link {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    text-align: center;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-pores-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-pores-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-pores-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-pores-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-question svg { flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; }
+  .sozo-sku-pores-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-pores-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-pores-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-pores-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-pores-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-pores-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-pores-wrapper .sozo-btn,
+    .sozo-sku-pores-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-pores-wrapper .sozo-section-card,
+    .sozo-sku-pores-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-pores-wrapper .sozo-problem-grid,
+    .sozo-sku-pores-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-pores-wrapper" id="sozo-pores-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/">Injectable Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/">Threadlift Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Facelift Treatment</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Facelift Tanpa Operasi untuk Membantu Mengencangkan Kulit Wajah</h1>
+      <p>Facelift merupakan treatment pengencangan wajah tanpa operasi yang dilakukan menggunakan benang medis (threadlift) untuk membantu mengangkat jaringan kulit yang mulai mengendur. Perawatan ini membantu membuat kontur wajah tampak lebih tegas, mengurangi kesan kendur pada area tertentu, serta merangsang pembentukan kolagen sehingga kulit terlihat lebih kencang dan awet muda. Sebagian efek lifting dapat terlihat segera setelah tindakan, sementara hasil biasanya semakin optimal dalam waktu sekitar 2 hingga 4 minggu. </p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">90 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">
+              Rp 4.999.000
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20threadlift%20%5Bsumber:%20ORG-threadlift%20treatment%5D " class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/facelift-sozo-skin-clinic.webp" alt="Perawatan pori pori besar wajah untuk mengecilkan pori di Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Wajah Kembali Kencang, Kenyal & Lebih Muda Tanpa Operasi!</h2>
+      <p>Kembalikan kontur wajah ideal dan kekencangan kulitmu dengan prosedur Facelift menggunakan threadlift profesional di SOZO Skin Clinic. Hasil nyata, aman, dan tampak natural.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20threadlift%20%5Bsumber:%20ORG-threadlift%20treatment%5D " class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <div class="sozo-section-card">
+      <h2>Masalah Wajah yang Dapat Dibantu Facelift </h2>
+      <p>Seiring bertambahnya usia, produksi kolagen alami dalam kulit akan menurun sehingga kulit mulai kehilangan elastisitas dan tampak lebih kendur. Selain faktor usia, paparan sinar matahari, gaya hidup, dan perubahan berat badan juga dapat memengaruhi kekencangan kulit. Facelift dapat menjadi salah satu pilihan treatment untuk membantu mengatasi beberapa kondisi berikut.
+</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Kulit Wajah Mulai Mengendur</strong>
+          <span>Berkurangnya elastisitas kulit dapat membuat wajah terlihat kurang kencang dibanding sebelumnya. Facelift membantu mengangkat jaringan kulit sehingga wajah tampak lebih terdefinisi dan proporsional.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Garis Rahang Terlihat Kurang Tegas
+</strong>
+          <span>Kontur rahang yang mulai kehilangan definisi dapat membuat wajah tampak lebih bulat atau kurang berbentuk. Facelift membantu memberikan efek lifting sehingga garis rahang terlihat lebih tegas dan wajah tampak lebih tirus</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Pipi Mulai Turun (Sagging Cheeks)</strong>
+          <span>Penurunan jaringan pada area pipi merupakan salah satu tanda penuaan yang umum terjadi. Facelift membantu menopang jaringan kulit sehingga area pipi tampak lebih terangkat dan wajah terlihat lebih segar.
+</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tanda-Tanda Penuaan pada Wajah
+</strong>
+          <span>Kulit yang mulai kehilangan kekencangan sering kali membuat wajah tampak lebih lelah atau terlihat lebih tua dari usia sebenarnya. Dengan membantu mengangkat jaringan kulit dan merangsang pembentukan kolagen, Facelift dapat membantu membuat wajah tampak lebih muda secara alami.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong> Ingin Mengencangkan Wajah Tanpa Operasi
+</strong>
+          <span>Tidak semua orang ingin menjalani prosedur bedah untuk mendapatkan wajah yang lebih kencang. Facelift dengan benang menjadi alternatif minim invasif bagi pasien yang menginginkan efek lifting tanpa melalui tindakan operasi dengan waktu pemulihan yang relatif lebih singkat.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Ingin Menjaga Kontur Wajah Tetap Proporsional
+</strong>
+          <span>Selain membantu mengencangkan kulit yang mulai kendur, Facelift juga dapat menjadi pilihan bagi Anda yang ingin mempertahankan bentuk dan kontur wajah agar tetap terlihat lebih tegas seiring bertambahnya usia.
+</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Facelift untuk Membantu Mengencangkan Kulit & Membentuk Kontur Wajah</h2>
+      <p>Facelift merupakan treatment pengencangan wajah tanpa operasi yang dilakukan menggunakan benang medis (threadlift) untuk membantu mengangkat jaringan kulit yang mulai mengendur. Benang akan dipasang pada area tertentu sesuai dengan kondisi dan kebutuhan pasien sehingga membantu memberikan efek lifting sekaligus menopang jaringan kulit agar wajah tampak lebih kencang dan terdefinisi.</p>
+      <p>Selain memberikan efek pengangkatan secara langsung, benang yang digunakan juga membantu merangsang pembentukan kolagen alami pada kulit. Kolagen merupakan protein penting yang berperan menjaga kekencangan dan elastisitas kulit. Seiring waktu, proses pembentukan kolagen tersebut membantu membuat hasil treatment tampak lebih natural serta mendukung kualitas kulit agar tetap terlihat sehat.</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionPores">
+        <div class="sozo-expandable-inner">
+            
+        <p>Di SOZO Skin Clinic, setiap pasien akan menjalani konsultasi dengan dokter sebelum treatment dilakukan. Dokter akan mengevaluasi kondisi kulit, tingkat hidrasi, produksi minyak, serta kebutuhan kulit untuk menentukan apakah Aquashine Treatment merupakan pilihan yang sesuai. Hasil perawatan dapat berbeda pada setiap orang tergantung kondisi kulit, gaya hidup, dan respons masing-masing terhadap treatment.
+</p>
+        
+          <h3>Apa Itu Facelift?
+</h3>
+          <p>Facelift adalah treatment pengencangan wajah tanpa operasi yang menggunakan benang medis untuk membantu mengangkat jaringan kulit yang mulai turun atau kehilangan elastisitas. Treatment ini bertujuan membantu memperbaiki kontur wajah, membuat garis rahang tampak lebih tegas, serta membantu wajah terlihat lebih kencang tanpa melalui prosedur bedah.</p>
+
+<p>Sebagian efek lifting dapat terlihat segera setelah tindakan dilakukan. Seiring berkurangnya pembengkakan dan berlangsungnya proses pembentukan kolagen, hasil treatment biasanya akan tampak semakin optimal dalam waktu sekitar 2 hingga 4 minggu.</p>
+          <h3>Manfaat Facelift</h3>
+          <p>Facelift memberikan berbagai manfaat untuk membantu memperbaiki tampilan wajah, antara lain:</p>
+          <ul>
+              
+            <li><strong>Membantu mengangkat kulit wajah yang mulai mengendur.</strong></li>
+            <li><strong>Membantu membuat kontur wajah tampak lebih tegas dan proporsional.</strong></li>
+            <li><strong>Membantu memperjelas garis rahang (jawline).</strong></li>
+            <li><strong>Membantu mengangkat area pipi yang mulai turun.</strong></li>
+            <li><strong>Membantu mengurangi kesan wajah lelah akibat kulit yang kehilangan kekencangan.</strong></li>
+            <li><strong>Membantu merangsang pembentukan kolagen alami pada kulit.</strong></li>
+            <li><strong>Membantu membuat wajah tampak lebih segar dan awet muda.</strong></li>
+            <li><strong>Mengapa Kulit Kehilangan Kelembapan?</strong></li>
+            <li><strong>Membantu mendapatkan efek pengencangan wajah tanpa prosedur operasi.
+</strong></li>
+          </ul>
+          
+          <h3>Mengapa Kulit Wajah Mulai Mengendur?</h3>
+          <p>Kulit wajah secara alami akan mengalami perubahan seiring bertambahnya usia. Produksi kolagen dan elastin yang berfungsi menjaga kekencangan kulit akan semakin berkurang sehingga jaringan penyangga kulit menjadi lebih lemah. Akibatnya, kulit mulai kehilangan elastisitas, area pipi tampak turun, garis rahang menjadi kurang tegas, dan kontur wajah tidak lagi sejelas sebelumnya.</p>
+          <p>Selain faktor usia, paparan sinar ultraviolet, kebiasaan merokok, stres, perubahan berat badan, serta gaya hidup yang kurang sehat juga dapat mempercepat terjadinya kekenduran kulit. Oleh karena itu, menjaga kualitas kulit sejak dini dan memilih treatment yang sesuai dapat membantu mempertahankan tampilan wajah agar tetap kencang dan proporsional.</p>
+          
+    <h3>Siapa yang Cocok Menjalani Facelift?</h3>
+    
+    <p>Facelift umumnya cocok bagi Anda yang mulai mengalami kulit wajah mengendur, pipi yang tampak turun, garis rahang yang kehilangan definisi, atau ingin mendapatkan efek pengencangan wajah tanpa menjalani prosedur operasi. Treatment ini juga dapat menjadi pilihan bagi individu yang ingin membantu memperbaiki kontur wajah agar terlihat lebih tegas dengan waktu pemulihan yang relatif lebih singkat dibanding tindakan bedah.
+</p>
+<p>Sebelum treatment dilakukan, dokter akan mengevaluasi kondisi kulit, tingkat elastisitas, struktur wajah, serta tujuan perawatan Anda. Berdasarkan hasil konsultasi tersebut, dokter akan menentukan apakah Facelift merupakan pilihan treatment yang sesuai dengan kebutuhan masing-masing pasien.</p>
+          
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="togglePoresDescription()">
+        <span id="poresReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2> Proses Facelift di SOZO Skin Clinic
+</h2>
+      <p>Facelift dilakukan melalui beberapa tahapan untuk membantu memastikan treatment berjalan dengan aman, nyaman, dan sesuai dengan kondisi setiap pasien. Sebelum tindakan dilakukan, dokter akan mengevaluasi kondisi kulit, tingkat kekenduran wajah, serta area yang membutuhkan efek lifting agar hasil treatment terlihat lebih proporsional.</p>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi & Analisis Kondisi Wajah
+</strong>
+          <p>Dokter akan melakukan pemeriksaan terhadap struktur wajah, elastisitas kulit, tingkat kekenduran, serta area yang ingin diperbaiki. Dari hasil konsultasi tersebut, dokter akan menentukan apakah Facelift merupakan treatment yang sesuai sekaligus merencanakan titik pemasangan benang berdasarkan kebutuhan masing-masing pasien.
+</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Persiapan Sebelum Tindakan</strong>
+          <p>Area wajah akan dibersihkan terlebih dahulu untuk membantu menjaga kebersihan selama prosedur. Dokter kemudian akan menandai area pemasangan benang dan melakukan persiapan tindakan sesuai dengan rencana treatment. Untuk membantu meningkatkan kenyamanan pasien, anestesi lokal dapat diberikan pada area yang akan dilakukan pemasangan benang.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Pemasangan Benang Threadlift
+</strong>
+          <p>Dokter akan memasukkan benang medis ke lapisan kulit melalui titik masuk yang telah ditentukan. Benang kemudian diposisikan secara hati-hati untuk membantu mengangkat jaringan kulit yang mulai mengendur sekaligus membentuk kontur wajah agar tampak lebih tegas. Pada paket Facelift ini digunakan 4 benang yang disesuaikan dengan area treatment dan kebutuhan pasien.
+</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Evaluasi Hasil & Edukasi Setelah Treatment</strong>
+          <p>Setelah seluruh benang terpasang, dokter akan mengevaluasi hasil lifting dan memastikan posisi benang telah sesuai. Pasien kemudian akan mendapatkan edukasi mengenai perawatan setelah treatment, termasuk aktivitas yang perlu dihindari sementara waktu, cara merawat area tindakan, serta jadwal kontrol apabila diperlukan. Sebagian efek lifting dapat terlihat segera setelah tindakan, sementara hasil biasanya semakin optimal dalam waktu sekitar 2 hingga 4 minggu seiring berkurangnya pembengkakan dan proses pembentukan kolagen.
+</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Treatment Skin Booster Terkait Untuk Kulit Anda </h2>
+      <p>Beberapa perawatan berikut dapat menjadi pilihan lanjutan atau kombinasi sesuai evaluasi dokter.</p>
+
+
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/perfect-facelift-sozo-skin-clinic.webp" alt="Laser CO2 Full Face Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Perfect Facelift</h3>
+            <p>Tarik benang wajah dengan 8 benang khusus untuk area smile line dan sagging jowl agar wajah tampak lebih kencang menyeluruh (sekitar 90 menit).</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Perfect%20Facelift%20(Tarik%20Benang%20Wajah)%20%5Bsumber:%20ORG-perfect%20facelift%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/nose-job-sozo-skin-clinic.webp" alt="PRP Treatment Wajah Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Tanam Benang Hidung</h3>
+            <p>Tanam benang hidung untuk membantu meninggikan batang hidung atau mengecilkan cuping tanpa operasi (sekitar 60 menit).</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Tanam%20Benang%20Hidung%20%5Bsumber:%20ORG-nose-job%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Facelift
+</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa itu Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Facelift adalah treatment pengencangan wajah tanpa operasi yang dilakukan menggunakan benang medis (threadlift). Benang dipasang pada area tertentu untuk membantu mengangkat jaringan kulit yang mulai mengendur sehingga kontur wajah tampak lebih tegas. Selain memberikan efek lifting, benang juga membantu merangsang pembentukan kolagen yang berperan menjaga kekencangan kulit secara bertahap.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa manfaat Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Facelift membantu mengangkat kulit wajah yang mulai mengendur, memperjelas garis rahang, serta memperbaiki kontur wajah agar terlihat lebih proporsional. Selain itu, treatment ini juga membantu merangsang pembentukan kolagen sehingga kulit tampak lebih kencang dan segar. Manfaat yang diperoleh setiap pasien dapat berbeda sesuai dengan kondisi kulit, tingkat kekenduran, serta respons tubuh terhadap treatment.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Siapa yang cocok menjalani Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Facelift umumnya cocok bagi Anda yang mulai mengalami kulit wajah kendur, pipi tampak turun, atau garis rahang yang kehilangan definisi. Treatment ini juga dapat menjadi pilihan bagi pasien yang menginginkan efek pengencangan wajah tanpa menjalani prosedur operasi. Sebelum tindakan dilakukan, dokter akan mengevaluasi kondisi kulit dan struktur wajah untuk menentukan apakah treatment ini sesuai dengan kebutuhan Anda.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Bagaimana cara kerja Facelift?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Facelift bekerja dengan memasang benang medis pada lapisan kulit untuk membantu mengangkat jaringan yang mulai turun. Setelah benang terpasang, jaringan kulit akan mendapatkan efek lifting sekaligus stimulasi pembentukan kolagen alami. Kombinasi kedua mekanisme tersebut membantu membuat wajah tampak lebih kencang dan hasil treatment berkembang secara bertahap dalam beberapa minggu setelah tindakan
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span> Kapan hasil Facelift mulai terlihat?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Sebagian efek lifting dapat terlihat segera setelah tindakan dilakukan karena jaringan kulit telah terangkat. Selama beberapa hari pertama, masih mungkin terjadi pembengkakan ringan sebagai bagian dari proses pemulihan. Setelah pembengkakan berkurang, hasil biasanya tampak semakin natural dan optimal dalam waktu sekitar 2 hingga 4 minggu, tergantung kondisi kulit dan proses penyembuhan masing-masing pasien.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Berapa lama hasil Facelift dapat bertahan?
+
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Hasil Facelift umumnya dapat bertahan sekitar 6 hingga 8 bulan, meskipun durasinya dapat berbeda pada setiap pasien. Faktor seperti usia, elastisitas kulit, gaya hidup, proses penuaan alami, serta perawatan setelah treatment dapat memengaruhi lamanya hasil bertahan. Dokter dapat memberikan rekomendasi jadwal maintenance sesuai dengan kondisi kulit Anda.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Facelift memerlukan operasi?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Facelift di SOZO Skin Clinic merupakan treatment tanpa operasi yang menggunakan benang medis untuk membantu mengangkat jaringan kulit. Karena tidak melalui prosedur bedah, treatment ini menjadi salah satu alternatif bagi pasien yang menginginkan efek pengencangan wajah dengan tindakan yang lebih minim invasif. Dokter akan menjelaskan prosedur secara lengkap sebelum treatment dilakukan.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Berapa lama proses Facelift berlangsung?
+
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Lama tindakan dapat berbeda tergantung area yang dirawat dan kebutuhan masing-masing pasien. Selama prosedur berlangsung, dokter akan melakukan pemasangan benang secara bertahap setelah area tindakan dipersiapkan. Sebelum treatment dimulai, dokter akan menjelaskan estimasi waktu tindakan sesuai dengan rencana perawatan Anda.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa yang perlu diperhatikan setelah Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setelah treatment, dokter akan memberikan panduan mengenai aktivitas yang sebaiknya dihindari selama masa pemulihan, termasuk cara merawat area tindakan dan jadwal kontrol apabila diperlukan. Mengikuti seluruh anjuran dokter dapat membantu proses penyembuhan berjalan dengan baik serta mendukung hasil lifting yang lebih optimal.
+</p></div>
+      </div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span> Apakah hasil Facelift terlihat alami?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Hasil Facelift dirancang untuk membantu mengangkat jaringan kulit secara proporsional sehingga wajah tetap terlihat natural. Dokter akan menyesuaikan jumlah benang, titik pemasangan, serta teknik tindakan berdasarkan bentuk wajah dan tingkat kekenduran kulit masing-masing pasien. Dengan pendekatan tersebut, hasil treatment diharapkan dapat menyatu dengan kontur wajah tanpa mengubah karakter alami pasien.
+      </div>
+</div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Facelift aman?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setiap tindakan di SOZO Skin Clinic diawali dengan konsultasi dan evaluasi oleh dokter. Pemeriksaan dilakukan untuk menilai kondisi kulit, struktur wajah, riwayat kesehatan, serta tujuan perawatan sebelum menentukan apakah Facelift merupakan pilihan yang sesuai. Dengan perencanaan yang tepat dan tindakan yang dilakukan oleh tenaga medis, prosedur dapat dilakukan sesuai standar yang berlaku.
+
+</p></div>
+      </div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span> Apakah Facelift dapat dikombinasikan dengan treatment lain?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Dalam beberapa kondisi, Facelift dapat dipadukan dengan treatment estetika lain untuk membantu mencapai hasil perawatan yang lebih menyeluruh. Kombinasi treatment akan disesuaikan dengan kondisi kulit, tingkat penuaan, serta tujuan yang ingin dicapai. Setelah melakukan evaluasi, dokter akan memberikan rekomendasi treatment yang paling sesuai untuk setiap pasien.
+</p></div>
+      </div>
+      
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa perbedaan Facelift dengan operasi facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Operasi facelift merupakan prosedur bedah yang dilakukan untuk mengangkat dan mengencangkan jaringan wajah melalui tindakan pembedahan. Sementara itu, Facelift di SOZO Skin Clinic menggunakan benang medis (threadlift) sebagai metode pengencangan tanpa operasi. Treatment ini bersifat minim invasif, memiliki waktu pemulihan yang relatif lebih singkat, dan dapat menjadi pilihan bagi pasien yang menginginkan efek lifting tanpa menjalani prosedur bedah.
+
+</p></div>
+      </div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Di mana saya bisa melakukan Facelift?
+
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Facelift tersedia di cabang SOZO Skin Clinic. Anda dapat menghubungi tim SOZO melalui WhatsApp untuk mengetahui ketersediaan jadwal treatment di cabang terdekat. Sebelum tindakan dilakukan, dokter akan melakukan konsultasi dan analisis kondisi wajah agar treatment yang diberikan sesuai dengan kebutuhan serta tujuan perawatan Anda. <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a></p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePoresDescription() {
+    const content = document.getElementById('treatmentDescriptionPores');
+    const btn = document.querySelector('.sozo-load-more-btn');
+    const btnText = document.getElementById('poresReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function togglePoresFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
+
+

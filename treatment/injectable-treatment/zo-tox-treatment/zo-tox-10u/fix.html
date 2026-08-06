@@ -1,0 +1,793 @@
+<style>
+  .sozo-sku-pores-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-pores-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-pores-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-pores-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-pores-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important;
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-pores-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important;
+    font-weight: 700 !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-btn,
+  .sozo-sku-pores-wrapper .sozo-related-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-btn:hover,
+  .sozo-sku-pores-wrapper .sozo-related-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+  }
+
+  .sozo-sku-pores-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-pores-wrapper .sozo-cta-banner {
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-pores-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-pores-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 650px;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    border: 2px solid #ffffff !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-pores-wrapper .sozo-section-card,
+  .sozo-sku-pores-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card h2,
+  .sozo-sku-pores-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card p,
+  .sozo-sku-pores-wrapper .sozo-section-card li {
+    color: #475569 !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-section-card ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-problem-grid,
+  .sozo-sku-pores-wrapper .sozo-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .sozo-sku-pores-wrapper .sozo-problem-card span {
+    color: #475569;
+    font-size: 14px;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-process-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-text strong {
+    display: block;
+    color: #1A2080;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .sozo-sku-pores-wrapper .sozo-step-text p {
+    margin: 0 !important;
+    color: #475569 !important;
+    font-size: 15px !important;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-related-card {
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body h3 {
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin: 0 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-body p {
+    font-size: 14px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    flex: 1;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-btn {
+    max-width: none;
+    padding: 11px 16px;
+    font-size: 14px !important;
+    box-shadow: none;
+  }
+  .sozo-sku-pores-wrapper .sozo-related-link {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    text-align: center;
+  }
+
+  .sozo-sku-pores-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-pores-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-pores-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-pores-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-pores-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-pores-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-question svg { flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; }
+  .sozo-sku-pores-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-pores-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-pores-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-pores-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-pores-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-pores-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-pores-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-pores-wrapper .sozo-btn,
+    .sozo-sku-pores-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-pores-wrapper .sozo-section-card,
+    .sozo-sku-pores-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-pores-wrapper .sozo-problem-grid,
+    .sozo-sku-pores-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-pores-wrapper" id="sozo-pores-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li>
+        <a href="https://sozoskinclinic.com/">Home</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/">Injectable Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li>
+        <a href="https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/">Zo Tox Treatment</a>
+      </li>
+      <li class="separator">/</li>
+      <li aria-current="page">
+        <span style="color: #1A2080; font-weight: 600;">Zo Tox 10u</span>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Zo Tox 10U</h1>
+      <p>Zo Tox 10U merupakan perawatan botulinum toxin dengan dosis 10 unit yang membantu merelaksasi otot wajah penyebab garis halus dan kerutan akibat ekspresi. Treatment ini dapat menjadi pilihan untuk membantu membuat wajah tampak lebih halus, segar, dan terawat. Sebelum tindakan dilakukan, dokter akan mengevaluasi kondisi otot wajah dan menentukan apakah dosis 10 unit sesuai dengan kebutuhan Anda.
+</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">75 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">
+              Rp 700.000
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Botox%20treatment%20[sumber:%20ORG-botox%20treatment] " class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/zo-tox-treatment-standar-10u.webp" alt="Perawatan pori pori besar wajah untuk mengecilkan pori di Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Samarkan Kerutan Halus dengan Hasil Natural</h2>
+      <p>Perawatan Zo-Tox 10U efektif merilekskan otot penyebab kerutan pada area spesifik tanpa membuat wajah terlihat kaku. Dapatkan tampilan segar dan awet muda bersama dokter ahli kami.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Botox%20treatment%20[sumber:%20ORG-botox%20treatment]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <div class="sozo-section-card">
+      <h2>Masalah yang Dapat Dibantu Botox 10U</h2>
+      <p>Botox 10U dapat menjadi pilihan bagi Anda yang mulai melihat garis ekspresi pada wajah atau ingin menjaga tampilan wajah tetap segar. Penggunaan dosis akan disesuaikan oleh dokter berdasarkan area treatment, kekuatan otot, serta tujuan perawatan masing-masing pasien.
+</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Garis Halus di Dahi</strong>
+          <span>Kontraksi otot yang terjadi berulang kali saat berekspresi dapat menyebabkan munculnya garis halus pada area dahi sehingga wajah tampak lebih berusia.
+</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kerutan di Area Mata (Crow's Feet)
+</strong>
+          <span>Kerutan halus di sudut mata sering muncul saat tersenyum atau menyipitkan mata. Botox membantu merelaksasi otot pada area tersebut sehingga tampilan garis ekspresi dapat berkurang.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Garis di Antara Alis</strong>
+          <span>Garis vertikal di antara kedua alis dapat membuat ekspresi wajah terlihat lebih tegas atau lelah. Treatment membantu mengurangi kontraksi otot penyebab munculnya garis tersebut.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kerutan Akibat Ekspresi Wajah</strong>
+          <span>Ekspresi wajah yang dilakukan setiap hari dapat menyebabkan garis-garis dinamis semakin terlihat. Botox membantu merelaksasi otot penyebab kerutan sehingga wajah tampak lebih halus.
+</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Ingin Menjaga Tampilan Wajah Tetap Segar
+</strong>
+          <span>Sebagian orang memilih botulinum toxin sebagai bagian dari perawatan preventif untuk membantu menjaga tampilan kulit tetap halus sebelum garis ekspresi menjadi semakin jelas.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Perawatan Estetika dengan Dosis yang Disesuaikan</strong>
+          <span>Setiap orang memiliki kebutuhan yang berbeda. Dokter akan menentukan apakah Botox 10U sudah mencukupi atau diperlukan dosis yang lebih sesuai berdasarkan area wajah dan tujuan treatment.
+</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Botox 10U untuk Membantu Menghaluskan Garis Ekspresi Wajah</h2>
+      <p>Botox 10U merupakan perawatan menggunakan botulinum toxin yang bekerja dengan membantu merelaksasi otot penyebab garis ekspresi pada area wajah tertentu. Di SOZO Skin Clinic, treatment ini tersedia dalam bentuk Zo Tox 10U, yaitu botulinum toxin asal Korea yang digunakan sesuai hasil evaluasi dokter dan kebutuhan setiap pasien.</p>
+      <p>Kontraksi otot wajah yang terjadi berulang kali saat tersenyum, mengernyit, atau mengangkat alis dapat menyebabkan munculnya garis halus hingga kerutan dinamis. Dengan membantu mengurangi aktivitas otot pada area tertentu, Botox 10U dapat membantu membuat tampilan garis ekspresi menjadi lebih halus sehingga wajah terlihat lebih segar dan terawat.</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionPores">
+        <div class="sozo-expandable-inner">
+    
+    <p>Setiap pasien memiliki kekuatan otot, area treatment, dan tujuan estetika yang berbeda. Oleh karena itu, dokter akan melakukan konsultasi terlebih dahulu untuk menentukan apakah dosis 10 unit sesuai dengan kebutuhan Anda atau diperlukan penyesuaian jumlah unit agar hasil treatment lebih optimal.</p>
+    
+          <h3>Apa Itu Botox 10U?</h3>
+          <p>Botox 10U adalah perawatan estetika menggunakan 10 unit botulinum toxin yang diberikan melalui prosedur injeksi pada otot wajah tertentu. Treatment ini bertujuan membantu merelaksasi otot penyebab garis ekspresi sehingga tampilan kerutan dinamis dapat berkurang secara bertahap. Jumlah unit yang digunakan akan disesuaikan oleh dokter berdasarkan area treatment dan kebutuhan masing-masing pasien.</p>
+
+          <h3>Manfaat Botox 10U</h3>
+          <ul>
+            <li><strong>Membantu mengurangi tampilan garis ekspresi pada wajah.</strong></li>
+            <li><strong>Membantu menghaluskan kerutan dinamis akibat kontraksi otot.</strong></li>
+            <li><strong>Membantu membuat wajah tampak lebih segar dan rileks.</strong></li>
+            <li><strong>Membantu menjaga tampilan kulit tetap halus sebagai bagian dari perawatan estetika.</strong></li>
+            <li><strong>Dapat digunakan pada area tertentu sesuai hasil konsultasi dengan dokter.</strong></li>
+            <li><strong>Dosis treatment disesuaikan dengan kebutuhan dan tujuan perawatan setiap pasien.</strong></li>
+
+          </ul>
+
+          <h3>Bagaimana Botox Membantu Mengurangi Kerutan?</h3>
+          <p>Garis ekspresi muncul akibat otot wajah yang terus berkontraksi saat melakukan berbagai ekspresi, seperti tersenyum, mengernyit, atau mengangkat alis. Seiring waktu, kontraksi yang berulang dapat membuat garis tersebut terlihat lebih jelas, bahkan saat wajah sedang dalam posisi rileks.</p>
+          <p>Botox bekerja dengan membantu merelaksasi otot pada area yang ditreatment sehingga kontraksi berkurang dan tampilan garis ekspresi menjadi lebih halus. Efek treatment umumnya mulai terlihat dalam 5–7 hari, dengan hasil yang lebih optimal sekitar 2 minggu setelah tindakan. Lama munculnya efek dapat berbeda pada setiap orang tergantung area treatment dan respons tubuh masing-masing.
+</p>
+
+          <h3>Siapa yang Cocok Menjalani Botox 10U?</h3>
+          <p>Botox 10U umumnya cocok bagi Anda yang mulai melihat garis ekspresi ringan pada wajah atau ingin menjaga tampilan wajah tetap segar melalui perawatan estetika. Treatment ini juga dapat dipertimbangkan bagi pasien yang membutuhkan botulinum toxin dengan dosis yang disesuaikan untuk area tertentu. Sebelum tindakan dilakukan, dokter akan mengevaluasi kondisi otot wajah, area treatment, serta tujuan perawatan untuk menentukan jumlah unit yang paling sesuai.</p>
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="togglePoresDescription()">
+        <span id="poresReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Proses Botox 10U di SOZO Skin Clinic</h2>
+      <p>Botox 10U dilakukan melalui beberapa tahapan yang dirancang untuk membantu menjaga keamanan, kenyamanan, dan hasil treatment sesuai dengan kondisi serta kebutuhan setiap pasien.</p>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi & Analisis Otot Wajah</strong>
+          <p>Dokter akan mengevaluasi kondisi wajah, kekuatan otot, area yang menjadi keluhan, serta tujuan perawatan yang ingin dicapai. Berdasarkan hasil pemeriksaan tersebut, dokter akan menentukan apakah Botox 10U merupakan pilihan yang sesuai atau diperlukan penyesuaian jumlah unit agar hasil treatment lebih optimal.</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Persiapan Area Treatment</strong>
+          <p>Area yang akan ditreatment dibersihkan terlebih dahulu untuk membantu menjaga kebersihan kulit sebelum tindakan dilakukan. Dokter kemudian menandai titik-titik injeksi sesuai dengan area otot yang menjadi target treatment.
+</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Injeksi Botox 10U</strong>
+          <p>Botulinum toxin diaplikasikan melalui beberapa titik injeksi pada area yang telah ditentukan. Prosedur dilakukan secara hati-hati dengan dosis yang disesuaikan berdasarkan evaluasi dokter untuk membantu merelaksasi otot penyebab garis ekspresi tanpa mengubah karakter alami wajah.
+</p>
+        </div>
+      </div>
+
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Edukasi Perawatan Setelah Treatment</strong>
+          <p>Setelah tindakan selesai, dokter akan memberikan panduan mengenai perawatan setelah treatment, termasuk aktivitas yang sebaiknya dihindari dalam beberapa jam pertama, posisi tidur yang dianjurkan, serta jadwal kontrol atau treatment berikutnya apabila diperlukan.
+</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-section-card">
+      <h2>Treatment Terkait untuk Meremajakan Kulit</h2>
+      <p>Beberapa perawatan berikut dapat menjadi pilihan lanjutan atau kombinasi sesuai evaluasi dokter.</p>
+
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/09/vecteezy_beautiful-young-asian-woman-model-with-perfect-clean-fresh_9209295-1-scaled.webp" alt="Laser CO2 Full Face Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Skin Booster Treatment</h3>
+            <p>Perawatan injeksi dengan kandungan Hyaluronic Acid (HA) dan vitamin untuk menghidrasi kulit secara mendalam, memperbaiki tekstur, dan memberikan efek glowing alami.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Skin%20Booster%20Treatment%20%5Bsumber:%20ORG-skinbooster%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/botox-wajah-diamond-1.webp" alt="PRP Treatment Wajah Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Botox Treatment</h3>
+            <p>Injeksi protein khusus untuk merelaksasi otot penyebab kerutan dan garis halus. Sangat efektif untuk mengencangkan area dahi, sudut mata, hingga meniruskan rahang.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Botox%20Treatment%20%5Bsumber:%20ORG-botox%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/infus-whitening-treatment.webp" alt="Rejuran Scar Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Infusion Treatment</h3>
+            <p>Pemberian multivitamin dan antioksidan premium melalui intravena (infus) untuk mencerahkan, melembapkan, serta menyehatkan kulit seluruh tubuh secara lebih cepat.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20infus%20whitening%20treatment%20[sumber:%20ORG-infus%20whitening]" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Botox 10U</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa itu Botox 10U?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Botox 10U adalah treatment estetika menggunakan 10 unit botulinum toxin yang diberikan melalui prosedur injeksi pada otot wajah tertentu. Di SOZO Skin Clinic, treatment ini menggunakan Zo Tox, yaitu botulinum toxin asal Korea yang diaplikasikan sesuai hasil evaluasi dokter. Jumlah unit yang digunakan akan disesuaikan dengan area treatment dan kebutuhan masing-masing pasien.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa manfaat Botox 10U?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Botox 10U membantu merelaksasi otot yang menyebabkan garis ekspresi sehingga tampilan kerutan dinamis dapat terlihat lebih halus. Treatment ini juga membantu membuat wajah tampak lebih segar dan rileks tanpa mengubah karakter alami wajah apabila dilakukan sesuai indikasi dan dosis yang direkomendasikan oleh dokter.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Siapa yang cocok menjalani Botox 10U?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Botox 10U umumnya cocok bagi Anda yang mulai memiliki garis ekspresi ringan pada area tertentu atau ingin menjaga tampilan wajah tetap halus melalui perawatan estetika. Sebelum treatment dilakukan, dokter akan mengevaluasi kekuatan otot wajah, kondisi kulit, serta tujuan perawatan untuk menentukan apakah dosis 10 unit sesuai dengan kebutuhan Anda.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Area wajah apa saja yang dapat ditreatment dengan Botox 10U?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Botox dapat digunakan pada berbagai area wajah sesuai indikasi medis dan estetika, seperti area dahi, sela alis, maupun sudut mata. Namun, kebutuhan setiap pasien berbeda sehingga jumlah unit yang digunakan akan disesuaikan berdasarkan area yang ditreatment, kekuatan otot, dan hasil yang ingin dicapai.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Botox 10U cukup untuk semua area wajah?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Kebutuhan botulinum toxin berbeda pada setiap orang. Dosis 10 unit dapat mencukupi untuk area tertentu, namun pada area yang memiliki otot lebih besar atau membutuhkan cakupan lebih luas mungkin diperlukan jumlah unit yang berbeda. Dokter akan menentukan dosis yang sesuai setelah melakukan pemeriksaan secara langsung.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Kapan hasil Botox 10U mulai terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Efek Botox umumnya mulai terlihat dalam waktu sekitar 5–7 hari setelah tindakan, sedangkan hasil yang lebih optimal biasanya dapat terlihat sekitar 2 minggu. Untuk treatment pada area rahang, perubahan umumnya membutuhkan waktu lebih lama sehingga hasil biasanya mulai tampak setelah sekitar dua minggu. Waktu munculnya efek dapat berbeda pada setiap pasien.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Berapa lama hasil Botox 10U dapat bertahan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Hasil Botox umumnya dapat bertahan sekitar 4–6 bulan, tergantung area treatment, kekuatan otot, metabolisme tubuh, serta aktivitas masing-masing pasien. Setelah efek mulai berkurang, dokter dapat merekomendasikan treatment ulang apabila masih diperlukan.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Botox 10U membuat wajah terlihat kaku?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Tujuan treatment adalah membantu merelaksasi otot penyebab garis ekspresi tanpa menghilangkan ekspresi alami wajah. Dokter akan menyesuaikan dosis dan titik injeksi agar hasil treatment terlihat proporsional sesuai karakter wajah serta kebutuhan setiap pasien.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah prosedur Botox 10U terasa sakit?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Botox dilakukan menggunakan jarum berukuran sangat kecil sehingga sebagian besar pasien hanya merasakan sensasi seperti tusukan ringan pada area injeksi. Tingkat kenyamanan dapat berbeda pada setiap orang, namun prosedur umumnya berlangsung singkat dan tidak memerlukan waktu pemulihan yang lama.</p></div>
+      </div>
+      
+       <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apa yang perlu diperhatikan setelah Botox 10U?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setelah treatment selesai, dokter akan memberikan panduan mengenai aktivitas yang sebaiknya dihindari untuk sementara waktu, seperti menggosok area injeksi secara berlebihan atau melakukan aktivitas tertentu dalam beberapa jam pertama. Mengikuti seluruh instruksi dokter membantu mendukung hasil treatment sesuai yang diharapkan.
+</p></div>
+      </div>
+      
+    <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Berapa kali Botox 10U perlu dilakukan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Botox bukan merupakan treatment permanen sehingga efeknya akan berkurang secara bertahap. Jadwal treatment ulang bergantung pada respons tubuh, area yang ditreatment, dan tujuan perawatan masing-masing pasien. Dokter akan memberikan rekomendasi interval treatment yang sesuai berdasarkan hasil evaluasi.</p></div>
+      </div>
+
+       
+    <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Bisakah Botox 10U dikombinasikan dengan treatment lain?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Botox dapat dipertimbangkan untuk dikombinasikan dengan treatment estetika lainnya sesuai kondisi kulit dan tujuan perawatan. Setelah melakukan konsultasi, dokter akan menyusun rekomendasi kombinasi treatment yang dinilai sesuai agar hasil yang diperoleh lebih optimal tanpa mengabaikan keamanan pasien.</p></div>
+      </div>
+
+    <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Apakah Botox 10U aman?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Sebelum tindakan dilakukan, dokter akan melakukan konsultasi dan pemeriksaan untuk memastikan kondisi pasien sesuai dengan treatment yang dipilih. Seluruh prosedur dilakukan menggunakan produk botulinum toxin dan teknik injeksi yang disesuaikan dengan kebutuhan masing-masing pasien sehingga treatment dapat dilakukan dengan pendekatan yang tepat.</p></div>
+      </div>
+
+    <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+          <span>Di mana saya bisa melakukan Botox 10U?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Botox 10U tersedia di SOZO Skin Clinic dan dilakukan oleh tenaga medis setelah melalui proses konsultasi. Dokter akan mengevaluasi kondisi wajah, area yang ingin ditreatment, serta jumlah unit yang sesuai sehingga setiap pasien mendapatkan rencana treatment yang disesuaikan dengan kebutuhan estetikanya.
+</p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePoresDescription() {
+    const content = document.getElementById('treatmentDescriptionPores');
+    const btn = document.querySelector('.sozo-load-more-btn');
+    const btnText = document.getElementById('poresReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function togglePoresFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
+
+

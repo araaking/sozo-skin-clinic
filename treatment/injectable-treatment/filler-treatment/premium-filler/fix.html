@@ -1,0 +1,480 @@
+<style>
+  .sozo-sku-korean-filler-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-korean-filler-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb { padding: 15px 20px 25px 20px; width: 100%; }
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb ol { list-style: none !important; margin: 0 !important; padding: 0 !important; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb li { display: flex; align-items: center; font-size: 14px; color: #1A2080; }
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb a { text-decoration: none !important; color: #64748b !important; font-weight: 500; transition: color 0.2s ease; }
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb .separator { color: #cbd5e1; margin: 0 4px; font-size: 12px; user-select: none; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-treatment-hero { display: flex; flex-wrap: nowrap; gap: 50px; align-items: center; margin-bottom: 50px; padding: 0 20px; }
+  .sozo-sku-korean-filler-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-korean-filler-wrapper .sozo-hero-text h1 { font-size: clamp(32px, 4vw, 42px) !important; color: #1A2080 !important; margin: 0 0 16px 0 !important; line-height: 1.2 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-korean-filler-wrapper .sozo-hero-text p { font-size: 16px !important; color: #475569 !important; margin: 0 0 30px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-hero-image { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; }
+  .sozo-sku-korean-filler-wrapper .sozo-hero-image img { width: 100%; max-width: 480px; height: 340px; border-radius: 24px; object-fit: cover; object-position: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); display: block; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-info-row { display: flex; gap: 40px; margin-bottom: 35px; padding: 24px; background-color: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9; }
+  .sozo-sku-korean-filler-wrapper .sozo-info-col { display: flex; align-items: flex-start; gap: 15px; }
+  .sozo-sku-korean-filler-wrapper .sozo-info-icon { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #EEF2FF; border-radius: 12px; color: #1A2080; }
+  .sozo-sku-korean-filler-wrapper .sozo-info-text { display: flex; flex-direction: column; gap: 2px; }
+  .sozo-sku-korean-filler-wrapper .sozo-info-label { font-size: 13px !important; color: #64748b !important; font-weight: 600 !important; text-transform: uppercase; letter-spacing: 0.5px; }
+  .sozo-sku-korean-filler-wrapper .sozo-info-value { font-size: 20px !important; color: #1A2080 !important; font-weight: 700 !important; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-btn,
+  .sozo-sku-korean-filler-wrapper .sozo-related-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background-color: #1A2080 !important; color: #ffffff !important; text-decoration: none !important; font-size: 16px !important; font-weight: 600 !important; border-radius: 100px; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2); border: 2px solid #1A2080 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-btn:hover,
+  .sozo-sku-korean-filler-wrapper .sozo-related-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; transform: translateY(-3px); }
+
+  .sozo-sku-korean-filler-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-korean-filler-wrapper .sozo-cta-banner { background-color: #1A2080; background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%); border-radius: 24px; padding: 50px 30px; margin-bottom: 50px; text-align: center; color: #ffffff; box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15); }
+  .sozo-sku-korean-filler-wrapper .sozo-cta-banner h2 { font-size: clamp(24px, 3vw, 32px) !important; color: #ffffff !important; margin: 0 0 15px 0 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-korean-filler-wrapper .sozo-cta-banner p { font-size: 16px !important; color: #e2e8f0 !important; margin: 0 auto 30px auto !important; max-width: 650px; line-height: 1.6 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background-color: #ffffff !important; color: #1A2080 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 100px; border: 2px solid #ffffff !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-btn-secondary:hover { background-color: transparent !important; color: #ffffff !important; transform: translateY(-3px); }
+
+  .sozo-sku-korean-filler-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-korean-filler-wrapper .sozo-section-card,
+  .sozo-sku-korean-filler-wrapper .sozo-description-section,
+  .sozo-sku-korean-filler-wrapper .sozo-faq-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-korean-filler-wrapper .sozo-section-card > h2,
+  .sozo-sku-korean-filler-wrapper .sozo-description-section h2,
+  .sozo-sku-korean-filler-wrapper .sozo-faq-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 16px !important; font-weight: 800 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-section-card > p { color: #475569 !important; font-size: 16px !important; margin-bottom: 24px !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-description-section h3 { font-size: 18px !important; color: #1A2080 !important; margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 700 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-description-section p,
+  .sozo-sku-korean-filler-wrapper .sozo-description-section li { color: #475569 !important; margin-bottom: 16px !important; font-size: 16px !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-description-section ul { padding-left: 20px !important; margin-bottom: 20px !important; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .sozo-sku-korean-filler-wrapper .sozo-problem-card { background-color: #f8fafc; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; }
+  .sozo-sku-korean-filler-wrapper .sozo-problem-card strong { display: block; font-size: 16px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-problem-card span { font-size: 14px !important; color: #475569 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-process-step { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; }
+  .sozo-sku-korean-filler-wrapper .sozo-process-step:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .sozo-sku-korean-filler-wrapper .sozo-step-num { width: 45px; height: 45px; background-color: #EEF2FF; color: #1A2080; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px !important; font-weight: 700 !important; flex-shrink: 0; }
+  .sozo-sku-korean-filler-wrapper .sozo-step-text strong { display: block; font-size: 18px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-step-text p { font-size: 15px !important; color: #475569 !important; margin: 0 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-card { border: 1px solid #f1f5f9; border-radius: 16px; overflow: hidden; background-color: #ffffff; display: flex; flex-direction: column; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-body h3 { font-size: 16px !important; color: #1A2080 !important; margin: 0 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-body p { font-size: 14px !important; color: #475569 !important; margin: 0 !important; flex: 1; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-actions { display: flex; flex-direction: column; gap: 10px; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-btn { max-width: none; padding: 11px 16px; font-size: 14px !important; box-shadow: none; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-link { color: #1A2080 !important; font-weight: 600 !important; font-size: 14px !important; text-decoration: none !important; text-align: center; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-expandable-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease-out; }
+  .sozo-sku-korean-filler-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-korean-filler-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-korean-filler-wrapper .sozo-load-more-btn { background: none !important; border: none !important; color: #1A2080 !important; font-size: 15px !important; font-weight: 600 !important; padding: 0 !important; margin-top: 15px !important; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .sozo-sku-korean-filler-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-korean-filler-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-korean-filler-wrapper .sozo-faq-item { border-bottom: 1px solid #f1f5f9; padding: 16px 0; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-question { width: 100%; background: none !important; border: none !important; text-align: left; font-size: 16px !important; font-weight: 600 !important; color: #1e293b !important; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0 0 8px 0 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-question svg { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-answer p { color: #475569 !important; font-size: 15px !important; margin: 8px 0 16px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-answer a { color: #1A2080 !important; text-decoration: underline !important; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .sozo-sku-korean-filler-wrapper .sozo-treatment-hero { flex-direction: column; gap: 30px; }
+    .sozo-sku-korean-filler-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-korean-filler-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-korean-filler-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-korean-filler-wrapper .sozo-btn,
+    .sozo-sku-korean-filler-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-korean-filler-wrapper .sozo-description-section,
+    .sozo-sku-korean-filler-wrapper .sozo-faq-section,
+    .sozo-sku-korean-filler-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+    .sozo-sku-korean-filler-wrapper .sozo-problem-grid,
+    .sozo-sku-korean-filler-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-korean-filler-wrapper" id="sozo-korean-filler-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li><a href="https://sozoskinclinic.com/">Home</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/injectable-treatment/">Injectable Treatment</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/injectable-treatment/filler-treatment/">Filler Treatment</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><span style="color: #1A2080; font-weight: 600;">Premium Filler</span></li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Premium Filler untuk Membantu Mengembalikan Volume dan Kontur Wajah</h1>
+      <p>Premium Filler merupakan treatment injeksi hyaluronic acid menggunakan Juvederm untuk membantu mengembalikan volume wajah yang berkurang serta membentuk kontur wajah agar tampak lebih proporsional. Treatment ini dapat diaplikasikan pada beberapa area sesuai hasil konsultasi dengan dokter. Prosedur dilakukan oleh dokter menggunakan produk premium yang berasal dari Amerika maupun Eropa, dengan durasi treatment sekitar 75 menit.
+</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">75 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 6.999.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20premium%20filler%20%5Bsumber:%20ORG-premium%20filler%5D 
+" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Premium-Filler.webp"
+           alt="Korean filler atau suntik filler ala Korea untuk volume wajah natural di Sozo Skin Clinic"
+           width="480"
+           height="340"
+           fetchpriority="high"
+           decoding="async">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Kembalikan Volume dan Kontur Wajah secara Instan</h2>
+      <p>Dapatkan proporsi wajah yang lebih ideal dan natural menggunakan produk filler premium Juvederm. Hanya dalam waktu sekitar 75 menit oleh dokter ahli, tanpa prosedur operasi. Konsultasikan kebutuhan Anda sekarang.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20premium%20filler%20%5Bsumber:%20ORG-premium%20filler%5D " class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Dokter Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <section class="sozo-section-card">
+      <h2>Masalah Wajah yang Dapat Dibantu Premium Filler</h2>
+      <p>Berkurangnya volume wajah dapat terjadi akibat proses penuaan maupun karakteristik anatomi setiap orang. Kondisi ini dapat memengaruhi proporsi wajah sehingga beberapa area terlihat kurang penuh atau kurang terdefinisi. Premium Filler dirancang untuk membantu mengatasi beberapa kondisi berikut.</p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Volume Wajah Mulai Berkurang</strong>
+          <span>Seiring bertambahnya usia, beberapa area wajah dapat kehilangan volume sehingga wajah tampak kurang segar. Premium Filler membantu mengembalikan volume pada area yang memerlukan sehingga wajah terlihat lebih proporsional.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kontur Wajah Kurang Tegas</strong>
+          <span>Kontur wajah yang kurang terdefinisi dapat memengaruhi keseimbangan bentuk wajah secara keseluruhan. Premium Filler membantu membentuk kontur wajah agar terlihat lebih jelas dan harmonis sesuai struktur wajah masing-masing pasien.
+</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Area Wajah Terlihat Cekung</strong>
+          <span>Beberapa area, seperti pipi atau pelipis, dapat terlihat cekung akibat berkurangnya volume jaringan. Premium Filler membantu mengisi area tersebut sehingga tampilan wajah terlihat lebih seimbang.</span>
+        </div>
+        
+        <div class="sozo-problem-card">
+          <strong> Ingin Membentuk Area Wajah Tanpa Operasi</strong>
+          <span>Bagi Anda yang ingin memperbaiki bentuk atau proporsi wajah tanpa prosedur bedah, Premium Filler dapat menjadi salah satu pilihan treatment minim invasif yang disesuaikan dengan kebutuhan setiap pasien.
+</span>
+        </div>
+        
+        <div class="sozo-problem-card">
+          <strong> Bibir Terlihat Kurang Bervolume</strong>
+          <span>Sebagian orang menginginkan bibir yang tampak lebih penuh namun tetap proporsional. Premium Filler dapat membantu menambah volume bibir sesuai bentuk wajah dan hasil konsultasi dengan dokter.</span>
+        </div>
+        
+        <div class="sozo-problem-card">
+          <strong> Menginginkan Hasil yang Natural</strong>
+          <span>Premium Filler membantu membentuk dan mengembalikan volume wajah dengan pendekatan yang disesuaikan pada kondisi anatomi masing-masing pasien sehingga hasil akhir diharapkan tetap terlihat natural dan seimbang.</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="sozo-description-section">
+      <h2>Premium Filler untuk Membantu Mengembalikan Volume Wajah
+</h2>
+      <p>Premium Filler merupakan treatment injeksi hyaluronic acid yang membantu mengembalikan volume wajah sekaligus memperbaiki kontur pada area tertentu. Treatment ini menggunakan Juvederm, produk filler premium yang berasal dari Amerika maupun Eropa, dan dilakukan oleh dokter setelah melalui konsultasi serta analisis kondisi wajah. Dengan mengembalikan volume pada area yang memerlukan, wajah dapat terlihat lebih proporsional, segar, dan tetap natural.</p>
+      <p>Hyaluronic acid merupakan zat yang secara alami terdapat di dalam tubuh dan berperan dalam menjaga kelembapan serta volume jaringan kulit. Pada treatment filler, bahan ini disuntikkan ke area tertentu untuk membantu mengisi volume yang berkurang atau memperbaiki proporsi wajah sesuai kebutuhan masing-masing pasien. Area treatment dapat berbeda pada setiap orang, tergantung kondisi anatomi wajah dan tujuan perawatan.
+</p>
+
+      <div class="sozo-expandable-content" id="treatmentDescriptionKorean">
+        <div class="sozo-expandable-inner">
+            
+        <p>Di SOZO Skin Clinic, setiap pasien akan menjalani konsultasi sebelum tindakan dilakukan. Dokter akan mengevaluasi struktur wajah, kualitas kulit, serta area yang memerlukan penambahan volume agar hasil treatment terlihat lebih seimbang. Hasil perawatan dapat berbeda pada setiap pasien, bergantung pada kondisi jaringan, area yang dirawat, serta respons tubuh terhadap filler.
+</p>
+          <h3>Apa Itu Premium Filler?</h3>
+          <p>Premium Filler adalah treatment estetika yang menggunakan filler berbahan hyaluronic acid untuk membantu mengembalikan volume wajah yang berkurang maupun membentuk kontur wajah agar tampak lebih proporsional. Treatment ini menggunakan Juvederm, filler premium yang banyak digunakan dalam prosedur estetika karena dirancang untuk memberikan hasil yang halus dan mengikuti kontur alami wajah.</p>
+          <p>Filler dapat diaplikasikan pada beberapa area wajah sesuai hasil konsultasi dengan dokter, seperti pipi, dagu, rahang, bibir, maupun area lain yang memerlukan penambahan volume. Sebelum tindakan dilakukan, dokter akan menentukan area yang sesuai berdasarkan bentuk wajah, kebutuhan pasien, dan hasil yang ingin dicapai.
+</p>
+          <h3>Manfaat Premium Filler</h3>
+          <p>Premium Filler membantu memberikan berbagai manfaat, antara lain:
+</p>
+
+          <ul>
+            <li>Membantu mengembalikan volume wajah yang berkurang.</li>
+            <li>Membantu membentuk kontur wajah agar tampak lebih proporsional.
+</li>
+            <li>Membantu mempertegas area wajah tertentu sesuai kebutuhan</li>
+            <li>Membantu memperbaiki keseimbangan proporsi wajah secara keseluruhan.</li>
+            
+            <li>Membantu memberikan tampilan wajah yang lebih segar tanpa prosedur operasi.</li>
+            
+            <li>Membantu menghasilkan perubahan yang tetap terlihat natural sesuai struktur wajah masing-masing pasien.</li>
+          </ul>
+
+          <h3>Mengapa Volume Wajah Dapat Berkurang?
+</h3>
+          <p>Seiring bertambahnya usia, tubuh mengalami penurunan produksi kolagen, elastin, dan hyaluronic acid alami. Perubahan tersebut dapat menyebabkan beberapa area wajah kehilangan volume sehingga pipi tampak lebih cekung, kontur wajah menjadi kurang tegas, atau wajah terlihat lebih lelah dibanding sebelumnya.</p>
+          
+          <p>Selain proses penuaan, faktor genetik, perubahan berat badan, pola hidup, dan kondisi kulit juga dapat memengaruhi bentuk serta volume wajah. Oleh karena itu, penambahan volume menggunakan filler dapat menjadi salah satu pilihan treatment untuk membantu memperbaiki proporsi wajah tanpa melalui prosedur operasi. Dokter akan menentukan area yang memerlukan treatment berdasarkan hasil pemeriksaan dan kebutuhan masing-masing pasien.
+</p>
+         <h3>Siapa yang Cocok Menjalani Premium Filler?</h3>
+         
+         <p>Premium Filler umumnya cocok bagi Anda yang ingin membantu mengembalikan volume wajah, memperbaiki kontur wajah, atau membentuk area tertentu agar terlihat lebih proporsional. Treatment ini juga dapat menjadi pilihan bagi pasien yang menginginkan perubahan bentuk wajah tanpa menjalani prosedur bedah.</p>
+         
+         <p>Sebelum treatment dilakukan, dokter akan mengevaluasi struktur wajah, kualitas kulit, serta area yang menjadi fokus perawatan. Berdasarkan hasil pemeriksaan tersebut, dokter akan menentukan apakah Premium Filler merupakan pilihan treatment yang sesuai serta menyusun rencana tindakan agar hasil yang diperoleh tetap harmonis dengan karakteristik wajah masing-masing pasien.
+</p>
+          
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="toggleKoreanDescription()">
+        <span id="koreanReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </article>
+
+    <section class="sozo-section-card">
+      <h2>Proses Premium Filler di SOZO Skin Clinic
+</h2>
+      <p>Premium Filler dilakukan melalui beberapa tahapan untuk membantu memastikan treatment sesuai dengan kondisi dan kebutuhan setiap pasien. Sebelum tindakan, dokter akan mengevaluasi struktur wajah, area yang kehilangan volume, serta hasil yang ingin dicapai agar treatment dapat direncanakan secara tepat.
+</p>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi dan Analisis Wajah</strong>
+          <p>Dokter akan memeriksa proporsi wajah, kualitas kulit, serta area yang memerlukan penambahan volume atau pembentukan kontur. Berdasarkan hasil evaluasi tersebut, dokter akan menentukan area penyuntikan filler dan menyusun rencana treatment yang disesuaikan dengan kebutuhan masing-masing pasien.
+</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Persiapan Sebelum Tindakan
+</strong>
+          <p>Area treatment akan dibersihkan terlebih dahulu untuk membantu menjaga kebersihan selama prosedur. Dokter kemudian menandai titik penyuntikan sesuai dengan rencana treatment dan mempersiapkan filler berbahan hyaluronic acid yang akan digunakan.
+</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Penyuntikan Premium Filler
+</strong>
+          <p>Dokter akan menyuntikkan Juvederm pada area yang telah ditentukan untuk membantu mengembalikan volume wajah atau membentuk kontur sesuai kebutuhan. Prosedur dilakukan secara bertahap agar distribusi filler merata dan hasil terlihat lebih proporsional dengan karakteristik wajah pasien.
+</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Evaluasi Hasil & Edukasi Setelah Treatment</strong>
+          <p>Setelah tindakan selesai, dokter akan mengevaluasi hasil penyuntikan dan memastikan area treatment sesuai dengan rencana perawatan. Pasien juga akan mendapatkan edukasi mengenai perawatan setelah treatment, termasuk aktivitas yang sebaiknya dihindari sementara waktu serta jadwal kontrol apabila diperlukan</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sozo-section-card">
+      <h2>Treatment Wajah Terkait</h2>
+      <p>Beberapa perawatan injectable berikut sering dipertimbangkan untuk membantu membentuk profil wajah.</p>
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2022/05/P1134552-Filler-scaled.webp" alt="Filler Dagu Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Filler Dagu</h3>
+            <p>Suntik filler dagu untuk membantu membentuk dagu agar profil wajah lebih proporsional dan tegas.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Korean%20Filler%20di%20Sozo%20%5Bsrc%3AORG-KF%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/filler-treatment/filler-dagu/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Nose-Job-2-benang.webp" alt="Tanam Benang Hidung Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Tanam Benang Hidung</h3>
+            <p>Threadlift untuk membantu membentuk dan mempertegas profil hidung tanpa operasi.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Korean%20Filler%20di%20Sozo%20%5Bsrc%3AORG-KF%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/zo-tox-treatment-standar-10u.webp" alt="Zo-Tox Treatment Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Zo-Tox Treatment</h3>
+            <p>Suntik botox dengan Zo-Tox untuk membantu menyamarkan kerutan dan mendukung tampilan V-shape.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Korean%20Filler%20di%20Sozo%20%5Bsrc%3AORG-KF%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Premium Filler</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apa itu Premium Filler?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Premium Filler adalah treatment injeksi hyaluronic acid menggunakan Juvederm untuk membantu mengembalikan volume wajah yang berkurang serta membentuk kontur wajah agar tampak lebih proporsional. Treatment dilakukan oleh dokter setelah konsultasi dan analisis kondisi wajah sehingga area penyuntikan dapat disesuaikan dengan kebutuhan serta tujuan perawatan masing-masing pasien.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apa manfaat Premium Filler?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Premium Filler membantu mengembalikan volume pada area wajah yang kehilangan kepadatan, memperbaiki kontur wajah, serta membantu menciptakan proporsi wajah yang lebih seimbang. Treatment ini dapat diaplikasikan pada beberapa area sesuai hasil konsultasi dengan dokter sehingga hasil perawatan tetap menyesuaikan karakteristik wajah setiap pasien.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Area wajah mana saja yang dapat diberikan Premium Filler?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Premium Filler dapat diaplikasikan pada berbagai area wajah yang memerlukan penambahan volume atau pembentukan kontur, seperti pipi, dagu, bibir, rahang, pelipis, maupun area lainnya sesuai indikasi. Dokter akan menentukan area treatment berdasarkan hasil pemeriksaan, struktur wajah, dan tujuan perawatan sehingga tindakan dilakukan secara lebih terarah.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Siapa yang cocok menjalani Premium Filler?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Treatment ini umumnya cocok bagi Anda yang ingin mengembalikan volume wajah, mempertegas kontur wajah, atau memperbaiki proporsi pada area tertentu tanpa prosedur operasi. Sebelum tindakan dilakukan, dokter akan mengevaluasi kondisi kulit, struktur wajah, serta kebutuhan pasien untuk menentukan apakah Premium Filler merupakan pilihan yang sesuai.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Mengapa Premium Filler menggunakan hyaluronic acid?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Hyaluronic acid merupakan zat yang secara alami terdapat di dalam tubuh dan berperan dalam menjaga kelembapan serta volume jaringan kulit. Pada treatment filler, bahan ini digunakan untuk membantu mengisi area yang kehilangan volume sehingga kontur wajah tampak lebih proporsional. Penggunaan bahan berbasis hyaluronic acid juga memungkinkan dokter menyesuaikan treatment dengan kebutuhan setiap pasien.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Produk apa yang digunakan pada Premium Filler?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Premium Filler di SOZO Skin Clinic menggunakan Juvederm, yaitu filler berbahan hyaluronic acid yang berasal dari Amerika maupun Eropa. Pemilihan produk dilakukan untuk mendukung treatment pengembalian volume dan pembentukan kontur wajah sesuai dengan rencana tindakan yang telah disusun oleh dokter.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Berapa lama tindakan Premium Filler?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Durasi Premium Filler sekitar 75 menit. Waktu tersebut mencakup persiapan tindakan, proses penyuntikan filler, hingga evaluasi hasil setelah treatment selesai. Lama tindakan dapat sedikit berbeda bergantung pada jumlah area yang dirawat dan kebutuhan masing-masing pasien.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Kapan hasil Premium Filler mulai terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perubahan pada area yang diberikan filler umumnya dapat mulai terlihat setelah tindakan selesai karena filler langsung memberikan tambahan volume pada jaringan. Seiring proses adaptasi jaringan, hasil treatment biasanya akan tampak lebih natural dalam beberapa hari berikutnya. Hasil yang diperoleh dapat berbeda pada setiap pasien sesuai kondisi kulit dan area yang dirawat.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apakah Premium Filler memerlukan operasi?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Tidak. Premium Filler merupakan treatment minim invasif yang dilakukan melalui penyuntikan filler berbahan hyaluronic acid tanpa prosedur bedah. Karena tidak memerlukan operasi, waktu tindakan relatif singkat dan pasien dapat kembali menjalani aktivitas sesuai anjuran dokter setelah treatment selesai.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apa yang perlu diperhatikan setelah Premium Filler?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setelah treatment, dokter akan memberikan panduan mengenai perawatan area yang telah disuntik filler, termasuk aktivitas yang sebaiknya dihindari selama masa pemulihan. Mengikuti seluruh anjuran dokter dapat membantu proses pemulihan berjalan dengan baik dan mendukung hasil treatment yang lebih optimal.</p></div>
+      </div>
+
+     <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apakah Premium Filler aman?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setiap tindakan diawali dengan konsultasi dan evaluasi oleh dokter untuk menilai kondisi wajah, area yang akan dirawat, serta kesesuaian treatment dengan kebutuhan pasien. Perencanaan tersebut membantu dokter menentukan teknik dan area penyuntikan yang tepat sehingga prosedur dapat dilakukan sesuai standar medis yang berlaku.</p></div>
+      </div>
+      
+       <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Di mana saya bisa melakukan Premium Filler?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Premium Filler tersedia di SOZO Skin Clinic dan dilakukan oleh dokter setelah pasien menjalani konsultasi. Anda dapat menghubungi tim SOZO Skin Clinic untuk memperoleh informasi mengenai jadwal treatment, ketersediaan layanan di cabang terdekat, serta melakukan konsultasi sebelum tindakan.
+</p></div>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+<script>
+  function toggleKoreanDescription() {
+    const content = document.getElementById('treatmentDescriptionKorean');
+    const btn = document.querySelector('.sozo-sku-korean-filler-wrapper .sozo-load-more-btn');
+    const btnText = document.getElementById('koreanReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function toggleKoreanFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px";
+  }
+</script>
+
+
