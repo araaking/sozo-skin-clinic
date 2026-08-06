@@ -1,0 +1,368 @@
+<style>
+    /* --- FONTS & BASE REGULATOR --- */
+    .sozo-ed-page {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+        color: #1e293b !important;
+        background-color: #ffffff !important;
+        line-height: 1.7 !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 80px 24px !important;
+    }
+
+    .sozo-ed-page * {
+        box-sizing: border-box !important;
+    }
+
+    /* --- TYPOGRAPHY HERO --- */
+    .sozo-ed-hero {
+        max-width: 760px !important;
+        margin-bottom: 80px !important;
+    }
+
+    .sozo-ed-badge {
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        color: #1A2080 !important;
+        margin-bottom: 16px !important;
+        display: block !important;
+    }
+
+    .sozo-ed-hero h1 {
+        font-size: clamp(32px, 5vw, 42px) !important;
+        font-weight: 800 !important;
+        color: #0f172a !important;
+        line-height: 1.2 !important;
+        margin: 0 0 24px 0 !important;
+        letter-spacing: -0.5px !important;
+    }
+
+    .sozo-ed-hero p {
+        font-size: 17px !important;
+        color: #475569 !important;
+        margin: 0 !important;
+    }
+
+    /* --- MINIMALIST WORKFLOW SECTION --- */
+    .sozo-ed-grid-info {
+        display: grid !important;
+        grid-template-columns: 1fr 2fr !important;
+        gap: 60px !important;
+        border-top: 1px solid #e2e8f0 !important;
+        padding-top: 48px !important;
+        margin-bottom: 100px !important;
+    }
+
+    .sozo-ed-section-title {
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        color: #0f172a !important;
+        margin: 0 !important;
+    }
+
+    .sozo-ed-process-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 40px 32px !important;
+    }
+
+    .sozo-process-item h3 {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        color: #1A2080 !important;
+        margin: 0 0 8px 0 !important;
+    }
+
+    .sozo-process-item p {
+        font-size: 14.5px !important;
+        color: #475569 !important;
+        margin: 0 !important;
+    }
+
+    /* --- BOARD TEAM LAYOUT (MINIMALIST CARDLESS) --- */
+    .sozo-board-container {
+        border-top: 1px solid #e2e8f0 !important;
+        padding-top: 48px !important;
+        margin-bottom: 60px !important;
+    }
+
+    .sozo-board-head {
+        margin-bottom: 48px !important;
+    }
+
+    .sozo-board-head h2 {
+        font-size: 24px !important;
+        font-weight: 800 !important;
+        color: #0f172a !important;
+        margin: 0 !important;
+    }
+
+    .sozo-member-row {
+        display: grid !important;
+        grid-template-columns: 240px 1fr !important;
+        gap: 40px !important;
+        padding: 40px 0 !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+    }
+
+    .sozo-member-meta h3 {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #0f172a !important;
+        margin: 0 0 6px 0 !important;
+    }
+
+    .sozo-member-meta h3 a {
+        color: #0f172a !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
+    }
+
+    .sozo-member-meta h3 a:hover {
+        color: #1A2080 !important;
+        text-decoration: underline !important;
+    }
+
+    .sozo-member-tag {
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: #1A2080 !important;
+        display: block !important;
+    }
+
+    .sozo-member-bio {
+        font-size: 15px !important;
+        color: #334155 !important;
+        margin: 0 !important;
+    }
+
+    /* --- SUB-LIST UNTUK DATA DOKTER --- */
+    .sozo-doc-detail-section {
+        margin-top: 0 !important;
+    }
+
+    .sozo-doc-detail-section h4 {
+        font-size: 14px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        color: #475569 !important;
+        margin: 0 0 12px 0 !important;
+        font-weight: 700 !important;
+    }
+
+    .sozo-doc-detail-section h4:not(:first-child) {
+        margin-top: 28px !important;
+    }
+
+    .sozo-doc-list {
+        padding-left: 18px !important;
+        margin: 0 !important;
+    }
+
+    .sozo-doc-list li {
+        font-size: 14.5px !important;
+        color: #334155 !important;
+        margin-bottom: 6px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* --- RESPONSIVE DESIGN --- */
+    @media (max-width: 868px) {
+        .sozo-ed-grid-info, .sozo-member-row {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+        }
+        .sozo-member-row {
+            padding: 32px 0 !important;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .sozo-ed-page { padding: 48px 16px !important; }
+        .sozo-ed-process-list {
+            grid-template-columns: 1fr !important;
+        }
+        .sozo-ed-grid-info { gap: 32px !important; }
+    }
+</style>
+
+<div class="sozo-ed-page">
+
+    <header class="sozo-ed-hero">
+        <span class="sozo-ed-badge">Transparansi Informasi</span>
+        <h1>Tim Editorial & Standar Konten Sozo</h1>
+        <p>Di balik setiap artikel edukasi dan panduan perawatan kecantikan Sozo Skin Clinic, terdapat dewan medis, penulis, dan editor yang berkomitmen menyajikan informasi yang jelas, akurat, dan dapat dipertanggungjawabkan secara klinis.</p>
+    </header>
+
+    <section class="sozo-ed-grid-info">
+        <div>
+            <h2 class="sozo-ed-section-title">Kebijakan & Komitmen Kami</h2>
+        </div>
+        <div>
+            <p style="font-size: 16px; margin-bottom: 40px !important; color: #334155;">Misi utama kami adalah memastikan pembaca mendapatkan referensi yang andal seputar perawatan kulit dan estetika medis. Setiap konten yang kami produksi melewati riset komprehensif serta peninjauan medis agar terbebas dari klaim sepihak dan mitos kecantikan yang keliru.</p>
+            
+            <div class="sozo-ed-process-list">
+                <div class="sozo-process-item">
+                    <h3>Akurasi Informasi</h3>
+                    <p>Penyusunan artikel wajib mengacu pada literatur estetika tepercaya, panduan resmi badan kesehatan, dan regulasi kosmetik (BPOM).</p>
+                </div>
+                <div class="sozo-process-item">
+                    <h3>Bahasa yang Sederhana</h3>
+                    <p>Kami menyederhanakan istilah-istilah dermatologi yang rumit agar bisa diakses dan diaplikasikan dengan mudah dalam perawatan harian Anda.</p>
+                </div>
+                <div class="sozo-process-item">
+                    <h3>Koreksi Cepat</h3>
+                    <p>Kami berkomitmen untuk segera melakukan pembaruan atau klarifikasi jika ditemukan kekeliruan data atau ejaan pada artikel kami.</p>
+                </div>
+                <div class="sozo-process-item">
+                    <h3>Relevansi Tren</h3>
+                    <p>Konten disesuaikan dengan kebutuhan perawatan kulit masyarakat urban di Indonesia serta perkembangan teknologi estetika terbaru.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: MEDICAL REVIEWER -->
+    <section class="sozo-board-container">
+        <div class="sozo-board-head">
+            <h2>Medical Reviewer</h2>
+        </div>
+
+        <div class="sozo-member-row">
+            <div class="sozo-member-meta">
+                <h3><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/">dr. Audi Sugiharto, Sp.D.V.E</a></h3>
+                <span class="sozo-member-tag">Spesialis Kulit, Kelamin, dan Estetika</span>
+            </div>
+            <div>
+                <p class="sozo-member-bio">Dokter spesialis dermatologi, venereologi, dan estetika dengan pengalaman menangani konsultasi serta tindakan medis di berbagai klinik dan rumah sakit di Jakarta. Menyelesaikan Program Adaptasi Spesialis Dermatologi dan Venereologi di Universitas Andalas / RSUP Dr. M. Djamil, Padang, serta pelatihan residensi di Research Institute for Tropical Medicine, Manila. Aktif meninjau artikel kesehatan kulit agar sesuai dengan praktik medis berbasis bukti.</p>
+            </div>
+        </div>
+
+        <div class="sozo-member-row">
+            <div class="sozo-member-meta">
+                <h3><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/">dr. Gesha Kautzar Putri, M.Biomed (AAM)</a></h3>
+                <span class="sozo-member-tag">Dokter Estetika Medis & Anti Aging Medicine</span>
+            </div>
+            <div>
+                <p class="sozo-member-bio">Memiliki pengalaman 13 tahun di bidang estetika medis dan manajerial. Lulusan Fakultas Kedokteran Universitas Tarumanagara dengan gelar magister Biomedik peminatan Anti Aging Medicine dari Universitas Udayana, Bali. Saat ini menjabat sebagai Dokter Komite di SOZO Clinic dan turut meninjau keakuratan informasi tindakan estetika seperti botox, filler, threadlift, dan skinbooster.</p>
+            </div>
+        </div>
+
+        <div class="sozo-member-row">
+            <div class="sozo-member-meta">
+                <h3><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/">dr. Elisabeth Ryan, Sp.D.V.E</a></h3>
+                <span class="sozo-member-tag">Dermatologi, Venereologi, &amp; Estetika</span>
+            </div>
+            <div>
+                <p class="sozo-member-bio">Dokter spesialis dermatologi, venereologi, dan estetika dengan pengalaman lebih dari 10 tahun, termasuk residensi dermatologi di Filipina dan fellowship trichoscopy di Polandia. Lulusan Fakultas Kedokteran Universitas Kristen Krida Wacana, Jakarta, dengan gelar spesialis dari program adaptasi Universitas Indonesia (2024). Menangani kasus dermatologi umum, tropis, imunodermatologi, hingga prosedur estetika seperti Botox, filler, skin booster, laser, dan HIFU, serta aktif dalam publikasi ilmiah dan kongres dermatologi internasional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: TIM EDITORIAL -->
+    <section class="sozo-board-container" style="border-top: none !important; padding-top: 0 !important;">
+        <div class="sozo-board-head">
+            <h2>Tim Editorial</h2>
+        </div>
+
+        <div class="sozo-member-row">
+            <div class="sozo-member-meta">
+                <h3>Alfian Dimas</h3>
+                <span class="sozo-member-tag">Content Editor</span>
+            </div>
+            <div>
+                <p class="sozo-member-bio">Bertanggung jawab dalam meriset literatur, melakukan penyuntingan narasi edukasi, serta memastikan setiap artikel kecantikan yang dipublikasikan di platform Sozo Skin Clinic akurat, faktual, dan mudah dipahami oleh pembaca.</p>
+            </div>
+        </div>
+
+        <div class="sozo-member-row">
+            <div class="sozo-member-meta">
+                <h3>Dimas Tri Wibowo</h3>
+                <span class="sozo-member-tag">Content Editor</span>
+            </div>
+            <div>
+                <p class="sozo-member-bio">Berperan aktif dalam menjaga kualitas penulisan dan keterbacaan konten, menyelaraskan tren perawatan kulit masyarakat modern dengan informasi yang aman, serta mengelola konsistensi alur publikasi artikel harian.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://sozoskinclinic.com/editorial-board/#webpage",
+      "url": "https://sozoskinclinic.com/editorial-board/",
+      "name": "Tim Editorial & Standar Konten - Sozo Skin Clinic",
+      "description": "Mengenal dewan dokter spesialis medis, tim redaksi, dewan editor, dan standar kebijakan penulisan informasi kecantikan di website resmi Sozo Skin Clinic.",
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/#website"
+      },
+      "about": {
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sozoskinclinic.com/editorial-board/#breadcrumb"
+      },
+      "reviewedBy": [
+        {
+          "@type": "Person",
+          "name": "dr. Audi Sugiharto, Sp.D.V.E",
+          "jobTitle": "Dermatologist, Venereologist, and Aesthetic Physician",
+          "worksFor": {
+            "@type": "MedicalOrganization",
+            "name": "Sozo Skin Clinic"
+          }
+        },
+        {
+          "@type": "Person",
+          "name": "dr. Gesha Kautzar Putri, M.Biomed (AAM)",
+          "jobTitle": "Medical Aesthetic Physician",
+          "worksFor": {
+            "@type": "MedicalOrganization",
+            "name": "Sozo Skin Clinic"
+          }
+        },
+        {
+          "@type": "Person",
+          "name": "dr. Elisabeth Ryan, Sp.D.V.E",
+          "jobTitle": "Dermatologist, Venereologist, and Aesthetic Physician",
+          "worksFor": {
+            "@type": "MedicalOrganization",
+            "name": "Sozo Skin Clinic"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/editorial-board/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tim Editorial & Standar Konten",
+          "item": "https://sozoskinclinic.com/editorial-board/"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sozoskinclinic.com/#website",
+      "url": "https://sozoskinclinic.com/",
+      "name": "Sozo Skin Clinic"
+    }
+  ]
+}
+</script>

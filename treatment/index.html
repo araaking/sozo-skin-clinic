@@ -1,0 +1,584 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+  html { scroll-behavior: smooth; }
+  #sozo-react-app { font-family: 'Poppins', sans-serif !important; color: #1f2937; background-color: #FAFAFA; line-height: 1.5; }
+  #sozo-react-app * { box-sizing: border-box; }
+  .sz-container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+  .sz-flex { display: flex; }
+  .sz-flex-col { display: flex; flex-direction: column; }
+  .sz-items-center { align-items: center; }
+  .sz-justify-between { justify-content: space-between; }
+  .sz-justify-center { justify-content: center; }
+  .sz-text-center { text-align: center; }
+  .sz-mb-4 { margin-bottom: 1rem; }
+  .sz-mb-8 { margin-bottom: 2rem; }
+  .sz-hidden { display: none !important; }
+  #sozo-react-app h2.sz-h2 { 
+    font-family: 'Poppins', sans-serif !important;
+    font-size: clamp(1.75rem, 4vw, 2.25rem) !important; 
+    font-weight: 800 !important; 
+    color: #1A2080 !important; 
+    margin: 0 0 0.5rem 0 !important; 
+    line-height: 1.2 !important; 
+    letter-spacing: -0.02em !important;
+  }
+  #sozo-react-app p.sz-desc { font-family: 'Poppins', sans-serif !important; color: #4b5563 !important; margin: 0 !important; font-size: 1rem !important; line-height: 1.6 !important; }
+
+  .sz-hero-wrapper {
+    background: linear-gradient(180deg, #1A2080 0%, #3b82f6 100%);
+    padding: 60px 16px 80px 16px;
+    font-family: 'Poppins', sans-serif !important;
+  }
+  
+  .sz-hero-header-text {
+    max-width: 1000px;
+    margin: 0 auto 24px auto;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .sz-hero-header-text h1 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: clamp(1.5rem, 4vw, 2.2rem) !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.01em !important;
+  }
+  
+  .sz-hero-header-text p {
+    font-size: 1rem !important;
+    margin: 0 !important;
+    opacity: 0.9 !important;
+    color: #e0e7ff !important;
+  }
+
+  .sz-ecommerce-card {
+    background: #ffffff;
+    border-radius: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    overflow: hidden;
+  }
+
+  .sz-ecommerce-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #f3f4f6;
+    flex-wrap: wrap;
+    gap: 16px;
+    background-color: #ffffff;
+  }
+  
+  .sz-ecommerce-banner-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1f2937;
+  }
+  
+  .sz-ecommerce-banner-left svg {
+    color: #1A2080;  /* biru */
+    width: 24px;
+    height: 24px;
+  }
+  
+  .sz-btn-action {
+    background-color: #1A2080;
+    color: #ffffff !important;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none !important;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+  }
+  
+  .sz-btn-action:hover {
+    background-color: #11164f;
+  }
+
+  .sz-category-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 32px 24px;
+    gap: 32px;
+    background: #ffffff;
+  }
+
+  .sz-cat-item {
+    flex: 0 0 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none !important;
+    gap: 12px;
+    cursor: pointer;
+  }
+  
+  .sz-cat-img-wrapper {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    border: none;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+  
+  .sz-cat-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .sz-cat-item:hover .sz-cat-img-wrapper {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 12px 20px -8px rgba(26, 32, 128, 0.2);
+    background: #ffffff !important;
+  }
+  
+  .sz-cat-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #4b5563;
+    text-align: center;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+  }
+  
+  .sz-cat-item:hover .sz-cat-title {
+    color: #1A2080;
+  }
+
+  @media (max-width: 768px) {
+    .sz-hero-wrapper { padding: 40px 16px 60px 16px; }
+    .sz-hero-header-text h1 { font-size: 1.5rem !important; }
+    .sz-ecommerce-banner { flex-direction: column; align-items: flex-start; padding: 16px; }
+    .sz-btn-action { width: 100%; text-align: center; }
+    .sz-category-row { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; padding: 24px 16px; gap: 16px; }
+    .sz-category-row::-webkit-scrollbar { display: none; }
+    .sz-cat-item { flex: 0 0 72px; gap: 8px; }
+    .sz-cat-img-wrapper { width: 60px; height: 60px; }
+    .sz-cat-title { font-size: 0.65rem; }
+  }
+  
+  .sz-section { padding: 48px 0; }
+  .sz-section.sz-bg-white { background-color: #ffffff; }
+  .sz-card { background: #fff; border-radius: 16px; border: 1px solid #f3f4f6; overflow: hidden; display: flex; flex-direction: column; height: 100%; transition: all 0.3s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .sz-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+  .sz-card-img-wrap { position: relative; aspect-ratio: 4/3; overflow: hidden; background: #f3f4f6; }
+  .sz-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .sz-card:hover .sz-card-img-wrap img { transform: scale(1.05); }
+  .sz-badge-category { position: absolute; top: 8px; left: 8px; background: #1A2080; color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+  .sz-badge-rating { position: absolute; top: 8px; right: 8px; background: #fff; color: #1f2937; padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 4px; }
+  .sz-badge-rating svg { width: 12px; height: 12px; fill: #eab308; color: #eab308; }
+  .sz-card-body { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+  #sozo-react-app h3.sz-card-title { font-family: 'Poppins', sans-serif !important; font-size: 1.125rem !important; font-weight: 700 !important; margin: 0 0 8px 0 !important; color: #111827 !important; line-height: 1.3 !important; }
+  .sz-card-duration { display: flex; align-items: center; gap: 6px; color: #6b7280; font-size: 0.875rem; margin-bottom: 16px; }
+  .sz-card-duration svg { width: 14px; height: 14px; }
+  .sz-card-footer { margin-top: auto; }
+  .sz-card-footer hr { border: 0; border-top: 1px dashed #e5e7eb; margin: 0 0 16px 0; }
+  .sz-card-price { font-family: 'Poppins', sans-serif !important; font-size: 1.25rem !important; font-weight: 800 !important; color: #1A2080 !important; margin: 0 0 16px 0 !important; }
+  .sz-btn-group { display: flex; flex-direction: column; gap: 8px; }
+  .sz-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 10px; border-radius: 50px !important; font-family: 'Poppins', sans-serif !important; font-weight: 600 !important; font-size: 0.85rem !important; transition: all 0.3s ease !important; text-decoration: none !important; cursor: pointer !important; }
+  .sz-btn-primary { background: #1A2080 !important; color: #fff !important; border: 2px solid #1A2080 !important; }
+  .sz-btn-primary:hover { background: #fff !important; color: #1A2080 !important; }
+  .sz-btn-primary i { margin-right: 6px; }
+  .sz-btn-outline { background: transparent !important; border: 2px solid #1A2080 !important; color: #1A2080 !important; }
+  .sz-btn-outline:hover { background: #1A2080 !important; color: #fff !important; }
+
+  .sz-scroll-wrapper { position: relative; }
+  .sz-scroll-container { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 24px; scrollbar-width: none; -ms-overflow-style: none; }
+  .sz-scroll-container::-webkit-scrollbar { display: none; }
+  .sz-scroll-item { flex: 0 0 280px; scroll-snap-align: start; }
+
+  #sozo-react-app .sz-nav-btn { position: absolute !important; top: 40% !important; transform: translateY(-50%) !important; z-index: 50 !important; width: 40px !important; height: 40px !important; border-radius: 50% !important; background-color: #ffffff !important; border: 1px solid #f3f4f6 !important; box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important; color: #1A2080 !important; display: flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; transition: all 0.3s ease !important; opacity: 0.9 !important; padding: 0 !important; }
+  .sz-scroll-wrapper:hover .sz-nav-btn { opacity: 1 !important; box-shadow: 0 6px 14px rgba(0,0,0,0.2) !important; }
+  #sozo-react-app .sz-nav-btn:hover { background-color: #f9fafb !important; }
+  #sozo-react-app .sz-nav-prev { left: -10px !important; }
+  #sozo-react-app .sz-nav-next { right: -10px !important; }
+  .sz-nav-btn svg { width: 20px !important; height: 20px !important; stroke-width: 2.5px !important; }
+
+  /* Search Box Redesign */
+  .sz-search-box {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 32px auto;
+  }
+  
+  .sz-search-input {
+    font-family: 'Poppins', sans-serif !important;
+    width: 100%;
+    padding: 18px 20px 18px 56px;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 20px !important;
+    font-size: 1rem !important;
+    box-shadow: 0 10px 25px rgba(26,32,128,0.03) !important;
+    outline: none !important;
+    transition: all 0.3s ease !important;
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+  }
+  
+  .sz-search-input:focus {
+    border-color: #1A2080 !important;
+    box-shadow: 0 10px 30px rgba(26,32,128,0.08) !important;
+  }
+  
+  .sz-search-icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+  }
+
+  .sz-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; align-items: center; }
+  
+  #sozo-react-app .sz-chip { font-family: 'Poppins', sans-serif !important; background-color: #ffffff !important; border: 1px solid #e5e7eb !important; color: #4b5563 !important; padding: 6px 16px !important; border-radius: 9999px !important; font-size: 0.875rem !important; font-weight: 500 !important; cursor: pointer !important; transition: all 0.2s !important; margin: 0 !important; display: inline-block !important; line-height: 1.5 !important; }
+  #sozo-react-app .sz-chip:hover { border-color: #1A2080 !important; color: #1A2080 !important; }
+  #sozo-react-app .sz-chip.active { background-color: #1A2080 !important; color: #fff !important; border-color: #1A2080 !important; }
+  .sz-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+  .sz-pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 32px; }
+  #sozo-react-app .sz-page-btn { font-family: 'Poppins', sans-serif !important; width: 40px !important; height: 40px !important; min-width: 40px !important; padding: 0 !important; border-radius: 8px !important; border: 1px solid #e5e7eb !important; background-color: #fff !important; color: #4b5563 !important; font-weight: 700 !important; font-size: 14px !important; cursor: pointer !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.2s !important; margin: 0 !important; }
+  #sozo-react-app .sz-page-btn:hover:not(:disabled) { border-color: #1A2080 !important; color: #1A2080 !important; }
+  #sozo-react-app .sz-page-btn.active { background-color: #1A2080 !important; color: #fff !important; border-color: #1A2080 !important; }
+  #sozo-react-app .sz-page-btn:disabled { opacity: 0.5 !important; cursor: not-allowed !important; }
+
+  @media (max-width: 768px) {
+    .sz-header-flex { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .sz-scroll-item { flex: 0 0 220px; }
+    #sozo-react-app .sz-nav-btn { width: 36px !important; height: 36px !important; display: flex !important; }
+    #sozo-react-app .sz-nav-prev { left: 4px !important; }
+    #sozo-react-app .sz-nav-next { right: 4px !important; }
+    .sz-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .sz-card-body { padding: 12px; }
+    #sozo-react-app h3.sz-card-title { font-size: 0.875rem !important; }
+    .sz-card-duration { font-size: 0.75rem; margin-bottom: 12px; }
+    .sz-card-price { font-size: 1rem !important; margin-bottom: 12px !important; }
+    .sz-btn { padding: 8px; font-size: 0.7rem !important; }
+    #sozo-react-app .sz-chips { flex-wrap: nowrap !important; overflow-x: auto !important; justify-content: flex-start !important; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; padding-bottom: 8px; }
+    #sozo-react-app .sz-chips::-webkit-scrollbar { display: none; }
+    #sozo-react-app .sz-chip { flex: 0 0 auto !important; white-space: nowrap !important; }
+  }
+  @media (max-width: 480px) { #sozo-react-app .sz-chip { font-size: 0.75rem !important; padding: 6px 12px !important; } }
+</style>
+
+<div id="sozo-react-app">
+  <div class="sz-hero-wrapper">
+    <div class="sz-hero-header-text">
+      <h1>Selamat datang di SOZO Skin Clinic</h1>
+      <p>Klinik estetika terpercaya untuk perawatan kulit &amp; rambut Anda</p>
+    </div>
+    <div class="sz-ecommerce-card">
+      <div class="sz-ecommerce-banner">
+        <div class="sz-ecommerce-banner-left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Konsul keluhan sesuai kebutuhan, GRATIS!
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20ingin%20konsultasi%20gratis%20[sumber:%20SEM-general]" target="_blank" rel="noopener noreferrer" class="sz-btn-action">Mulai Konsul GRATIS</a>
+      </div>
+      <div class="sz-category-row">
+        <a href="#acne-treatment" class="sz-cat-item">
+          <div class="sz-cat-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Acne-Single-Treatment-Acne-laser-facial.webp" alt="Acne & Scar" loading="lazy">
+          </div>
+          <span class="sz-cat-title">Acne &amp;<br>Scar</span>
+        </a>
+        <a href="#skin-booster" class="sz-cat-item">
+          <div class="sz-cat-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Skin-Bright-Facial-Medical-1.webp" alt="Skin Booster" loading="lazy">
+          </div>
+          <span class="sz-cat-title">Skin<br>Booster</span>
+        </a>
+        <a href="#anti-aging" class="sz-cat-item">
+          <div class="sz-cat-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Injection.webp" alt="Anti Aging" loading="lazy">
+          </div>
+          <span class="sz-cat-title">Anti Aging</span>
+        </a>
+        <a href="#hair-treatment" class="sz-cat-item">
+          <div class="sz-cat-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/03/Gemini_Generated_Image_qncw0qncw0qncw0q.webp" alt="Hair Treatment" loading="lazy">
+          </div>
+          <span class="sz-cat-title">Hair</span>
+        </a>
+        <a href="#slimming-treatment" class="sz-cat-item">
+          <div class="sz-cat-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/slimming-home.webp" alt="Slimming Treatment" loading="lazy">
+          </div>
+          <span class="sz-cat-title">Slimming</span>
+        </a>
+        <a href="#hair-removal" class="sz-cat-item">
+          <div class="sz-cat-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Hair-Removal-Underarm-Glow.webp" alt="Hair Removal" loading="lazy">
+          </div>
+          <span class="sz-cat-title">Hair<br>Removal</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="sz-categories-container" style="scroll-margin-top: 40px;"></div>
+
+  <div id="semua-treatment" class="sz-section" style="border-top: 1px solid #f3f4f6; padding-top: 80px; scroll-margin-top: 20px;">
+    <div class="sz-container">
+      <div class="sz-text-center sz-mb-8">
+        <div style="display:inline-flex; align-items:center; justify-content:center; padding:12px; background-color:#ffffff; border-radius:50%; box-shadow:0 1px 2px rgba(0,0,0,0.05); border:1px solid #f3f4f6; margin-bottom:16px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A2080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg>
+        </div>
+        <h2 class="sz-h2" style="margin-bottom: 16px !important;">Cari Treatment Spesifik</h2>
+        <p class="sz-desc">Tidak menemukan yang Anda cari? Gunakan pencarian di bawah untuk melihat seluruh koleksi treatment kami.</p>
+      </div>
+
+      <div class="sz-search-box">
+        <svg class="sz-search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="sz-search-input" class="sz-search-input" placeholder="Cari beauty treatment atau keluhan Anda...">
+      </div>
+
+      <div class="sz-chips sz-mb-8" id="sz-quick-chips"></div>
+      <div id="sz-grid-container" class="sz-grid"></div>
+      
+      <div id="sz-empty-state" class="sz-text-center sz-hidden" style="padding: 40px 0;">
+        <div style="width:80px; height:80px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 24px auto;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1A2080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <h3 class="sz-h2" style="font-size: 1.5rem !important; margin-bottom: 8px !important;">Pencarian Tidak Ditemukan</h3>
+        <p class="sz-desc sz-mb-4" id="sz-empty-desc">Kami tidak menemukan treatment untuk kata kunci tersebut.</p>
+        <button onclick="document.getElementById('sz-search-input').value=''; szHandleSearch();" class="sz-btn sz-btn-outline" style="display:inline-block; width:auto; padding:10px 24px; background:#1A2080 !important; color:#fff !important;">Lihat Semua Treatment</button>
+      </div>
+
+      <div id="sz-pagination" class="sz-pagination"></div>
+      <div id="sz-page-info" class="sz-text-center sz-desc" style="font-size: 0.875rem !important; margin-top: 16px !important;"></div>
+    </div>
+  </div>
+</div>
+
+<script data-no-optimize="1" data-no-defer="1">
+(function() {
+  const treatmentsData = [
+    {"id":"skin-booster","title":"Skin Booster Treatment","description":"Perawatan injeksi premium untuk hidrasi mendalam, peremajaan kulit, dan stimulasi kolagen.","link":"https://sozoskinclinic.com/ads/skin-booster-new-refresh/","sku":[{"id":"sb1","name":"Rejuran Healer","price":"Rp 6.499.000","duration":"90 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Healer1.avif","solutions":["Skin Booster","Anti Aging","Regenerasi"]},{"id":"sb2","name":"Rejuran Skin Booster","price":"Rp 2.999.000","duration":"90 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Scar1.avif","solutions":["Skin Booster","Hidrasi"]},{"id":"sb3","name":"Rejuran HB","price":"Rp 8.198.000","duration":"90 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-HB.avif","solutions":["Skin Booster","Hidrasi Maksimal"]},{"id":"sb4","name":"Jalupro","price":"Rp 8.598.000","duration":"60 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/09/jalupro.webp","solutions":["Skin Booster","Kolagen","Mata Panda"]},{"id":"sb5","name":"Profhilo","price":"Rp 6.999.000","duration":"75 Menit","rating":5.0,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/12/profhilo-treatment-1.avif","solutions":["Skin Booster","Remodeling Kulit","Lifting"]},{"id":"sb6","name":"DNA Glow (DNA Salmon)","price":"Rp 1.599.000","duration":"75 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/K-Glow-DNA-boost.avif","solutions":["Skin Booster","DNA Salmon","Cerah"]},{"id":"sb7","name":"Glass Skin Booster","price":"Rp 2.099.000","duration":"75 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Glass-Skin-Skinbooster1.avif","solutions":["Skin Booster","Glowing","Pori-pori"]},{"id":"sb8","name":"Exosome Face","price":"Rp 8.398.000","duration":"90 Menit","rating":5.0,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Exosome-Face.avif","solutions":["Skin Booster","Exosome","Sensitif"]},{"id":"sb9","name":"Xela Rederm","price":"Rp 8.598.000","duration":"75 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Xela-Rederm1.avif","solutions":["Skin Booster","Anti Aging"]},{"id":"sb10","name":"Juvelook","price":"Rp 11.198.000","duration":"75 Menit","rating":5.0,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/09/juvelook.webp","solutions":["Skin Booster","Volume","Kolagen"]},{"id":"sb11","name":"Nucleofill","price":"Rp 6.499.000","duration":"80 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2024/07/nucleofill-skinbooster-treatment.avif","solutions":["Skin Booster","Regenerasi"]},{"id":"sb12","name":"Restylane Skinbooster","price":"Rp 7.798.000","duration":"60 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Restylance-Scar.avif","solutions":["Skin Booster","Hidrasi","Kolagen"]},{"id":"sb13","name":"Aqua Shine Skinbooster","price":"Rp 2.599.000","duration":"60 Menit","rating":4.7,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/09/aquashine.webp","solutions":["Skin Booster","Hidrasi"]},{"id":"sb14","name":"Sozo Pink Bomb","price":"Rp 3.099.000","duration":"60 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/09/sozo-pink-bomb.webp","solutions":["Skin Booster","Mencerahkan"]},{"id":"sb15","name":"Rejuran Eye (Rejuran I)","price":"Rp 6.198.000","duration":"45 Menit","rating":4.9,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/12/Rejuran-Eye.webp","solutions":["Eye Treatment","Mata Panda"]},{"id":"sb16","name":"Panda Eye Booster","price":"Rp 2.099.000","duration":"45 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/under-eye-filler-mata-panda-1.avif","solutions":["Eye Treatment","Mata Panda"]},{"id":"sb17","name":"Pink Lips Booster","price":"Rp 1.599.000","duration":"30 Menit","rating":4.7,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pink-Lips.avif","solutions":["Lip Treatment","Bibir Hitam"]}]},
+    {"id":"anti-aging","title":"Anti Aging Treatment","description":"Solusi perawatan anti aging komprehensif dengan filler, threadlift, HIFU, dan infus whitening.","link":"https://sozoskinclinic.com/ads/anti-aging/","sku":[{"id":"inj4","name":"Korean Filler","price":"Konsultasikan","duration":"75 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Korean-Filler.avif","solutions":["Filler","Volume Wajah","Kolagen"]},{"id":"inj5","name":"Premium Filler","price":"Konsultasikan","duration":"75 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Premium-Filler.avif","solutions":["Filler","Anti Aging","Pengencangan"]},{"id":"inj6","name":"Filler Dagu","price":"Konsultasikan","duration":"75 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Premium-Filler.avif","solutions":["Filler","V-Shape","Kontur Dagu"]},{"id":"inj7","name":"Facelift (Threadlift)","price":"Konsultasikan","duration":"75 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2024/03/facelift-sozo-skin-clinic.avif","solutions":["Threadlift","Facelift","Anti Aging"]},{"id":"inj8","name":"Perfect Facelift","price":"Konsultasikan","duration":"90 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2024/03/perfect-facelift-sozo-skin-clinic.avif","solutions":["Threadlift","Facelift","Pengencangan"]},{"id":"inj9","name":"Nose Job (Threadlift)","price":"Konsultasikan","duration":"60 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2024/03/nose-job-sozo-skin-clinic.avif","solutions":["Threadlift","Hidung","Nose Job"]},{"id":"inj10","name":"Perfect Nose Job","price":"Konsultasikan","duration":"60 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2024/03/perfect-nose-job-sozo-skin-clinic.avif","solutions":["Threadlift","Hidung","Nose Job"]},{"id":"inj11","name":"Immune Glow Injection","price":"Mulai Rp 199.000","duration":"45 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.png","solutions":["Infus Whitening","Vitamin C","Cerah"]},{"id":"inj12","name":"Immune Glow Infusion","price":"Mulai Rp 399.000","duration":"60 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.png","solutions":["Infus Whitening","Imunitas","Cerah"]},{"id":"inj13","name":"Premium Glow Infusion","price":"Mulai Rp 849.000","duration":"60 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.png","solutions":["Infus Whitening","Stamina","Regenerasi"]},{"id":"liftera-hifu","name":"Liftera HIFU","price":"Konsultasikan","duration":"75 Menit","rating":4.9,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/DSC09073-1-scaled.webp","solutions":["HIFU","Pengencangan","Kolagen"]},{"id":"signature-hifu","name":"Signature HIFU","price":"Konsultasikan","duration":"75 Menit","rating":4.9,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/DSC06476-scaled-HIFU.webp","solutions":["HIFU","Lifting","Anti Aging"]},{"id":"rf-wajah","name":"RF Wajah","price":"Konsultasikan","duration":"45 Menit","rating":4.9,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-1-1.webp","solutions":["RF Treatment","Anti Aging","Pengencangan"]}]},
+    {"id":"facial-treatment","title":"Facial Treatment","description":"Dapatkan kulit bersih, cerah, dan sehat dengan pilihan facial treatment terbaik dari SOZO Skin Clinic.","link":"https://sozoskinclinic.com/ads/facial-new-lp/","sku":[{"id":"fc1","name":"Mini Facial","price":"Rp 149.000","duration":"30 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Mini-Facial.avif","solutions":["Facial Treatment","Komedo","Mencerahkan"]},{"id":"fc2","name":"Acne Clear Facial","price":"Rp 299.000","duration":"45 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.avif","solutions":["Facial Treatment","Acne Scar Solution","Jerawat"]},{"id":"fc3","name":"Skin Bright Facial","price":"Rp 299.000","duration":"45 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.avif","solutions":["Facial Treatment","Body & Face Brightening Solution","Kusam"]},{"id":"fc4","name":"Sozo Signature Facial","price":"Rp 699.000","duration":"60 Menit","rating":5.0,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_SOZO-Signature-Facial.avif","solutions":["Facial Treatment","Anti Aging Solution","Signature"]},{"id":"fc5","name":"Diamond Laser Facial","price":"Rp 1.499.000","duration":"60 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.avif","solutions":["Facial Treatment","Anti Aging Solution","Pori-pori"]},{"id":"fc6","name":"Sylfirm X","price":"Rp 7.999.000","duration":"60 Menit","rating":5.0,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.avif","solutions":["Facial Treatment","Melasma","Acne Scar Solution"]},{"id":"fc7","name":"Acne Laser Facial","price":"Rp 1.499.000","duration":"60 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Laser-Facial.avif","solutions":["Facial Treatment","Jerawat","Acne Scar Solution"]},{"id":"fc8","name":"Collagen Mask","price":"Rp 199.000","duration":"30 Menit","rating":4.7,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Mini-Facial.avif","solutions":["Facial Treatment","Glowing","Mask"]}]},
+    {"id":"laser-treatment","title":"Laser Treatment","description":"Solusi laser modern untuk pigmentasi, tekstur kulit, peremajaan, dan penghapusan tato secara efektif.","link":"https://sozoskinclinic.com/ads/laser-treatment-new-refresh-v2/","sku":[{"id":"ls1","name":"Nano Laser","price":"Rp 1.199.000","duration":"45 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Nano-Laser.avif","solutions":["Laser Treatment","Pigmentasi","Rejuvenation"]},{"id":"ls2","name":"Pico Laser","price":"Rp 1.199.000","duration":"45 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pico-Laser.avif","solutions":["Laser Treatment","Pigmentasi","Melasma"]},{"id":"ls3","name":"Laser CO2","price":"Rp 1.199.000","duration":"60 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Laser-CO2.avif","solutions":["Laser Treatment","Bopeng","Pori-pori Besar"]},{"id":"ls4","name":"Pink Lips Laser","price":"Rp 499.000","duration":"30 Menit","rating":4.7,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pink-Lips.avif","solutions":["Laser Treatment","Bibir","Rejuvenation"]},{"id":"ls5","name":"Laser Tattoo Removal","price":"Rp 499.000","duration":"60 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Tatto-Laser.avif","solutions":["Laser Treatment","Tattoo Removal"]},{"id":"ls6","name":"Laser Rejuve","price":"Rp 1.199.000","duration":"45 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Nano-Laser.avif","solutions":["Laser Treatment","Rejuvenation","Anti Aging"]}]},
+    {"id":"hair-treatment","title":"Hair Treatment","description":"Perawatan komprehensif untuk kulit kepala dan rambut yang lebih sehat dan lebat.","link":"https://sozoskinclinic.com/hair-treatment/","sku":[{"id":"ht1","name":"Hair Grow Booster","price":"Rp 1.499.000","duration":"45 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Hair-Grow-Booster-1.avif","solutions":["Hair Care Solution","Kerontokan"]},{"id":"ht2","name":"PRP Hair","price":"Mulai Rp 1.749.000","duration":"60 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_PRP-Hair-1.avif","solutions":["Hair Care Solution","Kerontokan"]},{"id":"ht3","name":"Biolight Hair","price":"Mulai Rp 199.000","duration":"70 Menit","rating":4.7,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Biolight-Hair-1.avif","solutions":["Hair Care Solution","Kerontokan"]},{"id":"ht4","name":"Salmon DNA Hair","price":"Mulai Rp 1.399.000","duration":"80 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Salmon-DNA-Hair-1.avif","solutions":["Hair Care Solution","Kulit Kepala"]},{"id":"ht5","name":"Exosome Hair 5cc","price":"Mulai Rp 3.849.000","duration":"80 Menit","rating":5.0,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Exosome-Hair-5cc-1.avif","solutions":["Hair Care Solution","Kerontokan"]},{"id":"ht6","name":"Express Hair Therapy","price":"Konsultasikan","duration":"45 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Hair-Therapy-1.avif","solutions":["Hair Care Solution","Kulit Kepala"]},{"id":"ht7","name":"Brow Grow","price":"Mulai Rp 599.000","duration":"80 Menit","rating":4.6,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Brow-Grow-1.avif","solutions":["Hair Care Solution","Alis & Jenggot"]},{"id":"ht8","name":"Beard Grow","price":"Mulai Rp 749.000","duration":"80 Menit","rating":4.7,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Beard-Grow-1.avif","solutions":["Hair Care Solution","Alis & Jenggot"]}]},
+    {"id":"hair-removal","title":"Hair Removal Treatment","description":"Solusi efektif dan tahan lama untuk menghilangkan bulu yang tidak diinginkan.","link":"https://sozoskinclinic.com/hair-removal-treatment/","sku":[{"id":"hr1","name":"Laser Hair Removal","price":"Mulai Rp 799.000","duration":"30 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Laser-Hair-Removal.avif","solutions":["Hair Removal Solution","Laser"]},{"id":"hr2","name":"Underarm Removal Treatment","price":"Mulai Rp 249.000","duration":"20 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_IPL-Underarm.avif","solutions":["Hair Removal Solution","Underarm"]},{"id":"hr3","name":"Underarm Brightening Treatment","price":"Mulai Rp 597.000","duration":"30 Menit","rating":4.7,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Underarm-Brightening.avif","solutions":["Hair Removal Solution","Underarm","Brightening"]},{"id":"hr4","name":"Brazilian Hair Removal","price":"Mulai Rp 1.199.000","duration":"45 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Brazilian.avif","solutions":["Hair Removal Solution","Body"]},{"id":"hr5","name":"Body Hair Removal (Med/Large)","price":"Mulai Rp 1.598.000","duration":"60 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Hair-Removal-Large.avif","solutions":["Hair Removal Solution","Body"]}]},
+    {"id":"acne-treatment","title":"Acne Treatment","description":"Solusi perawatan jerawat menyeluruh mulai dari facial medis, laser, mesotherapy, tanpa botox.","link":"https://sozoskinclinic.com/skin-treatment/acne-treatment/","sku":[{"id":"ac3","name":"Acne Clear Facial - Medical","price":"Konsultasikan","duration":"60 Menit","rating":4.9,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/IPL-Acne-2048x2048.webp","solutions":["Acne Treatment","Facial","Komedo"]},{"id":"ac4","name":"Intense Pulse Light Acne","price":"Konsultasikan","duration":"45 Menit","rating":4.8,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Laser-Facial1.webp","solutions":["Acne Treatment","IPL","Bakteri Jerawat"]},{"id":"ac5","name":"Acne Laser Facial","price":"Konsultasikan","duration":"75 Menit","rating":4.9,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Meso-Acne.webp","solutions":["Acne Treatment","Laser","Bekas Jerawat"]},{"id":"ac6","name":"Meso Acne","price":"Konsultasikan","duration":"45 Menit","rating":4.8,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Meso-Acne.webp","solutions":["Acne Treatment","Mesotherapy","Inflamasi"]}]},
+    {"id":"slimming-treatment","title":"Slimming Treatment","description":"Raih bentuk tubuh ideal dengan perawatan mesotherapy, RF body, dan teknologi pembakar lemak terkini.","link":"https://sozoskinclinic.com/ads/slimming-treatment-promo/","sku":[{"id":"ms1","name":"Meso V Line","price":"Konsultasikan","duration":"60 Menit","rating":4.8,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-3-1.webp","solutions":["Slimming","V-Shape","Kontur Wajah"]},{"id":"ms2","name":"Meso Slim Body Premium","price":"Konsultasikan","duration":"75 Menit","rating":4.9,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-4-1.webp","solutions":["Slimming","Body Goals"]},{"id":"ms3","name":"Meso Metabolic Boost","price":"Konsultasikan","duration":"60 Menit","rating":4.8,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-5-1.webp","solutions":["Slimming","Metabolisme"]},{"id":"ms4","name":"Meso Cellulift","price":"Konsultasikan","duration":"60 Menit","rating":4.8,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-8.webp","solutions":["Slimming","Selulit","Body Contouring"]},{"id":"ms5","name":"Meso BloatAway","price":"Konsultasikan","duration":"60 Menit","rating":4.8,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-9.webp","solutions":["Slimming","Bakar Lemak"]},{"id":"rf-body-slimming","name":"RF Body Slimming","price":"Konsultasikan","duration":"60 Menit","rating":4.8,"img":"https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/DSC05449-edit-RF-Body-sozo-signature-1.webp","solutions":["Slimming","RF Treatment","Selulit"]}]}
+  ];
+
+  const searchOnlyTreatments = [
+    {"id":"ipl-acne","name":"IPL Acne","price":"Rp 299.000","duration":"30 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Laser-Facial.avif","solutions":["IPL Treatment","Jerawat","Acne"],"categoryName":"IPL Treatment","categoryLink":"https://sozoskinclinic.com/skin-treatment/ipl-treatment/"},
+    {"id":"ipl-glow","name":"IPL Glow","price":"Rp 299.000","duration":"30 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.avif","solutions":["IPL Treatment","Glow","Brightening"],"categoryName":"IPL Treatment","categoryLink":"https://sozoskinclinic.com/skin-treatment/ipl-treatment/"},
+    {"id":"glow-peel","name":"Glow Peel","price":"Rp 399.000","duration":"45 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.avif","solutions":["Derma Peel","Glow","Brightening"],"categoryName":"Derma Peel","categoryLink":"https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/"},
+    {"id":"acne-peel","name":"Acne Peel","price":"Rp 299.000","duration":"45 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.avif","solutions":["Derma Peel","Acne","Komedo"],"categoryName":"Derma Peel","categoryLink":"https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/"},
+    {"id":"dazzling-glow-peel","name":"Dazzling Glow Peel","price":"Rp 499.000","duration":"60 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.avif","solutions":["Derma Peel","Glow","Anti Aging"],"categoryName":"Derma Peel","categoryLink":"https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/"},
+    {"id":"eternal-bloom-peel","name":"Eternal Bloom Peel","price":"Rp 699.000","duration":"60 Menit","rating":5.0,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_SOZO-Signature-Facial.avif","solutions":["Derma Peel","Anti Aging","Hiperpigmentasi"],"categoryName":"Derma Peel","categoryLink":"https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/"},
+    {"id":"rejuran-scar","name":"Rejuran Scar","price":"Rp 5.499.000","duration":"90 Menit","rating":4.9,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/10/Rejuran-Scar-2048x2048.webp","solutions":["Scar Treatment","Bopeng","Regenerasi"],"categoryName":"Scar Treatment","categoryLink":"https://sozoskinclinic.com/skin-treatment/scar-treatment/"},
+    {"id":"restylane-scar","name":"Restylane Scar","price":"Rp 7.798.000","duration":"60 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Restylance-Scar.avif","solutions":["Scar Treatment","Bopeng","Skin Booster"],"categoryName":"Scar Treatment","categoryLink":"https://sozoskinclinic.com/skin-treatment/scar-treatment/"},
+    {"id":"prp-face","name":"PRP Treatment (Face)","price":"Rp 1.499.000","duration":"75 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/10/PRP-Face-2048x2048.webp","solutions":["Scar Treatment","Bopeng","PRP"],"categoryName":"Scar Treatment","categoryLink":"https://sozoskinclinic.com/skin-treatment/scar-treatment/"},
+    {"id":"laser-co2-rejuve","name":"Laser CO2 (Rejuve)","price":"Rp 1.199.000","duration":"75 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Laser-CO2.avif","solutions":["Scar Treatment","Rejuvenation","Laser"],"categoryName":"Scar Treatment","categoryLink":"https://sozoskinclinic.com/skin-treatment/scar-treatment/"},
+    {"id":"laser-co2-scar-pores","name":"Laser CO2 (Scar/Pores)","price":"Rp 1.499.000","duration":"75 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/10/Laser-CO2-Acne-scar-_-Pores-Full-Face.webp","solutions":["Scar Treatment","Bopeng","Pori-pori"],"categoryName":"Scar Treatment","categoryLink":"https://sozoskinclinic.com/skin-treatment/scar-treatment/"},
+    {"id":"pore-detox","name":"Pore Detox","price":"Rp 599.000","duration":"90 Menit","rating":4.7,"img":"https://sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Scar-Package-Treatment-Scar-Repair-PRP-I.avif","solutions":["Scar Treatment","Pori-pori","Komedo"],"categoryName":"Scar Treatment","categoryLink":"https://sozoskinclinic.com/skin-treatment/scar-treatment/"},
+    {"id":"subcision","name":"Subcision","price":"Rp 299.000","duration":"75 Menit","rating":4.8,"img":"https://sozoskinclinic.com/wp-content/uploads/2025/10/Website-Acne-Campaign_USP-Before-After-Scar-Scar-Fighter-1-768x576.webp","solutions":["Scar Treatment","Bopeng","Subcision"],"categoryName":"Scar Treatment","categoryLink":"https://sozoskinclinic.com/skin-treatment/scar-treatment/"}
+  ];
+
+  let searchQuery = '';
+  let currentPage = 1;
+  const itemsPerPage = 6;
+  
+  const allTreatments = [
+    ...treatmentsData.flatMap(cat => cat.sku.map(item => ({ ...item, categoryName: cat.title, categoryLink: cat.link }))),
+    ...searchOnlyTreatments
+  ];
+  let filteredTreatments = [...allTreatments];
+
+  const iconStar = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+  const iconClock = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`;
+  const iconArrowRight = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+  const iconChevronLeft = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>`;
+  const iconChevronRight = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+
+  function getCardHTML(item, catName, catLink) {
+    const waText = encodeURIComponent(`Halo SOZO, saya mau booking promo ${item.name} [sumber: SEM-general]`);
+    const finalWaLink = `https://api.whatsapp.com/send?phone=6285175225664&text=${waText}`;
+    let buttonsHtml = `<a href="${finalWaLink}" target="_blank" class="sz-btn sz-btn-primary"><i class="fab fa-whatsapp"></i> Reservasi Sekarang</a>`;
+    return `
+      <div class="sz-card">
+        <div class="sz-card-img-wrap">
+          <img src="${item.img}" alt="${item.name}" loading="lazy">
+          <div class="sz-badge-category">${catName}</div>
+          <div class="sz-badge-rating">${iconStar} ${item.rating}</div>
+        </div>
+        <div class="sz-card-body">
+          <h3 class="sz-card-title">${item.name}</h3>
+          <div class="sz-card-duration">${iconClock} ${item.duration}</div>
+          <div class="sz-card-footer">
+            <hr>
+            <p class="sz-card-price">${item.price}</p>
+            <div class="sz-btn-group">${buttonsHtml}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderHorizontalCategories() {
+    const container = document.getElementById('sz-categories-container');
+    if (!container) return;
+    let html = '';
+    treatmentsData.forEach((cat, index) => {
+      const bgClass = index % 2 !== 0 ? 'sz-bg-white' : '';
+      const visibleSkus = cat.sku.slice(0, 5);
+      let cardsHtml = visibleSkus.map(item => `<div class="sz-scroll-item">${getCardHTML(item, cat.title, cat.link)}</div>`).join('');
+      cardsHtml += `
+        <div class="sz-scroll-item" style="display:flex; align-items:center; justify-content:center;">
+           <a href="${cat.link}" class="sz-text-center" style="text-decoration:none; color:#6b7280;">
+             <div style="width:60px; height:60px; border-radius:50%; background:#f3f4f6; display:flex; align-items:center; justify-content:center; margin:0 auto 12px auto; color:#1A2080;">${iconArrowRight}</div>
+             <span style="font-weight:600; font-size:14px; font-family:'Poppins',sans-serif;">Jelajahi<br>Selengkapnya</span>
+           </a>
+        </div>
+      `;
+      html += `
+        <div id="${cat.id}" class="sz-section ${bgClass}" style="scroll-margin-top: 40px;">
+          <div class="sz-container">
+            <div class="sz-flex sz-justify-between sz-items-center sz-header-flex sz-mb-8">
+              <div style="max-width: 600px;">
+                <h2 class="sz-h2">${cat.title}</h2>
+                <p class="sz-desc">${cat.description}</p>
+              </div>
+            </div>
+            <div class="sz-scroll-wrapper">
+              <button class="sz-nav-btn sz-nav-prev" onclick="document.getElementById('scroll-${cat.id}').scrollBy({left: -300, behavior: 'smooth'})">${iconChevronLeft}</button>
+              <div id="scroll-${cat.id}" class="sz-scroll-container">${cardsHtml}</div>
+              <button class="sz-nav-btn sz-nav-next" onclick="document.getElementById('scroll-${cat.id}').scrollBy({left: 300, behavior: 'smooth'})">${iconChevronRight}</button>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    container.innerHTML = html;
+  }
+
+  function renderChips() {
+    const container = document.getElementById('sz-quick-chips');
+    if (!container) return;
+    let chipsHtml = `<span style="font-family:'Poppins',sans-serif; font-size:0.875rem; color:#6b7280; margin-right:8px; display:inline-flex; align-items:center; flex-shrink:0;">Sering Dicari:</span>`;
+    chipsHtml += ["Skin Booster", "Acne Treatment", "Facial Treatment", "Acne Scar Solution", "Anti Aging Solution", "Hair Care Solution", "Body & Face Brightening Solution", "Hair Removal Solution", "Filler", "Threadlift", "Infus Whitening", "Meso Treatment", "RF Treatment", "HIFU"].map(sol => `
+      <button class="sz-chip ${searchQuery.toLowerCase() === sol.toLowerCase() ? 'active' : ''}" onclick="szSetSearch('${sol}')">${sol}</button>
+    `).join('');
+    container.innerHTML = chipsHtml;
+  }
+
+  window.szSetSearch = function(val) {
+    const input = document.getElementById('sz-search-input');
+    if (input) input.value = val;
+    szHandleSearch();
+  };
+
+  window.szHandleSearch = function() {
+    const input = document.getElementById('sz-search-input');
+    searchQuery = input ? input.value.toLowerCase() : '';
+    filteredTreatments = allTreatments.filter(item => {
+      return item.name.toLowerCase().includes(searchQuery) || item.categoryName.toLowerCase().includes(searchQuery) || (item.solutions && item.solutions.some(s => s.toLowerCase().includes(searchQuery)));
+    });
+    currentPage = 1;
+    renderChips();
+    renderGrid();
+  };
+
+  function renderGrid() {
+    const gridEl = document.getElementById('sz-grid-container');
+    const emptyEl = document.getElementById('sz-empty-state');
+    if (!gridEl || !emptyEl) return;
+    if (filteredTreatments.length === 0) {
+      gridEl.innerHTML = '';
+      emptyEl.classList.remove('sz-hidden');
+      const emptyDesc = document.getElementById('sz-empty-desc');
+      if (emptyDesc) emptyDesc.innerHTML = `Kami tidak menemukan treatment untuk kata kunci "<b>${searchQuery}</b>".`;
+      renderPagination();
+      return;
+    }
+    emptyEl.classList.add('sz-hidden');
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    gridEl.innerHTML = filteredTreatments.slice(startIndex, startIndex + itemsPerPage).map(item => getCardHTML(item, item.categoryName, item.categoryLink)).join('');
+    renderPagination();
+  }
+
+  function renderPagination() {
+    const pagEl = document.getElementById('sz-pagination');
+    const infoEl = document.getElementById('sz-page-info');
+    if (!pagEl || !infoEl) return;
+    const totalPages = Math.ceil(filteredTreatments.length / itemsPerPage);
+    if (totalPages <= 1) {
+      pagEl.innerHTML = '';
+      infoEl.innerHTML = filteredTreatments.length > 0 ? `Menampilkan ${filteredTreatments.length} layanan` : '';
+      return;
+    }
+    let html = `<button class="sz-page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="szChangePage(${currentPage - 1})">${iconChevronLeft}</button>`;
+    for (let i = 1; i <= totalPages; i++) {
+      html += `<button class="sz-page-btn ${currentPage === i ? 'active' : ''}" onclick="szChangePage(${i})">${i}</button>`;
+    }
+    html += `<button class="sz-page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="szChangePage(${currentPage + 1})">${iconChevronRight}</button>`;
+    pagEl.innerHTML = html;
+    infoEl.innerHTML = `Menampilkan ${((currentPage - 1) * itemsPerPage) + 1}-${Math.min(currentPage * itemsPerPage, filteredTreatments.length)} dari ${filteredTreatments.length} layanan`;
+  }
+
+  window.szChangePage = function(page) { currentPage = page; renderGrid(); };
+
+  function initSozoApp() {
+    const container = document.getElementById('sz-categories-container');
+    const gridContainer = document.getElementById('sz-grid-container');
+    if (!container || !gridContainer) return false;
+    renderHorizontalCategories();
+    renderChips();
+    renderGrid();
+    const searchInput = document.getElementById('sz-search-input');
+    if (searchInput) {
+      searchInput.removeEventListener('input', szHandleSearch);
+      searchInput.addEventListener('input', szHandleSearch);
+    }
+    return true;
+  }
+
+  let attempts = 0;
+  function runLoop() {
+    if (initSozoApp()) {
+      console.log("SOZO App ready.");
+    } else if (attempts < 30) {
+      attempts++;
+      setTimeout(runLoop, 200);
+    }
+  }
+
+  if (document.readyState === 'complete' || document.readyState === 'interactive') { runLoop(); } 
+  else { document.addEventListener('DOMContentLoaded', runLoop); }
+  window.addEventListener('load', runLoop);
+
+  window.addEventListener('elementor/frontend/init', function() {
+    if (window.elementorFrontend && elementorFrontend.hooks) {
+      elementorFrontend.hooks.addAction('frontend/element_ready/html.default', runLoop);
+    }
+  });
+})();
+</script>

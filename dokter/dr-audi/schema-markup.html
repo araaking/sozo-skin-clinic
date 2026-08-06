@@ -1,0 +1,125 @@
+<!-- ============================================================
+     SCHEMA MARKUP - Halaman Detail Dokter
+     URL       : https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/
+     Versi     : 1.0
+     Tanggal   : 2026-08-05
+     Tipe      : ProfilePage + BreadcrumbList + IndividualPhysician
+     Catatan   : Pasang via WPCode kondisi halaman ini saja
+                 (Page URL contains audi-sugiharto).
+                 @id Person SAMA dengan referensi di halaman list
+                 (tim-dokter-sozo-skin) agar entitas menyambung.
+                 STR tampil penuh di UI -> masuk hasCredential
+                 (EducationalOccupationalCredential + recognizedBy KKI).
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/#webpage",
+      "url": "https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/",
+      "name": "dr. Audi Sugiharto, Sp.D.V.E - Spesialis Dermatologi, Venereologi & Estetika Sozo Skin Clinic",
+      "description": "Dokter spesialis dermatologi, venereologi, dan estetika yang mengedepankan pendekatan berbasis bukti ilmiah (evidence-based medicine). Menyelesaikan Program Adaptasi Spesialis di Universitas Andalas / RSUP Dr. M. Djamil, Padang, serta pelatihan residensi di Research Institute for Tropical Medicine, Manila.",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/#website"
+      },
+      "about": {
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/#person"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tim Dokter Sozo Skin Clinic",
+          "item": "https://sozoskinclinic.com/tim-dokter-sozo-skin/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "dr. Audi Sugiharto, Sp.D.V.E",
+          "item": "https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/"
+        }
+      ]
+    },
+    {
+      "@type": ["Person", "IndividualPhysician"],
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/#person",
+      "name": "dr. Audi Sugiharto, Sp.D.V.E",
+      "honorificPrefix": "dr.",
+      "honorificSuffix": "Sp.D.V.E",
+      "jobTitle": "Dermatologist, Venereologist, and Aesthetic Physician",
+      "url": "https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/",
+      "image": "https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Audi-Sugiharto-Sp.D.V.E.webp",
+      "description": "Berpengalaman di bidang dermatologi, venereologi, dan estetika medis, mengedepankan pendekatan berbasis bukti ilmiah (evidence-based medicine) dalam setiap penanganan pasien. Dikenal sebagai dokter yang teliti, profesional, dan penuh empati.",
+      "worksFor": {
+        "@type": "MedicalOrganization",
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "practicesAt": {
+        "@type": "MedicalOrganization",
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "STR (Surat Tanda Registrasi)",
+        "identifier": "VP00000073538568",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Konsil Kedokteran Indonesia (KKI)"
+        }
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Universitas Kristen Krida Wacana (UKRIDA), Jakarta"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Research Institute for Tropical Medicine, Manila"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Universitas Andalas, Padang"
+        }
+      ],
+      "knowsAbout": [
+        "Dermatology",
+        "Venereology",
+        "Aesthetic Medicine",
+        "Skin Surgery",
+        "Cosmetic Surgery"
+      ],
+      "award": [
+        "Peringkat 8 Ujian Board Nasional Kolegium Dermatologi dan Venereologi Indonesia (2023)",
+        "Basic Surgical Skill Workshop - Departemen Dermatologi dan Venereologi, Universitas Andalas (2022)",
+        "3rd Cosmetic Dermatology Inquiring Conference (COSMIC) Hands-On Workshop, Palembang (2022)"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sozoskinclinic.com/#website",
+      "url": "https://sozoskinclinic.com/",
+      "name": "Sozo Skin Clinic"
+    }
+  ]
+}
+</script>

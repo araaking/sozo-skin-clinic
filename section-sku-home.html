@@ -1,0 +1,856 @@
+<div class="clinic-services-wrapper">
+  <div class="clinic-header">
+    <div class="clinic-header-text">
+      <h2 class="clinic-title">Temukan Perawatan Wajah dan Kulit Terbaik dari Sozo Skin Clinic​</h2>
+      <p class="clinic-subtitle">Pilih perawatan terbaik untuk kebutuhan kulit dan tubuh Anda.</p>
+    </div>
+    <a href="https://sozoskinclinic.com/treatment/" class="header-view-all">
+      Lihat Treatment Lebih Lengkap
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+    </a>
+  </div>
+
+  <!-- Filter Section -->
+  <div class="clinic-filters-container">
+    <div class="clinic-filters">
+      <button class="filter-btn active" data-filter="all" onclick="filterServices('all')">Semua</button>
+      <button class="filter-btn" data-filter="injectable" onclick="filterServices('injectable')">Cosmetic Injectable</button>
+      <button class="filter-btn" data-filter="facial" onclick="filterServices('facial')">Facial & Skin</button>
+      <button class="filter-btn" data-filter="hair" onclick="filterServices('hair')">Hair</button>
+      <button class="filter-btn" data-filter="slimming" onclick="filterServices('slimming')">Slimming</button>
+      <button class="filter-btn" data-filter="acne" onclick="filterServices('acne')">Acne & Scar</button>
+    </div>
+  </div>
+
+  <!-- Services Grid -->
+  <div class="clinic-grid" id="servicesGrid">
+    
+    <!-- ================== INJECTABLE ================== -->
+    <!-- 4 Card Pertama dihapus loading="lazy"-nya karena kemungkinan besar masuk LCP / Above the fold -->
+    <div class="service-card" data-category="injectable">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/skinbooster-home.webp" alt="Skin Booster" decoding="async" width="600" height="450">
+        <span class="service-badge">Injectable</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Skin Booster</h3>
+        <p class="service-desc">Menyuntikkan zat-zat aktif ke dalam lapisan kulit. Meningkatkan kelembapan, elastisitas, dan kecerahan kulit.</p>
+        <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="injectable">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/zotox-home.webp" alt="Zo-tox Treatment" decoding="async" width="600" height="450">
+        <span class="service-badge">Injectable</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Zo-tox Treatment</h3>
+        <p class="service-desc">Mengatasi tanda penuaan seperti kerutan dan garis halus. Mengontrol produksi minyak dan mengecilkan pori-pori.</p>
+        <a href="https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="injectable">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/infus-whitening-home.webp" alt="Infus Whitening" decoding="async" width="600" height="450">
+        <span class="service-badge">Injectable</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Infus Whitening</h3>
+        <p class="service-desc">Pemberian vitamin dan mineral langsung ke aliran darah. Imun tubuh meningkat dan kulit lebih cerah.</p>
+        <a href="https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="injectable">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/threadlift-home.webp" alt="Threadlift" decoding="async" width="600" height="450">
+        <span class="service-badge">Injectable</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Threadlift</h3>
+        <p class="service-desc">Mengencangkan kulit wajah dan memperbaiki garis halus menggunakan benang medis khusus dan jarum halus.</p>
+        <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="injectable">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/filler-home.webp" alt="Filler" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Injectable</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Filler</h3>
+        <p class="service-desc">Penyuntikan cairan seperti asam hialuronat, kolagen, atau zat sintetis ke dalam jaringan lunak kulit.</p>
+        <a href="https://sozoskinclinic.com/injectable-treatment/filler-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ================== FACIAL & SKIN ================== -->
+    <div class="service-card" data-category="facial">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/laser-home.webp" alt="Laser Treatment" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Facial & Skin</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Laser Treatment</h3>
+        <p class="service-desc">Menggunakan energi cahaya berintensitas tinggi untuk mengangkat sel kulit mati dan mempercepat regenerasi kulit.</p>
+        <a href="https://sozoskinclinic.com/skin-treatment/laser-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="facial">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/ipl-home.webp" alt="IPL Face" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Facial & Skin</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">IPL Face</h3>
+        <p class="service-desc">Memanfaatkan energi cahaya untuk membuat wajah lebih halus, cerah, dan membasmi jerawat.</p>
+        <a href="https://sozoskinclinic.com/skin-treatment/ipl-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="facial">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/facial-home.webp" alt="Facial Treatment" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Facial & Skin</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Facial Treatment</h3>
+        <p class="service-desc">Pengelupasan sel kulit mati, pemberian nutrisi, serta pelembapan untuk membuat kulit wajah lebih sehat.</p>
+        <a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="facial">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/dermapeel-home-1.webp" alt="Derma Peel" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Facial & Skin</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Derma Peel</h3>
+        <p class="service-desc">Menggunakan larutan kimia untuk mengangkat lapisan kulit terluar. Kulit baru yang muncul lebih halus dan cerah.</p>
+        <a href="https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ================== HAIR ================== -->
+    <div class="service-card" data-category="hair">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/hair-home.webp" alt="Hair Treatment" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Hair</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Hair Treatment</h3>
+        <p class="service-desc">Teknik microneedling untuk mempercepat pertumbuhan rambut, mengurangi kerontokan.</p>
+        <a href="https://sozoskinclinic.com/hair-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="hair">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/hair-removal-home-1.webp" alt="Hair Removal" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Hair</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Hair Removal</h3>
+        <p class="service-desc">Metode penghilangan bulu menggunakan teknologi sinar laser yang aman, hasil tahan lama.</p>
+        <a href="https://sozoskinclinic.com/hair-removal-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ================== ACNE & SCAR ================== -->
+    <div class="service-card" data-category="acne">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Clear-Facial-2.webp" alt="Acne Solution" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Acne & Scar</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Acne Solution</h3>
+        <p class="service-desc">Berbagai solusi untuk mengatasi jerawat yang disesuaikan dengan kondisi kulit Anda.</p>
+        <a href="https://sozoskinclinic.com/skin-treatment/acne-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="acne">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Rejuran-Scar-scaled.webp" alt="Scar Treatment" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Acne & Scar</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Scar Treatment</h3>
+        <p class="service-desc">Menangani berbagai jenis bopeng, keloid, dan bekas luka lainnya di area wajah maupun tubuh.</p>
+        <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ================== SLIMMING ================== -->
+    <div class="service-card" data-category="slimming">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/slimming-home.webp" alt="Slimming Treatment" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Slimming</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Slimming Treatment</h3>
+        <p class="service-desc">Solusi sempurna menghilangkan lemak di area tubuh tertentu seperti dagu, lengan, perut, dan paha.</p>
+        <a href="https://sozoskinclinic.com/slimming-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="service-card" data-category="slimming">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/rf.webp" alt="Radiofrequency Treatment" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Slimming</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Radiofrequency Treatment</h3>
+        <p class="service-desc">Mempercepat regenerasi kulit dan mengencangkan kulit kendur, memberikan tampilan awet muda.</p>
+        <a href="https://sozoskinclinic.com/radiofrequency-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="service-card" data-category="slimming">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/meso.webp" alt="Meso Treatment" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Slimming</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Meso Treatment</h3>
+        <p class="service-desc">Menurunkan berat badan, NumPy kurangi lemak tubuh, dan mengatasi selulit di dagu, lengan, perut, dan paha.</p>
+        <a href="https://sozoskinclinic.com/meso-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="service-card" data-category="slimming">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/hifu.webp" alt="Hifu Treatment" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Slimming</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Hifu Treatment</h3>
+        <p class="service-desc">Menghasilkan kulit yang lebih kencang dan halus. Mengurangi kerutan dan mengencangkan kulit kendur.</p>
+        <a href="https://sozoskinclinic.com/hifu-treatment/" class="detail-btn">
+          Lihat Selengkapnya
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="service-card" data-category="slimming">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/ultrasculpt.webp" alt="Ultrascrupt" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Slimming</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Ultrascrupt</h3>
+        <p class="service-desc">Mengencangkan tubuh dengan teknologi elektro current dalam pengencangan dan pembentukan otot.</p>
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" class="detail-btn">
+          Reservasi Sekarang
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="service-card" data-category="slimming">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/Fatburn-Laser.webp" alt="FatBurn Laser" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Slimming</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">FatBurn Laser</h3>
+        <p class="service-desc">Menggabungkan 3 teknologi untuk menghancurkan lemak, membentuk lekuk tubuh, dan mengencangkan kulit.</p>
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" class="detail-btn">
+          Konsultasi Dokter
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="service-card" data-category="slimming">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/Lymph-Drain.webp" alt="Lymph Drain" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Slimming</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">Lymph Drain</h3>
+        <p class="service-desc">Meningkatkan aliran sistem limfatik, penting untuk menjaga keseimbangan cairan dan membuang racun.</p>
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" class="detail-btn">
+          Reservasi Sekarang
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="slimming">
+      <div class="service-image">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/Caloburn.webp" alt="CaloBurn" loading="lazy" decoding="async" width="600" height="450">
+        <span class="service-badge">Slimming</span>
+      </div>
+      <div class="service-info">
+        <h3 class="service-name">CaloBurn</h3>
+        <p class="service-desc">Menggunakan selimut hangat yang menembus kulit. Meningkatkan suhu tubuh dan sirkulasi darah.</p>
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" class="detail-btn">
+          Reservasi Sekarang
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pagination Container -->
+  <div class="clinic-pagination" id="paginationControls"></div>
+
+  <!-- View All Section -->
+  <div class="clinic-view-all-container">
+    <a href="https://sozoskinclinic.com/treatment/" class="view-all-btn">
+      Lihat Semua Treatment Lebih Lengkap
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+    </a>
+  </div>
+</div>
+
+<style>
+  /* Base Variables & Isolasi Global */
+  .clinic-services-wrapper {
+    --primary-color: #1A2080;
+    --primary-hover: #262d9c;
+    --bg-light: #f8fafc;
+    --text-dark: #1e293b;
+    --text-muted: #475569; /* OPTIMASI: Digelapkan dari #64748b agar lolos cek kontras warna */
+    --border-color: #e2e8f0;
+    --card-bg: #ffffff;
+    
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  /* RESET: Mencegah style elementor merusak layout di dalam wrapper ini */
+  .clinic-services-wrapper * {
+    box-sizing: border-box !important;
+  }
+  
+  .clinic-services-wrapper h2, 
+  .clinic-services-wrapper h3, 
+  .clinic-services-wrapper p {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+  }
+
+  .clinic-services-wrapper a {
+    text-decoration: none;
+    box-shadow: none;
+  }
+
+  .clinic-services-wrapper button {
+    outline: none;
+    box-shadow: none;
+  }
+
+  /* Header */
+  .clinic-services-wrapper .clinic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .clinic-services-wrapper .clinic-header-text {
+    flex: 1;
+  }
+
+  .clinic-services-wrapper .clinic-title {
+    color: var(--primary-color) !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px 0 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.3 !important;
+  }
+
+  .clinic-services-wrapper .clinic-subtitle {
+    color: var(--text-muted) !important;
+    font-size: 15px !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
+  }
+
+  .clinic-services-wrapper .header-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-color) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .clinic-services-wrapper .header-view-all:hover {
+    color: var(--primary-hover) !important;
+    transform: translateX(4px);
+  }
+
+  /* Filter Section */
+  .clinic-services-wrapper .clinic-filters-container {
+    margin-bottom: 30px;
+  }
+
+  .clinic-services-wrapper .clinic-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .clinic-services-wrapper .filter-btn {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-muted) !important;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-family: inherit;
+  }
+
+  .clinic-services-wrapper .filter-btn:hover {
+    background-color: #f1f5f9 !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+  }
+
+  .clinic-services-wrapper .filter-btn.active {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 4px 10px rgba(26, 32, 128, 0.2) !important;
+  }
+
+  /* Grid Layout - Desktop */
+  .clinic-services-wrapper .clinic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  /* Service Card */
+  .clinic-services-wrapper .service-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+  }
+
+  .clinic-services-wrapper .service-card:hover {
+    box-shadow: 0 12px 24px rgba(26, 32, 128, 0.1) !important;
+    transform: translateY(-4px);
+  }
+
+  /* Card Image */
+  .clinic-services-wrapper .service-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background-color: var(--bg-light);
+  }
+
+  .clinic-services-wrapper .service-image img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+
+  .clinic-services-wrapper .service-card:hover .service-image img {
+    transform: scale(1.05);
+  }
+
+  .clinic-services-wrapper .service-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+
+  /* Card Info */
+  .clinic-services-wrapper .service-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .clinic-services-wrapper .service-name {
+    color: var(--primary-color) !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .clinic-services-wrapper .service-desc {
+    color: var(--text-muted) !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 20px 0 !important;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Button inside Card */
+  .clinic-services-wrapper .detail-btn {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 8px !important;
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .clinic-services-wrapper .service-card:hover .detail-btn {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+  }
+
+  /* View All Button (Bottom) */
+  .clinic-services-wrapper .clinic-view-all-container {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .clinic-services-wrapper .view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    padding: 14px 32px !important;
+    border: 2px solid var(--primary-color) !important;
+    border-radius: 30px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(26, 32, 128, 0.3) !important;
+  }
+
+  .clinic-services-wrapper .view-all-btn:hover {
+    background-color: #ffffff !important;
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 32, 128, 0.15) !important;
+  }
+
+  /* Pagination Styles */
+  .clinic-services-wrapper .clinic-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+  .clinic-services-wrapper .page-btn {
+    width: 36px !important;
+    height: 36px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px !important;
+    border: 1px solid var(--border-color) !important;
+    background: var(--card-bg) !important;
+    color: var(--text-muted) !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .clinic-services-wrapper .page-btn:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+  }
+
+  .clinic-services-wrapper .page-btn.active {
+    background: var(--primary-color) !important;
+    color: #fff !important;
+    border-color: var(--primary-color) !important;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .clinic-services-wrapper .clinic-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .clinic-services-wrapper .clinic-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .clinic-services-wrapper .clinic-title {
+      font-size: 22px !important;
+    }
+    
+    .clinic-services-wrapper .clinic-subtitle {
+      font-size: 13px !important;
+    }
+
+    .clinic-services-wrapper .clinic-filters {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      -webkit-overflow-scrolling: touch; 
+      scrollbar-width: none; 
+    }
+    .clinic-services-wrapper .clinic-filters::-webkit-scrollbar {
+      display: none; 
+    }
+
+    .clinic-services-wrapper .filter-btn {
+      flex: 0 0 auto; 
+      font-size: 13px !important;
+      padding: 6px 14px !important;
+    }
+
+    .clinic-services-wrapper .clinic-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px; 
+    }
+
+    .clinic-services-wrapper .service-card {
+      border-radius: 12px !important;
+    }
+
+    .clinic-services-wrapper .service-image {
+      aspect-ratio: 1/1; 
+    }
+
+    .clinic-services-wrapper .service-info {
+      padding: 12px !important;
+    }
+
+    .clinic-services-wrapper .service-name {
+      font-size: 14px !important; 
+      margin-bottom: 6px !important;
+    }
+
+    .clinic-services-wrapper .service-desc {
+      font-size: 12px !important;
+      margin-bottom: 12px !important;
+      -webkit-line-clamp: 2; 
+    }
+
+    .clinic-services-wrapper .detail-btn {
+      font-size: 12px !important;
+      padding: 8px !important;
+    }
+    
+    .clinic-services-wrapper .detail-btn svg {
+      width: 14px !important;
+      height: 14px !important;
+    }
+    
+    .clinic-services-wrapper .service-badge {
+      font-size: 9px !important;
+      padding: 3px 8px !important;
+      top: 8px !important;
+      left: 8px !important;
+    }
+    
+    .clinic-services-wrapper .clinic-view-all-container {
+      margin-top: 28px !important;
+    }
+    
+    .clinic-services-wrapper .view-all-btn {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      font-size: 14px !important;
+      padding: 14px 20px !important;
+      border-radius: 12px !important;
+    }
+  }
+</style>
+
+<script>
+  let currentCategory = 'all';
+  let currentPage = 1;
+  let resizeTimer; 
+  let currentWindowWidth = window.innerWidth; 
+
+  function renderCards(isInitial = false) {
+    const isMobile = window.innerWidth <= 768;
+    const itemsPerPage = isMobile ? 4 : 8; 
+    
+    const allCards = Array.from(document.querySelectorAll('.service-card'));
+    
+    const filteredCards = currentCategory === 'all' 
+      ? allCards 
+      : allCards.filter(card => card.getAttribute('data-category') === currentCategory);
+
+    const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+    
+    if (currentPage > totalPages) currentPage = totalPages || 1;
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    allCards.forEach(card => {
+      card.style.display = 'none';
+      card.style.opacity = '0';
+    });
+
+    filteredCards.slice(startIndex, endIndex).forEach(card => {
+      card.style.display = 'flex';
+      // OPTIMASI: Hilangkan setTimeout jika load pertama agar LCP ter-render instan tanpa jeda script
+      if (isInitial) {
+        card.style.opacity = '1';
+      } else {
+        card.style.transition = 'opacity 0.3s ease';
+        // Memaksa browser menerapkan display flex sebelum opacity
+        requestAnimationFrame(() => {
+          card.style.opacity = '1';
+        });
+      }
+    });
+
+    renderPagination(totalPages);
+  }
+
+  function renderPagination(totalPages) {
+    const container = document.getElementById('paginationControls');
+    container.innerHTML = '';
+
+    if (totalPages <= 1) return; 
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+      btn.innerText = i;
+      btn.onclick = () => {
+        currentPage = i;
+        renderCards(false);
+        document.getElementById('servicesGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+      container.appendChild(btn);
+    }
+  }
+
+  function filterServices(category) {
+    currentCategory = category;
+    currentPage = 1; 
+
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.filter-btn[data-filter="${category}"]`).classList.add('active');
+
+    renderCards(false);
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth !== currentWindowWidth) {
+      currentWindowWidth = window.innerWidth; 
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => renderCards(false), 250);
+    }
+  });
+  
+  // OPTIMASI: Jalankan langsung saat DOM siap, jangan pakai penundaan setTimeout lama
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => renderCards(true));
+  } else {
+    renderCards(true);
+  }
+</script>

@@ -1,0 +1,117 @@
+<!-- ============================================================
+     SCHEMA MARKUP - Halaman Detail Dokter
+     URL       : https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/
+     Versi     : 1.0
+     Tanggal   : 2026-08-05
+     Tipe      : ProfilePage + BreadcrumbList + IndividualPhysician
+     Catatan   : Pasang via WPCode kondisi halaman ini saja
+                 (Page URL contains dr-syerli-rahmadeni).
+                 @id Person SAMA dengan referensi di halaman list
+                 (tim-dokter-sozo-skin) agar entitas menyambung.
+                 STR tampil penuh di UI -> masuk hasCredential
+                 (EducationalOccupationalCredential + recognizedBy KKI).
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/#webpage",
+      "url": "https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/",
+      "name": "dr. Syerli Rahmadeni - Aesthetic Physician Sozo Skin Clinic",
+      "description": "Dokter estetika dengan pengalaman lebih dari 9 tahun di dunia klinis dan estetika medis, termasuk 3,5+ tahun di jajaran manajemen medis pada jaringan klinik estetika multi-cabang. Lulusan Fakultas Kedokteran Universitas Baiturrahmah, Padang, aktif praktik dengan fokus facial aesthetics, skin aging rejuvenation, dan facial contouring.",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/#website"
+      },
+      "about": {
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/#person"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tim Dokter Sozo Skin Clinic",
+          "item": "https://sozoskinclinic.com/tim-dokter-sozo-skin/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "dr. Syerli Rahmadeni",
+          "item": "https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/"
+        }
+      ]
+    },
+    {
+      "@type": ["Person", "IndividualPhysician"],
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/#person",
+      "name": "dr. Syerli Rahmadeni",
+      "honorificPrefix": "dr.",
+      "jobTitle": "Aesthetic Physician",
+      "url": "https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/",
+      "image": "https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr-sherly.webp",
+      "description": "Dokter estetika dengan pengalaman lebih dari 9 tahun di dunia klinis dan estetika medis, termasuk 3,5+ tahun di jajaran manajemen medis pada jaringan klinik estetika multi-cabang. Saat ini menjabat sebagai Medical Service Manager dan Senior Member Medical Committee di Sozo Skin Clinic, aktif praktik dengan fokus facial aesthetics, skin aging rejuvenation, dan facial contouring menggunakan injectable maupun energy-based device.",
+      "worksFor": {
+        "@type": "MedicalOrganization",
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "practicesAt": {
+        "@type": "MedicalOrganization",
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "STR (Surat Tanda Registrasi)",
+        "identifier": "1321100222169296",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Konsil Kedokteran Indonesia (KKI)"
+        }
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Universitas Baiturrahmah, Padang"
+      },
+      "knowsAbout": [
+        "Facial Aesthetics",
+        "Skin Aging Rejuvenation",
+        "Facial Contouring",
+        "Injectable",
+        "Energy-Based Device"
+      ],
+      "award": [
+        "Congress IMCAS Paris (2025)",
+        "Congress AMUSE, Indonesia (2025/2026)",
+        "International Symposium and Workshop on Aesthetic Medicine (ISWAM) (2025)",
+        "Congress The FACE London (2025)",
+        "Vegas Cosmetic Dermatology Congress, Las Vegas (2026)",
+        "JETEMA Cadaver Workshop (2025)"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sozoskinclinic.com/#website",
+      "url": "https://sozoskinclinic.com/",
+      "name": "Sozo Skin Clinic"
+    }
+  ]
+}
+</script>

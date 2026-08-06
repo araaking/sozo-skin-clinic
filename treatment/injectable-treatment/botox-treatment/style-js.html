@@ -1,0 +1,1188 @@
+<!-- ============================================================
+     UI BOTOX TREATMENT - CSS + JS TERPISAH
+     URL     : https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/
+     Isi     : FontAwesome preload + seluruh CSS (.sozo-botox) +
+               JS FAQ accordion + JS slider (SKU mobile & Before/After).
+     Catatan : Widget WPCode terpisah dari index.html (markup HTML).
+               Pasang kedua widget di halaman yang sama agar tampil sempurna.
+     ============================================================ -->
+
+
+<!-- SYSTEM PRELOAD FONTAWESOME (Menghindari Render-Blocking CSS) -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+<style>
+  /* ============================================================
+     UI BOTOX TREATMENT - Single Treatment Page
+     Style : Editorial Minimalis (Elementor Safe, scoped)
+     ============================================================ */
+  .sozo-botox {
+    --sozo-font-heading: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    --sozo-font-body:    'Inter', system-ui, -apple-system, sans-serif;
+    font-family: var(--sozo-font-body);
+    color: #1a1a1a;
+    background-color: #ffffff;
+    overflow: hidden;
+    line-height: 1.5;
+  }
+
+  .sozo-botox,
+  .sozo-botox * {
+    box-sizing: border-box;
+  }
+
+  .sozo-botox h1,
+  .sozo-botox h2,
+  .sozo-botox h3,
+  .sozo-botox p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sozo-botox a {
+    text-decoration: none;
+  }
+
+  /* ============ BREADCRUMB ============ */
+  .sozo-botox .breadcrumb {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 22px;
+  }
+
+  .sozo-botox .breadcrumb ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .sozo-botox .breadcrumb ol::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sozo-botox .breadcrumb li {
+    list-style: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .sozo-botox .breadcrumb a {
+    color: #888888;
+    transition: color 0.2s ease;
+  }
+
+  .sozo-botox .breadcrumb a:hover {
+    color: #1A2080;
+  }
+
+  .sozo-botox .breadcrumb .separator {
+    color: #b9b9b9;
+    font-size: 0.7rem;
+  }
+
+  .sozo-botox .breadcrumb .current {
+    color: #1A2080;
+    font-weight: 600;
+  }
+
+  /* ============ HERO / BANNER ============ */
+  .sozo-botox .hero-section {
+    display: flex;
+    align-items: center;
+    background-color: #eceef2;
+    overflow: hidden;
+    min-height: 440px;
+    position: relative;
+  }
+
+  .sozo-botox .hero-content {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 60px 5% 60px 10%;
+    z-index: 2;
+  }
+
+  .sozo-botox .hero-image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    align-self: stretch;
+    position: relative;
+
+    /* EFEK GRADIENT BLEND / MASK */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+    mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  }
+
+  .sozo-botox .hero-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .sozo-botox .hero-title {
+    font-family: var(--sozo-font-heading);
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #1A2080;
+    letter-spacing: -0.01em;
+  }
+
+  .sozo-botox .hero-title .italic-text {
+    font-style: italic;
+    font-weight: 500;
+    color: #1A2080;
+  }
+
+  .sozo-botox .hero-title strong {
+    color: #1A2080;
+  }
+
+  /* ============ DESKRIPSI ============ */
+  .sozo-botox .description-section {
+    position: relative;
+    padding: 56px 10%;
+    background-color: #ffffff;
+  }
+
+  .sozo-botox .description-text {
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* ============================================================
+     CATALOG SKU - HEADER KIRI + GRID / SLIDER MOBILE
+     ============================================================ */
+  .sozo-botox .soz-cat {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 16px 72px;
+    background-color: #ffffff;
+  }
+
+  .sozo-botox .soz-cat-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 36px;
+    text-align: left;
+  }
+
+  .sozo-botox .soz-cat-title {
+    font-family: var(--sozo-font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.1rem) !important;
+    font-weight: 800 !important;
+    color: #1A2080 !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+  }
+
+  .sozo-botox .soz-cat-desc {
+    color: #475569 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
+    max-width: 460px;
+  }
+
+  .sozo-botox .soz-cat-nav {
+    display: none;
+  }
+
+  .sozo-botox .soz-cat-arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #1A2080;
+    background: #ffffff;
+    color: #1A2080;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+  }
+
+  .sozo-botox .soz-cat-arrow:hover:not(:disabled) {
+    background: #1A2080;
+    color: #ffffff;
+  }
+
+  .sozo-botox .soz-cat-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  .sozo-botox .soz-cat-arrow:focus-visible,
+  .sozo-botox .soz-cat-dot:focus-visible {
+    outline: 2px solid #1A2080;
+    outline-offset: 2px;
+  }
+
+  /* ---------- Track: grid di desktop, slider di mobile ---------- */
+  .sozo-botox .soz-cat-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    outline: none;
+    align-items: stretch;
+  }
+
+  .sozo-botox .soz-cat-track > * {
+    min-width: 0;
+  }
+
+  .sozo-botox .soz-cat-dots {
+    display: none;
+  }
+
+  .sozo-botox .soz-cat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    border: none;
+    padding: 0;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .sozo-botox .soz-cat-dot.is-active {
+    background: #1A2080;
+    width: 24px;
+  }
+
+  /* ---------- Card ---------- */
+  .sozo-botox .soz-cat-card {
+    background: #ffffff;
+    border: 1px solid #f3f4f6;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .sozo-botox .soz-cat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(26, 32, 128, 0.08);
+    border-color: #e5e7eb;
+  }
+
+  .sozo-botox .soz-cat-card-img {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: #f9fafb;
+    overflow: hidden;
+  }
+
+  .sozo-botox .soz-cat-card-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .sozo-botox .soz-cat-card:hover .soz-cat-card-img img {
+    transform: scale(1.05);
+  }
+  .sozo-botox .soz-cat-card-body {
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .sozo-botox .soz-cat-card-title {
+    font-family: var(--sozo-font-heading);
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #1A2080 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .sozo-botox .soz-cat-card-desc {
+    font-size: 0.85rem !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+    margin: 0 0 12px 0 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .sozo-botox .soz-cat-card-desc.is-expanded {
+    -webkit-line-clamp: unset;
+  }
+
+  .sozo-botox .soz-cat-readmore {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0 14px 0;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1A2080;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .sozo-botox .soz-cat-readmore:hover {
+    color: #12165c;
+    text-decoration: underline;
+  }
+
+  .sozo-botox .soz-cat-card-meta {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 6px;
+    width: fit-content;
+  }
+
+  .sozo-botox .soz-cat-card-meta i {
+    color: #1A2080;
+  }
+
+  .sozo-botox .soz-cat-card-price {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sozo-botox .soz-cat-price-label {
+    font-size: 0.7rem;
+    color: #64748B;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .sozo-botox .soz-cat-price-main {
+    font-family: var(--sozo-font-heading);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1A2080;
+  }
+
+  .sozo-botox .soz-cat-card-footer {
+    margin-top: auto;
+    border-top: 1px dashed #e5e7eb;
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .sozo-botox .soz-cat-card-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 11px !important;
+    border-radius: 50px !important;
+    font-family: inherit !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: center;
+    transition: all 0.3s ease !important;
+  }
+
+  .sozo-botox .soz-cat-card-btn--primary {
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    border: 2px solid #1A2080 !important;
+  }
+
+  .sozo-botox .soz-cat-card-btn--primary:hover {
+    background-color: #12165c !important;
+    border-color: #12165c !important;
+  }
+
+  .sozo-botox .soz-cat-card-btn--secondary {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    border: 2px solid #1A2080 !important;
+  }
+
+  .sozo-botox .soz-cat-card-btn--secondary:hover {
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+  }
+
+  /* ============================================================
+     BEFORE / AFTER SLIDER
+     ============================================================ */
+  .sozo-botox .soz-ba-section {
+    position: relative;
+    padding: 72px 16px;
+    background-color: #f8fafc;
+  }
+
+  .sozo-botox .soz-ba-in {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .sozo-botox .soz-ba-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 40px auto;
+  }
+
+  .sozo-botox .soz-ba-title {
+    font-family: var(--sozo-font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.1rem) !important;
+    font-weight: 800 !important;
+    color: #1A2080 !important;
+    line-height: 1.25 !important;
+    margin: 0 0 14px 0 !important;
+  }
+
+  .sozo-botox .soz-ba-desc {
+    color: #475569 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
+  }
+
+  /* ============================================================
+     HASIL NYATA - BEFORE/AFTER SLIDER
+     Desktop : 3 sejajar statis (tanpa panah/dots, tanpa geser)
+     Tablet  : slider 2 per view + panah + dots
+     Mobile  : slider 1 per view, swipe, dots (tanpa panah)
+     ============================================================ */
+  .sozo-botox .soz-ba-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: transparent;
+    padding: 0;
+    width: 100%;
+  }
+
+  .sozo-botox .soz-ba-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+    gap: 16px;
+  }
+
+  .sozo-botox .soz-ba-slide {
+    flex: 0 0 calc(33.333% - (32px / 3));
+    min-width: 0;
+    padding: 0;
+  }
+
+  .sozo-botox .soz-ba-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: initial;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  }
+
+  /* ---------- Arrows ---------- */
+  .sozo-botox .soz-ba-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #111111;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    padding: 0;
+    line-height: 1;
+    font-family: inherit;
+  }
+
+  .sozo-botox .soz-ba-btn:hover {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  }
+
+  .sozo-botox .soz-ba-prev {
+    left: 12px;
+  }
+
+  .sozo-botox .soz-ba-next {
+    right: 12px;
+  }
+
+  /* ---------- Dots ---------- */
+  .sozo-botox .soz-ba-dots {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 0 4px 0;
+  }
+
+  .sozo-botox .soz-ba-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .sozo-botox .soz-ba-dot.is-active {
+    background: #1A2080;
+    width: 24px;
+    border-radius: 12px;
+  }
+
+  .sozo-botox .soz-ba-dot:focus-visible,
+  .sozo-botox .soz-ba-btn:focus-visible {
+    outline: 2px solid #1A2080;
+    outline-offset: 2px;
+  }
+
+  /* ============================================================
+     FAQ SECTION (ACCORDION)
+     ============================================================ */
+  .sozo-botox .soz-faq-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 16px 72px !important;
+    background-color: #ffffff;
+  }
+
+  .sozo-botox .soz-faq-head {
+    max-width: 640px;
+    margin-bottom: 28px !important;
+  }
+
+  .sozo-botox .soz-faq-title {
+    font-family: var(--sozo-font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.1rem) !important;
+    font-weight: 800 !important;
+    color: #1A2080 !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+  }
+
+  .sozo-botox .soz-faq-item {
+    border-bottom: 1px solid #e5e7eb !important;
+  }
+
+  .sozo-botox .soz-faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: none !important;
+    border: none !important;
+    padding: 18px 0 !important;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: background-color 0.2s ease;
+  }
+
+  .sozo-botox .soz-faq-question:hover {
+    background-color: #f8fafc !important;
+  }
+
+  .sozo-botox .soz-faq-question:focus-visible {
+    outline: 2px solid #1A2080;
+    outline-offset: 2px;
+  }
+
+  .sozo-botox .soz-faq-question h3 {
+    font-family: var(--sozo-font-heading);
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #1a1a1a !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+  }
+
+  .sozo-botox .soz-faq-question svg {
+    flex-shrink: 0;
+    color: #1A2080 !important;
+    transition: transform 0.25s ease;
+  }
+
+  .sozo-botox .soz-faq-item.is-open .soz-faq-question svg {
+    transform: rotate(180deg);
+  }
+
+  .sozo-botox .soz-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .sozo-botox .soz-faq-item.is-open .soz-faq-answer {
+    max-height: 1000px;
+  }
+
+  .sozo-botox .soz-faq-answer-inner {
+    padding: 0 0 18px 0 !important;
+    font-size: 0.9rem !important;
+    color: #475569 !important;
+    line-height: 1.7 !important;
+  }
+
+  .sozo-botox .soz-faq-answer-inner p {
+    margin: 0 0 10px 0 !important;
+  }
+
+  .sozo-botox .soz-faq-answer-inner p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .sozo-botox .soz-faq-answer-inner strong {
+    color: #1e293b;
+  }
+
+  .sozo-botox .soz-faq-answer-inner ul {
+    margin: 8px 0 0 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-botox .soz-faq-answer-inner li {
+    position: relative;
+    padding-left: 18px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .sozo-botox .soz-faq-answer-inner li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1A2080;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width: 992px) {
+    .sozo-botox .soz-cat {
+      padding: 40px 22px 48px;
+    }
+
+    .sozo-botox .soz-cat-head {
+      margin-bottom: 28px;
+    }
+
+    .sozo-botox .soz-cat-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .sozo-botox .soz-cat-track {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      overscroll-behavior-x: contain;
+      gap: 12px;
+      padding: 4px 2px;
+      align-items: stretch;
+    }
+
+    .sozo-botox .soz-cat-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .sozo-botox .soz-cat-track > * {
+      flex: 0 0 85%;
+      max-width: 85%;
+      scroll-snap-align: start;
+    }
+
+    .sozo-botox .soz-cat-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    /* BA: tablet -> slider 2 per view (panah + dots) */
+    .sozo-botox .soz-ba-slide {
+      flex: 0 0 calc(50% - 8px);
+    }
+
+    .sozo-botox .soz-ba-btn {
+      display: flex;
+      width: 38px;
+      height: 38px;
+      font-size: 18px;
+    }
+
+    .sozo-botox .soz-ba-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 0 4px 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-botox .hero-section {
+      flex-direction: column;
+      min-height: auto;
+    }
+
+    .sozo-botox .hero-content {
+      flex: 1 1 100%;
+      max-width: 100%;
+      padding: 40px 22px 28px 22px;
+    }
+
+    .sozo-botox .hero-image {
+      flex: 1 1 100%;
+      max-width: 100%;
+      height: 260px;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+    }
+
+    .sozo-botox .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .sozo-botox .description-section {
+      padding: 36px 22px;
+    }
+
+    .sozo-botox .description-text {
+      font-size: 0.9rem;
+    }
+
+    .sozo-botox .soz-cat {
+      padding: 36px 22px 44px;
+    }
+
+    .sozo-botox .soz-cat-title {
+      font-size: 1.4rem !important;
+    }
+
+    .sozo-botox .soz-cat-desc {
+      font-size: 0.875rem !important;
+    }
+
+    .sozo-botox .soz-cat-card-body {
+      padding: 14px 12px;
+    }
+
+    .sozo-botox .soz-cat-card-title {
+      font-size: 0.95rem !important;
+    }
+
+    .sozo-botox .soz-ba-section {
+      padding: 48px 16px;
+    }
+
+    .sozo-botox .soz-ba-title {
+      font-size: 1.4rem !important;
+    }
+
+    .sozo-botox .soz-faq-section {
+      padding: 48px 22px 44px !important;
+    }
+
+    .sozo-botox .soz-faq-title {
+      font-size: 1.4rem !important;
+    }
+
+    .sozo-botox .soz-faq-question h3 {
+      font-size: 0.9rem !important;
+    }
+
+    .sozo-botox .soz-faq-answer-inner {
+      font-size: 0.85rem !important;
+    }
+  }
+
+  /* BA: mobile -> slider 1 per view, gambar utuh, tanpa panah */
+  @media (max-width: 576px) {
+    .sozo-botox .soz-ba-slide {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .sozo-botox .soz-ba-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: initial;
+    }
+
+    .sozo-botox .soz-ba-btn {
+      display: none;
+    }
+  }
+</style>
+
+
+<script>
+  function toggleSozFaq(btn) {
+    var item = btn.closest('.soz-faq-item');
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    var section = item.closest('#soz-botox-faq');
+    var items = section ? section.querySelectorAll('.soz-faq-item') : [];
+
+    Array.prototype.forEach.call(items, function (other) {
+      if (other !== item) {
+        other.querySelector('.soz-faq-question').setAttribute('aria-expanded', 'false');
+        other.classList.remove('is-open');
+      }
+    });
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    item.classList.toggle('is-open', !isOpen);
+  }
+</script>
+
+
+<script>
+  (function () {
+    'use strict';
+
+    var BREAKPOINT = '(max-width: 992px)';
+    var SLIDE_GAP = 12;
+
+    function prefersReduced() {
+      return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+
+    function smoothBehavior() {
+      return prefersReduced() ? 'auto' : 'smooth';
+    }
+
+    function debounce(fn, wait) {
+      var t;
+      return function () {
+        clearTimeout(t);
+        t = setTimeout(fn, wait);
+      };
+    }
+
+    function initReadMore(root) {
+      var btns = root.querySelectorAll('.soz-cat-readmore');
+
+      Array.prototype.forEach.call(btns, function (btn) {
+        if (btn.dataset.bound) return;
+        btn.dataset.bound = '1';
+
+        btn.addEventListener('click', function () {
+          var desc = btn.previousElementSibling;
+          if (!desc) return;
+
+          var expanded = desc.classList.toggle('is-expanded');
+          btn.textContent = expanded ? 'Lebih sedikit' : 'Baca selengkapnya';
+          btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        });
+      });
+    }
+
+    /* ---------- SKU: grid di desktop, slider scroll-snap di mobile ---------- */
+    function initCatalog(root) {
+      var track = root.querySelector('.soz-cat-track');
+      var dotsWrap = root.querySelector('.soz-cat-dots');
+      var prevBtn = root.querySelector('[data-soz-slide="prev"]');
+      var nextBtn = root.querySelector('[data-soz-slide="next"]');
+
+      if (!track || !dotsWrap) return;
+
+      var slides = Array.prototype.slice.call(track.children);
+      if (slides.length === 0) return;
+
+      var mq = window.matchMedia(BREAKPOINT);
+
+      if (!dotsWrap.dataset.built) {
+        dotsWrap.dataset.built = '1';
+
+        slides.forEach(function (slide, i) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'soz-cat-dot';
+          dot.setAttribute('aria-label', 'Slide ' + (i + 1) + ' dari ' + slides.length);
+
+          dot.addEventListener('click', function () {
+            if (!mq.matches) return;
+            scrollToSlide(slide);
+          });
+
+          dotsWrap.appendChild(dot);
+        });
+      }
+
+      var dots = dotsWrap.children;
+
+      function scrollToSlide(slide) {
+        var left = slide.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+        track.scrollTo({ left: left, behavior: smoothBehavior() });
+      }
+
+      function stepSlide(dir) {
+        if (!mq.matches) return;
+        var w = slides[0].getBoundingClientRect().width + SLIDE_GAP;
+        track.scrollBy({ left: dir * w, behavior: smoothBehavior() });
+      }
+
+      function updateState() {
+        if (!mq.matches) return;
+
+        var maxScroll = track.scrollWidth - track.clientWidth;
+        var pos = track.scrollLeft;
+
+        if (prevBtn) prevBtn.disabled = pos < 8;
+        if (nextBtn) nextBtn.disabled = (maxScroll - pos) < 8;
+
+        var step = slides[0].getBoundingClientRect().width + SLIDE_GAP;
+        var idx = Math.max(0, Math.min(dots.length - 1, Math.round(pos / step)));
+
+        for (var i = 0; i < dots.length; i++) {
+          var active = (i === idx);
+          dots[i].classList.toggle('is-active', active);
+          if (active) {
+            dots[i].setAttribute('aria-current', 'true');
+          } else {
+            dots[i].removeAttribute('aria-current');
+          }
+        }
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { stepSlide(-1); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { stepSlide(1); });
+
+      track.addEventListener('scroll', updateState, { passive: true });
+      track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') {
+          stepSlide(1);
+          e.preventDefault();
+        } else if (e.key === 'ArrowLeft') {
+          stepSlide(-1);
+          e.preventDefault();
+        }
+      });
+
+      window.addEventListener('resize', debounce(updateState, 150));
+
+      updateState();
+    }
+
+    /* ---------- Before/After: 3 sejajar desktop, slider tablet/mobile ---------- */
+    function initBaSlider(root) {
+      var track = root.querySelector('.soz-ba-track');
+      var dotsWrap = root.querySelector('.soz-ba-dots');
+      var prevBtn = root.querySelector('.soz-ba-prev');
+      var nextBtn = root.querySelector('.soz-ba-next');
+
+      if (!track || !dotsWrap) return;
+
+      var slides = Array.prototype.slice.call(track.children);
+      var total = slides.length;
+      if (total === 0) return;
+
+      var GAP = 16;
+      var currentIndex = 0;
+      var autoplayInterval = null;
+
+      function getSlidesPerView() {
+        var w = window.innerWidth;
+        if (w <= 576) return 1;
+        if (w <= 992) return 2;
+        return 3;
+      }
+
+      function maxIndex() {
+        return Math.max(0, total - getSlidesPerView());
+      }
+
+      function buildDots() {
+        dotsWrap.innerHTML = '';
+        var count = maxIndex() + 1;
+        for (var i = 0; i < count; i++) {
+          (function (idx) {
+            var dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'soz-ba-dot' + (idx === currentIndex ? ' is-active' : '');
+            dot.setAttribute('aria-label', 'Hasil ' + (idx + 1) + ' dari ' + count);
+            dot.addEventListener('click', function () {
+              goTo(idx);
+              resetAutoplay();
+            });
+            dotsWrap.appendChild(dot);
+          })(i);
+        }
+      }
+
+      function goTo(index) {
+        currentIndex = Math.max(0, Math.min(maxIndex(), index));
+
+        var slideWidth = slides[0].getBoundingClientRect().width;
+        var moveAmount = (slideWidth + GAP) * currentIndex;
+        track.style.transform = 'translateX(-' + moveAmount + 'px)';
+
+        var dots = dotsWrap.children;
+        for (var i = 0; i < dots.length; i++) {
+          dots[i].classList.toggle('is-active', i === currentIndex);
+        }
+      }
+
+      function nextSlide() {
+        if (currentIndex >= maxIndex()) {
+          goTo(0);
+        } else {
+          goTo(currentIndex + 1);
+        }
+      }
+
+      function prevSlide() {
+        if (currentIndex <= 0) {
+          goTo(maxIndex());
+        } else {
+          goTo(currentIndex - 1);
+        }
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(nextSlide, 4000);
+      }
+
+      function stopAutoplay() {
+        if (autoplayInterval) {
+          clearInterval(autoplayInterval);
+          autoplayInterval = null;
+        }
+      }
+
+      function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); prevSlide(); resetAutoplay(); });
+      if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); nextSlide(); resetAutoplay(); });
+
+      root.addEventListener('mouseenter', stopAutoplay);
+      root.addEventListener('mouseleave', function () {
+        if (!autoplayInterval) startAutoplay();
+      });
+
+      var touchStartX = 0;
+      root.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      root.addEventListener('touchend', function (e) {
+        var diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 30) {
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+          resetAutoplay();
+        }
+      }, { passive: true });
+
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          buildDots();
+          goTo(currentIndex);
+          resetAutoplay();
+        }, 250);
+      });
+
+      buildDots();
+      goTo(0);
+      startAutoplay();
+    }
+
+    function initAll() {
+      var cat = document.getElementById('soz-botox-catalog');
+      if (cat && !cat.dataset.init) {
+        cat.dataset.init = '1';
+        initReadMore(cat);
+        initCatalog(cat);
+      }
+
+      var ba = document.getElementById('soz-ba-slider');
+      if (ba && !ba.dataset.init) {
+        ba.dataset.init = '1';
+        initBaSlider(ba);
+      }
+    }
+
+    initAll();
+    document.addEventListener('DOMContentLoaded', initAll);
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('elementor/frontend/init', function () {
+        if (window.elementorFrontend && window.elementorFrontend.hooks) {
+          window.elementorFrontend.hooks.addAction('frontend/element_ready/html.default', initAll);
+        }
+      });
+      setTimeout(initAll, 1000);
+      setTimeout(initAll, 2000);
+    }
+  })();
+</script>

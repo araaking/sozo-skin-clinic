@@ -1011,8 +1011,6 @@
     height: 56px;
     border-radius: 50%;
     object-fit: cover;
-    /* object-position: bias ke atas biar kepala dokter gak ke-crop di foto portrait */
-    object-position: center 25%;
     background: #ffffff;
     border: 1px solid var(--sz-border);
     flex-shrink: 0;

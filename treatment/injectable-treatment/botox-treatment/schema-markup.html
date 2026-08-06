@@ -1,0 +1,240 @@
+<!-- ============================================================
+     SCHEMA MARKUP - Halaman Botox Treatment
+     URL       : https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/
+     Versi     : 1.0
+     Tanggal   : 2026-08-05
+     Tipe      : MedicalWebPage + BreadcrumbList + Service (hasOfferCatalog)
+                + FAQPage
+     Catatan   : Pasang via WPCode kondisi "Page URL contains
+                 zo-tox-treatment" diinject ke <head>.
+                 Halaman punya 3 SKU dengan harga berbeda ->
+                 Service.hasOfferCatalog berisi 3 Offer
+                 (masing-masing dalam wrapper PriceSpecification,
+                 sesuai aturan konsistensi harga AGENTS.md §5).
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/#webpage",
+      "url": "https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/",
+      "name": "Botox untuk Wajah Lebih Halus, Tirus, dan Segar | Sozo Skin Clinic",
+      "description": "Dari kerutan halus, rahang lebar, hingga keringat berlebih, temukan jenis Botox yang tepat untuk kebutuhanmu, ditangani langsung oleh dokter tersertifikasi. Mulai Rp 599.000.",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/#website"
+      },
+      "about": {
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/#service"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Treatment",
+          "item": "https://sozoskinclinic.com/treatment"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Injectable Treatment",
+          "item": "https://sozoskinclinic.com/injectable-treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Botox Treatment",
+          "item": "https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/#service",
+      "name": "Botox Treatment (Zo-Tox)",
+      "serviceType": "Botulinum Toxin Injection",
+      "description": "Suntik botox (botulinum toxin tipe A) untuk membantu merelaksasi otot wajah penyebab kerutan dan garis halus, membentuk kontur wajah lebih tirus (V-Shape), serta membantu mengatasi keringat berlebih (hyperhidrosis) di area ketiak.",
+      "category": "Injectable Treatment",
+      "image": "https://sozoskinclinic.com/wp-content/uploads/2025/10/botox-wajah-diamond-1.webp",
+      "areaServed": {
+        "@type": "City",
+        "name": "Jakarta"
+      },
+      "provider": {
+        "@type": "MedicalOrganization",
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Pilihan Botox Treatment di Sozo",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Zo-Tox / Botox Standar 10u"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "599000",
+              "priceCurrency": "IDR",
+              "priceValidUntil": "2026-12-31",
+              "description": "Neurotoksin botulin dari Korea untuk dahi, area sekitar mata, dan garis senyum. Durasi ±50 menit."
+            },
+            "availability": "https://schema.org/InStock",
+            "url": "https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/zo-tox-10u/"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Zo-Tox / Botox Premium 10u"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "899000",
+              "priceCurrency": "IDR",
+              "priceValidUntil": "2026-12-31",
+              "description": "Neurotoksin botulin buatan Jerman sebagai relaksan otot untuk dahi, area sekitar mata, dan garis senyum. Durasi ±50 menit."
+            },
+            "availability": "https://schema.org/InStock",
+            "url": "https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/zo-tox-premium/"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Botox Underarm"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "1299000",
+              "priceCurrency": "IDR",
+              "priceValidUntil": "2026-12-31",
+              "description": "Suntik botox ke area ketiak untuk membantu mengatasi produksi keringat berlebih (hyperhidrosis) dan mengurangi bau badan. Durasi ±90 menit."
+            },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Acne Microbotox Skinbooster"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "949000",
+              "priceCurrency": "IDR",
+              "priceValidUntil": "2026-12-31",
+              "description": "Mikroinjeksi botulinum toxin dosis sangat kecil di lapisan kulit superfisial untuk mengontrol produksi minyak berlebih, mengecilkan pori-pori, dan memperbaiki tekstur kulit."
+            },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Acne Microbotox 40 IU"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "3796000",
+              "priceCurrency": "IDR",
+              "priceValidUntil": "2026-12-31",
+              "description": "Dosis 40 unit botulinum toxin yang disuntikkan merata di permukaan kulit untuk mengontrol sebum, mengecilkan pori, dan meratakan tekstur kulit. Hasil mulai terlihat sekitar 10 hari setelah prosedur."
+            },
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu Botox Treatment dan bagaimana cara kerjanya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Botox Treatment (di Sozo bernama Zo-Tox) adalah prosedur suntik menggunakan botulinum toxin tipe A untuk membantu mengatasi tanda penuaan seperti kerutan dan garis halus. Perawatan ini bekerja dengan merelaksasi otot wajah yang menyebabkan kerutan dinamis, serta membantu mengontrol produksi minyak dan menyamarkan tampilan pori. Botox membantu menghambat sinyal saraf ke otot wajah sehingga otot tidak berkontraksi berlebihan. Hasilnya, kerutan halus dapat memudar dan kulit tampak lebih halus dalam 1 sampai 3 hari, dengan efek maksimal umumnya tercapai dalam 7 hari."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa manfaat utama dari suntik botox untuk wajah?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Suntik botox menawarkan sejumlah manfaat: membantu mengencangkan kulit dan menyamarkan kerutan halus (dahi, area mata, garis senyum), membantu membentuk kontur wajah menjadi lebih tirus (V-Shape), membantu mengurangi produksi minyak berlebih dan menyamarkan tampilan pori, membantu mengontrol masalah jerawat akibat kulit berminyak, membantu mengatasi keringat berlebih (hyperhidrosis) di area ketiak, serta memberikan hasil yang natural dan segar tanpa mengganggu aktivitas sehari hari."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah Botox Treatment aman dan sudah teruji secara klinis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, Botox Treatment mengikuti standar yang sama dengan botulinum toxin tipe A medis lainnya dan telah melewati uji klinis. Penggunaannya umumnya aman dengan efek samping yang ringan dan sementara (seperti kemerahan atau pembengkakan kecil). Penggunaan secara berulang umumnya tidak menimbulkan risiko baru selama dilakukan oleh tenaga medis profesional sesuai protokol yang berlaku."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama hasil suntik botox bertahan di wajah?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hasil botox umumnya dapat bertahan hingga sekitar 3 bulan. Efek mulai terlihat dalam 2 sampai 3 hari setelah penyuntikan. Agar hasil tetap terjaga, perawatan ini biasanya disarankan untuk dilakukan rutin setiap 3 bulan sekali sesuai rekomendasi dokter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa harga suntik botox di Sozo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harga Botox di Sozo Skin Clinic mulai dari Rp 599.000 per sesi. Untuk informasi promo terbaru dan rekomendasi area yang sesuai, Anda dapat menghubungi tim Sozo melalui WhatsApp atau konsultasi langsung dengan dokter kami."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang perlu dipersiapkan sebelum menjalani suntik botox?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Untuk hasil yang optimal dan membantu meminimalkan risiko memar: hindari alkohol dan obat anti inflamasi (seperti ibuprofen) selama 72 jam sebelum tindakan, hindari konsumsi vitamin berminyak (seperti Vitamin E atau Fish Oil) 3 hari sebelum prosedur, dan konsultasikan dengan dokter jika sedang mengonsumsi obat pengencer darah (Warfarin) atau memiliki riwayat penyakit tertentu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah suntik botox membutuhkan waktu pemulihan (downtime)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Proses pemulihan suntik botox umumnya singkat. Gejala seperti kemerahan atau bengkak kecil biasanya mereda dalam 24 hingga 48 jam. Tips pasca tindakan: hindari berbaring telentang selama 4 jam pertama setelah suntik, hindari menyentuh atau memijat area suntikan selama 24 jam, dan tunda aktivitas berat atau paparan panas (sauna) dalam 24 jam pertama."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sozoskinclinic.com/#website",
+      "url": "https://sozoskinclinic.com/",
+      "name": "Sozo Skin Clinic"
+    }
+  ]
+}
+</script>

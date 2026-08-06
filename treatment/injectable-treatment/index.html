@@ -1,0 +1,1385 @@
+<!-- SYSTEM PRELOAD FONTAWESOME (Menghindari Render-Blocking CSS) -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+<style>
+  /* ============================================================
+     UI INJECTABLE TREATMENT - Homepage Hub
+     URL    : https://sozoskinclinic.com/injectable-treatment/
+     Style  : Editorial Minimalis (Elementor Safe, scoped)
+     ============================================================ */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+  .soz-injectable {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    overflow: hidden;
+    line-height: 1.5;
+  }
+
+  .soz-injectable,
+  .soz-injectable * {
+    box-sizing: border-box;
+  }
+
+  .soz-injectable h1,
+  .soz-injectable h2,
+  .soz-injectable p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .soz-injectable a {
+    text-decoration: none;
+  }
+
+  /* ============ BREADCRUMB ============ */
+  .soz-injectable .breadcrumb {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 22px;
+  }
+
+  .soz-injectable .breadcrumb ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .soz-injectable .breadcrumb ol::-webkit-scrollbar {
+    display: none;
+  }
+
+  .soz-injectable .breadcrumb li {
+    list-style: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .soz-injectable .breadcrumb a {
+    color: #888888;
+    transition: color 0.2s ease;
+  }
+
+  .soz-injectable .breadcrumb a:hover {
+    color: #1A2080;
+  }
+
+  .soz-injectable .breadcrumb .separator {
+    color: #b9b9b9;
+    font-size: 0.7rem;
+  }
+
+  .soz-injectable .breadcrumb .current {
+    color: #1A2080;
+    font-weight: 600;
+  }
+
+  /* ============ HERO / BANNER ============ */
+  .soz-injectable .hero-section {
+    display: flex;
+    align-items: center;
+    background-color: #eceef2;
+    overflow: hidden;
+    min-height: 440px;
+    position: relative;
+  }
+
+  .soz-injectable .hero-content {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 60px 5% 60px 10%;
+    z-index: 2;
+  }
+
+  .soz-injectable .hero-image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    align-self: stretch;
+    position: relative;
+
+    /* EFEK GRADIENT BLEND / MASK */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+    mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  }
+
+  .soz-injectable .hero-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .soz-injectable .hero-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #1A2080; /* UBAH WARNA JUDUL JADI BIRU */
+    letter-spacing: -0.01em;
+  }
+
+  .soz-injectable .hero-title .italic-text {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    color: #1A2080;
+  }
+
+  /* ============ DESKRIPSI ============ */
+  .soz-injectable .description-section {
+    position: relative;
+    padding: 56px 10%;
+    background-color: #ffffff;
+  }
+
+  .soz-injectable .description-text {
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* ============================================================
+     CATALOG SKU - HEADER KIRI + GRID / SLIDER MOBILE
+     ============================================================ */
+  .soz-injectable .soz-cat {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 16px 72px;
+    background-color: #ffffff;
+  }
+
+  .soz-injectable .soz-cat-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 36px;
+    text-align: left;
+  }
+
+  .soz-injectable .soz-cat-title {
+    font-size: clamp(1.5rem, 3vw, 2.1rem) !important;
+    font-weight: 800 !important;
+    color: #1A2080 !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+  }
+
+  .soz-injectable .soz-cat-desc {
+    color: #475569 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
+    max-width: 420px;
+  }
+
+  .soz-injectable .soz-cat-nav {
+    display: none;
+  }
+
+  .soz-injectable .soz-cat-arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #1A2080;
+    background: #ffffff;
+    color: #1A2080;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+  }
+
+  .soz-injectable .soz-cat-arrow:hover:not(:disabled) {
+    background: #1A2080;
+    color: #ffffff;
+  }
+
+  .soz-injectable .soz-cat-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  .soz-injectable .soz-cat-arrow:focus-visible,
+  .soz-injectable .soz-cat-dot:focus-visible {
+    outline: 2px solid #1A2080;
+    outline-offset: 2px;
+  }
+
+  /* ---------- Track: grid di desktop, slider di mobile ---------- */
+  .soz-injectable .soz-cat-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    outline: none;
+    align-items: stretch; /* Memastikan semua child seimbang tingginya */
+  }
+
+  .soz-injectable .soz-cat-track > * {
+    min-width: 0;
+  }
+
+  .soz-injectable .soz-cat-dots {
+    display: none;
+  }
+
+  .soz-injectable .soz-cat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    border: none;
+    padding: 0;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .soz-injectable .soz-cat-dot.is-active {
+    background: #1A2080;
+    width: 24px;
+  }
+
+  /* ---------- Card ---------- */
+  .soz-injectable .soz-cat-card {
+    background: #ffffff;
+    border: 1px solid #f3f4f6;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .soz-injectable .soz-cat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(26, 32, 128, 0.08);
+    border-color: #e5e7eb;
+  }
+
+  .soz-injectable .soz-cat-card-img {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: #f9fafb;
+    overflow: hidden;
+  }
+
+  .soz-injectable .soz-cat-card-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .soz-injectable .soz-cat-card:hover .soz-cat-card-img img {
+    transform: scale(1.05);
+  }
+
+  .soz-injectable .soz-cat-card-body {
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .soz-injectable .soz-cat-card-title {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #1A2080 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+    text-transform: capitalize;
+  }
+
+  .soz-injectable .soz-cat-card-desc {
+    font-size: 0.85rem !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+    margin: 0 0 4px 0 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .soz-injectable .soz-cat-card-desc.is-expanded {
+    -webkit-line-clamp: unset;
+  }
+
+  .soz-injectable .soz-cat-readmore {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1A2080;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .soz-injectable .soz-cat-readmore:hover {
+    color: #12165c;
+    text-decoration: underline;
+  }
+
+  .soz-injectable .soz-cat-card-footer {
+    margin-top: auto;
+    border-top: 1px dashed #e5e7eb;
+    padding-top: 16px;
+  }
+
+  .soz-injectable .soz-cat-card-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px !important;
+    border-radius: 50px !important;
+    font-family: inherit !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: center;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    border: 2px solid #1A2080 !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .soz-injectable .soz-cat-card-btn:hover {
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+  }
+
+  /* ---------- CTA Card (Lihat Treatment Lengkap) - DIPERBAIKI ---------- */
+  .soz-injectable .soz-cat-card--cta {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    padding: 32px 24px;
+    background: #f8fafc; /* Warna lebih soft */
+    border: 2px dashed #cbd5e1; /* Warna garis tidak terlalu mencolok */
+    text-decoration: none !important; /* Paksa hapus underline bawaan tema */
+    transition: all 0.3s ease;
+    min-height: 100%; /* Memastikan tinggi mengisi area track slider */
+  }
+
+  .soz-injectable .soz-cat-card--cta:hover {
+    background: #f1f5f9;
+    border-color: #1A2080;
+  }
+
+  .soz-injectable .soz-cat-cta-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #1A2080;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 8px;
+  }
+
+  .soz-injectable .soz-cat-card--cta:hover .soz-cat-cta-icon {
+    transform: translateX(6px);
+    background-color: #12165c;
+  }
+
+  .soz-injectable .soz-cat-cta-title {
+    font-weight: 700;
+    color: #1A2080 !important;
+    font-size: 1.1rem;
+    margin: 0;
+    text-decoration: none !important; /* Paksa hapus underline di text */
+  }
+
+  .soz-injectable .soz-cat-cta-sub {
+    font-size: 0.85rem;
+    color: #64748b !important;
+    margin: 0;
+    text-decoration: none !important; /* Paksa hapus underline di text */
+  }
+
+  /* ============================================================
+     WHY CHOOSE SOZO (KENAPA MEMILIH SOZO SKIN CLINIC)
+     ============================================================ */
+  .soz-injectable .sozo-why-section {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1A2080;
+    color: #ffffff;
+    padding: 80px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+
+  .soz-injectable .sozo-why-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 50%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .soz-injectable .sozo-why-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .soz-injectable .sozo-why-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+  }
+
+  .soz-injectable .sozo-why-header h2 {
+    font-size: clamp(28px, 4vw, 36px) !important;
+    color: #ffffff !important;
+    margin: 0 0 16px 0 !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+  }
+
+  .soz-injectable .sozo-why-header p {
+    font-size: 16px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+  }
+
+  .soz-injectable .sozo-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .soz-injectable .sozo-why-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    will-change: transform, box-shadow;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+  }
+
+  .soz-injectable .sozo-why-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .soz-injectable .sozo-why-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #ffffff;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .soz-injectable .sozo-why-card:hover .sozo-why-icon {
+    background: #ffffff;
+    color: #1A2080;
+    transform: scale(1.1);
+  }
+
+  .soz-injectable .sozo-why-card-title {
+    font-size: 18px !important;
+    color: #ffffff !important;
+    margin: 0 0 10px 0 !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+  }
+
+  .soz-injectable .sozo-why-card-text {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  @media (max-width: 991px) {
+    .soz-injectable .sozo-why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .soz-injectable .sozo-why-section {
+      padding: 60px 15px;
+    }
+
+    .soz-injectable .sozo-why-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .soz-injectable .sozo-why-card {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+      padding: 25px 20px;
+      gap: 15px;
+    }
+
+    .soz-injectable .sozo-why-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 22px;
+      border-radius: 12px;
+    }
+
+    .soz-injectable .sozo-why-card-title {
+      font-size: 16px !important;
+      margin-bottom: 6px !important;
+    }
+
+    .soz-injectable .sozo-why-card-text {
+      font-size: 13px !important;
+    }
+  }
+
+  /* ============================================================
+     FAQ SECTION (ACCORDION)
+     ============================================================ */
+  .soz-injectable .soz-faq-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px 16px 72px !important;
+    background-color: #ffffff;
+  }
+
+  .soz-injectable .soz-faq-head {
+    max-width: 640px;
+    margin-bottom: 28px !important;
+  }
+
+  .soz-injectable .soz-faq-title {
+    font-size: clamp(1.5rem, 3vw, 2.1rem) !important;
+    font-weight: 800 !important;
+    color: #1A2080 !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+  }
+
+  .soz-injectable .soz-faq-item {
+    border-bottom: 1px solid #e5e7eb !important;
+  }
+
+  .soz-injectable .soz-faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: none !important;
+    border: none !important;
+    padding: 18px 0 !important;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: background-color 0.2s ease;
+  }
+
+  .soz-injectable .soz-faq-question:hover {
+    background-color: #f8fafc !important;
+  }
+
+  .soz-injectable .soz-faq-question:focus-visible {
+    outline: 2px solid #1A2080;
+    outline-offset: 2px;
+  }
+
+  .soz-injectable .soz-faq-question h3 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #1a1a1a !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+  }
+
+  .soz-injectable .soz-faq-question svg {
+    flex-shrink: 0;
+    color: #1A2080 !important;
+    transition: transform 0.25s ease;
+  }
+
+  .soz-injectable .soz-faq-item.is-open .soz-faq-question svg {
+    transform: rotate(180deg);
+  }
+
+  .soz-injectable .soz-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .soz-injectable .soz-faq-item.is-open .soz-faq-answer {
+    max-height: 1000px;
+  }
+
+  .soz-injectable .soz-faq-answer-inner {
+    padding: 0 0 18px 0 !important;
+    font-size: 0.9rem !important;
+    color: #475569 !important;
+    line-height: 1.7 !important;
+  }
+
+  .soz-injectable .soz-faq-answer-inner p {
+    margin: 0 !important;
+  }
+
+  .soz-injectable .soz-faq-answer-inner ul {
+    margin: 8px 0 0 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .soz-injectable .soz-faq-answer-inner li {
+    position: relative;
+    padding-left: 18px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .soz-injectable .soz-faq-answer-inner li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1A2080;
+  }
+
+  @media (max-width: 768px) {
+    .soz-injectable .soz-faq-section {
+      padding: 8px 22px 44px !important;
+    }
+
+    .soz-injectable .soz-faq-title {
+      font-size: 1.4rem !important;
+    }
+
+    .soz-injectable .soz-faq-question h3 {
+      font-size: 0.9rem !important;
+    }
+
+    .soz-injectable .soz-faq-answer-inner {
+      font-size: 0.85rem !important;
+    }
+  }
+
+  /* ============================================================
+     MOBILE: HEADER ATAS + SLIDER
+     ============================================================ */
+  @media (max-width: 992px) {
+    .soz-injectable .soz-cat {
+      padding: 40px 22px 48px;
+    }
+
+    .soz-injectable .soz-cat-head {
+      margin-bottom: 28px;
+    }
+
+    .soz-injectable .soz-cat-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .soz-injectable .soz-cat-track {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      overscroll-behavior-x: contain;
+      gap: 12px;
+      padding: 4px 2px;
+      align-items: stretch; /* PENTING: Agar tinggi card CTA mengikuti card gambar */
+    }
+
+    .soz-injectable .soz-cat-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .soz-injectable .soz-cat-track > * {
+      flex: 0 0 85%;
+      max-width: 85%;
+      scroll-snap-align: start;
+    }
+
+    .soz-injectable .soz-cat-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .soz-injectable .soz-cat {
+      padding: 36px 22px 44px;
+    }
+
+    .soz-injectable .soz-cat-title {
+      font-size: 1.4rem !important;
+    }
+
+    .soz-injectable .soz-cat-desc {
+      font-size: 0.875rem !important;
+    }
+
+    .soz-injectable .soz-cat-card-body {
+      padding: 14px 12px;
+    }
+
+    .soz-injectable .soz-cat-card-title {
+      font-size: 0.9rem !important;
+      margin-bottom: 6px !important;
+    }
+
+    .soz-injectable .soz-cat-card-desc {
+      font-size: 0.75rem !important;
+    }
+
+    .soz-injectable .soz-cat-readmore {
+      font-size: 0.7rem;
+      margin-bottom: 12px;
+    }
+
+    .soz-injectable .soz-cat-card-footer {
+      padding-top: 12px;
+    }
+
+    .soz-injectable .soz-cat-card-btn {
+      padding: 10px 4px !important;
+      font-size: 0.75rem !important;
+    }
+    
+    /* Penyesuaian jarak di CTA Card versi mobile */
+    .soz-injectable .soz-cat-card--cta {
+      padding: 24px 16px;
+      gap: 12px;
+    }
+    
+    .soz-injectable .soz-cat-cta-icon {
+      width: 48px;
+      height: 48px;
+      font-size: 1.1rem;
+    }
+    
+    .soz-injectable .soz-cat-cta-title {
+      font-size: 1rem;
+    }
+    
+    .soz-injectable .soz-cat-cta-sub {
+      font-size: 0.75rem;
+    }
+  }
+
+  /* ============ RESPONSIVE HERO (MOBILE) ============ */
+  @media (max-width: 768px) {
+    .soz-injectable .hero-section {
+      flex-direction: column;
+      min-height: auto;
+    }
+
+    .soz-injectable .hero-content {
+      flex: 1 1 100%;
+      max-width: 100%;
+      padding: 40px 22px 28px 22px;
+    }
+
+    .soz-injectable .hero-image {
+      flex: 1 1 100%;
+      max-width: 100%;
+      height: 260px;
+
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+    }
+
+    .soz-injectable .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .soz-injectable .description-section {
+      padding: 36px 22px;
+    }
+
+    .soz-injectable .description-text {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<section class="soz-injectable">
+
+  <!-- HERO SECTION -->
+  <div class="hero-section">
+    <!-- KOLOM KIRI: TEKS & BREADCRUMB -->
+    <div class="hero-content">
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <ol>
+          <li><a href="https://sozoskinclinic.com/">Home</a></li>
+          <li class="separator">›</li>
+          <li><a href="https://sozoskinclinic.com/treatment">Treatment</a></li>
+          <li class="separator">›</li>
+          <li class="current" aria-current="page">Injectable Treatment</li>
+        </ol>
+      </nav>
+
+      <h1 class="hero-title">
+        Perawatan <strong>Injectable  </strong><br>
+        untuk <span class="italic-text">Hasil Kulit</span> Maksimal
+      </h1>
+    </div>
+
+    <!-- KOLOM KANAN: FOTO DENGAN EFEK GRADIENT MASK -->
+    <div class="hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/scars-hero.webp" alt="Perawatan Injectable Treatment di Sozo Skin Clinic" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+
+  <!-- DESKRIPSI -->
+  <div class="description-section">
+    <p class="description-text">
+      Perawatan injeksi treatment profesional di Sozo Skin Clinic dirancang untuk membantu meningkatkan kualitas kulit secara menyeluruh, dilakukan oleh ahli berpengalaman untuk hasil yang aman, efektif, tampak alami, dan memuaskan.
+    </p>
+  </div>
+
+  <!-- CATALOG SKU: JUDUL KIRI ATAS + GRID TENGAH (SLIDER DI MOBILE) -->
+  <div class="soz-cat" id="soz-inj-catalog">
+
+    <div class="soz-cat-head">
+      <h2 class="soz-cat-title">Pilihan Injectable Treatment</h2>
+      <p class="soz-cat-desc">Setiap kondisi kulit butuh pendekatan berbeda. Pilih treatment injeksi yang sesuai dengan kebutuhan Anda.</p>
+      <div class="soz-cat-nav">
+        <button type="button" class="soz-cat-arrow" data-soz-slide="prev" aria-label="Treatment sebelumnya"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <button type="button" class="soz-cat-arrow" data-soz-slide="next" aria-label="Treatment selanjutnya"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+    <div class="soz-cat-body">
+      <div class="soz-cat-track" tabindex="0" aria-label="Daftar pilihan Injectable Treatment">
+
+        <article class="soz-cat-card">
+          <div class="soz-cat-card-img">
+            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/09/vecteezy_beautiful-young-asian-woman-model-with-perfect-clean-fresh_9209295-1-scaled.webp" alt="Skin Booster Treatment" loading="lazy">
+          </div>
+          <div class="soz-cat-card-body">
+            <h3 class="soz-cat-card-title">Skin Booster Treatment</h3>
+            <p class="soz-cat-card-desc">Perawatan injeksi dengan kandungan Hyaluronic Acid (HA) dan vitamin untuk menghidrasi kulit secara mendalam, memperbaiki tekstur, dan memberikan efek glowing alami.</p>
+            <button type="button" class="soz-cat-readmore" aria-expanded="false">Baca selengkapnya</button>
+            <div class="soz-cat-card-footer">
+              <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster/" class="soz-cat-card-btn">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="soz-cat-card">
+          <div class="soz-cat-card-img">
+            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/10/botox-wajah-diamond-1.webp" alt="Botox Treatment" loading="lazy">
+          </div>
+          <div class="soz-cat-card-body">
+            <h3 class="soz-cat-card-title">Botox Treatment</h3>
+            <p class="soz-cat-card-desc">Injeksi protein khusus untuk merelaksasi otot penyebab kerutan dan garis halus. Sangat efektif untuk mengencangkan area dahi, sudut mata, hingga meniruskan rahang.</p>
+            <button type="button" class="soz-cat-readmore" aria-expanded="false">Baca selengkapnya</button>
+            <div class="soz-cat-card-footer">
+              <a href="https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/" class="soz-cat-card-btn">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="soz-cat-card">
+          <div class="soz-cat-card-img">
+            <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/infus-whitening-treatment.avif" alt="Infusion Treatment" loading="lazy">
+          </div>
+          <div class="soz-cat-card-body">
+            <h3 class="soz-cat-card-title">Infusion Treatment</h3>
+            <p class="soz-cat-card-desc">Pemberian multivitamin dan antioksidan premium melalui intravena (infus) untuk mencerahkan, melembapkan, serta menyehatkan kulit seluruh tubuh secara lebih cepat.</p>
+            <button type="button" class="soz-cat-readmore" aria-expanded="false">Baca selengkapnya</button>
+            <div class="soz-cat-card-footer">
+              <a href="https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/" class="soz-cat-card-btn">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="soz-cat-card">
+          <div class="soz-cat-card-img">
+            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/07/threadlift-home.webp" alt="Threadlift Treatment" loading="lazy">
+          </div>
+          <div class="soz-cat-card-body">
+            <h3 class="soz-cat-card-title">Threadlift Treatment</h3>
+            <p class="soz-cat-card-desc">Perawatan tarik benang medis yang dapat diserap tubuh untuk mengencangkan kulit wajah yang kendur, merangsang produksi kolagen, dan mempertegas kontur wajah (V-Shape).</p>
+            <button type="button" class="soz-cat-readmore" aria-expanded="false">Baca selengkapnya</button>
+            <div class="soz-cat-card-footer">
+              <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/" class="soz-cat-card-btn">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="soz-cat-card">
+          <div class="soz-cat-card-img">
+            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Korean-Filler.avif" alt="Filler Treatment" loading="lazy">
+          </div>
+          <div class="soz-cat-card-body">
+            <h3 class="soz-cat-card-title">Filler Treatment</h3>
+            <p class="soz-cat-card-desc">Prosedur penyuntikan gel Hyaluronic Acid untuk mengisi area wajah yang kehilangan volume, menyamarkan garis senyum, serta membentuk dagu, hidung, atau bibir agar lebih ideal.</p>
+            <button type="button" class="soz-cat-readmore" aria-expanded="false">Baca selengkapnya</button>
+            <div class="soz-cat-card-footer">
+              <a href="https://sozoskinclinic.com/injectable-treatment/filler-treatment/" class="soz-cat-card-btn">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </article>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="soz-cat-card soz-cat-card--cta">
+          <span class="soz-cat-cta-icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          <span class="soz-cat-cta-title">Lihat Treatment Lengkap</span>
+          <span class="soz-cat-cta-sub">Semua kategori treatment di Sozo Skin Clinic</span>
+        </a>
+
+      </div>
+
+      <div class="soz-cat-dots"></div>
+    </div>
+
+  </div>
+
+  <!-- FAQ SECTION -->
+  <div class="soz-faq-section" id="soz-inj-faq">
+    <div class="soz-faq-head">
+      <h2 class="soz-faq-title">Pertanyaan Seputar Injectable Treatment</h2>
+    </div>
+
+    <div class="soz-faq-item">
+      <button type="button" class="soz-faq-question" onclick="toggleSozFaq(this)" aria-expanded="false" aria-controls="soz-faq-inj-1-content" id="soz-faq-inj-1-trigger">
+        <span><h3>Apa itu Injectable Treatment?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="soz-faq-answer" id="soz-faq-inj-1-content" role="region" aria-labelledby="soz-faq-inj-1-trigger">
+        <div class="soz-faq-answer-inner">
+          <p>Prosedur estetika medis dengan menyuntikkan zat aktif seperti Botox, Filler, Skin Booster, dan Infus Whitening ke lapisan kulit untuk mengatasi kerutan, menambah volume, hingga mencerahkan wajah.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="soz-faq-item">
+      <button type="button" class="soz-faq-question" onclick="toggleSozFaq(this)" aria-expanded="false" aria-controls="soz-faq-inj-2-content" id="soz-faq-inj-2-trigger">
+        <span><h3>Apa bedanya Injectable secara umum dan Filler?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="soz-faq-answer" id="soz-faq-inj-2-content" role="region" aria-labelledby="soz-faq-inj-2-trigger">
+        <div class="soz-faq-answer-inner">
+          <p>Injectable adalah kategori besar perawatan. Filler adalah salah satu jenis perawatannya, bersama dengan Botox dan Skin Booster.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="soz-faq-item">
+      <button type="button" class="soz-faq-question" onclick="toggleSozFaq(this)" aria-expanded="false" aria-controls="soz-faq-inj-3-content" id="soz-faq-inj-3-trigger">
+        <span><h3>Siapa yang membutuhkan treatment ini?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="soz-faq-answer" id="soz-faq-inj-3-content" role="region" aria-labelledby="soz-faq-inj-3-trigger">
+        <div class="soz-faq-answer-inner">
+          <p>Treatment ini cocok untuk Anda yang memiliki keluhan:</p>
+          <ul>
+            <li>Kerutan &amp; garis halus (penuaan dini)</li>
+            <li>Kulit kusam, kendur, atau dehidrasi</li>
+            <li>Area wajah kempot / volume berkurang (bawah mata, pipi, dagu)</li>
+            <li>Tekstur tidak merata &amp; bekas jerawat</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="soz-faq-item">
+      <button type="button" class="soz-faq-question" onclick="toggleSozFaq(this)" aria-expanded="false" aria-controls="soz-faq-inj-4-content" id="soz-faq-inj-4-trigger">
+        <span><h3>Bagaimana prosedur treatment di SOZO Skin Clinic?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="soz-faq-answer" id="soz-faq-inj-4-content" role="region" aria-labelledby="soz-faq-inj-4-trigger">
+        <div class="soz-faq-answer-inner">
+          <ul>
+            <li><strong>Konsultasi &amp; Analisa:</strong> diskusi kondisi kulit bersama dokter.</li>
+            <li><strong>Penentuan Treatment:</strong> memilih jenis suntikan yang tepat.</li>
+            <li><strong>Tindakan:</strong> penyuntikan steril oleh dokter profesional.</li>
+            <li><strong>Selesai:</strong> langsung beraktivitas tanpa downtime berat.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="soz-faq-item">
+      <button type="button" class="soz-faq-question" onclick="toggleSozFaq(this)" aria-expanded="false" aria-controls="soz-faq-inj-5-content" id="soz-faq-inj-5-trigger">
+        <span><h3>Siapa yang melakukan prosedur penyuntikan?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="soz-faq-answer" id="soz-faq-inj-5-content" role="region" aria-labelledby="soz-faq-inj-5-trigger">
+        <div class="soz-faq-answer-inner">
+          <p>Seluruh tindakan dilakukan langsung oleh dokter profesional tersertifikasi dan berpengalaman di bidang estetika medis.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="soz-faq-item">
+      <button type="button" class="soz-faq-question" onclick="toggleSozFaq(this)" aria-expanded="false" aria-controls="soz-faq-inj-6-content" id="soz-faq-inj-6-trigger">
+        <span><h3>Apakah prosedurnya terasa sakit?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="soz-faq-answer" id="soz-faq-inj-6-content" role="region" aria-labelledby="soz-faq-inj-6-trigger">
+        <div class="soz-faq-answer-inner">
+          <p>Tidak. Sebelum tindakan, area wajah diolesi krim anestesi lokal. Sebagian besar produk kami juga sudah mengandung anestesi ringan di dalamnya.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="soz-faq-item">
+      <button type="button" class="soz-faq-question" onclick="toggleSozFaq(this)" aria-expanded="false" aria-controls="soz-faq-inj-7-content" id="soz-faq-inj-7-trigger">
+        <span><h3>Berapa lama hasilnya bertahan?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="soz-faq-answer" id="soz-faq-inj-7-content" role="region" aria-labelledby="soz-faq-inj-7-trigger">
+        <div class="soz-faq-answer-inner">
+          <ul>
+            <li><strong>Botox:</strong> 4–6 bulan</li>
+            <li><strong>Filler:</strong> 6–12 bulan</li>
+            <li><strong>Skin Booster:</strong> disarankan rutin 1 bulan sekali untuk hasil maksimal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="soz-faq-item">
+      <button type="button" class="soz-faq-question" onclick="toggleSozFaq(this)" aria-expanded="false" aria-controls="soz-faq-inj-8-content" id="soz-faq-inj-8-trigger">
+        <span><h3>Kapan hasil treatment mulai terlihat?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="soz-faq-answer" id="soz-faq-inj-8-content" role="region" aria-labelledby="soz-faq-inj-8-trigger">
+        <div class="soz-faq-answer-inner">
+          <ul>
+            <li><strong>Filler:</strong> langsung terlihat instan.</li>
+            <li><strong>Botox:</strong> maksimal dalam 7–14 hari.</li>
+            <li><strong>Skin Booster &amp; Infus:</strong> membutuhkan waktu beberapa hari–minggu seiring regenerasi kulit.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="soz-faq-item">
+      <button type="button" class="soz-faq-question" onclick="toggleSozFaq(this)" aria-expanded="false" aria-controls="soz-faq-inj-9-content" id="soz-faq-inj-9-trigger">
+        <span><h3>Apakah ada efek samping atau downtime?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="soz-faq-answer" id="soz-faq-inj-9-content" role="region" aria-labelledby="soz-faq-inj-9-trigger">
+        <div class="soz-faq-answer-inner">
+          <p>Minim downtime. Efek ringan seperti bentol kecil atau kemerahan di titik suntikan adalah normal dan biasanya hilang dalam 1–3 hari.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleSozFaq(btn) {
+      var item = btn.closest('.soz-faq-item');
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      var section = item.closest('#soz-inj-faq');
+      var items = section ? section.querySelectorAll('.soz-faq-item') : [];
+
+      Array.prototype.forEach.call(items, function (other) {
+        if (other !== item) {
+          other.querySelector('.soz-faq-question').setAttribute('aria-expanded', 'false');
+          other.classList.remove('is-open');
+        }
+      });
+
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      item.classList.toggle('is-open', !isOpen);
+    }
+  </script>
+
+  <!-- WHY CHOOSE SOZO (KENAPA MEMILIH SOZO SKIN CLINIC) -->
+  <section class="sozo-why-section">
+    <div class="sozo-why-container">
+
+      <div class="sozo-why-header">
+        <h2>Keunggulan Sozo Dibanding Beauty Clinic Lain</h2>
+        <p>Komitmen kami adalah memberikan pelayanan terbaik, aman, dan tepercaya untuk pancarkan pesona alami Anda.</p>
+      </div>
+
+      <div class="sozo-why-grid">
+
+        <article class="sozo-why-card">
+          <div class="sozo-why-icon" aria-hidden="true">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+          <div class="sozo-why-content">
+            <strong class="sozo-why-card-title" style="display:block;">Tenaga Medis Profesional</strong>
+            <p class="sozo-why-card-text">Ditangani oleh Dokter berpengalaman.</p>
+          </div>
+        </article>
+
+        <article class="sozo-why-card">
+          <div class="sozo-why-icon" aria-hidden="true">
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+          <div class="sozo-why-content">
+            <strong class="sozo-why-card-title" style="display:block;">Teknologi Terkini</strong>
+            <p class="sozo-why-card-text">Mesin berkualitas tinggi untuk hasil maksimal.</p>
+          </div>
+        </article>
+
+        <article class="sozo-why-card">
+          <div class="sozo-why-icon" aria-hidden="true">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <div class="sozo-why-content">
+            <strong class="sozo-why-card-title" style="display:block;">Pelayanan Terbaik</strong>
+            <p class="sozo-why-card-text">Klinik kecantikan yang nyaman dan ramah.</p>
+          </div>
+        </article>
+
+        <article class="sozo-why-card">
+          <div class="sozo-why-icon" aria-hidden="true">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+          <div class="sozo-why-content">
+            <strong class="sozo-why-card-title" style="display:block;">Konsultasi Dokter Gratis</strong>
+            <p class="sozo-why-card-text">Reservasi sekarang, diskon 100rb!</p>
+          </div>
+        </article>
+
+        <article class="sozo-why-card">
+          <div class="sozo-why-icon" aria-hidden="true">
+            <i class="fa-solid fa-tags"></i>
+          </div>
+          <div class="sozo-why-content">
+            <strong class="sozo-why-card-title" style="display:block;">Harga Terjangkau</strong>
+            <p class="sozo-why-card-text">Perawatan premium dengan harga terjangkau.</p>
+          </div>
+        </article>
+
+        <article class="sozo-why-card">
+          <div class="sozo-why-icon" aria-hidden="true">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="sozo-why-content">
+            <strong class="sozo-why-card-title" style="display:block;">Klinik Kecantikan Terdekat</strong>
+            <p class="sozo-why-card-text">60+ cabang di Jakarta, Bogor, Depok, Tangerang, Bekasi, Medan, dan Semarang.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<script>
+  (function () {
+    'use strict';
+
+    var BREAKPOINT = '(max-width: 992px)';
+    var SLIDE_GAP = 12;
+
+    function prefersReduced() {
+      return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+
+    function smoothBehavior() {
+      return prefersReduced() ? 'auto' : 'smooth';
+    }
+
+    function debounce(fn, wait) {
+      var t;
+      return function () {
+        clearTimeout(t);
+        t = setTimeout(fn, wait);
+      };
+    }
+
+    function initReadMore(root) {
+      var btns = root.querySelectorAll('.soz-cat-readmore');
+
+      Array.prototype.forEach.call(btns, function (btn) {
+        if (btn.dataset.bound) return;
+        btn.dataset.bound = '1';
+
+        btn.addEventListener('click', function () {
+          var desc = btn.previousElementSibling;
+          if (!desc) return;
+
+          var expanded = desc.classList.toggle('is-expanded');
+          btn.textContent = expanded ? 'Lebih sedikit' : 'Baca selengkapnya';
+          btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        });
+      });
+    }
+
+    function initSlider(root) {
+      var track = root.querySelector('.soz-cat-track');
+      var dotsWrap = root.querySelector('.soz-cat-dots');
+      var prevBtn = root.querySelector('[data-soz-slide="prev"]');
+      var nextBtn = root.querySelector('[data-soz-slide="next"]');
+
+      if (!track || !dotsWrap) return;
+
+      var slides = Array.prototype.slice.call(track.children);
+      if (slides.length === 0) return;
+
+      var mq = window.matchMedia(BREAKPOINT);
+
+      // Bangun dots sekali per DOM node (aman terhadap re-render Elementor)
+      if (!dotsWrap.dataset.built) {
+        dotsWrap.dataset.built = '1';
+
+        slides.forEach(function (slide, i) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'soz-cat-dot';
+          dot.setAttribute('aria-label', 'Slide ' + (i + 1) + ' dari ' + slides.length);
+
+          dot.addEventListener('click', function () {
+            if (!mq.matches) return;
+            scrollToSlide(slide);
+          });
+
+          dotsWrap.appendChild(dot);
+        });
+      }
+
+      var dots = dotsWrap.children;
+
+      function scrollToSlide(slide) {
+        var left = slide.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+        track.scrollTo({ left: left, behavior: smoothBehavior() });
+      }
+
+      function stepSlide(dir) {
+        if (!mq.matches) return;
+        var w = slides[0].getBoundingClientRect().width + SLIDE_GAP;
+        track.scrollBy({ left: dir * w, behavior: smoothBehavior() });
+      }
+
+      function updateState() {
+        if (!mq.matches) return;
+
+        var maxScroll = track.scrollWidth - track.clientWidth;
+        var pos = track.scrollLeft;
+
+        if (prevBtn) prevBtn.disabled = pos < 8;
+        if (nextBtn) nextBtn.disabled = (maxScroll - pos) < 8;
+
+        var step = slides[0].getBoundingClientRect().width + SLIDE_GAP;
+        var idx = Math.max(0, Math.min(dots.length - 1, Math.round(pos / step)));
+
+        for (var i = 0; i < dots.length; i++) {
+          var active = (i === idx);
+          dots[i].classList.toggle('is-active', active);
+          if (active) {
+            dots[i].setAttribute('aria-current', 'true');
+          } else {
+            dots[i].removeAttribute('aria-current');
+          }
+        }
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { stepSlide(-1); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { stepSlide(1); });
+
+      track.addEventListener('scroll', updateState, { passive: true });
+      track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') {
+          stepSlide(1);
+          e.preventDefault();
+        } else if (e.key === 'ArrowLeft') {
+          stepSlide(-1);
+          e.preventDefault();
+        }
+      });
+
+      window.addEventListener('resize', debounce(updateState, 150));
+
+      updateState();
+    }
+
+    function initAll() {
+      var root = document.getElementById('soz-inj-catalog');
+      if (!root || root.dataset.init) return;
+      root.dataset.init = '1';
+
+      initReadMore(root);
+      initSlider(root);
+    }
+
+    // Eksekusi segera
+    initAll();
+    document.addEventListener('DOMContentLoaded', initAll);
+
+    // Integrasi Hook Elementor
+    if (typeof window !== 'undefined') {
+      window.addEventListener('elementor/frontend/init', function () {
+        if (window.elementorFrontend && window.elementorFrontend.hooks) {
+          window.elementorFrontend.hooks.addAction('frontend/element_ready/html.default', initAll);
+        }
+      });
+      // Fallback delay (render ulang Elementor / lazy load)
+      setTimeout(initAll, 1000);
+      setTimeout(initAll, 2000);
+    }
+  })();
+</script>

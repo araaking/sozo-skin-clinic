@@ -1,10 +1,11 @@
 <!-- ============================================================
-     SCHEMA MARKUP - PRP Hair Treatment
+     SCHEMA MARKUP - PRP Hair Treatment (UI V2)
      URL       : https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/
-     Versi     : 1.0
-     Tanggal   : 2026-06-24
-     Catatan   : Pasang di <head> atau via WPCode kondisi
-                 halaman ini saja (is_page('prp-hair-treatment'))
+     Versi     : 2.0
+     Tanggal   : 2026-07-30
+     Perubahan : Deskripsi baru, FAQ 7 -> 14 item,
+                 structure mengikuti UI V2 (tanpa Masalah/Proses section).
+     Catatan   : Pasang via WPCode kondisi Page URL contains prp-hair-treatment
      ============================================================ -->
 
 <script type="application/ld+json">
@@ -13,10 +14,10 @@
   "@graph": [
     {
       "@type": "MedicalWebPage",
-      "@id": "https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/",
+      "@id": "https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/#webpage",
       "url": "https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/",
-      "name": "PRP Hair Treatment: Untuk Atasi Rambut Rontok dan Cegah Kebotakan",
-      "description": "Hentikan kerontokan ekstrem dan kembalikan ketebalan rambut Anda secara alami dengan PRP Hair Treatment. Terapi medis regeneratif memanfaatkan plasma darah kaya trombosit (Platelet-Rich Plasma) dari tubuh Anda sendiri untuk menutrisi akar rambut dan merangsang folikel yang pasif.",
+      "name": "PRP Hair Treatment",
+      "description": "PRP Hair Treatment atau PRP Rambut merupakan terapi regeneratif menggunakan plasma darah kaya trombosit (Platelet-Rich Plasma) dari tubuh sendiri untuk merangsang folikel rambut, memperkuat akar, dan menutrisi kulit kepala secara alami. Efektif untuk mengatasi rambut rontok, penipisan rambut, hingga kebotakan pola (androgenetic alopecia). Ditangani langsung oleh dokter, minim risiko alergi karena plasma berasal dari darah pasien sendiri. Tersedia untuk pria dan wanita.",
       "inLanguage": "id",
       "isPartOf": {
         "@id": "https://sozoskinclinic.com/#website"
@@ -28,6 +29,10 @@
         "@id": "https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/#breadcrumb"
       },
       "specialty": "http://schema.org/Dermatology",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-PRP-Hair-scaled.webp"
+      },
       "potentialAction": {
         "@type": "ReadAction",
         "target": {
@@ -65,7 +70,7 @@
       "@id": "https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/#service",
       "name": "PRP Hair Treatment",
       "alternateName": "PRP Rambut",
-      "description": "Terapi medis regeneratif yang memanfaatkan plasma darah kaya trombosit (Platelet-Rich Plasma) dari tubuh Anda sendiri untuk merangsang pertumbuhan rambut baru, menguatkan akar, dan mengatasi masalah penipisan rambut hingga kebotakan (alopecia).",
+      "description": "Terapi regeneratif rambut menggunakan plasma darah kaya trombosit (Platelet-Rich Plasma) dari tubuh sendiri untuk merangsang folikel rambut, memperkuat akar, dan mengatasi rambut rontok, penipisan rambut, hingga kebotakan pola (androgenetic alopecia).",
       "url": "https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/",
       "serviceType": "PRP Hair Treatment",
       "category": "Hair Treatment",
@@ -82,8 +87,9 @@
           "@type": "PriceSpecification",
           "price": "1099000",
           "priceCurrency": "IDR",
+          "priceValidUntil": "2026-12-31",
           "valueAddedTaxIncluded": true,
-          "description": "Mulai dari"
+          "description": "Mulai dari Rp 1.099.000 per sesi"
         }
       }
     },
@@ -93,58 +99,114 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "PRP hair untuk apa dan apa kegunaan utamanya?",
+          "name": "PRP Hair Treatment itu apa?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Secara medis, PRP Hair Treatment ditargetkan untuk mengatasi masalah kerontokan rambut kronis, penipisan rambut, serta mencegah kebotakan dini (alopecia androgenetika). Kegunaan utamanya adalah melancarkan sirkulasi darah di kulit kepala, mengantarkan konsentrasi growth factor yang tinggi langsung ke akar rambut, serta menstimulasi folikel yang pasif agar kembali aktif memproduksi helai rambut baru yang tebal dan kuat."
+            "text": "Terapi regeneratif menggunakan plasma darah kaya trombosit dari tubuh sendiri untuk merangsang folikel rambut dan mengatasi kerontokan hingga kebotakan pola (androgenetic alopecia)."
           }
         },
         {
           "@type": "Question",
-          "name": "Berapa lama hasil prp hair bisa terlihat secara nyata?",
+          "name": "PRP Hair Treatment cocok untuk siapa saja?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mengingat siklus biologis pertumbuhan rambut membutuhkan waktu, hasil dari terapi PRP rambut tidak terjadi dalam semalam. Penurunan intensitas kerontokan rambut biasanya mulai terasa secara signifikan dalam 2 hingga 4 minggu pertama pasca-tindakan. Sementara itu, pertumbuhan anak rambut (baby hair) baru yang lebih tebal dan penambahan volume rambut secara visual umumnya mulai terlihat jelas setelah bulan ke-2 atau ke-3 setelah Anda menyelesaikan beberapa sesi awal."
+            "text": "Cocok untuk pria dan wanita dengan rambut rontok ringan hingga sedang, rambut menipis, garis rambut mundur, kebotakan pola tahap awal, hingga folikel yang melemah akibat genetik, stres, hormon, atau kerusakan styling/pewarnaan kimia berlebihan."
           }
         },
         {
           "@type": "Question",
-          "name": "Berapa harga PRP hair treatment di Sozo Skin Clinic?",
+          "name": "Bagaimana proses PRP Hair Treatment dilakukan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Harga PRP Hair Treatment di Sozo Skin Clinic sangat terjangkau, mulai dari Rp 1.099.000. Kami juga memiliki paket khusus untuk program perawatan menyeluruh yang jauh lebih hemat. Silakan klik tombol reservasi atau hubungi admin kami untuk informasi promo terbaru bulan ini!"
+            "text": "Prosesnya terdiri dari 4 tahap: pengambilan darah, sentrifugasi untuk memisahkan plasma, anestesi lokal pada kulit kepala, lalu injeksi plasma ke area yang menipis."
           }
         },
         {
           "@type": "Question",
-          "name": "Apakah hasil PRP rambut permanen?",
+          "name": "Apakah pengambilan darahnya banyak?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Hasil pengurangan rontok dan penebalan rambut dari terapi PRP sangat bertahan lama karena merangsang perbaikan jaringan seluler asli Anda. Namun, hasilnya tidak bisa dikatakan 100% permanen mutlak karena folikel rambut hidup Anda akan terus dipengaruhi oleh faktor usia, fluktuasi hormon tubuh, tingkat stres, serta asupan nutrisi harian. Oleh karena itu, setelah program terapi awal selesai, sesi pemeliharaan berkala sangat disarankan untuk mempertahankan densitas rambut secara konsisten."
+            "text": "Tidak. Hanya sekitar 10-20 ml darah dari lengan, setara dengan tes darah laboratorium biasa."
           }
         },
         {
           "@type": "Question",
-          "name": "Apakah PRP Hair Treatment efektif untuk kebotakan pria?",
+          "name": "Berapa lama proses sentrifugasi (pemisahan plasma)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ya, sangat efektif. PRP telah terbukti secara medis mampu memperlambat dan memperbaiki kondisi kebotakan pola pada pria (Androgenetic Alopecia). Tingkat keberhasilannya paling tinggi jika treatment mulai dilakukan pada tahap awal atau pertengahan ketika folikel rambut mulai menyusut, sehingga dapat distimulasi kembali untuk menebal."
+            "text": "Sekitar 30 menit menggunakan mesin sentrifugasi khusus untuk memisahkan plasma kaya trombosit dari sel darah lainnya."
           }
         },
         {
           "@type": "Question",
-          "name": "Apakah proses suntik PRP hair treatment sakit?",
+          "name": "Apakah proses suntik PRP sakit?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Anda tidak perlu khawatir karena prosedur ini dirancang agar sangat nyaman dan minim rasa sakit. Sebelum tindakan dimulai, dokter kami akan selalu mengaplikasikan krim anestesi lokal pada seluruh area kulit kepala Anda. Selama proses injeksi, Anda umumnya hanya akan merasakan sensasi seperti tekanan ringan atau gigitan semut kecil."
+            "text": "Area kulit kepala akan dianestesi lokal selama 20-30 menit sebelum tindakan. Skala nyeri rata-rata berada di 2-3 dari 10, umumnya hanya terasa tekanan ringan."
           }
         },
         {
           "@type": "Question",
-          "name": "Di mana saya bisa melakukan PRP Hair Treatment terdekat?",
+          "name": "Apakah PRP Hair Treatment aman?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Untuk mendapatkan perawatan PRP Hair Treatment yang aman, steril, dan ditangani langsung oleh dokter medis profesional, Anda dapat mengunjungi seluruh cabang SOZO Skin Clinic. Jaringan klinik kami tersebar di berbagai wilayah strategis Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi)."
+            "text": "Aman. Alat dan bahan yang digunakan sekali pakai serta steril, dan plasma berasal dari darah pasien sendiri sehingga risiko alergi minim."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama hasil PRP mulai terlihat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Penurunan kerontokan mulai terasa dalam 2-4 minggu. Baby hair dan penambahan volume terlihat jelas setelah bulan ke-2 atau ke-3."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa banyak sesi yang direkomendasikan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Umumnya 3-4 sesi awal dengan jarak 4-6 minggu per sesi, dilanjutkan sesi pemeliharaan berkala."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah hasil PRP permanen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hasilnya bertahan lama karena meregenerasi jaringan asli, namun tidak 100% permanen karena dipengaruhi usia, hormon, stres, dan nutrisi harian. Sesi pemeliharaan disarankan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah PRP efektif untuk kebotakan pria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya. PRP terbukti memperlambat dan memperbaiki kebotakan pola pria (Androgenetic Alopecia), terutama jika dimulai di tahap awal atau pertengahan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa persiapan sebelum treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Disarankan keramas terlebih dahulu dan datang ke klinik dengan rambut bersih serta kering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa harga PRP Hair Treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mulai dari Rp 1.099.000. Tersedia juga paket khusus untuk program perawatan menyeluruh yang lebih hemat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana lokasi PRP Hair Treatment terdekat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tersedia di seluruh cabang SOZO Skin Clinic se-Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi)."
           }
         }
       ]

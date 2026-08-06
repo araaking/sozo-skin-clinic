@@ -1,0 +1,42 @@
+<style>
+  .sozo-hero-image {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+  }
+  .sozo-hero-image a {
+    display: block;
+    text-decoration: none;
+  }
+  .sozo-hero-image picture,
+  .sozo-hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    .sozo-hero-image img {
+      max-height: 70vh;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+</style>
+
+<div class="sozo-hero-image">
+  <a href="#" aria-label="Promo Skin Treatment SOZO">
+    <picture>
+      <source media="(min-width: 769px)" srcset="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/Banner-Promo-Skin.webp">
+      <source media="(max-width: 768px)" srcset="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/Banner-Promo-Skin.webp">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/Banner-Promo-Skin.webp"
+           alt="Promo Skin Treatment SOZO Skin Clinic"
+           loading="eager"
+           decoding="async"
+           width="1440"
+           height="auto">
+    </picture>
+  </a>
+</div>

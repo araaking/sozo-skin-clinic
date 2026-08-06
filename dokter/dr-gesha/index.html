@@ -1,0 +1,250 @@
+<!-- ==========================================================
+    CSS PROFILE DETAIL DOKTER - MODERN MINIMALIS PREMIUM
+   ========================================================== -->
+<style>
+    /* --- SYSTEM RESET &  CONTAINER --- */
+    .sozo-doc-profile-section {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+        background-color: #ffffff !important;
+        color: #1e293b !important;
+        padding: 80px 24px !important;
+    }
+
+    .sozo-doc-profile-section * {
+        box-sizing: border-box !important;
+    }
+
+    .sozo-profile-container {
+        max-width: 1100px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: 380px 1fr !important; /* Proporsi kiri foto, kanan text */
+        gap: 64px !important;
+        align-items: start !important;
+    }
+
+    /* --- SIDEBAR LEFT: FOTO & KEY INFO --- */
+    .sozo-profile-sidebar {
+        position: sticky !important;
+        top: 40px !important;
+    }
+
+    .sozo-profile-img-box {
+        width: 100% !important;
+        padding-top: 130% !important; /* Aspek rasio potret mewah */
+        position: relative !important;
+        background-color: #f8fafc !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        margin-bottom: 24px !important;
+    }
+
+    .sozo-profile-img-box img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+    }
+
+    .sozo-profile-str-box {
+        background-color: #f8fafc !important;
+        border-left: 3px solid #1A2080 !important;
+        padding: 16px 20px !important;
+        border-radius: 0 8px 8px 0 !important;
+    }
+
+    .sozo-profile-str-box span {
+        display: block !important;
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        color: #64748b !important;
+        margin-bottom: 4px !important;
+        font-weight: 600 !important;
+    }
+
+    .sozo-profile-str-box strong {
+        font-size: 14px !important;
+        color: #0f172a !important;
+        font-family: monospace !important; /* Gaya nomor seri profesional */
+        letter-spacing: 0.5px !important;
+    }
+
+    /* --- CONTENT RIGHT: DATA MEDIS --- */
+    .sozo-profile-content h1 {
+        font-size: 36px !important;
+        font-weight: 600 !important;
+        color: #0f172a !important;
+        margin: 0 0 6px 0 !important;
+        letter-spacing: -1px !important;
+    }
+
+    .sozo-profile-subtitle {
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        color: #1A2080 !important;
+        margin-bottom: 32px !important;
+        display: block !important;
+    }
+
+    /* Kategori Block */
+    .sozo-profile-block {
+        margin-bottom: 48px !important;
+    }
+
+    .sozo-profile-block h2 {
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        color: #0f172a !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        padding-bottom: 12px !important;
+        margin: 0 0 24px 0 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Timeline / List Styling */
+    .sozo-profile-timeline {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .sozo-profile-timeline li {
+        position: relative !important;
+        padding-left: 28px !important;
+        margin-bottom: 20px !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        color: #334155 !important;
+    }
+
+    /* Titik Akses Timeline Minimalis */
+    .sozo-profile-timeline li::before {
+        content: "" !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 6px !important;
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 50% !important;
+        background-color: #cbd5e1 !important;
+    }
+
+    .sozo-profile-timeline.edu-type li::before {
+        background-color: #1A2080 !important;
+    }
+
+    .sozo-profile-timeline.exp-type li::before {
+        background-color: #1A2080 !important;
+    }
+
+    .sozo-profile-timeline li strong {
+        color: #0f172a !important;
+        font-weight: 600 !important;
+        display: inline-block !important;
+        margin-right: 8px !important;
+    }
+
+    .sozo-profile-timeline li .sozo-exp-desc {
+        display: block !important;
+        margin-top: 4px !important;
+        color: #475569 !important;
+        font-size: 13px !important;
+    }
+
+    /* --- RESPONSIVE LAYOUT --- */
+    @media (max-width: 991px) {
+        .sozo-profile-container {
+            grid-template-columns: 1fr !important;
+            gap: 48px !important;
+        }
+        .sozo-profile-sidebar {
+            position: relative !important;
+            top: 0 !important;
+            max-width: 380px !important;
+            margin: 0 auto !important;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .sozo-doc-profile-section {
+            padding: 48px 16px !important;
+        }
+        .sozo-profile-content h1 {
+            font-size: 28px !important;
+        }
+    }
+</style>
+
+<!-- ==========================================================
+    STRUKTUR HTML - DETAIL PROFIL DOKTER MINIMALIS
+   ========================================================== -->
+<div class="sozo-doc-profile-section">
+    <div class="sozo-profile-container">
+        
+        <!-- KOLOM KIRI: VISUAL & LEGALITAS -->
+        <div class="sozo-profile-sidebar">
+            <div class="sozo-profile-img-box">
+                <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Gesha-Kautzar-Putri-M.Biomed-AAM.webp" alt="dr. Gesha Kautzar Putri, M.Biomed (AAM)">
+            </div>
+            <div class="sozo-profile-str-box">
+                <span>Surat Tanda Registrasi (STR)</span>
+                <strong>KT00000123255767</strong>
+            </div>
+        </div>
+
+        <!-- KOLOM KANAN: RIWAYAT PROFESIONAL -->
+        <div class="sozo-profile-content">
+            
+            <!-- Nama & Jabatan -->
+            <h1>dr. Gesha Kautzar Putri, M.Biomed (AAM)</h1>
+            <span class="sozo-profile-subtitle">Anti-Aging dan Estetika</span>
+
+            <!-- BLOK 0: PROFIL SINGKAT -->
+            <div class="sozo-profile-block">
+                <h2>Profil</h2>
+                <p style="font-size:14px; line-height:1.7; color:#334155; margin:0;">
+                    Memiliki pengalaman 13 tahun di dunia estetika medis dan manajerial. Lulusan Fakultas Kedokteran Universitas Tarumanagara dan melanjutkan studi S2 bidang Anti Aging Medicine di Universitas Udayana, Bali. Tindakan medis yang biasa dilakukan meliputi slimming consultation, botox, threadlift, filler, laser, skinbooster, dan injeksi lainnya.
+                </p>
+            </div>
+
+            <!-- BLOK 1: RIWAYAT PENDIDIKAN -->
+            <div class="sozo-profile-block">
+                <h2>Riwayat Pendidikan</h2>
+                <ul class="sozo-profile-timeline edu-type">
+                    <li><strong>2013:</strong> S1 Program Studi Kedokteran, Universitas Tarumanagara</li>
+                    <li><strong>2018:</strong> S2 Program Magister Biomedik (Anti Aging Medicine), Universitas Udayana</li>
+                </ul>
+            </div>
+
+            <!-- BLOK 2: PENGALAMAN PROFESIONAL -->
+            <div class="sozo-profile-block">
+                <h2>Pengalaman Profesional</h2>
+                <ul class="sozo-profile-timeline exp-type">
+                    <li><strong>Jabatan:</strong> Dokter Komite, SOZO Clinic</li>
+                    <li><strong>Organisasi:</strong> Bendahara PERDAWERI DKI Jakarta (Perhimpunan Dokter Estetika, Wellness, & Regeneratif Indonesia)</li>
+                    <li><strong>Organisasi:</strong> Anggota IKLASI (Ikatan Dokter Laser Indonesia)</li>
+                    <li><strong>Organisasi:</strong> Anggota IDI Jakarta Selatan</li>
+                </ul>
+            </div>
+
+            <!-- BLOK 3: PELATIHAN & SEMINAR -->
+            <div class="sozo-profile-block">
+                <h2>Pelatihan & Seminar</h2>
+                <ul class="sozo-profile-timeline">
+                    <li>Aesthetic Medical Update Seminar & Exhibition (AMUSE), Jakarta, 2026</li>
+                    <li>International Medicine Congress IMCAS, Bangkok, 2025</li>
+                    <li>IBSA DERMA Masterclass, Italia, 2025</li>
+                    <li>International SWAM, Jakarta, 2025</li>
+                    <li>Pharmaresearch Global Symposium, Korea, 2025</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>

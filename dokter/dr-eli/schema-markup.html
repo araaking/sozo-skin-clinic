@@ -1,0 +1,160 @@
+<!-- ============================================================
+     SCHEMA MARKUP - Halaman Detail Dokter
+     URL       : https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/
+     Versi     : 1.0
+     Tanggal   : 2026-08-05
+     Tipe      : ProfilePage + BreadcrumbList + IndividualPhysician
+     Catatan   : Pasang via WPCode kondisi halaman ini saja
+                 (Page URL contains elisabeth-ryan).
+                 @id Person SAMA dengan referensi di halaman list
+                 (tim-dokter-sozo-skin) agar entitas menyambung.
+                 STR tampil penuh di UI -> masuk hasCredential
+                 (EducationalOccupationalCredential + recognizedBy KKI).
+                 Afiliasi organisasi -> memberOf (sinyal E-E-A-T).
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/#webpage",
+      "url": "https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/",
+      "name": "dr. Elisabeth Ryan, Sp.DVE - Spesialis Dermatologi, Venereologi & Estetika Sozo Skin Clinic",
+      "description": "Dokter Spesialis Kulit dan Kelamin dengan fokus trikoskopi (kesehatan rambut dan kulit kepala), estetika medis, dan bedah kulit. Menempuh pendidikan di Filipina dan Polandia, termasuk fellowship trikoskopi di Medical University of Warsaw dan residensi di Research Institute for Tropical Medicine.",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/#website"
+      },
+      "about": {
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/#person"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tim Dokter Sozo Skin Clinic",
+          "item": "https://sozoskinclinic.com/tim-dokter-sozo-skin/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "dr. Elisabeth Ryan, Sp.DVE",
+          "item": "https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/"
+        }
+      ]
+    },
+    {
+      "@type": ["Person", "IndividualPhysician"],
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/#person",
+      "name": "dr. Elisabeth Ryan, Sp.DVE",
+      "honorificPrefix": "dr.",
+      "honorificSuffix": "Sp.DVE",
+      "jobTitle": "Dermatologist, Venereologist, and Aesthetic Physician",
+      "url": "https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/",
+      "image": "https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr-eli.webp",
+      "description": "Dokter Spesialis Kulit dan Kelamin yang menempuh pendidikan dan pelatihan di Filipina dan Polandia. Fokus keahliannya trikoskopi atau kesehatan rambut dan kulit kepala, selain estetika medis dan bedah kulit. Pendekatannya berbasis bukti ilmiah, dengan penanganan yang disesuaikan untuk tiap pasien.",
+      "worksFor": {
+        "@type": "MedicalOrganization",
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "practicesAt": {
+        "@type": "MedicalOrganization",
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "STR (Surat Tanda Registrasi)",
+        "identifier": "STRUI00001652595312",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Konsil Kedokteran Indonesia (KKI)"
+        }
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Universitas Kristen Krida Wacana (UKRIDA), Jakarta"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Research Institute for Tropical Medicine, Muntinlupa"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Medical University of Warsaw, Polandia"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Universitas Indonesia, Jakarta"
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Perhimpunan Dokter Spesialis Kulit dan Kelamin Indonesia (PERDOSKI)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Kelompok Studi Dermatologi Laser Indonesia (KSDLI)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Kelompok Studi Dermatologi Naturopati Indonesia (KSDNI)"
+        },
+        {
+          "@type": "Organization",
+          "name": "International Dermoscopy Society (IDS)"
+        },
+        {
+          "@type": "Organization",
+          "name": "International Society of Dermatology (ISD)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Ikatan Dokter Indonesia (IDI) Jakarta Pusat"
+        }
+      ],
+      "knowsAbout": [
+        "Dermatology",
+        "Venereology",
+        "Aesthetic Medicine",
+        "Dermatologic Surgery",
+        "Trichoscopy",
+        "Hair and Scalp Health"
+      ],
+      "award": [
+        "Publikasi laporan kasus \"Bowen's Disease Mimicking Lichen Simplex Chronicus in a 56-Year-Old Filipino Man\" - Jurnal Dermatologi dan Venereologi Indonesia (2025)",
+        "Beasiswa presentasi e-poster - 25th World Congress of Dermatology, Singapura (2023)",
+        "Publikasi laporan kasus \"A Case of Hard-to-Diagnose Papuloerythroderma of Ofuji in an Elderly Male\" - Journal of Pakistan Association of Dermatologists (2023)",
+        "Beasiswa presentasi e-poster - 24th World Congress of Dermatology, Milan (2019)",
+        "Publikasi laporan kasus \"Epidermolysis Bullosa Simplex in a 13-Year-Old Filipina\" - Journal of the Philippine Dermatological Society (2019)",
+        "E-poster - 5th World Congress of Dermoscopy, Thessaloniki (2018)"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sozoskinclinic.com/#website",
+      "url": "https://sozoskinclinic.com/",
+      "name": "Sozo Skin Clinic"
+    }
+  ]
+}
+</script>

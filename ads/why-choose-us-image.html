@@ -1,0 +1,268 @@
+<!-- SYSTEM PRELOAD FONTAWESOME (Menghindari Render-Blocking CSS) -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+<style>
+  /* ==========================================================
+     SOZO WHY CHOOSE US (Image Hero + 6 Cards)
+     ========================================================== */
+  .sozo-wcu-hero {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+  .sozo-wcu-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    .sozo-wcu-hero img {
+      max-height: 60vh;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  /* ==========================================================
+     CSS OPTIMIZED WHY CHOOSE US (Content-Visibility & Performance)
+     ========================================================== */
+  .sozo-why-section {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1A2080;
+    color: #ffffff;
+    padding: 80px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+
+  .sozo-why-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 50%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .sozo-why-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sozo-why-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+  }
+
+  .sozo-why-header h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    font-weight: 700;
+  }
+
+  .sozo-why-header p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .sozo-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .sozo-why-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    will-change: transform, box-shadow;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+  }
+
+  .sozo-why-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .sozo-why-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #ffffff;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .sozo-why-card:hover .sozo-why-icon {
+    background: #ffffff;
+    color: #1A2080;
+    transform: scale(1.1);
+  }
+
+  .sozo-why-card-title {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .sozo-why-card-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 991px) {
+    .sozo-why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .sozo-why-section {
+      padding: 60px 15px;
+    }
+    .sozo-why-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .sozo-why-card {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+      padding: 25px 20px;
+      gap: 15px;
+    }
+    .sozo-why-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 22px;
+      border-radius: 12px;
+    }
+    .sozo-why-card-title {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .sozo-why-card-text {
+      font-size: 13px;
+    }
+  }
+</style>
+
+<!-- Image hero: Tim Klinik SOZO -->
+<div class="sozo-wcu-hero">
+  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/tim-klinik-kecantikan-terdekat-sozo-skin-clinic-1024x1024.jpg.webp"
+       alt="Tim Klinik Kecantikan SOZO Skin Clinic"
+       loading="eager"
+       decoding="async"
+       width="1024"
+       height="1024">
+</div>
+
+<!-- 6 Cards: Keunggulan SOZO -->
+<section class="sozo-why-section">
+  <div class="sozo-why-container">
+
+    <div class="sozo-why-header">
+      <h2>Keunggulan Sozo Dibanding Beauty Clinic Lain</h2>
+      <p>Komitmen kami adalah memberikan pelayanan terbaik, aman, dan tepercaya untuk pancarkan pesona alami Anda.</p>
+    </div>
+
+    <div class="sozo-why-grid">
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title" style="display:block;">Tenaga Medis Profesional</strong>
+          <p class="sozo-why-card-text">Ditangani oleh Dokter berpengalaman.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true">
+          <i class="fa-solid fa-microscope"></i>
+        </div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title" style="display:block;">Teknologi Terkini</strong>
+          <p class="sozo-why-card-text">Mesin berkualitas tinggi untuk hasil maksimal.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title" style="display:block;">Pelayanan Terbaik</strong>
+          <p class="sozo-why-card-text">Klinik kecantikan yang nyaman dan ramah.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true">
+          <i class="fa-solid fa-handshake-angle"></i>
+        </div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title" style="display:block;">Konsultasi Dokter Gratis</strong>
+          <p class="sozo-why-card-text">Reservasi sekarang, diskon 100rb!</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true">
+          <i class="fa-solid fa-tags"></i>
+        </div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title" style="display:block;">Harga Terjangkau</strong>
+          <p class="sozo-why-card-text">Perawatan premium dengan harga terjangkau.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title" style="display:block;">Klinik Kecantikan Terdekat</strong>
+          <p class="sozo-why-card-text">60+ cabang di Jakarta, Bogor, Depok, Tangerang, Bekasi, Medan, dan Semarang.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>

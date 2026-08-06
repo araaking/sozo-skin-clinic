@@ -1,0 +1,254 @@
+<div id="sozo-react-app">
+  <!-- ====== STYLE: SEARCH, GRID, STATES ====== -->
+  <style>
+    /* Design tokens (shared via JS inject, but redeclared for safety on first paint) */
+    #sozo-react-app {
+      --sz-navy: #1A2080;
+      --sz-navy-deep: #11164f;
+      --sz-border: #e5e7eb;
+      --sz-border-soft: #f3f4f6;
+      --sz-text: #111827;
+      --sz-text-subtle: #6b7280;
+      --sz-shadow-sm: 0 1px 2px rgba(26, 32, 128, 0.04), 0 1px 3px rgba(26, 32, 128, 0.06);
+      --sz-shadow-md: 0 4px 12px rgba(26, 32, 128, 0.08), 0 2px 4px rgba(26, 32, 128, 0.04);
+      --sz-shadow-lg: 0 16px 32px rgba(26, 32, 128, 0.12), 0 4px 8px rgba(26, 32, 128, 0.06);
+      --sz-ring: 0 0 0 3px rgba(26, 32, 128, 0.18);
+      --sz-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Search icon: vertical centering yang presisi */
+    .sz-search-icon {
+      position: absolute !important;
+      top: 50% !important;
+      left: 18px !important;
+      transform: translateY(-50%) !important;
+      color: var(--sz-text-subtle) !important;
+      width: 20px !important;
+      height: 20px !important;
+      pointer-events: none !important;
+      transition: color 0.25s var(--sz-ease) !important;
+    }
+    .sz-search-box:focus-within .sz-search-icon {
+      color: var(--sz-navy) !important;
+    }
+    .sz-search-input {
+      padding: 16px 20px 16px 52px !important;
+      font-family: 'Poppins', sans-serif !important;
+      font-size: 0.95rem !important;
+      font-weight: 400 !important;
+      color: var(--sz-text) !important;
+      letter-spacing: -0.005em !important;
+    }
+    .sz-search-input::placeholder {
+      color: var(--sz-text-subtle) !important;
+      font-weight: 400 !important;
+    }
+    .sz-search-box:focus-within .sz-search-input {
+      border-color: var(--sz-navy) !important;
+      box-shadow: 0 10px 30px rgba(26, 32, 128, 0.08) !important;
+    }
+
+    /* Pagination button: centering + states */
+    #sozo-react-app .sz-page-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      line-height: 1 !important;
+      transition: all 0.2s var(--sz-ease) !important;
+    }
+    #sozo-react-app .sz-page-btn svg {
+      display: block !important;
+      width: 16px !important;
+      height: 16px !important;
+      stroke-width: 2.5px !important;
+    }
+    #sozo-react-app .sz-page-btn:hover:not(:disabled) {
+      transform: translateY(-1px) !important;
+      box-shadow: var(--sz-shadow-sm) !important;
+    }
+    #sozo-react-app .sz-page-btn:active:not(:disabled) {
+      transform: translateY(0) !important;
+    }
+    #sozo-react-app .sz-page-btn:focus-visible {
+      outline: none !important;
+      box-shadow: var(--sz-ring) !important;
+    }
+
+    /* Grid layout + stagger */
+    .sz-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+      min-height: 200px;
+    }
+    .sz-grid .sz-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: szCardIn 0.55s var(--sz-ease) forwards;
+    }
+    .sz-grid .sz-card:nth-child(1) { animation-delay: 0.04s; }
+    .sz-grid .sz-card:nth-child(2) { animation-delay: 0.08s; }
+    .sz-grid .sz-card:nth-child(3) { animation-delay: 0.12s; }
+    .sz-grid .sz-card:nth-child(4) { animation-delay: 0.16s; }
+    .sz-grid .sz-card:nth-child(5) { animation-delay: 0.20s; }
+    .sz-grid .sz-card:nth-child(6) { animation-delay: 0.24s; }
+    @keyframes szCardIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .sz-grid .sz-card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .sz-grid .sz-card-footer {
+      margin-top: auto;
+    }
+
+    /* Chips */
+    .sz-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 8px;
+      margin-bottom: 2rem;
+    }
+    #sozo-react-app .sz-chip {
+      transition: all 0.25s var(--sz-ease) !important;
+      outline: none !important;
+    }
+    #sozo-react-app .sz-chip:hover {
+      transform: translateY(-1px) !important;
+    }
+    #sozo-react-app .sz-chip:active {
+      transform: translateY(0) scale(0.98) !important;
+    }
+    #sozo-react-app .sz-chip:focus-visible {
+      outline: none !important;
+      box-shadow: var(--sz-ring) !important;
+    }
+
+    /* Buttons: focus + active */
+    #sozo-react-app .sz-btn:focus-visible {
+      outline: none !important;
+      box-shadow: var(--sz-ring) !important;
+    }
+    #sozo-react-app .sz-btn:active {
+      transform: translateY(1px) scale(0.99) !important;
+    }
+    #sozo-react-app .sz-btn-primary:active {
+      background-color: var(--sz-navy-deep) !important;
+    }
+
+    /* Empty state */
+    #sz-empty-state h3 { text-wrap: balance !important; }
+    #sz-empty-state button:focus-visible {
+      outline: none !important;
+      box-shadow: var(--sz-ring) !important;
+    }
+
+    @media (max-width: 768px) {
+      .sz-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .sz-chips {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        padding-bottom: 12px !important;
+        margin-left: -16px !important;
+        margin-right: -16px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+      .sz-chips::-webkit-scrollbar {
+        display: none;
+      }
+      #sozo-react-app .sz-chip {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        font-size: 0.75rem !important;
+        padding: 6px 14px !important;
+      }
+      #sozo-react-app .sz-page-btn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        font-size: 12px !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .sz-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .sz-grid .sz-card-body {
+        padding: 12px !important;
+      }
+      #sozo-react-app h3.sz-card-title {
+        font-size: 0.85rem !important;
+      }
+      .sz-card-price {
+        font-size: 0.95rem !important;
+      }
+      .sz-btn {
+        font-size: 0.7rem !important;
+        padding: 8px !important;
+      }
+    }
+  </style>
+
+  <!-- ====== SECTION SEMUA TREATMENT ====== -->
+  <div id="semua-treatment" class="sz-section" style="border-top: 1px solid #f3f4f6; padding-top: 60px; scroll-margin-top: 20px;">
+    <div class="sz-container">
+      <!-- Header Section -->
+      <div class="sz-text-center sz-mb-8">
+        <div style="display:inline-flex; align-items:center; justify-content:center; padding:12px; background-color:#ffffff; border-radius:50%; box-shadow:0 1px 2px rgba(0,0,0,0.05); border:1px solid #f3f4f6; margin-bottom:16px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A2080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+            <path d="M5 3v4"></path><path d="M19 17v4"></path>
+            <path d="M3 5h4"></path><path d="M17 19h4"></path>
+          </svg>
+        </div>
+        <h2 class="sz-h2" style="margin-bottom: 16px !important;">Cari Treatment Spesifik</h2>
+        <p class="sz-desc">Tidak menemukan yang Anda cari? Gunakan pencarian di bawah untuk melihat seluruh koleksi treatment kami.</p>
+      </div>
+
+      <!-- Kotak Pencarian -->
+      <div class="sz-search-box">
+        <svg class="sz-search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="sz-search-input" class="sz-search-input" placeholder="Cari beauty treatment atau keluhan Anda...">
+      </div>
+
+      <!-- Area Chips (Quick Filter) diisi oleh JS -->
+      <div class="sz-chips sz-mb-8" id="sz-quick-chips"></div>
+
+      <!-- Grid Produk yang diisi oleh JS -->
+      <div id="sz-grid-container" class="sz-grid"></div>
+      
+      <!-- Empty State (Pencarian Tidak Ditemukan) -->
+      <div id="sz-empty-state" class="sz-text-center sz-hidden" style="padding: 40px 0;">
+        <div style="width:80px; height:80px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 24px auto;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1A2080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <h3 class="sz-h2" style="font-size: 1.5rem !important; margin-bottom: 8px !important;">Pencarian Tidak Ditemukan</h3>
+        <p class="sz-desc sz-mb-4" id="sz-empty-desc">Kami tidak menemukan treatment untuk kata kunci tersebut.</p>
+        <button onclick="document.getElementById('sz-search-input').value=''; szHandleSearch();" class="sz-btn sz-btn-outline" style="display:inline-block; width:auto; padding:10px 24px; background:#1A2080 !important; color:#fff !important; border:2px solid #1A2080 !important;">Lihat Semua Treatment</button>
+      </div>
+
+      <!-- Pagination & Info -->
+      <div id="sz-pagination" class="sz-pagination"></div>
+      <div id="sz-page-info" class="sz-text-center sz-desc" style="font-size: 0.875rem !important; margin-top: 16px !important;"></div>
+    </div>
+  </div>
+</div>

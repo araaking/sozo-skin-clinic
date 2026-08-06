@@ -1,0 +1,262 @@
+<div class="sozo-locator-wrapper">
+
+  <div class="sozo-console">
+    <div class="sozo-input-wrapper sozo-provinsi-wrapper">
+      <select id="sozoProvinceFilter" aria-label="Filter Provinsi">
+        <option value="Semua">Semua Lokasi / Provinsi</option>
+        <option value="DKI Jakarta">DKI Jakarta</option>
+        <option value="Jawa Barat">Jawa Barat</option>
+        <option value="Banten">Banten</option>
+        <option value="Jawa Tengah">Jawa Tengah</option>
+        <option value="DI Yogyakarta">DI Yogyakarta</option>
+        <option value="Jawa Timur">Jawa Timur</option>
+        <option value="Bali">Bali</option>
+        <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+        <option value="Sumatera Utara">Sumatera Utara</option>
+        <option value="Sumatera Selatan">Sumatera Selatan</option>
+        <option value="Riau">Riau</option>
+        <option value="Kepulauan Riau">Kepulauan Riau</option>
+        <option value="Jambi">Jambi</option>
+        <option value="Kalimantan Barat">Kalimantan Barat</option>
+        <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+        <option value="Kalimantan Timur">Kalimantan Timur</option>
+        <option value="Sulawesi Utara">Sulawesi Utara</option>
+        <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+        <option value="Lainnya">Lainnya</option>
+      </select>
+    </div>
+    
+    <div class="sozo-search-group">
+      <input type="text" id="sozoSearchInput" placeholder="Cari lokasi klinik terdekat..." aria-label="Cari klinik">
+    </div>
+  </div>
+
+  <div id="sozoClinicGrid" class="sozo-map-grid" style="min-height: 600px;"></div>
+
+  <div id="sozoPagination" class="sozo-pagination"></div>
+
+  <div id="sozoEmptyState" class="sozo-empty-state">
+    <div class="sozo-empty-icon">📍</div>
+    <h3>Klinik segera hadir di lokasi "<span id="sozoSearchKeyword"></span>"</h3>
+    <p>Hubungi kami untuk informasi pembukaan cabang baru.</p>
+  </div>
+
+</div>
+
+<style>
+  .sozo-locator-wrapper { font-family: inherit; max-width: 1200px; margin: 0 auto; padding: 10px 0; }
+
+  /* --- CONSOLE --- */
+  .sozo-console { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; background: #ffffff; padding: 15px; border-radius: 12px; border: 1px solid #e0e0e0; }
+  .sozo-input-wrapper, .sozo-search-group { flex: 1; min-width: 250px; }
+  .sozo-console select, .sozo-console input { padding: 12px 15px; border: 1px solid #d1d1d1; border-radius: 8px; font-size: 15px; width: 100%; outline: none; background-color: #fafafa; transition: all 0.3s ease; box-sizing: border-box; }
+  .sozo-console select:focus, .sozo-console input:focus { border-color: #1A2080; background-color: #ffffff; box-shadow: 0 0 8px rgba(26, 32, 128, 0.1); }
+  
+  /* --- GRID & CARD --- */
+  .sozo-map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-bottom: 30px; align-content: start; }
+  .sozo-map-card { background: #ffffff; border: 1px solid #ececf2; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 3px rgba(16,18,64,0.05); transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; display: flex; flex-direction: column; }
+  .sozo-map-card:hover { transform: translateY(-6px); box-shadow: 0 18px 38px rgba(26,32,128,0.13); border-color: #d9dbf0; }
+  .sozo-iframe-container { width: 100%; height: 168px; background-color: #e9ecef; position: relative; }
+  .sozo-iframe-container iframe { width: 100%; height: 100%; border: none; display: block; pointer-events: none; } /* MAP NON-CLICKABLE */
+  .sozo-card-content { padding: 22px 22px 20px; display: flex; flex-direction: column; flex-grow: 1; }
+
+  .sozo-card-content h3 { color: #1A2080; font-size: 18px; line-height: 1.3; margin: 0 0 9px 0; font-weight: 700; letter-spacing: -0.01em; }
+  .sozo-address { color: #5b5b6b; font-size: 14px; line-height: 1.55; margin: 0 0 22px 0; flex-grow: 1; }
+
+  /* --- ACTION BUTTONS: hanya tombol WA --- */
+  .sozo-action-buttons { display: flex; flex-direction: column; gap: 10px; }
+  .sozo-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 14px; border-radius: 11px; text-decoration: none; font-size: 14px; font-weight: 600; border: 1.5px solid transparent; transition: all .25s ease; white-space: nowrap; width: 100%; box-sizing: border-box; }
+  .sozo-btn svg { width: 17px; height: 17px; fill: currentColor; flex-shrink: 0; }
+  .sozo-btn-wa { background-color: #1A2080; color: #ffffff !important; box-shadow: 0 4px 12px rgba(26,32,128,.18); }
+  .sozo-btn-wa:hover { background-color: #11164f; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(26,32,128,.28); }
+
+  /* --- PAGINATION --- */
+  .sozo-pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 40px 0; flex-wrap: wrap; }
+  .sozo-page-item { padding: 10px 18px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff; color: #1A2080; cursor: pointer; font-weight: 700; transition: 0.2s; user-select: none; }
+  .sozo-page-item.active { background: #1A2080; color: #fff; border-color: #1A2080; }
+  .sozo-page-item:hover:not(.active) { background: #f0f2ff; }
+
+  /* --- EMPTY STATE --- */
+  .sozo-empty-state { display: none; text-align: center; padding: 50px 20px; background: #f9f9fc; border-radius: 12px; border: 1px dashed #c0c0d0; }
+  .sozo-empty-icon { font-size: 40px; margin-bottom: 10px; }
+
+  /* --- MOBILE --- */
+  @media (max-width: 768px) {
+    .sozo-input-wrapper, .sozo-search-group { min-width: 100%; }
+    .sozo-console { flex-direction: column; gap: 10px; padding: 12px; }
+    .sozo-map-grid { grid-template-columns: 1fr; gap: 16px; }
+    .sozo-card-content { padding: 16px 16px 14px; }
+    .sozo-card-content h3 { font-size: 16px; }
+    .sozo-address { font-size: 13px; margin-bottom: 16px; }
+    .sozo-btn { font-size: 14px; padding: 12px 10px; }
+    .sozo-pagination { gap: 6px; margin: 24px 0; }
+    .sozo-page-item { padding: 8px 14px; font-size: 14px; }
+  }
+</style>
+
+<script>
+(function() {
+  const clinicsData = [
+    {"name": "Sozo Skin Clinic - Mangga Besar", "address": "Jl. Raya Mangga Besar No.84 13, RT.13/RW.1, Taman Sari, Kec. Taman Sari, Jakarta Barat, DKI Jakarta 11150", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Arteri Pondok Indah", "address": "Jl. Iskandar Muda No.68A, RT.3/RW.2, Kec. Kby. Lama, Jakarta Selatan, DKI Jakarta 12240", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Bendungan Hilir", "address": "Jl. Bendungan Hilir No 7 , RT.11/RW.3, Bend. Hilir, Kec. Tanah Abang, DKI Jakarta 10210", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Mampang", "address": "Jalan Mampang Prapatan Raya No. 99, Kel. Duren Tiga, Kec. Pancoran, Jakarta Selatan, DKI Jakarta 12760", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Jambi", "address": "Ruko Jambi Business Center (JBC) No. E1-12 & E1, Jl. Kapten Pattimura, No.15, Jambi, 36361", "province": "Jambi"},
+    {"name": "Sozo Skin Clinic - Cinere", "address": "Jl. Cinere Raya No. 9, Cinere, Kec. Cinere, Kota Depok, Jawa Barat 16514", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Samarinda", "address": "Jl. Dr. Sutomo No.8b, Sidodadi, Kec. Samarinda Ulu, Kalimantan Timur 75243", "province": "Kalimantan Timur"},
+    {"name": "Sozo Skin Clinic - Makassar", "address": "Ko. Business Centre Jade No.1, RT.001/RW.01, Masale, Kec. Panakkukang, Sulawesi Selatan 90231", "province": "Sulawesi Selatan"},
+    {"name": "Sozo Skin Clinic - Medan Cemara Asri", "address": "Jl. Cemara Boulevard Blok A-1 No. 40, Medan Estate, Deli Serdang, Sumatera Utara 20233", "province": "Sumatera Utara"},
+    {"name": "Sozo Skin Clinic - Puri Indah", "address": "Jl. Puri Indah Raya Blok T1 No.3A, RT.1/RW.2, Kembangan Selatan, DKI Jakarta 11610", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Surabaya Bukit Darmo", "address": "Office Park, Jl. Mayjend. Jonosewojo, Pradahkalikendal, Surabaya, Jawa Timur 60225", "province": "Jawa Timur"},
+    {"name": "Sozo Skin Clinic - Surabaya Manyar", "address": "Jl. Manyar Kertoarjo No.10A, Mojo, Kec. Gubeng, Surabaya, Jawa Timur 60285", "province": "Jawa Timur"},
+    {"name": "Sozo Skin Clinic - Solo", "address": "Jl. Prof. DR. Supomo 25-47, Timuran, Kec. Banjarsari, Surakarta, Jawa Tengah 57139", "province": "Jawa Tengah"},
+    {"name": "Sozo Skin Clinic - Kelapa Gading Boulevard", "address": "H 4 / 6, Jl. Boulevard Raya, Kelapa Gading Timur, Jakarta Utara, DKI Jakarta 14240", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Tebet", "address": "Jl. Tebet Utara Dalam No. 3A RT. 003 RW 002, Jakarta Selatan, DKI Jakarta 12820", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - JGC", "address": "Ruko New East, Jl. Jakarta Garden City Boulevard, Cakung, Jakarta Timur, DKI Jakarta 13910", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Bandung Surya Sumantri", "address": "Jalan Prof. Dr. Surya Sumantri No. 156, Sukajadi, Kota Bandung, Jawa Barat 40164", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Yogyakarta", "address": "Jl. Pangeran Diponegoro No.58, Jetis, Yogyakarta, DI Yogyakarta 55233", "province": "DI Yogyakarta"},
+    {"name": "Sozo Skin Clinic - Lampung", "address": "Jl. Kartini No.127 B, Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35127", "province": "Lainnya"},
+    {"name": "Sozo Skin Clinic - Malang", "address": "Jl. Pahlawan Trip No.23, Oro-oro Dowo, Kec. Klojen, Malang, Jawa Timur 65145", "province": "Jawa Timur"},
+    {"name": "Sozo Skin Clinic - Karawaci", "address": "Supermall Karawaci, Unit. FF # 11 Lippo Karawaci, Tangerang, Banten 15811", "province": "Banten"},
+    {"name": "Sozo Skin Signature - Tanjung Duren 2", "address": "Jl. Tanjung Duren Raya No.364A, Grogol petamburan, DKI Jakarta 11470", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Karawaci Palem Semi", "address": "Ruko CBD, Jl. Palem Semi No.32, Cibodas, Tangerang, Banten 15139", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Cirebon", "address": "Jl. DR. Cipto Mangunkusumo Komplek CSB Office Park Kav No. 5, Cirebon, Jawa Barat 45131", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Tasikmalaya", "address": "Komplek Ruko Permata Regency, Jl. HZ Mustofa, Kec. Tawang, Tasikmalaya, Jawa Barat 46115", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Green Lake City", "address": "Jl. Green Lake City Boulevard Blok D No. 26, Kota Tangerang, Banten 15147", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Tangerang City", "address": "Jl. Perintis Kemerdekaan Blok C No. 5 Tangcity Superblock, Kota Tangerang, Banten 15133", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Margonda Depok", "address": "Jl. Margonda No.27, Pondok Cina, Kec. Beji, Depok, Jawa Barat 16424", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Pekanbaru", "address": "Jl. Jend. Sudirman No.11, Bukit Raya, Pekanbaru, Riau 28125", "province": "Riau"},
+    {"name": "Sozo Skin Clinic - Bekasi Summarecon", "address": "Ruko Emerald Commercial Blok UA No 27, Bekasi Utara, Jawa Barat 17123", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Bogor Taman Yasmin", "address": "Komplek Ruko Permata Yasmin, Jl. Brigjen Saptadji Hadiprawira, Kota Bogor, Jawa Barat 16112", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Bandung Buah Batu", "address": "Jl. Buah Batu No 250, Kec. Lengkong, Bandung, Jawa Barat 40265", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Pondok Bambu", "address": "Jl. Pahlawan Revolusi No.2, Durensawit, East Jakarta, DKI Jakarta 13430", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Pontianak", "address": "Jl. Slt. Abdurrahman No.67, Sungai Bangkong, Pontianak, Kalimantan Barat 78116", "province": "Kalimantan Barat"},
+    {"name": "Sozo Skin Clinic - Semarang", "address": "Jl. Mayjend Sutoyo 960-81, Semarang Tengah, Jawa Tengah 50136", "province": "Jawa Tengah"},
+    {"name": "Sozo Skin Clinic - Cibinong", "address": "Jl. Raya Jakarta-Bogor KM. 45 No. 43a, Cibinong, Bogor, Jawa Barat 16195", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Cikarang", "address": "Jl. Raya Cikarang - Cibarusah No.1, Cikarang Selatan, Bekasi, Jawa Barat 17530", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Kota Wisata Cibubur", "address": "Ruko Downtown Madison Blok SHC6 No. 8, Gunung Putri, Bogor, Jawa Barat 16969", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Palembang", "address": "Jl. Jend. Basuki Rachmat No.12 B-C, Kemuning, Palembang, Sumatera Selatan 30128", "province": "Sumatera Selatan"},
+    {"name": "Sozo Skin Clinic - Balikpapan", "address": "Jl. Ruhui Rahayu Ring Road No.1, Balikpapan Selatan, Kalimantan Timur 76115", "province": "Kalimantan Timur"},
+    {"name": "Sozo Skin Clinic - Bekasi", "address": "Jl. Cemara Raya no. 1, Kavling 10D, Jakasampurna, Bekasi, Jawa Barat 17145", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Karawang", "address": "Jalan Bharata Blok J No. 3 Telukjambe Timur, Karawang, Jawa Barat 41361", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Kemang", "address": "Jalan Kemang Raya No. 72, Mampang Prapatan, Jakarta Selatan, DKI Jakarta 12730", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Bandung Paskal", "address": "Jalan Pajajaran No.68, Cicendo, Kota Bandung, Jawa Barat 40173", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Manado", "address": "Komp. Ruko Mega Mas Blok C1 No. 15-16, Kec. Wenang, Manado, Sulawesi Utara 95111", "province": "Sulawesi Utara"},
+    {"name": "Sozo Skin Clinic - Gading Serpong", "address": "Jl. Gading Serpong Boulevard, Ruko Odessa Blok AA 2 No.32, Tangerang, Banten 15810", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - PIK", "address": "Ruko Arcade, Jl Pantai Indah Utara 2, Penjaringan, Jakarta Utara, DKI Jakarta 14460", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Bali", "address": "Jl. Raya Puputan No.190 A, Denpasar Selatan, Bali 80226", "province": "Bali"},
+    {"name": "Sozo Skin Clinic - Tanjung Duren", "address": "Jl. Tanjung Duren Raya No. 41 D, DKI Jakarta 11470", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Rawamangun", "address": "Jl. Pemuda No.78 C, Pulo Gadung, Jakarta Timur, DKI Jakarta 13220", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Tebet Timur", "address": "Jl. Tebet Timur Raya No.67D, Jakarta Selatan, DKI Jakarta 12820", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Bekasi Grand Galaxy", "address": "Jl. Boulevard Raya RGA No.67, Bekasi Selatan, Jawa Barat 17147", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Surabaya Jemursari", "address": "Jalan Jemursari No. 106A, Tenggilis Mejoyo, Surabaya, Jawa Timur 60292", "province": "Jawa Timur"},
+    {"name": "Sozo Skin Clinic - Serang", "address": "Jalan Jenderal Ahmad Yani No. 160, Kota Serang, Banten 42118", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Banjarmasin", "address": "Jalan Ahmad Yani KM 5,7 Nomor 7A, Banjarmasin Selatan, Kalimantan Selatan 70238", "province": "Kalimantan Selatan"},
+    {"name": "Sozo Skin Clinic - Batam", "address": "Teluk Tering, Kec. Batam Kota, Batam, Kepulauan Riau 29444", "province": "Kepulauan Riau"},
+    {"name": "Sozo Skin Clinic - BSD", "address": "Ruko Pasar Modern Timur 2, Letnan Sutopo, Serpong, Tangerang Selatan, Banten 15318", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Bogor", "address": "Jl. Bangbarung Raya No.24, Bogor Utara, Jawa Barat 16153", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Padang", "address": "Jl. H. Agus Salim No.17, Padang Timur, Sumatera Barat 25171", "province": "Lainnya"},
+    {"name": "Sozo Skin Clinic - Bintaro", "address": "Jl. Bintaro Utama V Blok EA 2, Ciputat Timur, Tangerang Selatan, Banten 15224", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Medan", "address": "Jalan iskandar muda no 23, Medan Baru, Sumatera Utara 20154", "province": "Sumatera Utara"},
+    {"name": "Sozo Skin Clinic - AEON Tanjung Barat", "address": "AEON Tanjung Barat (3-23AB), Jl. Raya Tanjung Barat No. 163, RT 012 RW 04, Tanjung Barat, Jagakarsa, Jakarta Selatan, DKI Jakarta 12530", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Kelapa Gading Summarecon", "address": "Blok LC 6 No.43, Jl. Boulevard Bar., Klp. Gading Bar., Kec. Klp. Gading, Jakarta Utara, DKI Jakarta 14240", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Mataram", "address": "Jl. Pejanggik No. 82C, Kel. Pejanggik, Kec. Mataram, Kota Mataram, Nusa Tenggara Barat 83122", "province": "Nusa Tenggara Barat"},
+    {"name": "Sozo Skin Clinic - Semarang Banyumanik", "address": "Jl. Setia Budi No.115, Srondol Kulon, Kec. Banyumanik, Semarang, Jawa Tengah 50263", "province": "Jawa Tengah"}
+  ];
+
+  const gridContainer = document.getElementById("sozoClinicGrid");
+  const paginationContainer = document.getElementById("sozoPagination");
+  const searchInput = document.getElementById("sozoSearchInput");
+  const provinceFilter = document.getElementById("sozoProvinceFilter");
+  const emptyState = document.getElementById("sozoEmptyState");
+  const searchKeywordText = document.getElementById("sozoSearchKeyword");
+
+  let currentPage = 1;
+  const itemsPerPage = 9;
+  let filteredData = [...clinicsData];
+
+  function renderClinics() {
+    gridContainer.innerHTML = "";
+    
+    if (filteredData.length === 0) {
+      gridContainer.style.display = "none";
+      paginationContainer.style.display = "none";
+      emptyState.style.display = "block";
+      searchKeywordText.textContent = searchInput.value;
+      return;
+    }
+
+    gridContainer.style.display = "grid";
+    emptyState.style.display = "none";
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const paginatedItems = filteredData.slice(startIndex, startIndex + itemsPerPage);
+
+    paginatedItems.forEach(clinic => {
+      const searchQuery = encodeURIComponent(clinic.name + ", " + clinic.address);
+      const mapEmbedUrl = `https://maps.google.com/maps?q=${searchQuery}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
+      const waLink = `https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20treatment%20%5Bsumber:%20SEM-general-brand%5D`;
+
+      const card = document.createElement("div");
+      card.className = "sozo-map-card";
+      card.innerHTML = `
+        <div class="sozo-iframe-container">
+          <iframe src="${mapEmbedUrl}" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="sozo-card-content">
+          <h3>${clinic.name}</h3>
+          <p class="sozo-address">${clinic.address}</p>
+          <div class="sozo-action-buttons">
+            <a href="${waLink}" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa">
+              <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> Reservasi Sekarang
+            </a>
+          </div>
+        </div>
+      `;
+      gridContainer.appendChild(card);
+    });
+
+    renderPagination();
+  }
+
+  function renderPagination() {
+    paginationContainer.innerHTML = "";
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+    
+    if (totalPages <= 1) {
+      paginationContainer.style.display = "none";
+      return;
+    }
+
+    paginationContainer.style.display = "flex";
+    
+    for (let i = 1; i <= totalPages; i++) {
+      const pageBtn = document.createElement("div");
+      pageBtn.className = `sozo-page-item ${i === currentPage ? 'active' : ''}`;
+      pageBtn.textContent = i;
+      
+      pageBtn.addEventListener("click", () => {
+        currentPage = i;
+        renderClinics();
+      });
+      
+      paginationContainer.appendChild(pageBtn);
+    }
+  }
+
+  function handleFilter() {
+    const term = searchInput.value.toLowerCase();
+    const prov = provinceFilter.value;
+    filteredData = clinicsData.filter(c => 
+      (c.name.toLowerCase().includes(term) || c.address.toLowerCase().includes(term)) &&
+      (prov === "Semua" || c.province === prov)
+    );
+    currentPage = 1;
+    renderClinics();
+  }
+
+  searchInput.addEventListener("input", handleFilter);
+  provinceFilter.addEventListener("change", handleFilter);
+  renderClinics();
+})();
+</script>

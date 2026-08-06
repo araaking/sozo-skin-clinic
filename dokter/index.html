@@ -1,0 +1,279 @@
+<style>
+    /* --- RESET & TYPOGRAPHY --- */
+    .sozo-minimal-doc-section {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+        background-color: #F8FAFC !important;
+        padding: 100px 24px !important;
+        color: #334155 !important;
+    }
+
+    .sozo-minimal-doc-section * {
+        box-sizing: border-box !important;
+    }
+
+    /* --- CONTAINER MAX WIDTH 1200px --- */
+    .sozo-container {
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+
+    /* --- SECTION HEADER --- */
+    .sozo-min-header {
+        max-width: 800px !important;
+        margin: 0 auto 64px auto !important;
+        text-align: center !important;
+    }
+
+    .sozo-min-header h1 {
+        font-size: 40px !important;
+        font-weight: 600 !important;
+        color: #1A2080 !important;
+        letter-spacing: -1px !important;
+        margin: 0 0 16px 0 !important;
+    }
+
+    .sozo-min-header p {
+        font-size: 16px !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+    }
+
+    /* --- MINIMAL GRID --- */
+    .sozo-min-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        max-width: 1100px !important;
+        margin: 0 auto !important;
+        gap: 32px !important;
+    }
+
+    /* --- CARD DOCTOR BLOCK --- */
+    .sozo-min-card {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important;
+        text-decoration: none !important;
+        background-color: #ffffff !important;
+        border-radius: 16px !important;
+        border: 1px solid #E2E8F0 !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 6px -1px rgba(26, 32, 128, 0.05), 0 2px 4px -1px rgba(26, 32, 128, 0.03) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    .sozo-min-card:hover {
+        transform: translateY(-8px) !important;
+        border-color: #93C5FD !important;
+        box-shadow: 0 20px 25px -5px rgba(26, 32, 128, 0.1), 0 10px 10px -5px rgba(26, 32, 128, 0.04) !important;
+    }
+
+    /* --- IMAGE WRAPPER --- */
+    .sozo-min-img-wrapper {
+        width: 100% !important;
+        aspect-ratio: 4 / 5 !important;
+        background-color: #F1F5F9 !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+
+    .sozo-min-img-wrapper img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        transition: transform 0.7s ease !important;
+    }
+
+    /* Zoom standar saat hover (berlaku seragam untuk semua gambar) */
+    .sozo-min-card:hover .sozo-min-img-wrapper img {
+        transform: scale(1.05) !important;
+    }
+
+    /* --- INFO SECTION --- */
+    .sozo-min-info {
+        padding: 24px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-grow: 1 !important;
+    }
+
+    .sozo-min-name {
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        color: #0F172A !important;
+        margin: 0 0 6px 0 !important;
+        line-height: 1.3 !important;
+        min-height: 52px !important;
+        transition: color 0.3s ease !important;
+    }
+
+    .sozo-min-card:hover .sozo-min-name {
+        color: #1A2080 !important;
+    }
+
+    .sozo-min-title {
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: #2563EB !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 20px !important;
+        display: block !important;
+    }
+
+    /* --- META (STR & KEAHLIAN) --- */
+    .sozo-min-meta {
+        font-size: 13px !important;
+        color: #64748B !important;
+        line-height: 1.6 !important;
+        border-top: 1px dashed #E2E8F0 !important;
+        padding-top: 16px !important;
+    }
+
+    .sozo-min-meta span {
+        display: block !important;
+        margin-bottom: 6px !important;
+    }
+
+    .sozo-min-meta span:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .sozo-min-meta strong {
+        color: #334155 !important;
+        font-weight: 500 !important;
+    }
+
+    .sozo-min-meta .str-number {
+        font-family: 'Inter', monospace !important;
+        color: #1A2080 !important;
+        background-color: #EFF6FF !important;
+        padding: 2px 6px !important;
+        border-radius: 4px !important;
+        font-size: 12px !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* --- RESPONSIVE LAYOUT --- */
+    @media (max-width: 1024px) {
+        .sozo-min-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 24px !important;
+            max-width: 800px !important;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .sozo-minimal-doc-section {
+            padding: 60px 16px !important;
+        }
+        .sozo-min-header {
+            margin-bottom: 40px !important;
+        }
+        .sozo-min-header h1 {
+            font-size: 32px !important;
+        }
+        .sozo-min-grid {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+        }
+        .sozo-min-name {
+            min-height: auto !important;
+        }
+    }
+</style>
+
+<div class="sozo-minimal-doc-section">
+    <div class="sozo-container">
+
+        <div class="sozo-min-header">
+            <h1>Dokter Komite</h1>
+            <p>Profil profesional dewan dokter komite spesialis dan praktisi medis Sozo Skin Clinic yang tersertifikasi resmi.</p>
+        </div>
+
+        <div class="sozo-min-grid">
+
+            <!-- Dokter 1: dr. Elisabeth Ryan -->
+            <a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/" class="sozo-min-card">
+                <div class="sozo-min-img-wrapper">
+                    <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr-eli.webp" alt="dr. Elisabeth Ryan, Sp.DVE">
+                </div>
+                <div class="sozo-min-info">
+                    <h3 class="sozo-min-name">dr. Elisabeth Ryan, Sp.D.V.E</h3>
+                    <span class="sozo-min-title">Dermatologi, Venereologi, & Estetika</span>
+
+                    <div class="sozo-min-meta">
+                        <span>STR: <strong class="str-number">UI00001652595312</strong></span>
+                        <span>Keahlian: <strong>Trikoskopi, Bedah Kulit &amp; Estetika Medis</strong></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Dokter 2: dr. Gesha Kautzar Putri -->
+            <a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/" class="sozo-min-card">
+                <div class="sozo-min-img-wrapper">
+                    <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Gesha-Kautzar-Putri-M.Biomed-AAM.webp" alt="dr. Gesha Kautzar Putri, M.Biomed (AAM)">
+                </div>
+                <div class="sozo-min-info">
+                    <h3 class="sozo-min-name">dr. Gesha Kautzar Putri, M.Biomed (AAM)</h3>
+                    <span class="sozo-min-title">Anti-Aging & Estetika</span>
+
+                    <div class="sozo-min-meta">
+                        <span>STR: <strong class="str-number">KT00000123255767</strong></span>
+                        <span>Keahlian: <strong>Botox, Threadlift, Filler, Laser &amp; Skinbooster</strong></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Dokter 3: dr. Audi Sugiharto -->
+            <a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/" class="sozo-min-card">
+                <div class="sozo-min-img-wrapper">
+                    <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Audi-Sugiharto-Sp.D.V.E.webp" alt="dr. Audi Sugiharto, Sp.D.V.E">
+                </div>
+                <div class="sozo-min-info">
+                    <h3 class="sozo-min-name">dr. Audi Sugiharto, Sp.D.V.E</h3>
+                    <span class="sozo-min-title">Dermatologi, Venereologi, & Estetika</span>
+
+                    <div class="sozo-min-meta">
+                        <span>STR: <strong class="str-number">VP00000073538568</strong></span>
+                        <span>Keahlian: <strong>Bedah Kulit, Bedah Kecantikan & Estetika Medis</strong></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Dokter 4: dr. RR. Putri Rizkya -->
+            <a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-rr-putri-rizkya/" class="sozo-min-card">
+                <div class="sozo-min-img-wrapper">
+                    <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dokter-putri.webp" alt="dr. RR. Putri Rizkya">
+                </div>
+                <div class="sozo-min-info">
+                    <h3 class="sozo-min-name">dr. RR. Putri Rizkya</h3>
+                    <span class="sozo-min-title">Dokter Estetika, Perawatan Injeksi, &amp; Laser</span>
+
+                    <div class="sozo-min-meta">
+                        <span>STR: <strong class="str-number">3559 &bull;&bull;&bull;&bull;&bull;&bull; 2353</strong></span>
+                        <span>Keahlian: <strong>Injeksi, Laser &amp; Skin Booster</strong></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Dokter 5: dr. Syerli Rahmadeni -->
+            <a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/" class="sozo-min-card">
+                <div class="sozo-min-img-wrapper">
+                    <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr-sherly.webp" alt="dr. Syerli Rahmadeni">
+                </div>
+                <div class="sozo-min-info">
+                    <h3 class="sozo-min-name">dr. Syerli Rahmadeni</h3>
+                    <span class="sozo-min-title">Dokter Estetika, Peremajaan, &amp; Kontur Wajah</span>
+
+                    <div class="sozo-min-meta">
+                        <span>STR: <strong class="str-number">1321100222169296</strong></span>
+                        <span>Keahlian: <strong>Estetika Wajah, Peremajaan &amp; Kontur Wajah</strong></span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>

@@ -1,9 +1,27 @@
 # 📝 Sozo Skin Clinic - Schema Markup Migration Project
 
-> **Versi:** 1.7 | **Tanggal Update:** 13 Juli 2026
-> **Fokus Utama:** Migrasi dari Yoast SEO ke Custom Schema (JSON-LD) via `@graph`[cite: 1]
+> **Versi:** 1.9 | **Tanggal Update:** 5 Agustus 2026
+> **Fokus Utama:** Schema markup (custom JSON-LD via `@graph`) + dokumentasi UI & SEO lengkap untuk `sozoskinclinic.com`
 
 Proyek ini bertujuan untuk mengontrol penuh struktur schema markup di `sozoskinclinic.com`, mengeliminasi error bawaan Yoast, dan membangun *Knowledge Graph* terpusat per tipe halaman untuk memaksimalkan SEO[cite: 1]. Seluruh schema Yoast telah dimatikan secara global via WPCode[cite: 1].
+
+Sejak 13 Juli 2026, scope berkembang: dokumentasi melingkupi tidak hanya schema JSON-LD, tapi juga UI components (button, table, card, accordion, dll) dan SEO on-page per LP. Folder `docs/adr/` dan `docs/components/` adalah ekstensi modular dari tiga dokumen utama ini.
+
+---
+
+## 📚 Struktur Dokumentasi
+
+Tiga dokumen utama + dua folder ekstensi:
+
+| Dokumen | Fokus | Update terakhir |
+| :-- | :-- | :-- |
+| **README.md** (file ini) | Status per-LP, SOP schema, integrasi WPCode, struktur docs | 5 Agustus 2026 |
+| **AGENTS.md** | Schema generation rules + cara AI bekerja di project | 5 Agustus 2026 |
+| **Dokumentasi.md** | Log implementasi §5.x, troubleshooting, sisa pekerjaan, template per tipe halaman | 5 Agustus 2026 |
+| `docs/adr/` | Architecture Decision Records (saat ini 7 ADR) | 13 Juli 2026 |
+| `docs/components/` | UI component specs (saat ini 5: button, table, card, accordion, whatsapp-button) | 13 Juli 2026 |
+
+**Audience:** Developer yang maintain LP + designer. Schema JSON-LD adalah salah satu aspek; UI components adalah aspek lain yang sekarang terdokumentasi. Untuk komponen UI, distandardisasi di level atom (button, input, badge) — bukan di level section (hero, info-row) yang memang bervariasi antar LP.
 
 ---
 
@@ -41,8 +59,9 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [ ] **Promo Page** (`https://sozoskinclinic.com/promo/`) - *Keyword: promo sozo*
 - [ ] **Testimoni** (`https://sozoskinclinic.com/testimoni/`)
 - [ ] **Tentang Kami** (`https://sozoskinclinic.com/tentang-kami/`)
-- [ ] **Editorial Board** (`https://sozoskinclinic.com/editorial-board/`)
+- [x] **Editorial Board** (`https://sozoskinclinic.com/editorial-board/`) — *AboutPage + reviewedBy 3 dokter + BreadcrumbList, 5 Agustus 2026*
 - [ ] **Kebijakan Privasi** (`https://sozoskinclinic.com/kebijakan-privasi/`)
+- [ ] **Blog** (`https://sozoskinclinic.com/blog/`) — *di luar kategori treatment; rekomendasi Article/BlogPosting dynamic*
 
 ### 💇‍♀️ 2. Hair Removal Treatment (Category Hub & Subs)
 - [x] **Main Hub: Hair Removal Treatment** (`https://sozoskinclinic.com/hair-removal-treatment/`)[cite: 1]
@@ -82,14 +101,21 @@ Berikan data berikut ke AI sebelum meminta kode:
 
 ### 💉 5. Injectable & Anti-Aging Treatment
 - [x] **Main Hub: Injectable Treatment** (`https://sozoskinclinic.com/injectable-treatment/`)
-- [ ] **Botox:** Zo-Tox Treatment (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/`)
+- [x] **Botox:** Zo-Tox Treatment (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/`) — *revamp UI + schema siap (2026-08-05), WPCode belum dipasang; CSS/JS dipisah ke `style-js.html` (3 widget: style-js + markup + schema)*
+    - [ ] Zo-Tox 10U (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/zo-tox-10u/`) — *sub-treatment baru*
+    - [ ] Zo-Tox Premium (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/zo-tox-premium/`) — *sub-treatment baru*
 - [x] **Threadlift:** Tanam Benang Hub (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/`)
     - [x] Tanam Benang Hidung (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/`) — Rp 2.499.000
+    - [ ] Facelift (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/`) — *sub-treatment baru, schema belum dibuat*
+    - [ ] Perfect Facelift (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/perfect-facelift/`) — *sub-treatment baru, schema belum dibuat*
+    - [ ] Perfect Nose Job (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/perfect-nose-job/`) — *sub-treatment baru, schema belum dibuat*
 - [x] **Infus Whitening Hub** (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/`)
     - [x] Infus Vitamin C Immune Glow (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow-injection/`) — Rp 1.099.000
+    - [ ] Premium Glow Infusion (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/`) — *sub-treatment baru, schema belum dibuat*
 - [x] **Filler Treatment Hub** (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/`)
     - [x] Filler Dagu (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/filler-dagu/`) — Rp 5.499.000
     - [x] Korean Filler (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/korean-filler/`) — Rp 2.999.000
+    - [ ] Premium Filler (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/premium-filler/`) — *sub-treatment baru, schema belum dibuat*
 - [x] **Skin Booster Hub** (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/`)
     - [x] Aquashine Treatment (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/aquashine-treatment/`) — Rp 799.000
     - [x] Skin Booster DNA Salmon (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/dna-glow/`) — Rp 1.749.000
@@ -114,6 +140,7 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [x] **Skin Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/`)
 - [x] **HIFU Treatment Hub** (`https://sozoskinclinic.com/hifu-treatment/`)
     - [x] Liftera HIFU (`https://sozoskinclinic.com/hifu-treatment/liftera-hifu/`) — Rp 699.000
+    - [ ] Signature HIFU (`https://sozoskinclinic.com/hifu-treatment/signature-hifu/`) — *sub-treatment baru, schema belum dibuat*
 - [x] **Facial Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/facial-treatment/`)
     - [x] Signature Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/signature-facial/`)
     - [x] Mini Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/mini-facial-treatment/`)
@@ -205,6 +232,16 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [ ] Bintaro (`https://sozoskinclinic.com/lokasi/tangerang-selatan/bintaro/`)
     - [ ] BSD (`https://sozoskinclinic.com/lokasi/tangerang-selatan/bsd/`)
     - [ ] Bali (`https://sozoskinclinic.com/lokasi/bali/`) — *cabang di luar Jawa*
+
+### 🩺 9. Halaman Tim Dokter (List & Detail Profil)
+*Catatan: pola schema dokter berbeda dari treatment. List page pakai `CollectionPage` + `ItemList`, detail page pakai `ProfilePage` + `IndividualPhysician` (array `["Person", "IndividualPhysician"]`). Lihat AGENTS.md §6 dan §5.*
+
+- [x] **List Tim Dokter** (`https://sozoskinclinic.com/tim-dokter-sozo-skin/`) — *CollectionPage + ItemList (5 Person), terpasang WPCode, valid 0 error*
+- [ ] Detail dr. Elisabeth Ryan (`https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/`) — *schema siap (`dokter/dr-eli/schema-markup.html`), WPCode belum dipasang; STR penuh masuk `hasCredential`, organisasi masuk `memberOf`*
+- [ ] Detail dr. Gesha Kautzar Putri (`https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/`) — *schema siap (`dokter/dr-gesha/schema-markup.html`), WPCode belum dipasang; STR penuh masuk `hasCredential`, organisasi masuk `memberOf`*
+- [ ] Detail dr. Audi Sugiharto (`https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/`) — *schema siap (`dokter/dr-audi/schema-markup.html`), WPCode belum dipasang; STR penuh masuk `hasCredential`, 3 pendidikan masuk `alumniOf`*
+- [ ] Detail dr. RR. Putri Rizkya (`https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-rr-putri-rizkya/`) — *schema siap (`dokter/dr-putri/schema-markup.html`), WPCode belum dipasang; STR tidak masuk schema (disensor di UI)*
+- [ ] Detail dr. Syerli Rahmadeni (`https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/`) — *schema siap (`dokter/dr-sherly/schema-markup.html`), WPCode belum dipasang; STR tampil penuh di UI, masuk `hasCredential` + recognizedBy KKI*
 
 ---
 

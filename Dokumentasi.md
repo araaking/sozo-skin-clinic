@@ -4,9 +4,9 @@ Sozo Skin Clinic — sozoskinclinic.com
 
 *Migrasi dari Yoast SEO ke Custom Schema (JSON-LD)*
 
-Versi 1.6  •  13 Juli 2026
+Versi 1.8  •  5 Agustus 2026
 
-**Status: 72 dari 137 halaman memiliki custom schema + 1 README sync (DPL, alias URL Brow Grow, cabang Tangerang/Palembang/Pekanbaru/Manado/Batam, suplemen-pelangsing)**
+**Status: 75 dari 140 halaman memiliki custom schema + 2 schema siap WPCode (dr. Putri, editorial board review) + 1 README sync (URL baru Zo-Tox sub, Threadlift baru, Filler Premium, Infus Premium, Signature HIFU, Blog, Tim Dokter)**
 
 # **1\. Ringkasan Proyek**
 
@@ -87,6 +87,9 @@ Catatan: saat cek halaman treatment di validator/RRT, Organization akan tetap mu
 | :---- | :---- | :---- |
 | Homepage | Organization \+ WebSite \+ WebPage \+ BreadcrumbList \+ FAQPage | Custom (WPCode) |
 | Halaman Treatment | MedicalWebPage \+ BreadcrumbList \+ Service \+ FAQPage | Custom (WPCode) |
+| Halaman List Tim Dokter | CollectionPage \+ BreadcrumbList \+ ItemList (Person ringan) | Custom (WPCode) |
+| Halaman Detail Dokter | ProfilePage \+ BreadcrumbList \+ IndividualPhysician (array \["Person", "IndividualPhysician"\]) | Custom (WPCode) |
+| Editorial Board | AboutPage \+ reviewedBy \+ BreadcrumbList | Custom (WPCode) |
 | Blog / Artikel | Article / BlogPosting (rekomendasi dynamic) | Belum dikerjakan |
 | Halaman Cabang | LocalBusiness / MedicalClinic per lokasi | Belum dikerjakan |
 
@@ -883,7 +886,147 @@ URL baru di atas tidak punya schema JSON-LD sendiri di repo (belum ada folder). 
 
 URL `https://sozoskinclinic.com/hair-treatment/treatment-alis-brow-grow/` kemungkinan adalah alias/redirect dari `brow-grow/` (canonical). Sebelum generate schema, verifikasi dulu apakah URL ini return 200 atau 301/302 ke canonical. Jika 301, cukup satu schema di URL canonical — tidak perlu duplikasi. Schema.org duplicate content pada URL berbeda meski dengan entity sama tetap memicu warning.
 
-Pemeriksaan cepat via curl/HEAD: cek HTTP status + Location header. Dokumentasikan hasilnya sebelum commit keputusan schema.
+## **5.44 List Tim Dokter — SELESAI (terpasang WPCode)**
+
+URL: https://sozoskinclinic.com/tim-dokter-sozo-skin/
+
+File: `dokter/schema-markup-dokter.html` (schema) + `dokter/index.html` (layout kartu 5 dokter).
+
+Struktur `@graph` (4 node):
+
+* **CollectionPage** — `#webpage`, pointer `isPartOf` → `#website`, `about` → `#organization`, `breadcrumb` → `#breadcrumb`, `mainEntity` → `#itemlist`.
+
+* **BreadcrumbList** — Home › Tim Dokter Sozo Skin Clinic (2 level, URL flat).
+
+* **ItemList** — 5 ListItem sesuai urutan kartu (Elisabeth, Gesha, Audi, Putri, Syerli). Tiap `item` = `Person` ringan: `name`, `jobTitle`, `url`, `image`, `worksFor` → `#organization`. STR sengaja TIDAK masuk `identifier` karena nomor dr. Putri disensor di UI.
+
+* **WebSite** — pointer standar.
+
+**Catatan penting — pilihan tipe: `CollectionPage` bukan `WebPage`.** Halaman index profil dokter = kumpulan item → subtype `CollectionPage` tepat. Validator schema.org: 0 error, 0 warning. Snippet WPCode kondisi: **Page URL contains `tim-dokter-sozo-skin`**.
+
+## **5.45 Detail Dokter (dr. Putri) — SCHEMA SIAP, WPCODE BELUM**
+
+URL: https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-rr-putri-rizkya/
+
+File: `dokter/dr-putri/schema-markup.html` (schema) + `dokter/dr-putri/dr-putri.html` (layout profil).
+
+Struktur `@graph` (4 node):
+
+* **ProfilePage** — `#webpage`, pointer lengkap, `mainEntity` → `#person`.
+
+* **BreadcrumbList** — Home › Tim Dokter › dr. RR. Putri Rizkya (3 level).
+
+* **IndividualPhysician** — `"@type": ["Person", "IndividualPhysician"]` (array WAJIB: `IndividualPhysician` hanya turunan `Organization`, properti `jobTitle`/`worksFor`/`alumniOf`/`honorificPrefix` baru valid dengan `Person` di array). Berisi `honorificPrefix`, `jobTitle`, `url`, `image`, `description`, `worksFor` + `practicesAt` → `{"@type": "MedicalOrganization", "@id": "...#organization"}` (referensi wajib diberi `@type` eksplisit agar validator tidak membaca target sebagai `Thing` polos), `alumniOf`, `knowsAbout`, `award`.
+
+* **WebSite** — pointer standar.
+
+**Catatan penting:**
+
+* `@id` Person di halaman ini **identik** dengan referensi `#person` di halaman list (5.44) — entitas menyambung antar halaman.
+
+* `medicalSpecialty` TIDAK dipakai — expected type-nya enumerasi `MedicalSpecialty`, string bebas (mis. "Anti-Aging & Aesthetic Medicine") memicu warning validator. `knowsAbout` menutupi fungsinya.
+
+* STR tidak dimasukkan `hasCredential` — nomor dr. Putri disensor di UI; keputusan dihormati. Untuk dokter yang STR-nya tampil penuh (Syerli, Eli, Gesha, Audi), `hasCredential` + `EducationalOccupationalCredential` (credentialCategory: STR, + `recognizedBy` → KKI) bisa ditambahkan.
+
+* Validasi: JSON valid (parse OK), target 0 error 0 warning di validator.schema.org. Snippet WPCode kondisi: **Page URL contains `dr-rr-putri-rizkya`**.
+
+## **5.46 Editorial Board — SELESAI (schema lengkap)**
+
+URL: https://sozoskinclinic.com/editorial-board/
+
+File: `editorial-board.html`. Struktur `@graph` (3 node):
+
+* **AboutPage** — `#webpage`, pointer `isPartOf` → `#website`, `about` → `#organization`, `breadcrumb` → `#breadcrumb`, `reviewedBy` (3 Person: Audi, Gesha, Elisabeth).
+
+* **BreadcrumbList** — Home › Tim Editorial (2 level).
+
+* **WebSite** — pointer standar.
+
+Nama 3 dokter reviewer di section HTML juga di-link ke halaman profil masing-masing (`/tim-dokter-sozo-skin/[slug]/`) untuk distribusi authority internal. JSON valid.
+
+## **5.48 Detail Dokter (dr. Syerli) — SCHEMA SIAP, WPCODE BELUM**
+
+URL: https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/
+
+File: `dokter/dr-sherly/schema-markup.html` (schema) + `dokter/dr-sherly/sherly.html` (layout profil).
+
+Struktur `@graph` (4 node) — pola identik §5.45 (ProfilePage + BreadcrumbList 3 level + `["Person", "IndividualPhysician"]` + WebSite), dengan perbedaan penting:
+
+* **`hasCredential` diisi** — STR `1321100222169296` tampil penuh di UI, sehingga masuk `EducationalOccupationalCredential` (credentialCategory: "STR (Surat Tanda Registrasi)", `identifier`, `recognizedBy` → KKI). Ini sinyal E-E-A-T terkuat di profil dokter.
+* `knowsAbout` — Facial Aesthetics, Skin Aging Rejuvenation, Facial Contouring, Injectable, Energy-Based Device (dari profil).
+* `award` — 6 pelatihan/seminar dari konten halaman.
+
+Snippet WPCode kondisi: **Page URL contains `dr-syerli-rahmadeni`**.
+
+## **5.49 Detail Dokter (dr. Elisabeth Ryan) — SCHEMA SIAP, WPCODE BELUM**
+
+URL: https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/
+
+File: `dokter/dr-eli/schema-markup.html` (schema) + `dokter/dr-eli/index.html` (layout profil).
+
+Struktur `@graph` (4 node) — pola identik §5.48 (ProfilePage + BreadcrumbList 3 level + `["Person", "IndividualPhysician"]` + WebSite). Keunikan vs profil lain:
+
+* **`memberOf` diisi** — 6 organisasi (PERDOSKI, KSDLI, KSDNI, IDS, ISD, IDI Jakarta Pusat) masuk `Person.memberOf`. Ini sinyal E-E-A-T keanggotaan profesi, belum dipakai di profil lain.
+* `alumniOf` 4 entri — UKRIDA (sarjana + profesi), RITM Muntinlupa (residensi), Medical University of Warsaw (fellowship trikoskopi), UI (program adaptasi).
+* `hasCredential` — STR `STRUI00001652595312` tampil penuh di UI.
+* `award` — 6 dari 9 pencapaian & publikasi terpilih (publikasi jurnal + beasiswa World Congress of Dermatology). 50+ pelatihan/seminar tidak dimasukkan ke schema (noise).
+* `knowsAbout` mencakup Trichoscopy + Hair and Scalp Health — pembeda positioning vs dokter lain.
+
+Snippet WPCode kondisi: **Page URL contains `elisabeth-ryan`**.
+
+## **5.50 Detail Dokter (dr. Audi Sugiharto) — SCHEMA SIAP, WPCODE BELUM**
+
+URL: https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/
+
+File: `dokter/dr-audi/schema-markup.html` (schema) + `dokter/dr-audi/index.html` (layout profil).
+
+Struktur `@graph` (4 node) — pola identik §5.48. Keunikan:
+
+* **Satu-satunya dokter bersertifikat Sp.D.V.E** — `honorificSuffix: "Sp.D.V.E"` dipakai (profil lain pakai Sp.DVE / tanpa).
+* `alumniOf` 3 entri — UKRIDA (sarjana & profesi 2005–2011), RITM Manila (residensi 2016–2019), Universitas Andalas / RSUP Dr. M. Djamil (program adaptasi 2022–2023).
+* `hasCredential` — STR `VP00000073538568` tampil penuh di UI.
+* `award` — 3: peringkat 8 Ujian Board Nasional Kolegium DV Indonesia (2023), Basic Surgical Skill Workshop (2022), COSMIC Hands-On Workshop (2022).
+* `knowsAbout` mencakup Skin Surgery dan Cosmetic Surgery — pembeda positioning (bedah kulit).
+
+Snippet WPCode kondisi: **Page URL contains `audi-sugiharto`**.
+
+## **5.51 Detail Dokter (dr. Gesha Kautzar Putri) — SCHEMA SIAP, WPCODE BELUM**
+
+URL: https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/
+
+File: `dokter/dr-gesha/schema-markup.html` (schema) + `dokter/dr-gesha/index.html` (layout profil).
+
+Struktur `@graph` (4 node) — pola identik §5.48. Keunikan:
+
+* **Satu-satunya dokter non-spesialis kulit** — `jobTitle: "Medical Aesthetic Physician"` (identik dengan halaman list, bukan Dermatologist).
+* `honorificSuffix: "M.Biomed (AAM)"` — gelar magister + sertifikasi American Academy of Aesthetic Medicine.
+* `alumniOf` 2 entri — Universitas Tarumanagara (S1 Kedokteran 2013), Universitas Udayana (S2 Anti Aging Medicine 2018).
+* `memberOf` 3 organisasi — PERDAWERI DKI Jakarta (Bendahara), IKLASI, IDI Jakarta Selatan.
+* `hasCredential` — STR `KT00000123255767` tampil penuh di UI.
+* `award` — 5 pelatihan & seminar (AMUSE 2026, IMCAS Bangkok 2025, IBSA DERMA Italia 2025, ISWAM 2025, Pharmaresearch Korea 2025).
+* `knowsAbout` paling luas (8 item) — termasuk Slimming Consultation, pembeda positioning (prosedur non-kulit).
+
+Snippet WPCode kondisi: **Page URL contains `gesha-kautzar-putri`**.
+
+## **5.47 URL Baru Audit 5 Agustus 2026 — README SYNC**
+
+Daftar URL terbaru dari tim vs isi README.md. Hasilnya, 10 URL baru ditambahkan ke README + anomali ejaan dicatat:
+
+* **Baru ditambahkan ke README.md** (semua status BELUM, schema belum dibuat):
+  - `injectable-treatment/zo-tox-treatment/zo-tox-10u/`, `zo-tox-premium/` (sub Zo-Tox)
+  - `injectable-treatment/threadlift-treatment/facelift/`, `perfect-facelift/`, `perfect-nose-job/`
+  - `injectable-treatment/filler-treatment/premium-filler/`
+  - `injectable-treatment/infus-whitening-treatment/premium-glow-infusion/`
+  - `hifu-treatment/signature-hifu/`
+  - `blog/` (masuk checklist README §1)
+  - `tim-dokter-sozo-skin/` + 5 detail dokter (section baru README §9)
+* **Anomali ejaan di daftar URL user** (dokumentasi memakai versi benar):
+  - `ultrascrupt-treatment/` → benar `ultrasculpt-treatment/` (sudah dikoreksi README §4 sebelumnya)
+  - `salmon-dna-hair/` → benar `salmon-dna-hair-treatment/` (konsisten repo)
+  - `subsicion-treatment/` → benar `subcision-treatment/` (typo dobel 's')
+  - `meso-bloataway/` (dengan 'a') — URL live benar; folder lokal `meso-bloatway` (tanpa 'a'), penulisan konsisten ke URL live
+  - `hifu-treatment/liftera-hifu/` — URL live benar; folder lokal `lifetra-hifu` (typo), penulisan konsisten ke URL live
+* **Catatan — daftar user menghilangkan canonical `brow-grow/`** (`hair-treatment/brow-grow/`). URL itu tetap canonical untuk Treatment Alis (lihat §5.43); alias `treatment-alis-brow-grow/` tetap tercatat di README.
 
 # **6\. Cara Memasang Schema (WPCode)**
 
@@ -976,10 +1119,17 @@ Sebelum menandai sebuah halaman "selesai", pastikan:
 | Pore Detox Treatment | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.38) |
 | Collagen Mask Treatment | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.39) |
 | Rejuran Skin Booster | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.40) |
+| **List Tim Dokter** | 1 | **SELESAI** — terpasang WPCode, valid 0 error (lihat §5.44) |
+| **Detail Dokter (dr. Putri)** | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.45) |
+| **Detail Dokter (dr. Syerli)** | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.48) — hasCredential STR penuh |
+| **Detail Dokter (Eli, Audi)** | 2 | SCHEMA SIAP, WPCODE BELUM (lihat §5.49–§5.50) |
+| **Detail Dokter (Gesha)** | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.51) |
+| **Editorial Board** | 1 | **SELESAI** — AboutPage + reviewedBy + BreadcrumbList (lihat §5.46) |
 | DPL Treatment | 1 | Belum ada schema — lihat §5.42 |
 | Treatment Alis Brow Grow (alias URL) | 1 | Verifikasi canonical dulu — lihat §5.43 |
 | Sublemen Pelangsing (landing page) | 1 | Belum ada schema |
 | Halaman cabang baru: Tangerang (3 sub), Palembang, Pekanbaru, Manado, Batam | 7 | Belum ada schema |
+| Zo-Tox 10U, Zo-Tox Premium, Facelift, Perfect Facelift, Perfect Nose Job, Premium Filler, Premium Glow Infusion, Signature HIFU | 8 | Belum ada schema — URL baru §5.47 |
 | Halaman treatment lain (LP) | \~64 | Belum — pakai template Hair Removal |
 | Benerin nama breadcrumb "SEO –" | 114 halaman | Belum (jika masih relevan setelah custom) |
 | Schema blog / Article | — | Belum — pertimbangkan dynamic PHP |
@@ -999,6 +1149,57 @@ Gunakan schema Hair Removal sebagai template. Yang perlu diganti per halaman:
 * Daftar sub-treatment \+ harga di hasOfferCatalog.
 
 * Daftar FAQ (dari konten halaman tsb).
+
+---
+
+# **9. Ekstensi Dokumentasi (Update 13 Juli 2026)**
+
+Sejak 13 Juli 2026, scope dokumentasi meluas dari schema markup saja menjadi dokumentasi UI & SEO lengkap. Folder `docs/` adalah ekstensi modular dari tiga dokumen utama (README.md, AGENTS.md, Dokumentasi.md).
+
+## **9.1 docs/adr/ — Architecture Decision Records**
+
+Berisi keputusan teknis beserta reasoning (kenapa, bukan cuma apa). Setiap keputusan yang mengubah aturan main layak jadi ADR. Format mengikuti Michael Nygard (Context, Decision, Consequences, Alternatif yang dipertimbangkan).
+
+7 ADR saat ini:
+
+| # | Judul | Topik |
+| :-- | :-- | :-- |
+| 0001 | Disable Yoast schema output | Schema disable global via PHP filter |
+| 0002 | Service not Product | Schema type untuk halaman treatment |
+| 0003 | Homepage as knowledge hub | Arsitektur `Organization` + `WebSite` |
+| 0004 | PriceSpecification wrapper | Default pattern `Service.offers` |
+| 0005 | Keep FAQ after rich result removal | FAQPage tetap dipasang |
+| 0006 | Skip Yoast breadcrumb | Breadcrumb sepenuhnya custom |
+| 0007 | Two-file convention | `index.html` + `schema-markup.html` per treatment |
+
+Kandidat ADR berikutnya (perlu konfirmasi): unifikasi warna tombol WhatsApp (`#1A237E` production vs `#1A2080` `--sozo-blue`); accordion SKU-reference.
+
+## **9.2 docs/components/ — UI Component Specs**
+
+Standar atom/molekul UI yang dipakai di LP treatment. 5 specs saat ini:
+
+- `button.md` — Primary (pill), Secondary, Ghost, Link, Icon-only. Brand tokens dari navbar: `--sozo-blue: #1A2080`, Inter font, pill 50px untuk primary.
+- `table.md` — Pricing, Comparison, Info row. Cell padding 14×20, container 12px rounded.
+- `card.md` — Doctor, Testimoni, Lokasi, Treatment card. Hover lift -2px + shadow.
+- `accordion.md` — Single-open default untuk FAQ. SKU reference pending.
+- `whatsapp-button.md` — Nav (pill, dari production navbar) + Floating (circle, rekomendasi).
+
+**Prinsip utama:** Standarisasi di level atom/molekul, bukan di level section/organisme. Hero, info-row, dan section-level lain **dibiarkan bervariasi** antar LP — yang distandardisasi adalah komponen penyusunnya (button, image, badge, dll). Komposisi section bebas, visual consistency terjaga di level atom.
+
+## **9.3 Audience dan Use Case**
+
+- **Developer yang maintain LP existing** — lihat `docs/components/` untuk standar UI, AGENTS.md untuk schema rules, README untuk status per-LP.
+- **Developer/AI yang generate LP/schema baru** — lihat README §2 SOP + AGENTS.md + ADR yang relevan dengan tipe halaman.
+- **Designer** — lihat `docs/components/` untuk standar komponen, color/font tokens ada di button.md dan component specs lainnya.
+
+## **9.4 Item Lintas yang Sedang Berjalan**
+
+- Unifikasi warna tombol WhatsApp (`#1A237E` production → `var(--sozo-blue)`).
+- Accordion spec refinement (perlu SKU page code sebagai referensi).
+- Per-LP manifest format (perlu pilot 1-2 LP beneran untuk validasi).
+- Brand tokens + font rules didokumentasikan di `docs/design-system/colors-typography.md` (v1.1, 6 Agustus 2026) — diselaraskan dengan Elementor global (Primary Font Inter, heading H1–H6 Poppins).
+
+Update perubahan di tiga dokumen utama tracked via version bump: README 1.7 → 1.8, Dokumentasi 1.6 → 1.7, AGENTS.md (no version sebelumnya) → section 1.7 baru ditambahkan.
 
 ## **Pertimbangan: Custom Dynamic vs Manual**
 

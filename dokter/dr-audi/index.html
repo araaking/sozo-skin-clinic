@@ -1,0 +1,260 @@
+<!-- ==========================================================
+    CSS PROFILE DETAIL DOKTER - MODERN MINIMALIS PREMIUM
+   ========================================================== -->
+<style>
+    /* --- SYSTEM RESET & CONTAINER --- */
+    .sozo-doc-profile-section {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+        background-color: #ffffff !important;
+        color: #1e293b !important;
+        padding: 80px 24px !important;
+    }
+
+    .sozo-doc-profile-section * {
+        box-sizing: border-box !important;
+    }
+
+    .sozo-profile-container {
+        max-width: 1100px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: 380px 1fr !important; /* Proporsi kiri foto, kanan text */
+        gap: 64px !important;
+        align-items: start !important;
+    }
+
+    /* --- SIDEBAR LEFT: FOTO & KEY INFO --- */
+    .sozo-profile-sidebar {
+        position: sticky !important;
+        top: 40px !important;
+    }
+
+    .sozo-profile-img-box {
+        width: 100% !important;
+        padding-top: 130% !important; /* Aspek rasio potret mewah */
+        position: relative !important;
+        background-color: #f8fafc !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        margin-bottom: 24px !important;
+    }
+
+    .sozo-profile-img-box img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+    }
+
+    .sozo-profile-str-box {
+        background-color: #f8fafc !important;
+        border-left: 3px solid #1A2080 !important;
+        padding: 16px 20px !important;
+        border-radius: 0 8px 8px 0 !important;
+    }
+
+    .sozo-profile-str-box span {
+        display: block !important;
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        color: #64748b !important;
+        margin-bottom: 4px !important;
+        font-weight: 600 !important;
+    }
+
+    .sozo-profile-str-box strong {
+        font-size: 14px !important;
+        color: #0f172a !important;
+        font-family: monospace !important; /* Gaya nomor seri profesional */
+        letter-spacing: 0.5px !important;
+    }
+
+    /* --- CONTENT RIGHT: DATA MEDIS --- */
+    .sozo-profile-content h1 {
+        font-size: 36px !important;
+        font-weight: 600 !important;
+        color: #0f172a !important;
+        margin: 0 0 6px 0 !important;
+        letter-spacing: -1px !important;
+    }
+
+    .sozo-profile-subtitle {
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        color: #1A2080 !important;
+        margin-bottom: 32px !important;
+        display: block !important;
+    }
+
+    /* Kategori Block (Pendidikan / Seminar / Pengalaman) */
+    .sozo-profile-block {
+        margin-bottom: 48px !important;
+    }
+
+    .sozo-profile-block h2 {
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        color: #0f172a !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        padding-bottom: 12px !important;
+        margin: 0 0 24px 0 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Timeline / List Styling */
+    .sozo-profile-timeline {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .sozo-profile-timeline li {
+        position: relative !important;
+        padding-left: 28px !important;
+        margin-bottom: 20px !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        color: #334155 !important;
+    }
+
+    /* Titik Akses Timeline Minimalis */
+    .sozo-profile-timeline li::before {
+        content: "" !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 6px !important;
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 50% !important;
+        background-color: #cbd5e1 !important;
+    }
+
+    .sozo-profile-timeline.edu-type li::before {
+        background-color: #1A2080 !important; /* Warna aksen untuk edukasi */
+    }
+
+    .sozo-profile-timeline.exp-type li::before {
+        background-color: #1A2080 !important; /* Warna aksen untuk pengalaman kerja */
+    }
+
+    .sozo-profile-timeline li strong {
+        color: #0f172a !important;
+        font-weight: 600 !important;
+        display: inline-block !important;
+        margin-right: 8px !important;
+    }
+
+    .sozo-profile-timeline li .sozo-exp-desc {
+        display: block !important;
+        margin-top: 4px !important;
+        color: #475569 !important;
+        font-size: 13px !important;
+    }
+
+    /* --- RESPONSIVE LAYOUT --- */
+    @media (max-width: 991px) {
+        .sozo-profile-container {
+            grid-template-columns: 1fr !important; /* Menjadi satu kolom penuh di tablet & HP */
+            gap: 48px !important;
+        }
+        .sozo-profile-sidebar {
+            position: relative !important;
+            top: 0 !important;
+            max-width: 380px !important;
+            margin: 0 auto !important;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .sozo-doc-profile-section {
+            padding: 48px 16px !important;
+        }
+        .sozo-profile-content h1 {
+            font-size: 28px !important;
+        }
+    }
+</style>
+
+<!-- ==========================================================
+    STRUKTUR HTML - DETAIL PROFIL DOKTER MINIMALIS
+   ========================================================== -->
+<div class="sozo-doc-profile-section">
+    <div class="sozo-profile-container">
+        
+        <!-- KOLOM KIRI: VISUAL & LEGALITAS -->
+        <div class="sozo-profile-sidebar">
+            <div class="sozo-profile-img-box">
+                <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Audi-Sugiharto-Sp.D.V.E.webp" alt="dr. Audi Sugiharto, Sp.D.V.E">
+            </div>
+            <div class="sozo-profile-str-box">
+                <span>Surat Tanda Registrasi (STR)</span>
+                <strong>VP00000073538568 </strong>
+            </div>
+        </div>
+
+        <!-- KOLOM KANAN: RIWAYAT PROFESIONAL -->
+        <div class="sozo-profile-content">
+            
+            <!-- Nama & Jabatan -->
+            <h1>dr. Audi Sugiharto, Sp.D.V.E</h1>
+            <span class="sozo-profile-subtitle">Dermatologi, Venereologi, & Estetika</span>
+
+            <!-- BLOK 0: PROFIL SINGKAT -->
+            <div class="sozo-profile-block">
+                <h2>Profil</h2>
+                <p style="font-size:14px; line-height:1.7; color:#334155; margin:0;">
+                    Berpengalaman di bidang dermatologi, venereologi, dan estetika medis, beliau mengedepankan pendekatan berbasis bukti ilmiah (evidence-based medicine) dalam setiap penanganan pasien. Dikenal sebagai dokter yang teliti, profesional, dan penuh empati, beliau selalu berupaya memberikan solusi yang sesuai dengan kebutuhan setiap pasien.
+                </p>
+            </div>
+
+            <!-- BLOK 1: RIWAYAT PENDIDIKAN -->
+            <div class="sozo-profile-block">
+                <h2>Riwayat Pendidikan</h2>
+                <ul class="sozo-profile-timeline edu-type">
+                    <li><strong>2005 – 2011:</strong> Pendidikan Sarjana dan Profesi Kedokteran, Universitas Kristen Krida Wacana (UKRIDA), Jakarta, Indonesia</li>
+                    <li><strong>2016 – 2019:</strong> Pelatihan Residensi Dermatologi dan Venereologi, Research Institute for Tropical Medicine, Manila, Filipina</li>
+                    <li><strong>2022 – 2023:</strong> Program Adaptasi Spesialis Dermatologi dan Venereologi, Universitas Andalas / RSUP Dr. M. Djamil, Padang, Indonesia</li>
+                </ul>
+            </div>
+
+            <!-- BLOK 2: PENGALAMAN PROFESIONAL -->
+            <div class="sozo-profile-block">
+                <h2>Pengalaman Profesional</h2>
+                <ul class="sozo-profile-timeline exp-type">
+                    <li><strong>Maret 2024 – Sekarang:</strong> Dokter Spesialis Kulit dan Dokter Estetika, SOZO Skin Clinic, Jakarta Barat
+                        <span class="sozo-exp-desc">Memberikan konsultasi dan tindakan dermatologi serta estetika di klinik.</span>
+                    </li>
+                    <li><strong>Oktober 2024 – Sekarang:</strong> Dokter Spesialis Kulit dan Kelamin, RS Cinta Kasih Tzu Chi, Jakarta Barat
+                        <span class="sozo-exp-desc">Memberikan layanan medis dermatologi, venereologi, dan estetika di rumah sakit.</span>
+                    </li>
+                    <li><strong>November 2024 – Sekarang:</strong> Dokter Spesialis Kulit dan Dokter Estetika, Erha Ultimate, Jakarta Utara
+                        <span class="sozo-exp-desc">Memberikan konsultasi dan tindakan dermatologi serta estetika di klinik.</span>
+                    </li>
+                    <li><strong>Oktober 2023 – September 2024:</strong> Dokter Spesialis Kulit dan Kelamin, Firdaus Hospital, Jakarta Utara
+                        <span class="sozo-exp-desc">Memberikan konsultasi dermatologi dan venereologi di rumah sakit.</span>
+                    </li>
+                    <li><strong>Januari 2013 – Januari 2014:</strong> Dokter Umum, RSUD DR. Agoesdjam, Ketapang, Kalimantan Barat
+                        <span class="sozo-exp-desc">Bertugas di Instalasi Gawat Darurat, ruang rawat inap, dan ICU. Memberikan pelayanan kesehatan untuk pasien rawat inap dan rawat jalan, serta melakukan rujukan konsultasi dengan dokter spesialis terkait.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- BLOK 3: PELATIHAN, SEMINAR & PENGHARGAAN -->
+            <div class="sozo-profile-block">
+                <h2>Pelatihan, Seminar & Penghargaan</h2>
+                <ul class="sozo-profile-timeline">
+                    <li>Meraih Peringkat 8 dalam Ujian Board Nasional Kolegium Dermatologi dan Venereologi Indonesia, Juni 2023</li>
+                    <li>Mengikuti Basic Surgical Skill Workshop, Departemen Dermatologi dan Venereologi, Universitas Andalas, September 2022</li>
+                    <li>Mengikuti 3rd Cosmetic Dermatology Inquiring Conference (COSMIC) Hands-On Workshop, Palembang, Juni 2022</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,1171 @@
+<style>
+  /* --- GLOBAL & ISOLATION FOR ELEMENTOR --- */
+  .sozo-sku-prp-hair-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+
+  .sozo-sku-prp-hair-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- BREADCRUMB --- */
+  .sozo-sku-prp-hair-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- HERO SECTION --- */
+  .sozo-sku-prp-hair-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-hero-text {
+    flex: 1.2; 
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+
+  /* Badges Section */
+  .sozo-sku-prp-hair-wrapper .sozo-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-badge {
+    background-color: #EEF2FF;
+    color: #1A2080;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 50px;
+    border: 1px solid #C7D2FE;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .sozo-sku-prp-hair-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 25px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-prp-hair-wrapper .sozo-hero-image {
+    flex: 0.8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 360px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Info Box (Durasi & Harga) */
+  .sozo-sku-prp-hair-wrapper .sozo-info-row {
+    display: flex;
+    gap: 30px; 
+    margin-bottom: 30px;
+    padding: 20px 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-info-col {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+    flex-shrink: 0;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-info-label {
+    font-size: 12px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-info-value {
+    font-size: 18px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Primary Button */
+  .sozo-sku-prp-hair-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- CTA BANNER --- */
+  .sozo-sku-prp-hair-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+    margin-bottom: 50px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 45px 30px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(22px, 3vw, 30px) !important;
+    color: #ffffff !important;
+    margin: 0 0 12px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 25px auto !important;
+    max-width: 650px;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 32px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+  }
+
+  /* --- COMMON SECTION CARD --- */
+  .sozo-sku-prp-hair-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 0 20px 50px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-section-title {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+    text-align: center;
+  }
+
+  /* --- TESTIMONIAL SLIDER WITH BEFORE-AFTER IMAGES --- */
+  .sozo-sku-prp-hair-wrapper .sozo-testimonial-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testimonial-slider::-webkit-scrollbar {
+    height: 6px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testimonial-slider::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testi-card {
+    flex: 0 0 340px;
+    scroll-snap-align: start;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testi-img-holder {
+    width: 100%;
+    height: 220px;
+    background-color: #e2e8f0;
+    overflow: hidden;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testi-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testi-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testi-stars {
+    color: #f59e0b;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testi-text {
+    font-size: 14px !important;
+    color: #475569 !important;
+    font-style: italic;
+    margin-bottom: 16px !important;
+    line-height: 1.5 !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testi-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testi-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #1A2080;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testi-name {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin: 0 !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-testi-status {
+    font-size: 12px !important;
+    color: #64748b !important;
+    margin: 0 !important;
+  }
+
+  /* --- SECTION PAKET PROGRAM HAIR RESTORATION --- */
+  .sozo-sku-prp-hair-wrapper .sozo-package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-package-card {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-package-card.popular {
+    border-color: #1A2080;
+    box-shadow: 0 10px 30px rgba(26, 32, 128, 0.12);
+    transform: scale(1.02);
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-package-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #1A2080, #2e38b5);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-package-title {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    font-weight: 800 !important;
+    margin: 10px 0 8px 0 !important;
+    text-align: center;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-package-price {
+    font-size: 26px !important;
+    color: #1e293b !important;
+    font-weight: 800 !important;
+    text-align: center;
+    margin-bottom: 20px !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-package-features {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 25px 0 !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-package-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 10px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-package-features svg {
+    color: #10b981;
+    flex-shrink: 0;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-btn-package {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #1A2080;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    border: 2px solid #1A2080;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-btn-package:hover {
+    background-color: #ffffff;
+    color: #1A2080 !important;
+  }
+
+  /* --- RECOMMENDED OTHER TREATMENTS --- */
+  .sozo-sku-prp-hair-wrapper .sozo-grid-recommendations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-rec-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-rec-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    border-color: #cbd5e1;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-rec-title {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    font-weight: 700 !important;
+    margin: 0 0 10px 0 !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-rec-desc {
+    font-size: 14px !important;
+    color: #64748b !important;
+    margin-bottom: 20px !important;
+    line-height: 1.5 !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-rec-link {
+    color: #1A2080 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-rec-link:hover {
+    color: #2e38b5 !important;
+  }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-prp-hair-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 4px 0 !important;
+    white-space: normal !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-question:hover {
+    color: #1A2080 !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-question > span {
+    flex: 1;
+    min-width: 0;
+    white-space: normal !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-question h3 {
+    display: block;
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-question svg {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #1A2080;
+    transition: transform 0.3s ease;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 10px 0 12px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 600;
+  }
+  .sozo-sku-prp-hair-wrapper .sozo-faq-answer a:hover {
+    color: #2e38b5 !important;
+  }
+
+  /* --- RESPONSIVE MOBILE --- */
+  @media (max-width: 992px) {
+    .sozo-sku-prp-hair-wrapper .sozo-package-grid,
+    .sozo-sku-prp-hair-wrapper .sozo-grid-recommendations {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 25px;
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-package-card.popular {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-prp-hair-wrapper .sozo-treatment-hero {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-hero-text h1 { 
+      font-size: 28px !important; 
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-hero-image img {
+      height: 260px; 
+      max-width: 100%;
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 16px; 
+      padding: 16px;
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-btn { 
+      max-width: 100%; 
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-cta-banner { 
+      padding: 35px 20px; 
+      border-radius: 20px; 
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-btn-secondary { 
+      width: 100%; 
+      max-width: 320px; 
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-section-card { 
+      padding: 24px; 
+      border-radius: 20px; 
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-testi-card {
+      flex: 0 0 290px;
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-faq-question {
+      gap: 10px;
+      padding: 8px 0 !important;
+    }
+    .sozo-sku-prp-hair-wrapper .sozo-faq-question h3 {
+      font-size: 15px !important;
+      line-height: 1.5 !important;
+    }
+  }
+</style>
+
+<div class="sozo-sku-prp-hair-wrapper" id="sozo-prp-hair-widget">
+  
+  <!-- BREADCRUMB -->
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li><a href="https://sozoskinclinic.com/"><span>Home</span></a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/hair-treatment/"><span>Hair Treatment</span></a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li aria-current="page"><span style="color: #1A2080; font-weight: 600;">PRP Hair Treatment</span></li>
+    </ol>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>PRP Hair Treatment</h1>
+      
+      <!-- BADGES / TAGS -->
+      <div class="sozo-badges-container">
+        <span class="sozo-badge">Rambut Rontok</span>
+        <span class="sozo-badge">Rambut Menipis</span>
+        <span class="sozo-badge">Kebotakan Dini</span>
+        <span class="sozo-badge">Rambut Susah Tumbuh</span>
+      </div>
+
+      <p>
+        PRP Hair Treatment atau PRP Rambut merupakan terapi regeneratif menggunakan plasma darah kaya trombosit (Platelet-Rich Plasma) dari tubuh sendiri untuk merangsang folikel rambut, memperkuat akar, dan menutrisi kulit kepala secara alami. Efektif untuk mengatasi rambut rontok, penipisan rambut, hingga kebotakan pola (androgenetic alopecia). Ditangani langsung oleh dokter, minim risiko alergi karena plasma berasal dari darah pasien sendiri. Tersedia untuk pria dan wanita.
+      </p>
+
+      <!-- INFO ROW -->
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi Per Sesi</span>
+            <span class="sozo-info-value">45 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 1.099.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20PRP%20Hair%20di%20Sozo%20%5Bsrc%3AORG-PRP-Hair%5D" class="sozo-btn" target="_blank" rel="noopener">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-PRP-Hair-scaled.webp" 
+           alt="PRP Hair Treatment SOZO Skin Clinic"
+           width="480"
+           height="360"
+           fetchpriority="high">
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Jangan Tunggu Rambut Makin Menipis</h2>
+      <p>Semakin cepat ditangani, semakin besar peluang folikel rambut pulih. Konsultasi & PRP Hair Treatment langsung bersama dokter ahli di SOZO Skin Clinic.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20PRP%20Hair%20di%20Sozo%20%5Bsrc%3AORG-PRP-Hair%5D" class="sozo-btn-secondary" target="_blank" rel="noopener">Konsultasi Dokter Sekarang</a>
+    </div>
+  </div>
+
+  <!-- SECTION PAKET PROGRAM HAIR RESTORATION -->
+  <section class="sozo-section-card">
+    <h2 class="sozo-section-title">Pilihan Paket Hemat Program Hair Restoration</h2>
+    <div class="sozo-package-grid">
+      
+      <!-- Paket 1 -->
+      <div class="sozo-package-card">
+        <div>
+          <h3 class="sozo-package-title">90 Days Hair Restoration Program</h3>
+          <div class="sozo-package-price">Rp 4.700.000</div>
+          <ul class="sozo-package-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 2x Hair Grow Booster</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 2x PRP Hair</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 4x Biolight Hair</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Free 3x Custom Hair Serum</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Free Hair Vitamin (3 Bulan)</li>
+          </ul>
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20PRP%20Hair%20di%20Sozo%20%5Bsrc%3AORG-PRP-Hair%5D" class="sozo-btn-package" target="_blank" rel="noopener">Ambil Paket Ini</a>
+      </div>
+
+      <!-- Paket 2 (Popular) -->
+      <div class="sozo-package-card popular">
+        <span class="sozo-package-badge">Paling Diminati</span>
+        <div>
+          <h3 class="sozo-package-title">90 Days PRP Hair Grow Program</h3>
+          <div class="sozo-package-price">Rp 5.200.000</div>
+          <ul class="sozo-package-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 4x PRP Hair Grow</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 4x Biolight Hair</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 3x Custom Hair Serum</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Hair Vitamin (3 Bulan)</li>
+          </ul>
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20PRP%20Hair%20di%20Sozo%20%5Bsrc%3AORG-PRP-Hair%5D" class="sozo-btn-package" target="_blank" rel="noopener">Ambil Paket Ini</a>
+      </div>
+
+      <!-- Paket 3 -->
+      <div class="sozo-package-card">
+        <div>
+          <h3 class="sozo-package-title">180 Days Hair Restoration Program</h3>
+          <div class="sozo-package-price">Rp 8.800.000</div>
+          <ul class="sozo-package-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 4x PRP Hair Grow</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 4x Hair Grow Booster</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 8x Biolight Hair</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Free 6x Custom Hair Serum</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Hair Vitamin (6 Bulan)</li>
+          </ul>
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20PRP%20Hair%20di%20Sozo%20%5Bsrc%3AORG-PRP-Hair%5D" class="sozo-btn-package" target="_blank" rel="noopener">Ambil Paket Ini</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION TESTIMONI (SLIDER DENGAN GAMBAR BEFORE-AFTER) -->
+  <section class="sozo-section-card">
+    <h2 class="sozo-section-title">Testimoni Hasil Nyata PRP Hair Treatment di Hair Clinic Sozo</h2>
+    <div class="sozo-testimonial-slider">
+      
+      <!-- Card 1 (Perempuan) -->
+      <div class="sozo-testi-card">
+        <div class="sozo-testi-img-holder">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Before-After-2-2.webp" alt="Before After PRP Hair Treatment Pasien Wanita SOZO Skin Clinic" loading="lazy">
+        </div>
+        <div class="sozo-testi-body">
+          <div class="sozo-testi-stars">★★★★★</div>
+          <p class="sozo-testi-text">"Sangat terharu dengan hasilnya! Rontok parah setelah sering cat rambut akhirnya teratasi. Setelah 3 kali PRP di SOZO, anak rambut tumbuh tebal lagi."</p>
+          <div class="sozo-testi-user">
+            <div class="sozo-testi-avatar">C</div>
+            <div>
+              <h4 class="sozo-testi-name">Clarissa Amanda</h4>
+              <p class="sozo-testi-status">Pasien PRP Hair</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 (Laki-Laki) -->
+      <div class="sozo-testi-card">
+        <div class="sozo-testi-img-holder">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-Mockup-Hair-Lokasi-Before-After-V3.webp" alt="Before After PRP Hair Treatment Kebotakan Pria SOZO Clinic" loading="lazy">
+        </div>
+        <div class="sozo-testi-body">
+          <div class="sozo-testi-stars">★★★★★</div>
+          <p class="sozo-testi-text">"Garis rambut depan tadinya makin mundur dan jarang. Setelah rutin PRP di SOZO, pitak dan penipisan di puncak kepala mulai tertutup rambut baru."</p>
+          <div class="sozo-testi-user">
+            <div class="sozo-testi-avatar">R</div>
+            <div>
+              <h4 class="sozo-testi-name">Reza Pratama</h4>
+              <p class="sozo-testi-status">Pasien PRP Hair</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 (Laki-Laki) -->
+      <div class="sozo-testi-card">
+        <div class="sozo-testi-img-holder">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Before-After-3.webp" alt="Before After Penipisan Rambut Pria PRP SOZO Skin Clinic" loading="lazy">
+        </div>
+        <div class="sozo-testi-body">
+          <div class="sozo-testi-stars">★★★★★</div>
+          <p class="sozo-testi-text">"Paling puas sama hasilnya! Rambut rontok berkurang banyak pas keramas dan nyisir, terus batang rambut berasa jauh lebih kuat & tebal."</p>
+          <div class="sozo-testi-user">
+            <div class="sozo-testi-avatar">A</div>
+            <div>
+              <h4 class="sozo-testi-name">Andi Setiawan</h4>
+              <p class="sozo-testi-status">Pasien PRP Hair</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 (Perempuan) -->
+      <div class="sozo-testi-card">
+        <div class="sozo-testi-img-holder">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Before-After-scaled.webp" alt="Before After Penebalan Rambut Wanita SOZO Skin Clinic" loading="lazy">
+        </div>
+        <div class="sozo-testi-body">
+          <div class="sozo-testi-stars">★★★★★</div>
+          <p class="sozo-testi-text">"Dulu belahan rambut kelihatan lebar dan tipis banget. Pas coba PRP di SOZO pengerjaannya nyaman karena dianestesi dulu, hasilnya worth it banget!"</p>
+          <div class="sozo-testi-user">
+            <div class="sozo-testi-avatar">D</div>
+            <div>
+              <h4 class="sozo-testi-name">Dian Lestari</h4>
+              <p class="sozo-testi-status">Pasien PRP Hair</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION REKOMENDASI OTHER HAIR TREATMENTS -->
+  <section class="sozo-section-card">
+    <h2 class="sozo-section-title">Rekomendasi Pilihan Hair Treatment Rambut Terbaik Lainnya</h2>
+    <div class="sozo-grid-recommendations">
+      
+      <div class="sozo-rec-card">
+        <div>
+          <h3 class="sozo-rec-title">Exosome Hair 5cc</h3>
+          <p class="sozo-rec-desc">Terapi sel punca (exosome) konsentrasi tinggi 5cc untuk mempercepat regenerasi sel kulit kepala & menumbuhkan rambut tebal secara efektif.</p>
+        </div>
+        <a href="https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/" class="sozo-rec-link">Lihat Detail →</a>
+      </div>
+
+      <div class="sozo-rec-card">
+        <div>
+          <h3 class="sozo-rec-title">Hair Grow Booster</h3>
+          <p class="sozo-rec-desc">Treatment booster nutrisi konsentrat tinggi untuk mempercepat stimulasi pertumbuhan rambut baru dan menguatkan folikel dari akar.</p>
+        </div>
+        <a href="https://sozoskinclinic.com/hair-treatment/hair-grow-booster-treatment/" class="sozo-rec-link">Lihat Detail →</a>
+      </div>
+
+      <div class="sozo-rec-card">
+        <div>
+          <h3 class="sozo-rec-title">Salmon DNA Hair</h3>
+          <p class="sozo-rec-desc">Menggunakan molekul PDRN Salmon DNA untuk memperbaiki struktur akar rambut yang rusak dan menstimulasi pertumbuhan rambut baru.</p>
+        </div>
+        <a href="https://sozoskinclinic.com/hair-treatment/salmon-dna-hair/" class="sozo-rec-link">Lihat Detail →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION (Schema JSON-LD di schema-markup.html, di-inject via WPCode) -->
+  <section class="sozo-section-card">
+    <h2 class="sozo-section-title">Pertanyaan Seputar PRP Hair Treatment</h2>
+    
+    <!-- FAQ 1 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>1. PRP Hair Treatment itu apa?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Terapi regeneratif menggunakan plasma darah kaya trombosit dari tubuh sendiri untuk merangsang folikel rambut dan mengatasi kerontokan hingga kebotakan pola (androgenetic alopecia).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>2. PRP Hair Treatment cocok untuk siapa saja?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Cocok untuk pria dan wanita dengan rambut rontok ringan hingga sedang, rambut menipis, garis rambut mundur, kebotakan pola tahap awal, hingga folikel yang melemah akibat genetik, stres, hormon, atau kerusakan akibat styling/pewarnaan kimia berlebihan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>3. Bagaimana proses PRP Hair Treatment dilakukan?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Prosesnya terdiri dari 4 tahap: pengambilan darah, sentrifugasi untuk memisahkan plasma, anestesi lokal pada kulit kepala, lalu injeksi plasma ke area yang menipis.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>4. Apakah pengambilan darahnya banyak?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Tidak. Hanya sekitar 10-20 ml darah dari lengan, setara dengan tes darah laboratorium biasa.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 5 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>5. Berapa lama proses sentrifugasi (pemisahan plasma)?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Sekitar 30 menit menggunakan mesin sentrifugasi khusus untuk memisahkan plasma kaya trombosit dari sel darah lainnya.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 6 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>6. Apakah proses suntik PRP sakit?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Area kulit kepala akan dianestesi lokal selama 20-30 menit sebelum tindakan. Skala nyeri rata-rata berada di 2-3 dari 10, umumnya hanya terasa tekanan ringan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 7 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>7. Apakah PRP Hair Treatment aman?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Aman. Alat dan bahan yang digunakan sekali pakai serta steril, dan plasma berasal dari darah pasien sendiri sehingga risiko alergi minim.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 8 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>8. Berapa lama hasil PRP mulai terlihat?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Penurunan kerontokan mulai terasa dalam 2-4 minggu. Baby hair dan penambahan volume terlihat jelas setelah bulan ke-2 atau ke-3.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 9 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>9. Berapa banyak sesi yang direkomendasikan?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Umumnya 3-4 sesi awal dengan jarak 4-6 minggu per sesi, dilanjutkan sesi pemeliharaan berkala.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 10 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>10. Apakah hasil PRP permanen?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Hasilnya bertahan lama karena meregenerasi jaringan asli, namun tidak 100% permanen karena dipengaruhi usia, hormon, stres, dan nutrisi harian. Sesi pemeliharaan disarankan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 11 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>11. Apakah PRP efektif untuk kebotakan pria?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Ya. PRP terbukti memperlambat dan memperbaiki kebotakan pola pria (Androgenetic Alopecia), terutama jika dimulai di tahap awal atau pertengahan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 12 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>12. Apa persiapan sebelum treatment?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Disarankan keramas terlebih dahulu dan datang ke klinik dengan rambut bersih serta kering.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 13 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>13. Berapa harga PRP Hair Treatment?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>Mulai dari Rp 1.099.000. Tersedia juga paket khusus untuk program perawatan menyeluruh yang lebih hemat.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 14 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="togglePRPFaq(this)">
+        <span><h3>14. Di mana lokasi PRP Hair Treatment terdekat?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+<div class="sozo-faq-answer">
+          <div>
+          <p>SOZO Skin Clinic hadir di lebih dari 60 lokasi di seluruh Indonesia, sehingga Anda bisa mendapatkan PRP Hair Treatment yang aman dan ditangani langsung oleh dokter di cabang terdekat dari Anda. Temukan lokasi dan jadwal klinik terdekat melalui halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener">Lokasi Cabang SOZO Skin Clinic</a>.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+<script>
+  // Accordion Logic for FAQs
+  function togglePRPFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+
+    // Toggle Active State
+    button.classList.toggle('active');
+
+    // Animation via scrollHeight
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+
+  // Floating WhatsApp Button — show after user scrolls past hero
+  (function () {
+    var btn = document.getElementById('sozoPrpFloatingWA');
+    if (!btn) return;
+    var shown = false;
+    var THRESHOLD = 500;
+
+    function update() {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      if (y > THRESHOLD && !shown) {
+        btn.classList.add('is-visible');
+        shown = true;
+      } else if (y <= THRESHOLD && shown) {
+        btn.classList.remove('is-visible');
+        shown = false;
+      }
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
+
+<style>
+  /* ============================================================
+     FLOATING WHATSAPP BUTTON (isolated, outside main wrapper)
+     ============================================================ */
+  .sozo-prp-floating-wa {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px 14px 18px;
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 100px;
+    box-shadow: 0 10px 30px rgba(26, 32, 128, 0.35), 0 0 0 0 rgba(37, 211, 102, 0);
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    will-change: transform, opacity;
+  }
+
+  .sozo-prp-floating-wa.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    animation: sozoPrpPulse 2.4s ease-out infinite;
+  }
+
+  .sozo-prp-floating-wa:hover {
+    background-color: #ffffff !important;
+    background-image: none;
+    color: #1A2080 !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 35px rgba(26, 32, 128, 0.45);
+    animation: none;
+  }
+
+  .sozo-prp-floating-wa svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    color: #ffffff;
+    transition: color 0.2s ease;
+  }
+
+  .sozo-prp-floating-wa:hover svg { color: #1A2080; }
+
+  @keyframes sozoPrpPulse {
+    0%   { box-shadow: 0 10px 30px rgba(26, 32, 128, 0.35), 0 0 0 0 rgba(37, 211, 102, 0.55); }
+    70%  { box-shadow: 0 10px 30px rgba(26, 32, 128, 0.35), 0 0 0 18px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 10px 30px rgba(26, 32, 128, 0.35), 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-prp-floating-wa {
+      right: 16px;
+      bottom: 16px;
+      padding: 12px 18px 12px 14px;
+      font-size: 14px;
+    }
+    .sozo-prp-floating-wa svg { width: 20px; height: 20px; }
+  }
+</style>
+
+<a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20PRP%20Hair%20di%20Sozo%20%5Bsrc%3AORG-PRP-Hair%5D"
+   class="sozo-prp-floating-wa"
+   id="sozoPrpFloatingWA"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Konsultasi Sekarang via WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M16.003 3C9.379 3 4 8.379 4 15c0 2.379.696 4.59 1.896 6.45L4 29l7.755-1.836A11.94 11.94 0 0 0 16.003 27C22.625 27 28 21.625 28 15S22.625 3 16.003 3zm0 21.6a9.55 9.55 0 0 1-4.864-1.328l-.349-.207-4.605 1.09 1.099-4.49-.227-.363A9.6 9.6 0 1 1 25.6 15c0 5.302-4.298 9.6-9.597 9.6zm5.546-7.182c-.302-.151-1.787-.882-2.065-.983-.278-.1-.481-.151-.683.151-.202.303-.783.984-.96 1.186-.177.202-.354.227-.656.076-.302-.151-1.275-.47-2.43-1.499-.898-.801-1.504-1.791-1.681-2.094-.177-.302-.019-.466.133-.617.136-.135.303-.353.454-.53.151-.176.202-.302.303-.504.1-.202.05-.378-.025-.53-.076-.151-.683-1.645-.936-2.253-.247-.59-.498-.51-.683-.52-.177-.008-.379-.01-.581-.01-.202 0-.53.076-.807.378-.278.303-1.06 1.036-1.06 2.527 0 1.491 1.085 2.931 1.236 3.133.151.202 2.135 3.26 5.171 4.571.722.312 1.286.499 1.726.638.725.231 1.385.198 1.907.12.582-.087 1.787-.73 2.04-1.435.252-.706.252-1.31.176-1.436-.075-.126-.277-.202-.58-.353z"/>
+  </svg>
+  <span>Konsultasi Sekarang</span>
+</a>

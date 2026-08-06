@@ -104,234 +104,6 @@ function sz_generate_toc_and_inject_ids($html_content) {
 
 /**
  * ==========================================================
- * 2B. Reviewer meta helper — ambil custom field per post dengan fallback
- *
- * Custom fields (semua optional, set per post di panel Custom Fields):
- *   sozo_reviewer_key           → pilih dari registry: 'elisabeth' | 'gesha' | 'audi'
- *   sozo_reviewer_display_name  → override nama UI (byline + trust panel)
- *   sozo_reviewer_display_url   → override link UI
- *   sozo_reviewer_display_role  → override jabatan/judul di UI
- *   sozo_reviewer_schema_name   → override nama + gelar untuk JSON-LD
- *   sozo_reviewer_schema_url    → override URL profile untuk JSON-LD
- *   sozo_reviewer_schema_role   → override jobTitle untuk JSON-LD
- *
- * Field kosong → fallback ke registry / default (gak breaking post lama).
- * ==========================================================
- */
-function sz_reviewer_meta($post_id, $key, $fallback) {
-    $val = trim((string) get_post_meta($post_id, $key, true));
-    return $val !== '' ? $val : $fallback;
-}
-
-/**
- * ==========================================================
- * 2C. Reviewers registry — dokter yang tersedia sebagai reviewer
- *
- * Dipanggil dari shortcode untuk populate $reviewer_* variables dan schema.
- * Tambah dokter baru → tambah entry di sini aja.
- * ==========================================================
- */
-function sz_get_reviewers_registry() {
-    return array(
-        'elisabeth' => array(
-            'display_name' => 'dr. Elisabeth Ryan, Sp.D.V.E',
-            'display_url'  => 'https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/',
-            'display_role' => 'Dermatologi, Venereologi, & Estetika',
-            'schema_name'  => 'dr. Elisabeth Ryan, Sp.D.V.E',
-            'schema_url'   => 'https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/',
-            'schema_role'  => 'Dermatologi, Venereologi, & Estetika',
-            'expertise'    => array('Trikoskopi', 'Bedah Kulit', 'Esetetika Medis'),
-            'image_url'    => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Elisabeth-Ryan-Sp.DVE_.webp',
-            'credentials'  => array(
-                array(
-                    '@type'              => 'EducationalOccupationalCredential',
-                    'credentialCategory' => 'license',
-                    'name'               => 'Surat Tanda Registrasi (STR)',
-                    'identifier'         => 'STRUI00001652595312',
-                    'recognizedBy'       => array(
-                        '@type' => 'Organization',
-                        'name'  => 'Konsil Kedokteran Indonesia',
-                    ),
-                ),
-                array(
-                    '@type'              => 'EducationalOccupationalCredential',
-                    'credentialCategory' => 'degree',
-                    'name'               => 'Spesialis Kulit dan Kelamin (Sp.DVE)',
-                    'recognizedBy'       => array(
-                        '@type' => 'Organization',
-                        'name'  => 'Universitas Indonesia',
-                        'url'   => 'https://www.ui.ac.id/',
-                    ),
-                ),
-            ),
-            'alumni' => array(
-                array('@type' => 'CollegeOrUniversity', 'name' => 'Universitas Kristen Krida Wacana',     'url' => 'https://www.ukrida.ac.id/'),
-                array('@type' => 'CollegeOrUniversity', 'name' => 'Research Institute for Tropical Medicine', 'url' => 'https://www.ritm.gov.ph/'),
-                array('@type' => 'CollegeOrUniversity', 'name' => 'Medical University of Warsaw',        'url' => 'https://www.wum.edu.pl/'),
-                array('@type' => 'CollegeOrUniversity', 'name' => 'Universitas Indonesia',               'url' => 'https://www.ui.ac.id/'),
-            ),
-        ),
-        'gesha' => array(
-            'display_name' => 'dr. Gesha Kautzar Putri, M.Biomed (AAM)',
-            'display_url'  => 'https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/',
-            'display_role' => 'Anti-Aging & Estetika',
-            'schema_name'  => 'dr. Gesha Kautzar Putri, M.Biomed (AAM)',
-            'schema_url'   => 'https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/',
-            'schema_role'  => 'Anti-Aging & Estetika',
-            'expertise'    => array('Botox', 'Threadlift', 'Filler', 'Laser', 'Skinbooster'),
-            'image_url'    => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dokter-gesha-sozo.webp',
-            'credentials'  => array(
-                array(
-                    '@type'              => 'EducationalOccupationalCredential',
-                    'credentialCategory' => 'license',
-                    'name'               => 'Surat Tanda Registrasi (STR)',
-                    'identifier'         => 'KT00000123255767',
-                    'recognizedBy'       => array(
-                        '@type' => 'Organization',
-                        'name'  => 'Konsil Kedokteran Indonesia',
-                    ),
-                ),
-                array(
-                    '@type'              => 'EducationalOccupationalCredential',
-                    'credentialCategory' => 'degree',
-                    'name'               => 'Magister Biomedis Anti-Aging Medicine (M.Biomed AAM)',
-                    // recognizedBy omitted: universitas asal belum dikonfirmasi
-                ),
-            ),
-            'alumni' => array(),
-        ),
-        'audi' => array(
-            'display_name' => 'dr. Audi Sugiharto, Sp.D.V.E',
-            'display_url'  => 'https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/',
-            'display_role' => 'Dermatologi, Venereologi, & Estetika',
-            'schema_name'  => 'dr. Audi Sugiharto, Sp.D.V.E',
-            'schema_url'   => 'https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/',
-            'schema_role'  => 'Dermatologi, Venereologi, & Estetika',
-            'expertise'    => array('Bedah Kulit', 'Bedah Kecantikan', 'Esetetika Medis'),
-            'image_url'    => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dokter-audi-sozo.webp',
-            'credentials'  => array(
-                array(
-                    '@type'              => 'EducationalOccupationalCredential',
-                    'credentialCategory' => 'license',
-                    'name'               => 'Surat Tanda Registrasi (STR)',
-                    'identifier'         => 'VP00000073538568',
-                    'recognizedBy'       => array(
-                        '@type' => 'Organization',
-                        'name'  => 'Konsil Kedokteran Indonesia',
-                    ),
-                ),
-                array(
-                    '@type'              => 'EducationalOccupationalCredential',
-                    'credentialCategory' => 'degree',
-                    'name'               => 'Spesialis Kulit dan Kelamin (Sp.D.V.E)',
-                    // recognizedBy omitted: universitas asal belum dikonfirmasi
-                ),
-            ),
-            'alumni' => array(),
-        ),
-    );
-}
-
-/**
- * ==========================================================
- * 2D. Reviewer meta box — dropdown UI di post editor
- *
- * Pilih dokter reviewer dari registry, simpan ke post meta sozo_reviewer_key.
- * Aman: nonce + capability check + whitelist key dari registry.
- * ==========================================================
- */
-
-// Tampilkan meta box di sidebar post editor
-add_action('add_meta_boxes', 'sz_add_reviewer_meta_box');
-
-function sz_add_reviewer_meta_box() {
-    add_meta_box(
-        'sz_reviewer_meta',         // ID
-        'Peninjau Medis',           // Judul box
-        'sz_render_reviewer_meta_box', // Callback render
-        'post',                     // Post type (cuma di post)
-        'side',                     // Posisi: sidebar kanan
-        'high'                      // Prioritas tinggi
-    );
-}
-
-// Render: form select + deskripsi
-function sz_render_reviewer_meta_box($post) {
-    // Nonce untuk keamanan save_post
-    wp_nonce_field('sz_save_reviewer', 'sz_reviewer_nonce');
-
-    $current_key = (string) get_post_meta($post->ID, 'sozo_reviewer_key', true);
-    $registry    = sz_get_reviewers_registry();
-    ?>
-    <label for="sozo_reviewer_key" style="display:block; margin:0 0 6px; font-weight:600;">
-        Pilih Dokter Reviewer:
-    </label>
-
-    <select name="sozo_reviewer_key" id="sozo_reviewer_key" style="width:100%;">
-        <option value="">— Default (Tim Medis) —</option>
-
-        <?php foreach ($registry as $key => $doc) : ?>
-            <option value="<?php echo esc_attr($key); ?>" <?php selected($current_key, $key); ?>>
-                <?php echo esc_html($doc['display_name']); ?> — <?php echo esc_html($doc['display_role']); ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-
-    <p class="description" style="margin-top:10px;">
-        Schema JSON-LD (nama, URL, STR, keahlian) otomatis ter-update sesuai pilihan.
-    </p>
-
-    <details style="margin-top:10px; font-size:12px; color:#666;">
-        <summary style="cursor:pointer;">Atau isi manual via Custom Fields</summary>
-        <p style="margin-top:6px;">
-            Name: <code>sozo_reviewer_key</code><br>
-            Value: <code>elisabeth</code> / <code>gesha</code> / <code>audi</code>
-        </p>
-    </details>
-    <?php
-}
-
-// Save handler dengan validasi
-add_action('save_post_post', 'sz_save_reviewer_meta_box');
-
-function sz_save_reviewer_meta_box($post_id) {
-    // 1. Nonce verification
-    if (!isset($_POST['sz_reviewer_nonce']) || !wp_verify_nonce($_POST['sz_reviewer_nonce'], 'sz_save_reviewer')) {
-        return;
-    }
-
-    // 2. Skip autosave / revision
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-    if (wp_is_post_revision($post_id)) {
-        return;
-    }
-
-    // 3. Capability check (user harus bisa edit post ini)
-    if (!current_user_can('edit_post', $post_id)) {
-        return;
-    }
-
-    // 4. Whitelist validation (hanya terima key yang ada di registry)
-    $registry_keys = array_keys(sz_get_reviewers_registry());
-    $submitted     = isset($_POST['sozo_reviewer_key']) ? sanitize_key($_POST['sozo_reviewer_key']) : '';
-
-    // Key gak dikenal → abaikan (gak nyimpan apa-apa)
-    if ($submitted !== '' && !in_array($submitted, $registry_keys, true)) {
-        return;
-    }
-
-    // 5. Simpan: kosong = hapus meta, isi = update
-    if ($submitted === '') {
-        delete_post_meta($post_id, 'sozo_reviewer_key');
-    } else {
-        update_post_meta($post_id, 'sozo_reviewer_key', $submitted);
-    }
-}
-
-/**
- * ==========================================================
  * 3. Shortcode
  * ==========================================================
  */
@@ -406,73 +178,16 @@ function sz_single_post_shortcode() {
     $author_url    = home_url('/editorial-board/');
     $author_avatar = 'https://sozoskinclinic.com/wp-content/uploads/2026/04/sozologo.avif';
 
-    // ── Reviewer selection: registry key → 6 custom field override → hardcoded default ──
+    // ── PERUBAHAN #3: Pisahkan UI vs Schema ──────────
+    // UI: tetap "Tim Medis Sozo Skin Clinic" (generik)
+    $reviewer_display_name = 'Tim Medis Sozo Skin Clinic';
+    $reviewer_display_role = 'Medical Reviewer';
+    $reviewer_display_url  = home_url('/editorial-board/');
 
-    $reviewers_registry = sz_get_reviewers_registry();
-    $reviewer_key       = trim((string) get_post_meta($post_id, 'sozo_reviewer_key', true));
-
-    if ($reviewer_key !== '' && isset($reviewers_registry[$reviewer_key])) {
-        // Path 1: Key ketemu di registry → pake data dokter itu (override per-field tetep bisa)
-        $r = $reviewers_registry[$reviewer_key];
-
-        $reviewer_display_name = sz_reviewer_meta($post_id, 'sozo_reviewer_display_name', $r['display_name']);
-        $reviewer_display_url  = sz_reviewer_meta($post_id, 'sozo_reviewer_display_url',  $r['display_url']);
-        $reviewer_display_role = sz_reviewer_meta($post_id, 'sozo_reviewer_display_role', $r['display_role']);
-        $reviewer_schema_name  = sz_reviewer_meta($post_id, 'sozo_reviewer_schema_name',  $r['schema_name']);
-        $reviewer_schema_url   = sz_reviewer_meta($post_id, 'sozo_reviewer_schema_url',   $r['schema_url']);
-        $reviewer_schema_role  = sz_reviewer_meta($post_id, 'sozo_reviewer_schema_role',  $r['schema_role']);
-
-        $reviewer_credentials = $r['credentials'];
-        $reviewer_alumni      = $r['alumni'];
-        $reviewer_expertise   = $r['expertise'];
-        $reviewer_image_url   = sz_reviewer_meta($post_id, 'sozo_reviewer_image_url',   $r['image_url']);
-    } else {
-        // Path 2: Key kosong/invalid → fallback ke 6 field + hardcode (zero breaking change)
-        $reviewer_display_name = sz_reviewer_meta($post_id, 'sozo_reviewer_display_name', 'Tim Medis Sozo Skin Clinic');
-        $reviewer_display_url  = sz_reviewer_meta($post_id, 'sozo_reviewer_display_url',  home_url('/editorial-board/'));
-        $reviewer_display_role = sz_reviewer_meta($post_id, 'sozo_reviewer_display_role', 'Medical Reviewer');
-        $reviewer_schema_name  = sz_reviewer_meta($post_id, 'sozo_reviewer_schema_name',  'dr. Elisabeth Ryan, Sp.D.V.E');
-        $reviewer_schema_url   = sz_reviewer_meta($post_id, 'sozo_reviewer_schema_url',   'https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/');
-        $reviewer_schema_role  = sz_reviewer_meta($post_id, 'sozo_reviewer_schema_role',  'Dermatologi, Venereologi, & Estetika');
-
-        // Credentials & alumni default (legacy hardcode Elisabeth)
-        $reviewer_credentials = array(
-            array(
-                '@type'              => 'EducationalOccupationalCredential',
-                'credentialCategory' => 'license',
-                'name'               => 'Surat Tanda Registrasi (STR)',
-                'identifier'         => 'STRUI00001652595312',
-                'recognizedBy'       => array(
-                    '@type' => 'Organization',
-                    'name'  => 'Konsil Kedokteran Indonesia',
-                ),
-            ),
-            array(
-                '@type'              => 'EducationalOccupationalCredential',
-                'credentialCategory' => 'degree',
-                'name'               => 'Spesialis Kulit dan Kelamin (Sp.DVE)',
-                'recognizedBy'       => array(
-                    '@type' => 'Organization',
-                    'name'  => 'Universitas Indonesia',
-                    'url'   => 'https://www.ui.ac.id/',
-                ),
-            ),
-        );
-        $reviewer_alumni = array(
-            array('@type' => 'CollegeOrUniversity', 'name' => 'Universitas Kristen Krida Wacana',     'url' => 'https://www.ukrida.ac.id/'),
-            array('@type' => 'CollegeOrUniversity', 'name' => 'Research Institute for Tropical Medicine', 'url' => 'https://www.ritm.gov.ph/'),
-            array('@type' => 'CollegeOrUniversity', 'name' => 'Medical University of Warsaw',        'url' => 'https://www.wum.edu.pl/'),
-            array('@type' => 'CollegeOrUniversity', 'name' => 'Universitas Indonesia',               'url' => 'https://www.ui.ac.id/'),
-        );
-        $reviewer_expertise = array('Trikoskopi', 'Bedah Kulit', 'Esetetika Medis');
-        $reviewer_image_url = sz_reviewer_meta($post_id, 'sozo_reviewer_image_url', 'https://sozoskinclinic.com/wp-content/uploads/2026/04/sozologo.avif');
-    }
-
-    // Label profile link: "Profil Dokter" kalau URL dokter spesifik,
-    // "Standar Editorial" kalau URL generic (editorial board)
-    $reviewer_profile_label = (strpos($reviewer_display_url, '/tim-dokter-sozo-skin/') !== false)
-        ? 'Lihat Profil Dokter'
-        : 'Lihat Standar Editorial';
+    // Schema: dr. Elisabeth Ryan, Sp.DVE (dengan kredensial)
+    $reviewer_schema_url  = home_url('/dokter/dr-elisabeth-ryan/');
+    $reviewer_schema_name = 'dr. Elisabeth Ryan, Sp.DVE';
+    $reviewer_schema_role = 'Spesialis Kulit dan Kelamin';
 
     $last_reviewed_raw = trim((string) get_post_meta($post_id, 'sozo_last_reviewed', true));
 
@@ -871,7 +586,7 @@ function sz_single_post_shortcode() {
                 <h4>Peninjau Medis</h4>
 
                 <div class="sz-trust-profile">
-                    <img src="<?php echo esc_url($reviewer_image_url); ?>" alt="<?php echo esc_attr($reviewer_display_name); ?>" width="56" height="56" loading="lazy" decoding="async">
+                    <img src="https://sozoskinclinic.com/wp-content/uploads/2026/04/sozologo.avif" alt="Reviewer" width="56" height="56" loading="lazy" decoding="async">
 
                     <div class="sz-trust-profile-info">
                         <h3>
@@ -883,7 +598,7 @@ function sz_single_post_shortcode() {
                         <p><?php echo esc_html($reviewer_display_role); ?></p>
 
                         <a href="<?php echo esc_url($reviewer_display_url); ?>" class="sz-profile-link">
-                            <?php echo esc_html($reviewer_profile_label); ?> &rarr;
+                            Lihat Standar Editorial &rarr;
                         </a>
                     </div>
                 </div>
@@ -1070,32 +785,51 @@ function sz_single_post_shortcode() {
         'worksFor' => array(
             '@id' => home_url('/#organization'),
         ),
+        'hasCredential' => array(
+            array(
+                '@type'              => 'EducationalOccupationalCredential',
+                'credentialCategory' => 'license',
+                'name'               => 'Surat Tanda Registrasi (STR)',
+                'identifier'         => 'STRUI00001652595312',
+                'recognizedBy'       => array(
+                    '@type' => 'Organization',
+                    'name'  => 'Konsil Kedokteran Indonesia',
+                ),
+            ),
+            array(
+                '@type'              => 'EducationalOccupationalCredential',
+                'credentialCategory' => 'degree',
+                'name'               => 'Spesialis Kulit dan Kelamin (Sp.DVE)',
+                'recognizedBy'       => array(
+                    '@type' => 'Organization',
+                    'name'  => 'Universitas Indonesia',
+                    'url'   => 'https://www.ui.ac.id/',
+                ),
+            ),
+        ),
+        'alumniOf' => array(
+            array(
+                '@type' => 'CollegeOrUniversity',
+                'name'  => 'Universitas Kristen Krida Wacana',
+                'url'   => 'https://www.ukrida.ac.id/',
+            ),
+            array(
+                '@type' => 'CollegeOrUniversity',
+                'name'  => 'Research Institute for Tropical Medicine',
+                'url'   => 'https://www.ritm.gov.ph/',
+            ),
+            array(
+                '@type' => 'CollegeOrUniversity',
+                'name'  => 'Medical University of Warsaw',
+                'url'   => 'https://www.wum.edu.pl/',
+            ),
+            array(
+                '@type' => 'CollegeOrUniversity',
+                'name'  => 'Universitas Indonesia',
+                'url'   => 'https://www.ui.ac.id/',
+            ),
+        ),
     );
-
-    // image: foto reviewer untuk E-E-A-T signal
-    if (!empty($reviewer_image_url)) {
-        $person_node['image'] = esc_url_raw($reviewer_image_url);
-    }
-
-    // hasCredential: dari registry/legacy (skip key kalau array kosong biar gak muncul [])
-    if (!empty($reviewer_credentials)) {
-        $person_node['hasCredential'] = array_values($reviewer_credentials);
-    }
-
-    // alumniOf: dari registry/legacy
-    if (!empty($reviewer_alumni)) {
-        $person_node['alumniOf'] = array_values($reviewer_alumni);
-    }
-
-    // knowsAbout: keahlian reviewer (bonus E-E-A-T signal)
-    if (!empty($reviewer_expertise)) {
-        $person_node['knowsAbout'] = array_map(
-            static function ($item) {
-                return array('@type' => 'Thing', 'name' => $item);
-            },
-            array_values($reviewer_expertise)
-        );
-    }
 
     $schema_graph = array(
         array(

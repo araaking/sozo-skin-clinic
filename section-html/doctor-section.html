@@ -1,0 +1,271 @@
+<!--
+  ============================================================
+  SOZO SKIN CLINIC - DOCTOR SECTION (MINIMAL v3)
+  ============================================================
+  Paste ke Elementor HTML widget.
+  Self-contained, gak konflik sama theme.
+-->
+<style>
+.sz-doctor-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 72px 24px;
+  font-family: 'Manrope', 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: #0f172a;
+  box-sizing: border-box;
+}
+
+.sz-doctor-section *,
+.sz-doctor-section *::before,
+.sz-doctor-section *::after {
+  box-sizing: inherit;
+}
+
+/* ── Header (title left, button right) ──────────────── */
+.sz-doctor-section .sz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.sz-doctor-section .sz-title {
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #1A2080;
+  margin: 0;
+}
+
+/* ── Grid: 3 / 2 / 1 cols responsive ────────────────── */
+.sz-doctor-section .sz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .sz-doctor-section .sz-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sz-doctor-section .sz-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
+
+/* ── Card (max-width constrained, square feel) ──────── */
+.sz-doctor-section .sz-doctor-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  max-width: 280px;
+  margin: 0 auto;
+  transition: opacity 0.2s ease;
+}
+
+.sz-doctor-section .sz-doctor-card:hover {
+  opacity: 0.65;
+}
+
+.sz-doctor-section .sz-doctor-card:focus-visible {
+  outline: 2px solid #1A2080;
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+/* ── Photo (1:1 square) ─────────────────────────────── */
+.sz-doctor-section .sz-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  /* Default: 22% dari atas (untuk foto portrait normal) */
+  object-position: center 22%;
+  border-radius: 12px;
+  background: #f8fafc;
+  display: block;
+  margin: 0 0 14px;
+}
+
+/* Override: foto dengan kepala lebih tinggi di frame */
+.sz-doctor-section .sz-photo--head-up {
+  object-position: center 8%;
+}
+
+/* ── Text (biru sesuai brand) ───────────────────────── */
+.sz-doctor-section .sz-name {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1A2080;
+  margin: 0 0 4px;
+}
+
+.sz-doctor-section .sz-role {
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(26, 32, 128, 0.7);
+  margin: 0;
+}
+
+/* ── Button (di header, kanan) ──────────────────────── */
+.sz-doctor-section .sz-button {
+  display: inline-block;
+  background: #1A2080;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 14px 32px;
+  /* Transparent border default biar gak ada layout shift pas hover */
+  border: 2px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.sz-doctor-section .sz-button:hover {
+  background: #ffffff;
+  color: #1A2080;
+  border-color: #1A2080;
+  transform: translateY(-1px);
+}
+
+.sz-doctor-section .sz-button:focus-visible {
+  outline: 2px solid #1A2080;
+  outline-offset: 4px;
+}
+
+/* ── Mobile (stack title + button vertikal) ─────────── */
+@media (max-width: 600px) {
+  .sz-doctor-section {
+    padding: 56px 20px;
+  }
+
+  /* Header: title left, button right (sejajar horizontal) */
+  .sz-doctor-section .sz-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  /* Title: lebih kecil di mobile biar muat satu baris sama button */
+  .sz-doctor-section .sz-title {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  /* Button: compact version */
+  .sz-doctor-section .sz-button {
+    font-size: 13px;
+    padding: 10px 18px;
+    flex-shrink: 0;
+  }
+
+  /* Cards: jadi horizontal slider */
+  .sz-doctor-section .sz-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 20px;
+    gap: 16px;
+    grid-template-columns: none;
+    margin: 0 -20px;
+    padding: 4px 20px 16px;
+    max-width: none;
+    scrollbar-width: none;       /* Hide scrollbar (Firefox) */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Hide scrollbar (WebKit) */
+  .sz-doctor-section .sz-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Card: lebar fixed dengan peek next card, snap ke start */
+  .sz-doctor-section .sz-doctor-card {
+    flex: 0 0 calc(100vw - 72px);
+    max-width: 320px;
+    margin: 0;
+    scroll-snap-align: start;
+  }
+}
+
+/* ── Reduced motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .sz-doctor-section .sz-doctor-card,
+  .sz-doctor-section .sz-button {
+    transition: none;
+  }
+  .sz-doctor-section .sz-button:hover {
+    transform: none;
+  }
+}
+</style>
+
+<section class="sz-doctor-section" aria-labelledby="sz-doctor-section-title">
+
+  <div class="sz-header">
+    <h2 id="sz-doctor-section-title" class="sz-title">Tim Dokter Spesialis Sozo</h2>
+    <a href="/tim-dokter-sozo-skin/" class="sz-button">Lihat Selengkapnya</a>
+  </div>
+
+  <div class="sz-grid">
+
+    <!-- dr. Elisabeth: foto dengan kepala lebih tinggi di frame -->
+    <a href="/tim-dokter-sozo-skin/elisabeth-ryan/" class="sz-doctor-card">
+      <img
+        class="sz-photo sz-photo--head-up"
+        src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Elisabeth-Ryan-Sp.DVE_.webp"
+        alt="dr. Elisabeth Ryan, Sp.D.V.E, Dokter Spesialis Dermatologi Sozo Skin Clinic"
+        loading="lazy"
+        decoding="async"
+        width="400"
+        height="400"
+      />
+      <h3 class="sz-name">dr. Elisabeth Ryan, Sp.D.V.E</h3>
+      <p class="sz-role">Dermatologi, Venereologi, &amp; Estetika</p>
+    </a>
+
+    <a href="/tim-dokter-sozo-skin/gesha-kautzar-putri/" class="sz-doctor-card">
+      <img
+        class="sz-photo"
+        src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dokter-gesha-sozo.webp"
+        alt="dr. Gesha Kautzar Putri, M.Biomed (AAM), Dokter Spesialis Anti-Aging Sozo Skin Clinic"
+        loading="lazy"
+        decoding="async"
+        width="400"
+        height="400"
+      />
+      <h3 class="sz-name">dr. Gesha Kautzar Putri, M.Biomed (AAM)</h3>
+      <p class="sz-role">Anti-Aging &amp; Estetika</p>
+    </a>
+
+    <a href="/tim-dokter-sozo-skin/audi-sugiharto/" class="sz-doctor-card">
+      <img
+        class="sz-photo"
+        src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dokter-audi-sozo.webp"
+        alt="dr. Audi Sugiharto, Sp.D.V.E, Dokter Spesialis Dermatologi Sozo Skin Clinic"
+        loading="lazy"
+        decoding="async"
+        width="400"
+        height="400"
+      />
+      <h3 class="sz-name">dr. Audi Sugiharto, Sp.D.V.E</h3>
+      <p class="sz-role">Dermatologi, Venereologi, &amp; Estetika</p>
+    </a>
+
+  </div>
+
+</section>
