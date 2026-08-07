@@ -1,0 +1,525 @@
+<style>
+  .sozo-sku-korean-filler-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  .sozo-sku-korean-filler-wrapper * { box-sizing: border-box; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb { padding: 15px 20px 25px 20px; width: 100%; }
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb ol { list-style: none !important; margin: 0 !important; padding: 0 !important; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb li { display: flex; align-items: center; font-size: 14px; color: #1A2080; }
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb a { text-decoration: none !important; color: #64748b !important; font-weight: 500; transition: color 0.2s ease; }
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-breadcrumb .separator { color: #cbd5e1; margin: 0 4px; font-size: 12px; user-select: none; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-treatment-hero { display: flex; flex-wrap: nowrap; gap: 50px; align-items: center; margin-bottom: 50px; padding: 0 20px; }
+  .sozo-sku-korean-filler-wrapper .sozo-hero-text { flex: 1; }
+  .sozo-sku-korean-filler-wrapper .sozo-hero-text h1 { font-size: clamp(32px, 4vw, 42px) !important; color: #1A2080 !important; margin: 0 0 16px 0 !important; line-height: 1.2 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-korean-filler-wrapper .sozo-hero-text p { font-size: 16px !important; color: #475569 !important; margin: 0 0 30px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-hero-image { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; }
+  .sozo-sku-korean-filler-wrapper .sozo-hero-image img { width: 100%; max-width: 480px; height: 340px; border-radius: 24px; object-fit: cover; object-position: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); display: block; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-info-row { display: flex; gap: 40px; margin-bottom: 35px; padding: 24px; background-color: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9; }
+  .sozo-sku-korean-filler-wrapper .sozo-info-col { display: flex; align-items: flex-start; gap: 15px; }
+  .sozo-sku-korean-filler-wrapper .sozo-info-icon { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #EEF2FF; border-radius: 12px; color: #1A2080; }
+  .sozo-sku-korean-filler-wrapper .sozo-info-text { display: flex; flex-direction: column; gap: 2px; }
+  .sozo-sku-korean-filler-wrapper .sozo-info-label { font-size: 13px !important; color: #64748b !important; font-weight: 600 !important; text-transform: uppercase; letter-spacing: 0.5px; }
+  .sozo-sku-korean-filler-wrapper .sozo-info-value { font-size: 20px !important; color: #1A2080 !important; font-weight: 700 !important; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-btn,
+  .sozo-sku-korean-filler-wrapper .sozo-related-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background-color: #1A2080 !important; color: #ffffff !important; text-decoration: none !important; font-size: 16px !important; font-weight: 600 !important; border-radius: 100px; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2); border: 2px solid #1A2080 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-btn:hover,
+  .sozo-sku-korean-filler-wrapper .sozo-related-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; transform: translateY(-3px); }
+
+  .sozo-sku-korean-filler-wrapper .sozo-cta-wrapper { padding: 0 20px; }
+  .sozo-sku-korean-filler-wrapper .sozo-cta-banner { background-color: #1A2080; background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%); border-radius: 24px; padding: 50px 30px; margin-bottom: 50px; text-align: center; color: #ffffff; box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15); }
+  .sozo-sku-korean-filler-wrapper .sozo-cta-banner h2 { font-size: clamp(24px, 3vw, 32px) !important; color: #ffffff !important; margin: 0 0 15px 0 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
+  .sozo-sku-korean-filler-wrapper .sozo-cta-banner p { font-size: 16px !important; color: #e2e8f0 !important; margin: 0 auto 30px auto !important; max-width: 650px; line-height: 1.6 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background-color: #ffffff !important; color: #1A2080 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 100px; border: 2px solid #ffffff !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-btn-secondary:hover { background-color: transparent !important; color: #ffffff !important; transform: translateY(-3px); }
+
+  .sozo-sku-korean-filler-wrapper .sozo-content-wrapper { padding: 0 20px; }
+  .sozo-sku-korean-filler-wrapper .sozo-section-card,
+  .sozo-sku-korean-filler-wrapper .sozo-description-section,
+  .sozo-sku-korean-filler-wrapper .sozo-faq-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .sozo-sku-korean-filler-wrapper .sozo-section-card > h2,
+  .sozo-sku-korean-filler-wrapper .sozo-description-section h2,
+  .sozo-sku-korean-filler-wrapper .sozo-faq-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 16px !important; font-weight: 800 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-section-card > p { color: #475569 !important; font-size: 16px !important; margin-bottom: 24px !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-description-section h3 { font-size: 18px !important; color: #1A2080 !important; margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 700 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-description-section p,
+  .sozo-sku-korean-filler-wrapper .sozo-description-section li { color: #475569 !important; margin-bottom: 16px !important; font-size: 16px !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-description-section ul { padding-left: 20px !important; margin-bottom: 20px !important; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .sozo-sku-korean-filler-wrapper .sozo-problem-card { background-color: #f8fafc; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; }
+  .sozo-sku-korean-filler-wrapper .sozo-problem-card strong { display: block; font-size: 16px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-problem-card span { font-size: 14px !important; color: #475569 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-process-step { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; }
+  .sozo-sku-korean-filler-wrapper .sozo-process-step:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .sozo-sku-korean-filler-wrapper .sozo-step-num { width: 45px; height: 45px; background-color: #EEF2FF; color: #1A2080; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px !important; font-weight: 700 !important; flex-shrink: 0; }
+  .sozo-sku-korean-filler-wrapper .sozo-step-text strong { display: block; font-size: 18px !important; color: #1A2080 !important; margin-bottom: 8px !important; font-weight: 700 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-step-text p { font-size: 15px !important; color: #475569 !important; margin: 0 !important; line-height: 1.6 !important; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-card { border: 1px solid #f1f5f9; border-radius: 16px; overflow: hidden; background-color: #ffffff; display: flex; flex-direction: column; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-body h3 { font-size: 16px !important; color: #1A2080 !important; margin: 0 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-body p { font-size: 14px !important; color: #475569 !important; margin: 0 !important; flex: 1; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-actions { display: flex; flex-direction: column; gap: 10px; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-btn { max-width: none; padding: 11px 16px; font-size: 14px !important; box-shadow: none; }
+  .sozo-sku-korean-filler-wrapper .sozo-related-link { color: #1A2080 !important; font-weight: 600 !important; font-size: 14px !important; text-decoration: none !important; text-align: center; }
+
+  .sozo-sku-korean-filler-wrapper .sozo-expandable-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease-out; }
+  .sozo-sku-korean-filler-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
+  .sozo-sku-korean-filler-wrapper .sozo-expandable-inner { overflow: hidden; }
+  .sozo-sku-korean-filler-wrapper .sozo-load-more-btn { background: none !important; border: none !important; color: #1A2080 !important; font-size: 15px !important; font-weight: 600 !important; padding: 0 !important; margin-top: 15px !important; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .sozo-sku-korean-filler-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-korean-filler-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  .sozo-sku-korean-filler-wrapper .sozo-faq-item { border-bottom: 1px solid #f1f5f9; padding: 16px 0; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-item:last-child { border-bottom: none; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-question { width: 100%; background: none !important; border: none !important; text-align: left; font-size: 16px !important; font-weight: 600 !important; color: #1e293b !important; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0 0 8px 0 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-question svg { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-answer p { color: #475569 !important; font-size: 15px !important; margin: 8px 0 16px 0 !important; line-height: 1.6 !important; }
+  .sozo-sku-korean-filler-wrapper .sozo-faq-answer a { color: #1A2080 !important; text-decoration: underline !important; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .sozo-sku-korean-filler-wrapper .sozo-treatment-hero { flex-direction: column; gap: 30px; }
+    .sozo-sku-korean-filler-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-korean-filler-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-korean-filler-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-korean-filler-wrapper .sozo-btn,
+    .sozo-sku-korean-filler-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
+    .sozo-sku-korean-filler-wrapper .sozo-description-section,
+    .sozo-sku-korean-filler-wrapper .sozo-faq-section,
+    .sozo-sku-korean-filler-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+    .sozo-sku-korean-filler-wrapper .sozo-problem-grid,
+    .sozo-sku-korean-filler-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="sozo-sku-korean-filler-wrapper" id="sozo-korean-filler-widget">
+
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol>
+      <li><a href="https://sozoskinclinic.com/">Home</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/skin-treatment/ ">Skin Treatment</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/">Derma Peel Treatment</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><span style="color: #1A2080; font-weight: 600;">Lhala Peel</span></li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero">
+    <div class="sozo-hero-text">
+      <h1>Korean LHALA Peel</h1>
+      <p>Korean LHALA Peel adalah treatment gentle chemical peel berbasis Lipo Hydroxy Acid (LHA) yang membantu mengangkat sel kulit mati, mencerahkan kulit, memperbaiki tekstur, serta menjaga skin barrier tetap sehat. Dengan downtime yang minimal, treatment ini cocok untuk membantu mengatasi kulit kusam, bekas jerawat, pori-pori besar, dan warna kulit yang tidak merata.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">75 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">Rp 299.000</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Derma%20Peel%20di%20Sozo%20%5Bsrc%3AORG-Derma-Peel%5D " class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2022/05/P1123791-Peeling-2-scaled.webp"
+           alt="Korean filler atau suntik filler ala Korea untuk volume wajah natural di Sozo Skin Clinic"
+           width="480"
+           height="340"
+           fetchpriority="high"
+           decoding="async">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Ucapkan Selamat Tinggal pada Kulit Kusam dan Pori Besar</h2>
+      <p>Korean LHALA Peel efektif mengangkat sel kulit mati sekaligus menjaga kesehatan skin barrier. Solusi tepat untuk wajah yang lebih cerah, rata, dan bebas bekas jerawat.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Derma%20Peel%20di%20Sozo%20%5Bsrc%3AORG-Derma-Peel%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Dokter Sekarang</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+
+    <section class="sozo-section-card">
+      <h2>Masalah yang sering dialami </h2>
+      <p></p>
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Kulit kusam</strong>
+          <span></span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Bekas jerawat</strong>
+          <span></span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tekstur kulit kasar</strong>
+          <span></span>
+        </div>
+        
+        <div class="sozo-problem-card">
+          <strong>Pori-pori tampak besar </strong>
+          <span></span>
+        </div>
+        
+        <div class="sozo-problem-card">
+          <strong>Warna kulit tidak merata</strong>
+          <span></span>
+        </div>
+        
+        <div class="sozo-problem-card">
+          <strong>Kulit berminyak </strong>
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <article class="sozo-description-section">
+      <h2></h2>
+      <p></p>
+    <h3>Apa Itu Korean LHALA Peel?
+</h3>
+          <p>Korean LHALA Peel adalah treatment gentle chemical peel berbasis Lipo Hydroxy Acid (LHA) yang dirancang untuk membantu mengeksfoliasi kulit secara lembut sekaligus menjaga kesehatan skin barrier. Berbeda dengan chemical peel konvensional yang sering menyebabkan pengelupasan cukup intens, Korean LHALA Peel bekerja sebagai skin remodeling treatment yang membantu mempercepat regenerasi kulit tanpa memberikan downtime berlebihan.
+</p>
+          <p>Formula LHA memiliki ukuran molekul yang lebih besar dibandingkan beberapa jenis Alpha Hydroxy Acid (AHA), sehingga proses eksfoliasi berlangsung lebih perlahan dan terkontrol. Dipadukan dengan kandungan lipid, treatment ini membantu menjaga kelembapan kulit selama proses regenerasi sehingga kulit tetap terasa nyaman setelah tindakan.</p>
+      <div class="sozo-expandable-content" id="treatmentDescriptionKorean">
+        <div class="sozo-expandable-inner">
+            
+            <p>Korean LHALA Peel menjadi salah satu treatment yang banyak dipilih untuk membantu mengatasi kulit kusam, bekas jerawat, tekstur kulit tidak merata, pori-pori yang tampak besar, hingga warna kulit yang kurang merata. Dengan penggunaan secara berkala sesuai anjuran dokter, kulit dapat terlihat lebih cerah, halus, dan sehat.</p>
+            
+          <h3>Mengapa Korean LHALA Peel Berbeda dari Chemical Peel Biasa?</h3>
+          <p>Meskipun sama-sama termasuk treatment eksfoliasi, Korean LHALA Peel memiliki cara kerja yang berbeda dibandingkan chemical peel konvensional.</p>
+          <p>Chemical peel pada umumnya bekerja dengan mengangkat lapisan kulit mati secara lebih agresif sehingga sering menimbulkan kemerahan, rasa perih, hingga pengelupasan yang cukup jelas. Sementara itu, Korean LHALA Peel menggunakan kombinasi Lipo Hydroxy Acid (LHA) dan lipid untuk memberikan eksfoliasi yang lebih lembut sekaligus membantu mempertahankan fungsi skin barrier.</p>
+          <p>Karena bekerja secara bertahap, banyak pasien tidak mengalami pengelupasan yang terlihat jelas setelah treatment. Sebaliknya, kulit akan terasa lebih halus, lembap, dan tampak lebih glowing seiring meningkatnya proses regenerasi kulit. Hal ini menjadikan Korean LHALA Peel sebagai pilihan bagi mereka yang menginginkan hasil optimal dengan downtime yang minimal.
+</p>
+          
+          <h3>Manfaat Korean LHALA Peel</h3>
+          <p>Korean LHALA Peel memberikan berbagai manfaat bagi kesehatan dan penampilan kulit, di antaranya:</p>
+
+          <ul>
+            <li>Membantu mengangkat sel kulit mati secara lembut.</li>
+            <li>Membantu mencerahkan kulit yang tampak kusam.</li>
+            <li>Membantu memperbaiki tekstur kulit agar terasa lebih halus.</li>
+            <li>Membantu menyamarkan bekas jerawat dan noda pasca inflamasi.</li>
+            <li>Membantu meratakan warna kulit yang tidak merata.</li>
+            <li>Membantu mengurangi tampilan pori-pori besar.</li>
+            <li>Membantu menjaga skin barrier tetap sehat selama proses regenerasi kulit.</li>
+            <li>Membuat kulit tampak lebih lembap, segar, dan glowing.
+</li>
+          </ul>
+          <p>Hasil treatment dapat berbeda pada setiap orang tergantung kondisi kulit, rutinitas perawatan, dan jumlah sesi yang dijalani.</p>
+
+          <h3>Siapa yang Cocok Menjalani Korean LHALA Peel?</h3>
+          <p>Treatment ini dapat menjadi pilihan bagi Anda yang memiliki berbagai permasalahan kulit, seperti:</p>
+          <ul>
+            <li>Kulit kusam dan kehilangan kilau alami.</li>
+            <li>Bekas jerawat yang sulit memudar.</li>
+            <li>Tekstur kulit kasar atau tidak merata.</li>
+            <li>Pori-pori yang tampak besar.</li>
+            <li>Kulit berminyak dengan penumpukan sel kulit mati.</li>
+            <li>Warna kulit yang tidak merata.</li>
+            <li>Ingin menjaga kulit tetap sehat dan glowing dengan eksfoliasi yang lebih lembut.</li>
+          </ul>
+          <p>Sebelum menjalani treatment, dokter akan melakukan konsultasi untuk mengevaluasi kondisi kulit dan menentukan apakah Korean LHALA Peel merupakan pilihan yang sesuai dengan kebutuhan Anda.
+</p>
+          
+         <h3>Bagaimana Cara Kerja Korean LHALA Peel?</h3>
+         
+         <p>Korean LHALA Peel bekerja melalui proses eksfoliasi yang membantu mengangkat sel kulit mati pada lapisan terluar kulit. Setelah sel kulit mati terangkat, proses regenerasi kulit menjadi lebih optimal sehingga kulit baru dapat muncul dengan kondisi yang lebih sehat.</p>
+         
+         <p>Selain membantu mempercepat regenerasi kulit, kandungan lipid di dalam formula Korean LHALA Peel juga membantu menjaga kelembapan dan mendukung fungsi skin barrier. Oleh karena itu, treatment ini tidak hanya berfokus pada eksfoliasi, tetapi juga membantu menjaga keseimbangan kulit selama proses pemulihan.</p>
+         <p>Dengan perawatan yang dilakukan secara berkala sesuai anjuran dokter, kulit dapat terlihat lebih cerah, tekstur terasa lebih halus, serta tampilan bekas jerawat dan pori-pori menjadi lebih baik.
+</p>
+
+<h3>Mengapa Memilih Korean LHALA Peel di Sozo Skin Clinic?
+</h3>
+
+<p>Di Sozo Skin Clinic, setiap tindakan Korean LHALA Peel diawali dengan konsultasi bersama dokter untuk memahami kondisi kulit dan menentukan treatment yang paling sesuai. Prosedur dilakukan menggunakan produk berkualitas serta mengikuti standar tindakan medis yang mengutamakan keamanan dan kenyamanan pasien.
+</p>
+
+<p>Apabila diperlukan, dokter juga dapat merekomendasikan kombinasi treatment seperti Glow Facial, IPL Glow, Rejuve Laser, DNA Glow, atau Korean Glass Skin untuk membantu mengoptimalkan hasil sesuai kebutuhan kulit masing-masing pasien.</p>
+          
+        </div>
+      </div>
+
+      <button class="sozo-load-more-btn" onclick="toggleKoreanDescription()">
+        <span id="koreanReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </article>
+
+    <section class="sozo-section-card">
+      <h2>Proses Korean LHALA Peel di Sozo Skin Clinic</h2>
+      <p></p>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi dan Analisis Kulit</strong>
+          <p>Dokter akan mengevaluasi kondisi kulit, seperti tingkat hidrasi, tekstur, bekas jerawat, pigmentasi, hingga kondisi skin barrier untuk menentukan apakah Korean LHALA Peel sesuai dengan kebutuhan kulit Anda.
+</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Persiapan Kulit
+</strong>
+          <p>Wajah dibersihkan secara menyeluruh untuk mengangkat sisa makeup, minyak, dan kotoran agar larutan Korean LHALA Peel dapat bekerja secara optimal.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Aplikasi Korean LHALA Peel</strong>
+          <p>Dokter akan mengaplikasikan larutan Korean LHALA Peel secara merata pada area wajah. Selama proses ini, sebagian pasien hanya merasakan sensasi hangat atau sedikit tingling yang umumnya masih nyaman dan bersifat sementara.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Proses Penyerapan dan Evaluasi</strong>
+          <p>Larutan dibiarkan bekerja sesuai kebutuhan kulit. Dokter akan memantau respons kulit selama tindakan untuk memastikan treatment berjalan dengan aman dan optimal.</p>
+        </div>
+      </div>
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">5</div>
+        <div class="sozo-step-text">
+          <strong>Perawatan Setelah Treatment</strong>
+          <p>Setelah tindakan selesai, dokter akan memberikan panduan aftercare, termasuk penggunaan moisturizer dan sunscreen, serta menghindari skincare berbahan aktif selama beberapa hari agar proses regenerasi kulit berlangsung dengan baik.
+</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sozo-section-card">
+      <h2>Treatment Peeling Terkait</h2>
+      <p>Berbagai varian chemical peeling berkualitas klinis untuk target masalah kulit yang berbeda.</p>
+      <div class="sozo-related-grid">
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.webp" alt="Filler Dagu Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Glow Peel</h3>
+            <p>Treatment estetik medis menggunakan cairan kimia khusus untuk memberikan efek lifting instan, kulit glow, mengurangi kerutan, dan memperbaiki kulit secara umum.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Derma%20Peel%20di%20Sozo%20%5Bsrc%3AORG-Derma-Peel%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/filler-treatment/filler-dagu/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.webp" alt="Tanam Benang Hidung Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Acne Peel</h3>
+            <p>Prosedur perawatan cairan kimia medis yang aman untuk menyingkirkan sumbatan pori, mengeringkan jerawat aktif, dan memudarkan noda bekas jerawat.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Derma%20Peel%20di%20Sozo%20%5Bsrc%3AORG-Derma-Peel%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="sozo-related-card">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.webp" alt="Zo-Tox Treatment Sozo Skin Clinic">
+          <div class="sozo-related-body">
+            <h3>Dazzling Glow Peel</h3>
+            <p>Treatment chemical peeling lanjutan yang berfungsi meregenerasi kulit wajah secara mendalam, meningkatkan sintesis kolagen, dan memperbaiki penampilan secara keseluruhan.</p>
+            <div class="sozo-related-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Derma%20Peel%20di%20Sozo%20%5Bsrc%3AORG-Derma-Peel%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+              <a href="https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sozo-faq-section">
+      <h2>Pertanyaan Seputar Lhala Peel</h2>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apa itu Korean LHALA Peel?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Korean LHALA Peel adalah treatment gentle chemical peel berbasis Lipo Hydroxy Acid (LHA) yang dikombinasikan dengan lipid untuk membantu mengeksfoliasi kulit secara lembut sekaligus menjaga skin barrier tetap sehat. Berbeda dengan chemical peel konvensional, treatment ini bekerja sebagai skin remodeling treatment yang membantu mempercepat regenerasi kulit sehingga kulit tampak lebih cerah, halus, dan sehat dengan downtime yang minimal.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apa manfaat Korean LHALA Peel untuk kulit?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Korean LHALA Peel membantu mengangkat sel kulit mati, memperbaiki tekstur kulit, mencerahkan kulit kusam, menyamarkan bekas jerawat, membantu meratakan warna kulit, serta mengurangi tampilan pori-pori besar. Dengan perawatan yang dilakukan secara berkala sesuai anjuran dokter, kulit juga dapat terasa lebih lembap, halus, dan tampak lebih glowing.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apa perbedaan Korean LHALA Peel dengan chemical peel biasa?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Perbedaan utamanya terletak pada cara kerja dan kenyamanan setelah treatment. Chemical peel konvensional umumnya memberikan eksfoliasi yang lebih agresif sehingga sering menyebabkan kemerahan atau pengelupasan yang cukup jelas. Korean LHALA Peel menggunakan Lipo Hydroxy Acid (LHA) yang bekerja lebih lembut sehingga membantu mengeksfoliasi kulit sekaligus menjaga skin barrier. Karena itu, banyak pasien tidak mengalami pengelupasan yang terlihat dan dapat kembali beraktivitas setelah treatment sesuai anjuran dokter.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apakah Korean LHALA Peel terasa sakit?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Sebagian besar pasien hanya merasakan sensasi hangat, tingling, atau sedikit perih saat larutan diaplikasikan ke kulit. Sensasi tersebut umumnya bersifat sementara dan masih dapat ditoleransi. Tingkat kenyamanan setiap orang dapat berbeda tergantung kondisi kulit masing-masing.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apakah kulit akan mengelupas setelah Korean LHALA Peel?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Tidak selalu. Korean LHALA Peel bekerja sebagai skin remodeling peel, sehingga banyak pasien tidak mengalami pengelupasan yang terlihat. Jika kulit mengalami deskuamasi atau pengelupasan ringan, kondisi tersebut biasanya hanya berlangsung beberapa hari sebagai bagian dari proses regenerasi kulit.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Mengapa setelah Korean LHALA Peel muncul jerawat baru?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Pada sebagian orang dapat terjadi skin purging, yaitu proses ketika mikrokomedo atau sumbatan yang sebelumnya berada di bawah permukaan kulit muncul lebih cepat. Hal ini merupakan respons yang normal terhadap proses regenerasi kulit dan biasanya hanya bersifat sementara. Namun apabila jerawat bertambah banyak atau berlangsung lebih lama, sebaiknya lakukan kontrol kembali sesuai jadwal yang diberikan dokter.
+
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Berapa kali Korean LHALA Peel perlu dilakukan agar hasilnya optimal?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Jumlah sesi yang dibutuhkan dapat berbeda pada setiap orang, tergantung kondisi kulit dan tujuan perawatan. Beberapa orang mulai melihat kulit terasa lebih halus dan cerah setelah satu kali treatment, tetapi untuk membantu memperbaiki bekas jerawat, tekstur kulit, atau warna kulit yang tidak merata biasanya diperlukan beberapa sesi sesuai evaluasi dokter.</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Berapa interval Korean LHALA Peel yang dianjurkan?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Apabila dilakukan sebagai treatment tunggal, Korean LHALA Peel umumnya dapat dilakukan setiap 1 minggu. Jika dikombinasikan dengan laser atau treatment lainnya, jadwal tindakan akan disesuaikan berdasarkan evaluasi dokter agar hasil tetap optimal dan kulit memiliki waktu regenerasi yang cukup.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Kapan hasil Korean LHALA Peel mulai terlihat?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Sebagian pasien mulai merasakan kulit lebih halus, lembap, dan tampak lebih cerah dalam beberapa hari setelah treatment. Perbaikan tekstur kulit, bekas jerawat, pori-pori, dan pigmentasi biasanya akan terlihat lebih optimal setelah menjalani beberapa sesi secara rutin sesuai anjuran dokter.
+</p></div>
+      </div>
+
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apakah Korean LHALA Peel aman untuk kulit sensitif?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Korean LHALA Peel dirancang sebagai treatment eksfoliasi yang lebih lembut dibandingkan chemical peel konvensional sehingga dapat menjadi pilihan untuk berbagai jenis kulit, termasuk kulit sensitif. Namun sebelum treatment, dokter tetap akan melakukan konsultasi dan evaluasi kondisi kulit untuk memastikan tindakan yang dipilih sesuai dengan kebutuhan dan kondisi kulit Anda.
+</p></div>
+      </div>
+
+     <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apakah Korean LHALA Peel aman dilakukan dalam jangka panjang?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Ya. Korean LHALA Peel tidak hanya membantu mengeksfoliasi kulit, tetapi juga mendukung regenerasi kulit dan membantu menjaga skin barrier tetap sehat. Selama dilakukan sesuai indikasi, menggunakan produk yang tepat, dan mengikuti evaluasi dokter, treatment ini tidak menyebabkan penipisan kulit.
+</p></div>
+      </div>
+      
+       <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apa yang harus dilakukan setelah Korean LHALA Peel?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Setelah treatment, gunakan facial wash yang lembut, moisturizer, dan sunscreen setiap hari. Hindari penggunaan skincare berbahan aktif seperti AHA, BHA, retinol, atau hydroquinone selama sekitar 5–7 hari sesuai anjuran dokter. Selain itu, hindari mengelupas kulit secara paksa, paparan sinar matahari langsung tanpa perlindungan, serta aktivitas yang menyebabkan keringat berlebih dalam masa pemulihan.
+</p></div>
+      </div>
+
+    <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Apakah Korean LHALA Peel bisa dikombinasikan dengan treatment lain?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Ya. Korean LHALA Peel dapat dikombinasikan dengan treatment lain seperti Glow Facial, IPL Glow, Rejuve Laser, DNA Glow, atau Korean Glass Skin sesuai kebutuhan kulit. Kombinasi treatment akan ditentukan oleh dokter berdasarkan hasil konsultasi untuk membantu memperoleh hasil yang lebih optimal.
+</p></div>
+      </div>
+
+<div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Siapa yang cocok menjalani Korean LHALA Peel?
+</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Treatment ini cocok bagi Anda yang memiliki kulit kusam, bekas jerawat, tekstur kulit tidak merata, pori-pori yang tampak besar, warna kulit tidak merata, atau ingin menjaga kulit tetap sehat dan glowing melalui eksfoliasi yang lebih lembut. Dokter akan melakukan analisis kondisi kulit terlebih dahulu untuk menentukan apakah Korean LHALA Peel merupakan pilihan yang tepat.
+</p></div>
+      </div>
+      
+      <div class="sozo-faq-item">
+        <button class="sozo-faq-question" onclick="toggleKoreanFaq(this)">
+          <span>Berapa harga Korean LHALA Peel di Sozo Skin Clinic?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer"><p>Sozo Skin Clinic menyediakan berbagai pilihan Korean LHALA Peel, mulai dari single treatment hingga paket kombinasi dengan treatment lainnya. Promo dapat berbeda untuk new user, non-member, maupun member. Untuk mengetahui promo terbaru, paket yang sesuai dengan kebutuhan kulit, serta rekomendasi treatment terbaik, Anda dapat berkonsultasi langsung dengan tim Sozo Skin Clinic.
+</p></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  function toggleKoreanDescription() {
+    const content = document.getElementById('treatmentDescriptionKorean');
+    const btn = document.querySelector('.sozo-sku-korean-filler-wrapper .sozo-load-more-btn');
+    const btnText = document.getElementById('koreanReadMoreText');
+    if (!content || !btn) return;
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+  function toggleKoreanFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    button.classList.toggle('active');
+    answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px";
+  }
+</script>
+
+
