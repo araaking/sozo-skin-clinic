@@ -160,6 +160,7 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [x] Glow Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/glow-peel/`) — Rp 299.000
     - [x] Dazzling Glow Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/dazling-glow-peel/`) — Rp 889.000
     - [x] Eternal Bloom Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/eternal-bloom-peel/`) — Rp 599.000
+    - [x] Korean LHALA Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/korean-lhala-peel/`) — Rp 299.000
 - [x] **Laser Treatment Hub (Laser Wajah)** (`https://sozoskinclinic.com/skin-treatment/laser-treatment/`)
     - [x] Laser CO2 (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-co2-treatment/`)
     - [x] Laser Rejuve (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-rejuve-treatment/`)

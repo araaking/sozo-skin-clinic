@@ -1,0 +1,1431 @@
+<!-- Google Font Poppins Preconnect & Stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<div class="sozo-locator-wrapper-bg">
+  <div class="sozo-locator-container">
+    
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <div class="sozo-hero-section">
+      <span class="sozo-hero-badge">Lokasi Sozo</span>
+      <h1 class="sozo-hero-title">Cari Klinik Sozo Terdekat di Kotamu</h1>
+      <p class="sozo-hero-desc">70+ cabang tersebar di seluruh Indonesia, siap memberikan perawatan kulit terbaik untukmu</p>
+    </div>
+
+    <!-- ==================== 2. SEARCH CONSOLE (ERHA STYLE - SOZO BLUE) ==================== -->
+    <div class="sozo-search-wrapper">
+      <div class="sozo-tab-container">
+        <div class="sozo-tab-item active">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+          </svg>
+          Cari Klinik
+        </div>
+      </div>
+
+      <div class="sozo-search-card">
+        <!-- Trigger Modal Lokasi -->
+        <div class="sozo-input-field sozo-trigger-field" id="sozoLocationTrigger">
+          <svg class="sozo-icon" viewBox="0 0 384 512">
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+          </svg>
+          <span class="sozo-trigger-text" id="sozoSelectedLocationText">Pilih Lokasi</span>
+          <svg class="sozo-chevron" viewBox="0 0 320 512">
+            <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/>
+          </svg>
+        </div>
+
+        <!-- Text Input Search -->
+        <div class="sozo-input-field sozo-text-field">
+          <svg class="sozo-icon" viewBox="0 0 512 512">
+            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+          </svg>
+          <input type="text" id="sozoSearchInput" placeholder="Ketik lokasi / nama cabang klinik...">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" class="sozo-submit-btn" id="sozoSubmitBtn">
+          <svg viewBox="0 0 512 512">
+            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+          </svg>
+          <span>Cari</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== 3. QUICK LINKS (KOTA BESAR) ==================== -->
+    <div class="sozo-quick-links-wrapper">
+      <div class="sozo-quick-links">
+        <a href="https://sozoskinclinic.com/lokasi/jakarta/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Jakarta
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/tangerang/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Tangerang
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/depok/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Depok
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/bogor/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Bogor
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/bekasi/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Bekasi
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/bandung/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Bandung
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/surabaya/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Surabaya
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/semarang/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Semarang
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/jogja/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Jogja
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/malang/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Malang
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/medan/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Medan
+        </a>
+        <a href="https://sozoskinclinic.com/lokasi/makassar/" class="sozo-quick-link-btn">
+          <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          Makassar
+        </a>
+      </div>
+    </div>
+
+    <!-- ==================== 4. CLINIC GRID & COMPACT LIST ==================== -->
+    <div id="sozoClinicGrid" class="sozo-map-grid"></div>
+
+    <!-- ==================== 5. PAGINATION (ERHA MINIMALIST STYLE) ==================== -->
+    <div id="sozoPagination" class="sozo-pagination"></div>
+
+    <!-- ==================== 6. EMPTY STATE ==================== -->
+    <div id="sozoEmptyState" class="sozo-empty-state">
+      <div class="sozo-empty-icon">📍</div>
+      <h3>Klinik belum ditemukan di lokasi "<span id="sozoSearchKeyword"></span>"</h3>
+      <p>Coba kata kunci lain atau pilih provinsi dari daftar lokasi.</p>
+      <button type="button" class="sozo-btn-reset" id="sozoResetBtn">Reset Pencarian</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ==================== 7. LOCATION MODAL ==================== -->
+<div class="sozo-modal-overlay" id="sozoLocationModal">
+  <div class="sozo-modal-card">
+    <div class="sozo-modal-header">
+      <h3>Pilih Lokasi</h3>
+      <button type="button" class="sozo-modal-close-btn" id="sozoModalClose">&times;</button>
+    </div>
+
+    <div class="sozo-modal-search-wrapper">
+      <svg viewBox="0 0 512 512">
+        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+      </svg>
+      <input type="text" id="sozoModalSearchInput" placeholder="Cari Provinsi / Kota...">
+    </div>
+
+    <div class="sozo-modal-list" id="sozoModalLocationList"></div>
+
+    <div class="sozo-modal-footer">
+      <button type="button" class="sozo-apply-btn" id="sozoModalApplyBtn">TERAPKAN</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 8. FLOATING PROMO BUTTON ==================== -->
+<a href="https://sozoskinclinic.com/promo/" target="_blank" rel="noopener noreferrer" class="sozo-floating-promo" aria-label="Lihat Promo Klinik Sozo">
+  <div class="sozo-promo-icon-circle">
+    <svg viewBox="0 0 512 512">
+      <path d="M437.33 128h-38.62C407.38 113.67 416 93.9 416 72c0-39.7-32.3-72-72-72-43.6 0-77.94 36.63-88 77.29C245.94 36.63 211.6 0 168 0c-39.7 0-72 32.3-72 72 0 21.9 8.62 41.67 17.29 56H74.67C33.43 128 0 161.43 0 202.67V240c0 8.84 7.16 16 16 16h216V128h-32c-22.06 0-40-17.94-40-40s17.94-40 40-40c26.96 0 53.64 29.82 56 80h32c2.36-50.18 29.04-80 56-80 22.06 0 40 17.94 40 40s-17.94 40-40 40h-32v128h216c8.84 0 16-7.16 16-16v-37.33C480 161.43 446.57 128 437.33 128zM32 288v176c0 26.51 21.49 48 48 48h152V288H32zm248 224h152c26.51 0 48-21.49 48-48V288H280v224z"/>
+    </svg>
+  </div>
+  <span class="sozo-promo-label">Promo</span>
+  <span class="sozo-promo-badge-ping"></span>
+</a>
+
+<!-- ==================== STYLES ==================== -->
+<style>
+  /* Base Reset */
+  .sozo-locator-wrapper-bg,
+  .sozo-locator-wrapper-bg *,
+  .sozo-modal-overlay,
+  .sozo-modal-overlay *,
+  .sozo-floating-promo,
+  .sozo-floating-promo * {
+    box-sizing: border-box !important;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
+
+  .sozo-locator-wrapper-bg {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 50px 15px 70px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: linear-gradient(135deg, #EFF5FF 0%, #FFFFFF 45%, #E6EEFA 100%) !important;
+  }
+
+  .sozo-locator-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    color: #1f242e !important;
+    line-height: 1.5 !important;
+  }
+
+  /* --- HERO SECTION --- */
+  .sozo-hero-section {
+    text-align: center !important;
+    padding: 0 15px 25px !important;
+    max-width: 860px !important;
+    margin: 0 auto !important;
+  }
+  .sozo-hero-badge {
+    display: inline-block !important;
+    background: #eef0fb !important;
+    color: #1A2080 !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.2px !important;
+    padding: 6px 16px !important;
+    border-radius: 50px !important;
+    margin-bottom: 14px !important;
+  }
+  .sozo-hero-title {
+    font-size: clamp(25px, 4vw, 38px) !important;
+    font-weight: 800 !important;
+    color: #1A2080 !important;
+    line-height: 1.25 !important;
+    margin: 0 0 12px 0 !important;
+    letter-spacing: -0.02em !important;
+  }
+  .sozo-hero-desc {
+    font-size: clamp(14px, 1.8vw, 16px) !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+    margin: 0 auto !important;
+    max-width: 650px !important;
+  }
+
+  /* --- SEARCH BOX --- */
+  .sozo-search-wrapper {
+    max-width: 860px !important;
+    margin: 0 auto 28px !important;
+    position: relative !important;
+  }
+  .sozo-tab-container {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: -1px !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  .sozo-tab-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 10px 26px !important;
+    background: #ffffff !important;
+    border-radius: 20px 20px 0 0 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #1A2080 !important;
+    box-shadow: 0 -4px 15px rgba(26, 32, 128, 0.05) !important;
+    border: 1px solid #e2e5eb !important;
+    border-bottom: 2px solid #ffffff !important;
+  }
+  .sozo-tab-item svg {
+    width: 16px !important;
+    height: 16px !important;
+    fill: #1A2080 !important;
+  }
+
+  .sozo-search-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e5eb !important;
+    border-radius: 24px !important;
+    padding: 10px 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    box-shadow: 0 12px 35px rgba(26, 32, 128, 0.08) !important;
+  }
+  .sozo-input-field {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 11px 16px !important;
+    border: 1px solid #e9ecf2 !important;
+    border-radius: 14px !important;
+    background: #fafbfe !important;
+    transition: all 0.25s ease !important;
+  }
+  .sozo-trigger-field {
+    flex: 0 0 240px !important;
+    cursor: pointer !important;
+    user-select: none !important;
+  }
+  .sozo-trigger-field:hover {
+    border-color: #1A2080 !important;
+    background: #ffffff !important;
+  }
+  .sozo-trigger-text {
+    flex: 1 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #1f242e !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .sozo-icon {
+    width: 15px !important;
+    height: 15px !important;
+    fill: #1A2080 !important;
+    flex-shrink: 0 !important;
+  }
+  .sozo-chevron {
+    width: 12px !important;
+    height: 12px !important;
+    fill: #8c93a4 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .sozo-text-field {
+    flex: 1 !important;
+  }
+  .sozo-text-field input {
+    width: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    font-size: 14px !important;
+    color: #1f242e !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-weight: 500 !important;
+  }
+  .sozo-text-field:focus-within {
+    border-color: #1A2080 !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(26, 32, 128, 0.08) !important;
+  }
+
+  .sozo-submit-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: #1A2080 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 14px !important;
+    padding: 13px 28px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 15px rgba(26, 32, 128, 0.25) !important;
+    line-height: 1 !important;
+  }
+  .sozo-submit-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+    fill: #ffffff !important;
+  }
+  .sozo-submit-btn:hover {
+    background: #11164f !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.35) !important;
+  }
+
+  /* --- QUICK LINKS --- */
+  .sozo-quick-links-wrapper {
+    margin-bottom: 30px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  .sozo-quick-links {
+    display: flex !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    padding-bottom: 8px !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .sozo-quick-links::-webkit-scrollbar {
+    display: none !important;
+  }
+  .sozo-quick-link-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 8px 18px !important;
+    border: 1px solid #e2e5eb !important;
+    border-radius: 50px !important;
+    background-color: #ffffff !important;
+    color: #444444 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03) !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+  }
+  .sozo-quick-link-btn svg {
+    width: 13px !important;
+    height: 13px !important;
+    fill: #1A2080 !important;
+  }
+  .sozo-quick-link-btn:hover {
+    border-color: #1A2080 !important;
+    color: #1A2080 !important;
+    background-color: #eef0fb !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(26, 32, 128, 0.1) !important;
+  }
+
+  /* ==================== DESKTOP CARD GRID ==================== */
+  .sozo-map-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+    gap: 24px !important;
+    margin-bottom: 35px !important;
+    min-height: 380px !important;
+  }
+  .sozo-map-card {
+    background: #ffffff !important;
+    border: 1px solid #e7ebf3 !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 6px 20px -4px rgba(26, 32, 128, 0.07) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .sozo-map-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 18px 36px rgba(26, 32, 128, 0.12) !important;
+    border-color: #c9cfee !important;
+  }
+  .sozo-card-media {
+    width: 100% !important;
+    height: 175px !important;
+    background-color: #eef1f5 !important;
+    position: relative !important;
+  }
+  .sozo-card-media iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block !important;
+  }
+  .sozo-mobile-thumb {
+    display: none !important;
+  }
+  .sozo-card-content {
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+  }
+  .sozo-region-badge {
+    align-self: flex-start !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #1A2080 !important;
+    background: #eef0fb !important;
+    padding: 4px 10px !important;
+    border-radius: 50px !important;
+    margin-bottom: 10px !important;
+  }
+  .sozo-region-badge svg {
+    width: 11px !important;
+    height: 11px !important;
+    fill: #1A2080 !important;
+  }
+  .sozo-card-content h3 {
+    color: #1A2080 !important;
+    font-size: 16.5px !important;
+    line-height: 1.35 !important;
+    margin: 0 0 8px 0 !important;
+    font-weight: 700 !important;
+  }
+  .sozo-address {
+    color: #5e6676 !important;
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+    margin: 0 0 20px 0 !important;
+    flex-grow: 1 !important;
+    font-weight: 400 !important;
+  }
+  
+  /* Action Buttons Desktop */
+  .sozo-action-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .sozo-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 11px 14px !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    transition: all 0.25s ease !important;
+    width: 100% !important;
+    line-height: 1.2 !important;
+  }
+  .sozo-btn svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  .sozo-btn-wa {
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    border: 1.5px solid transparent !important;
+    box-shadow: 0 4px 12px rgba(26, 32, 128, 0.18) !important;
+  }
+  .sozo-btn-wa svg {
+    fill: #ffffff !important;
+  }
+  .sozo-btn-wa:hover {
+    background-color: #11164f !important;
+    color: #ffffff !important;
+  }
+  .sozo-btn-maps {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    border: 1.5px solid #dcdef0 !important;
+  }
+  .sozo-btn-maps svg {
+    stroke: #1A2080 !important;
+  }
+  .sozo-btn-maps:hover {
+    background-color: #eef0fb !important;
+    border-color: #1A2080 !important;
+  }
+
+  /* ==================== ERHA-STYLE MINIMALIST PAGINATION ==================== */
+  .sozo-pagination {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin: 30px 0 10px !important;
+  }
+  .sozo-page-item {
+    min-width: 36px !important;
+    height: 36px !important;
+    padding: 0 6px !important;
+    border-radius: 50% !important;
+    background: transparent !important;
+    color: #4b5563 !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    user-select: none !important;
+  }
+  .sozo-page-item:hover:not(.active):not(.dots) {
+    background: #eef1fc !important;
+    color: #1A2080 !important;
+  }
+  .sozo-page-item.active {
+    background: #1A2080 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(26, 32, 128, 0.25) !important;
+  }
+  .sozo-page-item.dots {
+    cursor: default !important;
+    color: #9ca3af !important;
+  }
+  .sozo-page-arrow {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #1A2080 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+  }
+  .sozo-page-arrow:hover {
+    background: #eef1fc !important;
+  }
+  .sozo-page-arrow.disabled {
+    color: #d1d5db !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+  }
+
+  .sozo-empty-state {
+    display: none;
+    text-align: center !important;
+    padding: 50px 20px !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    border: 1.5px dashed #cdd2e0 !important;
+    margin: 20px 0 !important;
+  }
+  .sozo-empty-icon {
+    font-size: 40px !important;
+    margin-bottom: 10px !important;
+  }
+  .sozo-empty-state h3 {
+    color: #1A2080 !important;
+    margin: 0 0 6px 0 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-empty-state p {
+    color: #5e6676 !important;
+    font-size: 14px !important;
+    margin: 0 0 16px 0 !important;
+  }
+  .sozo-btn-reset {
+    background: #1A2080 !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 10px 22px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 13.5px !important;
+    cursor: pointer !important;
+  }
+
+  /* --- MODAL POPUP --- */
+  .sozo-modal-overlay {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(16, 20, 50, 0.6) !important;
+    backdrop-filter: blur(5px) !important;
+    z-index: 999999 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 15px !important;
+  }
+  .sozo-modal-overlay.active {
+    display: flex !important;
+  }
+  .sozo-modal-card {
+    background: #ffffff !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    border-radius: 22px !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    max-height: 85vh !important;
+  }
+  .sozo-modal-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 18px 22px !important;
+    border-bottom: 1px solid #eef0f5 !important;
+  }
+  .sozo-modal-header h3 {
+    margin: 0 !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: #1f242e !important;
+  }
+  .sozo-modal-close-btn {
+    background: transparent !important;
+    border: none !important;
+    font-size: 26px !important;
+    color: #7b8395 !important;
+    cursor: pointer !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+  }
+  .sozo-modal-close-btn:hover {
+    color: #1A2080 !important;
+  }
+
+  .sozo-modal-search-wrapper {
+    padding: 12px 22px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    border-bottom: 1px solid #edf0f5 !important;
+  }
+  .sozo-modal-search-wrapper svg {
+    width: 15px !important;
+    height: 15px !important;
+    fill: #8c93a4 !important;
+  }
+  .sozo-modal-search-wrapper input {
+    width: 100% !important;
+    border: 1px solid #e2e5eb !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    outline: none !important;
+    font-size: 13.5px !important;
+    background: #ffffff !important;
+    color: #1f242e !important;
+    box-shadow: none !important;
+    font-weight: 500 !important;
+  }
+  .sozo-modal-search-wrapper input:focus {
+    border-color: #1A2080 !important;
+  }
+
+  .sozo-modal-list {
+    padding: 8px 22px !important;
+    overflow-y: auto !important;
+    max-height: 320px !important;
+  }
+  .sozo-modal-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 4px !important;
+    border-bottom: 1px solid #f0f2f7 !important;
+    cursor: pointer !important;
+  }
+  .sozo-modal-item:hover {
+    background-color: #f5f7ff !important;
+  }
+  .sozo-modal-item label {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    flex: 1 !important;
+    color: #1f242e !important;
+    margin: 0 !important;
+  }
+  .sozo-modal-item input[type="radio"] {
+    accent-color: #1A2080 !important;
+    width: 17px !important;
+    height: 17px !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+  }
+
+  .sozo-modal-footer {
+    padding: 16px 22px !important;
+    border-top: 1px solid #e2e5eb !important;
+    background: #ffffff !important;
+  }
+  .sozo-apply-btn {
+    width: 100% !important;
+    background: #1A2080 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.03em !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 4px 12px rgba(26, 32, 128, 0.2) !important;
+  }
+  .sozo-apply-btn:hover {
+    background: #11164f !important;
+  }
+
+  /* --- FLOATING PROMO BUTTON --- */
+  .sozo-floating-promo {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    background: #1A2080 !important;
+    color: #ffffff !important;
+    padding: 9px 18px 9px 10px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    z-index: 99999 !important;
+    box-shadow: 0 10px 25px rgba(26, 32, 128, 0.35) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+  }
+  .sozo-floating-promo:hover {
+    background: #11164f !important;
+    color: #ffffff !important;
+    transform: translateY(-4px) scale(1.04) !important;
+  }
+  .sozo-promo-icon-circle {
+    width: 36px !important;
+    height: 36px !important;
+    background: #ffffff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .sozo-promo-icon-circle svg {
+    width: 17px !important;
+    height: 17px !important;
+    fill: #1A2080 !important;
+  }
+  .sozo-promo-label {
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1 !important;
+  }
+  .sozo-promo-badge-ping {
+    position: absolute !important;
+    top: 2px !important;
+    right: 4px !important;
+    width: 11px !important;
+    height: 11px !important;
+    background-color: #ff3b30 !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 50% !important;
+    animation: sozoPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite !important;
+  }
+  @keyframes sozoPing {
+    0% { transform: scale(1); opacity: 1; }
+    75%, 100% { transform: scale(1.6); opacity: 0.3; }
+  }
+
+  /* ==========================================================
+      MOBILE VIEW: ERHA FLAT COMPACT LIST (< 768px)
+      - NO THICK CARDS
+      - FULL ADDRESS READABLE
+      - CLEAN BORDER-BOTTOM
+      ========================================================== */
+  @media (max-width: 768px) {
+    .sozo-locator-wrapper-bg {
+      padding: 20px 10px 45px !important;
+      background: #ffffff !important;
+    }
+    .sozo-hero-section {
+      padding: 0 4px 16px !important;
+    }
+    .sozo-hero-title {
+      font-size: 20px !important;
+      margin-bottom: 6px !important;
+    }
+    .sozo-hero-desc {
+      font-size: 12.5px !important;
+    }
+    .sozo-search-card {
+      flex-direction: column !important;
+      padding: 10px !important;
+      gap: 8px !important;
+      border-radius: 16px !important;
+      box-shadow: 0 4px 18px rgba(26, 32, 128, 0.05) !important;
+    }
+    .sozo-trigger-field,
+    .sozo-text-field,
+    .sozo-submit-btn {
+      width: 100% !important;
+      flex: unset !important;
+      padding: 9px 12px !important;
+      border-radius: 10px !important;
+    }
+
+    /* Flat List Container (No Outer Card) */
+    .sozo-map-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0 !important;
+      margin-bottom: 20px !important;
+      min-height: auto !important;
+      border-top: 1px solid #f0f2f7 !important;
+    }
+
+    /* Flat List Item (Erha Style) */
+    .sozo-map-card {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-start !important;
+      padding: 16px 4px !important;
+      border-radius: 0 !important;
+      border: none !important;
+      border-bottom: 1px solid #f0f2f7 !important;
+      box-shadow: none !important;
+      gap: 14px !important;
+      background: transparent !important;
+    }
+    .sozo-map-card:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Thumbnail Minimalist */
+    .sozo-card-media {
+      width: 68px !important;
+      height: 68px !important;
+      flex-shrink: 0 !important;
+      border-radius: 8px !important;
+      overflow: hidden !important;
+      background: #eef1fc !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .sozo-card-media iframe {
+      display: none !important;
+    }
+    .sozo-mobile-thumb {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: linear-gradient(145deg, #1A2080 0%, #2b35b5 100%) !important;
+      color: #ffffff !important;
+      border-radius: 8px !important;
+    }
+    .sozo-mobile-thumb svg {
+      width: 22px !important;
+      height: 22px !important;
+      fill: #ffffff !important;
+      margin-bottom: 2px !important;
+    }
+    .sozo-mobile-thumb span {
+      font-size: 8px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      color: #ffffff !important;
+    }
+
+    /* Detail Content Right */
+    .sozo-card-content {
+      padding: 0 !important;
+      flex: 1 !important;
+      min-width: 0 !important;
+    }
+    .sozo-region-badge {
+      display: none !important;
+    }
+    .sozo-card-content h3 {
+      font-size: 14.5px !important;
+      font-weight: 700 !important;
+      margin: 0 0 4px 0 !important;
+      color: #1A2080 !important;
+      line-height: 1.3 !important;
+      white-space: normal !important;
+    }
+    .sozo-address {
+      font-size: 11.5px !important;
+      line-height: 1.5 !important;
+      margin: 0 0 10px 0 !important;
+      color: #64748b !important;
+      display: block !important;
+    }
+
+    /* Action Buttons (Erha Style: Buat Jadwal & Lihat Maps) */
+    .sozo-action-buttons {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 16px !important;
+    }
+    .sozo-btn-wa {
+      width: auto !important;
+      padding: 5px 14px !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      border-radius: 50px !important;
+      background: transparent !important;
+      color: #1A2080 !important;
+      border: 1.5px solid #1A2080 !important;
+      box-shadow: none !important;
+      line-height: 1.2 !important;
+      letter-spacing: 0.02em !important;
+    }
+    .sozo-btn-wa svg {
+      display: none !important;
+    }
+    .sozo-btn-wa:hover {
+      background: #1A2080 !important;
+      color: #ffffff !important;
+    }
+
+    .sozo-btn-maps {
+      width: auto !important;
+      padding: 0 !important;
+      font-size: 11.5px !important;
+      font-weight: 700 !important;
+      color: #1A2080 !important;
+      background: transparent !important;
+      border: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+      line-height: 1.2 !important;
+    }
+    .sozo-btn-maps svg {
+      display: none !important;
+    }
+
+    /* Mobile Pagination */
+    .sozo-pagination {
+      gap: 3px !important;
+      margin: 20px 0 10px !important;
+    }
+    .sozo-page-item {
+      min-width: 32px !important;
+      height: 32px !important;
+      font-size: 13px !important;
+    }
+    .sozo-page-arrow {
+      min-width: 32px !important;
+      height: 32px !important;
+      font-size: 16px !important;
+    }
+
+    /* Modal & Floating Responsive */
+    .sozo-modal-overlay {
+      align-items: flex-end !important;
+      padding: 0 !important;
+    }
+    .sozo-modal-card {
+      max-width: 100% !important;
+      border-radius: 20px 20px 0 0 !important;
+      max-height: 80vh !important;
+    }
+    .sozo-floating-promo {
+      bottom: 20px !important;
+      right: 14px !important;
+      padding: 8px 14px 8px 9px !important;
+    }
+    .sozo-promo-icon-circle {
+      width: 28px !important;
+      height: 28px !important;
+    }
+    .sozo-promo-icon-circle svg {
+      width: 13px !important;
+      height: 13px !important;
+    }
+    .sozo-promo-label {
+      font-size: 12.5px !important;
+    }
+
+    /* FIX iOS Safari auto-zoom: input <16px triggers viewport zoom on focus */
+    .sozo-text-field input,
+    .sozo-modal-search-wrapper input,
+    #sozoSearchInput,
+    #sozoModalSearchInput {
+      font-size: 16px !important;
+    }
+  }
+
+  /* Extra safety for iOS devices regardless of width */
+  @supports (-webkit-touch-callout: none) {
+    .sozo-text-field input,
+    .sozo-modal-search-wrapper input {
+      font-size: 16px !important;
+    }
+  }
+</style>
+
+<!-- ==================== JS SCRIPT ==================== -->
+<script>
+(function() {
+  function initSozoLocator() {
+    const clinicsData = [
+      {"name": "Sozo Skin Clinic - AEON Tanjung Barat", "address": "AEON Tanjung Barat (3-23AB) - Jl. Raya Tanjung Barat No. 163, RT 012 RW 04, Tanjung Barat, Jagakarsa, Jakarta Selatan, DKI Jakarta 12530", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Alam Sutera", "address": "Ruko Jalur Sutera 25 BC-15, Alam Sutera, Kel. Pakualam, Kec. Tangerang, Kota Tangerang Selatan, Banten 15331", "province": "Banten"},
+      {"name": "Sozo Skin Clinic - Arteri Pondok Indah", "address": "Jl. Iskandar Muda No.68A, RT.3/RW.2, Kec. Kby. Lama, Jakarta Selatan, DKI Jakarta 12240", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Bali", "address": "Jl. Raya Puputan No.190 A, Renon, Denpasar Selatan, Kota Denpasar, Bali 80226", "province": "Bali"},
+      {"name": "Sozo Skin Clinic - Bali Gatot Subroto", "address": "Jl. Gatot Subroto No. 279, Dauh Puri Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80237", "province": "Bali"},
+      {"name": "Sozo Skin Clinic - Balikpapan", "address": "Jl. Ruhui Rahayu Ring Road No.1, Sepinggan, Kecamatan Balikpapan Selatan, Balikpapan, Kalimantan Timur 76115", "province": "Kalimantan Timur"},
+      {"name": "Sozo Skin Clinic - Balikpapan Superblock", "address": "Ruko Komplek Balikpapan Super Blok (BSB) Blok E-20, Jl. Jenderal Sudirman, Kel. Gunung Bahagia, Kec. Balikpapan Selatan, Kota Balikpapan, Kalimantan Timur 76114", "province": "Kalimantan Timur"},
+      {"name": "Sozo Skin Clinic - Bandung Buah Batu", "address": "Jl. Buah Batu No 250, Cijagra, Kec. Lengkong, Bandung, Jawa Barat 40265", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Bandung Paskal", "address": "Jalan Pajajaran No.68, Pamoyanan, Kecamatan Cicendo, Kota Bandung, Jawa Barat 40173", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Bandung Surya Sumantri", "address": "Jalan Prof Surya Sumantri No. 156, Kelurahan Sukagalih, Kecamatan Sukajadi, Kota Bandung, Jawa Barat 40164", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Banjarmasin", "address": "Jalan Ahmad Yani KM 5,7 Nomor 7A RT 008 RW 001 Kel. Pemurus Dalam Kec. Banjarmasin Selatan, Banjarmasin, Kalimantan Selatan 70238", "province": "Kalimantan Selatan"},
+      {"name": "Sozo Skin Clinic - Batam", "address": "Teluk Tering, Kec. Batam Kota, Batam, Kepulauan Riau 29444", "province": "Kepulauan Riau"},
+      {"name": "Sozo Skin Clinic - Bekasi", "address": "Jl. Cemara Raya no. 1, Kavling 10D, RT.003/RW.006A, Jakasampurna, Kota Bekasi, Jawa Barat 17145", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Bekasi Grand Galaxy", "address": "Jl. Boulevard Raya RGA No.67, RT.001/RW.002, Jaka Setia, Kec. Bekasi Sel., Kota Bks, Jawa Barat 17147", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Bekasi Summarecon", "address": "Ruko Emerald Commercial Blok UA No 27, RT 004 RW 011, Marga Mulya, Kec. Bekasi Utara, Bekasi, Jawa Barat 17123", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Bendungan Hilir", "address": "Jl. Bendungan Hilir No 7 , RT.11/RW.3, Bend. Hilir, Kecamatan Tanah Abang, Jakarta, DKI Jakarta 10210", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Bintaro", "address": "Jl. Bintaro Utama V Blok EA 2 lantai 2, Bintaro Jaya No.27, Pd. Ranji, Kec. Ciputat Timur, Tangerang Selatan, Banten 15224", "province": "Banten"},
+      {"name": "Sozo Skin Clinic - Bogor", "address": "Jl. Bangbarung Raya No.24, RT.02/RW.07, Bantarjati, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16153", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Bogor Taman Yasmin", "address": "Komplek Ruko Permata Yasmin, Jl. Brigjen Saptadji Hadiprawira No. 1 & 2, Cilendek Barat, Bogor Barat, Kota Bogor, Jawa Barat 16112", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - BSD", "address": "Ruko Pasar Modern Timur 2, Jl. Letnan Sutopo Blok AA Nomor 25-26, Bumi Serpong Damai, Rawa Mekar Jaya, Kec. Serpong, Tangerang Selatan, Banten 15318", "province": "Banten"},
+      {"name": "Sozo Skin Clinic - Cibinong", "address": "Jl. Raya Jakarta-Bogor KM. 45 No. 43a, Pakansari, Kec. Cibinong, Kabupaten Bogor, Jawa Barat 16195", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Cibubur Transyogi", "address": "Ruko Cibubur Point, Jl. Alternatif Cibubur, Blk. A, No.9, Harjamukti, Kec. Cimanggis, Kota Depok, Jawa Barat 16454", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Cikarang", "address": "Jl. Raya Cikarang - Cibarusah No.1, Serang, Cikarang Selatan, Kabupaten Bekasi, Jawa Barat 17530", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Cinere", "address": "Jl. Cinere Raya No. 9, Cinere, Kec. Cinere, Kota Depok, Jawa Barat 16514", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Cirebon", "address": "Jl. DR. Cipto Mangunkusumo Komplek CSB (Cirebon Super Blok) Office Park Kav No. 5, Kel. Pekiringan, Kec. Kesambi, Cirebon, Jawa Barat 45131", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Gading Serpong", "address": "Jl. Gading Serpong Boulevard, Ruko Odessa Blok AA 2 No.32 Kabupaten Tangerang, Banten 15810", "province": "Banten"},
+      {"name": "Sozo Skin Clinic - Green Lake City", "address": "Jl. Green Lake City Boulevard Blok D No. 26, Komplek Greenlake City Ruko Cordoba, Kota Tangerang, Banten 15147", "province": "Banten"},
+      {"name": "Sozo Skin Clinic - Jambi", "address": "Ruko Jambi Business Center (JBC) No. E1-12 & E1, Jl. Kapten Pattimura, No.15, Simpang III Sipin, Kec. Kota Baru, Jambi, 36361", "province": "Jambi"},
+      {"name": "Sozo Skin Clinic - JGC", "address": "Ruko New East, Jl. Jakarta Garden City Boulevard, RT. 11 RW. 8, Cakung Timur, Cakung, Jakarta Timur, DKI Jakarta 13910", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Karawaci", "address": "Supermall Karawaci, Unit. FF # 11 Jalan 105 Bulevar Diponegoro Lippo Karawaci, Kel. Bencongan Indah. Kec. Kelapa Dua, Tangerang, Banten 15811", "province": "Banten"},
+      {"name": "Sozo Skin Clinic - Karawaci Palem Semi", "address": "Ruko CBD, Jl. Palem Semi No.32, RT.001/RW.009, Panunggangan Barat, Cibodas, Tangerang, Banten 15139", "province": "Banten"},
+      {"name": "Sozo Skin Clinic - Karawaci Taman Permata", "address": "Ruko New Asia, Lippo Village, Jl. Taman Permata No.220, Binong, Curug, Tangerang, Banten 15810", "province": "Banten"},
+      {"name": "Sozo Skin Clinic - Karawang", "address": "Jalan Bharata Blok J No. 3 Kel. Sukaluyu Kec. Telukjambe Timur, Karawang, Jawa Barat 41361", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Kelapa Gading Boulevard", "address": "H 4 / 6, Jl. Boulevard Raya, RT.1/RW.2, Kelapa Gading Timur, Kec. Kelapa Gading, Jakarta Utara, DKI Jakarta 14240", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Kelapa Gading Summarecon", "address": "Blok LC 6 No.43, Jl. Boulevard Bar., Klp. Gading Bar., Kec. Klp. Gading, Jakarta Utara, DKI Jakarta 14240", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Kemang", "address": "Jalan Kemang Raya No. 72, RT.4/RW.2, Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan, DKI Jakarta 12730", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Kemanggisan", "address": "Ruko Kemanggisan Square, Jl. Kemanggisan Raya No. B5 Unit C & D, Kel. Palmerah, Kec. Palmerah, Kota Jakarta Barat, DKI Jakarta 11480", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Kota Wisata Cibubur", "address": "Ruko Downtown Madison Blok SHC6 No. 8 Jl. Raya Kota Wisata Cibubur, Kel. Ciangsana Kec. Gunung Putri Kab. Bogor Jawa Barat 16969", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Lampung", "address": "Jl. Kartini No.127 B, Klp. Tiga, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35127", "province": "Lainnya"},
+      {"name": "Sozo Skin Clinic - Makassar", "address": "Ko. Business Centre Jade No.1, RT.001/RW.01, Masale, Kecamatan Panakkukang, Kota Makassar, Sulawesi Selatan 90231", "province": "Sulawesi Selatan"},
+      {"name": "Sozo Skin Clinic - Makassar Tamalanrea", "address": "Jalan Perintis Kemerdekaan, Tamalanrea Jaya, Tamalanrea, Kota Makassar, Sulawesi Selatan 90245", "province": "Sulawesi Selatan"},
+      {"name": "Sozo Skin Clinic - Malang", "address": "Jl. Pahlawan Trip No.23, Oro-oro Dowo, Kec. Klojen, Malang, Jawa Timur 65145", "province": "Jawa Timur"},
+      {"name": "Sozo Skin Clinic - Mampang", "address": "Jalan Mampang Prapatan Raya No. 99, Kel. Duren Tiga, Kec. Pancoran, Jakarta Selatan, DKI Jakarta 12760", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Manado", "address": "Komp. Ruko Mega Mas Blok C1 No. 15-16, Jl. Pierre Tendean - Boulevard, Wenang Sel., Kec. Wenang, Kota Manado, Sulawesi Utara 95111", "province": "Sulawesi Utara"},
+      {"name": "Sozo Skin Clinic - Mangga Besar", "address": "Jl. Raya Mangga Besar No.84 13, RT.13/RW.1, Taman Sari, Kec. Taman Sari, Kota Jakarta Barat, DKI Jakarta 11150", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Margonda Depok", "address": "Jl. Margonda No.27, Pondok Cina, Kecamatan Beji, Depok, Jawa Barat 16424", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Mataram", "address": "Jl. Pejanggik No. 82C, Kel. Pejanggik, Kec. Mataram, Mataram, Nusa Tenggara Barat 83122", "province": "Nusa Tenggara Barat"},
+      {"name": "Sozo Skin Clinic - Medan", "address": "Jalan iskandar muda no 23, Medan Baru, Kota Medan, Sumatera Utara 20154", "province": "Sumatera Utara"},
+      {"name": "Sozo Skin Clinic - Medan Cemara Asri", "address": "Jl. Cemara Boulevard Blok A-1 No. 40, Medan Estate, Percut Sei Tuan, Deli Serdang, Sumatera Utara 20233", "province": "Sumatera Utara"},
+      {"name": "Sozo Skin Clinic - Padang", "address": "Jl. H. Agus Salim No.17, Sawahan, Kec. Padang Tim., Kota Padang, Sumatera Barat 25171", "province": "Lainnya"},
+      {"name": "Sozo Skin Clinic - Palembang", "address": "Jl. Jend. Basuki Rachmat No.12 B-C, Pahlawan, Kec. Kemuning, Palembang, Sumatera Selatan 30128", "province": "Sumatera Selatan"},
+      {"name": "Sozo Skin Clinic - Pekanbaru", "address": "Jl. Jend. Sudirman No.11, Tengkerang Sel., Kec. Bukit Raya, Pekanbaru, Riau 28125", "province": "Riau"},
+      {"name": "Sozo Skin Clinic - PIK", "address": "Ruko Arcade, Jl Pantai Indah Utara 2, RT.2/RW.7, Kapuk Muara, Kec. Penjaringan, Jakarta Utara, DKI Jakarta 14460", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Pondok Bambu", "address": "Jl. Pahlawan Revolusi No.2, RW.4, Pondok Bambu, Durensawit, Jakarta Timur, DKI Jakarta 13430", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Pontianak", "address": "Jl. Slt. Abdurrahman Kelurahan No.67, Sungai Bangkong, Kec. Pontianak Kota, Pontianak, Kalimantan Barat 78116", "province": "Kalimantan Barat"},
+      {"name": "Sozo Skin Clinic - Puri Indah", "address": "Jl. Puri Indah Raya Blok T1 No.3A, RT.1/RW.2, Kembangan Selatan, Kembangan, Jakarta Barat, DKI Jakarta 11610", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Rawamangun", "address": "Jl. Pemuda No.78 C, RT.1/RW.8, Jati, Kec. Pulo Gadung, Jakarta Timur, DKI Jakarta 13220", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Samarinda", "address": "Jl. Dr. Sutomo No.8b, Sidodadi, Kec. Samarinda Ulu, Samarinda, Kalimantan Timur 75243", "province": "Kalimantan Timur"},
+      {"name": "Sozo Skin Clinic - Semarang", "address": "Jl. Mayjend Sutoyo 960-81, Karangkidul, Kec. Semarang Tengah, Semarang, Jawa Tengah 50136", "province": "Jawa Tengah"},
+      {"name": "Sozo Skin Clinic - Semarang Banyumanik", "address": "Jl. Setia Budi No.115, Srondol Kulon, Kec. Banyumanik, Semarang, Jawa Tengah 50263", "province": "Jawa Tengah"},
+      {"name": "Sozo Skin Clinic - Serang", "address": "Jalan Jenderal Ahmad Yani No. 160 Kel. Sumur Pecung Kec. Serang, Kota Serang, Banten 42118", "province": "Banten"},
+      {"name": "Sozo Skin Clinic - Solo", "address": "Jl. Prof. DR. Supomo 25-47, Timuran, Kec. Banjarsari, Surakarta, Jawa Tengah 57139", "province": "Jawa Tengah"},
+      {"name": "Sozo Skin Clinic - Sunter", "address": "Ruko Greenlake Sunter Blok TBS BSM, Jalan Danau Sunter Selatan, RT.4/RW.18, Sunter Agung, Kecamatan Tanjung Priok, Jakarta Utara, DKI Jakarta 14350", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Surabaya Bukit Darmo", "address": "Office Park, Jl. Mayjend. Jonosewojo, Pradahkalikendal, Kec. Dukuhpakis, Surabaya, Jawa Timur 60225", "province": "Jawa Timur"},
+      {"name": "Sozo Skin Clinic - Surabaya Jemursari", "address": "Jalan Jemursari No. 106A Jemur Wonosari, Kec. Tenggilis Mejoyo, Kota Surabaya, Jawa Timur 60292", "province": "Jawa Timur"},
+      {"name": "Sozo Skin Clinic - Surabaya Manyar", "address": "Jl. Manyar Kertoarjo No.10A, Mojo, Kecamatan Gubeng, Surabaya, Jawa Timur 60285", "province": "Jawa Timur"},
+      {"name": "Sozo Skin Clinic - Surabaya Mulyosari", "address": "Jalan Raya Mulyosari, Kalisari, Kecamatan Mulyorejo, Surabaya, Jawa Timur 60113", "province": "Jawa Timur"},
+      {"name": "Sozo Skin Clinic - Tangerang City", "address": "Jl. Perintis Kemerdekaan Blok C No. 5 RT.005/RW.005, Babakan, Ruko Business Park Tangcity Superblock, Kota Tangerang, Banten 15133", "province": "Banten"},
+      {"name": "Sozo Skin Clinic - Tanjung Duren", "address": "Jl. Tanjung Duren Raya No. 41 D, Jakarta Barat, DKI Jakarta 11470", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Signature - Tanjung Duren 2", "address": "Jl. Tanjung Duren Raya No.364A, Tj. Duren Utara, Kec. Grogol petamburan, Jakarta Barat, DKI Jakarta 11470", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Tasikmalaya", "address": "Komplek Ruko Permata Regency, Jl. HZ Mustofa, Kelurahan Kahuripan, Kec. Tawang, Tasikmalaya, Jawa Barat 46115", "province": "Jawa Barat"},
+      {"name": "Sozo Skin Clinic - Tebet", "address": "Jl. Tebet Utara Dalam No. 3A RT. 003 RW 002 Blok V Persil No. 561, Kota Jakarta Selatan, DKI Jakarta 12820", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Tebet Timur", "address": "Jl. Tebet Timur Raya No.67D, RT.9/RW.3, Tebet Tim., Kec. Tebet, Kota Jakarta Selatan, DKI Jakarta 12820", "province": "DKI Jakarta"},
+      {"name": "Sozo Skin Clinic - Yogyakarta", "address": "Jl. Pangeran Diponegoro No.58, Gowongan, Kec. Jetis, Yogyakarta, DI Yogyakarta 55233", "province": "DI Yogyakarta"}
+    ];
+
+    const provinces = [
+      "Semua Lokasi", "DKI Jakarta", "Jawa Barat", "Banten", "Jawa Tengah", 
+      "DI Yogyakarta", "Jawa Timur", "Bali", "Nusa Tenggara Barat", 
+      "Sumatera Utara", "Sumatera Selatan", "Riau", "Kepulauan Riau", 
+      "Jambi", "Kalimantan Barat", "Kalimantan Selatan", "Kalimantan Timur", 
+      "Sulawesi Utara", "Sulawesi Selatan", "Lainnya"
+    ];
+
+    const gridContainer = document.getElementById("sozoClinicGrid");
+    const paginationContainer = document.getElementById("sozoPagination");
+    const searchInput = document.getElementById("sozoSearchInput");
+    const submitBtn = document.getElementById("sozoSubmitBtn");
+    const emptyState = document.getElementById("sozoEmptyState");
+    const searchKeywordText = document.getElementById("sozoSearchKeyword");
+    const resetBtn = document.getElementById("sozoResetBtn");
+
+    const locationTrigger = document.getElementById("sozoLocationTrigger");
+    const selectedLocationText = document.getElementById("sozoSelectedLocationText");
+    const locationModal = document.getElementById("sozoLocationModal");
+    const modalClose = document.getElementById("sozoModalClose");
+    const modalList = document.getElementById("sozoModalLocationList");
+    const modalSearchInput = document.getElementById("sozoModalSearchInput");
+    const modalApplyBtn = document.getElementById("sozoModalApplyBtn");
+
+    if (!gridContainer || !locationTrigger) return;
+
+    let currentPage = 1;
+    const itemsPerPage = 9;
+    let selectedProvince = "Semua Lokasi";
+    let tempSelectedProvince = "Semua Lokasi";
+    let filteredData = [...clinicsData];
+
+    function regionLabel(clinic) {
+      if (clinic.province && clinic.province !== "Lainnya") return clinic.province;
+      const m = clinic.address.match(/,\s*([A-Za-z.\s]+?)\s*\d{5}\s*$/);
+      return m ? m[1].trim() : "Indonesia";
+    }
+
+    // Membersihkan prefix nama untuk tampilan yang lebih compact
+    function formatClinicName(name) {
+      return name.replace(/^Sozo\s+Skin\s+(Clinic|Signature)\s*-\s*/i, '');
+    }
+
+    function populateModalList(filterTerm = "") {
+      modalList.innerHTML = "";
+      const term = filterTerm.toLowerCase();
+      const filteredProvinces = provinces.filter(p => p.toLowerCase().includes(term));
+
+      filteredProvinces.forEach(prov => {
+        const item = document.createElement("div");
+        item.className = "sozo-modal-item";
+        const isChecked = tempSelectedProvince === prov ? "checked" : "";
+        
+        item.innerHTML = `
+          <label for="prov_${prov.replace(/\s+/g, '')}">${prov}</label>
+          <input type="radio" id="prov_${prov.replace(/\s+/g, '')}" name="sozo_modal_prov" value="${prov}" ${isChecked}>
+        `;
+
+        item.addEventListener("click", () => {
+          const radio = item.querySelector("input");
+          radio.checked = true;
+          tempSelectedProvince = prov;
+        });
+
+        modalList.appendChild(item);
+      });
+    }
+
+    function executeFilter() {
+      const term = searchInput.value.toLowerCase().trim();
+      
+      filteredData = clinicsData.filter(c => {
+        const matchText = c.name.toLowerCase().includes(term) || c.address.toLowerCase().includes(term);
+        const matchProv = (selectedProvince === "Semua Lokasi" || selectedProvince === "Semua") 
+          ? true 
+          : (c.province === selectedProvince);
+        return matchText && matchProv;
+      });
+
+      currentPage = 1;
+      renderClinics();
+    }
+
+    function renderClinics() {
+      gridContainer.innerHTML = "";
+      
+      if (filteredData.length === 0) {
+        gridContainer.style.setProperty("display", "none", "important");
+        paginationContainer.style.setProperty("display", "none", "important");
+        emptyState.style.setProperty("display", "block", "important");
+        searchKeywordText.textContent = searchInput.value || selectedProvince;
+        return;
+      }
+
+      gridContainer.style.removeProperty("display");
+      emptyState.style.setProperty("display", "none", "important");
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const paginatedItems = filteredData.slice(startIndex, startIndex + itemsPerPage);
+
+      paginatedItems.forEach(clinic => {
+        const searchQuery = encodeURIComponent(clinic.name + ", " + clinic.address);
+        const mapEmbedUrl = `https://maps.google.com/maps?q=${searchQuery}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
+        const mapRedirectUrl = `https://www.google.com/maps/search/?api=1&query=${searchQuery}`;
+        const waLink = `https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D`;
+        const cleanName = formatClinicName(clinic.name);
+
+        const card = document.createElement("div");
+        card.className = "sozo-map-card";
+        card.innerHTML = `
+          <div class="sozo-card-media">
+            <iframe src="${mapEmbedUrl}" loading="lazy" allowfullscreen></iframe>
+            <div class="sozo-mobile-thumb">
+              <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+              <span>SOZO</span>
+            </div>
+          </div>
+          <div class="sozo-card-content">
+            <span class="sozo-region-badge">
+              <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+              ${regionLabel(clinic)}
+            </span>
+            <h3>${cleanName}</h3>
+            <p class="sozo-address">${clinic.address}</p>
+            <div class="sozo-action-buttons">
+              <a href="${waLink}" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa">
+                <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> BUAT JADWAL
+              </a>
+              <a href="${mapRedirectUrl}" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 8 2 16 6 23 2 23 18 16 22 8 18 1 22 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg> LIHAT MAPS &gt;
+              </a>
+            </div>
+          </div>
+        `;
+        gridContainer.appendChild(card);
+      });
+
+      renderPagination();
+    }
+
+    // Pagination Minimalis (Erha style: < 1 2 3 ... 19 >)
+    function renderPagination() {
+      paginationContainer.innerHTML = "";
+      const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+      
+      if (totalPages <= 1) {
+        paginationContainer.style.setProperty("display", "none", "important");
+        return;
+      }
+
+      paginationContainer.style.setProperty("display", "flex", "important");
+
+      const prevArrow = document.createElement("div");
+      prevArrow.className = `sozo-page-arrow ${currentPage === 1 ? 'disabled' : ''}`;
+      prevArrow.innerHTML = "&#8249;";
+      prevArrow.addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderClinics();
+          gridContainer.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+      paginationContainer.appendChild(prevArrow);
+
+      function getPaginationRange(current, total) {
+        const delta = 1;
+        const range = [];
+        const rangeWithDots = [];
+        let l;
+
+        for (let i = 1; i <= total; i++) {
+          if (i === 1 || i === total || (i >= current - delta && i <= current + delta)) {
+            range.push(i);
+          }
+        }
+
+        for (let i of range) {
+          if (l) {
+            if (i - l === 2) {
+              rangeWithDots.push(l + 1);
+            } else if (i - l !== 1) {
+              rangeWithDots.push('...');
+            }
+          }
+          rangeWithDots.push(i);
+          l = i;
+        }
+
+        return rangeWithDots;
+      }
+
+      const pages = getPaginationRange(currentPage, totalPages);
+
+      pages.forEach(p => {
+        if (p === '...') {
+          const dots = document.createElement("div");
+          dots.className = "sozo-page-item dots";
+          dots.textContent = "...";
+          paginationContainer.appendChild(dots);
+        } else {
+          const pageBtn = document.createElement("div");
+          pageBtn.className = `sozo-page-item ${p === currentPage ? 'active' : ''}`;
+          pageBtn.textContent = p;
+          
+          pageBtn.addEventListener("click", () => {
+            currentPage = p;
+            renderClinics();
+            gridContainer.scrollIntoView({ behavior: "smooth" });
+          });
+          
+          paginationContainer.appendChild(pageBtn);
+        }
+      });
+
+      const nextArrow = document.createElement("div");
+      nextArrow.className = `sozo-page-arrow ${currentPage === totalPages ? 'disabled' : ''}`;
+      nextArrow.innerHTML = "&#8250;";
+      nextArrow.addEventListener("click", () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderClinics();
+          gridContainer.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+      paginationContainer.appendChild(nextArrow);
+    }
+
+    // Modal Events
+    locationTrigger.addEventListener("click", () => {
+      tempSelectedProvince = selectedProvince;
+      populateModalList();
+      locationModal.classList.add("active");
+      modalSearchInput.value = "";
+      modalSearchInput.focus();
+    });
+
+    modalClose.addEventListener("click", () => {
+      locationModal.classList.remove("active");
+    });
+
+    locationModal.addEventListener("click", (e) => {
+      if (e.target === locationModal) {
+        locationModal.classList.remove("active");
+      }
+    });
+
+    modalSearchInput.addEventListener("input", (e) => {
+      populateModalList(e.target.value);
+    });
+
+    modalApplyBtn.addEventListener("click", () => {
+      selectedProvince = tempSelectedProvince;
+      selectedLocationText.textContent = selectedProvince === "Semua Lokasi" ? "Pilih Lokasi" : selectedProvince;
+      locationModal.classList.remove("active");
+      executeFilter();
+    });
+
+    // Search Trigger Events
+    searchInput.addEventListener("input", executeFilter);
+    submitBtn.addEventListener("click", executeFilter);
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") executeFilter();
+    });
+
+    // Reset Event
+    resetBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      selectedProvince = "Semua Lokasi";
+      selectedLocationText.textContent = "Pilih Lokasi";
+      executeFilter();
+    });
+
+    renderClinics();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSozoLocator);
+  } else {
+    initSozoLocator();
+  }
+})();
+</script>

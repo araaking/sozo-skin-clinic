@@ -1,0 +1,307 @@
+<!-- ============================================================
+     SCHEMA MARKUP - Halaman Hub Lokasi (Directory)
+     URL       : https://sozoskinclinic.com/lokasi/
+     Versi     : 1.0
+     Tanggal   : 2026-08-19
+     Tipe      : CollectionPage + BreadcrumbList + ItemList (12 kota besar)
+     Catatan   : Pasang via WPCode kondisi halaman ini saja
+                 (Page URL contains /lokasi/).
+                 Organization & WebSite dideklarasi di homepage saja
+                 (pointer #organization / #website). Hub ini pakai
+                 CollectionPage (bukan MedicalWebPage) karena ini
+                 directory/locator, bukan artikel medis — sejalan dengan
+                 pola list dokter (CollectionPage) di AGENTS.md §6.
+                 Tiap kota di ItemList pakai ["MedicalClinic","LocalBusiness"]
+                 + parentOrganization -> #organization + areaServed -> City
+                 sesuai ADR lokasi cabang (address/geo/telephone wajib di
+                 halaman detail /lokasi/[kota]/, bukan di hub).
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://sozoskinclinic.com/lokasi/#webpage",
+      "url": "https://sozoskinclinic.com/lokasi/",
+      "name": "Cari Klinik Sozo Terdekat di Kotamu | Sozo Skin Clinic",
+      "description": "70+ cabang tersebar di seluruh Indonesia, siap memberikan perawatan kulit terbaik untukmu. Cari klinik Sozo Skin Clinic terdekat di kotamu dan reservasi perawatan sekarang.",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/#website"
+      },
+      "about": {
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sozoskinclinic.com/lokasi/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://sozoskinclinic.com/lokasi/#itemlist"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/lokasi/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lokasi Sozo",
+          "item": "https://sozoskinclinic.com/lokasi/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://sozoskinclinic.com/lokasi/#itemlist",
+      "name": "Daftar Kota Klinik Sozo Skin Clinic",
+      "description": "12 kota besar dengan cabang Sozo Skin Clinic terbanyak, tautan ke hub kota masing-masing.",
+      "numberOfItems": 12,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://sozoskinclinic.com/lokasi/jakarta/",
+          "name": "Klinik Kecantikan Jakarta - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/jakarta/#clinic",
+            "name": "Sozo Skin Clinic Jakarta",
+            "url": "https://sozoskinclinic.com/lokasi/jakarta/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Jakarta"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://sozoskinclinic.com/lokasi/tangerang/",
+          "name": "Klinik Kecantikan Tangerang - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/tangerang/#clinic",
+            "name": "Sozo Skin Clinic Tangerang",
+            "url": "https://sozoskinclinic.com/lokasi/tangerang/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Tangerang"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://sozoskinclinic.com/lokasi/depok/",
+          "name": "Klinik Kecantikan Depok - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/depok/#clinic",
+            "name": "Sozo Skin Clinic Depok",
+            "url": "https://sozoskinclinic.com/lokasi/depok/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Depok"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://sozoskinclinic.com/lokasi/bogor/",
+          "name": "Klinik Kecantikan Bogor - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/bogor/#clinic",
+            "name": "Sozo Skin Clinic Bogor",
+            "url": "https://sozoskinclinic.com/lokasi/bogor/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Bogor"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://sozoskinclinic.com/lokasi/bekasi/",
+          "name": "Klinik Kecantikan Bekasi - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/bekasi/#clinic",
+            "name": "Sozo Skin Clinic Bekasi",
+            "url": "https://sozoskinclinic.com/lokasi/bekasi/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Bekasi"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://sozoskinclinic.com/lokasi/bandung/",
+          "name": "Klinik Kecantikan Bandung - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/bandung/#clinic",
+            "name": "Sozo Skin Clinic Bandung",
+            "url": "https://sozoskinclinic.com/lokasi/bandung/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Bandung"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://sozoskinclinic.com/lokasi/surabaya/",
+          "name": "Klinik Kecantikan Surabaya - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/surabaya/#clinic",
+            "name": "Sozo Skin Clinic Surabaya",
+            "url": "https://sozoskinclinic.com/lokasi/surabaya/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Surabaya"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "url": "https://sozoskinclinic.com/lokasi/semarang/",
+          "name": "Klinik Kecantikan Semarang - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/semarang/#clinic",
+            "name": "Sozo Skin Clinic Semarang",
+            "url": "https://sozoskinclinic.com/lokasi/semarang/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Semarang"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "url": "https://sozoskinclinic.com/lokasi/jogja/",
+          "name": "Klinik Kecantikan Jogja - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/jogja/#clinic",
+            "name": "Sozo Skin Clinic Yogyakarta",
+            "url": "https://sozoskinclinic.com/lokasi/jogja/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Yogyakarta"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "url": "https://sozoskinclinic.com/lokasi/malang/",
+          "name": "Klinik Kecantikan Malang - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/malang/#clinic",
+            "name": "Sozo Skin Clinic Malang",
+            "url": "https://sozoskinclinic.com/lokasi/malang/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Malang"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "url": "https://sozoskinclinic.com/lokasi/medan/",
+          "name": "Klinik Kecantikan Medan - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/medan/#clinic",
+            "name": "Sozo Skin Clinic Medan",
+            "url": "https://sozoskinclinic.com/lokasi/medan/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Medan"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "url": "https://sozoskinclinic.com/lokasi/makassar/",
+          "name": "Klinik Kecantikan Makassar - Sozo Skin Clinic",
+          "item": {
+            "@type": ["MedicalClinic", "LocalBusiness"],
+            "@id": "https://sozoskinclinic.com/lokasi/makassar/#clinic",
+            "name": "Sozo Skin Clinic Makassar",
+            "url": "https://sozoskinclinic.com/lokasi/makassar/",
+            "parentOrganization": {
+              "@id": "https://sozoskinclinic.com/#organization"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Makassar"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sozoskinclinic.com/#website",
+      "url": "https://sozoskinclinic.com/",
+      "name": "Sozo Skin Clinic"
+    }
+  ]
+}
+</script>

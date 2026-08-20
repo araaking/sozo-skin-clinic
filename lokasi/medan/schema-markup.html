@@ -1,0 +1,233 @@
+<!-- ============================================================
+     SCHEMA MARKUP - Klinik Kecantikan Medan (Hub Kota)
+     URL       : https://sozoskinclinic.com/lokasi/medan/
+     Versi     : 1.0
+     Tanggal   : 2026-08-19
+     Tipe      : CollectionPage + BreadcrumbList + ItemList (2 cabang)
+               + 2x MedicalClinic/LocalBusiness + FAQPage
+     Catatan   : Pasang via WPCode kondisi halaman ini saja
+                 (Page URL contains /lokasi/medan/).
+                 2 cabang Medan (Iskandar Muda & Cemara Asri) masing-
+                 masing jadi MedicalClinic+LocalBusiness dengan
+                 address, geo, telephone, openingHours, aggregateRating,
+                 image, areaServed. Geo Cemara Asri pakai koordinat
+                 Place ID yang kamu konfirmasi (3.6305497,98.6970416).
+                 Iskandar Muda pakai query-geocode terbaru.
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://sozoskinclinic.com/lokasi/medan/#webpage",
+      "url": "https://sozoskinclinic.com/lokasi/medan/",
+      "name": "Klinik Kecantikan Terbaik di Medan - Sozo Skin Clinic (2 Cabang)",
+      "description": "Mencari klinik kecantikan Medan yang terpercaya? Sozo hadir di 2 lokasi Medan — Iskandar Muda (Medan Baru) & Cemara Asri (Deli Serdang) — dengan dokter bersertifikasi, teknologi terkini, dan harga transparan. Buka setiap hari 09:00–20:00.",
+      "inLanguage": "id",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
+      "about": { "@id": "https://sozoskinclinic.com/#organization" },
+      "breadcrumb": { "@id": "https://sozoskinclinic.com/lokasi/medan/#breadcrumb" },
+      "mainEntity": { "@id": "https://sozoskinclinic.com/lokasi/medan/#itemlist" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/lokasi/medan/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lokasi",
+          "item": "https://sozoskinclinic.com/lokasi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Klinik Kecantikan Medan",
+          "item": "https://sozoskinclinic.com/lokasi/medan/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://sozoskinclinic.com/lokasi/medan/#itemlist",
+      "name": "Daftar Cabang Sozo Skin Clinic di Medan",
+      "numberOfItems": 2,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://sozoskinclinic.com/lokasi/medan/#iskandar-muda",
+          "name": "Sozo Skin Clinic - Iskandar Muda",
+          "item": { "@id": "https://sozoskinclinic.com/lokasi/medan/#clinic-iskandar-muda" }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://sozoskinclinic.com/lokasi/medan/#cemara-asri",
+          "name": "Sozo Skin Clinic - Medan Cemara Asri",
+          "item": { "@id": "https://sozoskinclinic.com/lokasi/medan/#clinic-cemara-asri" }
+        }
+      ]
+    },
+    {
+      "@type": ["MedicalClinic", "LocalBusiness"],
+      "@id": "https://sozoskinclinic.com/lokasi/medan/#clinic-iskandar-muda",
+      "name": "Sozo Skin Clinic - Iskandar Muda",
+      "url": "https://sozoskinclinic.com/lokasi/medan/",
+      "image": "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-1-scaled.webp",
+      "description": "Cabang Medan Baru di Jl. Iskandar Muda No.23 — klinik kecantikan dengan dokter bersertifikasi, rating 4.8 dari 1.056 ulasan.",
+      "telephone": "+6285175225664",
+      "priceRange": "Rp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Iskandar Muda No.23, Darat, Kec. Medan Baru",
+        "addressLocality": "Medan",
+        "addressRegion": "Sumatera Utara",
+        "postalCode": "20154",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 3.5836,
+        "longitude": 98.6701
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Medan"
+      },
+      "parentOrganization": { "@id": "https://sozoskinclinic.com/#organization" },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "20:00" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1056",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    {
+      "@type": ["MedicalClinic", "LocalBusiness"],
+      "@id": "https://sozoskinclinic.com/lokasi/medan/#clinic-cemara-asri",
+      "name": "Sozo Skin Clinic - Medan Cemara Asri",
+      "url": "https://sozoskinclinic.com/lokasi/medan/",
+      "image": "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/medan-cemara-1-scaled.webp",
+      "description": "Cabang Deli Serdang di Jl. Cemara Boulevard Utara No.40 Blok A-1, Medan Estate — rating 4.9 dari 439 ulasan, ruang konsultasi & perawatan privat.",
+      "telephone": "+6285175225664",
+      "priceRange": "Rp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Cemara Boulevard Utara No.40 Blok A-1, Medan Estate, Kec. Percut Sei Tuan",
+        "addressLocality": "Medan",
+        "addressRegion": "Sumatera Utara",
+        "postalCode": "20233",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 3.6305497,
+        "longitude": 98.6970416
+      },
+      "hasMap": "https://www.google.com/maps/place/Sozo+Skin+Clinic+-+Medan+Cemara+Asri/@3.63055,98.6795325,15z/data=!4m10!1m2!2m1!1sSozo+Skin+Clinic+-+Medan+Cemara+Asri,+Jl.+Cemara+Boulevard+Utara+No.40+Blok+A-1!3m6!1s0x3031338fbbdcbc09:0x915677c323db3cd1!8m2!3d3.6305497!4d98.6970416!15sCk9Tb3pvIFNraW4gQ2xpbmljIC0gTWVkYW4gQ2VtYXJhIEFzcmksIEpsLiBDZW1hcmEgQm91bGV2YXJkIFV0YXJhIE5vLjQwIEJsb2sgQS0xWk0iS3Nvem8gc2tpbiBjbGluaWMgbWVkYW4gY2VtYXJhIGFzcmkgamwgY2VtYXJhIGJvdWxldmFyZCB1dGFyYSBubyA0MCBibG9rIGEgMZIBCmJlYXV0aWNpYW6aAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMjVTZVdOVlRuZGlhMGt4VGxoT1EySnRPVkJhVkdSTFVrZHdkMVpJWXhBQuABAPoBBAgAEBs!16s%2Fg%2F11y_d1vw51?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D",
+      "areaServed": {
+        "@type": "City",
+        "name": "Medan"
+      },
+      "parentOrganization": { "@id": "https://sozoskinclinic.com/#organization" },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "20:00" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "439",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sozoskinclinic.com/lokasi/medan/#faqpage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah perawatan medis di Sozo ditangani langsung oleh dokter?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ya, seluruh tindakan medis di Sozo Skin Clinic dilakukan langsung oleh dokter yang bersertifikasi dan berpengalaman di bidang estetika medis." }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana saja lokasi klinik Sozo di Medan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Saat ini Sozo hadir di 2 lokasi: Cabang Iskandar Muda (Jl. Iskandar Muda No. 23, Medan Baru) dan Cabang Cemara Asri (Jl. Cemara Boulevard Utara No. 40 Blok A-1, Deli Serdang)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa saja layanan perawatan yang tersedia di Sozo Medan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Kami menyediakan perawatan lengkap mulai dari Skin Treatment (Acne, Brightening, Laser, Facial), Injectable (Skin Booster, Botulinum Toxin, Filler), Slimming, Hair Treatment, hingga Laser Hair Removal." }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah perlu konsultasi terlebih dahulu sebelum melakukan treatment?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sangat dianjurkan. Konsultasi bertujuan agar dokter dapat menganalisis jenis kulit, mengidentifikasi permasalahan secara akurat, serta merekomendasikan jenis perawatan yang paling sesuai." }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara membuat jadwal konsultasi dan reservasi treatment?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Anda dapat melakukan reservasi secara praktis melalui tombol WhatsApp di halaman ini dengan memilih cabang, tanggal, dan waktu yang diinginkan." }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa jam operasional klinik Sozo di Medan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Klinik kami buka setiap hari (Senin sampai Minggu) mulai pukul 09:00 hingga 20:00 WIB." }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah produk dan peralatan yang digunakan terjamin keamanannya?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Seluruh produk perawatan telah terdaftar resmi di BPOM dan peralatan medis kami telah teruji secara klinis dengan standar medis internasional yang higienis." }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama rata-rata durasi setiap sesi treatment?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Durasi tindakan umumnya berkisar antara 45 hingga 90 menit, tergantung pada jenis dan kombinasi tindakan yang diambil." }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah perawatan di Sozo cocok untuk pria dan wanita?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ya, seluruh perawatan di Sozo Skin Clinic dirancang untuk pria maupun wanita yang ingin merawat kesehatan kulit, rambut, serta bentuk tubuh." }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah bisa langsung datang (walk-in) tanpa reservasi?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pasien walk-in tetap diterima, namun disarankan untuk reservasi online terlebih dahulu demi kenyamanan jadwal dan menghindari antrean." }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sozoskinclinic.com/#website",
+      "url": "https://sozoskinclinic.com/",
+      "name": "Sozo Skin Clinic"
+    }
+  ]
+}
+</script>

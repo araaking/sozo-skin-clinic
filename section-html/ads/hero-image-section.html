@@ -1,0 +1,137 @@
+<style>
+  /* ==========================================================================
+     CUSTOM HERO SECTION SETTINGS (Ubah Pengaturan di Sini)
+     ========================================================================== */
+  :root {
+    /* URL Gambar Hero Utama */
+    --hero-img-url: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop');
+    
+    /* Tinggi Banner di Berbagai Layar */
+    --hero-height-desktop: 70vh;  /* Layar Komputer / Laptop */
+    --hero-height-tablet: 50vh;   /* Layar Tablet (iPad, dsb) */
+    --hero-height-mobile: 40vh;   /* Layar Smartphone (HP) */
+
+    /* Minimum & Maksimum Tinggi (Agar tidak terlalu gepeng/tinggi) */
+    --hero-min-height-desktop: 450px;
+    --hero-min-height-mobile: 240px;
+
+    /* Tampilan & Efek */
+    --hero-border-radius: 16px;   /* Kelengkungan Sudut (0px jika mau full kotak) */
+    --hero-overlay-color: rgba(0, 0, 0, 0.25); /* Overlay warna gelap tipis */
+    --hero-zoom-speed: 0.5s;     /* Durasi animasi zoom saat hover */
+    --hero-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  /* ==========================================================================
+     STYLING UTAMA BANNER
+     ========================================================================== */
+  .custom-hero-container {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .custom-hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: var(--hero-height-desktop);
+    min-height: var(--hero-min-height-desktop);
+    border-radius: var(--hero-border-radius);
+    box-shadow: var(--hero-shadow);
+    overflow: hidden;
+    background-color: #1a1a1a; /* Warna latar sementara saat gambar loading */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Elemen Gambar Hero */
+  .custom-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform var(--hero-zoom-speed) cubic-bezier(0.25, 1, 0.5, 1),
+                filter var(--hero-zoom-speed) ease;
+    will-change: transform;
+  }
+
+  /* Layer Overlay Warna Tipis */
+  .custom-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--hero-overlay-color);
+    transition: background 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Efek Hover (Hanya aktif di desktop / kursor mouse) */
+  @media (hover: hover) {
+    .custom-hero-wrapper:hover .custom-hero-image {
+      transform: scale(1.04); /* Efek perbesaran halus saat kursor menempel */
+    }
+    .custom-hero-wrapper:hover .custom-hero-overlay {
+      background: rgba(0, 0, 0, 0.15); /* Overlay sedikit memudar saat dihover */
+    }
+  }
+
+  /* ==========================================================================
+     RESPONSIF MOBILE FRIENDLY (Penyesuaian Layar)
+     ========================================================================== */
+  
+  /* Tablet (Lebar max 1024px) */
+  @media (max-width: 1024px) {
+    .custom-hero-wrapper {
+      height: var(--hero-height-tablet);
+      min-height: 350px;
+    }
+  }
+
+  /* Smartphone / HP (Lebar max 767px) */
+  @media (max-width: 767px) {
+    :root {
+      --hero-border-radius: 12px; /* Radius lebih kecil di HP agar rapi */
+    }
+    .custom-hero-wrapper {
+      height: var(--hero-height-mobile);
+      min-height: var(--hero-min-height-mobile);
+    }
+  }
+
+  /* HP Ukuran Kecil (Lebar max 480px) */
+  @media (max-width: 480px) {
+    .custom-hero-wrapper {
+      height: 38vh;
+      border-radius: 10px;
+    }
+  }
+</style>
+
+<!-- ==========================================================================
+     STRUKTUR HTML HERO BANNER
+     ========================================================================== -->
+<div class="custom-hero-container">
+  <!-- Opsional: Ganti <a> menjadi <div> jika banner TIDAK bisa diklik -->
+  <a href="#" class="custom-hero-wrapper" aria-label="Hero Banner">
+    
+    <!-- Gambar Hero -->
+    <img 
+      class="custom-hero-image" 
+      src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop" 
+      alt="Hero Banner Image" 
+      loading="eager" 
+      fetchpriority="high"
+      decoding="async"
+    />
+
+    <!-- Overlay Gradasi Gelap -->
+    <div class="custom-hero-overlay"></div>
+
+  </a>
+</div>

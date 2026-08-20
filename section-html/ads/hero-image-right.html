@@ -1,0 +1,128 @@
+<!-- SYSTEM PRELOAD FONTAWESOME (Menghindari Render-Blocking CSS) -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+<style>
+  /* ============================================================
+     HERO SECTION - Anti Aging
+     Style  : Editorial Minimalis (Elementor Safe, scoped)
+     ============================================================ */
+  .soz-injectable {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    overflow: hidden;
+    line-height: 1.5;
+  }
+
+  .soz-injectable,
+  .soz-injectable * {
+    box-sizing: border-box;
+  }
+
+  .soz-injectable h1,
+  .soz-injectable h2,
+  .soz-injectable p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .soz-injectable a {
+    text-decoration: none;
+  }
+
+  /* ============ HERO / BANNER ============ */
+  .soz-injectable .hero-section {
+    display: flex;
+    align-items: center;
+    background-color: #eceef2;
+    overflow: hidden;
+    min-height: 440px;
+    position: relative;
+  }
+
+  .soz-injectable .hero-content {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 60px 5% 60px 10%;
+    z-index: 2;
+  }
+
+  .soz-injectable .hero-image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    align-self: stretch;
+    position: relative;
+
+    /* EFEK GRADIENT BLEND / MASK */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+    mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  }
+
+  .soz-injectable .hero-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .soz-injectable .hero-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #1A2080;
+    letter-spacing: -0.01em;
+  }
+
+  .soz-injectable .hero-title .italic-text {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    color: #1A2080;
+  }
+
+  /* ============ RESPONSIVE HERO (MOBILE) ============ */
+  @media (max-width: 768px) {
+    .soz-injectable .hero-section {
+      flex-direction: column;
+      min-height: auto;
+    }
+
+    .soz-injectable .hero-content {
+      flex: 1 1 100%;
+      max-width: 100%;
+      padding: 40px 22px 28px 22px;
+    }
+
+    .soz-injectable .hero-image {
+      flex: 1 1 100%;
+      max-width: 100%;
+      height: 260px;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+    }
+
+    .soz-injectable .hero-title {
+      font-size: 1.75rem;
+    }
+  }
+</style>
+
+<section class="soz-injectable">
+
+  <!-- HERO SECTION -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Perawatan <strong>Injectable  </strong><br>
+        untuk <span class="italic-text">Hasil Kulit</span> Maksimal
+      </h1>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/anti-aging.webp" alt="Perawatan Injectable Treatment di Sozo Skin Clinic" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+
+</section>

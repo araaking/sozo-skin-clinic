@@ -1,0 +1,2186 @@
+<style>
+  :root {
+    --sozo-primary: #1A2080;
+    --sozo-primary-hover: #12165c;
+    --sozo-text-main: #1e293b;
+    --sozo-text-muted: #475569;
+    --sozo-white: #ffffff;
+    --sozo-accent-green: #10b981;
+  }
+
+  /* --- FULLWIDTH HERO SECTION --- */
+  .sozo-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    background-color: #f69d3c;
+    background-image: 
+      linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.94) 42%, rgba(255, 255, 255, 0.15) 75%, rgba(255, 255, 255, 0) 100%),
+      url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/perawatan-rambut-rontok-hero.webp');
+    background-position: center right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 80px 0 120px 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .sozo-inner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sozo-hero-content {
+    max-width: 560px;
+  }
+
+  .sozo-hero-content h1 {
+    font-size: clamp(30px, 4.2vw, 42px);
+    font-weight: 800;
+    color: var(--sozo-primary);
+    line-height: 1.25;
+    margin: 0 0 18px 0;
+    letter-spacing: -0.5px;
+  }
+
+  .sozo-hero-content p {
+    font-size: 16px;
+    color: var(--sozo-text-muted);
+    line-height: 1.65;
+    margin: 0 0 32px 0;
+  }
+
+  /* --- CTA BUTTON --- */
+  .sozo-btn-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background-color: var(--sozo-primary);
+    color: var(--sozo-white) !important;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 2px solid var(--sozo-primary);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+  }
+
+  .sozo-btn-cta:hover {
+    background-color: var(--sozo-white);
+    color: var(--sozo-primary) !important;
+    border-color: var(--sozo-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(26, 32, 128, 0.15);
+  }
+
+  .sozo-btn-cta svg {
+    transition: transform 0.25s ease;
+  }
+
+  .sozo-btn-cta:hover svg {
+    transform: translateX(4px);
+  }
+
+  /* --- FLOATING TRUST CARD --- */
+  .sozo-floating-trust-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(50%);
+    z-index: 10;
+  }
+
+  .sozo-trust-card {
+    background: var(--sozo-white);
+    border-radius: 20px;
+    padding: 24px 35px;
+    box-shadow: 0 16px 40px rgba(26, 32, 128, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .sozo-trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--sozo-primary);
+  }
+
+  .sozo-trust-icon {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(16, 185, 129, 0.12);
+    color: var(--sozo-accent-green);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .sozo-trust-divider {
+    width: 1px;
+    height: 30px;
+    background-color: #e2e8f0;
+  }
+
+  /* --- PROBLEM SECTION (FULL & SEJAJAR) --- */
+  .sozo-problem-section {
+    position: relative;
+    padding: 100px 0 90px 0; /* Memberi ruang agar floating card tidak memotong gambar */
+    background: #F8F9FC;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr; /* Proporsi gambar lebih dominan */
+    gap: 50px;
+    align-items: stretch; /* Membuat gambar dan teks tingginya seragam */
+  }
+
+  /* --- FRAME GAMBAR: FULL, BESAR, SUDUT DIAGONAL --- */
+  .sozo-problem-image-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 520px; /* Menjamin gambar berdiri tegak & besar */
+    height: 100%;
+    /* Radius: Kiri Atas (80px) & Kanan Bawah (80px) */
+    border-radius: 80px 0px 80px 0px; 
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(26, 32, 128, 0.08);
+    background-color: #f1f5f9;
+  }
+
+  .sozo-problem-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center; /* Fokus pas di tengah */
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .sozo-problem-image-wrapper:hover img {
+    transform: scale(1.03);
+  }
+
+  .sozo-problem-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .sozo-problem-content h2 {
+    font-size: clamp(28px, 3.8vw, 36px);
+    color: var(--sozo-primary);
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .sozo-problem-content > p {
+    font-size: 15.5px;
+    color: var(--sozo-text-muted);
+    line-height: 1.65;
+    margin: 0 0 28px 0;
+  }
+
+  .sozo-problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sozo-problem-list-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .sozo-problem-list-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(26, 32, 128, 0.06);
+    color: var(--sozo-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sozo-problem-list-text h4 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    color: var(--sozo-primary);
+    font-weight: 800;
+  }
+
+  .sozo-problem-list-text p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--sozo-text-muted);
+    line-height: 1.55;
+  }
+
+  /* --- RESPONSIVE MOBILE & TABLET --- */
+  @media (max-width: 900px) {
+    .sozo-hero-section {
+      background-image: 
+        linear-gradient(180deg, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255, 255, 0.98) 100%),
+        url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/perawatan-rambut-rontok-hero.webp');
+      background-position: center;
+      padding: 50px 0 130px 0;
+    }
+
+    .sozo-hero-content {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .sozo-trust-card {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 24px;
+      gap: 14px;
+    }
+
+    .sozo-trust-divider {
+      display: none;
+    }
+
+    .sozo-problem-section {
+      padding: 140px 0 60px;
+    }
+
+    .sozo-problem-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    
+    .sozo-problem-image-wrapper {
+      min-height: auto;
+      height: 320px;
+      aspect-ratio: 16 / 10;
+      border-radius: 50px 0px 50px 0px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sozo-btn-cta {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+</style>
+
+<!-- 1. FULL WIDTH HERO + FLOATING TRUST STAT -->
+<section class="sozo-hero-section">
+  <div class="sozo-inner-container">
+    <div class="sozo-hero-content">
+      <h1>Perawatan Rambut Rontok & Kebotakan di Sozo Skin Clinic</h1>
+      <p>Atasi penipisan rambut dari akarnya dengan diagnosis presisi dan perawatan berstandar medis oleh dokter ahli di Sozo Skin Clinic. Jangan tunggu sampai folikel mati.</p>
+      
+      <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Perawatan%20Rambut%20Rontok%20%5Bsrc%3AORG-PRR%5D" class="sozo-btn-cta" target="_blank" rel="noopener">
+        <span>Reservasi Sekarang</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- FLOATING TRUST CARD -->
+  <div class="sozo-floating-trust-container">
+    <div class="sozo-inner-container">
+      <div class="sozo-trust-card">
+        <div class="sozo-trust-item">
+          <span class="sozo-trust-icon">✓</span>
+          <span>Ditangani Dokter Tersertifikasi</span>
+        </div>
+        
+        <div class="sozo-trust-divider"></div>
+
+        <div class="sozo-trust-item">
+          <span class="sozo-trust-icon">✓</span>
+          <span>Teknologi Medis Terkini</span>
+        </div>
+        
+        <div class="sozo-trust-divider"></div>
+
+        <div class="sozo-trust-item">
+          <span class="sozo-trust-icon">✓</span>
+          <span>Ribuan Pasien Terbantu</span>
+        </div>
+
+        <div class="sozo-trust-divider"></div>
+
+        <div class="sozo-trust-item">
+          <span class="sozo-trust-icon">✓</span>
+          <span>65+ Klinik Rambut di Seluruh Indonesia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. SECTION PROBLEM (FULL HEIGHT & CORNER RADIUS DIAGONAL) -->
+<section class="sozo-problem-section">
+  <div class="sozo-inner-container">
+    <div class="sozo-problem-grid">
+      
+      <!-- Frame Gambar Penuh (Kiri Atas & Kanan Bawah) -->
+      <div class="sozo-problem-image-wrapper">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/Rambut-Mengalami-Kerontokan-Akibat-Garukan.webp" 
+             alt="Diagnosis Penyebab Rambut Rontok" 
+             loading="lazy" 
+             width="600" 
+             height="450">
+      </div>
+      
+      <!-- Konten Teks & List Masalah -->
+      <div class="sozo-problem-content">
+        <h2>Mengapa Rambut Anda Rontok? </h2>
+        <p>Di Sozo, kami tidak sekadar menebak. Dokter kami memetakan kondisi kulit kepala Anda secara akurat untuk merancang solusi klinis yang tepat sasaran.</p>
+        
+        <div class="sozo-problem-list">
+          
+          <div class="sozo-problem-list-item">
+            <div class="sozo-problem-list-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+            </div>
+            <div class="sozo-problem-list-text">
+              <h4>Genetik & Hormonal</h4>
+              <p>Penipisan rambut terpola yang butuh intervensi medis spesifik untuk merangsang folikel baru.</p>
+            </div>
+          </div>
+          
+          <div class="sozo-problem-list-item">
+            <div class="sozo-problem-list-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <div class="sozo-problem-list-text">
+              <h4>Stres Berlebih</h4>
+              <p>Kerontokan mendadak akibat tekanan fisik atau psikologis yang mengganggu siklus pertumbuhan rambut.</p>
+            </div>
+          </div>
+          
+          <div class="sozo-problem-list-item">
+            <div class="sozo-problem-list-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="9" y1="12" x2="15" y2="12"></line><line x1="12" y1="9" x2="12" y2="15"></line></svg>
+            </div>
+            <div class="sozo-problem-list-text">
+              <h4>Defisiensi Nutrisi & Medis</h4>
+              <p>Kekurangan nutrisi esensial atau infeksi kulit kepala yang menghambat serta melemahkan akar rambut.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOZO: SOLUSI MEDIS UNTUK MENUMBUHKAN RAMBUT ========== -->
+<style>
+  .sozo-solutions-section {
+    background: #ffffff !important;
+    padding: 80px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    position: relative !important;
+    border-top: 1px solid #f1f5f9 !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+  }
+  .sozo-solutions-inner {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    display: grid !important;
+    grid-template-columns: 360px minmax(0, 1fr) !important;
+    gap: 40px !important;
+    align-items: start !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .sozo-solutions-header {
+    text-align: left !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: sticky !important;
+    top: 20px !important;
+  }
+  .sozo-solutions-header h2 {
+    font-size: clamp(26px, 3.5vw, 36px) !important;
+    font-weight: 800 !important;
+    color: #1A2080 !important;
+    line-height: 1.25 !important;
+    margin: 0 0 16px 0 !important;
+    letter-spacing: -0.5px !important;
+  }
+  .sozo-solutions-header p {
+    font-size: 15.5px !important;
+    color: #475569 !important;
+    line-height: 1.65 !important;
+    margin: 0 0 24px 0 !important;
+  }
+  .sozo-solutions-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #1A2080 !important;
+    color: #ffffff !important;
+    padding: 12px 24px !important;
+    border-radius: 100px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    border: 2px solid #1A2080 !important;
+    transition: all 0.3s ease !important;
+    line-height: 1 !important;
+  }
+  .sozo-solutions-cta:hover {
+    background: #ffffff !important;
+    color: #1A2080 !important;
+  }
+  .sozo-solutions-cta svg { transition: transform 0.2s ease !important; }
+  .sozo-solutions-cta:hover svg { transform: translateX(4px) !important; }
+  .sozo-solutions-section .sozo-services-wrapper {
+    --primary-color: #1A2080 !important;
+    --primary-hover: #262d9c !important;
+    --bg-light: #f8fafc !important;
+    --text-dark: #1e293b !important;
+    --text-muted: #64748b !important;
+    --border-color: #e2e8f0 !important;
+    --card-bg: #ffffff !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  .sozo-solutions-section .sozo-services-wrapper * { box-sizing: border-box !important; }
+  .sozo-solutions-section .sozo-services-wrapper h3,
+  .sozo-solutions-section .sozo-services-wrapper p { margin:0 !important; padding:0 !important; line-height: normal !important; }
+  .sozo-solutions-section .sozo-services-wrapper a { text-decoration:none !important; box-shadow:none !important; }
+  .sozo-solutions-section .sozo-services-viewport {
+    position: relative !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .sozo-solutions-section .sozo-services-track {
+    display: flex !important;
+    gap: 16px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    scroll-behavior: smooth !important;
+    padding: 8px 4px 16px 4px !important;
+    cursor: grab !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    align-items: stretch !important;
+    overscroll-behavior-x: contain !important;
+    touch-action: pan-x !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .sozo-solutions-section .sozo-services-track::-webkit-scrollbar { display: none !important; }
+  .sozo-solutions-section .sozo-services-track:active { cursor: grabbing !important; }
+  .sozo-solutions-section .sozo-card {
+    flex: 0 0 260px !important;
+    min-width: 0 !important;
+    max-width: 260px !important;
+    scroll-snap-align: start !important;
+    height: auto !important;
+    align-self: stretch !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+  }
+  .sozo-solutions-section .sozo-card:hover {
+    box-shadow: 0 12px 24px rgba(26,32,128,0.10) !important;
+    transform: translateY(-4px) !important;
+    border-color: var(--primary-color) !important;
+  }
+  .sozo-solutions-section .sozo-image-area {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 4/3 !important;
+    overflow: hidden !important;
+    background-color: var(--bg-light) !important;
+  }
+  .sozo-solutions-section .sozo-image-area img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 0.5s ease !important;
+  }
+  .sozo-solutions-section .sozo-card:hover .sozo-image-area img { transform: scale(1.05) !important; }
+  .sozo-solutions-section .sozo-badge { display: none !important; }
+  .sozo-solutions-section .sozo-info-area { padding: 16px !important; display:flex !important; flex-direction:column !important; flex-grow:1 !important; }
+  .sozo-solutions-section .sozo-body-content { display:flex !important; flex-direction:column !important; flex-grow:1 !important; }
+  .sozo-solutions-section .sozo-name { color: var(--primary-color) !important; font-size: 15.5px !important; font-weight: 700 !important; margin:0 0 8px 0 !important; line-height:1.3 !important; min-height: 40px !important; display: flex !important; align-items: flex-end !important; }
+  .sozo-solutions-section .sozo-desc { color: var(--text-muted) !important; font-size: 13px !important; line-height:1.4 !important; margin:8px 0 0 0 !important; flex-grow:1 !important; display:-webkit-box !important; -webkit-line-clamp:3 !important; -webkit-box-orient:vertical !important; overflow:hidden !important; min-height: 54px !important; }
+  .sozo-solutions-section .sozo-meta-row { display:flex !important; gap:8px !important; flex-wrap:wrap !important; margin:14px 0 16px 0 !important; }
+  .sozo-solutions-section .sozo-duration,
+  .sozo-solutions-section .sozo-frequency {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    gap:6px !important;
+    padding:4px 8px !important;
+    border-radius: 8px !important;
+    line-height:1 !important;
+  }
+  .sozo-solutions-section .sozo-duration { background:#f1f5f9 !important; color: var(--text-dark) !important; }
+  .sozo-solutions-section .sozo-frequency { background:#EEF2FF !important; color: var(--primary-color) !important; border:1px solid #e0e7ff !important; }
+  .sozo-solutions-section .sozo-footer-content { margin-top:auto !important; display:flex !important; flex-direction:column !important; }
+  .sozo-solutions-section .sozo-price-box { min-height:42px !important; display:flex !important; flex-direction:column !important; justify-content:flex-end !important; margin-bottom:14px !important; }
+  .sozo-solutions-section .sozo-price-value { font-size:16px !important; font-weight:800 !important; color:var(--primary-color) !important; }
+  .sozo-solutions-section .sozo-actions-box { display:flex !important; flex-direction:column !important; gap:8px !important; }
+  .sozo-solutions-section .sozo-btn-primary,
+  .sozo-solutions-section .sozo-btn-outline {
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:10px !important;
+    border-radius:8px !important;
+    font-weight:700 !important;
+    font-size:12.5px !important;
+    width:100% !important;
+    height:36px !important;
+    transition:all 0.3s ease !important;
+    text-decoration:none !important;
+    box-sizing: border-box !important;
+  }
+  .sozo-solutions-section .sozo-btn-primary { background:var(--primary-color) !important; color:#fff !important; border:1px solid var(--primary-color) !important; }
+  .sozo-solutions-section .sozo-btn-primary:hover { background:var(--primary-hover) !important; border-color:var(--primary-hover) !important; }
+  .sozo-solutions-section .sozo-btn-outline { background:transparent !important; color:var(--primary-color) !important; border:1px solid var(--primary-color) !important; }
+  .sozo-solutions-section .sozo-btn-outline:hover { background:var(--primary-color) !important; color:#fff !important; }
+  .sozo-solutions-section .sozo-services-nav {
+    position:absolute !important;
+    top:35% !important;
+    transform:translateY(-50%) !important;
+    width:36px !important;
+    height:36px !important;
+    border-radius:50% !important;
+    border:none !important;
+    background:#fff !important;
+    box-shadow:0 4px 16px rgba(26,32,128,0.15) !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    cursor:pointer !important;
+    z-index:2 !important;
+    color:var(--primary-color) !important;
+    transition: all 0.2s ease !important;
+    padding:0 !important;
+    line-height:0 !important;
+  }
+  .sozo-solutions-section .sozo-services-nav:hover { background:var(--primary-color) !important; color:#fff !important; }
+  .sozo-solutions-section .sozo-services-nav--prev { left: -14px !important; }
+  .sozo-solutions-section .sozo-services-nav--next { right: -14px !important; }
+  .sozo-solutions-section .sozo-services-nav svg { width:16px !important; height:16px !important; stroke:currentColor !important; fill:none !important; display:block !important; }
+  @media (max-width: 1240px) {
+    .sozo-solutions-section .sozo-services-nav--prev { left: 8px !important; }
+    .sozo-solutions-section .sozo-services-nav--next { right: 8px !important; }
+  }
+  @media (max-width: 1024px) {
+    .sozo-solutions-inner { gap: 30px !important; }
+  }
+  @media (max-width: 900px) {
+    .sozo-solutions-inner { grid-template-columns: 1fr !important; }
+    .sozo-solutions-header { position: static !important; }
+  }
+  @media (max-width: 768px) {
+    .sozo-solutions-section { padding: 60px 0 !important; }
+    .sozo-solutions-inner { grid-template-columns: 1fr !important; gap: 24px !important; padding: 0 16px !important; }
+    .sozo-solutions-header { position: static !important; text-align: left !important; }
+    .sozo-solutions-section .sozo-services-wrapper { padding:0 !important; }
+    .sozo-solutions-section .sozo-services-track {
+      display: flex !important;
+      gap: 16px !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+      scroll-behavior: smooth !important;
+      padding: 0 0 12px 0 !important;
+      cursor: grab !important;
+    }
+    .sozo-solutions-section .sozo-card { flex:0 0 85% !important; min-width:0 !important; scroll-snap-align: start !important; }
+    .sozo-solutions-section .sozo-services-nav { display:none !important; }
+    .sozo-solutions-section .sozo-info-area { padding:14px !important; }
+    .sozo-solutions-section .sozo-name { font-size:16px !important; }
+    .sozo-solutions-section .sozo-desc { font-size:13px !important; -webkit-line-clamp:2 !important; }
+    .sozo-solutions-section .sozo-price-value { font-size:16px !important; }
+  }
+</style>
+
+<section class="sozo-solutions-section">
+  <div class="sozo-solutions-inner">
+    <div class="sozo-solutions-header">
+      <h2>Solusi Medis Untuk Menumbuhkan Rambut Anda Kembali</h2>
+      <p>Tinggalkan perawatan rumahan yang lambat. Pilih tindakan medis yang teruji klinis untuk merangsang folikel rambut yang tertidur (dorman) agar kembali aktif.</p>
+      <a href="https://sozoskinclinic.com/hair-treatment/" class="sozo-solutions-cta" target="_blank" rel="noopener">Lihat Semua Treatment <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+    </div>
+    <div class="sozo-services-wrapper">
+      <div class="sozo-services-viewport">
+        <button class="sozo-services-nav sozo-services-nav--prev" id="sozoServicesPrev" aria-label="Geser kiri">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+        </button>
+        <div class="sozo-services-track" id="sozoServicesTrack">
+        <!-- 1. PRP Hair - 1x sebulan -->
+        <div class="sozo-card">
+          <div class="sozo-image-area">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-PRP-Hair-scaled.webp" alt="PRP Hair" loading="lazy" decoding="async" width="400" height="300">
+          </div>
+          <div class="sozo-info-area">
+            <div class="sozo-body-content">
+              <h3 class="sozo-name">PRP Hair</h3>
+              <p class="sozo-desc">Menggunakan serum PRP yang mengandung konsentrat growth factor tinggi untuk menstimulasi pertumbuhan dan menyehatkan rambut.</p>
+              <div class="sozo-meta-row">
+                <span class="sozo-duration"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 60 menit</span>
+                <span class="sozo-frequency"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 1x sebulan</span>
+              </div>
+            </div>
+            <div class="sozo-footer-content">
+              <div class="sozo-price-box"><span class="sozo-price-value">Rp 1.799.000</span></div>
+              <div class="sozo-actions-box">
+                <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Perawatan%20Rambut%20Rontok%20%5Bsrc%3AORG-PRR%5D" target="_blank" rel="noopener" class="sozo-btn-primary">Reservasi Sekarang</a>
+                <a href="https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/" class="sozo-btn-outline">Lihat Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 2. Hair Grow Booster - 2x sebulan -->
+        <div class="sozo-card">
+          <div class="sozo-image-area">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-Hair-Grow-Booster-scaled.webp" alt="Hair Grow Booster" loading="lazy" decoding="async" width="400" height="300">
+          </div>
+          <div class="sozo-info-area">
+            <div class="sozo-body-content">
+              <h3 class="sozo-name">Hair Grow Booster</h3>
+              <p class="sozo-desc">Pemberian serum khusus pada kulit kepala yang dapat mengurangi kerontokan, mempercepat pertumbuhan rambut, dan menutrisi rambut.</p>
+              <div class="sozo-meta-row">
+                <span class="sozo-duration"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 45 menit</span>
+                <span class="sozo-frequency"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2x sebulan</span>
+              </div>
+            </div>
+            <div class="sozo-footer-content">
+              <div class="sozo-price-box"><span class="sozo-price-value">Rp 1.499.000</span></div>
+              <div class="sozo-actions-box">
+                <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Perawatan%20Rambut%20Rontok%20%5Bsrc%3AORG-PRR%5D" target="_blank" rel="noopener" class="sozo-btn-primary">Reservasi Sekarang</a>
+                <a href="https://sozoskinclinic.com/hair-treatment/hair-grow-booster-treatment/" class="sozo-btn-outline">Lihat Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3. Salmon DNA Hair - 1x sebulan -->
+        <div class="sozo-card">
+          <div class="sozo-image-area">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-Salmon-DNA-Hair-scaled.webp" alt="Salmon DNA Hair" loading="lazy" decoding="async" width="400" height="300">
+          </div>
+          <div class="sozo-info-area">
+            <div class="sozo-body-content">
+              <h3 class="sozo-name">Salmon DNA Hair</h3>
+              <p class="sozo-desc">Prosedur microneedling dengan pengaplikasian serum PDRN untuk memperbaiki jaringan kulit kepala, dan merangsang pertumbuhan rambut baru.</p>
+              <div class="sozo-meta-row">
+                <span class="sozo-duration"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 80 menit</span>
+                <span class="sozo-frequency"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 1x sebulan</span>
+              </div>
+            </div>
+            <div class="sozo-footer-content">
+              <div class="sozo-price-box"><span class="sozo-price-value">Rp 2.199.000</span></div>
+              <div class="sozo-actions-box">
+                <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Perawatan%20Rambut%20Rontok%20%5Bsrc%3AORG-PRR%5D" target="_blank" rel="noopener" class="sozo-btn-primary">Reservasi Sekarang</a>
+                <a href="https://sozoskinclinic.com/hair-treatment/salmon-dna-hair/" class="sozo-btn-outline">Lihat Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 4. Exosome Hair 5cc - 1x sebulan -->
+        <div class="sozo-card">
+          <div class="sozo-image-area">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-Exosome-Hair-5cc-scaled.webp" alt="Exosome Hair 5cc" loading="lazy" decoding="async" width="400" height="300">
+          </div>
+          <div class="sozo-info-area">
+            <div class="sozo-body-content">
+              <h3 class="sozo-name">Exosome Hair 5cc</h3>
+              <p class="sozo-desc">Menggunakan teknik microneedling dengan aplikasi exosome. Bermanfaat untuk merangsang pertumbuhan rambut, menyehatkan kulit kepala.</p>
+              <div class="sozo-meta-row">
+                <span class="sozo-duration"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 80 menit</span>
+                <span class="sozo-frequency"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 1x sebulan</span>
+              </div>
+            </div>
+            <div class="sozo-footer-content">
+              <div class="sozo-price-box"><span class="sozo-price-value">Rp 7.598.000</span></div>
+              <div class="sozo-actions-box">
+                <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Perawatan%20Rambut%20Rontok%20%5Bsrc%3AORG-PRR%5D" target="_blank" rel="noopener" class="sozo-btn-primary">Reservasi Sekarang</a>
+                <a href="https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/" class="sozo-btn-outline">Lihat Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="sozo-services-nav sozo-services-nav--next" id="sozoServicesNext" aria-label="Geser kanan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var track = document.getElementById('sozoServicesTrack');
+  var prev = document.getElementById('sozoServicesPrev');
+  var next = document.getElementById('sozoServicesNext');
+  if(!track) return;
+  function getScrollAmount(){
+    var card = track.querySelector('.sozo-card');
+    if(!card) return 320;
+    var gap = parseInt(window.getComputedStyle(track).gap) || 24;
+    return card.offsetWidth + gap;
+  }
+  if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -getScrollAmount(), behavior:'smooth'}); });
+  if(next) next.addEventListener('click', function(){ track.scrollBy({left: getScrollAmount(), behavior:'smooth'}); });
+  var isDown=false, startX, scrollLeft;
+  track.addEventListener('mousedown', function(e){
+    isDown=true; track.style.cursor='grabbing';
+    startX=e.pageX - track.getBoundingClientRect().left;
+    scrollLeft=track.scrollLeft;
+  });
+  track.addEventListener('mouseleave', function(){ isDown=false; track.style.cursor=''; });
+  track.addEventListener('mouseup', function(){ isDown=false; track.style.cursor=''; });
+  track.addEventListener('mousemove', function(e){
+    if(!isDown) return;
+    e.preventDefault();
+    var x=e.pageX - track.getBoundingClientRect().left;
+    var walk=(x - startX)*1.2;
+    track.scrollLeft=scrollLeft - walk;
+  });
+})();
+</script>
+
+<!-- ========== SOZO: PRODUK HAIR TREATMENT (Homecare) ========== -->
+<style>
+  .sozo-prod-section {
+    background: #ffffff !important;
+    padding: 80px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    position: relative !important;
+    border-top: 1px solid #f1f5f9 !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+  }
+  .sozo-prod-inner {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    display: grid !important;
+    grid-template-columns: 360px minmax(0, 1fr) !important;
+    gap: 40px !important;
+    align-items: start !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .sozo-prod-header {
+    text-align: left !important;
+    position: sticky !important;
+    top: 20px !important;
+  }
+  .sozo-prod-header h2 {
+    font-size: clamp(26px, 3.5vw, 36px) !important;
+    font-weight: 800 !important;
+    color: #1A2080 !important;
+    line-height: 1.25 !important;
+    margin: 0 0 16px 0 !important;
+    letter-spacing: -0.5px !important;
+  }
+  .sozo-prod-header p {
+    font-size: 15.5px !important;
+    color: #475569 !important;
+    line-height: 1.65 !important;
+    margin: 0 0 24px 0 !important;
+  }
+  .sozo-prod-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #1A2080 !important;
+    color: #ffffff !important;
+    padding: 12px 24px !important;
+    border-radius: 100px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    border: 2px solid #1A2080 !important;
+    transition: all 0.3s ease !important;
+    line-height: 1 !important;
+  }
+  .sozo-prod-cta:hover { background: #ffffff !important; color: #1A2080 !important; }
+  .sozo-prod-cta svg { transition: transform 0.2s ease !important; }
+  .sozo-prod-cta:hover svg { transform: translateX(4px) !important; }
+  .sozo-prod-wrapper { width: 100% !important; box-sizing: border-box !important; }
+  .sozo-prod-wrapper * { box-sizing: border-box !important; }
+  .sozo-prod-viewport { position: relative !important; min-width: 0 !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; }
+  .sozo-prod-wrapper { min-width: 0 !important; overflow: hidden !important; width: 100% !important; }
+  .sozo-prod-track {
+    display: flex !important;
+    gap: 16px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    scroll-behavior: smooth !important;
+    padding: 8px 4px 16px 4px !important;
+    cursor: grab !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    align-items: stretch !important;
+    overscroll-behavior-x: contain !important;
+    touch-action: pan-x !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .sozo-prod-track::-webkit-scrollbar { display: none !important; }
+  .sozo-prod-track:active { cursor: grabbing !important; }
+  .sozo-prod-card {
+    flex: 0 0 260px !important;
+    max-width: 260px !important;
+    min-width: 0 !important;
+    scroll-snap-align: start !important;
+    height: auto !important;
+    align-self: stretch !important;
+    background: #ffffff !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s, box-shadow 0.3s !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+  }
+  .sozo-prod-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 24px rgba(26,32,128,0.10) !important;
+    border-color: #1A2080 !important;
+  }
+  .sozo-prod-img-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    background: #F8FAFC !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+  }
+  .sozo-prod-img-wrapper img {
+    max-width: 85% !important;
+    max-height: 85% !important;
+    object-fit: contain !important;
+    display: block !important;
+    transition: transform 0.4s ease !important;
+  }
+  .sozo-prod-card:hover .sozo-prod-img-wrapper img { transform: scale(1.06) !important; }
+  .sozo-prod-content {
+    padding: 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    text-align: center !important;
+  }
+  .sozo-prod-body { display: flex !important; flex-direction: column !important; flex-grow: 1 !important; }
+  .sozo-prod-card-title {
+    display: block !important;
+    margin: 0 0 12px 0 !important;
+    font-size: 15.5px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    line-height: 1.3 !important;
+    min-height: 40px !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+  }
+  .sozo-prod-body p {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    flex-grow: 1 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    min-height: 54px !important;
+  }
+  .sozo-prod-footer { margin-top: auto !important; padding-top: 16px !important; width: 100% !important; }
+  .sozo-prod-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    color: #1A2080 !important;
+    padding: 10px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 12.5px !important;
+    height: 36px !important;
+    text-decoration: none !important;
+    border: 2px solid #1A2080 !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
+    transition: all 0.25s ease !important;
+  }
+  .sozo-prod-btn:hover { background: #1A2080 !important; color: #ffffff !important; }
+  .sozo-waba-icon { width: 16px !important; height: 16px !important; fill: currentColor !important; display: inline-block !important; vertical-align: middle !important; }
+  .sozo-prod-nav {
+    position: absolute !important;
+    top: 35% !important;
+    transform: translateY(-50%) !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    background: #fff !important;
+    box-shadow: 0 4px 16px rgba(26,32,128,0.15) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 2 !important;
+    color: #1A2080 !important;
+    transition: all 0.2s ease !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+  }
+  .sozo-prod-nav:hover { background: #1A2080 !important; color: #fff !important; }
+  .sozo-prod-nav--prev { left: -14px !important; }
+  .sozo-prod-nav--next { right: -14px !important; }
+  .sozo-prod-nav svg { width: 16px !important; height: 16px !important; stroke: currentColor !important; fill: none !important; display: block !important; }
+  @media (max-width: 1240px) {
+    .sozo-prod-nav--prev { left: 8px !important; }
+    .sozo-prod-nav--next { right: 8px !important; }
+  }
+  @media (max-width: 1024px) {
+    .sozo-prod-inner { gap: 30px !important; }
+  }
+  @media (max-width: 900px) {
+    .sozo-prod-inner { grid-template-columns: 1fr !important; }
+    .sozo-prod-header { position: static !important; }
+  }
+  @media (max-width: 768px) {
+    .sozo-prod-section { padding: 60px 0 !important; }
+    .sozo-prod-inner { grid-template-columns: 1fr !important; gap: 24px !important; padding: 0 16px !important; }
+    .sozo-prod-header { position: static !important; }
+    .sozo-prod-track { gap: 16px !important; padding: 0 0 12px 0 !important; }
+    .sozo-prod-card { flex: 0 0 85% !important; max-width: 85% !important; }
+    .sozo-prod-nav { display: none !important; }
+    .sozo-prod-content { padding: 16px !important; }
+    .sozo-prod-card-title { font-size: 16px !important; }
+  }
+</style>
+
+<section class="sozo-prod-section">
+  <div class="sozo-prod-inner">
+    <div class="sozo-prod-header">
+      <h2>Rangkaian Produk Hair Treatment di Rumah</h2>
+      <p>Gunakan produk formulasi medis khusus untuk memaksimalkan hasil dari hair treatment pasca tindakan di klinik (Homecare).</p>
+      <a href="https://sozoskinclinic.com/produk/" class="sozo-prod-cta" target="_blank" rel="noopener">Lihat Semua Produk <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+    </div>
+    <div class="sozo-prod-wrapper">
+      <div class="sozo-prod-viewport">
+        <button class="sozo-prod-nav sozo-prod-nav--prev" id="sozoProdPrev" aria-label="Geser kiri">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+        </button>
+        <div class="sozo-prod-track" id="sozoProdTrack">
+          <article class="sozo-prod-card">
+            <div class="sozo-prod-img-wrapper">
+              <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Sec2-Custom-Hair-Serum.avif" alt="Custom Hair Serum untuk melengkapi Hair Treatment Sozo" width="300" height="300" loading="lazy">
+            </div>
+            <div class="sozo-prod-content">
+              <div class="sozo-prod-body">
+                <strong class="sozo-prod-card-title">Custom Hair Serum</strong>
+                <p>Serum rambut khusus pendukung program <strong>hair treatment</strong> Anda, diformulasikan spesifik sesuai kondisi klinis kulit kepala.</p>
+              </div>
+              <div class="sozo-prod-footer">
+                <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Perawatan%20Rambut%20Rontok%20%5Bsrc%3AORG-PRR%5D" target="_blank" rel="noopener" class="sozo-prod-btn">
+                  <svg class="sozo-waba-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                  Tanya Produk Ini
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="sozo-prod-card">
+            <div class="sozo-prod-img-wrapper">
+              <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Sec2-Shampoo-Anti-Dandruff.avif" alt="Shampoo Anti Ketombe untuk pendukung program hair care" width="300" height="300" loading="lazy">
+            </div>
+            <div class="sozo-prod-content">
+              <div class="sozo-prod-body">
+                <strong class="sozo-prod-card-title">Shampoo Anti Ketombe</strong>
+                <p>Formulasi ketoconazole esensial untuk melengkapi aktivitas <strong>hair care</strong> harian, efektif basmi akar ketombe jamur dan minyak.</p>
+              </div>
+              <div class="sozo-prod-footer">
+                <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Perawatan%20Rambut%20Rontok%20%5Bsrc%3AORG-PRR%5D" target="_blank" rel="noopener" class="sozo-prod-btn">
+                  <svg class="sozo-waba-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                  Tanya Produk Ini
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="sozo-prod-card">
+            <div class="sozo-prod-img-wrapper">
+              <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Sec2-Hair-Vitamin.avif" alt="Vitamin Nutrisi Esensial Rambut" width="300" height="300" loading="lazy">
+            </div>
+            <div class="sozo-prod-content">
+              <div class="sozo-prod-body">
+                <strong class="sozo-prod-card-title">Vitamin Rambut</strong>
+                <p>Suplemen nutrisi internal esensial guna memperkuat jangkar folikel dan mendukung laju pertumbuhan akar rambut.</p>
+              </div>
+              <div class="sozo-prod-footer">
+                <a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Perawatan%20Rambut%20Rontok%20%5Bsrc%3AORG-PRR%5D" target="_blank" rel="noopener" class="sozo-prod-btn">
+                  <svg class="sozo-waba-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                  Tanya Produk Ini
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <button class="sozo-prod-nav sozo-prod-nav--next" id="sozoProdNext" aria-label="Geser kanan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var track = document.getElementById('sozoProdTrack');
+  var prev = document.getElementById('sozoProdPrev');
+  var next = document.getElementById('sozoProdNext');
+  if(!track) return;
+  function getScrollAmount(){
+    var card = track.querySelector('.sozo-prod-card');
+    if(!card) return 334;
+    var gap = parseInt(window.getComputedStyle(track).gap) || 24;
+    return card.offsetWidth + gap;
+  }
+  if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -getScrollAmount(), behavior:'smooth'}); });
+  if(next) next.addEventListener('click', function(){ track.scrollBy({left: getScrollAmount(), behavior:'smooth'}); });
+  var isDown=false, startX, scrollLeft;
+  track.addEventListener('mousedown', function(e){ isDown=true; track.style.cursor='grabbing'; startX=e.pageX - track.getBoundingClientRect().left; scrollLeft=track.scrollLeft; });
+  track.addEventListener('mouseleave', function(){ isDown=false; track.style.cursor=''; });
+  track.addEventListener('mouseup', function(){ isDown=false; track.style.cursor=''; });
+  track.addEventListener('mousemove', function(e){
+    if(!isDown) return; e.preventDefault();
+    var x=e.pageX - track.getBoundingClientRect().left;
+    var walk=(x - startX)*1.2;
+    track.scrollLeft=scrollLeft - walk;
+  });
+})();
+</script>
+
+<!--
+  ============================================================
+  SOZO SKIN CLINIC - DOCTOR SECTION (INSPIRATION STYLE)
+  Paste langsung ke Widget HTML Elementor (Self-Contained)
+  ============================================================
+-->
+<style>
+.sz-doctor-section {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 60px 20px !important;
+  font-family: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+.sz-doctor-section *,
+.sz-doctor-section *::before,
+.sz-doctor-section *::after {
+  box-sizing: border-box !important;
+}
+
+/* ── Layout Grid 2 Kolom (Kiri: Teks, Kanan: Slider) ── */
+.sz-doctor-section .sz-layout {
+  display: grid !important;
+  grid-template-columns: 320px 1fr !important;
+  align-items: center !important;
+  gap: 40px !important;
+  position: relative !important;
+}
+
+/* ── Kolom Kiri: Info & Tombol ──────────────────────── */
+.sz-doctor-section .sz-info {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.sz-doctor-section .sz-badge {
+  display: inline-block !important;
+  background: #EBF2FE !important;
+  color: #1A2080 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  padding: 6px 16px !important;
+  border-radius: 999px !important;
+  margin-bottom: 16px !important;
+  letter-spacing: 0.02em !important;
+}
+
+.sz-doctor-section .sz-title {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  color: #0b132b !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 16px 0 !important;
+}
+
+.sz-doctor-section .sz-desc {
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #64748b !important;
+  margin: 0 0 28px 0 !important;
+}
+
+.sz-doctor-section .sz-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: #1A2080 !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 13px 26px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 14px rgba(26, 32, 128, 0.25) !important;
+  border: none !important;
+}
+
+.sz-doctor-section .sz-button svg {
+  width: 16px !important;
+  height: 16px !important;
+  fill: currentColor !important;
+  transition: transform 0.2s ease !important;
+}
+
+.sz-doctor-section .sz-button:hover {
+  background: #121659 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(26, 32, 128, 0.35) !important;
+}
+
+.sz-doctor-section .sz-button:hover svg {
+  transform: translateX(4px) !important;
+}
+
+/* ── Kolom Kanan: Slider Track ──────────────────────── */
+.sz-doctor-section .sz-slider-outer {
+  position: relative !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.sz-doctor-section .sz-slider-track {
+  display: flex !important;
+  gap: 20px !important;
+  overflow-x: auto !important;
+  scroll-behavior: smooth !important;
+  scroll-snap-type: x mandatory !important;
+  padding: 12px 6px 20px !important;
+  scrollbar-width: none !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.sz-doctor-section .sz-slider-track::-webkit-scrollbar {
+  display: none !important;
+}
+
+.sz-doctor-section .sz-doctor-card {
+  flex: 0 0 240px !important;
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid #f1f5f9 !important;
+  scroll-snap-align: start !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.sz-doctor-section .sz-doctor-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 30px -5px rgba(26, 32, 128, 0.12) !important;
+}
+
+.sz-doctor-section .sz-photo-box {
+  width: 100% !important;
+  aspect-ratio: 1 / 1.05 !important;
+  background: #f8fafc !important;
+  overflow: hidden !important;
+}
+
+.sz-doctor-section .sz-photo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 22% !important;
+  display: block !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.sz-doctor-section .sz-photo--head-up {
+  object-position: center 8% !important;
+}
+
+.sz-doctor-section .sz-card-body {
+  padding: 16px 14px 20px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  flex-grow: 1 !important;
+}
+
+.sz-doctor-section .sz-name {
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  color: #1A2080 !important;
+  margin: 0 0 6px 0 !important;
+  line-height: 1.35 !important;
+}
+
+.sz-doctor-section .sz-role {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: rgba(26, 32, 128, 0.7) !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.sz-doctor-section .sz-nav-arrow {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 5 !important;
+  transition: all 0.2s ease !important;
+  color: #1A2080 !important;
+  padding: 0 !important;
+}
+
+.sz-doctor-section .sz-nav-arrow:hover {
+  background: #1A2080 !important;
+  color: #ffffff !important;
+  border-color: #1A2080 !important;
+}
+
+.sz-doctor-section .sz-nav-arrow.sz-prev {
+  left: -18px !important;
+}
+
+.sz-doctor-section .sz-nav-arrow.sz-next {
+  right: -18px !important;
+}
+
+.sz-doctor-section .sz-nav-arrow svg {
+  width: 16px !important;
+  height: 16px !important;
+  fill: currentColor !important;
+}
+
+@media (max-width: 992px) {
+  .sz-doctor-section .sz-layout {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .sz-doctor-section .sz-info {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .sz-doctor-section .sz-title {
+    font-size: 26px !important;
+  }
+
+  .sz-doctor-section .sz-nav-arrow {
+    display: none !important;
+  }
+
+  .sz-doctor-section .sz-slider-track {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .sz-doctor-section {
+    padding: 44px 16px !important;
+  }
+
+  .sz-doctor-section .sz-doctor-card {
+    flex: 0 0 210px !important;
+  }
+}
+</style>
+
+<section class="sz-doctor-section" aria-labelledby="sz-doctor-section-title">
+  <div class="sz-layout">
+    <div class="sz-info">
+      <span class="sz-badge">Dokter Kami</span>
+      <h2 id="sz-doctor-section-title" class="sz-title">Perawatan Rambut Rontok Oleh Dokter Berpengalaman</h2>
+      <p class="sz-desc">Tim dokter kami siap memberikan perawatan rambut rontok yang terbaik untuk Anda.</p>
+      <a href="/tim-dokter-sozo-skin/" class="sz-button">
+        <span>Lihat Semua Dokter</span>
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="sz-slider-outer">
+      <button type="button" class="sz-nav-arrow sz-prev" onclick="szSlideLeft()" aria-label="Slide sebelumnya">
+        <svg viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="sz-slider-track" id="szDoctorSlider">
+        <a href="/tim-dokter-sozo-skin/elisabeth-ryan/" class="sz-doctor-card">
+          <div class="sz-photo-box">
+            <img
+              class="sz-photo sz-photo--head-up"
+              src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr-eli.webp"
+              alt="dr. Elisabeth Ryan, Sp.D.V.E, Dokter Spesialis Dermatologi Sozo Skin Clinic"
+              loading="lazy"
+              decoding="async"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="sz-card-body">
+            <h3 class="sz-name">dr. Elisabeth Ryan, Sp.D.V.E</h3>
+            <p class="sz-role">Dermatologi, Venereologi, &amp; Estetika</p>
+          </div>
+        </a>
+        <a href="/tim-dokter-sozo-skin/gesha-kautzar-putri/" class="sz-doctor-card">
+          <div class="sz-photo-box">
+            <img
+              class="sz-photo"
+              src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Gesha-Kautzar-Putri-M.Biomed-AAM.webp"
+              alt="dr. Gesha Kautzar Putri, M.Biomed (AAM), Dokter Spesialis Anti-Aging Sozo Skin Clinic"
+              loading="lazy"
+              decoding="async"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="sz-card-body">
+            <h3 class="sz-name">dr. Gesha Kautzar Putri, M.Biomed (AAM)</h3>
+            <p class="sz-role">Anti-Aging &amp; Estetika</p>
+          </div>
+        </a>
+        <a href="/tim-dokter-sozo-skin/audi-sugiharto/" class="sz-doctor-card">
+          <div class="sz-photo-box">
+            <img
+              class="sz-photo"
+              src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Audi-Sugiharto-Sp.D.V.E.webp"
+              alt="dr. Audi Sugiharto, Sp.D.V.E, Dokter Spesialis Dermatologi Sozo Skin Clinic"
+              loading="lazy"
+              decoding="async"
+              width="400"
+              height="400"
+            />
+          </div>
+          <div class="sz-card-body">
+            <h3 class="sz-name">dr. Audi Sugiharto, Sp.D.V.E</h3>
+            <p class="sz-role">Dermatologi, Venereologi, &amp; Estetika</p>
+          </div>
+        </a>
+      </div>
+      <button type="button" class="sz-nav-arrow sz-next" onclick="szSlideRight()" aria-label="Slide berikutnya">
+        <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function szSlideLeft() {
+    const slider = document.getElementById('szDoctorSlider');
+    if (slider) slider.scrollBy({ left: -260, behavior: 'smooth' });
+  }
+  function szSlideRight() {
+    const slider = document.getElementById('szDoctorSlider');
+    if (slider) slider.scrollBy({ left: 260, behavior: 'smooth' });
+  }
+</script>
+
+<!-- 
+  SOZO SKIN CLINIC — Section "Sebelum & Sesudah" Hair Treatment (Slider Desktop & Mobile - Font: Poppins)
+  Widget: Elementor → Custom HTML
+  FIX: nav inside viewport + svg stroke explicit
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+  .sozo-ba-slider {
+    --navy: #1A2080;
+    --navy-deep: #10154f;
+    --navy-tint: #EAEDFA;
+    --bg: #F8FAFC;
+    position: relative !important;
+    width: 100% !important;
+    background: #F8FAFC !important;
+    border-top: 1px solid #f1f5f9;
+    padding: 72px 5% 40px !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  .sozo-ba-slider, .sozo-ba-slider * { box-sizing: border-box !important; }
+  .sozo-ba-slider h2, .sozo-ba-slider p { margin: 0 !important; }
+
+  .sozo-ba-slider__inner {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    opacity: 0 !important;
+    transform: translateY(24px) !important;
+    transition: opacity .7s ease, transform .7s ease !important;
+  }
+  .sozo-ba-slider__inner.is-visible { opacity: 1 !important; transform: translateY(0) !important; }
+
+  .sozo-ba-slider__head { text-align: center !important; margin-bottom: 48px !important; }
+  .sozo-ba-slider__eyebrow {
+    display: inline-block !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 12.5px !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: var(--navy) !important;
+    margin-bottom: 10px !important;
+  }
+  .sozo-ba-slider__title {
+    font-family: 'Poppins', sans-serif !important;
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+    font-size: clamp(24px, 3.2vw, 36px) !important;
+    line-height: 1.25 !important;
+  }
+
+  .sozo-ba-slider__viewport {
+    position: relative !important;
+    width: 100% !important;
+  }
+  .sozo-ba-slider__track {
+    display: flex !important;
+    gap: 24px !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    scroll-behavior: smooth !important;
+    padding-bottom: 8px !important;
+  }
+  .sozo-ba-slider__track::-webkit-scrollbar { display: none !important; }
+
+  .sozo-ba-slider__slide {
+    position: relative !important;
+    flex: 0 0 calc((100% - 48px) / 3) !important;
+    scroll-snap-align: start !important;
+    aspect-ratio: 16 / 10 !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+    background: var(--navy-tint) !important;
+    box-shadow: 0 10px 30px -10px rgba(26,32,128,.15) !important;
+  }
+  .sozo-ba-slider__slide img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  /* Nav Arrows - FIX: posisi inside viewport biar tidak ke-clip Elementor */
+  .sozo-ba-slider__nav {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    background: #fff !important;
+    box-shadow: 0 4px 16px rgba(26,32,128,.15) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 2 !important;
+    color: var(--navy) !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    transition: background .2s ease, transform .2s ease !important;
+  }
+  .sozo-ba-slider__nav:hover { background: var(--navy) !important; color: #fff !important; }
+  .sozo-ba-slider__nav--prev { left: 12px !important; }
+  .sozo-ba-slider__nav--next { right: 12px !important; }
+  .sozo-ba-slider__nav svg {
+    width: 20px !important;
+    height: 20px !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+    stroke: currentColor !important;
+    fill: none !important;
+  }
+  .sozo-ba-slider__nav svg path { stroke: currentColor !important; }
+
+  .sozo-ba-slider__dots {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-top: 28px !important;
+  }
+  .sozo-ba-slider__dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    background: var(--navy-tint) !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    transition: background .2s ease, width .2s ease, border-radius .2s ease !important;
+  }
+  .sozo-ba-slider__dot.is-active {
+    background: var(--navy) !important;
+    width: 22px !important;
+    border-radius: 5px !important;
+  }
+
+  @media (max-width: 991px) {
+    .sozo-ba-slider { padding: 52px 6% 48px !important; }
+    .sozo-ba-slider__head { margin-bottom: 32px !important; }
+    .sozo-ba-slider__slide {
+      flex: 0 0 100% !important;
+      border-radius: 16px !important;
+    }
+    .sozo-ba-slider__nav { width: 38px !important; height: 38px !important; }
+    .sozo-ba-slider__nav--prev { left: 8px !important; }
+    .sozo-ba-slider__nav--next { right: 8px !important; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-ba-slider__inner { transition: none !important; opacity: 1 !important; transform: none !important; }
+    .sozo-ba-slider__track { scroll-behavior: auto !important; }
+  }
+</style>
+
+<section class="sozo-ba-slider">
+  <div class="sozo-ba-slider__inner" id="sozoBaInner">
+    <div class="sozo-ba-slider__head">
+      <span class="sozo-ba-slider__eyebrow">Hasil Pasien</span>
+      <h2 class="sozo-ba-slider__title">HASIL NYATA HAIR TREATMENT DI HAIR CLINIC SOZO</h2>
+    </div>
+
+    <div class="sozo-ba-slider__viewport">
+      <button class="sozo-ba-slider__nav sozo-ba-slider__nav--prev" id="sozoBaPrev" aria-label="Sebelumnya">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+
+      <div class="sozo-ba-slider__track" id="sozoBaTrack">
+        <div class="sozo-ba-slider__slide">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Before-After-1-1.webp" alt="Hasil sebelum dan sesudah Hair Treatment 1" loading="lazy">
+        </div>
+        <div class="sozo-ba-slider__slide">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Before-After-2-2.webp" alt="Hasil sebelum dan sesudah Hair Treatment 2" loading="lazy">
+        </div>
+        <div class="sozo-ba-slider__slide">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Before-After-3-1.webp" alt="Hasil sebelum dan sesudah Hair Treatment 3" loading="lazy">
+        </div>
+        <div class="sozo-ba-slider__slide">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Before-After-5-1.webp" alt="Hasil sebelum dan sesudah Hair Treatment 4" loading="lazy">
+        </div>
+        <div class="sozo-ba-slider__slide">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Before-After-4-1.webp" alt="Hasil sebelum dan sesudah Hair Treatment 5" loading="lazy">
+        </div>
+      </div>
+
+      <button class="sozo-ba-slider__nav sozo-ba-slider__nav--next" id="sozoBaNext" aria-label="Selanjutnya">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="sozo-ba-slider__dots" id="sozoBaDots"></div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var wrap = document.getElementById('sozoBaInner');
+  var track = document.getElementById('sozoBaTrack');
+  var dotsWrap = document.getElementById('sozoBaDots');
+  var prevBtn = document.getElementById('sozoBaPrev');
+  var nextBtn = document.getElementById('sozoBaNext');
+  var slides = track.querySelectorAll('.sozo-ba-slider__slide');
+
+  slides.forEach(function (_, i) {
+    var dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'sozo-ba-slider__dot';
+    dot.setAttribute('aria-label', 'Ke slide ' + (i + 1));
+    dot.addEventListener('click', function () {
+      slides[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    });
+    dotsWrap.appendChild(dot);
+  });
+  var dots = dotsWrap.querySelectorAll('.sozo-ba-slider__dot');
+
+  function getActiveIndex() {
+    var slideWidth = slides[0].offsetWidth + 24;
+    return Math.round(track.scrollLeft / slideWidth);
+  }
+  function setActive(i) {
+    var idx = Math.max(0, Math.min(i, slides.length - 1));
+    dots.forEach(function (d, j) { d.classList.toggle('is-active', j === idx); });
+  }
+  function scrollToIndex(i) {
+    var idx = Math.max(0, Math.min(i, slides.length - 1));
+    slides[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+  }
+
+  prevBtn.addEventListener('click', function() { scrollToIndex(getActiveIndex() - 1); });
+  nextBtn.addEventListener('click', function() { scrollToIndex(getActiveIndex() + 1); });
+
+  var ticking = false;
+  track.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      setActive(getActiveIndex());
+      ticking = false;
+    });
+  });
+  setActive(0);
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          wrap.classList.add('is-visible');
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(wrap);
+  } else {
+    wrap.classList.add('is-visible');
+  }
+})();
+</script>
+
+<style>
+  /* ==========================================================
+     CSS OPTIMIZED TESTIMONIAL (Content-Visibility & CLS Fix)
+     ========================================================== */
+  .sozo-testi-section {
+    font-family: 'Poppins', sans-serif;
+    background: #F8FAFC;
+    padding: 40px 20px 80px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    /* PERFORMANCE: Browser melewatkan beban render kartu sebelum area ter-scroll */
+    content-visibility: auto;
+    contain-intrinsic-size: 0 600px;
+  }
+
+  .sozo-testi-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Grid Styling */
+  .sozo-testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  /* Card Styling */
+  .sozo-testi-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s, box-shadow 0.3s;
+    border: 1px solid #E2E8F0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sozo-testi-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(26, 32, 128, 0.08);
+    border-color: #1A2080;
+  }
+
+  /* SPEED FIX: Mengganti FontAwesome Pseudo-element dengan hiasan latar belakang SVG inline */
+  .sozo-bg-quote {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    color: rgba(26, 32, 128, 0.04);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Stars Container */
+  .sozo-testi-stars {
+    color: #FFB800;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 4px;
+  }
+  
+  .sozo-star-svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+  }
+
+  /* Text Content */
+  .sozo-testi-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #334155;
+    font-style: italic;
+    margin: 0 0 30px 0;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* User Profile */
+  .sozo-testi-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sozo-testi-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #F0F4F8;
+    background: #E2E8F0;
+    flex-shrink: 0;
+  }
+
+  .sozo-testi-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sozo-testi-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sozo-testi-info-name {
+    display: block;
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1A2080;
+  }
+
+  .sozo-testi-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748B;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .sozo-check-svg {
+    width: 12px;
+    height: 12px;
+    color: #1A2080;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 991px) {
+    .sozo-testi-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .sozo-testi-section {
+      padding: 60px 15px;
+    }
+    .sozo-testi-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .sozo-testi-card {
+      padding: 25px 20px;
+    }
+    .sozo-bg-quote {
+      width: 45px;
+      height: 45px;
+      top: 15px;
+      right: 15px;
+    }
+  }
+</style>
+
+<section class="sozo-testi-section">
+  <div class="sozo-testi-container">
+    
+    <div class="sozo-testi-grid">
+      
+      <!-- Testimoni 1 -->
+      <article class="sozo-testi-card">
+        <svg class="sozo-bg-quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.122 14.335C11.122 17.462 8.583 20 5.456 20 2.329 20 0 17.462 0 14.335s2.329-5.674 5.456-5.674c.485 0 .952.062 1.399.176C6.183 6.444 8.167 4 11.002 4c.334 0 .604.27.604.604 0 .248-.152.47-.384.56-1.954.761-3.238 2.502-3.468 4.607.72-.257 1.498-.396 2.311-.396 3.127 0 5.666 2.538 5.666 5.665h-.609zm12.274 0c0 3.127-2.538 5.665-5.665 5.665-3.127 0-5.666-2.538-5.666-5.665s2.329-5.674 5.456-5.674c.485 0 .951.062 1.398.176-.671-2.393 1.313-4.837 4.148-4.837.334 0 .604.27.604.604 0 .248-.152.47-.384.56-1.954.761-3.238 2.502-3.468 4.607.72-.257 1.498-.396 2.311-.396 3.127 0 5.665 2.538 5.665 5.665z"/></svg>
+
+        <div class="sozo-testi-stars" aria-label="Rating 5 Bintang">
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+        </div>
+        <p class="sozo-testi-text">"Rambutku rontok parah dari umur 20-an, cobain banyak cara tapi tidak ada hasil. Akhirnya coba <strong>hair care treatment</strong> di Sozo. Setelah konsultasi intensif dengan dokter, saya diberikan program Express Hair Therapy dan custom serum rutin. Sekarang akar rambut jadi sangat kuat dan bebas rontok!"</p>
+        <div class="sozo-testi-user">
+          <div class="sozo-testi-avatar">
+            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Rizka-Purnadi.avif" alt="Testimoni Express Hair Therapy dari Rizka Purnadi" width="51" height="51" loading="lazy">
+          </div>
+          <div class="sozo-testi-info">
+            <strong class="sozo-testi-info-name">Rizka Purnadi</strong>
+            <p>
+              <svg class="sozo-check-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Express Hair Therapy
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimoni 2 -->
+      <article class="sozo-testi-card">
+        <svg class="sozo-bg-quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.122 14.335C11.122 17.462 8.583 20 5.456 20 2.329 20 0 17.462 0 14.335s2.329-5.674 5.456-5.674c.485 0 .952.062 1.399.176C6.183 6.444 8.167 4 11.002 4c.334 0 .604.27.604.604 0 .248-.152.47-.384.56-1.954.761-3.238 2.502-3.468 4.607.72-.257 1.498-.396 2.311-.396 3.127 0 5.666 2.538 5.666 5.665h-.609zm12.274 0c0 3.127-2.538 5.665-5.665 5.665-3.127 0-5.666-2.538-5.666-5.665s2.329-5.674 5.456-5.674c.485 0 .951.062 1.398.176-.671-2.393 1.313-4.837 4.148-4.837.334 0 .604.27.604.604 0 .248-.152.47-.384.56-1.954.761-3.238 2.502-3.468 4.607.72-.257 1.498-.396 2.311-.396 3.127 0 5.665 2.538 5.665 5.665z"/></svg>
+        
+        <div class="sozo-testi-stars" aria-label="Rating 5 Bintang">
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+        </div>
+        <p class="sozo-testi-text">"Saya mengalami masalah kebotakan di area belakang kepala yang melebar. Sempat cemas, akhirnya saya coba opsi medis <strong>hair treatment</strong> di Sozo. Setelah rutin menjalani terapi PRP Hair, banyak sekali rambut baru yang tumbuh sehat. Sangat puas dengan hasilnya!"</p>
+        <div class="sozo-testi-user">
+          <div class="sozo-testi-avatar">
+            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/JUNE.avif" alt="Testimoni PRP Hair dari June" width="51" height="51" loading="lazy">
+          </div>
+          <div class="sozo-testi-info">
+            <strong class="sozo-testi-info-name">June</strong>
+            <p>
+              <svg class="sozo-check-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              PRP Hair
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimoni 3 -->
+      <article class="sozo-testi-card">
+        <svg class="sozo-bg-quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.122 14.335C11.122 17.462 8.583 20 5.456 20 2.329 20 0 17.462 0 14.335s2.329-5.674 5.456-5.674c.485 0 .952.062 1.399.176C6.183 6.444 8.167 4 11.002 4c.334 0 .604.27.604.604 0 .248-.152.47-.384.56-1.954.761-3.238 2.502-3.468 4.607.72-.257 1.498-.396 2.311-.396 3.127 0 5.666 2.538 5.666 5.665h-.609zm12.274 0c0 3.127-2.538 5.665-5.665 5.665-3.127 0-5.666-2.538-5.666-5.665s2.329-5.674 5.456-5.674c.485 0 .951.062 1.398.176-.671-2.393 1.313-4.837 4.148-4.837.334 0 .604.27.604.604 0 .248-.152.47-.384.56-1.954.761-3.238 2.502-3.468 4.607.72-.257 1.498-.396 2.311-.396 3.127 0 5.665 2.538 5.665 5.665z"/></svg>
+        
+        <div class="sozo-testi-stars" aria-label="Rating 5 Bintang">
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+          <svg class="sozo-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.133 9.21l8.2-1.192z"/></svg>
+        </div>
+        <p class="sozo-testi-text">"Banyak teman merekomendasikan penanganan rambut tipis di Sozo. Akhirnya saya bareng pacar coba ambil paket Hair Grow Combo. Hanya butuh beberapa minggu, rambut baru mulai tumbuh lebat. Rekomendasi klinik kecantikan terbaik!"</p>
+        <div class="sozo-testi-user">
+          <div class="sozo-testi-avatar">
+            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Dianca.avif" alt="Testimoni Hair Grow Combo dari Dianca" width="51" height="51" loading="lazy">
+          </div>
+          <div class="sozo-testi-info">
+            <strong class="sozo-testi-info-name">Dianca</strong>
+            <p>
+              <svg class="sozo-check-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Hair Grow Combo
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOZO: FAQ PERAWATAN RAMBUT RONTOK ========== -->
+<style>
+  .sozo-faq-section {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    background: #ffffff !important;
+    padding: 80px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .sozo-faq-container {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+  }
+  .sozo-faq-header {
+    text-align: center !important;
+    margin-bottom: 40px !important;
+  }
+  .sozo-faq-header h2 {
+    font-size: clamp(28px, 4vw, 36px) !important;
+    color: #1A2080 !important;
+    font-weight: 800 !important;
+    margin: 0 0 12px 0 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.25 !important;
+  }
+  .sozo-faq-header p {
+    font-size: 15px !important;
+    color: #64748b !important;
+    margin: 0 !important;
+  }
+  .sozo-faq-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .sozo-faq-item {
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    overflow: hidden !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+  }
+  .sozo-faq-item[open] {
+    border-color: #1A2080 !important;
+    box-shadow: 0 8px 24px rgba(26,32,128,0.08) !important;
+  }
+  .sozo-faq-item summary {
+    list-style: none !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 20px 24px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer !important;
+    font-size: 15.5px !important;
+    line-height: 1.4 !important;
+    gap: 16px !important;
+  }
+  .sozo-faq-item summary::-webkit-details-marker { display: none !important; }
+  .sozo-faq-item summary::after {
+    content: '+' !important;
+    font-size: 22px !important;
+    font-weight: 300 !important;
+    color: #1A2080 !important;
+    transition: transform 0.3s ease !important;
+    flex-shrink: 0 !important;
+    width: 28px !important;
+    height: 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    background: #EEF2FF !important;
+  }
+  .sozo-faq-item[open] summary::after {
+    transform: rotate(45deg) !important;
+    background: #1A2080 !important;
+    color: #fff !important;
+  }
+  .sozo-faq-answer {
+    padding: 0 24px 20px 24px !important;
+    color: #475569 !important;
+    font-size: 14.5px !important;
+    line-height: 1.7 !important;
+  }
+  .sozo-faq-answer p { margin: 0 0 12px 0 !important; }
+  .sozo-faq-answer p:last-child { margin-bottom: 0 !important; }
+  .sozo-faq-answer ul {
+    padding-left: 20px !important;
+    margin: 12px 0 !important;
+    list-style: disc !important;
+  }
+  .sozo-faq-answer li { margin-bottom: 8px !important; }
+  .sozo-faq-answer strong { color: #1e293b !important; }
+  @media (max-width: 768px) {
+    .sozo-faq-section { padding: 60px 16px !important; }
+    .sozo-faq-item summary { padding: 16px 18px !important; font-size: 14.5px !important; }
+    .sozo-faq-answer { padding: 0 18px 16px 18px !important; font-size: 14px !important; }
+  }
+</style>
+
+<section class="sozo-faq-section">
+  <div class="sozo-faq-container">
+    <div class="sozo-faq-header">
+      <h2>Pertanyaan Seputar Perawatan Rambut Rontok</h2>
+      <p>Jawaban medis untuk keraguan Anda.</p>
+    </div>
+    <div class="sozo-faq-list">
+      <details class="sozo-faq-item">
+        <summary>Berapa helai rambut rontok yang dianggap normal?</summary>
+        <div class="sozo-faq-answer">
+          <p>Secara medis, kehilangan 50 hingga 100 helai rambut per hari dianggap normal sebagai bagian dari siklus pertumbuhan alami. Namun, jika kerontokan terjadi dalam gumpalan besar, atau Anda menyadari adanya penipisan drastis pada area tertentu (seperti belahan rambut atau garis rambut depan), disarankan untuk segera melakukan pemeriksaan.</p>
+        </div>
+      </details>
+      <details class="sozo-faq-item">
+        <summary>Apa saja jenis perawatan rambut rontok yang tersedia di Sozo Skin Clinic?</summary>
+        <div class="sozo-faq-answer">
+          <p>Kami menyediakan dua kategori utama yang disesuaikan dengan tingkat keparahan masalah rambut Anda:</p>
+          <ul>
+            <li><strong>Perawatan Medical:</strong> Tindakan berfokus pada regenerasi sel mendalam, meliputi Anti Hair Fall, Salmon DNA Hair, Exosome Hair, dan PRP Hair.</li>
+            <li><strong>Perawatan Non-Medical:</strong> Perawatan topikal non-invasif yang meliputi Scalp Facial, Hair Grow Booster, dan Express Hair Therapy.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="sozo-faq-item">
+        <summary>Apa perbedaan fokus tujuan dari perawatan Medical dan Non-Medical?</summary>
+        <div class="sozo-faq-answer">
+          <p>Perawatan <strong>Medical</strong> (seperti PRP dan Exosome) bertujuan meregenerasi sel kulit kepala, mengurangi peradangan secara signifikan, dan merangsang pembelahan sel folikel untuk menumbuhkan rambut baru yang lebih tebal. Sedangkan perawatan <strong>Non-Medical</strong> berfokus untuk menyuburkan folikel, menyeimbangkan kadar minyak berlebih, dan meningkatkan pasokan nutrisi ke akar rambut guna memperlambat proses kerontokan.</p>
+        </div>
+      </details>
+      <details class="sozo-faq-item">
+        <summary>Kondisi kulit kepala seperti apa yang direkomendasikan untuk melakukan treatment ini?</summary>
+        <div class="sozo-faq-answer">
+          <p>Perawatan kami diindikasikan dan sangat direkomendasikan bagi Anda yang mengalami:</p>
+          <ul>
+            <li>Rambut rontok aktif atau penipisan parah.</li>
+            <li>Kulit kepala yang sangat berminyak sehingga menyumbat folikel.</li>
+            <li>Masalah ketombe berlebih yang merusak akar rambut.</li>
+            <li>Helai rambut yang rapuh, kusam, dan mudah patah.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="sozo-faq-item">
+        <summary>Apakah ada kondisi yang membuat saya tidak bisa melakukan treatment?</summary>
+        <div class="sozo-faq-answer">
+          <p>Demi keamanan dan sterilitas, tindakan hair treatment tidak dapat dilakukan jika Anda sedang memiliki:</p>
+          <ul>
+            <li>Luka terbuka di area kulit kepala yang akan ditindak.</li>
+            <li>Infeksi aktif pada area perawatan.</li>
+            <li>Kulit kepala dalam keadaan sangat sensitif atau meradang hebat.</li>
+            <li>Kondisi Dermatitis Seboroik akut (harus disembuhkan terlebih dahulu).</li>
+          </ul>
+        </div>
+      </details>
+      <details class="sozo-faq-item">
+        <summary>Apakah rambut yang rontok dan botak bisa tumbuh kembali?</summary>
+        <div class="sozo-faq-answer">
+          <p>Rambut rontok bisa tumbuh kembali asalkan folikel (akar rambut) belum mati secara permanen atau belum tertutup oleh jaringan parut. Tindakan seperti PRP Hair atau Salmon DNA Hair dirancang khusus untuk "membangunkan" folikel yang sedang beristirahat (dorman) agar kembali memproduksi helai rambut.</p>
+        </div>
+      </details>
+      <details class="sozo-faq-item">
+        <summary>Apakah ada efek samping setelah melakukan hair treatment?</summary>
+        <div class="sozo-faq-answer">
+          <p>Sebagian besar perawatan kami aman dengan downtime (waktu pemulihan) minimal. Namun, tergantung pada sensitivitas kulit masing-masing pasien, beberapa efek samping ringan dan sementara yang mungkin muncul meliputi rasa gatal di kulit kepala, sedikit ketombe atau kulit kepala berminyak, serta rambut kusam sementara selama masa penyesuaian. Dokter kami akan memberikan instruksi pasca-perawatan untuk mengatasi hal ini.</p>
+        </div>
+      </details>
+      <details class="sozo-faq-item">
+        <summary>Berapa lama hasil perawatan rambut rontok baru bisa terlihat?</summary>
+        <div class="sozo-faq-answer">
+          <p>Hasil perawatan rambut rontok secara medis umumnya mulai terlihat secara signifikan dalam waktu 3 hingga 6 bulan setelah sesi perawatan rutin. Hal ini dikarenakan siklus pertumbuhan rambut manusia berjalan cukup lambat, sehingga Anda membutuhkan konsistensi untuk melihat perubahan pada ketebalan dan volume rambut.</p>
+        </div>
+      </details>
+      <details class="sozo-faq-item">
+        <summary>Apakah hasil dari hair treatment untuk rambut rontok bersifat permanen?</summary>
+        <div class="sozo-faq-answer">
+          <p>Hasil perawatan dapat bertahan dalam jangka waktu yang sangat panjang jika kondisi folikel membaik. Namun, kondisi ini tidak 100% permanen tanpa penjagaan. Pasien (terutama dengan kondisi kebotakan genetik) tetap membutuhkan perawatan pemeliharaan (maintenance) secara berkala serta penggunaan produk home-care yang tepat sesuai anjuran dokter.</p>
+        </div>
+      </details>
+      <details class="sozo-faq-item">
+        <summary>Berapa kisaran harga perawatan rambut rontok di Sozo Skin Clinic?</summary>
+        <div class="sozo-faq-answer">
+          <p>Biaya perawatan rambut rontok di Sozo Skin Clinic sangat terjangkau dan akan disesuaikan dengan tingkat keparahan kondisi kulit kepala Anda berdasarkan diagnosis dokter. Secara umum, kisaran harga untuk seluruh layanan hair treatment kami dimulai dari <strong>Rp 199.000</strong>.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

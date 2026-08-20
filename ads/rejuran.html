@@ -1,0 +1,364 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+  :root{
+    --navy:#1A2080;
+    --navy-deep:#10154f;
+    --navy-tint:#EAEDFA;
+    --cyan:#3AB4F2;
+    --slate:#64748b;
+    --text-muted:#475569;
+    --bg:#FBFBFE;
+    --border:#e5e7eb;
+  }
+  *{box-sizing:border-box;}
+  .rejuran-lp{font-family:'Poppins',sans-serif;background:var(--bg);color:#333;-webkit-font-smoothing:antialiased;}
+  .rejuran-lp h1,.rejuran-lp h2,.rejuran-lp h3,.rejuran-lp p{margin:0;}
+  .rejuran-lp img{max-width:100%;display:block;}
+  .rejuran-lp a{text-decoration:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;width:100%;overflow:hidden;}
+  .hero__inner{position:relative;max-width:1320px;margin:0 auto;display:flex;align-items:center;min-height:600px;padding:56px 5%;gap:40px;}
+  .hero__blob{position:absolute;top:50%;right:2%;width:680px;height:680px;max-width:90vw;transform:translateY(-48%);background:radial-gradient(circle at 38% 38%, var(--navy-tint) 0%, rgba(234,237,250,0) 72%);border-radius:50%;z-index:0;pointer-events:none;}
+  .hero__visual{position:relative;flex:0 0 50%;width:50%;z-index:1;aspect-ratio:1/1;border-radius:28px;overflow:hidden;background:var(--navy-tint);box-shadow:0 24px 48px -18px rgba(26,32,128,.25);}
+  .hero__visual img{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero__content{position:relative;z-index:2;flex:1;min-width:280px;text-align:left;}
+  .hero__eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--cyan);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;}
+  .hero__eyebrow::before{content:"";width:20px;height:1.5px;background:var(--cyan);}
+  .hero__title{font-weight:700;font-size:clamp(28px,4vw,46px);line-height:1.2;color:var(--navy);letter-spacing:-.01em;margin-bottom:16px;}
+  .hero__title em{font-style:normal;font-weight:400;font-style:italic;color:var(--navy);display:block;}
+  .hero__desc{font-size:15.5px;color:var(--text-muted);line-height:1.65;max-width:420px;margin-bottom:28px;}
+  .hero__badge{display:inline-flex;align-items:baseline;gap:6px;background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);color:#fff !important;font-weight:500;font-size:16px;padding:13px 24px;border-radius:100px;box-shadow:0 10px 24px -8px rgba(26,32,128,.45);transition:transform .25s ease, box-shadow .25s ease;}
+  .hero__badge strong{font-weight:700;font-size:1.12em;}
+  .hero__badge:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 18px 32px -8px rgba(26,32,128,.6);}
+
+  @media (max-width:900px){
+    .hero__inner{flex-direction:column-reverse;min-height:unset;padding:32px 6% 40px;gap:28px;}
+    .hero__content{width:100%;text-align:center;}
+    .hero__desc{margin-left:auto;margin-right:auto;}
+    .hero__visual{width:100%;flex:0 0 100%;height:260px;aspect-ratio:auto;}
+    .hero__blob{width:380px;height:380px;right:50%;transform:translate(50%,-48%);}
+  }
+
+  /* ---------- BEFORE/AFTER SLIDER ---------- */
+  .ba-slider{padding:72px 5% 64px;}
+  .ba-slider__inner{max-width:1200px;margin:0 auto;}
+  .ba-slider__head{text-align:center;margin-bottom:44px;}
+  .ba-slider__eyebrow{display:inline-block;font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-bottom:10px;}
+  .ba-slider__title{font-weight:700;font-size:clamp(22px,3.2vw,34px);line-height:1.25;color:var(--navy);}
+  .ba-slider__track{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto;}
+  .ba-slide{position:relative;width:100%;aspect-ratio:16/10;border-radius:22px;overflow:hidden;background:var(--navy-tint);box-shadow:0 10px 30px -10px rgba(26,32,128,.15);}
+  .ba-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+  @media (max-width:900px){.ba-slider__track{grid-template-columns:1fr;}}
+
+  /* ---------- TRUST / STATS ---------- */
+  .stats-section{max-width:1200px;margin:60px auto;padding:0 24px;}
+  .stats-flex{display:flex;align-items:center;gap:56px;}
+  .stats-media{flex:0 0 32%;width:32%;}
+  .stats-media-wrap{width:100%;border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:var(--navy-tint);box-shadow:0 16px 36px rgba(26,32,128,.05);}
+  .stats-media-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+  .stats-caption{font-size:15px;font-weight:700;color:var(--navy);line-height:1.4;margin-top:16px;border-left:3px solid var(--navy);padding-left:12px;}
+  .stats-content{flex:1;}
+  .stats-heading{color:var(--navy);font-size:clamp(24px,3vw,34px);font-weight:700;margin-bottom:28px;line-height:1.25;}
+  .stats-list{display:flex;flex-direction:column;gap:14px;}
+  .stat-row{display:flex;align-items:center;background:#fff;border:1px solid #eef0f5;border-radius:16px;padding:18px 24px;gap:20px;box-shadow:0 4px 15px rgba(26,32,128,.02);}
+  .stat-icon{flex:0 0 auto;width:48px;height:48px;background:#f4f5ff;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .stat-icon svg{width:24px;height:24px;fill:none;stroke:var(--navy);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+  .stat-number{font-size:28px;font-weight:800;color:var(--navy);line-height:1.1;}
+  .stat-label{font-size:12.5px;font-weight:600;color:var(--slate);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+  @media (max-width:991px){
+    .stats-flex{flex-direction:column;gap:32px;}
+    .stats-media{width:100%;max-width:340px;margin:0 auto;}
+    .stats-heading{text-align:center;}
+    .stats-caption{text-align:center;border-left:none;padding-left:0;border-bottom:2px solid var(--navy-tint);padding-bottom:16px;}
+  }
+
+  /* ---------- TREATMENT CARDS ---------- */
+  .services-wrapper{max-width:1200px;margin:0 auto;padding:40px 24px;}
+  .services-header{margin-bottom:32px;}
+  .services-title{color:var(--navy);font-size:28px;font-weight:700;margin-bottom:8px;line-height:1.3;}
+  .services-subtitle{color:var(--text-muted);font-size:15px;line-height:1.5;max-width:640px;}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:all .3s ease;}
+  .service-card:hover{box-shadow:0 12px 24px rgba(26,32,128,.1);transform:translateY(-4px);border-color:var(--navy);}
+  .service-image{position:relative;width:100%;aspect-ratio:4/3;background:var(--navy-tint);overflow:hidden;}
+  .service-image img{width:100%;height:100%;object-fit:cover;display:block;}
+  .service-badge{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.92);color:var(--navy);padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;z-index:1;}
+  .service-info{padding:20px;display:flex;flex-direction:column;flex-grow:1;}
+  .service-name{color:var(--navy);font-size:18px;font-weight:700;margin-bottom:8px;line-height:1.3;}
+  .service-desc{color:var(--text-muted);font-size:14px;line-height:1.5;margin-bottom:20px;flex-grow:1;}
+  .detail-btn{width:100%;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:#fff !important;transition:all .3s ease;}
+  .detail-btn:hover{background:var(--navy-deep);color:#fff !important;box-shadow:0 4px 12px rgba(26,32,128,.25);}
+  @media (max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:768px){.services-grid{grid-template-columns:1fr;}}
+
+  /* ---------- SKINBOOSTER COMPARISON ---------- */
+  .compare-section{max-width:1200px;margin:70px auto;padding:0 24px;}
+  .compare-header{text-align:center;max-width:720px;margin:0 auto 40px;}
+  .compare-eyebrow{display:inline-block;font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;}
+  .compare-title{color:var(--navy);font-size:clamp(24px,3vw,34px);font-weight:700;line-height:1.25;margin-bottom:14px;}
+  .compare-sub{color:var(--text-muted);font-size:15px;line-height:1.6;}
+
+  .compare-table-wrap{overflow-x:auto;border-radius:20px;border:1px solid var(--border);box-shadow:0 10px 30px -10px rgba(26,32,128,.08);}
+  table.compare-table{width:100%;border-collapse:collapse;min-width:920px;background:#fff;}
+  .compare-table thead th{background:var(--navy);color:#fff;text-align:left;font-size:13px;font-weight:600;padding:16px 18px;position:sticky;top:0;}
+  .compare-table thead th:first-child{border-top-left-radius:20px;}
+  .compare-table thead th:last-child{border-top-right-radius:20px;}
+  .compare-table tbody td{padding:16px 18px;font-size:13.5px;color:var(--text-muted);border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+  .compare-table tbody tr:last-child td{border-bottom:none;}
+  .compare-table tbody tr:nth-child(even){background:#FAFAFE;}
+  .compare-table tbody tr.highlight-row{background:var(--navy-tint);}
+  .compare-table tbody tr.highlight-row td{color:var(--navy);}
+  .compare-table td.prod-name{font-weight:700;color:var(--navy);white-space:nowrap;}
+  .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--navy-tint);color:var(--navy);margin-top:4px;}
+
+  .compare-note{margin-top:20px;font-size:12.5px;color:#6b7280;line-height:1.6;border-top:1px dashed var(--border);padding-top:16px;}
+  .compare-note strong{color:#333;font-weight:600;}
+
+  .compare-cta{text-align:center;margin-top:32px;}
+  .compare-cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff !important;padding:14px 32px;border-radius:30px;font-weight:600;font-size:15px;box-shadow:0 4px 14px rgba(26,32,128,.25);transition:all .3s ease;}
+  .compare-cta-btn:hover{background:var(--navy-deep);color:#fff !important;transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,32,128,.35);}
+
+  @media (max-width:768px){
+    .compare-table thead th, .compare-table tbody td{padding:12px 14px;font-size:12.5px;}
+  }
+
+  /* ---------- CTA SECTION ---------- */
+  .cta-section{max-width:1200px;margin:60px auto;padding:0 24px;}
+  .cta-container{display:flex;align-items:center;background:var(--bg);border:1px solid #eef0f5;border-radius:24px;padding:48px;gap:56px;box-shadow:0 10px 30px -10px rgba(26,32,128,.05);}
+  .cta-image-col{flex:0 0 45%;width:45%;}
+  .cta-img-wrap{width:100%;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--navy-tint);box-shadow:0 12px 24px rgba(0,0,0,.04);}
+  .cta-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+  .cta-content-col{flex:1;display:flex;flex-direction:column;align-items:flex-start;}
+  .cta-title{color:var(--navy);font-size:clamp(22px,3.2vw,32px);font-weight:700;line-height:1.25;margin-bottom:12px;}
+  .cta-desc{font-size:15px;color:var(--navy);line-height:1.6;margin-bottom:28px;}
+  .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff !important;padding:14px 36px;border-radius:30px;font-weight:600;font-size:15px;box-shadow:0 4px 14px rgba(26,32,128,.25);transition:all .3s ease;}
+  .cta-btn:hover{background:var(--navy-deep);color:#fff !important;transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,32,128,.35);}
+  @media (max-width:768px){
+    .cta-container{flex-direction:column;padding:24px;gap:24px;border-radius:20px;}
+    .cta-image-col{width:100%;flex:0 0 100%;}
+    .cta-content-col{align-items:center;text-align:center;}
+    .cta-btn{width:100%;justify-content:center;}
+  }
+
+  /* ---------- FLOATING WA BUTTON ---------- */
+  .sz-floating-wa{position:fixed;bottom:24px;right:24px;z-index:999;background:var(--navy);color:#fff !important;border:2px solid #fff;padding:14px 24px;border-radius:50px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;box-shadow:0 8px 25px rgba(26,32,128,.35);animation:sz-pulse 2s infinite;}
+  .sz-floating-wa svg{width:20px;height:20px;fill:currentColor;}
+  @keyframes sz-pulse{0%{box-shadow:0 0 0 0 rgba(26,32,128,.6);}70%{box-shadow:0 0 0 12px rgba(26,32,128,0);}100%{box-shadow:0 0 0 0 rgba(26,32,128,0);}}
+</style>
+
+<div class="rejuran-lp">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__blob"></div>
+    <div class="hero__visual">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-14-2026-05_35_14-PM.webp" alt="Rejuran Eye - Skinbooster Area Mata Sozo Skin Clinic" loading="eager" width="660" height="660">
+    </div>
+    <div class="hero__content">
+      <span class="hero__eyebrow">Skinbooster Area Mata</span>
+      <h1 class="hero__title">Kantung &amp; Kerutan Mata? <em>Atasi dengan Rejuran Eye</em></h1>
+      <p class="hero__desc">Skinbooster PN (polynucleotide) khusus area mata yang tipis &amp; sensitif — membantu meredakan garis halus, kelopak kendur, dan tampilan mata lelah secara alami tanpa operasi.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285117828714&text=Halo%20Sozo%2C%20saya%20mau%20booking%20promo%20Rejuran%20Eye%20%5Bsumber%3A%20SEM-Rejuran%5D">
+        <span class="hero__badge">Mulai dari <strong>[HARGA PROMO]</strong></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="ba-slider">
+  <div class="ba-slider__inner">
+    <div class="ba-slider__head">
+      <span class="ba-slider__eyebrow">Hasil Pasien</span>
+      <h2 class="ba-slider__title">MATA LEBIH CERAH &amp; KENYAL OLEH DOKTER PROFESIONAL</h2>
+    </div>
+    <div class="ba-slider__track">
+      <div class="ba-slide"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/Rewind-Rejuran-Before-After-1.webp" alt="Before After Rejuran Eye 1 - Sozo Skin Clinic" loading="lazy" width="600" height="375"></div>
+      <div class="ba-slide"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/Rewind-Rejuran-Before-After-2.webp" alt="Before After Rejuran Eye 2 - Sozo Skin Clinic" loading="lazy" width="600" height="375"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST / STATS ============ -->
+<section class="stats-section">
+  <div class="stats-flex">
+    <div class="stats-media">
+      <div class="stats-media-wrap"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/Rewind-Dokter.webp" alt="Dokter Sozo Skin Clinic" loading="lazy" width="400" height="500"></div>
+      <div class="stats-caption">Berpengalaman lebih dari 10 tahun menangani 500rb+ pasien</div>
+    </div>
+    <div class="stats-content">
+      <h2 class="stats-heading">Dipercaya ribuan pasien di Indonesia</h2>
+      <div class="stats-list">
+        <div class="stat-row">
+          <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.74"/><path d="M21 21v-2a4 4 0 0 0-3-3.85"/></svg></div>
+          <div><div class="stat-number">100+</div><div class="stat-label">Dokter Profesional Berlisensi</div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div><div class="stat-number">500.000+</div><div class="stat-label">Pasien Puas &amp; Terlayani</div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+          <div><div class="stat-number">60+</div><div class="stat-label">Cabang Klinik di Indonesia</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TREATMENT / PACKAGE OPTIONS ============ -->
+<section class="services-wrapper">
+  <div class="services-header">
+    <h2 class="services-title">Pilihan Rejuran di SOZO</h2>
+    <p class="services-subtitle">Pilih varian Rejuran sesuai kebutuhan kulit Anda — dari area mata yang tipis, peremajaan wajah menyeluruh, hingga perbaikan bekas jerawat.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-image"><span class="service-badge">Injectable</span><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/Rewind-Rejuran-eye.webp" alt="Rejuran I - Eye Sozo Skin Clinic" loading="lazy" width="400" height="300"></div>
+      <div class="service-info">
+        <h3 class="service-name">Rejuran I</h3>
+        <p class="service-desc">Varian Rejuran khusus area mata — tekstur lebih cair &amp; konsentrasi PN lebih ringan dari Healer, aman untuk kulit tipis sekitar mata dan membantu menyamarkan garis halus (sekitar 30–45 menit).</p>
+        <a href="https://api.whatsapp.com/send?phone=6285117828714&text=Halo%20Sozo%2C%20saya%20mau%20booking%20promo%20Rejuran%20Eye%20%5Bsumber%3A%20SEM-Rejuran%5D" class="detail-btn">Reservasi Sekarang</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-image"><span class="service-badge">Injectable</span><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/Rewind-Rejuran-HB.webp" alt="Rejuran Healer Sozo Skin Clinic" loading="lazy" width="400" height="300"></div>
+      <div class="service-info">
+        <h3 class="service-name">Rejuran Healer</h3>
+        <p class="service-desc">Skinbooster PN untuk peremajaan kulit wajah secara menyeluruh — memperbaiki tekstur, elastisitas, dan garis halus di seluruh area wajah (sekitar 45–60 menit).</p>
+        <a href="https://api.whatsapp.com/send?phone=6285117828714&text=Halo%20Sozo%2C%20saya%20mau%20booking%20promo%20Rejuran%20Eye%20%5Bsumber%3A%20SEM-Rejuran%5D" class="detail-btn">Reservasi Sekarang</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-image"><span class="service-badge">Injectable</span><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/Rewind-Rejuran-Scar.webp" alt="Rejuran Scar Sozo Skin Clinic" loading="lazy" width="400" height="300"></div>
+      <div class="service-info">
+        <h3 class="service-name">Rejuran Scar</h3>
+        <p class="service-desc">Varian Rejuran dengan konsentrasi PN lebih tinggi &amp; kental, diformulasikan khusus untuk memperbaiki bekas jerawat berlubang (atrophic scar) dan area kulit cekung (sekitar 45–60 menit).</p>
+        <a href="https://api.whatsapp.com/send?phone=6285117828714&text=Halo%20Sozo%2C%20saya%20mau%20booking%20promo%20Rejuran%20Eye%20%5Bsumber%3A%20SEM-Rejuran%5D" class="detail-btn">Reservasi Sekarang</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKINBOOSTER COMPARISON ============ -->
+<section class="compare-section" id="perbandingan-skinbooster">
+  <div class="compare-header">
+    <span class="compare-eyebrow">Panduan Memilih</span>
+    <h2 class="compare-title">Perbedaan Rejuran Eye dengan Skinbooster Lainnya</h2>
+    <p class="compare-sub">Setiap skinbooster punya kandungan dan cara kerja yang berbeda. Berikut perbandingan singkat agar Anda &amp; dokter bisa menentukan pilihan paling sesuai dengan kondisi kulit Anda.</p>
+  </div>
+
+  <div class="compare-table-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Produk</th>
+          <th>Kandungan Utama</th>
+          <th>Fokus Area / Kegunaan</th>
+          <th>Cara Kerja</th>
+          <th>Sesi &amp; Downtime</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-row">
+          <td class="prod-name">Rejuran Eye<br><span class="tag">Featured</span></td>
+          <td>Polynucleotide (PN) dari DNA salmon, konsentrasi lebih encer &amp; ringan dari Healer</td>
+          <td>Area mata yang tipis &amp; sensitif — garis halus, kulit kendur/keriput sekitar mata</td>
+          <td>Merangsang fibroblast &amp; produksi kolagen tanpa risiko lump karena tekstur lebih cair, aman untuk kulit tipis</td>
+          <td>3–4 sesi, interval 2–4 minggu · downtime ringan (bengkak minimal beberapa hari)</td>
+        </tr>
+        <tr>
+          <td class="prod-name">Rejuran Healer</td>
+          <td>Polynucleotide (PN) dari DNA salmon, konsentrasi standar</td>
+          <td>Peremajaan kulit wajah menyeluruh — tekstur, elastisitas, garis halus</td>
+          <td>Merangsang fibroblast &amp; kolagen di lapisan dermis untuk regenerasi kulit secara umum</td>
+          <td>3 sesi, interval 3–4 minggu · downtime 3–5 hari</td>
+        </tr>
+        <tr>
+          <td class="prod-name">Rejuran Scar (S)</td>
+          <td>Polynucleotide (PN) dengan konsentrasi &amp; viskositas lebih tinggi dari Healer</td>
+          <td>Bekas jerawat berlubang (atrophic/ice-pick scar) dan area cekung</td>
+          <td>Diinjeksikan langsung ke dasar bekas luka untuk memberi dukungan struktural sekaligus merangsang kolagen</td>
+          <td>3 sesi, interval 4 minggu · downtime 5–7 hari</td>
+        </tr>
+        <tr>
+          <td class="prod-name">Juvelook</td>
+          <td>PDLLA (Poly-D,L-Lactic Acid) + Hyaluronic Acid non-crosslink</td>
+          <td>Tekstur kulit kusam, pori besar, bekas jerawat, area mata &amp; wajah tipis</td>
+          <td>HA memberi hidrasi instan, PDLLA merangsang kolagen &amp; elastin secara bertahap (dual-action)</td>
+          <td>3–4 sesi, interval 4 minggu · downtime ringan, hasil bertahan hingga ±18 bulan</td>
+        </tr>
+        <tr>
+          <td class="prod-name">Profhilo</td>
+          <td>Hybrid Hyaluronic Acid (kombinasi HA berat molekul tinggi &amp; rendah, non-crosslink)</td>
+          <td>Kulit kendur, kusam &amp; kurang elastis — teknik BAP (bio aesthetic points)</td>
+          <td>HA menyebar merata di bawah kulit untuk hidrasi mendalam sekaligus "bio-remodeling" jaringan</td>
+          <td>2 sesi, interval 4 minggu · downtime minimal, hasil terlihat cepat</td>
+        </tr>
+        <tr>
+          <td class="prod-name">Vitaran Poly Booster</td>
+          <td>Polynucleotide/PDRN dari salmon (produk PN skinbooster Korea)</td>
+          <td>Perbaikan skin barrier, kulit kusam, area mata (varian Vitaran i)</td>
+          <td>Sama seperti PN pada Rejuran — mengaktifkan reseptor A2A fibroblast untuk regenerasi &amp; anti-inflamasi</td>
+          <td>3–4 sesi, interval 2–3 minggu · downtime ringan</td>
+        </tr>
+        <tr>
+          <td class="prod-name">Neuclofill</td>
+          <td>Polynucleotide (sodium DNA) — populer sebagai booster area mata</td>
+          <td>Area bawah mata (dark circle akibat kulit tipis), tekstur &amp; hidrasi kulit</td>
+          <td>PN merangsang regenerasi jaringan &amp; kolagen di area yang diinjeksi</td>
+          <td>3 sesi, interval 2–3 minggu · downtime ringan</td>
+        </tr>
+        <tr>
+          <td class="prod-name">Ultracoll 100</td>
+          <td>PDO (Polydioxanone) microsphere — partikel lebih kecil</td>
+          <td>Skinbooster ringan untuk tekstur &amp; kekenyalan kulit, termasuk area mata</td>
+          <td>Partikel PDO terurai bertahap sambil merangsang produksi kolagen tipe I &amp; III</td>
+          <td>3 sesi, interval 4 minggu · downtime ringan-sedang, hasil bertahan 4–6 bulan</td>
+        </tr>
+        <tr>
+          <td class="prod-name">Ultracoll 200</td>
+          <td>PDO (Polydioxanone) microsphere — partikel lebih besar dari seri 100</td>
+          <td>Volumizing ringan &amp; kontur — tear trough, pelipis, smile line, full face</td>
+          <td>Efek volume subtle langsung terasa, lalu kolagen terus terbentuk seiring PDO terurai</td>
+          <td>1–3 sesi sesuai kebutuhan · downtime bengkak ringan 3–4 hari, hasil bertahan 6–8 bulan</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="compare-note">
+    <p><strong>Catatan:</strong> Informasi di atas adalah gambaran umum berdasarkan kandungan &amp; mekanisme kerja masing-masing produk, bukan pengganti konsultasi medis. Pemilihan skinbooster yang tepat tetap perlu disesuaikan dengan kondisi kulit dan riwayat kesehatan Anda melalui konsultasi dengan dokter di Sozo Skin Clinic.</p>
+  </div>
+
+  <div class="compare-cta">
+    <a href="https://api.whatsapp.com/send?phone=6285117828714&text=Halo%20Sozo%2C%20saya%20mau%20booking%20promo%20Rejuran%20Eye%20%5Bsumber%3A%20SEM-Rejuran%5D" class="compare-cta-btn">
+      Konsultasi Pilih Skinbooster yang Tepat
+    </a>
+  </div>
+</section>
+
+<!-- ============ CTA SECTION ============ -->
+<section class="cta-section">
+  <div class="cta-container">
+    <div class="cta-image-col">
+      <div class="cta-img-wrap"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-Rewind-Landing-Page_Fasad-scaled.webp" alt="Fasad Sozo Skin Clinic" loading="lazy" width="600" height="450"></div>
+    </div>
+    <div class="cta-content-col">
+      <h2 class="cta-title">Sozo Skin Clinic</h2>
+      <p class="cta-desc">Wujudkan tampilan mata lebih segar, cerah, dan awet muda tanpa prosedur bedah. Hubungi tim medis kami hari ini untuk mendapatkan rekomendasi treatment area mata terbaik yang dipersonalisasi khusus untuk Anda.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285117828714&text=Halo%20Sozo%2C%20saya%20mau%20booking%20promo%20Rejuran%20Eye%20%5Bsumber%3A%20SEM-Rejuran%5D" class="cta-btn">Konsultasi Sekarang</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLOATING WA BUTTON ============ -->
+<a href="https://api.whatsapp.com/send?phone=6285117828714&text=Halo%20Sozo%2C%20saya%20mau%20booking%20promo%20Rejuran%20Eye%20%5Bsumber%3A%20SEM-Rejuran%5D" class="sz-floating-wa">
+  <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+  Chat WhatsApp
+</a>
+
+</div>

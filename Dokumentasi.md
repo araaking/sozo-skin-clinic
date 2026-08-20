@@ -754,7 +754,7 @@ Catatan: folder lokal `treadlift-treatment/` (typo, tanpa 'h'). URL live dan pen
 
 Catatan: range harga skin booster paling lebar di antara semua batch (799rb–8,5 juta). Variation ini karena beda generasi produk (Aquashine entry-level vs Jalupro premium). Di FAQ biasanya sudah eksplisit menyebut jumlah sesi & kombinasi treatment untuk tiap use case.
 
-### **D. Advanced Skin — IPL & Derma Peel (6 halaman, Rp 299.000–889.000)**
+### **D. Advanced Skin — IPL & Derma Peel (7 halaman, Rp 299.000–889.000)**
 
 | # | Treatment | URL Slug | Harga | FAQ |
 | :- | :-- | :-- | --: | :-: |
@@ -764,6 +764,7 @@ Catatan: range harga skin booster paling lebar di antara semua batch (799rb–8,
 | 32 | Glow Peel | skin-treatment/derma-peel-treatment/glow-peel | Rp 299.000 | 9 |
 | 33 | Dazzling Glow Peel | skin-treatment/derma-peel-treatment/dazling-glow-peel | Rp 889.000 | 3 |
 | 34 | Eternal Bloom Peel | skin-treatment/derma-peel-treatment/eternal-bloom-peel | Rp 599.000 | 7 |
+| 35 | Korean LHALA Peel | skin-treatment/derma-peel-treatment/korean-lhala-peel | Rp 299.000 | 15 |
 
 **Catatan penting — IPL Acne pakai pola Offer langsung, bukan PriceSpecification.** Schema Service untuk IPL Acne menulis `offers` sebagai `Offer` langsung dengan field `price`/`priceCurrency`/`priceValidUntil`/`itemCondition`, tanpa membungkus di `PriceSpecification`. Sepuluh file lain di batch ini konsisten pakai pola `PriceSpecification` di dalam `Offer` (mengikuti template Hair Removal).
 
@@ -1008,6 +1009,23 @@ Struktur `@graph` (4 node) — pola identik §5.48. Keunikan:
 
 Snippet WPCode kondisi: **Page URL contains `gesha-kautzar-putri`**.
 
+## **5.52 Korean LHALA Peel — SCHEMA SIAP**
+
+URL: https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/korean-lhala-peel/
+
+File: `treatment/skin-treatment/derma-peel-treatment/korean-lhala-peel/schema-markup.html` (schema) + `index.html` (layout LP). Folder asli `treatment/peel-treatment/` dipindah ke jalur `skin-treatment/derma-peel-treatment/` agar konsisten dengan struktur LP peel lain.
+
+Struktur `@graph` (4 node) — pola standar Derma Peel:
+
+* `MedicalWebPage` (specialty Dermatology, isPartOf → #website, about → #organization, potentialAction ReadAction).
+* `BreadcrumbList` 4-level: Home → Skin Treatment → Derma Peel → Korean LHALA Peel.
+* `Service` + `offers` → `PriceSpecification` Rp 299.000 (entry-level, setara Acne/Glow Peel), `priceValidUntil: 2026-12-31`, `valueAddedTaxIncluded`.
+* `FAQPage` 15 FAQ — paling banyak di rumpun Derma Peel.
+
+Catatan QC: class wrapper LP memakai `sozo-sku-korean-lhala-wrapper` (bukan sisa nama Filler), alt text & link kartu terkait sudah menunjuk Glow Peel, Acne Peel, Dazzling Glow Peel yang benar.
+
+Snippet WPCode kondisi: **Page URL contains `korean-lhala-peel`**.
+
 ## **5.47 URL Baru Audit 5 Agustus 2026 — README SYNC**
 
 Daftar URL terbaru dari tim vs isi README.md. Hasilnya, 10 URL baru ditambahkan ke README + anomali ejaan dicatat:
@@ -1124,6 +1142,7 @@ Sebelum menandai sebuah halaman "selesai", pastikan:
 | **Detail Dokter (dr. Syerli)** | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.48) — hasCredential STR penuh |
 | **Detail Dokter (Eli, Audi)** | 2 | SCHEMA SIAP, WPCODE BELUM (lihat §5.49–§5.50) |
 | **Detail Dokter (Gesha)** | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.51) |
+| **Korean LHALA Peel** | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.52) |
 | **Editorial Board** | 1 | **SELESAI** — AboutPage + reviewedBy + BreadcrumbList (lihat §5.46) |
 | DPL Treatment | 1 | Belum ada schema — lihat §5.42 |
 | Treatment Alis Brow Grow (alias URL) | 1 | Verifikasi canonical dulu — lihat §5.43 |
