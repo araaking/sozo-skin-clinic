@@ -1,0 +1,1624 @@
+<!-- Google Font Poppins Preconnect & Stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- SYSTEM PRELOAD FONTAWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="sozo-medan-page-wrapper">
+  <div class="sozo-medan-page-container">
+    
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <div class="sozo-clean-hero">
+      <h1 class="sozo-clean-title">Klinik Kecantikan Terbaik Di Bekasi</h1>
+      <p class="sozo-clean-desc">Mencari klinik kecantikan Bekasi yang terpercaya? Sozo Hadir di Bekasi dengan kualitas terbaik, harga transparan dan terjangkau.</p>
+    </div>
+
+    <!-- ==================== 2. MASTER-DETAIL SECTION (MAPS & INFO) ==================== -->
+    <div class="sozo-clean-layout">
+      
+      <!-- SISI KIRI: SELECTOR CABANG UTAMA (Desktop Card / Mobile Pill) -->
+      <div class="sozo-clean-sidebar">
+        <!-- Cabang 1: Jakasampurna -->
+        <button type="button" class="sozo-branch-pill active" data-branch="0" onclick="selectBranch(0)">
+          <svg class="sozo-pill-icon" viewBox="0 0 384 512">
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+          </svg>
+          <div class="sozo-pill-content">
+            <span class="sozo-pill-title">Jakasampurna</span>
+            <span class="sozo-pill-sub">Bekasi Barat • ★ 4.8</span>
+          </div>
+        </button>
+
+        <!-- Cabang 2: Grand Galaxy -->
+        <button type="button" class="sozo-branch-pill" data-branch="1" onclick="selectBranch(1)">
+          <svg class="sozo-pill-icon" viewBox="0 0 384 512">
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+          </svg>
+          <div class="sozo-pill-content">
+            <span class="sozo-pill-title">Grand Galaxy</span>
+            <span class="sozo-pill-sub">Bekasi Selatan • ★ 5.0</span>
+          </div>
+        </button>
+
+        <!-- Cabang 3: Summarecon Bekasi -->
+        <button type="button" class="sozo-branch-pill" data-branch="2" onclick="selectBranch(2)">
+          <svg class="sozo-pill-icon" viewBox="0 0 384 512">
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+          </svg>
+          <div class="sozo-pill-content">
+            <span class="sozo-pill-title">Summarecon Bekasi</span>
+            <span class="sozo-pill-sub">Bekasi Utara • ★ 4.8</span>
+          </div>
+        </button>
+
+        <!-- Cabang 4: Cikarang -->
+        <button type="button" class="sozo-branch-pill" data-branch="3" onclick="selectBranch(3)">
+          <svg class="sozo-pill-icon" viewBox="0 0 384 512">
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+          </svg>
+          <div class="sozo-pill-content">
+            <span class="sozo-pill-title">Cikarang</span>
+            <span class="sozo-pill-sub">Cikarang Selatan • ★ 4.9</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- DETAIL PANEL -->
+      <div class="sozo-clean-content">
+        <div class="sozo-detail-card" id="sozoDetailCard">
+          
+          <div class="sozo-detail-map">
+            <iframe id="sozoMapIframe" src="https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Bekasi%20Jakasampurna&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+          </div>
+
+          <div class="sozo-detail-body">
+            <div class="sozo-detail-header">
+              <h2 class="sozo-detail-name" id="sozoDetailName">Sozo Skin Clinic - Bekasi (Jakasampurna)</h2>
+              <div class="sozo-detail-rating" id="sozoDetailRating">★ 4.8 (2.030 ulasan Google)</div>
+            </div>
+
+            <p class="sozo-detail-address" id="sozoDetailAddress">
+              Jl. Cemara Raya No.1 Kavling 10D, RT.003/RW.006A, Jakasampurna, Kec. Bekasi Bar., Kota Bks, Jawa Barat 17145
+            </p>
+
+            <div class="sozo-detail-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Bekasi%20%5Bsrc%3AORG-BKS%5D" id="sozoWaBtn" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa sozo-master-cta">
+                Buat Jadwal (WhatsApp)
+              </a>
+              <a href="https://maps.google.com/?cid=7253721916722848605" id="sozoMapBtn" target="_blank" rel="noopener" class="sozo-btn sozo-btn-map">
+                Buka Maps &gt;
+              </a>
+            </div>
+
+            <a href="https://sozoskinclinic.com/lokasi/cikarang/" id="sozoDetailLinkBtn" class="sozo-btn-page-banner is-hidden">
+              <span id="sozoDetailLinkText">Lihat Detail Klinik Cikarang</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
+
+            <div class="sozo-schedule-card">
+              <div class="sozo-schedule-header">
+                <svg viewBox="0 0 448 512">
+                  <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H64zm128 0c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H192zm128 0c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H320z"/>
+                </svg>
+                <span>Waktu Kerja</span>
+              </div>
+              <div class="sozo-schedule-list" id="sozoScheduleList">
+                <div class="sozo-schedule-row"><span>Senin</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Selasa</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Rabu</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Kamis</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Jumat</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Sabtu</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Minggu</span><span>09:00 - 20:00</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== 3. CLINIC AMBIENCE SLIDER ==================== -->
+    <div class="sozo-gallery-section">
+      <div class="sozo-gallery-header">
+        <div class="sozo-gallery-pill">Suasana Klinik</div>
+        <h2 class="sozo-gallery-title">Fasilitas & Ruang Perawatan Nyaman</h2>
+        <p class="sozo-gallery-desc">Ruang perawatan privat, higienis, dan berstandar medis untuk pengalaman treatment terbaikmu yang ada di klinik kecantikan Bekasi.</p>
+      </div>
+
+      <div class="sozo-slider-wrapper">
+        <div class="sozo-slider-container" id="sozoSliderContainer">
+          <div class="sozo-slider-track" id="sozoSliderTrack"></div>
+          <button type="button" class="sozo-slider-btn sozo-slider-prev" id="sozoSliderPrev" aria-label="Slide Sebelumnya">❮</button>
+          <button type="button" class="sozo-slider-btn sozo-slider-next" id="sozoSliderNext" aria-label="Slide Selanjutnya">❯</button>
+          <div class="sozo-slider-dots" id="sozoSliderDots"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 4. TREATMENT CATEGORIES ==================== -->
+    <div class="sozo-category-section">
+      <h2 class="sozo-category-heading">Pilihan Treatment di Sozo Skin Clinic Bekasi</h2>
+      <p class="sozo-category-sub">Pilih kategori perawatan kulit & tubuh yang sesuai dengan kebutuhanmu</p>
+
+      <div class="sozo-category-grid">
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Skin-Bright-Facial-Medical-1.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Skin<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Injection.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Injectable<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Slimming-1-11.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Slimming<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/03/Gemini_Generated_Image_qncw0qncw0qncw0q.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Hair-Removal-Underarm-Glow.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Removal</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Acne-Single-Treatment-Acne-laser-facial.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Acne<br>Treatment</span>
+        </a>
+      </div>
+
+      <div class="sozo-category-cta-wrap">
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-btn">
+          <span>Lihat Semua Treatment</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ==================== 4.5 TESTIMONI & HASIL NYATA SECTION ==================== -->
+    <div class="sozo-results-section">
+      
+      <div class="sozo-results-header">
+        <div class="sozo-results-pill">Real Results & Testimonials</div>
+        <h2 class="sozo-results-title">Hasil Nyata Treatment di Sozo Skin Clinic Bekasi</h2>
+        <p class="sozo-results-desc">Lihat transformasi nyata dan cerita pengalaman langsung dari para pasien yang telah membuktikannya.</p>
+      </div>
+
+      <!-- BAGIAN 1: SLIDER BEFORE AFTER (GAMBAR 16:9) -->
+      <div class="sozo-sub-slider-block">
+        <div class="sozo-sub-slider-head">
+          <span class="sozo-sub-slider-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Before & After Results</span>
+        </div>
+
+        <div class="sozo-slider-wrapper">
+          <div class="sozo-ba-slider-container" id="sozoBaSliderContainer">
+            <div class="sozo-ba-slider-track" id="sozoBaSliderTrack">
+              
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/LP-Mockup-Suplemen-Pelangsing-Slimming-Program-Before-After-2.webp" alt="Before After Slimming Program" loading="lazy">
+                </div>
+              </div>
+
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/hifu-treatment-di-sozo-skin-clinic.webp" alt="Before After HIFU Treatment" loading="lazy">
+                </div>
+              </div>
+
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-pink-lips.webp" alt="Before After Pink Lips" loading="lazy">
+                </div>
+              </div>
+
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-underarm.webp" alt="Before After Underarm Treatment" loading="lazy">
+                </div>
+              </div>
+
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/BA-skin-booster.webp" alt="Before After Skin Booster" loading="lazy">
+                </div>
+              </div>
+
+            </div>
+
+            <button type="button" class="sozo-slider-btn sozo-ba-prev" id="sozoBaPrev" aria-label="Before After Sebelumnya">❮</button>
+            <button type="button" class="sozo-slider-btn sozo-ba-next" id="sozoBaNext" aria-label="Before After Selanjutnya">❯</button>
+            <div class="sozo-slider-dots" id="sozoBaDots"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BAGIAN 2: SLIDER REVIEW TEKS -->
+      <div class="sozo-sub-slider-block" style="margin-top: 40px;">
+        <div class="sozo-sub-slider-head">
+          <span class="sozo-sub-slider-tag"><i class="fa-solid fa-quote-left"></i> Cerita Pengalaman Pasien</span>
+        </div>
+
+        <div class="sozo-slider-wrapper">
+          <div class="sozo-quote-slider-container" id="sozoQuoteSliderContainer">
+            <div class="sozo-quote-slider-track" id="sozoQuoteSliderTrack">
+              
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Jerawat aku bikin ribet sampai harus nutupin pakai makeup terus. Nyoba 30 Days Acne Program karena saran temen, dan ternyata works di aku. Jerawat jadi jauh lebih kalem, bekasnya juga makin pudar, bikin pede naik!"</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">AS</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Asha</strong>
+                      <span class="sozo-author-meta">Pasien 30 Days Acne Program</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Dulu sih gue jerawatan banget sampai males ketemu orang. Abis Pore Detox sekali, jerawat gue langsung kalem, terus bikin jerawat gue nggak gampang nongol lagi. Fix, ini treatment all-in banget sih!"</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">HK</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Hakim</strong>
+                      <span class="sozo-author-meta">Pasien Pore Detox</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Sempet takut dan bertanya-tanya, emang bisa ya muka jerawatan di-facial? Ternyata bisa banget, malah bikin wajah gue jadi lebih bersih dan kemerahannya reda. Pokoknya aman deh untuk wajah berjerawat."</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">HM</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Hilman</strong>
+                      <span class="sozo-author-meta">Pasien Acne Facial</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Bekas jerawat gak ilang-ilang, warna kulit jadi gak merata dan kusam. Udah cobain banyak serum masih gak ngaruh. Akhirnya cobain treatment Diamond Laser Facial, ternyata baru 1x treatment langsung keliatan hasilnya. Kemerahan hilang dan kulit jadi lebih cerah."</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">CK</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Chika</strong>
+                      <span class="sozo-author-meta">Pasien Diamond Laser Facial</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Suka sekali dengan RF Wajah di sini. Kerutan halus di sekitar mata mulai tersamarkan dan wajah kelihatan lebih v-shape serta fresh. Tempatnya bersih dan nyaman banget."</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">AP</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Amanda Putri</strong>
+                      <span class="sozo-author-meta">Pasien RF Wajah</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Pelayanan di Sozo Skin Clinic juara banget. Nggak cuma dapet treatment yang tepat, tapi juga dikasih tips skincare routine yang cocok buat jenis kulit saya."</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">BS</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Budi Santoso</strong>
+                      <span class="sozo-author-meta">Pasien Skin Treatment</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <button type="button" class="sozo-slider-btn sozo-quote-prev" id="sozoQuotePrev" aria-label="Testimoni Sebelumnya">❮</button>
+            <button type="button" class="sozo-slider-btn sozo-quote-next" id="sozoQuoteNext" aria-label="Testimoni Selanjutnya">❯</button>
+            <div class="sozo-slider-dots" id="sozoQuoteDots"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== 4.6 PROMO KHUSUS HARI INI SECTION ==================== -->
+    <div class="sozo-promo-section">
+      
+      <div class="sozo-promo-header">
+        <div class="sozo-promo-pill">Limited Time Offer</div>
+        <h2 class="sozo-promo-title">Promo Khusus Hari Ini</h2>
+        <p class="sozo-promo-desc">Nikmati penawaran spesial dan diskon perawatan eksklusif hanya untuk Anda hari ini.</p>
+      </div>
+
+      <div class="sozo-slider-wrapper">
+        <div class="sozo-promo-slider-container" id="sozoPromoSliderContainer">
+          <div class="sozo-promo-slider-track" id="sozoPromoSliderTrack">
+            
+            <!-- Promo 1 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Cicilan 0%</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-0-scaled.webp" alt="Promo Cicilan 0% & Cashback s.d 500rb" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Cicilan 0% &amp; Cashback s.d 500rb</h3>
+                    <p class="sozo-promo-card-desc">Nikmati kemudahan cicilan bunga 0% dan cashback spesial hingga Rp 500.000 untuk treatment pilihan.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Bekasi%20%5Bsrc%3AORG-BKS%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Ambil Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 2 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Hemat Rp 100 Ribu</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-potongan100rb-scaled.webp" alt="Promo Potongan 100 Ribu Sozo" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Voucher Potongan Rp 100.000</h3>
+                    <p class="sozo-promo-card-desc">Potongan langsung Rp 100.000 untuk berbagai pilihan treatment kulit, laser, dan estetika medis di Sozo Bekasi.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Bekasi%20%5Bsrc%3AORG-BKS%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Ambil Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 3 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Special Deal</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/skin-booster-promo-scaled.webp" alt="Special Deal Promo Skin Booster" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Special Deal Skin Booster</h3>
+                    <p class="sozo-promo-card-desc">Diskon spesial berbagai pilihan Skin Booster premium untuk kulit glowing maksimal.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Bekasi%20%5Bsrc%3AORG-BKS%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Ambil Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 4 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Hair Treatment</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/05/LP-Mockup-Landing-Page-Refreshment-MEI-Promo-banner-bye2-rontok.webp" alt="Promo Bye-Bye Rambut Rontok & Botak" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Promo Bye-Bye Rambut Rontok &amp; Botak</h3>
+                    <p class="sozo-promo-card-desc">Perawatan intensif stimulasi pertumbuhan rambut, kuatkan akar, dan atasi kerontokan serta kebotakan.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Bekasi%20%5Bsrc%3AORG-BKS%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Ambil Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <button type="button" class="sozo-slider-btn sozo-promo-prev" id="sozoPromoPrev" aria-label="Promo Sebelumnya">❮</button>
+          <button type="button" class="sozo-slider-btn sozo-promo-next" id="sozoPromoNext" aria-label="Promo Selanjutnya">❯</button>
+          <div class="sozo-slider-dots" id="sozoPromoDots"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ==================== 5. WHY CHOOSE SOZO SECTION ==================== -->
+<section class="sozo-why-section">
+  <div class="sozo-why-container">
+    
+    <div class="sozo-why-header">
+      <h2>Keunggulan Sozo Dibanding Beauty Clinic Lain</h2>
+      <p>Komitmen kami adalah memberikan pelayanan terbaik, aman, dan tepercaya untuk pancarkan pesona alami Anda.</p>
+    </div>
+
+    <div class="sozo-why-grid">
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Tenaga Medis Profesional</strong>
+          <p class="sozo-why-card-text">Ditangani oleh Dokter berpengalaman.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-microscope"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Teknologi Terkini</strong>
+          <p class="sozo-why-card-text">Mesin berkualitas tinggi untuk hasil maksimal.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Pelayanan Terbaik</strong>
+          <p class="sozo-why-card-text">Klinik kecantikan yang nyaman dan ramah.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-handshake-angle"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Konsultasi Dokter Gratis</strong>
+          <p class="sozo-why-card-text">Reservasi sekarang untuk konsultasi tepat.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-tags"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Harga Terjangkau</strong>
+          <p class="sozo-why-card-text">Perawatan premium dengan harga terjangkau.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Klinik Kecantikan Terdekat</strong>
+          <p class="sozo-why-card-text">60+ cabang di Jakarta, Bogor, Depok, Tangerang, Bekasi, Medan, dan Semarang.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6. COMPACT MINIMAL BANNER CTA ==================== -->
+<section class="sozo-compact-cta-section">
+  <div class="sozo-compact-cta-container">
+    <div class="sozo-compact-cta-box">
+      <div class="sozo-compact-cta-text">
+        <h3 class="sozo-compact-cta-title">Segera Kunjungi Klinik Kecantikan Bekasi SOZO.</h3>
+        <p class="sozo-compact-cta-desc">Konsultasikan kondisi kulitmu dan temukan solusi treatment yang tepat bersama dokter profesional kami.</p>
+      </div>
+      <div class="sozo-compact-cta-action">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Bekasi%20%5Bsrc%3AORG-BKS%5D" target="_blank" rel="noopener" class="sozo-custom-cta-btn sozo-master-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>Hubungi Kami Untuk Reservasi</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6.5 CARA MENUJU LOKASI (EXPANDABLE) ==================== -->
+<section class="sozo-directions-section">
+  <div class="sozo-directions-container">
+    
+    <div class="sozo-directions-header">
+      <div class="sozo-directions-pill">Panduan Rute & Akses</div>
+      <h2 class="sozo-directions-title">Cara Menuju Lokasi</h2>
+      <p class="sozo-directions-desc">Panduan rute dan pilihan transportasi untuk menuju ke 4 cabang Sozo Skin Clinic di wilayah Bekasi dan Cikarang.</p>
+    </div>
+
+    <div class="sozo-directions-list">
+      
+      <!-- 1. Bekasi Summarecon -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>1. Menuju Sozo Skin Clinic - Bekasi Summarecon</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-lead">Berlokasi di Ruko Emerald Commercial Blok UA No 27, Bekasi Utara, cabang ini berada di kawasan mandiri premium Summarecon Bekasi, berdekatan dengan Summarecon Mall Bekasi (SMB).</p>
+            
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-car"></i> Akses Kendaraan Pribadi</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Dari arah Tol Bekasi Barat / Pekayon:</strong> Keluar di Pintu Tol Bekasi Barat, susuri Jl. Ahmad Yani, naik Flyover KH. Noer Ali masuk ke gerbang Summarecon Bekasi, lalu lurus ke area Ruko Emerald Commercial dekat bundaran utama.</li>
+                <li><strong>Dari arah Stasiun Bekasi / Pusat Kota:</strong> Lewati Jl. Ir. H. Juanda menuju flyover gerbang Summarecon Bekasi, lalu cari Blok UA No. 27 di kompleks komersial.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-train-subway"></i> Akses Transportasi Umum</h4>
+              <ul class="sozo-route-list">
+                <li><strong>KRL Commuter Line:</strong> Turun di Stasiun Bekasi, lanjutkan perjalanan sekitar 5–10 menit dengan taksi atau ojek online ke Ruko Emerald.</li>
+                <li><strong>Trans Patriot / BISKITA:</strong> Naik bus kota rute Summarecon Mall Bekasi, lalu berjalan kaki singkat atau pesan ojek online menuju deretan ruko Blok UA.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Bekasi Grand Galaxy -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>2. Menuju Sozo Skin Clinic - Bekasi Grand Galaxy</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-lead">Terletak di Jl. Boulevard Raya RGA No.67, di pusat gaya hidup dan hunian Grand Galaxy City, Bekasi Selatan.</p>
+            
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-car"></i> Akses Kendaraan Pribadi</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Dari Tol Bekasi Barat:</strong> Keluar Pintu Tol Bekasi Barat arah Jl. Pekayon Raya, masuk gerbang utama Grand Galaxy City di sisi kanan, lalu susuri Jl. Boulevard Raya hingga Blok RGA No. 67.</li>
+                <li><strong>Dari Tol JORR (Jatiasih):</strong> Keluar Tol Jatiasih arah Pekayon/Bekasi Kota, masuk gerbang Grand Galaxy City di sebelah kiri dan ikuti jalan boulevard utama.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-train-subway"></i> Akses Transportasi Umum</h4>
+              <ul class="sozo-route-list">
+                <li><strong>LRT / KRL Commuter Line:</strong> Turun di Stasiun LRT Cikunir 2 atau Stasiun KRL Bekasi, lalu lanjutkan dengan ojek atau taksi online sekitar 15–20 menit.</li>
+                <li><strong>Angkot Lokal (K05 / K05A):</strong> Naik angkot trayek Pekayon - Galaxy, turun di gerbang utama Grand Galaxy City dan lanjutkan perjalanan singkat ke lokasi ruko.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Bekasi (Jakasampurna) -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>3. Menuju Sozo Skin Clinic - Bekasi (Jakasampurna)</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-lead">Berada di Jl. Cemara Raya No. 1 Kavling 10D, Jakasampurna, Bekasi Barat, hanya beberapa meter dari jalan arteri Kalimalang (Jl. KH. Noer Ali) penghubung Jakarta Timur dan Bekasi.</p>
+            
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-car"></i> Akses Kendaraan Pribadi</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Dari Jakarta / Cawang (Via Kalimalang):</strong> Susuri Jl. Raya Kalimalang (Jl. KH. Noer Ali) ke arah timur. Setelah melewati Pasar Sumber Arta dan perbatasan, belok kiri ke Jl. Cemara Raya (Jakasampurna).</li>
+                <li><strong>Dari Tol JORR (Exit Kalimalang) / Pusat Kota Bekasi:</strong> Susuri Jl. KH. Noer Ali arah Jakarta, putar balik di U-turn resmi sebelum Sumber Arta, lalu belok kiri masuk ke Jl. Cemara Raya.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-train-subway"></i> Akses Transportasi Umum</h4>
+              <ul class="sozo-route-list">
+                <li><strong>LRT Jabodebek:</strong> Turun di Stasiun LRT Cikunir 1, lanjutkan dengan ojek online kurang dari 10 menit menuju Jl. Cemara Raya.</li>
+                <li><strong>Angkot M26:</strong> Naik angkot M26 (Kampung Melayu - Bekasi) yang melintasi Jl. Raya Kalimalang, turun di pertigaan Jl. Cemara Raya dan jalan kaki ke Kavling 10D.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Cikarang -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>4. Menuju Sozo Skin Clinic - Cikarang</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-lead">Berlokasi di Ruko CBC (Cikarang Business Center) Blok A2, Jl. Raya Cikarang - Cibarusah, Serang, Cikarang Selatan, di pusat kawasan industri dan bisnis Kabupaten Bekasi.</p>
+            
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-car"></i> Akses Kendaraan Pribadi</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Dari Tol Jakarta - Cikampek:</strong> Keluar di Gerbang Tol Cikarang Barat atau Cibatu, arahkan kendaraan ke Jl. Raya Cikarang - Cibarusah menuju kompleks Ruko Cikarang Business Center (CBC) Blok A2.</li>
+                <li><strong>Dari Lippo Cikarang / Jababeka:</strong> Ambil jalan penghubung utama menuju koridor Cikarang - Cibarusah, lokasi ruko berada di kawasan strategis sisi jalan raya utama.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-train-subway"></i> Akses Transportasi Umum</h4>
+              <ul class="sozo-route-list">
+                <li><strong>KRL Commuter Line:</strong> Turun di Stasiun Cikarang, lanjutkan perjalanan dengan transportasi online sekitar 15–20 menit ke Ruko CBC Cikarang.</li>
+                <li><strong>Angkot / Bus Antarkota:</strong> Naik angkot trayek Cikarang - Cibarusah (K17) dan turun langsung di depan kawasan komersial Cikarang Business Center.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== 7. FAQ SECTION ==================== -->
+<section class="sozo-faq-section">
+  <div class="sozo-faq-container">
+    <div class="sozo-faq-header">
+      <div class="sozo-faq-pill">FAQ</div>
+      <h2 class="sozo-faq-title">Pertanyaan yang Sering Diajukan</h2>
+      <p class="sozo-faq-desc">Informasi lengkap seputar layanan dan perawatan di Sozo Skin Clinic Bekasi.</p>
+    </div>
+
+    <div class="sozo-faq-list">
+      
+      <!-- FAQ 1 -->
+      <div class="sozo-faq-item active">
+        <button type="button" class="sozo-faq-question" aria-expanded="true">
+          <span>1. Di mana saja lokasi cabang Sozo Skin Clinic di wilayah Bekasi?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" style="max-height: 250px;">
+          <p>Sebagai pilihan klinik kecantikan Bekasi dengan jangkauan terluas, kami hadir di empat titik strategis: Cabang Summarecon (Ruko Emerald Commercial Bekasi Utara), Grand Galaxy (Jaka Setia Bekasi Selatan), Jakasampurna (Bekasi Barat), serta area ekspansi di Cikarang (Jl. Raya Cikarang - Cibarusah).</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>2. Bagaimana rute transportasi publik menuju klinik?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Akses transportasi sangat terintegrasi. Menuju cabang Summarecon, Anda bisa menggunakan KRL ke Stasiun Bekasi atau LRT Jabodebek yang terhubung dengan BISKITA Trans Bekasi Patriot. Untuk cabang Grand Galaxy tersedia akses Angkot K05A, sedangkan cabang Jakasampurna mudah dijangkau dengan rute Angkot M26 dari arah Kalimalang.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>3. Jam berapa klinik mulai beroperasi?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Seluruh cabang kami siap melayani Anda setiap hari Senin hingga Sabtu mulai pukul 09:00 hingga 20:00 WIB. Untuk memberikan fleksibilitas tambahan di akhir pekan, klinik tetap beroperasi pada hari Minggu dari pukul 09:00 hingga 20:00 WIB.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>4. Apakah saya harus membuat janji temu sebelum datang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Kami sangat menyarankan Anda melakukan reservasi secara daring via WhatsApp resmi klinik. Langkah ini memastikan Anda mendapatkan alokasi waktu eksklusif dengan dokter tanpa perlu menunggu di ruang lobi. Kunjungan langsung (walk-in) tetap kami layani berdasarkan ketersediaan slot yang ada pada hari tersebut.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>5. Berapa biaya untuk sesi konsultasi dokter?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Kami memberikan fasilitas konsultasi dokter secara gratis. Edukasi medis dan pemahaman kondisi anatomi kulit adalah hak setiap pasien, sehingga Anda bisa mendiskusikan rencana perawatan dengan nyaman tanpa terbebani biaya di awal.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>6. Bagaimana cara dokter mendiagnosis masalah kulit saya secara akurat?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Analisis kulit dilakukan secara objektif menggunakan teknologi 3D Skin Analyzer. Instrumen canggih ini memetakan kondisi di bawah permukaan kulit, seperti hidrasi, kedalaman pori, hingga aktivitas pigmen, sehingga rekomendasi perawatan didasarkan pada data visual yang sangat presisi.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>7. Siapa praktisi medis yang akan menangani prosedur perawatan saya?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Setiap prosedur yang bersifat invasif maupun semi-invasif, seperti injeksi Botox, Filler, Threadlift, dan terapi Laser, dieksekusi langsung oleh Dokter Estetika tersertifikasi atau Dokter Spesialis (Sp.D.V.E). Kami beroperasi dengan kepatuhan mutlak terhadap lisensi resmi Dinas Kesehatan.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>8. Bagaimana jika saya sama sekali tidak paham jenis perawatan yang cocok?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Anda tidak perlu khawatir. Tim dokter kami akan membantu merumuskan tailor-made treatment plan (peta jalan perawatan personal). Perencanaan ini murni disesuaikan dengan prioritas kebutuhan biologis kulit Anda sekaligus selaras dengan anggaran (budget) yang Anda tentukan.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>9. Perawatan apa saja yang tersedia di Sozo Skin Clinic Bekasi?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Layanan kami mencakup pembersihan kulit (Facial), peremajaan berbasis perangkat canggih (Laser &amp; IPL), injeksi regeneratif (Skin Booster), kontur wajah, hingga perawatan kulit tubuh secara komprehensif.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>10. Apa keunggulan Skin Booster dibandingkan Facial biasa?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Facial sangat baik untuk menjaga kebersihan permukaan luar kulit (epidermis). Sementara itu, Skin Booster (seperti Nucleofill) dirancang menembus ke lapisan dermis untuk memberikan nutrisi mendalam, memicu produksi kolagen alami, dan menciptakan efek kulit sehat bercahaya (glass skin) dari dalam.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 11 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>11. Apakah ada solusi untuk menghilangkan bulu tubuh tanpa waxing?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sebagai bagian dari kategori perawatan kulit (skin treatment), kami menyediakan terapi Hair Removal menggunakan teknologi Intense Pulsed Light (IPL). Gelombang cahaya ini bekerja secara presisi menonaktifkan folikel tanpa merusak permukaan kulit, menjadikan area lipatan seperti ketiak tetap halus dan cerah.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 12 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>12. Apakah tersedia perawatan untuk masalah kerontokan rambut?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Klinik kami memiliki departemen khusus yang secara ketat berfokus pada kesehatan kulit kepala (scalp health) dan stimulasi pertumbuhan rambut. Melalui terapi restorasi biologis seperti PRP (Platelet-Rich Plasma) Hair, kami membantu memberikan nutrisi langsung pada folikel untuk merangsang laju pertumbuhan rambut baru yang lebih padat.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 13 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>13. Apa tindakan medis terbaik untuk meratakan tekstur bekas jerawat (bopeng)?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Untuk mengembalikan tekstur kulit menjadi rata kembali, kami menggunakan intervensi struktural tingkat lanjut. Dokter akan mengombinasikan prosedur Microneedling Scar dan Premium Subsicion (subsisi) guna membebaskan jaringan ikat yang menarik kulit ke bawah, sehingga produksi kolagen baru dapat mengisi ruang kosong tersebut secara optimal.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 14 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>14. Berapa kisaran harga perawatan di klinik ini?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Struktur harga kami sangat transparan dan dirancang untuk berbagai kebutuhan. Kategori perawatan dasar dimulai dari estimasi Rp 199.000. Untuk prosedur medis yang lebih spesifik seperti Laser atau Injeksi Regeneratif, estimasi biaya akan dijelaskan secara rinci di awal dan disetujui bersama sebelum tindakan dimulai.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 15 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>15. Apakah ada program khusus untuk pasien yang baru pertama kali berkunjung?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Kami memiliki paket penyambutan eksklusif bagi pasien baru di cabang Bekasi. Manfaat ini mencakup potongan harga langsung, fasilitas konsultasi dokter gratis, dan akses penawaran khusus uji coba perawatan (trial) agar Anda bisa merasakan kualitas layanan premium kami dengan investasi awal yang sangat bersahabat.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 16 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>16. Bagaimana klinik memastikan kenyamanan pasien saat prosedur seperti injeksi atau laser?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Kenyamanan pengalaman sensorik Anda adalah prioritas utama. Sebelum tindakan dimulai, tim medis akan mengaplikasikan krim anestesi topikal (bius lokal) berskala tinggi. Hal ini memastikan area kulit berada dalam kondisi kebas, sehingga prosedur akan terasa sangat ringan dan nyaman.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 17 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>17. Apakah ada masa pemulihan (downtime) setelah melakukan perawatan?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Setiap perawatan memiliki masa adaptasi yang berbeda. Tindakan dasar umumnya memiliki zero downtime (Anda bisa langsung beraktivitas normal). Untuk tindakan rekonstruktif seperti Microneedling atau Laser tingkat lanjut, akan ada fase regenerasi kulit berupa rona kemerahan alami yang bersifat sementara. Dokter akan memberikan prediksi durasi regenerasi ini secara transparan saat sesi konsultasi.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 18 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>18. Bagaimana standar keamanan obat dan instrumen medis yang digunakan?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Integritas keamanan adalah fondasi layanan kami. Seluruh produk yang diaplikasikan ke jaringan kulit pasien 100% dipasok dari distributor resmi dan terdaftar di BPOM. Semua instrumen penghasil energi (Laser/RF/IPL) juga dikalibrasi secara rutin untuk menjamin presisi klinis yang sempurna.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 19 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>19. Langkah perawatan wajah di rumah (aftercare) apa yang wajib dilakukan pasien?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sinergi antara tindakan klinik dan perawatan di rumah sangat menentukan hasil akhir yang optimal. Pasca-tindakan medis, kami menyarankan Anda untuk rutin mengaplikasikan sunscreen (tabir surya) setiap beberapa jam, menggunakan pelembap, dan menghentikan sementara penggunaan skincare dengan bahan aktif eksfoliasi (seperti AHA/BHA) hingga kulit selesai beregenerasi.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ SCHEMA MARKUP ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Di mana saja lokasi cabang Sozo Skin Clinic di wilayah Bekasi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sebagai pilihan klinik kecantikan Bekasi dengan jangkauan terluas, kami hadir di empat titik strategis: Cabang Summarecon (Ruko Emerald Commercial Bekasi Utara), Grand Galaxy (Jaka Setia Bekasi Selatan), Jakasampurna (Bekasi Barat), serta area ekspansi di Cikarang (Jl. Raya Cikarang - Cibarusah)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana rute transportasi publik menuju klinik?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Akses transportasi sangat terintegrasi. Menuju cabang Summarecon, Anda bisa menggunakan KRL ke Stasiun Bekasi atau LRT Jabodebek yang terhubung dengan BISKITA Trans Bekasi Patriot. Untuk cabang Grand Galaxy tersedia akses Angkot K05A, sedangkan cabang Jakasampurna mudah dijangkau dengan rute Angkot M26 dari arah Kalimalang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jam berapa klinik mulai beroperasi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Seluruh cabang kami siap melayani Anda setiap hari Senin hingga Sabtu mulai pukul 09:00 hingga 20:00 WIB. Untuk memberikan fleksibilitas tambahan di akhir pekan, klinik tetap beroperasi pada hari Minggu dari pukul 09:00 hingga 20:00 WIB."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah saya harus membuat janji temu sebelum datang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kami sangat menyarankan Anda melakukan reservasi secara daring via WhatsApp resmi klinik. Langkah ini memastikan Anda mendapatkan alokasi waktu eksklusif dengan dokter tanpa perlu menunggu di ruang lobi. Kunjungan langsung (walk-in) tetap kami layani berdasarkan ketersediaan slot yang ada pada hari tersebut."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa biaya untuk sesi konsultasi dokter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kami memberikan fasilitas konsultasi dokter secara gratis. Edukasi medis dan pemahaman kondisi anatomi kulit adalah hak setiap pasien, sehingga Anda bisa mendiskusikan rencana perawatan dengan nyaman tanpa terbebani biaya di awal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara dokter mendiagnosis masalah kulit saya secara akurat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Analisis kulit dilakukan secara objektif menggunakan teknologi 3D Skin Analyzer. Instrumen canggih ini memetakan kondisi di bawah permukaan kulit, seperti hidrasi, kedalaman pori, hingga aktivitas pigmen, sehingga rekomendasi perawatan didasarkan pada data visual yang sangat presisi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Siapa praktisi medis yang akan menangani prosedur perawatan saya?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Setiap prosedur yang bersifat invasif maupun semi-invasif, seperti injeksi Botox, Filler, Threadlift, dan terapi Laser, dieksekusi langsung oleh Dokter Estetika tersertifikasi atau Dokter Spesialis (Sp.D.V.E). Kami beroperasi dengan kepatuhan mutlak terhadap lisensi resmi Dinas Kesehatan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana jika saya sama sekali tidak paham jenis perawatan yang cocok?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anda tidak perlu khawatir. Tim dokter kami akan membantu merumuskan tailor-made treatment plan (peta jalan perawatan personal). Perencanaan ini murni disesuaikan dengan prioritas kebutuhan biologis kulit Anda sekaligus selaras dengan anggaran (budget) yang Anda tentukan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Perawatan apa saja yang tersedia di Sozo Skin Clinic Bekasi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Layanan kami mencakup pembersihan kulit (Facial), peremajaan berbasis perangkat canggih (Laser & IPL), injeksi regeneratif (Skin Booster), kontur wajah, hingga perawatan kulit tubuh secara komprehensif."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa keunggulan Skin Booster dibandingkan Facial biasa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Facial sangat baik untuk menjaga kebersihan permukaan luar kulit (epidermis). Sementara itu, Skin Booster (seperti Nucleofill) dirancang menembus ke lapisan dermis untuk memberikan nutrisi mendalam, memicu produksi kolagen alami, dan menciptakan efek kulit sehat bercahaya (glass skin) dari dalam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah ada solusi untuk menghilangkan bulu tubuh tanpa waxing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sebagai bagian dari kategori perawatan kulit (skin treatment), kami menyediakan terapi Hair Removal menggunakan teknologi Intense Pulsed Light (IPL). Gelombang cahaya ini bekerja secara presisi menonaktifkan folikel tanpa merusak permukaan kulit, menjadikan area lipatan seperti ketiak tetap halus dan cerah."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah tersedia perawatan untuk masalah kerontokan rambut?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Klinik kami memiliki departemen khusus yang secara ketat berfokus pada kesehatan kulit kepala (scalp health) dan stimulasi pertumbuhan rambut. Melalui terapi restorasi biologis seperti PRP (Platelet-Rich Plasma) Hair, kami membantu memberikan nutrisi langsung pada folikel untuk merangsang laju pertumbuhan rambut baru yang lebih padat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa tindakan medis terbaik untuk meratakan tekstur bekas jerawat (bopeng)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Untuk mengembalikan tekstur kulit menjadi rata kembali, kami menggunakan intervensi struktural tingkat lanjut. Dokter akan mengombinasikan prosedur Microneedling Scar dan Premium Subsicion (subsisi) guna membebaskan jaringan ikat yang menarik kulit ke bawah, sehingga produksi kolagen baru dapat mengisi ruang kosong tersebut secara optimal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa kisaran harga perawatan di klinik ini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Struktur harga kami sangat transparan dan dirancang untuk berbagai kebutuhan. Kategori perawatan dasar dimulai dari estimasi Rp 199.000. Untuk prosedur medis yang lebih spesifik seperti Laser atau Injeksi Regeneratif, estimasi biaya akan dijelaskan secara rinci di awal dan disetujui bersama sebelum tindakan dimulai."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah ada program khusus untuk pasien yang baru pertama kali berkunjung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kami memiliki paket penyambutan eksklusif bagi pasien baru di cabang Bekasi. Manfaat ini mencakup potongan harga langsung, fasilitas konsultasi dokter gratis, dan akses penawaran khusus uji coba perawatan (trial) agar Anda bisa merasakan kualitas layanan premium kami dengan investasi awal yang sangat bersahabat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana klinik memastikan kenyamanan pasien saat prosedur seperti injeksi atau laser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kenyamanan pengalaman sensorik Anda adalah prioritas utama. Sebelum tindakan dimulai, tim medis akan mengaplikasikan krim anestesi topikal (bius lokal) berskala tinggi. Hal ini memastikan area kulit berada dalam kondisi kebas, sehingga prosedur akan terasa sangat ringan dan nyaman."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah ada masa pemulihan (downtime) setelah melakukan perawatan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Setiap perawatan memiliki masa adaptasi yang berbeda. Tindakan dasar umumnya memiliki zero downtime (Anda bisa langsung beraktivitas normal). Untuk tindakan rekonstruktif seperti Microneedling atau Laser tingkat lanjut, akan ada fase regenerasi kulit berupa rona kemerahan alami yang bersifat sementara. Dokter akan memberikan prediksi durasi regenerasi ini secara transparan saat sesi konsultasi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana standar keamanan obat dan instrumen medis yang digunakan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integritas keamanan adalah fondasi layanan kami. Seluruh produk yang diaplikasikan ke jaringan kulit pasien 100% dipasok dari distributor resmi dan terdaftar di BPOM. Semua instrumen penghasil energi (Laser/RF/IPL) juga dikalibrasi secara rutin untuk menjamin presisi klinis yang sempurna."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Langkah perawatan wajah di rumah (aftercare) apa yang wajib dilakukan pasien?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sinergi antara tindakan klinik dan perawatan di rumah sangat menentukan hasil akhir yang optimal. Pasca-tindakan medis, kami menyarankan Anda untuk rutin mengaplikasikan sunscreen (tabir surya) setiap beberapa jam, menggunakan pelembap, dan menghentikan sementara penggunaan skincare dengan bahan aktif eksfoliasi (seperti AHA/BHA) hingga kulit selesai beregenerasi."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ==================== JAVASCRIPT CONTROLLER WITH TRACKING ==================== -->
+<script>
+(function() {
+  const MASTER_WA_URL = "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Bekasi%20%5Bsrc%3AORG-BKS%5D";
+
+  const branches = [
+    {
+      name: "Sozo Skin Clinic - Bekasi (Jakasampurna)",
+      shortName: "Jakasampurna",
+      rating: "★ 4.8 (2.030 ulasan Google)",
+      address: "Jl. Cemara Raya No.1 Kavling 10D, RT.003/RW.006A, Jakasampurna, Kec. Bekasi Bar., Kota Bks, Jawa Barat 17145",
+      mapSrc: "https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Bekasi%20Jakasampurna&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      mapLink: "https://maps.google.com/?cid=7253721916722848605",
+      hours: [
+        {day: "Senin", time: "09:00 - 20:00"},
+        {day: "Selasa", time: "09:00 - 20:00"},
+        {day: "Rabu", time: "09:00 - 20:00"},
+        {day: "Kamis", time: "09:00 - 20:00"},
+        {day: "Jumat", time: "09:00 - 20:00"},
+        {day: "Sabtu", time: "09:00 - 20:00"},
+        {day: "Minggu", time: "09:00 - 20:00"}
+      ],
+      gallery: [
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-1-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-muda-2-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-3-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-4-scaled.webp"
+      ]
+    },
+    {
+      name: "Sozo Skin Clinic - Bekasi Grand Galaxy",
+      shortName: "Grand Galaxy",
+      rating: "★ 5.0 (816 ulasan Google)",
+      address: "Jl. Boulevard Raya RGA No.67, RT.001/RW.002, Jaka Setia, Kec. Bekasi Sel., Kota Bks, Jawa Barat 17147",
+      mapSrc: "https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Bekasi%20Grand%20Galaxy&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      mapLink: "https://maps.google.com/?cid=2078535945935644093",
+      hours: [
+        {day: "Senin", time: "09:00 - 20:00"},
+        {day: "Selasa", time: "09:00 - 20:00"},
+        {day: "Rabu", time: "09:00 - 20:00"},
+        {day: "Kamis", time: "09:00 - 20:00"},
+        {day: "Jumat", time: "09:00 - 20:00"},
+        {day: "Sabtu", time: "09:00 - 20:00"},
+        {day: "Minggu", time: "09:00 - 20:00"}
+      ],
+      gallery: [
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-1-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-muda-2-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-3-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-4-scaled.webp"
+      ]
+    },
+    {
+      name: "Sozo Skin Clinic - Bekasi Summarecon",
+      shortName: "Summarecon Bekasi",
+      rating: "★ 4.8 (1.075 ulasan Google)",
+      address: "Ruko Emerald Commercial Blok UA No 27, RT.004/RW.011, Marga Mulya, Kec. Bekasi Utara, Kota Bks, Jawa Barat 17123",
+      mapSrc: "https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Bekasi%20Summarecon&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      mapLink: "https://maps.google.com/?cid=7014027831949560720",
+      hours: [
+        {day: "Senin", time: "09:00 - 20:00"},
+        {day: "Selasa", time: "09:00 - 20:00"},
+        {day: "Rabu", time: "09:00 - 20:00"},
+        {day: "Kamis", time: "09:00 - 20:00"},
+        {day: "Jumat", time: "09:00 - 20:00"},
+        {day: "Sabtu", time: "09:00 - 20:00"},
+        {day: "Minggu", time: "09:00 - 20:00"}
+      ],
+      gallery: [
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-1-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-muda-2-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-3-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-4-scaled.webp"
+      ]
+    },
+    {
+      name: "Sozo Skin Clinic - Cikarang",
+      shortName: "Cikarang",
+      pageUrl: "https://sozoskinclinic.com/lokasi/cikarang/",
+      rating: "★ 4.9 (1.319 ulasan Google)",
+      address: "Jl. Ruko CBC Cikarang Jl. Raya Cikarang - Cibarusah No.Blok A2, Serang, Cikarang Sel., Kabupaten Bekasi, Jawa Barat 17530",
+      mapSrc: "https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Cikarang&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      mapLink: "https://maps.google.com/?cid=10321797967808145160",
+      hours: [
+        {day: "Senin", time: "09:00 - 20:00"},
+        {day: "Selasa", time: "09:00 - 20:00"},
+        {day: "Rabu", time: "09:00 - 20:00"},
+        {day: "Kamis", time: "09:00 - 20:00"},
+        {day: "Jumat", time: "09:00 - 20:00"},
+        {day: "Sabtu", time: "09:00 - 20:00"},
+        {day: "Minggu", time: "09:00 - 20:00"}
+      ],
+      gallery: [
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-1-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-muda-2-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-3-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-4-scaled.webp"
+      ]
+    }
+  ];
+
+  function trackEvent(eventName, params = {}) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: eventName,
+      ...params
+    });
+
+    if (typeof window.clarity === "function") {
+      window.clarity("event", eventName);
+      Object.keys(params).forEach(k => {
+        if (params[k] !== undefined && params[k] !== null && params[k] !== "") {
+          window.clarity("set", k, String(params[k]));
+        }
+      });
+    }
+  }
+
+  function getPerView() {
+    const w = window.innerWidth;
+    if (w <= 768) return 1;
+    if (w <= 992) return 2;
+    return 3;
+  }
+
+  function initGenericSlider(trackId, prevId, nextId, dotsId, containerId, autoInterval) {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const dotsContainer = document.getElementById(dotsId);
+    const container = document.getElementById(containerId);
+
+    if (!track) return null;
+
+    let currentIndex = 0;
+    let autoTimer = null;
+
+    function getSlides() {
+      return track.children;
+    }
+
+    function buildDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      const total = getSlides().length;
+      const perView = getPerView();
+      const count = Math.max(1, total - perView + 1);
+
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'sozo-slider-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dot.addEventListener('click', () => {
+          goTo(i);
+          resetAuto();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function goTo(index) {
+      const slides = getSlides();
+      const total = slides.length;
+      if (total === 0) return;
+
+      const perView = getPerView();
+      const maxIndex = Math.max(0, total - perView);
+
+      if (index < 0) index = 0;
+      if (index > maxIndex) index = maxIndex;
+      currentIndex = index;
+
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = 16;
+      const move = (slideWidth + gap) * currentIndex;
+
+      track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+      track.style.transform = `translateX(-${move}px)`;
+
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.sozo-slider-dot');
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === currentIndex));
+      }
+    }
+
+    function next() {
+      const total = getSlides().length;
+      const maxIndex = Math.max(0, total - getPerView());
+      if (currentIndex >= maxIndex) goTo(0);
+      else goTo(currentIndex + 1);
+    }
+
+    function prev() {
+      const total = getSlides().length;
+      const maxIndex = Math.max(0, total - getPerView());
+      if (currentIndex <= 0) goTo(maxIndex);
+      else goTo(currentIndex - 1);
+    }
+
+    function startAuto() {
+      if (autoInterval && !autoTimer) {
+        autoTimer = setInterval(next, autoInterval);
+      }
+    }
+
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function resetAuto() {
+      stopAuto();
+      startAuto();
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        next();
+        resetAuto();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prev();
+        resetAuto();
+      });
+    }
+
+    if (container) {
+      container.addEventListener('mouseenter', stopAuto);
+      container.addEventListener('mouseleave', startAuto);
+
+      let startX = 0;
+      let startY = 0;
+      let currentX = 0;
+      let isTouching = false;
+      let isHorizontal = null;
+
+      container.addEventListener('touchstart', (e) => {
+        stopAuto();
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        currentX = startX;
+        isTouching = true;
+        isHorizontal = null;
+      }, { passive: true });
+
+      container.addEventListener('touchmove', (e) => {
+        if (!isTouching) return;
+        const touch = e.touches[0];
+        currentX = touch.clientX;
+        const diffX = currentX - startX;
+        const diffY = touch.clientY - startY;
+
+        if (isHorizontal === null) {
+          if (Math.abs(diffX) > 6 || Math.abs(diffY) > 6) {
+            isHorizontal = Math.abs(diffX) > Math.abs(diffY);
+          }
+        }
+
+        if (isHorizontal) {
+          track.style.transition = 'none';
+          const slides = getSlides();
+          if (slides.length > 0) {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            const gap = 16;
+            const baseMove = (slideWidth + gap) * currentIndex;
+            track.style.transform = `translateX(${-baseMove + diffX}px)`;
+          }
+        }
+      }, { passive: true });
+
+      function handleTouchEnd() {
+        if (!isTouching) return;
+        isTouching = false;
+        track.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)';
+
+        const diffX = startX - currentX;
+        if (isHorizontal && Math.abs(diffX) > 35) {
+          if (diffX > 0) next();
+          else prev();
+        } else {
+          goTo(currentIndex);
+        }
+        resetAuto();
+      }
+
+      container.addEventListener('touchend', handleTouchEnd, { passive: true });
+      container.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+    }
+
+    buildDots();
+    goTo(0);
+    startAuto();
+
+    return {
+      refresh: () => {
+        buildDots();
+        goTo(currentIndex);
+      },
+      goTo: goTo
+    };
+  }
+
+  let gallerySliderTrack = document.getElementById('sozoSliderTrack');
+  let ambienceSliderCtrl = null;
+
+  function renderAmbience(images) {
+    if (!gallerySliderTrack) return;
+    gallerySliderTrack.innerHTML = images.map(img => `
+      <div class="sozo-slider-slide">
+        <img src="${img}" alt="Suasana Sozo Skin Clinic Bekasi" loading="lazy">
+      </div>
+    `).join('');
+
+    ambienceSliderCtrl = initGenericSlider(
+      'sozoSliderTrack',
+      'sozoSliderPrev',
+      'sozoSliderNext',
+      'sozoSliderDots',
+      'sozoSliderContainer',
+      4500
+    );
+  }
+
+  window.selectBranch = function(idx) {
+    document.querySelectorAll('.sozo-branch-pill').forEach(btn => {
+      btn.classList.toggle('active', parseInt(btn.getAttribute('data-branch')) === idx);
+    });
+
+    const data = branches[idx];
+    const card = document.getElementById('sozoDetailCard');
+    card.classList.add('sliding');
+
+    trackEvent("branch_view", {
+      branch_name: data.name,
+      branch_province: "Jawa Barat"
+    });
+
+    setTimeout(() => {
+      document.getElementById('sozoMapIframe').src = data.mapSrc;
+      document.getElementById('sozoDetailName').textContent = data.name;
+      document.getElementById('sozoDetailRating').textContent = data.rating;
+      document.getElementById('sozoDetailAddress').textContent = data.address;
+      document.getElementById('sozoMapBtn').href = data.mapLink;
+      document.getElementById('sozoWaBtn').href = MASTER_WA_URL;
+
+      const detailLinkBtn = document.getElementById('sozoDetailLinkBtn');
+      const detailLinkText = document.getElementById('sozoDetailLinkText');
+      if (detailLinkBtn) {
+        if (data.pageUrl) {
+          detailLinkBtn.href = data.pageUrl;
+          if (detailLinkText) detailLinkText.textContent = 'Lihat Detail & Rute Klinik ' + data.shortName;
+          detailLinkBtn.classList.remove('is-hidden');
+        } else {
+          detailLinkBtn.classList.add('is-hidden');
+        }
+      }
+
+      const scheduleBox = document.getElementById('sozoScheduleList');
+      scheduleBox.innerHTML = data.hours.map(h => `
+        <div class="sozo-schedule-row"><span>${h.day}</span><span>${h.time}</span></div>
+      `).join('');
+
+      renderAmbience(data.gallery);
+      card.classList.remove('sliding');
+    }, 140);
+  };
+
+  function setupDirections() {
+    document.querySelectorAll('.sozo-direction-item').forEach(item => {
+      const btn = item.querySelector('.sozo-direction-toggle');
+      const ans = item.querySelector('.sozo-direction-content');
+
+      btn.addEventListener('click', () => {
+        const active = item.classList.contains('active');
+        document.querySelectorAll('.sozo-direction-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            other.querySelector('.sozo-direction-toggle').setAttribute('aria-expanded', 'false');
+            other.querySelector('.sozo-direction-content').style.maxHeight = null;
+          }
+        });
+
+        if (!active) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          ans.style.maxHeight = ans.scrollHeight + "px";
+          trackEvent("directions_toggle", {
+            direction_target: btn.textContent.trim(),
+            city: "Bekasi"
+          });
+        } else {
+          item.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+          ans.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  function setupFaq() {
+    document.querySelectorAll('.sozo-faq-item').forEach(item => {
+      const btn = item.querySelector('.sozo-faq-question');
+      const ans = item.querySelector('.sozo-faq-answer');
+
+      btn.addEventListener('click', () => {
+        const active = item.classList.contains('active');
+        document.querySelectorAll('.sozo-faq-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            other.querySelector('.sozo-faq-question').setAttribute('aria-expanded', 'false');
+            other.querySelector('.sozo-faq-answer').style.maxHeight = null;
+          }
+        });
+
+        if (!active) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          ans.style.maxHeight = ans.scrollHeight + "px";
+          trackEvent("faq_toggle", {
+            faq_question: btn.textContent.trim(),
+            city: "Bekasi"
+          });
+        } else {
+          item.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+          ans.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  function setupCtaTracking() {
+    const waBtn = document.getElementById('sozoWaBtn');
+    if (waBtn) {
+      waBtn.addEventListener('click', () => {
+        const activeBranch = document.getElementById('sozoDetailName').textContent.trim();
+        trackEvent("branch_wa_click", {
+          clicked_branch_name: activeBranch,
+          clicked_branch_province: "Jawa Barat"
+        });
+      });
+    }
+
+    const mapBtn = document.getElementById('sozoMapBtn');
+    if (mapBtn) {
+      mapBtn.addEventListener('click', () => {
+        const activeBranch = document.getElementById('sozoDetailName').textContent.trim();
+        trackEvent("branch_maps_click", {
+          clicked_branch_name: activeBranch,
+          clicked_branch_province: "Jawa Barat"
+        });
+      });
+    }
+
+    document.querySelectorAll('.sozo-custom-cta-btn, .sozo-promo-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        trackEvent("branch_wa_click", {
+          clicked_branch_name: "Sozo Skin Clinic - Bekasi (Promo Banner)",
+          clicked_branch_province: "Jawa Barat"
+        });
+      });
+    });
+  }
+
+  let promoSliderCtrl = null;
+  let baSliderCtrl = null;
+  let quoteSliderCtrl = null;
+
+  function initSliders() {
+    promoSliderCtrl = initGenericSlider(
+      'sozoPromoSliderTrack',
+      'sozoPromoPrev',
+      'sozoPromoNext',
+      'sozoPromoDots',
+      'sozoPromoSliderContainer',
+      5500
+    );
+
+    baSliderCtrl = initGenericSlider(
+      'sozoBaSliderTrack',
+      'sozoBaPrev',
+      'sozoBaNext',
+      'sozoBaDots',
+      'sozoBaSliderContainer',
+      5000
+    );
+
+    quoteSliderCtrl = initGenericSlider(
+      'sozoQuoteSliderTrack',
+      'sozoQuotePrev',
+      'sozoQuoteNext',
+      'sozoQuoteDots',
+      'sozoQuoteSliderContainer',
+      6000
+    );
+  }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (ambienceSliderCtrl) ambienceSliderCtrl.refresh();
+      if (promoSliderCtrl) promoSliderCtrl.refresh();
+      if (baSliderCtrl) baSliderCtrl.refresh();
+      if (quoteSliderCtrl) quoteSliderCtrl.refresh();
+    }, 200);
+  });
+
+  function init() {
+    setupDirections();
+    setupFaq();
+    setupCtaTracking();
+    initSliders();
+    window.selectBranch(0);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>

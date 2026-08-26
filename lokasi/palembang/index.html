@@ -1,0 +1,1393 @@
+<!-- Google Font Poppins Preconnect & Stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- SYSTEM PRELOAD FONTAWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="sozo-location-page-wrapper">
+  <div class="sozo-location-page-container">
+    
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <div class="sozo-clean-hero">
+      <h1 class="sozo-clean-title">Klinik Kecantikan Terbaik Di Palembang</h1>
+      <p class="sozo-clean-desc">Mencari klinik kecantikan Palembang yang terpercaya? Sozo Hadir di Palembang dengan kualitas terbaik, harga transparan dan terjangkau.</p>
+    </div>
+
+    <!-- ==================== 2. MASTER-DETAIL SECTION (MAPS & INFO - SINGLE BRANCH CENTERED) ==================== -->
+    <div class="sozo-clean-layout-single">
+      
+      <!-- BADGE / PILL CABANG (DI TENGAH) -->
+      <div class="sozo-single-branch-nav">
+        <button type="button" class="sozo-branch-pill active" data-branch="0">
+          <svg class="sozo-pill-icon" viewBox="0 0 384 512">
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+          </svg>
+          <div class="sozo-pill-content">
+            <span class="sozo-pill-title">Palembang</span>
+            <span class="sozo-pill-sub">Kemuning, Basuki Rachmat • ★ 4.9</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- DETAIL CARD -->
+      <div class="sozo-clean-content-single">
+        <div class="sozo-detail-card" id="sozoDetailCard">
+          
+          <div class="sozo-detail-map">
+            <iframe id="sozoMapIframe" src="https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Palembang&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+          </div>
+
+          <div class="sozo-detail-body">
+            <div class="sozo-detail-header">
+              <h2 class="sozo-detail-name" id="sozoDetailName">Sozo Skin Clinic - Palembang</h2>
+              <div class="sozo-detail-rating" id="sozoDetailRating">★ 4.9 (1.891 ulasan Google)</div>
+            </div>
+
+            <p class="sozo-detail-address" id="sozoDetailAddress">
+              Jl. Jend. Basuki Rachmat No.12 B-C, Pahlawan, Kec. Kemuning, Kota Palembang, Sumatera Selatan 30128
+            </p>
+
+            <div class="sozo-detail-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Palembang%20%5Bsrc%3AORG-PLB%5D" id="sozoWaBtn" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa sozo-master-cta">
+                Buat Jadwal (WhatsApp)
+              </a>
+              <a href="https://maps.google.com/?cid=8445936451737769369" id="sozoMapBtn" target="_blank" rel="noopener" class="sozo-btn sozo-btn-map">
+                Buka Maps &gt;
+              </a>
+            </div>
+
+            <div class="sozo-schedule-card">
+              <div class="sozo-schedule-header">
+                <svg viewBox="0 0 448 512">
+                  <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H64zm128 0c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H192zm128 0c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H320z"/>
+                </svg>
+                <span>Waktu Kerja</span>
+              </div>
+              <div class="sozo-schedule-list" id="sozoScheduleList">
+                <div class="sozo-schedule-row"><span>Senin</span><span>09:00 - 20:00 WIB</span></div>
+                <div class="sozo-schedule-row"><span>Selasa</span><span>09:00 - 20:00 WIB</span></div>
+                <div class="sozo-schedule-row"><span>Rabu</span><span>09:00 - 20:00 WIB</span></div>
+                <div class="sozo-schedule-row"><span>Kamis</span><span>09:00 - 20:00 WIB</span></div>
+                <div class="sozo-schedule-row"><span>Jumat</span><span>09:00 - 20:00 WIB</span></div>
+                <div class="sozo-schedule-row"><span>Sabtu</span><span>09:00 - 20:00 WIB</span></div>
+                <div class="sozo-schedule-row"><span>Minggu</span><span>09:00 - 20:00 WIB</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== 3. AMBIENCE GALLERY SLIDER ==================== -->
+    <div class="sozo-gallery-section">
+      <div class="sozo-gallery-header">
+        <div class="sozo-gallery-pill">Suasana Klinik</div>
+        <h2 class="sozo-gallery-title">Fasilitas & Ruang Perawatan Nyaman</h2>
+        <p class="sozo-gallery-desc">Ruang perawatan privat, higienis, dan berstandar medis untuk pengalaman treatment terbaikmu yang ada di klinik kecantikan Palembang.</p>
+      </div>
+
+      <div class="sozo-slider-wrapper">
+        <div class="sozo-slider-container" id="sozoSliderContainer">
+          <div class="sozo-slider-track" id="sozoSliderTrack">
+            <!-- Dynamic Injection Via JS -->
+          </div>
+          <button type="button" class="sozo-slider-btn sozo-slider-prev" id="sozoSliderPrev" aria-label="Slide Sebelumnya">❮</button>
+          <button type="button" class="sozo-slider-btn sozo-slider-next" id="sozoSliderNext" aria-label="Slide Selanjutnya">❯</button>
+          <div class="sozo-slider-dots" id="sozoSliderDots"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 4. TREATMENT CATEGORIES ==================== -->
+    <div class="sozo-category-section">
+      <h2 class="sozo-category-heading">Pilihan Treatment di Sozo Skin Clinic Palembang</h2>
+      <p class="sozo-category-sub">Pilih kategori perawatan kulit & tubuh yang sesuai dengan kebutuhanmu</p>
+      
+      <div class="sozo-category-grid">
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Skin-Bright-Facial-Medical-1.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Skin<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Injection.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Injectable<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Slimming-1-11.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Slimming<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/03/Gemini_Generated_Image_qncw0qncw0qncw0q.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Hair-Removal-Underarm-Glow.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Removal</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Acne-Single-Treatment-Acne-laser-facial.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Acne<br>Treatment</span>
+        </a>
+      </div>
+
+      <div class="sozo-category-cta-wrap">
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-btn">
+          <span>Lihat Semua Treatment</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ==================== 4.5 HASIL NYATA & TESTIMONI ==================== -->
+    <div class="sozo-results-section">
+      <div class="sozo-results-header">
+        <div class="sozo-results-pill">Real Results & Testimonials</div>
+        <h2 class="sozo-results-title">Hasil Nyata Treatment di Sozo Skin Clinic Palembang</h2>
+        <p class="sozo-results-desc">Lihat transformasi nyata dan cerita pengalaman langsung dari para pasien yang telah membuktikannya.</p>
+      </div>
+
+      <!-- Sub-Block 1: Before After Gallery Slider -->
+      <div class="sozo-sub-slider-block">
+        <div class="sozo-sub-slider-head">
+          <span class="sozo-sub-slider-tag"><i class="fa-solid fa-camera-retro"></i> Transformasi Klinis</span>
+        </div>
+
+        <div class="sozo-slider-wrapper">
+          <div class="sozo-ba-slider-container" id="sozoBaSliderContainer">
+            <div class="sozo-ba-slider-track" id="sozoBaSliderTrack">
+              
+              <!-- BA 1 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/LP-Mockup-Suplemen-Pelangsing-Slimming-Program-Before-After-2.webp" alt="Before After Slimming Program" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 2 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/hifu-treatment-di-sozo-skin-clinic.webp" alt="Before After HIFU Treatment" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 3 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-pink-lips.webp" alt="Before After Pink Lips" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 4 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-underarm.webp" alt="Before After Underarm Treatment" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 5 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/BA-skin-booster.webp" alt="Before After Skin Booster" loading="lazy">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button type="button" class="sozo-slider-btn sozo-ba-prev" id="sozoBaPrev" aria-label="Hasil Sebelumnya">❮</button>
+          <button type="button" class="sozo-slider-btn sozo-ba-next" id="sozoBaNext" aria-label="Hasil Selanjutnya">❯</button>
+          <div class="sozo-slider-dots" id="sozoBaDots"></div>
+        </div>
+      </div>
+
+      <!-- Sub-Block 2: Testimonial Quotes Slider -->
+      <div class="sozo-sub-slider-block" style="margin-top: 30px;">
+        <div class="sozo-sub-slider-head">
+          <span class="sozo-sub-slider-tag"><i class="fa-solid fa-comment-dots"></i> Ulasan Pasien Terverifikasi</span>
+        </div>
+
+        <div class="sozo-slider-wrapper">
+          <div class="sozo-quote-slider-container" id="sozoQuoteSliderContainer">
+            <div class="sozo-quote-slider-track" id="sozoQuoteSliderTrack">
+              
+              <!-- Quote 1 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Pelayanan di Sozo Palembang luar biasa ramah dan profesional. Dokternya detail banget jelasin kondisi kulit dan kasih treatment plan yang pas di kantong. Jerawat meradang saya berangsur reda dalam 2 sesi!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">AN</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Anisa Novitasari</strong>
+                      <span class="sozo-author-meta">Pasien Acne Clear Facial • Kemuning</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 2 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Tempatnya estetik, nyaman, dan bersih di Jl. Basuki Rachmat. Treatment Skin Booster di Sozo hasilnya langsung bikin wajah glowing kenyal tanpa downtime berlebih. Sangat recommended!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">RP</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Rizky Pratama</strong>
+                      <span class="sozo-author-meta">Pasien Skin Booster • Palembang</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 3 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Aksesnya sangat mudah dekat Simpang Polda &amp; Stasiun LRT Demang. Laser flek di Sozo benar-benar bikin noda hitam memudar signifikan. Harganya transparan dari awal dan konsultasi dokternya gratis.</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">ML</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Mega Lestari</strong>
+                      <span class="sozo-author-meta">Pasien Laser Rejuvenation • Palembang</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 4 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Klinik langganan di Palembang. Terapisnya teliti banget pas ekstraksi komedo sama sekali nggak sakit. Perawatannya higienis dan dokternya sangat edukatif. Wajib coba facial-nya!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">DW</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Dina Wahyuni</strong>
+                      <span class="sozo-author-meta">Pasien Skin Bright Facial • Pahlawan</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 5 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Hair treatment di Sozo sangat membantu mengurangi rambut rontok. Suasana kliniknya bikin betah dan perawatannya selalu on time sesuai jadwal booking.</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">BP</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Bambang Pamungkas</strong>
+                      <span class="sozo-author-meta">Pasien Hair Treatment • Palembang</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 6 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Perawatan underarm hair removal-nya benar-benar painless dan ketiak jadi lebih cerah halus. Sangat puas dengan standar pelayanan medis di Sozo!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">ST</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Siti Trihandayani</strong>
+                      <span class="sozo-author-meta">Pasien Hair Removal • Kemuning</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button type="button" class="sozo-slider-btn sozo-quote-prev" id="sozoQuotePrev" aria-label="Ulasan Sebelumnya">❮</button>
+          <button type="button" class="sozo-slider-btn sozo-quote-next" id="sozoQuoteNext" aria-label="Ulasan Selanjutnya">❯</button>
+          <div class="sozo-slider-dots" id="sozoQuoteDots"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 4.6 PROMO KHUSUS HARI INI ==================== -->
+    <div class="sozo-promo-section">
+      <div class="sozo-promo-header">
+        <div class="sozo-promo-pill">Penawaran Terbatas</div>
+        <h2 class="sozo-promo-title">Promo Spesial Klinik Kecantikan Palembang</h2>
+        <p class="sozo-promo-desc">Manfaatkan penawaran eksklusif minggu ini untuk perawatan kulit &amp; tubuh impianmu di cabang Palembang.</p>
+      </div>
+
+      <div class="sozo-slider-wrapper">
+        <div class="sozo-promo-slider-container" id="sozoPromoSliderContainer">
+          <div class="sozo-promo-slider-track" id="sozoPromoSliderTrack">
+            
+            <!-- Promo 1 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Promo Spesial</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-0-scaled.webp" alt="Promo Treatment Sozo Palembang" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Promo Treatment Spesial</h3>
+                    <p class="sozo-promo-card-desc">Dapatkan diskon eksklusif untuk berbagai pilihan treatment unggulan di Sozo Skin Clinic Palembang.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Palembang%20%5Bsrc%3AORG-PLB%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 2 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Voucher Diskon</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-potongan100rb-scaled.webp" alt="Promo Potongan 100rb" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Voucher Potongan Langsung</h3>
+                    <p class="sozo-promo-card-desc">Nikmati potongan harga langsung untuk reservasi pertama perawatan wajah dan tubuh pilihanmu.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Palembang%20%5Bsrc%3AORG-PLB%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 3 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Best Seller</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/skin-booster-promo-scaled.webp" alt="Promo Skin Booster Palembang" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Paket Skin Booster Glowing</h3>
+                    <p class="sozo-promo-card-desc">Kulit lebih lembap, cerah, dan tampak awet muda dengan paket skin booster berstandar medis.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Palembang%20%5Bsrc%3AORG-PLB%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 4 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Hair Care</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/05/LP-Mockup-Landing-Page-Refreshment-MEI-Promo-banner-bye2-rontok.webp" alt="Promo Hair Treatment Palembang" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Promo Bye-Bye Rambut Rontok</h3>
+                    <p class="sozo-promo-card-desc">Solusi tepat untuk mengatasi kerontokan dan merangsang pertumbuhan rambut baru secara optimal.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Palembang%20%5Bsrc%3AORG-PLB%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <button type="button" class="sozo-slider-btn sozo-promo-prev" id="sozoPromoPrev" aria-label="Promo Sebelumnya">❮</button>
+        <button type="button" class="sozo-slider-btn sozo-promo-next" id="sozoPromoNext" aria-label="Promo Selanjutnya">❯</button>
+        <div class="sozo-slider-dots" id="sozoPromoDots"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ==================== 5. WHY CHOOSE US ==================== -->
+<section class="sozo-why-section">
+  <div class="sozo-why-container">
+    <div class="sozo-why-header">
+      <h2>Mengapa Memilih SOZO Skin Clinic Palembang?</h2>
+      <p>Klinik kecantikan modern dan terpercaya yang mengutamakan kualitas, keamanan, dan kepuasan pasien di Palembang.</p>
+    </div>
+
+    <div class="sozo-why-grid">
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Dokter Berpengalaman</strong>
+          <p class="sozo-why-card-text">Ditangani oleh dokter estetika profesional dan tersertifikasi.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-microchip"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Teknologi Modern</strong>
+          <p class="sozo-why-card-text">Menggunakan peralatan canggih berstandar internasional.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Pelayanan Terbaik</strong>
+          <p class="sozo-why-card-text">Klinik kecantikan yang nyaman, higienis, dan ramah.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-handshake-angle"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Konsultasi Dokter Gratis</strong>
+          <p class="sozo-why-card-text">Reservasi sekarang untuk konsultasi tepat dan transparan.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-tags"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Harga Terjangkau</strong>
+          <p class="sozo-why-card-text">Perawatan premium berkualitas tinggi dengan harga ramah kantong.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Lokasi Strategis</strong>
+          <p class="sozo-why-card-text">Berada di Jl. Jend. Basuki Rachmat, Kemuning, dekat Simpang Polda &amp; LRT Demang.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6. COMPACT MINIMAL BANNER CTA ==================== -->
+<section class="sozo-compact-cta-section">
+  <div class="sozo-compact-cta-container">
+    <div class="sozo-compact-cta-box">
+      <div class="sozo-compact-cta-text">
+        <h3 class="sozo-compact-cta-title">Segera Kunjungi Klinik Kecantikan Palembang SOZO.</h3>
+        <p class="sozo-compact-cta-desc">Konsultasikan kondisi kulitmu dan temukan solusi treatment yang tepat bersama dokter profesional kami.</p>
+      </div>
+      <div class="sozo-compact-cta-action">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Palembang%20%5Bsrc%3AORG-PLB%5D" target="_blank" rel="noopener" class="sozo-custom-cta-btn sozo-master-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>Hubungi Kami Untuk Reservasi</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6.5 CARA MENUJU LOKASI (EXPANDABLE) ==================== -->
+<section class="sozo-directions-section">
+  <div class="sozo-directions-container">
+    
+    <div class="sozo-directions-header">
+      <div class="sozo-directions-pill">Panduan Rute &amp; Akses</div>
+      <h2 class="sozo-directions-title">Cara Menuju Lokasi</h2>
+      <p class="sozo-directions-desc">Panduan rute dan pilihan transportasi menuju Sozo Skin Clinic di Kota Palembang.</p>
+    </div>
+
+    <div class="sozo-directions-list">
+      
+      <!-- 1. Palembang (Basuki Rachmat) -->
+      <div class="sozo-direction-item active">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="true">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Menuju Sozo Skin Clinic - Palembang</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content" style="max-height: 800px;">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-lead">Berlokasi di Jl. Jend. Basuki Rachmat No. 12 B-C, Kelurahan Pahlawan, Kecamatan Kemuning, Kota Palembang. Cabang ini menempati posisi yang sangat strategis di salah satu jalan protokol utama yang menghubungkan pusat kota dengan kawasan bandara dan pusat bisnis. Posisinya yang berada di kawasan komersial yang ramai menjadikannya sangat mudah diakses dari berbagai penjuru kota.</p>
+            
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-car"></i> Akses Kendaraan Pribadi</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Dari arah Bandara Internasional Sultan Mahmud Badaruddin II / Talang Betutu:</strong> Arahkan kendaraan Anda menyusuri Jl. Kolonel H. Burlian ke arah pusat kota. Lurus terus melintasi kawasan simpang bandara dan rute utama menuju arah KM 5 hingga memasuki Jl. Jend. Basuki Rachmat. Klinik akan berada di deretan ruko komersial di sisi jalan utama yang mudah terlihat dengan area parkir yang memadai.</li>
+                <li><strong>Dari arah Jembatan Ampera / Pusat Kota (Kenten/Ilir Timur):</strong> Susuri Jalan Jenderal Sudirman ke arah utara hingga tiba di kawasan Simpang Polda atau simpang lampu merah utama. Belok ke arah Jl. Jend. Basuki Rachmat. Terus ikuti jalur protokol tersebut, dan lokasi klinik berada di Blok B-C pada sisi jalan yang sama.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-train-subway"></i> Akses Transportasi Umum</h4>
+              <ul class="sozo-route-list">
+                <li><strong>LRT Sumsel (Light Rail Transit):</strong> Stasiun LRT terdekat adalah Stasiun LRT Demang atau Stasiun LRT RSUD Sumsel. Dari stasiun tersebut, Anda dapat melanjutkan perjalanan dengan memesan ojek atau taksi online dengan waktu tempuh yang sangat singkat (sekitar 5–10 menit) langsung menuju ke depan ruko klinik di Jl. Jend. Basuki Rachmat.</li>
+                <li><strong>Angkutan Kota (Angkot / Bus Trans Musi):</strong> Jl. Jend. Basuki Rachmat merupakan koridor utama yang dilalui oleh berbagai trayek angkutan umum lokal di Palembang. Anda bisa menaiki angkot atau bus kota yang melewati rute Pahlawan/Basuki Rachmat, dan meminta sopir untuk menurunkan Anda tepat di sekitar lokasi klinik atau gedung komersial terdekat.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== 7. FAQ SECTION ==================== -->
+<section class="sozo-faq-section">
+  <div class="sozo-faq-container">
+    <div class="sozo-faq-header">
+      <div class="sozo-faq-pill">FAQ</div>
+      <h2 class="sozo-faq-title">Pertanyaan yang Sering Diajukan</h2>
+      <p class="sozo-faq-desc">Informasi lengkap seputar layanan, reservasi, dan perawatan di Sozo Skin Clinic Palembang.</p>
+    </div>
+
+    <div class="sozo-faq-list">
+      
+      <!-- FAQ 1 -->
+      <div class="sozo-faq-item active">
+        <button type="button" class="sozo-faq-question" aria-expanded="true">
+          <span>1. Sozo Skin Clinic Palembang ada di mana?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" style="max-height: 250px;">
+          <p>Sozo Skin Clinic Palembang berlokasi di Jl. Jend. Basuki Rachmat No.12 B-C, Pahlawan, Kecamatan Kemuning, Kota Palembang, Sumatera Selatan 30128. Lokasi ini dapat menjadi pilihan bagi Anda yang sedang mencari klinik kecantikan di Palembang untuk melakukan perawatan kulit, wajah, rambut, maupun perawatan estetika lainnya. Sebelum datang, Anda dapat melihat petunjuk lokasi melalui Google Maps atau menghubungi tim Sozo Skin Clinic untuk memastikan informasi lokasi dan akses terbaru.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>2. Sozo Skin Clinic Palembang buka jam berapa?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sozo Skin Clinic Palembang saat ini beroperasi setiap hari pukul 09.00–20.00 WIB. Jika Anda memiliki jadwal tertentu, terutama untuk treatment yang memerlukan konsultasi atau tindakan dokter, sebaiknya melakukan reservasi terlebih dahulu agar waktu kedatangan dapat disesuaikan dengan ketersediaan dokter dan treatment yang dibutuhkan.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>3. Apa saja treatment yang tersedia di Sozo Skin Clinic Palembang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sozo Skin Clinic menyediakan berbagai pilihan perawatan yang dapat disesuaikan dengan kebutuhan kulit dan tujuan perawatan Anda. Jenis treatment yang tersedia mencakup facial, peeling, skin booster, hair treatment, hair removal, infus whitening, slimming, threadlift, filler, dan berbagai perawatan estetika lainnya. Pilihan treatment tidak harus ditentukan sendiri sejak awal. Jika Anda masih bingung memilih perawatan, konsultasi dengan dokter dapat membantu menentukan tindakan berdasarkan kondisi kulit, keluhan, dan hasil yang ingin dicapai.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>4. Berapa harga treatment di Cabang Palembang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Harga treatment di Sozo Skin Clinic Palembang dapat berbeda tergantung jenis treatment, area perawatan, produk atau teknologi yang digunakan, serta program atau promo yang sedang berlangsung. Karena itu, harga yang ditampilkan pada suatu periode belum tentu sama untuk semua treatment atau periode berikutnya. Sebagai gambaran, Sozo memiliki berbagai kategori treatment mulai dari facial dan peeling hingga treatment premium seperti skin booster. Beberapa treatment skin booster yang tercantum di situs resmi Sozo, misalnya, memiliki harga berbeda sesuai jenis produknya. Untuk mendapatkan harga terbaru di cabang Palembang, Anda dapat menghubungi tim Sozo sebelum melakukan reservasi.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>5. Apakah bisa konsultasi dengan dokter sebelum melakukan treatment?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Bisa, dan konsultasi dengan dokter merupakan bagian penting sebelum tindakan medis estetika dilakukan. Sozo menerapkan analisa kondisi kulit secara personal sebelum treatment sehingga perawatan dapat disesuaikan dengan kebutuhan masing-masing pasien. Hal ini penting karena dua orang dengan keluhan yang sama belum tentu membutuhkan treatment yang sama. Dokter dapat membantu mengevaluasi kondisi kulit dan memberikan rekomendasi perawatan berdasarkan tujuan, kondisi kulit, serta pertimbangan keamanan.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>6. Bagaimana cara booking treatment di Sozo?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Anda dapat melakukan reservasi dengan menghubungi tim Sozo Skin Clinic melalui WhatsApp resmi atau Website kami. Saat melakukan booking, Anda dapat menyampaikan keluhan atau tujuan perawatan, treatment yang ingin dilakukan jika sudah mengetahuinya, serta waktu kunjungan yang diinginkan. Jika Anda belum mengetahui treatment yang sesuai, tidak perlu menentukan tindakan secara mandiri. Sampaikan masalah kulit atau tujuan perawatan kepada tim agar dapat diarahkan untuk melakukan konsultasi terlebih dahulu.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>7. Apakah harus menentukan treatment sebelum datang ke Sozo Skin Clinic Palembang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Tidak selalu. Jika Anda sudah mengetahui treatment yang ingin dilakukan, Anda dapat menyampaikannya ketika melakukan reservasi. Namun, jika masih bingung atau belum mengetahui treatment yang sesuai, Anda dapat memulai dengan konsultasi dan analisa kondisi kulit. Pendekatan ini lebih tepat karena kebutuhan setiap orang berbeda. Misalnya, masalah seperti jerawat, bekas jerawat, flek, pori-pori terlihat besar, kulit kusam, atau tanda penuaan dapat membutuhkan pendekatan treatment yang berbeda.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>8. Treatment apa yang cocok untuk kulit berjerawat di Sozo Skin Clinic Palembang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Treatment untuk kulit berjerawat sebaiknya ditentukan berdasarkan jenis, tingkat keparahan, kondisi kulit, dan penyebab jerawat. Karena itu, tidak semua orang dengan jerawat membutuhkan treatment yang sama. Di Sozo Skin Clinic, dokter dapat melakukan evaluasi terlebih dahulu untuk menentukan pendekatan perawatan yang sesuai. Treatment dapat diarahkan untuk membantu menangani masalah seperti jerawat aktif, produksi minyak berlebih, peradangan, hingga bekas jerawat setelah kondisi acne lebih terkontrol. Jika Anda sedang mengalami jerawat aktif, sebaiknya jangan langsung memilih treatment hanya berdasarkan nama treatment atau rekomendasi orang lain. Konsultasi terlebih dahulu membantu memastikan tindakan yang dipilih sesuai dengan kondisi kulit Anda.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>9. Apakah ada treatment untuk flek hitam dan bekas jerawat di Sozo Skin Clinic?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Ada berbagai pendekatan treatment yang dapat digunakan untuk membantu menangani flek, pigmentasi, bekas jerawat, dan perubahan warna kulit, tetapi pilihan treatment bergantung pada jenis dan kondisi masalah kulit. Dokter perlu membedakan terlebih dahulu apakah keluhan berupa bekas jerawat, hiperpigmentasi, melasma, atau jenis pigmentasi lainnya karena respons terhadap treatment dapat berbeda. Setelah kondisi kulit dievaluasi, dokter dapat menentukan treatment dan kombinasi perawatan yang lebih sesuai. Dengan pendekatan tersebut, perawatan tidak hanya berfokus pada membuat kulit terlihat lebih cerah, tetapi juga mempertimbangkan kondisi kulit secara keseluruhan.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>10. Apa treatment yang bisa membantu mencerahkan kulit?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sozo menyediakan berbagai pilihan perawatan yang ditujukan untuk membantu membuat kulit tampak lebih cerah, segar, dan sehat, mulai dari facial dan peeling hingga treatment dengan pendekatan skin booster. Namun, kulit kusam tidak selalu memiliki penyebab yang sama. Kondisi seperti penumpukan sel kulit mati, dehidrasi, paparan sinar matahari, pigmentasi, atau kondisi skin barrier dapat membutuhkan pendekatan berbeda. Karena itu, pilihan treatment sebaiknya disesuaikan dengan hasil konsultasi dan kondisi kulit.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 11 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>11. Apakah ada perawatan untuk pori-pori dan tekstur kulit?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sozo memiliki pilihan treatment yang dapat digunakan untuk membantu meningkatkan tekstur, kelembapan, dan tampilan pori-pori kulit, termasuk beberapa jenis skin booster dan treatment estetika lainnya. Namun, pori-pori yang terlihat besar dapat dipengaruhi oleh produksi sebum, elastisitas kulit, tekstur, serta kondisi bekas jerawat. Karena penyebabnya berbeda-beda, dokter dapat membantu menentukan treatment yang paling sesuai setelah melihat kondisi kulit secara langsung.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 12 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>12. Apakah Sozo Skin Clinic Palembang menyediakan laser wajah?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sozo menyediakan berbagai kategori perawatan estetika berbasis teknologi, dan pilihan treatment dapat disesuaikan dengan kebutuhan kulit. Laser atau teknologi berbasis energi tidak digunakan untuk semua masalah kulit dengan cara yang sama. Jenis perangkat, parameter tindakan, area yang dirawat, dan tujuan perawatan perlu disesuaikan dengan kondisi pasien. Karena itu, konsultasi terlebih dahulu penting untuk menentukan apakah laser merupakan pilihan yang tepat untuk kondisi kulit Anda.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 13 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>13. Apakah ada pilihan facial untuk perawatan wajah?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Facial merupakan salah satu kategori treatment yang tersedia di Sozo Skin Clinic. Facial dapat menjadi pilihan untuk membantu merawat kondisi kulit dan menjaga kebersihan serta kesehatan kulit. Jenis facial yang sesuai dapat berbeda berdasarkan kebutuhan, misalnya kulit kusam, berminyak, atau membutuhkan perawatan untuk menjaga kondisi kulit. Jika Anda belum mengetahui jenis facial yang cocok, Anda dapat berkonsultasi terlebih dahulu agar treatment disesuaikan dengan kondisi kulit.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 14 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>14. Apa saja pilihan skin booster yang tersedia?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Ya. Sozo menyediakan berbagai pilihan skin booster, termasuk beberapa produk dan formula yang ditujukan untuk kebutuhan seperti hidrasi, skin rejuvenation, pigmentasi, tekstur, dan tanda penuaan. Jenis skin booster tidak semuanya memiliki fungsi yang sama. Sebagai contoh, produk yang berfokus pada hidrasi belum tentu menjadi pilihan utama untuk seseorang yang memiliki masalah pigmentasi atau tekstur. Karena itu, konsultasi dokter tetap penting sebelum menentukan produk yang akan digunakan.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 15 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>15. Apakah tersedia Botox dan filler di Sozo Skin Clinic Palembang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sozo menyediakan kategori treatment estetika seperti filler dan threadlift, serta berbagai treatment injectable sesuai layanan yang tersedia. Botox dan filler merupakan tindakan yang memiliki tujuan berbeda. Botox umumnya digunakan untuk memengaruhi aktivitas otot tertentu, sedangkan filler digunakan untuk memberikan volume atau memperbaiki kontur pada area tertentu. Keduanya sebaiknya dilakukan setelah konsultasi untuk menentukan indikasi, area, produk, serta jumlah yang sesuai. Untuk memastikan ketersediaan produk dan layanan Botox atau filler di cabang Palembang pada saat kunjungan, Anda dapat menghubungi tim Sozo terlebih dahulu.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 16 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>16. Apakah Sozo Skin Clinic Palembang memiliki treatment untuk rambut rontok?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Tentu. Sozo memiliki kategori hair treatment yang ditujukan untuk berbagai kebutuhan perawatan rambut dan kulit kepala. Jika keluhan utama Anda adalah rambut rontok, rambut menipis, atau pertumbuhan rambut yang kurang optimal, sebaiknya kondisi rambut dan kulit kepala dievaluasi terlebih dahulu. Penyebab kerontokan dapat berbeda pada setiap orang sehingga jenis treatment, frekuensi, dan kombinasi perawatan juga dapat berbeda.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 17 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>17. Apakah pria juga bisa melakukan treatment di sini?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Tentu. Treatment di klinik kecantikan tidak terbatas untuk perempuan. Pria juga dapat melakukan perawatan kulit, rambut, maupun estetika sesuai kebutuhan. Kebutuhan perawatan pria dapat mencakup masalah seperti jerawat, kulit berminyak, bekas jerawat, pori-pori, rambut rontok, hingga perawatan untuk menjaga kesehatan dan penampilan kulit. Treatment tetap disesuaikan dengan kondisi masing-masing individu melalui konsultasi.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 18 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>18. Apakah treatment di Sozo Skin Clinic Palembang aman untuk semua jenis kulit?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Keamanan treatment bergantung pada jenis tindakan, kondisi kulit, riwayat pasien, serta protokol yang digunakan. Sozo menyatakan bahwa perawatan dilakukan dengan pengawasan dokter dan menggunakan produk aktif yang telah terdaftar BPOM serta teknologi dengan sertifikasi yang relevan. Meskipun demikian, tidak berarti setiap treatment cocok untuk semua orang. Konsultasi sebelum tindakan tetap diperlukan untuk menilai kondisi kulit dan menentukan prosedur yang sesuai. Informasikan juga kepada dokter jika Anda memiliki kondisi khusus, sedang menggunakan produk atau obat tertentu, atau baru menjalani prosedur kulit lainnya.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 19 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>19. Apakah setelah treatment di Sozo Skin Clinic Palembang harus menjalani downtime?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Downtime bergantung pada jenis treatment yang dilakukan. Beberapa perawatan bersifat non-invasif dan umumnya memungkinkan pasien kembali beraktivitas setelah treatment, sedangkan prosedur tertentu dapat menyebabkan kemerahan, bengkak ringan, pengelupasan, atau perubahan sementara lainnya. Karena setiap treatment memiliki karakteristik berbeda, dokter akan memberikan informasi mengenai efek setelah tindakan dan perawatan yang perlu dilakukan setelah treatment. Jika Anda memiliki aktivitas penting dalam waktu dekat, sampaikan kepada dokter agar pilihan treatment dapat dipertimbangkan dengan lebih tepat.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 20 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>20. Mengapa sebaiknya konsultasi terlebih dahulu sebelum memilih treatment?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Konsultasi membantu memastikan treatment yang dipilih benar-benar sesuai dengan kondisi kulit dan tujuan perawatan, bukan hanya berdasarkan tren atau rekomendasi orang lain. Misalnya, keluhan "kulit kusam" dapat berkaitan dengan dehidrasi, pigmentasi, penumpukan sel kulit mati, atau faktor lainnya. Begitu juga dengan bekas jerawat dan pori-pori yang membutuhkan pendekatan berbeda tergantung kondisi kulit. Sozo menerapkan analisa personal sebelum tindakan untuk membantu dokter menentukan protokol perawatan yang sesuai. Dengan demikian, Anda tidak harus datang dengan keputusan treatment yang sudah final. Anda dapat menyampaikan masalah dan tujuan yang ingin dicapai, kemudian mendiskusikan pilihan perawatan yang paling sesuai bersama dokter.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ SCHEMA MARKUP ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Sozo Skin Clinic Palembang ada di mana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sozo Skin Clinic Palembang berlokasi di Jl. Jend. Basuki Rachmat No.12 B-C, Pahlawan, Kecamatan Kemuning, Kota Palembang, Sumatera Selatan 30128. Lokasi ini dapat menjadi pilihan bagi Anda yang sedang mencari klinik kecantikan di Palembang untuk melakukan perawatan kulit, wajah, rambut, maupun perawatan estetika lainnya. Sebelum datang, Anda dapat melihat petunjuk lokasi melalui Google Maps atau menghubungi tim Sozo Skin Clinic untuk memastikan informasi lokasi dan akses terbaru."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sozo Skin Clinic Palembang buka jam berapa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sozo Skin Clinic Palembang saat ini beroperasi setiap hari pukul 09.00–20.00 WIB. Jika Anda memiliki jadwal tertentu, terutama untuk treatment yang memerlukan konsultasi atau tindakan dokter, sebaiknya melakukan reservasi terlebih dahulu agar waktu kedatangan dapat disesuaikan dengan ketersediaan dokter dan treatment yang dibutuhkan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa saja treatment yang tersedia di Sozo Skin Clinic Palembang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sozo Skin Clinic menyediakan berbagai pilihan perawatan yang dapat disesuaikan dengan kebutuhan kulit dan tujuan perawatan Anda. Jenis treatment yang tersedia mencakup facial, peeling, skin booster, hair treatment, hair removal, infus whitening, slimming, threadlift, filler, dan berbagai perawatan estetika lainnya. Pilihan treatment tidak harus ditentukan sendiri sejak awal. Jika Anda masih bingung memilih perawatan, konsultasi dengan dokter dapat membantu menentukan tindakan berdasarkan kondisi kulit, keluhan, dan hasil yang ingin dicapai."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa harga treatment di Cabang Palembang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Harga treatment di Sozo Skin Clinic Palembang dapat berbeda tergantung jenis treatment, area perawatan, produk atau teknologi yang digunakan, serta program atau promo yang sedang berlangsung. Karena itu, harga yang ditampilkan pada suatu periode belum tentu sama untuk semua treatment atau periode berikutnya. Sebagai gambaran, Sozo memiliki berbagai kategori treatment mulai dari facial dan peeling hingga treatment premium seperti skin booster. Beberapa treatment skin booster yang tercantum di situs resmi Sozo, misalnya, memiliki harga berbeda sesuai jenis produknya. Untuk mendapatkan harga terbaru di cabang Palembang, Anda dapat menghubungi tim Sozo sebelum melakukan reservasi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah bisa konsultasi dengan dokter sebelum melakukan treatment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa, dan konsultasi dengan dokter merupakan bagian penting sebelum tindakan medis estetika dilakukan. Sozo menerapkan analisa kondisi kulit secara personal sebelum treatment sehingga perawatan dapat disesuaikan dengan kebutuhan masing-masing pasien. Hal ini penting karena dua orang dengan keluhan yang sama belum tentu membutuhkan treatment yang sama. Dokter dapat membantu mengevaluasi kondisi kulit dan memberikan rekomendasi perawatan berdasarkan tujuan, kondisi kulit, serta pertimbangan keamanan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara booking treatment di Sozo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anda dapat melakukan reservasi dengan menghubungi tim Sozo Skin Clinic melalui WhatsApp resmi atau Website kami. Saat melakukan booking, Anda dapat menyampaikan keluhan atau tujuan perawatan, treatment yang ingin dilakukan jika sudah mengetahuinya, serta waktu kunjungan yang diinginkan. Jika Anda belum mengetahui treatment yang sesuai, tidak perlu menentukan tindakan secara mandiri. Sampaikan masalah kulit atau tujuan perawatan kepada tim agar dapat diarahkan untuk melakukan konsultasi terlebih dahulu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah harus menentukan treatment sebelum datang ke Sozo Skin Clinic Palembang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak selalu. Jika Anda sudah mengetahui treatment yang ingin dilakukan, Anda dapat menyampaikannya ketika melakukan reservasi. Namun, jika masih bingung atau belum mengetahui treatment yang sesuai, Anda dapat memulai dengan konsultasi dan analisa kondisi kulit. Pendekatan ini lebih tepat karena kebutuhan setiap orang berbeda. Misalnya, masalah seperti jerawat, bekas jerawat, flek, pori-pori terlihat besar, kulit kusam, atau tanda penuaan dapat membutuhkan pendekatan treatment yang berbeda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Treatment apa yang cocok untuk kulit berjerawat di Sozo Skin Clinic Palembang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treatment untuk kulit berjerawat sebaiknya ditentukan berdasarkan jenis, tingkat keparahan, kondisi kulit, dan penyebab jerawat. Karena itu, tidak semua orang dengan jerawat membutuhkan treatment yang sama. Di Sozo Skin Clinic, dokter dapat melakukan evaluasi terlebih dahulu untuk menentukan pendekatan perawatan yang sesuai. Treatment dapat diarahkan untuk membantu menangani masalah seperti jerawat aktif, produksi minyak berlebih, peradangan, hingga bekas jerawat setelah kondisi acne lebih terkontrol. Jika Anda sedang mengalami jerawat aktif, sebaiknya jangan langsung memilih treatment hanya berdasarkan nama treatment atau rekomendasi orang lain. Konsultasi terlebih dahulu membantu memastikan tindakan yang dipilih sesuai dengan kondisi kulit Anda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah ada treatment untuk flek hitam dan bekas jerawat di Sozo Skin Clinic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ada berbagai pendekatan treatment yang dapat digunakan untuk membantu menangani flek, pigmentasi, bekas jerawat, dan perubahan warna kulit, tetapi pilihan treatment bergantung pada jenis dan kondisi masalah kulit. Dokter perlu membedakan terlebih dahulu apakah keluhan berupa bekas jerawat, hiperpigmentasi, melasma, atau jenis pigmentasi lainnya karena respons terhadap treatment dapat berbeda. Setelah kondisi kulit dievaluasi, dokter dapat menentukan treatment dan kombinasi perawatan yang lebih sesuai. Dengan pendekatan tersebut, perawatan tidak hanya berfokus pada membuat kulit terlihat lebih cerah, tetapi juga mempertimbangkan kondisi kulit secara keseluruhan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa treatment yang bisa membantu mencerahkan kulit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sozo menyediakan berbagai pilihan perawatan yang ditujukan untuk membantu membuat kulit tampak lebih cerah, segar, dan sehat, mulai dari facial dan peeling hingga treatment dengan pendekatan skin booster. Namun, kulit kusam tidak selalu memiliki penyebab yang sama. Kondisi seperti penumpukan sel kulit mati, dehidrasi, paparan sinar matahari, pigmentasi, atau kondisi skin barrier dapat membutuhkan pendekatan berbeda. Karena itu, pilihan treatment sebaiknya disesuaikan dengan hasil konsultasi dan kondisi kulit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah ada perawatan untuk pori-pori dan tekstur kulit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sozo memiliki pilihan treatment yang dapat digunakan untuk membantu meningkatkan tekstur, kelembapan, dan tampilan pori-pori kulit, termasuk beberapa jenis skin booster dan treatment estetika lainnya. Namun, pori-pori yang terlihat besar dapat dipengaruhi oleh produksi sebum, elastisitas kulit, tekstur, serta kondisi bekas jerawat. Karena penyebabnya berbeda-beda, dokter dapat membantu menentukan treatment yang paling sesuai setelah melihat kondisi kulit secara langsung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah Sozo Skin Clinic Palembang menyediakan laser wajah?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sozo menyediakan berbagai kategori perawatan estetika berbasis teknologi, dan pilihan treatment dapat disesuaikan dengan kebutuhan kulit. Laser atau teknologi berbasis energi tidak digunakan untuk semua masalah kulit dengan cara yang sama. Jenis perangkat, parameter tindakan, area yang dirawat, dan tujuan perawatan perlu disesuaikan dengan kondisi pasien. Karena itu, konsultasi terlebih dahulu penting untuk menentukan apakah laser merupakan pilihan yang tepat untuk kondisi kulit Anda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah ada pilihan facial untuk perawatan wajah?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Facial merupakan salah satu kategori treatment yang tersedia di Sozo Skin Clinic. Facial dapat menjadi pilihan untuk membantu merawat kondisi kulit dan menjaga kebersihan serta kesehatan kulit. Jenis facial yang sesuai dapat berbeda berdasarkan kebutuhan, misalnya kulit kusam, berminyak, atau membutuhkan perawatan untuk menjaga kondisi kulit. Jika Anda belum mengetahui jenis facial yang cocok, Anda dapat berkonsultasi terlebih dahulu agar treatment disesuaikan dengan kondisi kulit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa saja pilihan skin booster yang tersedia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya. Sozo menyediakan berbagai pilihan skin booster, termasuk beberapa produk dan formula yang ditujukan untuk kebutuhan seperti hidrasi, skin rejuvenation, pigmentasi, tekstur, dan tanda penuaan. Jenis skin booster tidak semuanya memiliki fungsi yang sama. Sebagai contoh, produk yang berfokus pada hidrasi belum tentu menjadi pilihan utama untuk seseorang yang memiliki masalah pigmentasi atau tekstur. Karena itu, konsultasi dokter tetap penting sebelum menentukan produk yang akan digunakan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah tersedia Botox dan filler di Sozo Skin Clinic Palembang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sozo menyediakan kategori treatment estetika seperti filler dan threadlift, serta berbagai treatment injectable sesuai layanan yang tersedia. Botox dan filler merupakan tindakan yang memiliki tujuan berbeda. Botox umumnya digunakan untuk memengaruhi aktivitas otot tertentu, sedangkan filler digunakan untuk memberikan volume atau memperbaiki kontur pada area tertentu. Keduanya sebaiknya dilakukan setelah konsultasi untuk menentukan indikasi, area, produk, serta jumlah yang sesuai. Untuk memastikan ketersediaan produk dan layanan Botox atau filler di cabang Palembang pada saat kunjungan, Anda dapat menghubungi tim Sozo terlebih dahulu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah Sozo Skin Clinic Palembang memiliki treatment untuk rambut rontok?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tentu. Sozo memiliki kategori hair treatment yang ditujukan untuk berbagai kebutuhan perawatan rambut dan kulit kepala. Jika keluhan utama Anda adalah rambut rontok, rambut menipis, atau pertumbuhan rambut yang kurang optimal, sebaiknya kondisi rambut dan kulit kepala dievaluasi terlebih dahulu. Penyebab kerontokan dapat berbeda pada setiap orang sehingga jenis treatment, frekuensi, dan kombinasi perawatan juga dapat berbeda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah pria juga bisa melakukan treatment di sini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tentu. Treatment di klinik kecantikan tidak terbatas untuk perempuan. Pria juga dapat melakukan perawatan kulit, rambut, maupun estetika sesuai kebutuhan. Kebutuhan perawatan pria dapat mencakup masalah seperti jerawat, kulit berminyak, bekas jerawat, pori-pori, rambut rontok, hingga perawatan untuk menjaga kesehatan dan penampilan kulit. Treatment tetap disesuaikan dengan kondisi masing-masing individu melalui konsultasi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah treatment di Sozo Skin Clinic Palembang aman untuk semua jenis kulit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keamanan treatment bergantung pada jenis tindakan, kondisi kulit, riwayat pasien, serta protokol yang digunakan. Sozo menyatakan bahwa perawatan dilakukan dengan pengawasan dokter dan menggunakan produk aktif yang telah terdaftar BPOM serta teknologi dengan sertifikasi yang relevan. Meskipun demikian, tidak berarti setiap treatment cocok untuk semua orang. Konsultasi sebelum tindakan tetap diperlukan untuk menilai kondisi kulit dan menentukan prosedur yang sesuai. Informasikan juga kepada dokter jika Anda memiliki kondisi khusus, sedang menggunakan produk atau obat tertentu, atau baru menjalani prosedur kulit lainnya."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah setelah treatment di Sozo Skin Clinic Palembang harus menjalani downtime?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Downtime bergantung pada jenis treatment yang dilakukan. Beberapa perawatan bersifat non-invasif dan umumnya memungkinkan pasien kembali beraktivitas setelah treatment, sedangkan prosedur tertentu dapat menyebabkan kemerahan, bengkak ringan, pengelupasan, atau perubahan sementara lainnya. Karena setiap treatment memiliki karakteristik berbeda, dokter akan memberikan informasi mengenai efek setelah tindakan dan perawatan yang perlu dilakukan setelah treatment. Jika Anda memiliki aktivitas penting dalam waktu dekat, sampaikan kepada dokter agar pilihan treatment dapat dipertimbangkan dengan lebih tepat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mengapa sebaiknya konsultasi terlebih dahulu sebelum memilih treatment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Konsultasi membantu memastikan treatment yang dipilih benar-benar sesuai dengan kondisi kulit dan tujuan perawatan, bukan hanya berdasarkan tren atau rekomendasi orang lain. Misalnya, keluhan \"kulit kusam\" dapat berkaitan dengan dehidrasi, pigmentasi, penumpukan sel kulit mati, atau faktor lainnya. Begitu juga dengan bekas jerawat dan pori-pori yang membutuhkan pendekatan berbeda tergantung kondisi kulit. Sozo menerapkan analisa personal sebelum tindakan untuk membantu dokter menentukan protokol perawatan yang sesuai. Dengan demikian, Anda tidak harus datang dengan keputusan treatment yang sudah final. Anda dapat menyampaikan masalah dan tujuan yang ingin dicapai, kemudian mendiskusikan pilihan perawatan yang paling sesuai bersama dokter."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ==================== JAVASCRIPT CONTROLLER WITH TRACKING ==================== -->
+<script>
+(function() {
+  const MASTER_WA_URL = "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Palembang%20%5Bsrc%3AORG-PLB%5D";
+
+  const branchData = {
+    name: "Sozo Skin Clinic - Palembang",
+    rating: "★ 4.9 (1.891 ulasan Google)",
+    address: "Jl. Jend. Basuki Rachmat No.12 B-C, Pahlawan, Kec. Kemuning, Kota Palembang, Sumatera Selatan 30128",
+    mapSrc: "https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Palembang&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    mapLink: "https://maps.google.com/?cid=8445936451737769369",
+    gallery: [
+      "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-1-scaled.webp",
+      "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-muda-2-scaled.webp",
+      "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-3-scaled.webp",
+      "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-4-scaled.webp"
+    ]
+  };
+
+  // ==========================================
+  // UNIFIED TRACKING HELPER (GTM & Clarity)
+  // ==========================================
+  function trackEvent(eventName, params = {}) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: eventName,
+      ...params
+    });
+
+    if (typeof window.clarity === "function") {
+      window.clarity("event", eventName);
+      Object.keys(params).forEach(k => {
+        if (params[k] !== undefined && params[k] !== null && params[k] !== "") {
+          window.clarity("set", k, String(params[k]));
+        }
+      });
+    }
+  }
+
+  function getPerView() {
+    const w = window.innerWidth;
+    if (w <= 768) return 1;
+    if (w <= 992) return 2;
+    return 3;
+  }
+
+  function initGenericSlider(trackId, prevId, nextId, dotsId, containerId, autoInterval) {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const dotsContainer = document.getElementById(dotsId);
+    const container = document.getElementById(containerId);
+
+    if (!track) return null;
+
+    let currentIndex = 0;
+    let autoTimer = null;
+
+    function getSlides() {
+      return track.children;
+    }
+
+    function buildDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      const total = getSlides().length;
+      const perView = getPerView();
+      const count = Math.max(1, total - perView + 1);
+
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'sozo-slider-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dot.addEventListener('click', () => {
+          goTo(i);
+          resetAuto();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function goTo(index) {
+      const slides = getSlides();
+      const total = slides.length;
+      if (total === 0) return;
+
+      const perView = getPerView();
+      const maxIndex = Math.max(0, total - perView);
+
+      if (index < 0) index = 0;
+      if (index > maxIndex) index = maxIndex;
+      currentIndex = index;
+
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = 16;
+      const move = (slideWidth + gap) * currentIndex;
+
+      track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+      track.style.transform = `translateX(-${move}px)`;
+
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.sozo-slider-dot');
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === currentIndex));
+      }
+    }
+
+    function next() {
+      const total = getSlides().length;
+      const maxIndex = Math.max(0, total - getPerView());
+      if (currentIndex >= maxIndex) goTo(0);
+      else goTo(currentIndex + 1);
+    }
+
+    function prev() {
+      const total = getSlides().length;
+      const maxIndex = Math.max(0, total - getPerView());
+      if (currentIndex <= 0) goTo(maxIndex);
+      else goTo(currentIndex - 1);
+    }
+
+    function startAuto() {
+      if (autoInterval && !autoTimer) {
+        autoTimer = setInterval(next, autoInterval);
+      }
+    }
+
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function resetAuto() {
+      stopAuto();
+      startAuto();
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        next();
+        resetAuto();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prev();
+        resetAuto();
+      });
+    }
+
+    if (container) {
+      container.addEventListener('mouseenter', stopAuto);
+      container.addEventListener('mouseleave', startAuto);
+
+      let startX = 0;
+      let startY = 0;
+      let currentX = 0;
+      let isTouching = false;
+      let isHorizontal = null;
+
+      container.addEventListener('touchstart', (e) => {
+        stopAuto();
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        currentX = startX;
+        isTouching = true;
+        isHorizontal = null;
+      }, { passive: true });
+
+      container.addEventListener('touchmove', (e) => {
+        if (!isTouching) return;
+        const touch = e.touches[0];
+        currentX = touch.clientX;
+        const diffX = currentX - startX;
+        const diffY = touch.clientY - startY;
+
+        if (isHorizontal === null) {
+          if (Math.abs(diffX) > 6 || Math.abs(diffY) > 6) {
+            isHorizontal = Math.abs(diffX) > Math.abs(diffY);
+          }
+        }
+
+        if (isHorizontal) {
+          track.style.transition = 'none';
+          const slides = getSlides();
+          if (slides.length > 0) {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            const gap = 16;
+            const baseMove = (slideWidth + gap) * currentIndex;
+            track.style.transform = `translateX(${-baseMove + diffX}px)`;
+          }
+        }
+      }, { passive: true });
+
+      function handleTouchEnd() {
+        if (!isTouching) return;
+        isTouching = false;
+        track.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)';
+
+        const diffX = startX - currentX;
+        if (isHorizontal && Math.abs(diffX) > 35) {
+          if (diffX > 0) next();
+          else prev();
+        } else {
+          goTo(currentIndex);
+        }
+        resetAuto();
+      }
+
+      container.addEventListener('touchend', handleTouchEnd, { passive: true });
+      container.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+    }
+
+    buildDots();
+    goTo(0);
+    startAuto();
+
+    return {
+      refresh: () => {
+        buildDots();
+        goTo(currentIndex);
+      },
+      goTo: goTo
+    };
+  }
+
+  let gallerySliderTrack = document.getElementById('sozoSliderTrack');
+  let ambienceSliderCtrl = null;
+
+  function renderAmbience(images) {
+    if (!gallerySliderTrack) return;
+    gallerySliderTrack.innerHTML = images.map(img => `
+      <div class="sozo-slider-slide">
+        <img src="${img}" alt="Suasana Sozo Skin Clinic Palembang" loading="lazy">
+      </div>
+    `).join('');
+
+    ambienceSliderCtrl = initGenericSlider(
+      'sozoSliderTrack',
+      'sozoSliderPrev',
+      'sozoSliderNext',
+      'sozoSliderDots',
+      'sozoSliderContainer',
+      4500
+    );
+  }
+
+  function setupDirections() {
+    document.querySelectorAll('.sozo-direction-item').forEach(item => {
+      const btn = item.querySelector('.sozo-direction-toggle');
+      const ans = item.querySelector('.sozo-direction-content');
+
+      btn.addEventListener('click', () => {
+        const active = item.classList.contains('active');
+        document.querySelectorAll('.sozo-direction-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            other.querySelector('.sozo-direction-toggle').setAttribute('aria-expanded', 'false');
+            other.querySelector('.sozo-direction-content').style.maxHeight = null;
+          }
+        });
+
+        if (!active) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          ans.style.maxHeight = ans.scrollHeight + "px";
+          trackEvent("directions_toggle", {
+            direction_target: btn.textContent.trim(),
+            city: "Palembang"
+          });
+        } else {
+          item.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+          ans.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  function setupFaq() {
+    document.querySelectorAll('.sozo-faq-item').forEach(item => {
+      const btn = item.querySelector('.sozo-faq-question');
+      const ans = item.querySelector('.sozo-faq-answer');
+
+      btn.addEventListener('click', () => {
+        const active = item.classList.contains('active');
+        document.querySelectorAll('.sozo-faq-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            other.querySelector('.sozo-faq-question').setAttribute('aria-expanded', 'false');
+            other.querySelector('.sozo-faq-answer').style.maxHeight = null;
+          }
+        });
+
+        if (!active) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          ans.style.maxHeight = ans.scrollHeight + "px";
+          trackEvent("faq_toggle", {
+            faq_question: btn.textContent.trim(),
+            city: "Palembang"
+          });
+        } else {
+          item.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+          ans.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  function setupCtaTracking() {
+    const waBtn = document.getElementById('sozoWaBtn');
+    if (waBtn) {
+      waBtn.addEventListener('click', () => {
+        trackEvent("branch_wa_click", {
+          clicked_branch_name: branchData.name,
+          clicked_branch_province: "Sumatera Selatan"
+        });
+      });
+    }
+
+    const mapBtn = document.getElementById('sozoMapBtn');
+    if (mapBtn) {
+      mapBtn.addEventListener('click', () => {
+        trackEvent("branch_maps_click", {
+          clicked_branch_name: branchData.name,
+          clicked_branch_province: "Sumatera Selatan"
+        });
+      });
+    }
+
+    document.querySelectorAll('.sozo-custom-cta-btn, .sozo-promo-btn, .sozo-category-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        trackEvent("branch_wa_click", {
+          clicked_branch_name: "Sozo Skin Clinic - Palembang (Promo Banner)",
+          clicked_branch_province: "Sumatera Selatan"
+        });
+      });
+    });
+  }
+
+  let promoSliderCtrl = null;
+  let baSliderCtrl = null;
+  let quoteSliderCtrl = null;
+
+  function initSliders() {
+    promoSliderCtrl = initGenericSlider(
+      'sozoPromoSliderTrack',
+      'sozoPromoPrev',
+      'sozoPromoNext',
+      'sozoPromoDots',
+      'sozoPromoSliderContainer',
+      5500
+    );
+
+    baSliderCtrl = initGenericSlider(
+      'sozoBaSliderTrack',
+      'sozoBaPrev',
+      'sozoBaNext',
+      'sozoBaDots',
+      'sozoBaSliderContainer',
+      5000
+    );
+
+    quoteSliderCtrl = initGenericSlider(
+      'sozoQuoteSliderTrack',
+      'sozoQuotePrev',
+      'sozoQuoteNext',
+      'sozoQuoteDots',
+      'sozoQuoteSliderContainer',
+      6000
+    );
+  }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (ambienceSliderCtrl) ambienceSliderCtrl.refresh();
+      if (promoSliderCtrl) promoSliderCtrl.refresh();
+      if (baSliderCtrl) baSliderCtrl.refresh();
+      if (quoteSliderCtrl) quoteSliderCtrl.refresh();
+    }, 200);
+  });
+
+  function init() {
+    renderAmbience(branchData.gallery);
+    setupDirections();
+    setupFaq();
+    setupCtaTracking();
+    initSliders();
+    trackEvent("branch_view", {
+      branch_name: branchData.name,
+      branch_province: "Sumatera Selatan"
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
