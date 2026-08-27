@@ -1,252 +1,319 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- SOZO SKIN CLINIC — Hero Section with Integrated Promo Card -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-  /* ==========================================================
-     CSS SKU / PRICING SECTION
-     ========================================================== */
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
-  .sozo-price-section { 
-    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-    background: #ffffff; 
-    padding: 80px 20px; 
-    width: 100%; 
-    box-sizing: border-box;
+  /* ================= 1. Global & Hero Container ================= */
+  .sozo-rewind-hero {
+    --sozo-navy: #1A2080;
+    --sozo-blue-accent: #2563EB;
+    font-family: 'Poppins', sans-serif !important;
+    position: relative !important;
+    width: 100% !important;
+    background: linear-gradient(135deg, #EFF5FF 0%, #FFFFFF 45%, #E6EEFA 100%) !important;
+    overflow: hidden !important;
+    -webkit-font-smoothing: antialiased !important;
+    box-sizing: border-box !important;
   }
-  .sozo-price-section * { box-sizing: border-box; }
   
-  .sozo-price-header { text-align: center; max-width: 700px; margin: 0 auto 50px auto; }
-  .sozo-price-header h2 { font-size: clamp(28px, 4vw, 38px); color: #1A2080; margin: 0 0 15px 0; font-weight: 800; line-height: 1.2; }
-  .sozo-price-header p { color: #64748b; font-size: 17px; margin: 0; }
-
-  /* Grid: 4 kolom desktop, 2 kolom tablet */
-  .sozo-price-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
+  .sozo-rewind-hero, 
+  .sozo-rewind-hero * {
+    box-sizing: border-box !important;
   }
 
-  .sozo-sku-card {
-    background: #ffffff;
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-  .sozo-sku-card:hover {
-    box-shadow: 0 12px 24px rgba(26, 32, 128, 0.1);
-    transform: translateY(-4px);
-    border-color: #1A2080;
+  .sozo-rewind-hero__inner {
+    position: relative !important;
+    max-width: 1320px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    min-height: 520px !important;
+    padding: 40px 5% !important;
   }
 
-  .sozo-card-img-wrapper { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #f0f4f8; }
-  .sozo-card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
-  .sozo-sku-card:hover .sozo-card-img-wrapper img { transform: scale(1.05); }
-
-  .sozo-card-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-  .sozo-card-body { flex-grow: 1; display: flex; flex-direction: column; }
-  .sozo-card-body h3 { font-size: 18px; font-weight: 700; color: #1A2080; margin: 0 0 8px 0; line-height: 1.3; }
-  
-  .sozo-desc {
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 0 0 16px 0;
-    color: #475569;
-    flex-grow: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  .sozo-rewind-hero__blob {
+    position: absolute !important;
+    top: 50% !important;
+    right: 2% !important;
+    width: 520px !important;
+    height: 520px !important;
+    max-width: 90vw !important;
+    transform: translateY(-50%) !important;
+    background: radial-gradient(circle at 40% 40%, rgba(234, 237, 250, 0.9) 0%, rgba(234, 237, 250, 0) 70%) !important;
+    border-radius: 50% !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
   }
 
-  .sozo-duration {
-    font-size: 13px;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #f1f5f9;
-    padding: 4px 10px;
-    border-radius: 6px;
-    width: fit-content;
+  /* Visual Desktop */
+  .sozo-rewind-hero__visual {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;                         
+    width: 58% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+    background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/SKIN-Landing-page-experiment-Peeling-Medical-ed-Main-no-text.webp') !important;
+    background-repeat: no-repeat !important;
+    background-position: right bottom !important;  
+    background-size: cover !important;             
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%), 
+                        linear-gradient(to top, transparent 0%, black 8%) !important;
+    -webkit-mask-composite: source-in !important;
+    mask-image: linear-gradient(to right, transparent 0%, black 18%), 
+                linear-gradient(to top, transparent 0%, black 8%) !important;
+    mask-composite: intersect !important;
   }
 
-  .sozo-price-wrapper { margin-bottom: 14px; min-height: 42px; display: flex; flex-direction: column; justify-content: flex-end; }
-  .sozo-price-label { font-size: 12px; color: #64748B; font-weight: 500; margin-bottom: 2px; }
-  .sozo-price-main { font-size: 18px; font-weight: 800; color: #1A2080; }
-
-  .sozo-btn-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-height: 40px;
-    justify-content: flex-start;
+  .sozo-rewind-hero__content {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 55% !important;
+    min-width: 280px !important;
+    text-align: left !important;
   }
 
-  .sozo-btn-primary {
-    display: inline-flex; align-items: center; justify-content: center; padding: 10px; border-radius: 8px;
-    font-weight: 700; font-size: 13px; text-decoration: none; transition: all 0.3s ease; width: 100%;
-    background-color: #1A2080; color: #ffffff !important; border: 1px solid #1A2080;
-    gap: 8px;
+  .sozo-hero-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    background-color: #D9C7B1 !important;
+    color: var(--sozo-navy) !important;
+    padding: 7px 18px !important;
+    border-radius: 50px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px !important;
+    text-transform: capitalize !important;
+    margin-bottom: 22px !important;
+    border: 1px solid rgba(26, 32, 128, 0.15) !important;
   }
-  .sozo-btn-primary i { font-size: 15px; }
-  .sozo-btn-primary:hover { background-color: #262d9c; border-color: #262d9c; }
 
-  /* RESPONSIVE SKU */
-  @media (max-width: 1024px) {
-    .sozo-price-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Title dengan margin bawah yang jelas */
+  .sozo-rewind-hero__title {
+    font-family: 'Poppins', sans-serif !important;
+    color: var(--sozo-navy) !important;   
+    font-weight: 800 !important; 
+    font-size: clamp(24px, 3.2vw, 38px) !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.01em !important;
+    margin: 0 0 22px 0 !important;
   }
 
-  @media (max-width: 767px) {
-    .sozo-price-section { padding: 40px 12px; }
-    .sozo-price-header h2 { font-size: 24px; margin-bottom: 8px; }
-    .sozo-price-header p { font-size: 14px; }
-    .sozo-price-header { margin-bottom: 30px; }
+  .sozo-highlight-underline {
+    text-decoration: underline !important;
+    text-decoration-color: var(--sozo-blue-accent) !important;
+    text-decoration-thickness: 4px !important;
+    text-underline-offset: 8px !important;
+    text-decoration-skip-ink: none !important;
+  }
 
-    /* UBAH JADI LAYOUT 2 KOLOM E-COMMERCE */
-    .sozo-price-grid { 
-      grid-template-columns: repeat(2, 1fr); 
-      gap: 12px; 
+  /* Description berjarak aman */
+  .sozo-rewind-hero__desc {
+    color: #4b5563 !important;
+    font-size: clamp(14px, 1.1vw, 16px) !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
+    margin: 0 0 24px 0 !important;
+  }
+
+  /* ================= 2. Integrated Promo Card ================= */
+  .sozo-promo-card-inline {
+    margin-top: 0 !important;
+    background: #ffffff !important;
+    border-radius: 18px !important;
+    padding: 10px 16px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    box-shadow: 0 10px 28px rgba(26, 32, 128, 0.1) !important;
+    border: 1px solid rgba(26, 32, 128, 0.08) !important;
+    max-width: 500px !important;
+    width: 100% !important;
+  }
+
+  .sozo-badge-flag {
+    flex: 0 0 auto !important;
+    background-color: #EBF2FE !important;
+    color: #1A2080 !important;
+    font-weight: 800 !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    padding: 10px 16px !important;
+    text-align: center !important;
+    border-radius: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%) !important;
+    padding-right: 20px !important;
+  }
+
+  .sozo-text-middle {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 0 4px !important;
+  }
+
+  .sozo-label-small {
+    font-size: 12.5px !important;
+    color: #4b5563 !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .sozo-price-large {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+    margin: 2px 0 0 0 !important;
+    line-height: 1.1 !important;
+  }
+
+  .sozo-action-wrapper {
+    flex: 0 0 140px !important;
+    width: 140px !important;
+    max-width: 140px !important;
+  }
+
+  .sozo-action-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 44px !important;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(26, 32, 128, 0.25) !important;
+    border: none !important;
+  }
+
+  .sozo-action-btn:hover {
+    background-color: #2563EB !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35) !important;
+  }
+
+  .sozo-rewind-hero__mobile {
+    display: none !important;
+  }
+
+  /* ================= 3. Mobile Responsiveness ================= */
+  @media (max-width: 768px) {
+    .sozo-rewind-hero {
+      background: none !important;
+      min-height: 0 !important;
+      height: auto !important;
+      padding: 0 !important;
     }
-    
-    .sozo-sku-card { border-radius: 12px; }
-    .sozo-card-img-wrapper { aspect-ratio: 1 / 1; }
-    
-    .sozo-card-content { padding: 12px; }
-    .sozo-card-body h3 { font-size: 14px; margin-bottom: 4px; font-weight: 700; }
-    
-    /* Deskripsi & durasi disesuaikan agar tidak merusak tinggi card */
-    .sozo-desc { font-size: 11px; margin-bottom: 8px; -webkit-line-clamp: 2; }
-    .sozo-duration { font-size: 10px; padding: 2px 6px; margin-bottom: 8px; gap: 4px; }
-    
-    .sozo-price-wrapper { min-height: unset; margin-bottom: 10px; }
-    .sozo-price-label { font-size: 10px; }
-    .sozo-price-main { font-size: 14px; font-weight: 800; }
-    
-    .sozo-btn-primary { padding: 8px; font-size: 11px; border-radius: 6px; gap: 6px; }
-    .sozo-btn-primary i { font-size: 13px; }
+
+    .sozo-rewind-hero__inner,
+    .sozo-rewind-hero__blob,
+    .sozo-rewind-hero__visual {
+      display: none !important;
+    }
+
+    .sozo-rewind-hero__mobile {
+      display: block !important;
+      width: 100% !important;
+      line-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .sozo-rewind-hero__mobile a {
+      display: block !important;
+      width: 100% !important;
+      text-decoration: none !important;
+      line-height: 0 !important;
+    }
+
+    .sozo-rewind-hero__mobile img {
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      object-fit: cover !important;
+    }
   }
 </style>
 
-<section class="sozo-price-section">
-  <div class="sozo-price-header">
-    <h2>Pilih Solusi Derma Peel Sesuai Kebutuhan Anda</h2>
-    <p>Berbagai varian chemical peeling berkualitas klinis untuk target masalah kulit yang berbeda.</p>
-  </div>
-
-  <div class="sozo-price-grid">
+<div class="sozo-rewind-hero">
+  <div class="sozo-rewind-hero__inner">
+    <div class="sozo-rewind-hero__blob"></div>
     
-    <!-- Card 1 -->
-    <article class="sozo-sku-card">
-      <div class="sozo-card-img-wrapper">
-        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/glow-peel-treatment-scaled.webp" alt="Glow Peel" loading="lazy">
+    <div class="sozo-rewind-hero__content">
+      <!-- Badge -->
+      <div class="sozo-hero-badge">
+        Perawatan Wajah Ahli untuk Hasil Nyata
       </div>
-      <div class="sozo-card-content">
-        <div class="sozo-card-body">
-          <h3>Glow Peel</h3>
-          <p class="sozo-desc">Treatment estetik medis menggunakan cairan kimia khusus untuk memberikan efek lifting instan, kulit glow, mengurangi kerutan, and memperbaiki kulit secara umum.</p>
-          <div class="sozo-duration"><i class="fa-regular fa-clock"></i> 20 menit</div>
-        </div>
-        <div class="sozo-price-wrapper">
-          <span class="sozo-price-label">Mulai dari</span>
-          <span class="sozo-price-main">Rp 299.000</span>
-        </div>
-        <div class="sozo-btn-group">
-          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20peeling%20treatment%20[sumber:%20SEM-peeling%20treatment]" target="_blank" class="sozo-btn-primary"><i class="fa-brands fa-whatsapp"></i> Reservasi</a>
-        </div>
-      </div>
-    </article>
 
-    <!-- Card 2 -->
-    <article class="sozo-sku-card">
-      <div class="sozo-card-img-wrapper">
-        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/acne-peel-treatment-scaled.webp" alt="Acne Peel" loading="lazy">
-      </div>
-      <div class="sozo-card-content">
-        <div class="sozo-card-body">
-          <h3>Acne Peel</h3>
-          <p class="sozo-desc">Prosedur perawatan cairan kimia medis yang aman untuk menyingkirkan sumbatan pori, mengeringkan jerawat aktif, dan memudarkan noda bekas jerawat.</p>
-          <div class="sozo-duration"><i class="fa-regular fa-clock"></i> 20 menit</div>
+      <!-- Title -->
+      <h1 class="sozo-rewind-hero__title">
+        Wajah Lebih Cerah dan Halus Dengan <span class="sozo-highlight-underline">Peeling</span>
+      </h1>
+      
+      <!-- Description -->
+      <p class="sozo-rewind-hero__desc">
+        Ditangani oleh Dokter Profesional
+      </p>
+      
+      <!-- Promo Card Box -->
+      <div class="sozo-promo-card-inline">
+        <!-- Tag Harga Spesial -->
+        <div class="sozo-badge-flag">
+          HARGA<br>SPESIAL
         </div>
-        <div class="sozo-price-wrapper">
-          <span class="sozo-price-label">Mulai dari</span>
-          <span class="sozo-price-main">Rp 299.000</span>
-        </div>
-        <div class="sozo-btn-group">
-          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20peeling%20treatment%20[sumber:%20SEM-peeling%20treatment]" target="_blank" class="sozo-btn-primary"><i class="fa-brands fa-whatsapp"></i> Reservasi</a>
-        </div>
-      </div>
-    </article>
 
-    <!-- Card 3 -->
-    <article class="sozo-sku-card">
-      <div class="sozo-card-img-wrapper">
-        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/dazling-glow-peel-scaled.webp" alt="Dazzling Glow Peel" loading="lazy">
-      </div>
-      <div class="sozo-card-content">
-        <div class="sozo-card-body">
-          <h3>Dazzling Glow Peel</h3>
-          <p class="sozo-desc">Treatment chemical peeling lanjutan yang berfungsi meregenerasi kulit wajah secara mendalam, meningkatkan sintesis kolagen, dan memperbaiki penampilan secara keseluruhan.</p>
-          <div class="sozo-duration"><i class="fa-regular fa-clock"></i> 30 menit</div>
+        <!-- Teks Tengah -->
+        <div class="sozo-text-middle">
+          <span class="sozo-label-small">Peeling wajah mulai dari</span>
+          <span class="sozo-price-large">199rb</span>
         </div>
-        <div class="sozo-price-wrapper">
-          <span class="sozo-price-label">Mulai dari</span>
-          <span class="sozo-price-main">Rp 499.000</span>
-        </div>
-        <div class="sozo-btn-group">
-          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20peeling%20treatment%20[sumber:%20SEM-peeling%20treatment]" target="_blank" class="sozo-btn-primary"><i class="fa-brands fa-whatsapp"></i> Reservasi</a>
-        </div>
-      </div>
-    </article>
 
-    <!-- Card 4 -->
-    <article class="sozo-sku-card">
-      <div class="sozo-card-img-wrapper">
-        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/eternal-bloom-peel.webp" alt="Eternal Bloom Peel" loading="lazy">
-      </div>
-      <div class="sozo-card-content">
-        <div class="sozo-card-body">
-          <h3>Eternal Bloom Peel</h3>
-          <p class="sozo-desc">Treatment inovatif dan intensif untuk mempercepat regenerasi sel-sel kulit, melawan tanda penuaan, serta meredakan hiperpigmentasi membandel.</p>
-          <div class="sozo-duration"><i class="fa-regular fa-clock"></i> 40 menit</div>
-        </div>
-        <div class="sozo-price-wrapper">
-          <span class="sozo-price-label">Mulai dari</span>
-          <span class="sozo-price-main">Rp 599.000</span>
-        </div>
-        <div class="sozo-btn-group">
-          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20peeling%20treatment%20[sumber:%20SEM-peeling%20treatment]" target="_blank" class="sozo-btn-primary"><i class="fa-brands fa-whatsapp"></i> Reservasi</a>
+        <!-- Tombol Klaim Promo -->
+        <div class="sozo-action-wrapper">
+          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20peeling%20wajah%20199rb%20[sumber:%20SEM-peeling%20treatment]" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="sozo-action-btn">
+            KLAIM PROMO
+          </a>
         </div>
       </div>
-    </article>
 
-    <!-- Card 5 -->
-    <article class="sozo-sku-card">
-      <div class="sozo-card-img-wrapper">
-        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/lhala-peel-treatment-scaled.webp" alt="Korean LHALA Peel" loading="lazy">
-      </div>
-      <div class="sozo-card-content">
-        <div class="sozo-card-body">
-          <h3>Korean LHALA Peel</h3>
-          <p class="sozo-desc">Treatment gentle chemical peel berbasis Lipo Hydroxy Acid (LHA) untuk mengangkat sel kulit mati, mencerahkan kulit, memperbaiki tekstur, serta menjaga skin barrier tetap sehat dengan downtime minimal.</p>
-          <div class="sozo-duration"><i class="fa-regular fa-clock"></i> 75 menit</div>
-        </div>
-        <div class="sozo-price-wrapper">
-          <span class="sozo-price-label">Mulai dari</span>
-          <span class="sozo-price-main">Rp 789.000</span>
-        </div>
-        <div class="sozo-btn-group">
-          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20peeling%20treatment%20[sumber:%20SEM-peeling%20treatment]" target="_blank" class="sozo-btn-primary"><i class="fa-brands fa-whatsapp"></i> Reservasi</a>
-        </div>
-      </div>
-    </article>
+    </div>
 
+    <!-- Visual Banner Desktop -->
+    <div class="sozo-rewind-hero__visual" role="img" aria-label="Peeling Wajah Sozo Skin Clinic"></div>
   </div>
-</section>
+
+  <!-- Mobile Only Hero Banner -->
+  <div class="sozo-rewind-hero__mobile">
+    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20peeling%20wajah%20199rb%20[sumber:%20SEM-peeling%20treatment]" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Klaim Promo Peeling Wajah Sozo Skin Clinic via WhatsApp">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/SKIN-Landing-page-experiment-Peeling-Medical-ed-Main-text.webp" 
+           alt="Promo Peeling Wajah Sozo Skin Clinic" 
+           loading="eager">
+    </a>
+  </div>
+</div>
