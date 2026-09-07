@@ -24,29 +24,29 @@ function sz_home_shortcode() {
     $slimming_link = $slimming_cat ? get_category_link($slimming_cat->term_id) : home_url('/blog/category/slimming/');
     $all_link      = home_url('/blog/');
 
-    // 1. Dapatkan Hero Post (Hanya di page 1 dan jika tidak sedang search)
-    $hero_id = 0;
-    $hero_query = null;
+    // 1. Dapatkan Hero Posts (Hanya di page 1 dan jika tidak sedang search)
+    $hero_ids   = [];
+    $hero_posts = [];
 
     if ($paged == 1 && empty($search_query)) {
         $hero_query = new WP_Query([
-            'posts_per_page'      => 1,
+            'posts_per_page'      => 4,
             'post_status'         => 'publish',
-            'orderby'             => 'post_modified',
+            'orderby'             => 'date',
             'order'               => 'DESC',
-            'no_found_rows'       => true,
             'ignore_sticky_posts' => true,
         ]);
 
         if ($hero_query->have_posts()) {
-            $hero_id = $hero_query->posts[0]->ID;
+            $hero_posts = $hero_query->posts;
+            $hero_ids   = wp_list_pluck($hero_posts, 'ID');
         }
     }
     ?>
 
     <div class="sz-blog-wrapper">
 
-        <!-- HERO HEADER SECTION (Gradient Background - Compact) -->
+        <!-- HERO HEADER SECTION (Editorial Split Layout) -->
         <section class="sz-hero-banner-section">
             <div class="sz-hero-container">
                 <div class="sz-hero-header-text">
@@ -57,62 +57,100 @@ function sz_home_shortcode() {
                     </p>
                 </div>
 
-                <?php if ($paged == 1 && empty($search_query) && $hero_query && $hero_query->have_posts()) : ?>
-                    <?php
-                    $hero_query->the_post();
-                    $hero_post_id  = get_the_ID();
-                    $hero_cats     = get_the_category();
-                    $hero_cat_name = !empty($hero_cats) ? esc_html($hero_cats[0]->name) : 'Artikel';
-                    $hero_thumb_id = get_post_thumbnail_id($hero_post_id);
-                    $hero_thumb    = $hero_thumb_id ? wp_get_attachment_image_url($hero_thumb_id, 'full') : 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/LP-Facial-Terdekat-V2-Hero-Image.webp';
-                    $hero_title    = get_the_title();
-                    $hero_excerpt  = wp_trim_words(get_the_excerpt(), 18, '...');
-
-                    // Perhitungan status tanggal perbarui vs terbit
-                    $u_time = get_the_modified_time('U', $hero_post_id);
-                    $p_time = get_the_time('U', $hero_post_id);
-                    if (($u_time - $p_time) > 86400) {
-                        $hero_date_display = 'Diperbarui: ' . get_the_modified_date('j M Y', $hero_post_id);
-                    } else {
-                        $hero_date_display = get_the_date('j M Y', $hero_post_id);
-                    }
-                    ?>
-                    <article class="sz-featured-hero-card">
-                        <div class="sz-featured-hero-bg">
-                            <img src="<?php echo esc_url($hero_thumb); ?>" alt="<?php echo esc_attr($hero_title); ?>" decoding="async" fetchpriority="high">
-                            <div class="sz-featured-hero-overlay"></div>
-                        </div>
-
-                        <div class="sz-featured-hero-content">
-                            <div class="sz-featured-hero-top">
-                                <span class="sz-featured-tag"><?php echo $hero_cat_name; ?></span>
-                                <a href="<?php the_permalink(); ?>" class="sz-featured-arrow-link" aria-label="Baca artikel">
-                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <line x1="7" y1="17" x2="17" y2="7"></line>
-                                        <polyline points="7 7 17 7 17 17"></polyline>
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <h2 class="sz-featured-title">
-                                <a href="<?php the_permalink(); ?>"><?php echo esc_html($hero_title); ?></a>
-                            </h2>
-
-                            <p class="sz-featured-excerpt"><?php echo esc_html($hero_excerpt); ?></p>
-
-                            <div class="sz-featured-meta">
-                                <div class="sz-featured-date">
-                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                                    </svg>
-                                    <span><?php echo esc_html($hero_date_display); ?></span>
+                <?php if ($paged == 1 && empty($search_query) && !empty($hero_posts)) : ?>
+                    <div class="sz-hero-split-grid">
+                        <?php
+                        // 1. KARTU UTAMA DI KIRI (Post #1)
+                        $main_post      = $hero_posts[0];
+                        $main_id        = $main_post->ID;
+                        $main_thumb_id  = get_post_thumbnail_id($main_id);
+                        $main_thumb     = $main_thumb_id ? wp_get_attachment_image_url($main_thumb_id, 'large') : 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/LP-Facial-Terdekat-V2-Hero-Image.webp';
+                        $main_title     = get_the_title($main_id);
+                        $main_excerpt   = wp_trim_words(get_the_excerpt($main_id), 24, '...');
+                        $main_author_id = get_post_field('post_author', $main_id);
+                        $main_author    = get_the_author_meta('display_name', $main_author_id) ?: 'dr. Sozo Clinic';
+                        $main_date      = sz_get_date_display($main_id);
+                        $main_cats      = get_the_category($main_id);
+                        $main_link      = get_permalink($main_id);
+                        ?>
+                        <article class="sz-hero-main-card">
+                            <a href="<?php echo esc_url($main_link); ?>" class="sz-hero-main-img-wrap" aria-label="<?php echo esc_attr($main_title); ?>">
+                                <img src="<?php echo esc_url($main_thumb); ?>" alt="<?php echo esc_attr($main_title); ?>" decoding="async" fetchpriority="high">
+                            </a>
+                            <div class="sz-hero-main-body">
+                                <div class="sz-hero-meta">
+                                    <span class="sz-hero-author"><?php echo esc_html($main_author); ?></span>
+                                    <span class="sz-hero-meta-dot">&bull;</span>
+                                    <span class="sz-hero-date"><?php echo esc_html($main_date); ?></span>
                                 </div>
+
+                                <h2 class="sz-hero-main-card-title">
+                                    <a href="<?php echo esc_url($main_link); ?>" class="sz-hero-main-link">
+                                        <span class="sz-hero-title-text"><?php echo esc_html($main_title); ?></span>
+                                        <svg class="sz-hero-arrow-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </a>
+                                </h2>
+
+                                <p class="sz-hero-main-excerpt"><?php echo esc_html($main_excerpt); ?></p>
+
+                                <?php if (!empty($main_cats)) : ?>
+                                    <div class="sz-pill-list">
+                                        <?php foreach (array_slice($main_cats, 0, 3) as $cat) : ?>
+                                            <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="sz-pill-tag"><?php echo esc_html($cat->name); ?></a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                        </div>
-                    </article>
+                        </article>
+
+                        <?php
+                        // 2. TIGA KARTU SAMPING DI KANAN (Post #2, #3, #4)
+                        $side_posts = array_slice($hero_posts, 1, 3);
+                        if (!empty($side_posts)) :
+                        ?>
+                            <div class="sz-hero-side-stack">
+                                <?php foreach ($side_posts as $side_post) : 
+                                    $side_id        = $side_post->ID;
+                                    $side_thumb_id  = get_post_thumbnail_id($side_id);
+                                    $side_thumb     = $side_thumb_id ? wp_get_attachment_image_url($side_thumb_id, 'medium') : 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/LP-Facial-Terdekat-V2-Hero-Image.webp';
+                                    $side_title     = get_the_title($side_id);
+                                    $side_excerpt   = wp_trim_words(get_the_excerpt($side_id), 14, '...');
+                                    $side_author_id = get_post_field('post_author', $side_id);
+                                    $side_author    = get_the_author_meta('display_name', $side_author_id) ?: 'dr. Sozo Clinic';
+                                    $side_date      = sz_get_date_display($side_id);
+                                    $side_cats      = get_the_category($side_id);
+                                    $side_link      = get_permalink($side_id);
+                                ?>
+                                    <article class="sz-hero-side-card">
+                                        <a href="<?php echo esc_url($side_link); ?>" class="sz-hero-side-img-wrap" aria-label="<?php echo esc_attr($side_title); ?>" tabindex="-1">
+                                            <img src="<?php echo esc_url($side_thumb); ?>" alt="<?php echo esc_attr($side_title); ?>" loading="lazy" decoding="async">
+                                        </a>
+                                        <div class="sz-hero-side-body">
+                                            <div class="sz-hero-meta">
+                                                <span class="sz-hero-author"><?php echo esc_html($side_author); ?></span>
+                                                <span class="sz-hero-meta-dot">&bull;</span>
+                                                <span class="sz-hero-date"><?php echo esc_html($side_date); ?></span>
+                                            </div>
+                                            <h3 class="sz-hero-side-card-title">
+                                                <a href="<?php echo esc_url($side_link); ?>"><?php echo esc_html($side_title); ?></a>
+                                            </h3>
+                                            <p class="sz-hero-side-excerpt"><?php echo esc_html($side_excerpt); ?></p>
+                                            <?php if (!empty($side_cats)) : ?>
+                                                <div class="sz-pill-list">
+                                                    <?php foreach (array_slice($side_cats, 0, 2) as $cat) : ?>
+                                                        <a href="<?php echo esc_url(get_category_link($cat->term_id)); ?>" class="sz-pill-tag"><?php echo esc_html($cat->name); ?></a>
+                                                    <?php endforeach; ?>
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    </article>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
                     <?php wp_reset_postdata(); ?>
                 <?php endif; ?>
             </div>
@@ -155,15 +193,15 @@ function sz_home_shortcode() {
                         'post_status'         => 'publish',
                         'posts_per_page'      => $posts_per_page,
                         'paged'               => $paged,
-                        'orderby'             => 'post_modified',
+                        'orderby'             => 'date',
                         'order'               => 'DESC',
                         'ignore_sticky_posts' => true,
                     ];
 
                     if (!empty($search_query)) {
                         $query_args['s'] = $search_query;
-                    } elseif ($hero_id) {
-                        $query_args['post__not_in'] = [$hero_id];
+                    } elseif (!empty($hero_ids)) {
+                        $query_args['post__not_in'] = $hero_ids;
                     }
 
                     $recent_query = new WP_Query($query_args);
@@ -206,27 +244,36 @@ function sz_home_shortcode() {
 
 /**
  * ==========================================================
+ * HELPER: Format Tanggal (Update Status jika > 24 jam)
+ * ==========================================================
+ */
+function sz_get_date_display($post_id = null) {
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+    $u_time = get_the_modified_time('U', $post_id);
+    $p_time = get_the_time('U', $post_id);
+    if (($u_time - $p_time) > 86400) {
+        return 'Diperbarui: ' . get_the_modified_date('j M Y', $post_id);
+    }
+    return get_the_date('j M Y', $post_id);
+}
+
+/**
+ * ==========================================================
  * 2. FUNGSI RENDER KARTU ARTIKEL MODERN MINIMALIST
  * ==========================================================
  */
 function sz_render_modern_card() {
-    $post_id   = get_the_ID();
-    $thumb_id  = get_post_thumbnail_id($post_id);
-    $thumb     = $thumb_id ? wp_get_attachment_image_url($thumb_id, 'medium_large') : 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/LP-Facial-Terdekat-V2-Hero-Image.webp';
-    $cats      = get_the_category();
-    $cat_name  = !empty($cats) ? esc_html($cats[0]->name) : 'Artikel';
-    $cat_link  = !empty($cats) ? get_category_link($cats[0]->term_id) : '#';
-    $title     = get_the_title();
-    $excerpt   = wp_trim_words(get_the_excerpt(), 15, '...');
-
-    // Status Tanggal: Diperbarui jika > 24 jam setelah publish
-    $u_time = get_the_modified_time('U');
-    $p_time = get_the_time('U');
-    if (($u_time - $p_time) > 86400) {
-        $date_display = 'Diperbarui: ' . get_the_modified_date('j M Y');
-    } else {
-        $date_display = get_the_date('j M Y');
-    }
+    $post_id      = get_the_ID();
+    $thumb_id     = get_post_thumbnail_id($post_id);
+    $thumb        = $thumb_id ? wp_get_attachment_image_url($thumb_id, 'medium_large') : 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/LP-Facial-Terdekat-V2-Hero-Image.webp';
+    $cats         = get_the_category();
+    $cat_name     = !empty($cats) ? esc_html($cats[0]->name) : 'Artikel';
+    $cat_link     = !empty($cats) ? get_category_link($cats[0]->term_id) : '#';
+    $title        = get_the_title();
+    $excerpt      = wp_trim_words(get_the_excerpt(), 15, '...');
+    $date_display = sz_get_date_display($post_id);
     ?>
     <article class="sz-card">
         <a href="<?php the_permalink(); ?>" class="sz-card-img" aria-label="<?php echo esc_attr($title); ?>" tabindex="-1">

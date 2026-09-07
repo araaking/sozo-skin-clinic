@@ -1,24 +1,26 @@
 <style>
-  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
-  .sozo-sku-glow-wrapper {
+  /* --- GLOBAL & ISOLATION FOR ELEMENTOR --- */
+  .sozo-sku-bloatway-wrapper {
     font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
     max-width: 1200px;
     margin: 0 auto;
-    color: #333;
+    color: #333333;
     line-height: 1.6;
     background-color: #ffffff;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
   }
 
-  .sozo-sku-glow-wrapper * { 
+  .sozo-sku-bloatway-wrapper * { 
     box-sizing: border-box; 
   }
 
-  /* --- STYLING BREADCRUMB --- */
-  .sozo-sku-glow-wrapper .sozo-breadcrumb {
+  /* --- BREADCRUMB --- */
+  .sozo-sku-bloatway-wrapper .sozo-breadcrumb {
     padding: 15px 20px 25px 20px;
     width: 100%;
   }
-  .sozo-sku-glow-wrapper .sozo-breadcrumb ol {
+  .sozo-sku-bloatway-wrapper .sozo-breadcrumb ol {
     list-style: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -27,41 +29,41 @@
     align-items: center;
     gap: 8px; 
   }
-  .sozo-sku-glow-wrapper .sozo-breadcrumb li {
+  .sozo-sku-bloatway-wrapper .sozo-breadcrumb li {
     display: flex;
     align-items: center;
     font-size: 14px;
     color: #1A2080;
   }
-  .sozo-sku-glow-wrapper .sozo-breadcrumb a {
+  .sozo-sku-bloatway-wrapper .sozo-breadcrumb a {
     text-decoration: none !important;
     color: #64748b !important;
     font-weight: 500;
     transition: color 0.2s ease;
   }
-  .sozo-sku-glow-wrapper .sozo-breadcrumb a:hover { 
+  .sozo-sku-bloatway-wrapper .sozo-breadcrumb a:hover { 
     color: #1A2080 !important; 
   }
-  .sozo-sku-glow-wrapper .sozo-breadcrumb .separator {
+  .sozo-sku-bloatway-wrapper .sozo-breadcrumb .separator {
     color: #cbd5e1;
     margin: 0 4px;
     font-size: 12px;
     user-select: none;
   }
 
-  /* --- STYLING HERO / DETAIL TREATMENT --- */
-  .sozo-sku-glow-wrapper .sozo-treatment-hero {
+  /* --- HERO SECTION --- */
+  .sozo-sku-bloatway-wrapper .sozo-treatment-hero {
     display: flex;
     flex-wrap: nowrap;
-    gap: 50px;
+    gap: 40px;
     align-items: center;
     margin-bottom: 50px;
     padding: 0 20px;
   }
-  .sozo-sku-glow-wrapper .sozo-hero-text {
-    flex: 1; 
+  .sozo-sku-bloatway-wrapper .sozo-hero-text {
+    flex: 1.2; 
   }
-  .sozo-sku-glow-wrapper .sozo-hero-text h1 {
+  .sozo-sku-bloatway-wrapper .sozo-hero-text h1 {
     font-size: clamp(32px, 4vw, 42px) !important;
     color: #1A2080 !important; 
     margin: 0 0 16px 0 !important;
@@ -69,25 +71,44 @@
     font-weight: 800 !important;
     letter-spacing: -0.5px;
   }
-  .sozo-sku-glow-wrapper .sozo-hero-text p {
+
+  /* Badges Section */
+  .sozo-sku-bloatway-wrapper .sozo-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-badge {
+    background-color: #EEF2FF;
+    color: #1A2080;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 50px;
+    border: 1px solid #C7D2FE;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .sozo-sku-bloatway-wrapper .sozo-hero-text p {
     font-size: 16px !important;
     color: #475569 !important;
-    margin: 0 0 30px 0 !important;
+    margin: 0 0 25px 0 !important;
     line-height: 1.6 !important;
   }
   
-  /* FIXED IMAGE SIZING (Dikecilkan) */
-  .sozo-sku-glow-wrapper .sozo-hero-image {
-    flex: 1; 
+  .sozo-sku-bloatway-wrapper .sozo-hero-image {
+    flex: 0.8; 
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
   }
-  .sozo-sku-glow-wrapper .sozo-hero-image img {
+  .sozo-sku-bloatway-wrapper .sozo-hero-image img {
     width: 100%;
-    max-width: 480px; /* Batas maksimal lebar agar tidak raksasa di layar besar */
-    height: 340px; /* Dikecilkan dari 400px menjadi 340px */
+    max-width: 480px; 
+    height: 360px; 
     border-radius: 24px;
     object-fit: cover;
     object-position: center;
@@ -95,58 +116,52 @@
     display: block;
   }
 
-  /* Box Info (Durasi & Harga) */
-  .sozo-sku-glow-wrapper .sozo-info-row {
+  /* Info Box (Durasi, Lokasi & Harga) */
+  .sozo-sku-bloatway-wrapper .sozo-info-row {
     display: flex;
-    gap: 40px; 
-    margin-bottom: 35px;
-    padding: 24px;
+    flex-wrap: wrap;
+    gap: 20px; 
+    margin-bottom: 30px;
+    padding: 20px 24px;
     background-color: #f8fafc;
     border-radius: 16px;
     border: 1px solid #f1f5f9;
   }
-  .sozo-sku-glow-wrapper .sozo-info-col {
+  .sozo-sku-bloatway-wrapper .sozo-info-col {
     display: flex;
-    align-items: flex-start;
-    gap: 15px;
+    align-items: center;
+    gap: 12px;
   }
-  .sozo-sku-glow-wrapper .sozo-info-icon {
+  .sozo-sku-bloatway-wrapper .sozo-info-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     background-color: #EEF2FF;
     border-radius: 12px;
     color: #1A2080;
+    flex-shrink: 0;
   }
-  .sozo-sku-glow-wrapper .sozo-info-text {
+  .sozo-sku-bloatway-wrapper .sozo-info-text {
     display: flex;
     flex-direction: column;
-    gap: 2px;
   }
-  .sozo-sku-glow-wrapper .sozo-info-label {
-    font-size: 13px !important;
+  .sozo-sku-bloatway-wrapper .sozo-info-label {
+    font-size: 12px !important;
     color: #64748b !important;
     font-weight: 600 !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-  .sozo-sku-glow-wrapper .sozo-info-value {
-    font-size: 20px !important;
+  .sozo-sku-bloatway-wrapper .sozo-info-value {
+    font-size: 16px !important;
     color: #1A2080 !important; 
     font-weight: 700 !important;
   }
-  .sozo-sku-glow-wrapper .sozo-price-old {
-    font-size: 14px !important;
-    color: #94a3b8 !important;
-    text-decoration: line-through;
-    margin-right: 8px;
-    font-weight: 500 !important;
-  }
 
-  /* Styling Tombol Primary */
-  .sozo-sku-glow-wrapper .sozo-btn {
+  /* Primary Button */
+  .sozo-sku-bloatway-wrapper .sozo-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -164,47 +179,46 @@
     box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
     border: 2px solid #1A2080 !important;
   }
-  .sozo-sku-glow-wrapper .sozo-btn:hover {
+  .sozo-sku-bloatway-wrapper .sozo-btn:hover {
     background-color: #ffffff !important;
     color: #1A2080 !important;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
   }
 
-  /* --- STYLING CTA BANNER --- */
-  .sozo-sku-glow-wrapper .sozo-cta-wrapper {
+  /* --- CTA BANNER --- */
+  .sozo-sku-bloatway-wrapper .sozo-cta-wrapper {
     padding: 0 20px;
+    margin-bottom: 50px;
   }
-  .sozo-sku-glow-wrapper .sozo-cta-banner {
+  .sozo-sku-bloatway-wrapper .sozo-cta-banner {
     background-color: #1A2080;
     background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
     border-radius: 24px;
-    padding: 50px 30px;
-    margin-bottom: 50px;
+    padding: 45px 30px;
     text-align: center;
     color: #ffffff;
     box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
   }
-  .sozo-sku-glow-wrapper .sozo-cta-banner h2 {
-    font-size: clamp(24px, 3vw, 32px) !important;
+  .sozo-sku-bloatway-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(22px, 3vw, 30px) !important;
     color: #ffffff !important;
-    margin: 0 0 15px 0 !important;
+    margin: 0 0 12px 0 !important;
     font-weight: 800 !important;
     letter-spacing: -0.5px;
   }
-  .sozo-sku-glow-wrapper .sozo-cta-banner p {
+  .sozo-sku-bloatway-wrapper .sozo-cta-banner p {
     font-size: 16px !important;
     color: #e2e8f0 !important;
-    margin: 0 auto 30px auto !important;
-    max-width: 600px;
+    margin: 0 auto 25px auto !important;
+    max-width: 650px;
     line-height: 1.6 !important;
   }
-  
-  .sozo-sku-glow-wrapper .sozo-btn-secondary {
+  .sozo-sku-bloatway-wrapper .sozo-btn-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 36px;
+    padding: 15px 32px;
     background-color: #ffffff !important;
     color: #1A2080 !important;
     text-decoration: none !important;
@@ -215,91 +229,337 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border: 2px solid #ffffff !important;
   }
-  .sozo-sku-glow-wrapper .sozo-btn-secondary:hover {
+  .sozo-sku-bloatway-wrapper .sozo-btn-secondary:hover {
     background-color: transparent !important;
     color: #ffffff !important;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
 
-  /* --- STYLING EXPLANATION & LOAD MORE --- */
-  .sozo-sku-glow-wrapper .sozo-content-wrapper {
-    padding: 0 20px;
-  }
-  .sozo-sku-glow-wrapper .sozo-description-section {
+  /* --- COMMON SECTION CARD --- */
+  .sozo-sku-bloatway-wrapper .sozo-section-card {
     background-color: #ffffff;
     border: 1px solid #f1f5f9;
     border-radius: 24px;
     padding: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin: 0 20px 50px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   }
-  .sozo-sku-glow-wrapper .sozo-description-section h2 {
-    font-size: 24px !important;
-    color: #1A2080 !important;
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-    font-weight: 800 !important;
-  }
-  .sozo-sku-glow-wrapper .sozo-description-section p {
-    color: #475569 !important;
-    margin-bottom: 16px !important;
-    font-size: 16px !important;
-  }
-  
-  .sozo-sku-glow-wrapper .sozo-expandable-content {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.4s ease-out;
-  }
-  .sozo-sku-glow-wrapper .sozo-expandable-content.expanded {
-    grid-template-rows: 1fr;
-  }
-  .sozo-sku-glow-wrapper .sozo-expandable-inner {
-    overflow: hidden;
-  }
-  
-  .sozo-sku-glow-wrapper .sozo-load-more-btn {
-    background: none !important;
-    border: none !important;
-    color: #1A2080 !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
-    padding: 0 !important;
-    margin-top: 15px !important;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: opacity 0.2s ease;
-  }
-  .sozo-sku-glow-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
-  .sozo-sku-glow-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
-  .sozo-sku-glow-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
-
-  /* --- STYLING FAQ ACCORDION --- */
-  .sozo-sku-glow-wrapper .sozo-faq-section {
-    background-color: #ffffff;
-    border: 1px solid #f1f5f9;
-    border-radius: 24px;
-    padding: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  }
-  .sozo-sku-glow-wrapper .sozo-faq-section h2 {
+  .sozo-sku-bloatway-wrapper .sozo-section-title {
     font-size: 24px !important;
     color: #1A2080 !important;
     margin-top: 0 !important;
     margin-bottom: 24px !important;
     font-weight: 800 !important;
+    text-align: center;
   }
-  .sozo-sku-glow-wrapper .sozo-faq-item {
+
+  /* --- SECTION PAKET PROGRAM SLIMMING --- */
+  .sozo-sku-bloatway-wrapper .sozo-package-section {
+    padding: 0 20px 50px 20px;
+    margin: 0;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 25px;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-card {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-card.popular {
+    border-color: #1A2080;
+    box-shadow: 0 10px 30px rgba(26, 32, 128, 0.12);
+    transform: scale(1.02);
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #1A2080, #2e38b5);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-title {
+    font-size: 19px !important;
+    color: #1A2080 !important;
+    font-weight: 800 !important;
+    margin: 10px 0 8px 0 !important;
+    text-align: center;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-price-wrap {
+    text-align: center;
+    margin-bottom: 20px !important;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-old-price {
+    font-size: 14px;
+    color: #94a3b8;
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-price {
+    font-size: 26px !important;
+    color: #1e293b !important;
+    font-weight: 800 !important;
+    line-height: 1.2;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-member-price {
+    display: inline-block;
+    background: #eef2ff;
+    color: #1A2080;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 50px;
+    margin-top: 6px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-features {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 25px 0 !important;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 10px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-features svg {
+    color: #10b981;
+    flex-shrink: 0;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-btn-package {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #1A2080;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    border: 2px solid #1A2080;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-btn-package:hover {
+    background-color: #ffffff;
+    color: #1A2080 !important;
+  }
+
+  /* Outlet Notes Box */
+  .sozo-sku-bloatway-wrapper .sozo-package-notes {
+    max-width: 920px;
+    margin: 24px auto 0 auto;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.6;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-notes strong {
+    color: #1A2080;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-package-notes p {
+    margin: 4px 0 0 0 !important;
+    font-size: 13px !important;
+  }
+
+  /* --- TESTIMONIAL & BEFORE-AFTER SLIDER --- */
+  .sozo-sku-bloatway-wrapper .sozo-testimonial-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testimonial-slider::-webkit-scrollbar {
+    height: 6px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testimonial-slider::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testi-card {
+    flex: 0 0 340px;
+    scroll-snap-align: start;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testi-img-holder {
+    width: 100%;
+    height: 220px;
+    background-color: #e2e8f0;
+    overflow: hidden;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testi-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testi-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testi-stars {
+    color: #f59e0b;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testi-text {
+    font-size: 14px !important;
+    color: #475569 !important;
+    font-style: italic;
+    margin-bottom: 16px !important;
+    line-height: 1.5 !important;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testi-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testi-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #1A2080;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testi-name {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin: 0 !important;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-testi-status {
+    font-size: 12px !important;
+    color: #64748b !important;
+    margin: 0 !important;
+  }
+
+  /* --- RECOMMENDED OTHER TREATMENTS --- */
+  .sozo-sku-bloatway-wrapper .sozo-grid-recommendations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-rec-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-rec-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    border-color: #cbd5e1;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-rec-title {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    font-weight: 700 !important;
+    margin: 0 0 10px 0 !important;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-rec-desc {
+    font-size: 14px !important;
+    color: #64748b !important;
+    margin-bottom: 20px !important;
+    line-height: 1.5 !important;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-rec-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-rec-btn-wa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 16px;
+    background-color: #1A2080;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 13.5px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    border: 1.5px solid #1A2080;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-rec-btn-wa:hover {
+    background-color: #ffffff;
+    color: #1A2080 !important;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-rec-link {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    font-size: 13.5px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 0;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-rec-link:hover {
+    color: #2e38b5 !important;
+    text-decoration: underline !important;
+  }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-bloatway-wrapper .sozo-faq-item {
     border-bottom: 1px solid #f1f5f9;
     padding: 16px 0;
   }
-  .sozo-sku-glow-wrapper .sozo-faq-item:last-child {
+  .sozo-sku-bloatway-wrapper .sozo-faq-item:last-child {
     border-bottom: none;
   }
-  .sozo-sku-glow-wrapper .sozo-faq-question {
+  .sozo-sku-bloatway-wrapper .sozo-faq-question {
     width: 100%;
     background: none !important;
     border: none !important;
@@ -309,272 +569,796 @@
     color: #1e293b !important;
     cursor: pointer;
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 0 8px 0 !important;
+    gap: 12px;
+    padding: 4px 0 !important;
+    white-space: normal !important;
   }
-  .sozo-sku-glow-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
-  .sozo-sku-glow-wrapper .sozo-faq-question svg {
-    transition: transform 0.3s ease;
+  .sozo-sku-bloatway-wrapper .sozo-faq-question:hover {
+    color: #1A2080 !important;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-faq-question > span {
+    flex: 1;
+    min-width: 0;
+    white-space: normal !important;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-faq-question h3 {
+    display: block;
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .sozo-sku-bloatway-wrapper .sozo-faq-question svg {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
-    margin-left: 16px;
-  }
-  .sozo-sku-glow-wrapper .sozo-faq-question.active svg {
-    transform: rotate(180deg);
+    margin-top: 2px;
     color: #1A2080;
+    transition: transform 0.3s ease;
   }
-  .sozo-sku-glow-wrapper .sozo-faq-answer {
+  .sozo-sku-bloatway-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+  }
+  .sozo-sku-bloatway-wrapper .sozo-faq-answer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
   }
-  .sozo-sku-glow-wrapper .sozo-faq-answer p {
+  .sozo-sku-bloatway-wrapper .sozo-faq-answer p {
     color: #475569 !important;
     font-size: 15px !important;
-    margin: 8px 0 16px 0 !important;
+    margin: 10px 0 12px 0 !important;
     line-height: 1.6 !important;
   }
 
-  /* --- RESPONSIVE MOBILE FRIENDLY --- */
-  @media (max-width: 768px) {
-    .sozo-sku-glow-wrapper .sozo-treatment-hero {
-      flex-direction: column;
-      gap: 30px;
+  /* --- RESPONSIVE MOBILE --- */
+  @media (max-width: 992px) {
+    .sozo-sku-bloatway-wrapper .sozo-grid-recommendations {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
     }
-    .sozo-sku-glow-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
-    
-    /* Responsive image fix */
-    .sozo-sku-glow-wrapper .sozo-hero-image img {
-      height: 250px; /* Dikecilkan di mobile agar proporsional */
-      max-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    /* Section & Container Spacing */
+    .sozo-sku-bloatway-wrapper .sozo-section-card { 
+      padding: 20px 16px !important; 
+      border-radius: 18px !important; 
+      margin-left: 15px !important;
+      margin-right: 15px !important;
+      margin-bottom: 28px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-section-title {
+      font-size: 18px !important;
+      margin-bottom: 16px !important;
+      line-height: 1.35 !important;
     }
 
-    .sozo-sku-glow-wrapper .sozo-info-row { 
-      flex-direction: column; 
-      gap: 20px; 
-      padding: 20px;
+    /* Hero Section (Compact) */
+    .sozo-sku-bloatway-wrapper .sozo-treatment-hero {
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 15px 30px 15px;
     }
-    .sozo-sku-glow-wrapper .sozo-btn { max-width: 100%; }
-    .sozo-sku-glow-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
-    .sozo-sku-glow-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
-    .sozo-sku-glow-wrapper .sozo-description-section, 
-    .sozo-sku-glow-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-bloatway-wrapper .sozo-hero-text h1 { 
+      font-size: 24px !important; 
+      margin-bottom: 8px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-hero-text p {
+      font-size: 13px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 16px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-badges-container {
+      gap: 6px !important;
+      margin-bottom: 12px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-badge {
+      font-size: 11px !important;
+      padding: 3px 10px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-hero-image img {
+      height: 220px; 
+      max-width: 100%;
+      border-radius: 16px;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 10px !important; 
+      padding: 12px 14px !important;
+      margin-bottom: 18px !important;
+      border-radius: 12px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-info-col {
+      gap: 10px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-info-icon {
+      width: 34px !important;
+      height: 34px !important;
+      border-radius: 8px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-info-icon svg {
+      width: 16px !important;
+      height: 16px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-info-label {
+      font-size: 10px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-info-value {
+      font-size: 14px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-btn { 
+      width: 100% !important;
+      max-width: 100% !important; 
+      padding: 11px 20px !important;
+      font-size: 14px !important;
+      border-radius: 50px !important;
+    }
+
+    /* CTA Banner (Compact) */
+    .sozo-sku-bloatway-wrapper .sozo-cta-wrapper {
+      padding: 0 15px !important;
+      margin-bottom: 28px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-cta-banner { 
+      padding: 22px 16px !important; 
+      border-radius: 16px !important; 
+    }
+    .sozo-sku-bloatway-wrapper .sozo-cta-banner h2 {
+      font-size: 18px !important;
+      line-height: 1.3 !important;
+      margin-bottom: 8px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-cta-banner p {
+      font-size: 12px !important;
+      line-height: 1.45 !important;
+      margin-bottom: 15px !important;
+      max-width: 100% !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-btn-secondary { 
+      width: 100% !important; 
+      max-width: 240px !important; 
+      padding: 10px 20px !important;
+      font-size: 13px !important;
+      border-radius: 50px !important;
+    }
+
+    /* Mobile Horizontal Slider for Paket Hemat */
+    .sozo-sku-bloatway-wrapper .sozo-package-section {
+      padding: 10px 15px 30px 15px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-section .sozo-section-title {
+      font-size: 18px !important;
+      margin-bottom: 12px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-grid {
+      display: flex !important;
+      gap: 12px !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      scroll-behavior: smooth !important;
+      padding: 16px 2px 12px 2px !important;
+      margin-top: 10px !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-grid::-webkit-scrollbar {
+      display: none !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-card {
+      flex: 0 0 80% !important;
+      min-width: 250px !important;
+      max-width: 285px !important;
+      padding: 18px 14px !important;
+      border-radius: 16px !important;
+      scroll-snap-align: start !important;
+      margin-bottom: 0 !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-card.popular {
+      transform: none !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-badge {
+      font-size: 10px !important;
+      padding: 2px 10px !important;
+      top: -10px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-title {
+      font-size: 15px !important;
+      margin: 4px 0 4px 0 !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-price {
+      font-size: 20px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-member-price {
+      font-size: 11.5px !important;
+      padding: 2px 10px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-features {
+      margin-bottom: 14px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-features li {
+      font-size: 12px !important;
+      margin-bottom: 6px !important;
+      gap: 6px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-package-features svg {
+      width: 14px !important;
+      height: 14px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-btn-package {
+      padding: 9px 14px !important;
+      font-size: 13px !important;
+    }
+
+    /* Testimoni Card (Compact) */
+    .sozo-sku-bloatway-wrapper .sozo-testi-card {
+      flex: 0 0 270px;
+    }
+
+    /* Rekomendasi Treatment Lainnya (Compact Horizontal Slider) */
+    .sozo-sku-bloatway-wrapper .sozo-grid-recommendations {
+      display: flex !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      scroll-behavior: smooth !important;
+      gap: 12px !important;
+      padding: 4px 2px 12px 2px !important;
+      margin-top: 12px !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-grid-recommendations::-webkit-scrollbar {
+      display: none !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-rec-card {
+      flex: 0 0 76% !important;
+      min-width: 240px !important;
+      max-width: 275px !important;
+      scroll-snap-align: start !important;
+      padding: 16px 14px !important;
+      border-radius: 14px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-rec-title {
+      font-size: 14px !important;
+      margin-bottom: 6px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-rec-desc {
+      font-size: 12px !important;
+      line-height: 1.4 !important;
+      margin-bottom: 12px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-rec-btn-wa {
+      font-size: 12px !important;
+      padding: 8px 12px !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-rec-link {
+      font-size: 12px !important;
+    }
+
+    /* FAQ (Compact) */
+    .sozo-sku-bloatway-wrapper .sozo-faq-question {
+      gap: 10px;
+      padding: 8px 0 !important;
+    }
+    .sozo-sku-bloatway-wrapper .sozo-faq-question h3 {
+      font-size: 14px !important;
+      line-height: 1.45 !important;
+    }
   }
 </style>
 
-<div class="sozo-sku-glow-wrapper" id="sozo-glow-widget">
+<div class="sozo-sku-bloatway-wrapper" id="sozo-meso-bloatway-widget">
   
+  <!-- BREADCRUMB -->
   <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
     <ol>
-      <li>
-        <a href="https://sozoskinclinic.com/">
-          <span>Home</span>
-        </a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/slimming-treatment/">
-          <span>Slimming Treatment</span>
-        </a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/meso-treatment/">
-          <span>Meso Treatment</span>
-        </a>
-      </li>
-      <li class="separator">/</li>
-      <li aria-current="page">
-        <span style="color: #1A2080; font-weight: 600;">Meso BloatAway</span>
-      </li>
+      <li><a href="https://sozoskinclinic.com/"><span>Home</span></a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/slimming-treatment/"><span>Slimming Treatment</span></a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li><a href="https://sozoskinclinic.com/meso-treatment/"><span>Meso Treatment</span></a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li aria-current="page"><span style="color: #1A2080; font-weight: 600;">Meso BloatAway</span></li>
     </ol>
   </nav>
 
+  <!-- HERO SECTION -->
   <div class="sozo-treatment-hero">
     <div class="sozo-hero-text">
       <h1>Meso BloatAway</h1>
+      
+      <!-- BADGES / TAGS -->
+      <div class="sozo-badges-container">
+        <span class="sozo-badge">Lemak Membandel</span>
+        <span class="sozo-badge">Perut Buncit &amp; Begah</span>
+        <span class="sozo-badge">Susah Turun Berat Badan</span>
+        <span class="sozo-badge">Metabolisme Lambat</span>
+      </div>
+
       <p>
-        Meso bloataway membantu mengurangi retensi cairan, meningkatkan sirkulasi, serta mengoptimalkan sistem limfatik untuk tubuh lebih ringan dan tidak kembung.
+        Meso BloatAway adalah treatment mesoterapi khusus yang bekerja efektif untuk meningkatkan metabolisme, mempercepat proses pembakaran lemak, dan mengurangi penumpukan cairan serta pembengkakan pada tubuh. Membantu sistem limfatik bekerja lebih optimal sehingga tubuh terasa lebih ringan, segar, dan tampak lebih ramping secara bertahap. Ditangani langsung oleh dokter profesional dengan standar medis higienis.
       </p>
 
+      <!-- INFO ROW -->
       <div class="sozo-info-row">
         <div class="sozo-info-col">
           <div class="sozo-info-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
           </div>
           <div class="sozo-info-text">
-            <span class="sozo-info-label">Durasi</span>
-            <span class="sozo-info-value">30 Menit</span>
+            <span class="sozo-info-label">Durasi Per Sesi</span>
+            <span class="sozo-info-value">30 - 45 Menit</span>
+          </div>
+        </div>
+
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Tersedia di Klinik</span>
+            <span class="sozo-info-value">Arteri, PIK, Bekasi</span>
           </div>
         </div>
         
         <div class="sozo-info-col">
           <div class="sozo-info-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
           </div>
           <div class="sozo-info-text">
             <span class="sozo-info-label">Harga Mulai</span>
-            <span class="sozo-info-value">
-              Rp 949,000
-            </span>
+            <span class="sozo-info-value">Rp 1.399.000</span>
           </div>
         </div>
       </div>
 
-      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20scar%20treatment%20[sumber:%20ORG-Scar%20General]" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Meso%20Bloataway%20di%20Sozo%20%5Bsrc%3AORG-Meso-Blo%5D" class="sozo-btn" target="_blank" rel="noopener">Reservasi Sekarang</a>
     </div>
 
     <div class="sozo-hero-image">
-      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Meso-Bloat-Away.webp" alt="Subcision Treatment Sozo Skin Clinic">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Meso-Bloat-Away.webp" 
+           alt="Meso BloatAway Treatment SOZO Skin Clinic"
+           width="480"
+           height="360"
+           fetchpriority="high">
     </div>
   </div>
 
+  <!-- CTA BANNER -->
   <div class="sozo-cta-wrapper">
     <div class="sozo-cta-banner">
-      <h2>Atasi Tubuh Begah dan Retensi Cairan dengan Meso BloatAway</h2>
-      <p>Singkirkan penumpukan cairan berlebih yang membuat tubuh terasa berat dan kembung. Optimalkan kembali sistem limfatik Anda untuk tubuh yang lebih ringan, nyaman, dan ramping bersama tim dokter kami.</p>
-      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20scar%20treatment%20[sumber:%20ORG-Scar%20General]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+      <h2>Atasi Lemak Membandel &amp; Tubuh Begah dengan Meso BloatAway</h2>
+      <p>Singkirkan penumpukan lemak serta cairan berlebih dan optimalkan sistem limfatik tubuh bersama dokter ahli SOZO Skin Clinic.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Meso%20Bloataway%20di%20Sozo%20%5Bsrc%3AORG-Meso-Blo%5D" class="sozo-btn-secondary" target="_blank" rel="noopener">Konsultasi Dokter Sekarang</a>
     </div>
   </div>
 
-  <div class="sozo-content-wrapper">
-    <div class="sozo-description-section">
-      <h2></h2>
-      <p>Meso BloatAway adalah treatment untuk mengatasi retensi air dalam tubuh. Dengan meningkatkan sirkulasi dan sistem limfatik, treatment ini membantu mengurangi pembengkakan, kembung, dan cairan berlebih. Cocok untuk Anda yang mengalami water retention dan ingin tubuh lebih ringan.</p>
+  <!-- SECTION PAKET PROGRAM SLIMMING -->
+  <section class="sozo-package-section">
+    <h2 class="sozo-section-title">Pilihan Paket Hemat Program Slimming</h2>
+    <div class="sozo-package-grid">
       
-      <div class="sozo-expandable-content sozo-glow-desc-content" id="treatmentDescriptionGlow">
-        <div class="sozo-expandable-inner">
-          <p>Cocok untuk Anda yang mengalami water retention dan ingin tubuh lebih ringan.</p>
+      <!-- Paket 1 -->
+      <div class="sozo-package-card">
+        <div>
+          <h3 class="sozo-package-title">1. Meso BloatAway + Lymph Drain</h3>
+          <div class="sozo-package-price-wrap">
+            <span class="sozo-package-old-price">Rp 2.398.000</span>
+            <div class="sozo-package-price">Rp 949.000</div>
+            <span class="sozo-member-price">Member: Rp 899.000</span>
+          </div>
+          <ul class="sozo-package-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 1x Meso BloatAway*</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 1x Lymph Drain*</li>
+          </ul>
         </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Meso%20Bloataway%20di%20Sozo%20%5Bsrc%3AORG-Meso-Blo%5D" class="sozo-btn-package" target="_blank" rel="noopener">Ambil Paket Ini</a>
       </div>
-      
-      <!-- JavaScript diubah menggunakan atribut onclick langsung agar kebal terhadap lazy load Elementor -->
-      <button class="sozo-load-more-btn sozo-glow-read-more" onclick="toggleGlowDescription()">
-        <span id="glowReadMoreText">Baca Selengkapnya</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-      </button>
+
+      <!-- Paket 2 (Popular) -->
+      <div class="sozo-package-card popular">
+        <span class="sozo-package-badge">Paling Diminati</span>
+        <div>
+          <h3 class="sozo-package-title">2. Ultimate Slimming Max</h3>
+          <div class="sozo-package-price-wrap">
+            <span class="sozo-package-old-price">Rp 16.584.000</span>
+            <div class="sozo-package-price">Rp 7.199.000</div>
+            <span class="sozo-member-price">Member: Rp 7.099.000</span>
+          </div>
+          <ul class="sozo-package-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 2x Meso Metabolic Boost</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 2x Meso Slim Body Premium / Meso BloatAway*</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 8x RF / Ultrasculpt*</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 4x Consultation</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 14x Fat Block</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 14x Crave Block</li>
+          </ul>
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Meso%20Bloataway%20di%20Sozo%20%5Bsrc%3AORG-Meso-Blo%5D" class="sozo-btn-package" target="_blank" rel="noopener">Ambil Paket Ini</a>
+      </div>
+
     </div>
 
-    <div class="sozo-faq-section">
-      <h2>Pertanyaan Seputar Meso BloatAway</h2>
+    <!-- Catatan Outlet -->
+    <div class="sozo-package-notes">
+      <strong>Catatan Keterangan Outlet pada Brosur:</strong>
+      <p>• Treatment bertanda (*) yaitu Meso BloatAway &amp; Lymph Drain khusus tersedia di outlet <strong>Arteri, PIK, dan Medan</strong>.</p>
+      <p>• Pada paket Ultimate Slimming Max, penukaran treatment Meso Slim Body Premium disesuaikan menjadi Meso BloatAway jika diambil di outlet <strong>Arteri, PIK, atau Medan</strong>.</p>
+    </div>
+  </section>
+
+  <!-- SECTION TESTIMONI (SLIDER DENGAN GAMBAR BEFORE-AFTER) -->
+  <section class="sozo-section-card">
+    <h2 class="sozo-section-title">Hasil Nyata &amp; Testimoni Treatment di Sozo Skin Clinic</h2>
+    <div class="sozo-testimonial-slider">
       
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Apa itu Meso BloatAway dan bagaimana cara kerjanya dalam mengatasi retensi cairan?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Meso BloatAway adalah treatment mesoterapi yang difokuskan untuk mengurangi retensi air dalam tubuh dengan meningkatkan sistem limfatik dan sirkulasi darah, sehingga cairan berlebih dapat dikeluarkan secara alami.</p>
+      <!-- Card 1 -->
+      <div class="sozo-testi-card">
+        <div class="sozo-testi-img-holder">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/Meso-Bloataway-Treatment.webp" alt="Hasil Nyata Meso BloatAway SOZO Skin Clinic" loading="lazy">
+        </div>
+        <div class="sozo-testi-body">
+          <div class="sozo-testi-stars">★★★★★</div>
+          <p class="sozo-testi-text">"Perut sering begah dan bengkak langsung berangsur reda setelah treatment Meso BloatAway. Badan berasa jauh lebih enteng!"</p>
+          <div class="sozo-testi-user">
+            <div class="sozo-testi-avatar">N</div>
+            <div>
+              <h4 class="sozo-testi-name">Nadia S.</h4>
+              <p class="sozo-testi-status">Pasien Slimming Treatment</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Apa manfaat utama dari treatment ini? </span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Mengurangi kembung, pembengkakan, serta membuat tubuh terasa lebih ringan dan nyaman.</p>
+      <!-- Card 2 -->
+      <div class="sozo-testi-card">
+        <div class="sozo-testi-img-holder">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/02/LP-Mockup-Meso-v2-Education-2-1.webp" alt="Edukasi dan Hasil Nyata Meso Slimming SOZO Skin Clinic" loading="lazy">
+        </div>
+        <div class="sozo-testi-body">
+          <div class="sozo-testi-stars">★★★★★</div>
+          <p class="sozo-testi-text">"Kombinasi meso dan pola hidup sehat dibimbing dokter sangat membantu metabolisme tubuh saya. Lingkar pinggang turun bertahap."</p>
+          <div class="sozo-testi-user">
+            <div class="sozo-testi-avatar">V</div>
+            <div>
+              <h4 class="sozo-testi-name">Vania K.</h4>
+              <p class="sozo-testi-status">Pasien Meso Treatment</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Siapa yang biasanya mengalami retensi cairan dan cocok dengan treatment ini? </span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Orang yang sering merasa bengkak, kembung, atau memiliki masalah water retention akibat gaya hidup atau hormon.</p>
+      <!-- Card 3 -->
+      <div class="sozo-testi-card">
+        <div class="sozo-testi-img-holder">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Meso-Bloat-Away.webp" alt="Transformasi Pasien Meso BloatAway SOZO Skin Clinic" loading="lazy">
+        </div>
+        <div class="sozo-testi-body">
+          <div class="sozo-testi-stars">★★★★★</div>
+          <p class="sozo-testi-text">"Sangat terbantu untuk membakar lemak membandel dan mengatasi begah sehabis liburan panjang. Pengerjaan cepat dan minim rasa sakit."</p>
+          <div class="sozo-testi-user">
+            <div class="sozo-testi-avatar">D</div>
+            <div>
+              <h4 class="sozo-testi-name">Dina R.</h4>
+              <p class="sozo-testi-status">Pasien Meso BloatAway</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Berapa kali treatment diperlukan? </span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Biasanya 2–4 sesi sudah memberikan hasil yang signifikan.</p>
-        </div>
-      </div>
+    </div>
+  </section>
+
+  <!-- SECTION REKOMENDASI OTHER MESO & SLIMMING TREATMENTS -->
+  <section class="sozo-section-card">
+    <h2 class="sozo-section-title">Pilihan Treatment Meso &amp; Slimming Lainnya</h2>
+    <div class="sozo-grid-recommendations">
       
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Kapan hasil mulai terlihat? </span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Hasil bisa terasa cukup cepat, bahkan setelah beberapa sesi pertama.</p>
+      <!-- Rec 1 -->
+      <div class="sozo-rec-card">
+        <div>
+          <h3 class="sozo-rec-title">Meso V Line</h3>
+          <p class="sozo-rec-desc">Membentuk curve wajah dengan menargetkan timbunan lemak pada bagian-bagian tertentu.</p>
+        </div>
+        <div class="sozo-rec-actions">
+          <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Meso%20di%20Sozo%20%5Bsrc%3AORG-Meso%5D" class="sozo-rec-btn-wa" target="_blank" rel="noopener">Reservasi Sekarang</a>
+          <a href="https://sozoskinclinic.com/meso-treatment/meso-v-line/" class="sozo-rec-link" target="_blank" rel="noopener">Lihat Selengkapnya →</a>
         </div>
       </div>
 
+      <!-- Rec 2 -->
+      <div class="sozo-rec-card">
+        <div>
+          <h3 class="sozo-rec-title">Meso Slim Body Premium</h3>
+          <p class="sozo-rec-desc">Treatment dengan campuran 3 bahan aktif untuk bantu capai body goals secara lebih efektif.</p>
+        </div>
+        <div class="sozo-rec-actions">
+          <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Meso%20di%20Sozo%20%5Bsrc%3AORG-Meso%5D" class="sozo-rec-btn-wa" target="_blank" rel="noopener">Reservasi Sekarang</a>
+          <a href="https://sozoskinclinic.com/meso-treatment/meso-slim-body/" class="sozo-rec-link" target="_blank" rel="noopener">Lihat Selengkapnya →</a>
+        </div>
+      </div>
+
+      <!-- Rec 3 -->
+      <div class="sozo-rec-card">
+        <div>
+          <h3 class="sozo-rec-title">Meso Metabolic Boost</h3>
+          <p class="sozo-rec-desc">Meningkatkan metabolisme, membakar lemak lebih cepat, dan membantu menurunkan berat badan.</p>
+        </div>
+        <div class="sozo-rec-actions">
+          <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Meso%20di%20Sozo%20%5Bsrc%3AORG-Meso%5D" class="sozo-rec-btn-wa" target="_blank" rel="noopener">Reservasi Sekarang</a>
+          <a href="https://sozoskinclinic.com/slimming-treatment/" class="sozo-rec-link" target="_blank" rel="noopener">Lihat Selengkapnya →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="sozo-section-card">
+    <h2 class="sozo-section-title">Pertanyaan Seputar Meso BloatAway</h2>
+    
+    <!-- FAQ 1 -->
     <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Apakah treatment ini membantu penurunan berat badan?  </span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Lebih fokus pada pengurangan cairan, namun dapat membantu tampilan tubuh lebih ramping.</p>
+      <button class="sozo-faq-question" onclick="toggleMesoFaq(this)">
+        <span><h3>1. Apa tujuan dari tindakan ini?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sozo-faq-answer">
+        <div>
+          <p>Untuk meningkatkan metabolisme, membakar lemak lebih cepat, dan membantu menurunkan berat badan.</p>
         </div>
       </div>
-      
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Apakah aman dilakukan?  </span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Aman jika dilakukan oleh tenaga medis profesional.</p>
-        </div>
-      </div>
-      
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Apakah bisa dikombinasikan dengan treatment lain?  </span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Ya, sangat baik dikombinasikan dengan meso slimming lainnya.</p>
-        </div>
-      </div>
-
     </div>
-  </div>
+
+    <!-- FAQ 2 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="toggleMesoFaq(this)">
+        <span><h3>2. Berapa lama hasilnya terlihat?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sozo-faq-answer">
+        <div>
+          <p>Hasil biasanya mulai terlihat setelah beberapa sesi, dengan peningkatan metabolisme dan penurunan lingkar secara bertahap.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="toggleMesoFaq(this)">
+        <span><h3>3. Apakah ada efek samping?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sozo-faq-answer">
+        <div>
+          <p>Efek samping umum meliputi pembengkakan ringan, memar, atau kemerahan di area injeksi. Pada yang sensitif terhadap kafein, mungkin mengalami jantung berdebar, sakit kepala, atau gelisah.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="toggleMesoFaq(this)">
+        <span><h3>4. Berapa sesi yang diperlukan?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sozo-faq-answer">
+        <div>
+          <p>Biasanya diperlukan beberapa sesi, tergantung pada kondisi tubuh dan tujuan penurunan berat badan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 5 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="toggleMesoFaq(this)">
+        <span><h3>5. Apakah saya bisa mengkonsumsi kopi setelah tindakan?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sozo-faq-answer">
+        <div>
+          <p>Sebaiknya hindari konsumsi kafein berlebih, seperti kopi, teh, atau soda, setelah prosedur untuk menghindari stimulasi berlebihan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 6 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="toggleMesoFaq(this)">
+        <span><h3>6. Apa yang harus dilakukan setelah prosedur?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sozo-faq-answer">
+        <div>
+          <p>Minum banyak air, makan makanan sehat, dan lakukan olahraga ringan untuk mendukung hasilnya.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 7 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="toggleMesoFaq(this)">
+        <span><h3>7. Apakah tindakan ini sakit?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sozo-faq-answer">
+        <div>
+          <p>Umumnya tidak, namun bisa ada sedikit ketidaknyamanan atau sensasi seperti tusukan ringan di area injeksi.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 8 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="toggleMesoFaq(this)">
+        <span><h3>8. Apakah ada yang perlu dihindari sebelum tindakan?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sozo-faq-answer">
+        <div>
+          <p>Hindari alkohol, kafein berlebih, energy drink dan olahraga berat 24 jam sebelum tindakan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 9 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="toggleMesoFaq(this)">
+        <span><h3>9. Apakah tindakan ini dapat efektif tanpa olahraga?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sozo-faq-answer">
+        <div>
+          <p>Keberhasilan mencapai tubuh yang sehat dan ideal tentu merupakan kombinasi dari beberapa elemen. Dokter akan tetap mengedukasi pentingnya gaya hidup sehat dengan berolahraga secara teratur, makan yang bergizi tinggi serat dan rendah kalori untuk mengoptimalkan metabolisme.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 10 -->
+    <div class="sozo-faq-item">
+      <button class="sozo-faq-question" onclick="toggleMesoFaq(this)">
+        <span><h3>10. Mengapa pada area tindakan timbul kebiruan?</h3></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="sozo-faq-answer">
+        <div>
+          <p>Kebiruan biasanya timbul karena efek suntikan yang mengenai pembuluh darah di tubuh, hal ini umum terjadi pada beberapa tindakan penyuntikan. Kebiruan ini akan hilang dengan sendirinya. Untuk meringankan keluhan, bisa dengan kompres air dingin dan pemberian anti heparin sodium (thrombophob) 2x dalam sehari sampai tanda lebam hilang kurang lebih 10-14 hari.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
 </div>
 
-<script>
-  // Menggunakan fungsi global unik (inline onclick) agar tidak terpengaruh oleh event loading Elementor
-  function toggleGlowDescription() {
-    const content = document.getElementById('treatmentDescriptionGlow');
-    const btn = document.querySelector('.sozo-glow-read-more');
-    const btnText = document.getElementById('glowReadMoreText');
-    
-    if (!content || !btn) return;
-    
-    content.classList.toggle('expanded');
-    btn.classList.toggle('active');
-    
-    if (content.classList.contains('expanded')) {
-      btnText.textContent = 'Tampilkan Lebih Sedikit';
-    } else {
-      btnText.textContent = 'Baca Selengkapnya';
-    }
+<!-- Floating WhatsApp Button -->
+<style>
+  .sozo-bloatway-floating-wa {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px 14px 18px;
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 100px;
+    box-shadow: 0 10px 30px rgba(26, 32, 128, 0.35), 0 0 0 0 rgba(37, 211, 102, 0);
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    will-change: transform, opacity;
   }
 
-  function toggleGlowFaq(button) {
+  .sozo-bloatway-floating-wa.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    animation: sozoBloatwayPulse 2.4s ease-out infinite;
+  }
+
+  .sozo-bloatway-floating-wa:hover {
+    background-color: #ffffff !important;
+    background-image: none;
+    color: #1A2080 !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 35px rgba(26, 32, 128, 0.45);
+    animation: none;
+  }
+
+  .sozo-bloatway-floating-wa svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    color: #ffffff;
+    transition: color 0.2s ease;
+  }
+
+  .sozo-bloatway-floating-wa:hover svg { color: #1A2080; }
+
+  @keyframes sozoBloatwayPulse {
+    0%   { box-shadow: 0 10px 30px rgba(26, 32, 128, 0.35), 0 0 0 0 rgba(37, 211, 102, 0.55); }
+    70%  { box-shadow: 0 10px 30px rgba(26, 32, 128, 0.35), 0 0 0 18px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 10px 30px rgba(26, 32, 128, 0.35), 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-bloatway-floating-wa {
+      right: 16px;
+      bottom: 16px;
+      padding: 12px 18px 12px 14px;
+      font-size: 14px;
+    }
+    .sozo-bloatway-floating-wa svg { width: 20px; height: 20px; }
+  }
+</style>
+
+<a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Meso%20Bloataway%20di%20Sozo%20%5Bsrc%3AORG-Meso-Blo%5D"
+   class="sozo-bloatway-floating-wa"
+   id="sozoBloatwayFloatingWA"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Konsultasi Sekarang via WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M16.003 3C9.379 3 4 8.379 4 15c0 2.379.696 4.59 1.896 6.45L4 29l7.755-1.836A11.94 11.94 0 0 0 16.003 27C22.625 27 28 21.625 28 15S22.625 3 16.003 3zm0 21.6a9.55 9.55 0 0 1-4.864-1.328l-.349-.207-4.605 1.09 1.099-4.49-.227-.363A9.6 9.6 0 1 1 25.6 15c0 5.302-4.298 9.6-9.597 9.6zm5.546-7.182c-.302-.151-1.787-.882-2.065-.983-.278-.1-.481-.151-.683.151-.202.303-.783.984-.96 1.186-.177.202-.354.227-.656.076-.302-.151-1.275-.47-2.43-1.499-.898-.801-1.504-1.791-1.681-2.094-.177-.302-.019-.466.133-.617.136-.135.303-.353.454-.53.151-.176.202-.302.303-.504.1-.202.05-.378-.025-.53-.076-.151-.683-1.645-.936-2.253-.247-.59-.498-.51-.683-.52-.177-.008-.379-.01-.581-.01-.202 0-.53.076-.807.378-.278.303-1.06 1.036-1.06 2.527 0 1.491 1.085 2.931 1.236 3.133.151.202 2.135 3.26 5.171 4.571.722.312 1.286.499 1.726.638.725.231 1.385.198 1.907.12.582-.087 1.787-.73 2.04-1.435.252-.706.252-1.31.176-1.436-.075-.126-.277-.202-.58-.353z"/>
+  </svg>
+  <span>Konsultasi Sekarang</span>
+</a>
+
+<script>
+  // Accordion Logic for FAQs
+  function toggleMesoFaq(button) {
     const answer = button.nextElementSibling;
     if (!answer) return;
-    
-    // Toggle class active untuk rotasi panah
+
+    // Toggle Active State
     button.classList.toggle('active');
-    
-    // Logika animasi max-height
+
+    // Animation via scrollHeight
     if (answer.style.maxHeight) {
       answer.style.maxHeight = null;
     } else {
       answer.style.maxHeight = answer.scrollHeight + "px";
     }
   }
-</script>
 
+  // Floating WhatsApp Button — show after user scrolls past hero
+  (function () {
+    var btn = document.getElementById('sozoBloatwayFloatingWA');
+    if (!btn) return;
+    var shown = false;
+    var THRESHOLD = 500;
+
+    function update() {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      if (y > THRESHOLD && !shown) {
+        btn.classList.add('is-visible');
+        shown = true;
+      } else if (y <= THRESHOLD && shown) {
+        btn.classList.remove('is-visible');
+        shown = false;
+      }
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>

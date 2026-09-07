@@ -90,6 +90,7 @@ Header desktop tampil di kanan (`Lihat Promo Lengkapnya` + panah), di mobile jad
 
 **Daftar Slug Default:**
 
+- `general-promo`
 - `single-treatment`
 - `skin-treatment`
 - `acne-scar-free`

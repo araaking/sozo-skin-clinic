@@ -26,7 +26,7 @@
 
   function getCardHTML(item, catName, catLink) {
     const finalWaLink = `https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D`;
-    let buttonsHtml = `<a href="${finalWaLink}" target="_blank" class="sz-btn sz-btn-primary"><i class="fab fa-whatsapp"></i> Reservasi Sekarang</a>`;
+    let buttonsHtml = `<a href="${finalWaLink}" target="_blank" class="sz-btn sz-btn-primary" data-wa-src="organic"><i class="fab fa-whatsapp"></i> Reservasi Sekarang</a>`;
     if (item.detailLink) {
       buttonsHtml += `<a href="${item.detailLink}" class="sz-btn sz-btn-outline">Lihat Selengkapnya</a>`;
     }
@@ -70,7 +70,7 @@
             <hr>
             <p class="sz-card-price">${item.price}</p>
             <div class="sz-btn-group">
-              <a href="${finalWaLink}" target="_blank" class="sz-btn sz-btn-primary"><i class="fab fa-whatsapp"></i> Reservasi</a>
+              <a href="${finalWaLink}" target="_blank" class="sz-btn sz-btn-primary" data-wa-src="organic"><i class="fab fa-whatsapp"></i> Reservasi</a>
               ${detailHtml}
             </div>
           </div>
@@ -138,7 +138,7 @@
           <div class="sz-new-card-footer">
             <hr>
             <p class="sz-new-card-price">${item.price}</p>
-            <a href="${waLink}" target="_blank" rel="noopener" class="sz-new-card-cta"><i class="fab fa-whatsapp"></i> Reservasi Sekarang</a>
+            <a href="${waLink}" target="_blank" rel="noopener" class="sz-new-card-cta" data-wa-src="organic"><i class="fab fa-whatsapp"></i> Reservasi Sekarang</a>
           </div>
         </div>
       </div>

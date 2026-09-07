@@ -1,672 +1,250 @@
-<!-- 
-  SOZO SKIN CLINIC — Standalone Promo Slider Peeling Treatments (Compact Mobile Version)
-  Widget: Elementor → Custom HTML
--->
+<!-- SOZO SKIN CLINIC — Hero Section Peeling Treatment -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-  /* TRIK BREAKOUT 100VW: Memaksa elemen full layar dari ujung kiri ke kanan */
-  .sozo-promo-standalone-wrapper {
-    position: relative !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    left: 50% !important;
-    right: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
-    padding: 32px 0 40px !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  }
-
-  .sozo-promo-standalone-wrapper * {
-    box-sizing: border-box !important;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  }
-
-  /* Judul Section */
-  .sozo-promo-section-header {
-    text-align: center !important;
-    margin-bottom: 24px !important;
-  }
-
-  .sozo-promo-main-title {
-    font-size: 26px !important;
-    font-weight: 700 !important;
-    color: #1A2080 !important;
-    margin: 0 !important;
-    line-height: 1.3 !important;
-  }
-
-  /* Container wrapper */
-  .sozo-slider-wrapper {
+  .sozo-rewind-hero {
+    --sozo-navy: #1A2080;
+    --sozo-navy-tint: #EAEDFA;
+    font-family: 'Poppins', sans-serif !important;
     position: relative !important;
     width: 100% !important;
-    max-width: 1180px !important;
+    background: linear-gradient(135deg, #EFF5FF 0%, #FFFFFF 45%, #E6EEFA 100%) !important;
+    overflow: hidden !important;
+    -webkit-font-smoothing: antialiased !important;
+    box-sizing: border-box !important;
+  }
+  
+  .sozo-rewind-hero, 
+  .sozo-rewind-hero * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-rewind-hero h1,
+  .sozo-rewind-hero p {
+    margin: 0 !important;
+  }
+
+  /* Desktop Container */
+  .sozo-rewind-hero__inner {
+    position: relative !important;
+    max-width: 1320px !important;
     margin: 0 auto !important;
-    padding: 0 28px !important;
-  }
-
-  .sozo-promo-slider-outer {
-    position: relative !important;
-    width: 100% !important;
-  }
-
-  .sozo-promo-slider-container {
-    position: relative !important;
-    width: 100% !important;
-    overflow: hidden !important;
-    border-radius: 16px !important;
-  }
-
-  .sozo-promo-slider-track {
     display: flex !important;
-    gap: 16px !important;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
-    will-change: transform !important;
+    align-items: center !important;
+    min-height: 480px !important;
+    padding: 36px 5% 40px !important;
   }
 
-  .sozo-promo-slide {
-    flex: 0 0 calc(33.333% - 11px) !important;
+  /* Lingkaran lembut latar visual */
+  .sozo-rewind-hero__blob {
+    position: absolute !important;
+    top: 50% !important;
+    right: 2% !important;
+    width: 520px !important;
+    height: 520px !important;
+    max-width: 90vw !important;
+    transform: translateY(-50%) !important;
+    background: radial-gradient(circle at 40% 40%, rgba(234, 237, 250, 0.9) 0%, rgba(234, 237, 250, 0) 70%) !important;
+    border-radius: 50% !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
   }
 
-  .sozo-promo-card {
-    background: #ffffff !important;
-    border: 1.5px solid #e2e8f0 !important;
-    border-radius: 16px !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
+  /* Visual Desktop + Gradasi Masking */
+  .sozo-rewind-hero__visual {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;                        
+    width: 58% !important;
     height: 100% !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+    z-index: 1 !important;
+    background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/Text-Removed-scaled.webp') !important;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;  
+    background-size: cover !important;             
+    
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%), 
+                        linear-gradient(to top, transparent 0%, black 8%) !important;
+    -webkit-mask-composite: source-in !important;
+    mask-image: linear-gradient(to right, transparent 0%, black 18%), 
+                linear-gradient(to top, transparent 0%, black 8%) !important;
+    mask-composite: intersect !important;
   }
 
-  .sozo-promo-card:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08) !important;
-    border-color: #cbd5e1 !important;
-  }
-
-  /* Gambar 1:1 Aspect Ratio (Square) */
-  .sozo-promo-img-wrap {
+  .sozo-rewind-hero__content {
     position: relative !important;
-    width: 100% !important;
-    aspect-ratio: 1 / 1 !important;
-    background: #f1f5f9 !important;
-    overflow: hidden !important;
+    z-index: 2 !important;
+    width: 50% !important;
+    min-width: 280px !important;
+    text-align: left !important;
   }
 
-  .sozo-promo-img-wrap img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-  }
-
-  .sozo-promo-body {
-    padding: 18px 16px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    flex-grow: 1 !important;
-    gap: 14px !important;
-  }
-
-  .sozo-promo-info {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 6px !important;
-  }
-
-  .sozo-promo-card-title {
-    font-size: 15px !important;
+  .sozo-hero-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background-color: #D9C7B1 !important;
+    color: var(--sozo-navy) !important;
+    padding: 6px 16px !important;
+    border-radius: 50px !important;
+    font-size: 12px !important;
     font-weight: 700 !important;
-    color: #1A2080 !important;
+    letter-spacing: 0.6px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 16px !important;
+    border: 1px solid rgba(26, 32, 128, 0.15) !important;
+  }
+
+  .sozo-hero-badge svg {
+    width: 13px !important;
+    height: 13px !important;
+    fill: currentColor !important;
+  }
+
+  .sozo-rewind-hero__title {
+    font-family: 'Poppins', sans-serif !important;
+    color: var(--sozo-navy) !important;   
+    font-weight: 800 !important; 
+    font-size: clamp(26px, 3.2vw, 38px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+    margin: 0 0 12px 0 !important;
+  }
+
+  /* Styling Underline Aksentuasi */
+  .sozo-highlight-underline {
+    text-decoration: underline !important;
+    text-decoration-color: #3b82f6 !important; /* Aksen biru terang */
+    text-decoration-thickness: 4px !important;
+    text-underline-offset: 6px !important;
+    display: inline-block !important;
+  }
+
+  /* Deskripsi Teks */
+  .sozo-rewind-hero__desc {
+    color: #4b5563 !important;
+    font-size: clamp(14px, 1.1vw, 16px) !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
     margin: 0 !important;
-    line-height: 1.35 !important;
+  }
+  
+  .sozo-btn-block {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 24px !important;
   }
 
-  .sozo-promo-card-desc {
-    font-size: 12.5px !important;
-    color: #3b4594 !important;
-    line-height: 1.5 !important;
-    margin: 0 !important;
-  }
-
-  .sozo-promo-actions {
-    margin-top: auto !important;
-  }
-
-  .sozo-promo-btn {
+  .sozo-hero-btn-primary {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 6px !important;
-    width: 100% !important;
-    background: #1A2080 !important;
+    background-color: var(--sozo-navy) !important;
     color: #ffffff !important;
-    padding: 10px 14px !important;
-    border-radius: 10px !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
+    padding: 13px 30px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
     text-decoration: none !important;
-    transition: all 0.2s ease !important;
-  }
-
-  .sozo-promo-btn:hover {
-    background: #141966 !important;
-    color: #ffffff !important;
-  }
-
-  .sozo-promo-btn svg {
-    width: 14px !important;
-    height: 14px !important;
-    transition: transform 0.2s ease !important;
-  }
-
-  .sozo-promo-btn:hover svg {
-    transform: translateX(3px) !important;
-  }
-
-  /* Slider Navigation Arrows - Modern Styling & Clean Position */
-  .sozo-slider-btn {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 50% !important;
-    background: #ffffff !important;
-    border: 1.5px solid #e2e8f0 !important;
-    box-shadow: 0 6px 16px rgba(26, 32, 128, 0.14) !important;
-    color: #1A2080 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    z-index: 10 !important;
-    transition: all 0.25s ease !important;
-    outline: none !important;
-    padding: 0 !important;
-  }
-
-  .sozo-slider-btn:hover {
-    background: #1A2080 !important;
-    color: #ffffff !important;
-    border-color: #1A2080 !important;
-    transform: translateY(-50%) scale(1.08) !important;
-    box-shadow: 0 8px 22px rgba(26, 32, 128, 0.25) !important;
-  }
-
-  .sozo-slider-btn svg {
-    width: 20px !important;
-    height: 20px !important;
-    stroke: currentColor !important;
-  }
-
-  .sozo-promo-prev { left: -20px !important; }
-  .sozo-promo-next { right: -20px !important; }
-
-  /* Slider Dots */
-  .sozo-slider-dots {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    margin-top: 18px !important;
-  }
-
-  .sozo-slider-dot {
-    position: relative !important;
-    width: 8px !important;
-    height: 8px !important;
-    border-radius: 50% !important;
-    background: #cbd5e1 !important;
-    border: none !important;
-    padding: 0 !important;
-    cursor: pointer !important;
     transition: all 0.3s ease !important;
+    border: 2px solid var(--sozo-navy) !important;
+    gap: 10px !important;
+    box-shadow: 0 5px 16px rgba(26, 32, 128, 0.2) !important;
   }
 
-  .sozo-slider-dot.active {
-    width: 24px !important;
-    border-radius: 10px !important;
-    background: #1A2080 !important;
+  .sozo-hero-btn-primary:hover {
+    background-color: transparent !important;
+    color: var(--sozo-navy) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.18) !important;
   }
 
-  /* Responsive Tablet */
-  @media (max-width: 992px) {
-    .sozo-promo-slide {
-      flex: 0 0 calc(50% - 8px) !important;
-    }
+  .sozo-hero-btn-primary svg {
+    width: 18px !important;
+    height: 18px !important;
+    fill: currentColor !important;
   }
 
-  /* Responsive Mobile (Tampilan Kompak) */
+  /* Default State: Sembunyikan elemen mobile di Desktop */
+  .sozo-hero-mobile {
+    display: none !important;
+  }
+
+  /* Tampilan Khusus Mobile (Layar <= 768px) */
   @media (max-width: 768px) {
-    .sozo-promo-standalone-wrapper {
-      padding: 16px 0 24px !important;
-    }
-    
-    .sozo-promo-section-header {
-      margin-bottom: 18px !important;
+    .sozo-rewind-hero {
+      background: none !important;
     }
 
-    .sozo-promo-main-title {
-      font-size: 20px !important;
-    }
-
-    .sozo-slider-wrapper {
-      padding: 0 16px !important;
-    }
-
-    .sozo-promo-slide {
-      flex: 0 0 75% !important; 
-      max-width: 290px !important;
-    }
-
-    .sozo-promo-slider-track {
-      gap: 12px !important;
-    }
-
-    .sozo-promo-card {
-      border-radius: 14px !important;
-    }
-
-    .sozo-promo-body {
-      padding: 12px 14px !important;
-      gap: 10px !important;
-    }
-
-    .sozo-promo-card-title {
-      font-size: 13.5px !important;
-      line-height: 1.3 !important;
-    }
-
-    .sozo-promo-card-desc {
-      font-size: 11.5px !important;
-      line-height: 1.4 !important;
-    }
-
-    .sozo-promo-btn {
-      padding: 8px 12px !important;
-      font-size: 12px !important;
-      border-radius: 8px !important;
-    }
-
-    .sozo-slider-dots {
-      margin-top: 14px !important;
-      gap: 6px !important;
-    }
-
-    .sozo-slider-dot {
-      width: 6px !important;
-      height: 6px !important;
-    }
-
-    .sozo-slider-dot.active {
-      width: 18px !important;
-    }
-
-    .sozo-slider-btn {
+    .sozo-rewind-hero__inner {
       display: none !important;
+    }
+
+    .sozo-hero-mobile {
+      display: block !important;
+      width: 100% !important;
+      line-height: 0 !important;
+    }
+
+    .sozo-hero-mobile a {
+      display: block !important;
+      width: 100% !important;
+      text-decoration: none !important;
+    }
+
+    .sozo-hero-mobile img {
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      object-fit: cover !important;
     }
   }
 </style>
 
-<div class="sozo-promo-standalone-wrapper">
-  <div class="sozo-slider-wrapper">
+<div class="sozo-rewind-hero">
+  <!-- Desktop Hero Section -->
+  <div class="sozo-rewind-hero__inner">
+    <div class="sozo-rewind-hero__blob"></div>
+    <div class="sozo-rewind-hero__visual" role="img" aria-label="Peeling Wajah Sozo Skin Clinic"></div>
     
-    <!-- Judul Section -->
-    <div class="sozo-promo-section-header">
-      <h2 class="sozo-promo-main-title">Pilihan Perawatan Peeling Terbaik</h2>
-    </div>
+    <div class="sozo-rewind-hero__content">
+      <div class="sozo-hero-badge">
+        Limited Offer
+      </div>
 
-    <div class="sozo-promo-slider-outer">
-      <div class="sozo-promo-slider-container" id="sozoPromoSliderContainer">
-        <div class="sozo-promo-slider-track" id="sozoPromoSliderTrack">
-        
-        <!-- Promo 1: Glow Peel -->
-        <div class="sozo-promo-slide">
-          <div class="sozo-promo-card">
-            <div class="sozo-promo-img-wrap">
-              <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-glow-peel2.webp" alt="Promo Glow Peel" loading="lazy">
-            </div>
-            <div class="sozo-promo-body">
-              <div class="sozo-promo-info">
-                <h3 class="sozo-promo-card-title">Promo Glow Peel</h3>
-                <p class="sozo-promo-card-desc">Angkat penumpukan sel kulit mati secara menyeluruh, halus tekstur kulit, dan hasilkan kilau sehat alami.</p>
-              </div>
-              <div class="sozo-promo-actions">
-                <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%2C%20saya%20mau%20booking%20promo%20Glow%20Peel" target="_blank" rel="noopener" class="sozo-promo-btn">
-                  <span>Klaim Promo</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Promo 2: Korean Lhala Peel -->
-        <div class="sozo-promo-slide">
-          <div class="sozo-promo-card">
-            <div class="sozo-promo-img-wrap">
-              <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/korean-lhala-peel.webp" alt="Promo Korean Lhala Peel" loading="lazy">
-            </div>
-            <div class="sozo-promo-body">
-              <div class="sozo-promo-info">
-                <h3 class="sozo-promo-card-title">Promo Korean Lhala Peel</h3>
-                <p class="sozo-promo-card-desc">Eksfoliasi generasi ke-4 asal Korea tanpa rasa perih untuk kulit glowing, kenyal, dan glass skin instan.</p>
-              </div>
-              <div class="sozo-promo-actions">
-                <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%2C%20saya%20mau%20booking%20promo%20Korean%20Lhala%20Peel" target="_blank" rel="noopener" class="sozo-promo-btn">
-                  <span>Klaim Promo</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Promo 3: Acne Peel Promo -->
-        <div class="sozo-promo-slide">
-          <div class="sozo-promo-card">
-            <div class="sozo-promo-img-wrap">
-              <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/Acne-Peel-Promo-scaled.webp" alt="Promo Acne Peel" loading="lazy">
-            </div>
-            <div class="sozo-promo-body">
-              <div class="sozo-promo-info">
-                <h3 class="sozo-promo-card-title">Promo Acne Peel Solution</h3>
-                <p class="sozo-promo-card-desc">Atasi jerawat meradang, bersihkan pori-pori tersumbat, dan kontrol minyak berlebih hingga tuntas.</p>
-              </div>
-              <div class="sozo-promo-actions">
-                <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%2C%20saya%20mau%20booking%20promo%20Acne%20Peel" target="_blank" rel="noopener" class="sozo-promo-btn">
-                  <span>Klaim Promo</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Promo 4: Eternal Bloom Peel Promo -->
-        <div class="sozo-promo-slide">
-          <div class="sozo-promo-card">
-            <div class="sozo-promo-img-wrap">
-              <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-Mockup-Peeling-LP-Eternal-Bloom-Peel.webp" alt="Promo Eternal Bloom Peel" loading="lazy">
-            </div>
-            <div class="sozo-promo-body">
-              <div class="sozo-promo-info">
-                <h3 class="sozo-promo-card-title">Promo Eternal Bloom Peel</h3>
-                <p class="sozo-promo-card-desc">Regenerasi sel kulit baru, samarkan kerutan halus, serta kembalikan elastisitas wajah tampak lebih awet muda.</p>
-              </div>
-              <div class="sozo-promo-actions">
-                <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%2C%20saya%20mau%20booking%20promo%20Eternal%20Bloom%20Peel" target="_blank" rel="noopener" class="sozo-promo-btn">
-                  <span>Klaim Promo</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Promo 5: Dazzling Glow Peel -->
-        <div class="sozo-promo-slide">
-          <div class="sozo-promo-card">
-            <div class="sozo-promo-img-wrap">
-              <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-Mockup-Peeling-LP-Dazzling-Glow-Peel.webp" alt="Promo Dazzling Glow Peel" loading="lazy">
-            </div>
-            <div class="sozo-promo-body">
-              <div class="sozo-promo-info">
-                <h3 class="sozo-promo-card-title">Promo Dazzling Glow Peel</h3>
-                <p class="sozo-promo-card-desc">Samarkan flek hitam dan hiperpigmentasi untuk kulit cerah merata dan bebas kusam secara maksimal.</p>
-              </div>
-              <div class="sozo-promo-actions">
-                <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%2C%20saya%20mau%20booking%20promo%20Dazzling%20Glow%20Peel" target="_blank" rel="noopener" class="sozo-promo-btn">
-                  <span>Klaim Promo</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <h1 class="sozo-rewind-hero__title">
+        Kulit Cerah, Halus, dan Sehat Dengan <span class="sozo-highlight-underline">Face Peeling & Facial</span>
+      </h1>
+      
+      <p class="sozo-rewind-hero__desc">
+        Angkat sel kulit mati, bersihkan pori-pori, dan kembalikan kilau alami kulitmu.
+      </p>
+      
+      <div class="sozo-btn-block">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20peeling%20treatment%20[sumber:%20SEM-peeling%20treatment]" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="sozo-hero-btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+          </svg>
+          Konsultasi Sekarang
+        </a>
       </div>
     </div>
-
-    <button type="button" class="sozo-slider-btn sozo-promo-prev" id="sozoPromoPrev" aria-label="Promo Sebelumnya">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-    </button>
-    <button type="button" class="sozo-slider-btn sozo-promo-next" id="sozoPromoNext" aria-label="Promo Selanjutnya">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-    </button>
   </div>
 
-  <div class="sozo-slider-dots" id="sozoPromoDots"></div>
+  <!-- Mobile Only Banner (Clickable WhatsApp) -->
+  <div class="sozo-hero-mobile">
+    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20peeling%20treatment%20[sumber:%20SEM-peeling%20treatment]" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Konsultasi Peeling Treatment via WhatsApp">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/SKIN-Landing-page-experiment-Peeling-Medical-ed-Main-text.webp" 
+           alt="Promo Peeling Wajah Mulai dari 100rb-an - Sozo Skin Clinic" 
+           loading="eager" />
+    </a>
+  </div>
 </div>
-</div>
-
-<script>
-(function() {
-  function getPerView() {
-    const w = window.innerWidth;
-    if (w <= 768) return 1;
-    if (w <= 992) return 2;
-    return 3;
-  }
-
-  function initPromoSlider() {
-    const track = document.getElementById('sozoPromoSliderTrack');
-    const prevBtn = document.getElementById('sozoPromoPrev');
-    const nextBtn = document.getElementById('sozoPromoNext');
-    const dotsContainer = document.getElementById('sozoPromoDots');
-    const container = document.getElementById('sozoPromoSliderContainer');
-
-    if (!track) return null;
-
-    let currentIndex = 0;
-    let autoTimer = null;
-
-    function getSlides() {
-      return track.children;
-    }
-
-    function buildDots() {
-      if (!dotsContainer) return;
-      dotsContainer.innerHTML = '';
-      const total = getSlides().length;
-      const perView = getPerView();
-      const count = Math.max(1, total - perView + 1);
-
-      for (let i = 0; i < count; i++) {
-        const dot = document.createElement('button');
-        dot.className = 'sozo-slider-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-        dot.addEventListener('click', () => {
-          goTo(i);
-          resetAuto();
-        });
-        dotsContainer.appendChild(dot);
-      }
-    }
-
-    function goTo(index) {
-      const slides = getSlides();
-      const total = slides.length;
-      if (total === 0) return;
-
-      const perView = getPerView();
-      const maxIndex = Math.max(0, total - perView);
-
-      if (index < 0) index = 0;
-      if (index > maxIndex) index = maxIndex;
-      currentIndex = index;
-
-      const slideWidth = slides[0].getBoundingClientRect().width;
-      const gap = window.innerWidth <= 768 ? 12 : 16;
-      const move = (slideWidth + gap) * currentIndex;
-
-      track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
-      track.style.transform = `translateX(-${move}px)`;
-
-      if (dotsContainer) {
-        const dots = dotsContainer.querySelectorAll('.sozo-slider-dot');
-        dots.forEach((d, idx) => d.classList.toggle('active', idx === currentIndex));
-      }
-    }
-
-    function next() {
-      const total = getSlides().length;
-      const maxIndex = Math.max(0, total - getPerView());
-      if (currentIndex >= maxIndex) goTo(0);
-      else goTo(currentIndex + 1);
-    }
-
-    function prev() {
-      const total = getSlides().length;
-      const maxIndex = Math.max(0, total - getPerView());
-      if (currentIndex <= 0) goTo(maxIndex);
-      else goTo(currentIndex - 1);
-    }
-
-    function startAuto() {
-      if (!autoTimer) {
-        autoTimer = setInterval(next, 5000);
-      }
-    }
-
-    function stopAuto() {
-      if (autoTimer) {
-        clearInterval(autoTimer);
-        autoTimer = null;
-      }
-    }
-
-    function resetAuto() {
-      stopAuto();
-      startAuto();
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        next();
-        resetAuto();
-      });
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        prev();
-        resetAuto();
-      });
-    }
-
-    if (container) {
-      container.addEventListener('mouseenter', stopAuto);
-      container.addEventListener('mouseleave', startAuto);
-
-      let startX = 0;
-      let startY = 0;
-      let currentX = 0;
-      let isTouching = false;
-      let isHorizontal = null;
-
-      container.addEventListener('touchstart', (e) => {
-        stopAuto();
-        const touch = e.touches[0];
-        startX = touch.clientX;
-        startY = touch.clientY;
-        currentX = startX;
-        isTouching = true;
-        isHorizontal = null;
-      }, { passive: true });
-
-      container.addEventListener('touchmove', (e) => {
-        if (!isTouching) return;
-        const touch = e.touches[0];
-        currentX = touch.clientX;
-        const diffX = currentX - startX;
-        const diffY = touch.clientY - startY;
-
-        if (isHorizontal === null) {
-          if (Math.abs(diffX) > 6 || Math.abs(diffY) > 6) {
-            isHorizontal = Math.abs(diffX) > Math.abs(diffY);
-          }
-        }
-
-        if (isHorizontal) {
-          track.style.transition = 'none';
-          const slides = getSlides();
-          if (slides.length > 0) {
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            const gap = window.innerWidth <= 768 ? 12 : 16;
-            const baseMove = (slideWidth + gap) * currentIndex;
-            track.style.transform = `translateX(${-baseMove + diffX}px)`;
-          }
-        }
-      }, { passive: true });
-
-      function handleTouchEnd() {
-        if (!isTouching) return;
-        isTouching = false;
-        track.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)';
-
-        const diffX = startX - currentX;
-        if (isHorizontal && Math.abs(diffX) > 35) {
-          if (diffX > 0) next();
-          else prev();
-        } else {
-          goTo(currentIndex);
-        }
-        resetAuto();
-      }
-
-      container.addEventListener('touchend', handleTouchEnd, { passive: true });
-      container.addEventListener('touchcancel', handleTouchEnd, { passive: true });
-    }
-
-    buildDots();
-    goTo(0);
-    startAuto();
-
-    return {
-      refresh: () => {
-        buildDots();
-        goTo(currentIndex);
-      }
-    };
-  }
-
-  let promoCtrl = null;
-  let resizeTimer;
-
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      if (promoCtrl) promoCtrl.refresh();
-    }, 200);
-  });
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      promoCtrl = initPromoSlider();
-    });
-  } else {
-    promoCtrl = initPromoSlider();
-  }
-})();
-</script>

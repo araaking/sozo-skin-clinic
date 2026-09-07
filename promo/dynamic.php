@@ -154,18 +154,29 @@ function sozo_get_wa_link() {
 }
 
 function sozo_render_category_gallery_slider($category_slug) {
-    $term = get_term_by('slug', $category_slug, 'promo_category');
     $images = array();
+    $is_general = ($category_slug === 'general-promo');
 
-    if ($term) {
-        $gallery_ids = get_term_meta($term->term_id, 'sozo_promo_gallery', true);
-        if (!empty($gallery_ids)) {
-            $ids = explode(',', $gallery_ids);
-            foreach ($ids as $id) {
-                $url = wp_get_attachment_image_url($id, 'full');
-                $alt = get_post_meta($id, '_wp_attachment_image_alt', true);
-                if ($url) {
-                    $images[] = array('url' => $url, 'alt' => $alt ? $alt : 'Promo SOZO Skin');
+    // Data statis khusus General Promo
+    if ($is_general) {
+        $images = array(
+            array('url' => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-28-at-15.25.53.webp', 'alt' => 'General Promo SOZO Skin'),
+            array('url' => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-28-at-15.25.53-1.webp', 'alt' => 'General Promo SOZO Skin'),
+            array('url' => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/SEO-Banner-SKIN-Agustus-2026-16x9-8.webp', 'alt' => 'General Promo SOZO Skin'),
+            array('url' => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/SEO-Banner-SKIN-Agustus-2026-16x9-15.webp', 'alt' => 'General Promo SOZO Skin'),
+        );
+    } else {
+        $term = get_term_by('slug', $category_slug, 'promo_category');
+        if ($term) {
+            $gallery_ids = get_term_meta($term->term_id, 'sozo_promo_gallery', true);
+            if (!empty($gallery_ids)) {
+                $ids = explode(',', $gallery_ids);
+                foreach ($ids as $id) {
+                    $url = wp_get_attachment_image_url($id, 'full');
+                    $alt = get_post_meta($id, '_wp_attachment_image_alt', true);
+                    if ($url) {
+                        $images[] = array('url' => $url, 'alt' => $alt ? $alt : 'Promo SOZO Skin');
+                    }
                 }
             }
         }
@@ -177,10 +188,12 @@ function sozo_render_category_gallery_slider($category_slug) {
 
     ob_start();
     ?>
-    <div class="sz-promo-slider-container">
+    <div class="sz-promo-slider-container <?php echo $is_general ? 'sz-slider-general' : ''; ?>">
+        <?php if (!$is_general): ?>
         <button class="sz-promo-nav-btn prev" aria-label="Previous Slide" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
         </button>
+        <?php endif; ?>
 
         <div class="sz-promo-grid">
             <?php 
@@ -188,8 +201,9 @@ function sozo_render_category_gallery_slider($category_slug) {
             foreach ($images as $img) : 
                 $i++;
                 $fetch_priority = ($i <= 2) ? 'fetchpriority="high"' : 'loading="lazy"';
+                $card_class = $is_general ? 'sz-promo-card sz-card-banner' : 'sz-promo-card';
             ?>
-                <div class="sz-promo-card" data-full-img="<?php echo esc_url($img['url']); ?>" data-modal-id="szPromoModal">
+                <div class="<?php echo esc_attr($card_class); ?>" data-full-img="<?php echo esc_url($img['url']); ?>" data-modal-id="szPromoModal">
                     <div class="sz-promo-image">
                         <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>" <?php echo $fetch_priority; ?>>
                         <div class="sz-promo-overlay">
@@ -201,12 +215,13 @@ function sozo_render_category_gallery_slider($category_slug) {
             <?php endforeach; ?>
         </div>
 
+        <?php if (!$is_general): ?>
         <button class="sz-promo-nav-btn next" aria-label="Next Slide" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
         </button>
+        <?php endif; ?>
     </div>
     <?php
-    // SCRIPT INLINE DIHAPUS DARI SINI UNTUK MENCEGAH KONFLIK DENGAN WP_FOOTER
     return ob_get_clean();
 }
 
@@ -273,6 +288,7 @@ add_shortcode('sozo_promo_special', function() {
 // 5.3. List All Promos Shortcode
 add_shortcode('sozo_promo_list', function() {
     $categories = array(
+        'general-promo'    => array('title' => 'General Promo', 'id' => 'general-promo'),
         'single-treatment' => array('title' => 'Promo Single Treatment', 'id' => 'single-treatment'),
         'skin-treatment'   => array('title' => 'Skin Treatment', 'id' => 'skin-treatment'),
         'acne-scar-free'   => array('title' => 'Acne & Scar Free', 'id' => 'acne-scar-free'),
@@ -373,7 +389,7 @@ add_shortcode('sozo_promo_cta', function() {
     <?php return ob_get_clean();
 });
 
-// 5.6. Master Shortcode (Semua Gabung Jadi Satu)
+// 5.6. Master Shortcode
 add_shortcode('sozo_promo_landing', function() {
     ob_start();
     ?>
@@ -386,7 +402,7 @@ add_shortcode('sozo_promo_landing', function() {
         echo do_shortcode('[sozo_promo_cta]');
         ?>
         
-        <!-- FLOATING BUTTON (Hanya Muncul Jika Memanggil Master Landing Page) -->
+        <!-- FLOATING BUTTON -->
         <div class="sozo-promo-wrapper">
             <button class="sz-floating-promo-btn" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -404,16 +420,16 @@ add_shortcode('sozo_promo_landing', function() {
     return ob_get_clean();
 });
 
-// 5.7. Shortcode Per Kategori Spesifik (dengan custom WA link + header opsional)
+// 5.7. Shortcode Per Kategori Spesifik
 add_shortcode('sozo_promo_kategori', function($atts) {
     $atts = shortcode_atts(array(
-        'slug'       => '', 
-        'title'      => '',
-        'wa_link'    => '',
-        'subtitle'   => 'Wujudkan Kulit Impian dengan Cicilan 0%! Klaim Promonya Sekarang, Syarat & Ketentuan Berlaku.',
-        'promo_url'  => 'https://sozoskinclinic.com/promo/',
-        'link_text'  => 'Lihat Promo Lengkapnya',
-        'show_header'=> 'true'
+        'slug'        => '', 
+        'title'       => '',
+        'wa_link'     => '',
+        'subtitle'    => 'Wujudkan Kulit Impian dengan Cicilan 0%! Klaim Promonya Sekarang, Syarat & Ketentuan Berlaku.',
+        'promo_url'   => 'https://sozoskinclinic.com/promo/',
+        'link_text'   => 'Lihat Promo Lengkapnya',
+        'show_header' => 'true'
     ), $atts);
 
     if (empty($atts['slug'])) {
@@ -467,68 +483,108 @@ add_shortcode('sozo_promo_kategori', function($atts) {
 });
 
 
-// ============ 6. INJECT STRICT CSS ============
+// ============ 6. INJECT STRICT CSS & FONT ============
 add_action('wp_head', function() {
     ?>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style id="sozo-promo-inline-css">
         :root {
             --sozo-blue: #1A2080;
             --sozo-blue-hover: #2a33a3;
-            --sozo-cyan: #3AB4F2;
-            --sozo-text: #333333;
-            --sozo-border: #e5e7eb;
-            --sozo-light-bg: #F4F8FA;
+            --sozo-text: #475569;
+            --sozo-border: #e2e8f0;
+            --sozo-gradient-bg: linear-gradient(135deg, #EFF5FF 0%, #FFFFFF 45%, #E6EEFA 100%);
             --sozo-white: #FFFFFF;
-            --sozo-font-heading: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
-            --sozo-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --sozo-font-heading: 'Poppins', system-ui, -apple-system, sans-serif;
+            --sozo-font-body: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
             --card-radius: 20px;
         }
 
-        .sozo-promo-wrapper { background: var(--sozo-light-bg); color: var(--sozo-text); font-family: var(--sozo-font-body); }
-        .sozo-promo-wrapper h1, .sozo-promo-wrapper h2, .sozo-promo-wrapper h3, .sozo-promo-wrapper h4 { font-family: var(--sozo-font-heading); color: var(--sozo-blue); }
+        .sozo-promo-wrapper { 
+            background: var(--sozo-gradient-bg) !important; 
+            color: var(--sozo-text); 
+            font-family: var(--sozo-font-body); 
+        }
+        .sozo-promo-wrapper h1, 
+        .sozo-promo-wrapper h2, 
+        .sozo-promo-wrapper h3, 
+        .sozo-promo-wrapper h4 { 
+            font-family: var(--sozo-font-heading); 
+            color: var(--sozo-blue); 
+        }
         .sozo-promo-wrapper .wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
 
-        .sozo-promo-wrapper .hero { padding: 56px 0 64px; }
+        .sozo-promo-wrapper .hero { padding: 60px 0 70px; }
         .sozo-promo-wrapper .hero-grid { display: grid; grid-template-columns: 1fr 0.86fr; gap: 48px; align-items: center; }
-        .sozo-promo-wrapper .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--sozo-cyan); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 20px; }
-        .sozo-promo-wrapper .hero-eyebrow::before { content: ""; width: 20px; height: 1.5px; background: var(--sozo-cyan); }
-        .sozo-promo-wrapper .hero h1 { font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.25; color: var(--sozo-blue); font-weight: 700; margin-bottom: 18px; }
-        .sozo-promo-wrapper .hero h1 em { font-style: normal; color: var(--sozo-cyan); font-weight: 800; }
+        .sozo-promo-wrapper .hero-eyebrow { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            color: var(--sozo-blue) !important; 
+            font-size: 13px; 
+            font-weight: 700; 
+            letter-spacing: .12em; 
+            text-transform: uppercase; 
+            margin-bottom: 20px; 
+        }
+        .sozo-promo-wrapper .hero-eyebrow::before { 
+            content: ""; 
+            width: 20px; 
+            height: 2.5px; 
+            background: var(--sozo-blue) !important; 
+            border-radius: 2px;
+        }
+        .sozo-promo-wrapper .hero h1 { font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.25; color: var(--sozo-blue); font-weight: 800; margin-bottom: 18px; }
+        .sozo-promo-wrapper .hero h1 em { font-style: normal; color: var(--sozo-blue); font-weight: 800; text-decoration: underline; text-decoration-color: rgba(26, 32, 128, 0.3); }
         .sozo-promo-wrapper .hero p { font-size: 16px; color: var(--sozo-text); line-height: 1.65; max-width: 430px; margin-bottom: 30px; }
         .sozo-promo-wrapper .hero-actions { display: flex; gap: 12px; align-items: center; }
         
         .sozo-promo-wrapper .btn-primary { 
             background: var(--sozo-blue) !important; 
             color: var(--sozo-white) !important; 
-            border: none !important; 
-            padding: 14px 26px !important; 
-            border-radius: 8px !important; 
+            border: 2px solid var(--sozo-blue) !important; 
+            padding: 14px 28px !important; 
+            border-radius: 50px !important; 
             font-weight: 600 !important; 
-            font-size: 14.5px !important; 
+            font-size: 15px !important; 
             text-decoration: none !important; 
             display: inline-block !important; 
-            transition: background-color .2s !important; 
+            transition: all .3s ease !important; 
+            box-shadow: 0 4px 15px rgba(26, 32, 128, 0.2) !important;
         }
-        .sozo-promo-wrapper .btn-primary:hover { background: var(--sozo-blue-hover) !important; color: #fff !important; }
+        .sozo-promo-wrapper .btn-primary:hover { 
+            background: transparent !important; 
+            color: var(--sozo-blue) !important; 
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 32, 128, 0.15) !important;
+        }
         
         .sozo-promo-wrapper .btn-ghost { 
             background: transparent !important; 
-            border: 1.5px solid var(--sozo-border) !important; 
+            border: 2px solid var(--sozo-blue) !important; 
             color: var(--sozo-blue) !important; 
-            padding: 13px 22px !important; 
-            border-radius: 8px !important; 
-            font-weight: 500 !important; 
-            font-size: 14.5px !important; 
+            padding: 14px 26px !important; 
+            border-radius: 50px !important; 
+            font-weight: 600 !important; 
+            font-size: 15px !important; 
             text-decoration: none !important; 
             display: inline-block !important; 
-            transition: all .2s !important; 
+            transition: all .3s ease !important; 
         }
-        .sozo-promo-wrapper .btn-ghost:hover { border-color: var(--sozo-blue) !important; background: var(--sozo-white) !important; }
+        .sozo-promo-wrapper .btn-ghost:hover { 
+            background: var(--sozo-blue) !important; 
+            color: var(--sozo-white) !important; 
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 32, 128, 0.15) !important;
+        }
         
         .sozo-promo-wrapper .hero-visual { position: relative; }
-        .sozo-promo-wrapper .hero-poster { width: 100%; aspect-ratio: 1/1; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 48px -18px rgba(26, 32, 128, 0.2); }
+        .sozo-promo-wrapper .hero-poster { width: 100%; aspect-ratio: 1/1; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 48px -18px rgba(26, 32, 128, 0.2); }
         .sozo-promo-wrapper .hero-poster img { width: 100%; height: 100%; object-fit: cover; }
-        .sozo-promo-wrapper .hero-tag { position: absolute; top: 18px; left: 18px; background: var(--sozo-white); color: var(--sozo-blue); font-size: 12px; font-weight: 600; padding: 8px 14px; border-radius: 999px; box-shadow: 0 8px 16px -6px rgba(0,0,0,.15); }
+        .sozo-promo-wrapper .hero-tag { position: absolute; top: 18px; left: 18px; background: var(--sozo-white); color: var(--sozo-blue); font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 999px; box-shadow: 0 8px 16px -6px rgba(26, 32, 128, 0.2); }
 
         .sozo-promo-wrapper .section { padding: 60px 0; }
         
@@ -540,8 +596,16 @@ add_action('wp_head', function() {
             gap: 24px !important; 
             flex-wrap: wrap !important; 
         }
-        .sozo-promo-wrapper .section-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--sozo-cyan); margin-bottom: 8px; display: block; }
-        .sozo-promo-wrapper .section-head h2 { font-size: clamp(1.5rem, 2.5vw, 2rem) !important; color: var(--sozo-blue) !important; font-weight: 700 !important; margin: 0 !important; line-height: 1.1 !important; }
+        .sozo-promo-wrapper .section-eyebrow { 
+            font-size: 12px; 
+            font-weight: 700; 
+            letter-spacing: .12em; 
+            text-transform: uppercase; 
+            color: var(--sozo-blue) !important; 
+            margin-bottom: 8px; 
+            display: block; 
+        }
+        .sozo-promo-wrapper .section-head h2 { font-size: clamp(1.5rem, 2.5vw, 2rem) !important; color: var(--sozo-blue) !important; font-weight: 700 !important; margin: 0 !important; line-height: 1.2 !important; }
         
         .sozo-promo-wrapper .section-head p { 
             color: var(--sozo-text) !important; 
@@ -551,18 +615,19 @@ add_action('wp_head', function() {
             margin: 0 !important;
         }
 
-        .sozo-promo-wrapper .special { background: linear-gradient(135deg, var(--sozo-blue) 0%, var(--sozo-blue-hover) 100%); border-radius: 24px; overflow: hidden; color: var(--sozo-white); }
+        .sozo-promo-wrapper .special { background: linear-gradient(135deg, var(--sozo-blue) 0%, var(--sozo-blue-hover) 100%); border-radius: 24px; overflow: hidden; color: var(--sozo-white); box-shadow: 0 20px 40px rgba(26, 32, 128, 0.15); }
         .sozo-promo-wrapper .special-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; }
         .sozo-promo-wrapper .special-content { padding: 52px 48px; }
+        .sozo-promo-wrapper .special-content .section-eyebrow { color: rgba(255, 255, 255, 0.85) !important; }
         .sozo-promo-wrapper .special-content h2 { color: var(--sozo-white); font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 14px; font-weight: 700; }
-        .sozo-promo-wrapper .special-content h2 em { font-style: normal; color: var(--sozo-cyan); font-weight: 800; }
-        .sozo-promo-wrapper .special-content p { color: rgba(255, 255, 255, 0.85); font-size: 14.5px; max-width: 380px; margin-bottom: 24px; line-height: 1.6; }
+        .sozo-promo-wrapper .special-content h2 em { font-style: normal; color: #FFFFFF; font-weight: 800; text-decoration: underline; }
+        .sozo-promo-wrapper .special-content p { color: rgba(255, 255, 255, 0.9); font-size: 14.5px; max-width: 380px; margin-bottom: 24px; line-height: 1.6; }
         .sozo-promo-wrapper .pay-logos { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
         
         .sozo-promo-wrapper .pay-logos span { 
-            background: rgba(255, 255, 255, 0.12) !important; 
-            border: 1px solid rgba(255, 255, 255, 0.2) !important; 
-            padding: 7px 12px !important; 
+            background: rgba(255, 255, 255, 0.15) !important; 
+            border: 1px solid rgba(255, 255, 255, 0.25) !important; 
+            padding: 7px 14px !important; 
             border-radius: 8px !important; 
             font-size: 12px !important; 
             font-weight: 600 !important; 
@@ -574,21 +639,22 @@ add_action('wp_head', function() {
         a.special-cta { 
             background: var(--sozo-white) !important; 
             color: var(--sozo-blue) !important; 
-            border: none !important; 
-            padding: 13px 24px !important; 
-            border-radius: 8px !important; 
+            border: 2px solid var(--sozo-white) !important; 
+            padding: 13px 26px !important; 
+            border-radius: 50px !important; 
             font-weight: 600 !important; 
             font-size: 14px !important; 
             cursor: pointer !important; 
-            display: inline-block !important;
-            text-decoration: none !important;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.1) !important;
-            outline: none !important;
-            appearance: none !important;
-            -webkit-appearance: none !important;
-            transition: background-color .2s !important; 
+            display: inline-block !important; 
+            text-decoration: none !important; 
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12) !important;
+            transition: all .3s ease !important; 
         }
-        .sozo-promo-wrapper .special-cta:hover { background: var(--sozo-light-bg) !important; color: var(--sozo-blue) !important; }
+        .sozo-promo-wrapper .special-cta:hover { 
+            background: transparent !important; 
+            color: var(--sozo-white) !important; 
+            transform: translateY(-2px);
+        }
         
         .sozo-promo-wrapper .special-visual { height: 100%; min-height: 380px; }
         .sozo-promo-wrapper .special-visual img { width: 100%; height: 100%; object-fit: cover; }
@@ -599,36 +665,44 @@ add_action('wp_head', function() {
             color: var(--sozo-text) !important; 
             font-weight: 600 !important; 
             font-size: 13.5px !important; 
-            padding: 9px 16px !important; 
+            padding: 9px 18px !important; 
             border-radius: 999px !important; 
             border: 1px solid var(--sozo-border) !important; 
             background: var(--sozo-white) !important; 
-            display: inline-block !important;
+            display: inline-block !important; 
             transition: all .2s !important; 
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
         }
-        .sozo-promo-wrapper .cat-nav a:hover { color: var(--sozo-blue) !important; border-color: var(--sozo-blue) !important; background: var(--sozo-light-bg) !important; }
+        .sozo-promo-wrapper .cat-nav a:hover { 
+            color: var(--sozo-blue) !important; 
+            border-color: var(--sozo-blue) !important; 
+            transform: translateY(-1px);
+        }
         .sozo-promo-wrapper .cat-block { margin-bottom: 64px; scroll-margin-top: 90px; }
         .sozo-promo-wrapper .cat-block-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--sozo-border); }
-        .sozo-promo-wrapper .cat-block-head h3 { font-size: 1.25rem; color: var(--sozo-blue); font-weight: 600; }
+        .sozo-promo-wrapper .cat-block-head h3 { font-size: 1.25rem; color: var(--sozo-blue); font-weight: 700; }
 
         .sz-promo-slider-container { position: relative !important; }
         .sz-promo-grid { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; scroll-behavior: smooth !important; gap: 20px !important; padding: 10px 0 20px 0 !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; }
         .sz-promo-grid::-webkit-scrollbar { display: none !important; }
-        .sz-promo-card { flex: 0 0 calc(25% - 15px) !important; scroll-snap-align: start !important; cursor: pointer !important; border-radius: var(--card-radius) !important; overflow: hidden !important; box-shadow: 0 4px 15px rgba(0,0,0,0.06) !important; transition: transform 0.3s ease, box-shadow 0.3s ease !important; background: #fff !important; position: relative !important; aspect-ratio: 1 / 1 !important; outline: none !important; border: none !important; }
+
+        /* Kategori Standar: 4 kartu, rasio 1:1 */
+        .sz-promo-card { flex: 0 0 calc(25% - 15px) !important; scroll-snap-align: start !important; cursor: pointer !important; border-radius: var(--card-radius) !important; overflow: hidden !important; box-shadow: 0 6px 18px rgba(26, 32, 128, 0.08) !important; transition: transform 0.3s ease, box-shadow 0.3s ease !important; background: #fff !important; position: relative !important; aspect-ratio: 1 / 1 !important; outline: none !important; border: none !important; }
         .sz-promo-card:focus-visible { outline: 3px solid #1A2080 !important; outline-offset: 2px !important; }
-        .sz-promo-card:hover { transform: translateY(-6px) !important; box-shadow: 0 12px 24px rgba(26, 32, 128, 0.15) !important; }
+        .sz-promo-card:hover { transform: translateY(-6px) !important; box-shadow: 0 14px 28px rgba(26, 32, 128, 0.16) !important; }
         .sz-promo-image { width: 100% !important; height: 100% !important; position: relative !important; }
         .sz-promo-image img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; transition: transform 0.5s ease !important; }
         .sz-promo-card:hover .sz-promo-image img { transform: scale(1.05) !important; }
-        .sz-promo-overlay { position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background: rgba(26, 32, 128, 0.6) !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; color: #fff !important; opacity: 0 !important; transition: opacity 0.3s ease !important; }
+        .sz-promo-overlay { position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background: rgba(26, 32, 128, 0.7) !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; color: #fff !important; opacity: 0 !important; transition: opacity 0.3s ease !important; }
         .sz-promo-card:hover .sz-promo-overlay, .sz-promo-card:focus .sz-promo-overlay { opacity: 1 !important; }
         .sz-promo-overlay svg { margin-bottom: 8px !important; }
         .sz-promo-overlay span { font-size: 14px !important; font-weight: 600 !important; letter-spacing: 0.5px !important; }
 
+        /* Tombol Navigasi Kategori Standar */
         button.sz-promo-nav-btn {
             position: absolute !important; top: 50% !important; transform: translateY(-50%) !important;
             width: 46px !important; height: 46px !important; border-radius: 50% !important;
-            background: #ffffff !important; color: #1A2080 !important; box-shadow: 0 4px 14px rgba(0,0,0,0.18) !important;
+            background: #ffffff !important; color: #1A2080 !important; box-shadow: 0 4px 14px rgba(26, 32, 128, 0.18) !important;
             display: flex !important; align-items: center !important; justify-content: center !important;
             cursor: pointer !important; z-index: 10 !important; border: 1px solid #e2e8f0 !important;
             padding: 0 !important; margin: 0 !important; outline: none !important; transition: all 0.3s ease !important;
@@ -639,7 +713,15 @@ add_action('wp_head', function() {
         button.sz-promo-nav-btn.prev { left: -20px !important; }
         button.sz-promo-nav-btn.next { right: -20px !important; }
 
-        /* Header untuk shortcode kategori saja */
+        /* KHUSUS General Promo (Rasio Banner 16:9, 3 kartu, tanpa tombol panah) */
+        .sz-promo-slider-container.sz-slider-general .sz-promo-grid { gap: 16px !important; }
+        .sz-promo-card.sz-card-banner { flex: 0 0 calc(33.333% - (32px / 3)) !important; border-radius: 14px !important; aspect-ratio: 16 / 9 !important; background: transparent !important; box-shadow: 0 8px 20px -4px rgba(26, 32, 128, 0.08) !important; }
+        .sz-promo-card.sz-card-banner:hover { transform: translateY(-4px) scale(1.02) !important; }
+        .sz-promo-card.sz-card-banner .sz-promo-image img { border-radius: 14px !important; }
+        .sz-promo-card.sz-card-banner .sz-promo-overlay { border-radius: 14px !important; background: rgba(26, 32, 128, 0.6) !important; }
+        .sz-promo-slider-container.sz-slider-general button.sz-promo-nav-btn { display: none !important; }
+
+        /* Header Kategori */
         .sozo-promo-wrapper .sz-promo-header{
             display:flex !important; justify-content:space-between !important; align-items:center !important;
             gap:20px !important; margin-bottom:24px !important;
@@ -650,7 +732,7 @@ add_action('wp_head', function() {
             font-size:28px !important; font-weight:700 !important; margin:0 0 8px 0 !important; line-height:1.3 !important;
         }
         .sozo-promo-wrapper .sz-promo-subtitle{
-            color:#475569 !important; font-family:var(--sozo-font-body) !important;
+            color:var(--sozo-text) !important; font-family:var(--sozo-font-body) !important;
             font-size:15px !important; margin:0 !important; line-height:1.5 !important;
         }
         .sozo-promo-wrapper .sz-promo-link-desktop{
@@ -658,13 +740,13 @@ add_action('wp_head', function() {
             color:#1A2080 !important; font-size:15px !important; font-weight:600 !important;
             text-decoration:none !important; white-space:nowrap !important; transition:all 0.3s ease !important;
         }
-        .sozo-promo-wrapper .sz-promo-link-desktop:hover{ color:#131861 !important; transform:translateX(4px) !important; }
+        .sozo-promo-wrapper .sz-promo-link-desktop:hover{ color:#2a33a3 !important; transform:translateX(4px) !important; }
         .sozo-promo-wrapper .sz-promo-footer.mobile-only{ display:none !important; }
         .sozo-promo-wrapper .sz-promo-btn-mobile{
             display:inline-flex !important; align-items:center !important; justify-content:center !important;
             width:100% !important; gap:8px !important; background:#1A2080 !important; color:#fff !important;
             padding:14px 20px !important; border-radius:30px !important; font-size:15px !important;
-            font-weight:600 !important; text-decoration:none !important; box-shadow:0 4px 12px rgba(26,32,128,.2) !important;
+            font-weight:600 !important; text-decoration:none !important; box-shadow:0 4px 15px rgba(26,32,128,.2) !important;
         }
 
         .sozo-promo-wrapper button.sz-floating-promo-btn,
@@ -711,23 +793,23 @@ add_action('wp_head', function() {
             stroke-width: 2 !important; 
             stroke-linecap: round !important; 
             stroke-linejoin: round !important; 
-            display: block !important;
+            display: block !important; 
         }
 
-        .sz-promo-modal { display: none; position: fixed !important; z-index: 999999 !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background-color: rgba(0,0,0,0.85) !important; backdrop-filter: blur(5px) !important; align-items: center !important; justify-content: center !important; opacity: 0; transition: opacity 0.3s ease !important; }
+        .sz-promo-modal { display: none; position: fixed !important; z-index: 999999 !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background-color: rgba(10, 15, 60, 0.85) !important; backdrop-filter: blur(6px) !important; align-items: center !important; justify-content: center !important; opacity: 0; transition: opacity 0.3s ease !important; }
         .sz-promo-modal.show { display: flex !important; opacity: 1 !important; }
-        .sz-modal-content { position: relative !important; max-width: 420px !important; width: 90% !important; max-height: 90vh !important; animation: sz-zoomIn 0.3s ease !important; }
-        .sz-modal-body { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 14px !important; }
-        .sz-modal-content img { max-width: 100% !important; max-height: 62vh !important; border-radius: 12px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important; display: block !important; object-fit: contain !important; }
+        .sz-modal-content { position: relative !important; max-width: 850px !important; width: 90% !important; max-height: 90vh !important; animation: sz-zoomIn 0.3s ease !important; }
+        .sz-modal-body { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 16px !important; }
+        .sz-modal-content img { max-width: 100% !important; max-height: 75vh !important; border-radius: 12px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important; display: block !important; object-fit: contain !important; }
         .sz-promo-wa-btn { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important; background-color: #1A2080 !important; color: #ffffff !important; padding: 14px 32px !important; border-radius: 50px !important; font-size: 16px !important; font-weight: 600 !important; text-decoration: none !important; transition: all 0.3s ease !important; border: 2px solid #1A2080 !important; box-shadow: 0 4px 15px rgba(26,32,128,0.2) !important; }
         .sz-promo-wa-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; transform: translateY(-2px) !important; box-shadow: 0 8px 20px rgba(26,32,128,0.3) !important; }
         .sz-promo-wa-btn svg { width: 20px !important; height: 20px !important; fill: currentColor !important; }
         .sz-modal-close { position: absolute !important; top: -40px !important; right: 0px !important; color: #fff !important; font-size: 35px !important; font-weight: bold !important; cursor: pointer !important; transition: color 0.3s !important; z-index: 100001 !important; line-height: 1 !important; pointer-events: auto !important; padding: 6px 10px !important; user-select: none !important; }
 
-        .sozo-promo-wrapper .claim { background: var(--sozo-white); border: 1px solid var(--sozo-border); border-radius: 24px; }
+        .sozo-promo-wrapper .claim { background: var(--sozo-white); border: 1px solid var(--sozo-border); border-radius: 24px; box-shadow: 0 10px 30px rgba(26, 32, 128, 0.05); }
         .sozo-promo-wrapper .claim-inner { padding: 56px 48px; }
         .sozo-promo-wrapper .claim-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-        .sozo-promo-wrapper .claim-num { font-family: var(--sozo-font-heading); font-size: 38px; font-weight: 700; color: var(--sozo-cyan); margin-bottom: 14px; }
+        .sozo-promo-wrapper .claim-num { font-family: var(--sozo-font-heading); font-size: 40px; font-weight: 800; color: var(--sozo-blue) !important; margin-bottom: 14px; }
         
         .sozo-promo-wrapper .claim-note { 
             margin-top: 36px !important; 
@@ -741,11 +823,11 @@ add_action('wp_head', function() {
         }
         .sozo-promo-wrapper .claim-note p { 
             font-size: 12.5px !important; 
-            color: #6b7280 !important; 
+            color: #64748b !important; 
             line-height: 1.6 !important; 
             margin: 0 !important; 
         }
-        .sozo-promo-wrapper .claim-note strong { color: var(--sozo-text) !important; font-weight: 600 !important; }
+        .sozo-promo-wrapper .claim-note strong { color: var(--sozo-blue) !important; font-weight: 700 !important; }
 
         .sozo-promo-wrapper .final-cta { padding: 64px 0; text-align: center; }
         .sozo-promo-wrapper .final-cta h2 { font-size: clamp(1.5rem, 2.5vw, 2rem) !important; color: var(--sozo-blue) !important; margin-bottom: 12px !important; font-weight: 700 !important; }
@@ -763,8 +845,9 @@ add_action('wp_head', function() {
         }
 
         @keyframes sz-zoomIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        @keyframes sz-pulse { 0% { box-shadow: 0 0 0 0 rgba(26,32,128,0.6); } 70% { box-shadow: 0 0 0 12px rgba(26,32,128,0); } 100% { box-shadow: 0 0 0 0 rgba(26,32,128,0); } }
+
         @media (max-width: 1024px){ .sz-promo-card { flex: 0 0 calc(33.333% - 14px) !important; } }
+        @media (max-width: 992px){ .sz-promo-card.sz-card-banner { flex: 0 0 calc(50% - 8px) !important; } }
         @media (max-width: 980px){ 
             .sozo-promo-wrapper .hero-grid, .sozo-promo-wrapper .special-inner { grid-template-columns: 1fr; } 
             .sozo-promo-wrapper .claim-grid { grid-template-columns: repeat(2,1fr); } 
@@ -779,13 +862,15 @@ add_action('wp_head', function() {
             .mobile-only { display: block !important; }
             .sz-promo-grid { gap: 16px !important; padding-bottom: 10px !important; }
             .sz-promo-card { flex: 0 0 82% !important; border-radius: 16px !important; }
+            .sz-promo-card.sz-card-banner { flex: 0 0 85% !important; border-radius: 14px !important; }
             .sozo-promo-wrapper .sz-promo-footer{ margin-top: 10px !important; text-align: center !important; }
             .sz-promo-btn-mobile { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 100% !important; box-sizing: border-box !important; gap: 8px !important; background-color: #1A2080 !important; color: #ffffff !important; padding: 14px 20px !important; border-radius: 30px !important; font-size: 15px !important; font-weight: 600 !important; text-decoration: none !important; box-shadow: 0 4px 12px rgba(26,32,128,0.2) !important; }
-            .sz-modal-content { max-width: 92% !important; }
-            .sz-modal-content img { max-height: 68vh !important; }
+            .sz-modal-content { max-width: 95% !important; }
+            .sz-modal-content img { max-height: 70vh !important; }
             .sz-modal-close { top: -35px !important; right: 0px !important; font-size: 30px !important; }
             .sz-promo-wa-btn { width: 100% !important; padding: 12px 20px !important; font-size: 14px !important; }
         }
+        @media (max-width: 560px){ .sozo-promo-wrapper .claim-grid { grid-template-columns: 1fr; } }
         @media (max-width: 560px){ .sozo-promo-wrapper .claim-grid { grid-template-columns: 1fr; } }
     </style>
     <?php
@@ -811,25 +896,23 @@ add_action('wp_footer', function() {
         </div>
     </div>
 
-    <!-- SCRIPT INTERAKSI UI (CONSOLIDATED) -->
+    <!-- SCRIPT INTERAKSI UI -->
     <script id="sozo-promo-inline-js">
     (function(){
-        // Cegah eksekusi ganda jika wp_footer dipanggil dua kali oleh tema
         if (window.__sozoPromoJSLoaded) return;
         window.__sozoPromoJSLoaded = true;
 
         window.sozoOpenPromoModal = function(imageSrc, modalId, cardElement) {
             let modal = document.getElementById(modalId || 'szPromoModal');
-            // jika ada duplikat id (contoh lama + plugin), pilih yang ada WA button
             if (modal && !modal.querySelector('.sz-promo-wa-btn') && document.querySelectorAll('#' + (modalId || 'szPromoModal')).length > 1) {
                 const all = document.querySelectorAll('#' + (modalId || 'szPromoModal'));
                 for (let i=0;i<all.length;i++){ if(all[i].querySelector('.sz-promo-wa-btn')){ modal = all[i]; break; } }
             }
             if (!modal) return;
-            // support dua versi modal: plugin (class) dan contoh lama (id)
+            
             let modalImg = modal.querySelector('.sz-promo-modal-img') || modal.querySelector('#szPromoModalImage');
             let modalWaBtn = modal.querySelector('.sz-promo-wa-btn');
-            // auto-inject WA button kalau modal contoh lama tanpa button
+            
             if (!modalWaBtn) {
                 const waHref = (function(){
                     const cb = cardElement ? cardElement.closest('.cat-block') : null;
@@ -840,10 +923,9 @@ add_action('wp_footer', function() {
                 const body = modal.querySelector('.sz-modal-body') || modal.querySelector('.sz-modal-content') || modal;
                 body.insertAdjacentHTML('beforeend', btnHtml);
                 modalWaBtn = modal.querySelector('.sz-promo-wa-btn');
-                // jika modal contoh lama pakai #szPromoModalImage, tambahkan class biar ter-styling
                 if (modalImg && !modalImg.classList.contains('sz-promo-modal-img')) modalImg.classList.add('sz-promo-modal-img');
             }
-            // Atur Link WA dinamis
+            
             if (modalWaBtn) {
                 const catBlock = cardElement ? cardElement.closest('.cat-block') : null;
                 const customWa = catBlock ? (catBlock.dataset.customWa || catBlock.getAttribute('data-custom-wa')) : null;
@@ -858,7 +940,6 @@ add_action('wp_footer', function() {
         };
 
         window.sozoClosePromoModal = function(modalId) {
-            // close semua modal dengan id tersebut (handle duplikat)
             const modals = modalId ? document.querySelectorAll('#' + modalId) : document.querySelectorAll('.sz-promo-modal.show');
             if (!modals.length) {
                 const single = document.getElementById(modalId || 'szPromoModal');
@@ -878,7 +959,6 @@ add_action('wp_footer', function() {
                 modal.classList.remove('show');
                 setTimeout(function () {
                     if (!modal.classList.contains('show')) {
-                        // hanya reset overflow jika tidak ada modal lain yang masih show
                         if (!document.querySelector('.sz-promo-modal.show')) document.body.style.overflow = '';
                         const img = modal.querySelector('.sz-promo-modal-img') || modal.querySelector('#szPromoModalImage');
                         if (img) img.src = '';
@@ -888,9 +968,7 @@ add_action('wp_footer', function() {
         };
 
         function szInitEvents(){
-            // Gunakan Event Delegation murni (Cocok untuk Elementor yang merender DOM dinamis)
             document.addEventListener('click', function (e) {
-                // 1. Klik pada Card Promo
                 const card = e.target.closest('.sz-promo-card');
                 if (card) {
                     let src = card.dataset.fullImg || card.getAttribute('data-full-img');
@@ -903,7 +981,6 @@ add_action('wp_footer', function() {
                     return;
                 }
 
-                // 2. Klik pada tombol Close Modal — close modal terdekat langsung (tahan duplikat id)
                 const closeBtn = e.target.closest('.sz-modal-close');
                 if (closeBtn) {
                     const parentModal = closeBtn.closest('.sz-promo-modal');
@@ -919,14 +996,12 @@ add_action('wp_footer', function() {
                     return;
                 }
 
-                // 3. Klik Area Luar Modal (Backdrop)
                 const modal = e.target.closest('.sz-promo-modal');
                 if (modal && e.target === modal) {
                     window.sozoClosePromoModal(modal.id || 'szPromoModal');
                     return;
                 }
 
-                // 4. Klik Navigasi Slider
                 const navBtn = e.target.closest('.sz-promo-nav-btn');
                 if (navBtn) {
                     const container = navBtn.closest('.sz-promo-slider-container');
@@ -942,7 +1017,6 @@ add_action('wp_footer', function() {
                     return;
                 }
 
-                // 5. Klik Tombol Floating
                 const floatBtn = e.target.closest('.sz-floating-promo-btn');
                 if (floatBtn) {
                     const targetSection = document.querySelector('#all-promos');
@@ -952,7 +1026,6 @@ add_action('wp_footer', function() {
                 }
             });
 
-            // Tutup Modal via tombol Escape
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') {
                     document.querySelectorAll('.sz-promo-modal.show').forEach(function (m) {
@@ -961,7 +1034,6 @@ add_action('wp_footer', function() {
                 }
             });
 
-            // Logika sembunyikan tombol floating saat user sudah melihat seksi promo
             window.addEventListener('scroll', function () {
                 const floatBtn = document.querySelector('.sz-floating-promo-btn');
                 const promoSection = document.querySelector('#all-promos');
@@ -976,9 +1048,7 @@ add_action('wp_footer', function() {
             });
         }
 
-        // Pastikan event di-bind tanpa peduli status readyState DOM
         szInitEvents();
-
     })();
     </script>
     <?php

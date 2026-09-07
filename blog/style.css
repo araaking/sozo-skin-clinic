@@ -46,8 +46,22 @@
 }
 
 /* ==========================================================
-   2. Main Layout
+   2. Main Layout & Page Background
    ========================================================== */
+
+body.single-post,
+body.single {
+    background: linear-gradient(180deg, #F3F7FD 0%, #FFFFFF 650px) no-repeat !important;
+    background-color: #ffffff !important;
+}
+
+body.single-post #page,
+body.single-post .site,
+body.single-post #content,
+body.single-post .site-content,
+body.single-post .site-main {
+    background: transparent !important;
+}
 
 .sz-single-wrapper {
     max-width: calc(var(--sz-layout-w) + 40px);
@@ -70,7 +84,7 @@
 
 .sz-single-header {
     max-width: var(--sz-content-w);
-    margin: 0 auto 24px auto;
+    margin: 0 auto 28px auto;
     text-align: center;
 }
 
@@ -157,9 +171,10 @@
     text-align: center;
     padding: 12px 18px;
     border: 1px solid rgba(226, 232, 240, 0.95);
-    background: #f8fafc;
+    background: #ffffff;
     border-radius: var(--sz-radius-md);
     margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(26, 32, 128, 0.03);
 }
 
 .sz-byline-info {
@@ -974,14 +989,15 @@
 .sz-trust-panel {
     max-width: var(--sz-content-w);
     margin: 60px auto 0 auto;
-    background: var(--sz-bg-light);
+    background: linear-gradient(180deg, #F8FAFC 0%, #F3F7FD 100%);
     border: 1px solid rgba(226, 232, 240, 0.9);
-    border-radius: var(--sz-radius-md);
+    border-radius: var(--sz-radius-lg);
     padding: 36px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 36px;
     position: relative;
+    box-shadow: 0 4px 20px rgba(26, 32, 128, 0.03);
 }
 
 .sz-trust-panel::after {

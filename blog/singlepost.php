@@ -447,9 +447,26 @@ function sz_single_post_shortcode() {
      * Author and reviewer data
      * ======================================================
      */
-    $author_name   = 'Tim Editorial Sozo Skin Clinic';
-    $author_url    = home_url('/editorial-board/');
-    $author_avatar = 'https://sozoskinclinic.com/wp-content/uploads/2026/04/sozologo.avif';
+    $post_author_id = (int) get_post_field('post_author', $post_id);
+    $author_name    = get_the_author_meta('display_name', $post_author_id);
+    if (empty($author_name)) {
+        $author_name = 'Tim Editorial Sozo Skin Clinic';
+    }
+
+    $author_url = get_author_posts_url($post_author_id);
+    if (empty($author_url)) {
+        $author_url = home_url('/editorial-board/');
+    }
+
+    $author_avatar = get_avatar_url($post_author_id, array('size' => 112));
+    if (empty($author_avatar)) {
+        $author_avatar = 'https://sozoskinclinic.com/wp-content/uploads/2026/04/sozologo.avif';
+    }
+
+    $author_role = get_the_author_meta('job_title', $post_author_id);
+    if (empty($author_role)) {
+        $author_role = 'Medical Content Specialist';
+    }
 
     // ── Reviewer selection: registry key → 6 custom field override → hardcoded default ──
 
@@ -894,7 +911,7 @@ function sz_single_post_shortcode() {
                 <h4>Penulis Artikel</h4>
 
                 <div class="sz-trust-profile">
-                    <img src="<?php echo esc_url($author_avatar); ?>" alt="Author" width="56" height="56" loading="lazy" decoding="async">
+                    <img src="<?php echo esc_url($author_avatar); ?>" alt="<?php echo esc_attr($author_name); ?>" width="56" height="56" loading="lazy" decoding="async">
 
                     <div class="sz-trust-profile-info">
                         <h3>
@@ -903,10 +920,10 @@ function sz_single_post_shortcode() {
                             </a>
                         </h3>
 
-                        <p>Tim Editorial Sozo Skin Clinic</p>
+                        <p><?php echo esc_html($author_role); ?></p>
 
                         <a href="<?php echo esc_url($author_url); ?>" class="sz-profile-link">
-                            Lihat Standar Editorial &rarr;
+                            Lihat Profil Penulis &rarr;
                         </a>
                     </div>
                 </div>
@@ -1184,10 +1201,16 @@ function sz_single_post_shortcode() {
             'articleSection'   => $cat_name,
             'timeRequired'     => 'PT' . $reading_time . 'M',
             'author'           => array(
-                '@type' => 'Organization',
-                '@id'   => home_url('/#editorialTeam'),
-                'name'  => $author_name,
-                'url'   => esc_url_raw($author_url),
+                '@type'    => 'Person',
+                '@id'      => trailingslashit($author_url) . '#person',
+                'name'     => $author_name,
+                'url'      => esc_url_raw($author_url),
+                'jobTitle' => $author_role,
+                'image'    => esc_url_raw($author_avatar),
+                'worksFor' => array(
+                    '@type' => 'MedicalOrganization',
+                    '@id'   => home_url('/#organization'),
+                ),
             ),
             'publisher'        => array(
                 '@id' => home_url('/#organization'),
