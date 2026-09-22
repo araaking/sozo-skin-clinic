@@ -34,7 +34,7 @@ Rule ini berlaku untuk penjelasan, dokumentasi, dan komentar. **Tidak berlaku un
 
 Proyek ini dulunya fokus tunggal pada schema markup JSON-LD. Sejak 13 Juli 2026, scope berkembang menjadi dokumentasi UI & SEO lengkap untuk `sozoskinclinic.com`. README.md, AGENTS.md, dan Dokumentasi.md adalah tiga dokumen utama. Folder `docs/` adalah ekstensi modular:
 
-* **`docs/adr/`** — Architecture Decision Records. Setiap keputusan teknis (kenapa, bukan cuma apa) layak didokumentasikan di sini. Saat ini 7 ADR:
+* **`docs/adr/`** — Architecture Decision Records. Setiap keputusan teknis (kenapa, bukan cuma apa) layak didokumentasikan di sini. Saat ini 8 ADR:
   - `0001-disable-yoast-schema.md` — Matikan output JSON-LD Yoast SEO
   - `0002-use-service-not-product.md` — Pakai schema Service, bukan Product
   - `0003-homepage-as-knowledge-hub.md` — Homepage sebagai knowledge graph hub
@@ -42,6 +42,7 @@ Proyek ini dulunya fokus tunggal pada schema markup JSON-LD. Sejak 13 Juli 2026,
   - `0005-keep-faq-after-rich-result-removal.md` — FAQPage tetap dipasang meski Google hapus rich result Mei 2026
   - `0006-skip-yoast-breadcrumb.md` — Skip Yoast breadcrumb sepenuhnya (visual maupun schema)
   - `0007-two-file-convention.md` — Konvensi dua file per treatment (index.html + schema-markup.html)
+  - `0008-single-source-blog-schema.md` — Satu sumber schema artikel (`blog/singlepost.php`), `articleBody` + referensi entity
 * **`docs/components/`** — UI component specs. Standar atom/molekul UI yang dipakai di LP. Standarisasi di level **atom** (button, input, badge) — bukan di level section (hero, info-row). Section bervariasi antar LP, atom harus konsisten. Saat ini 5 specs: button, table, card, accordion, whatsapp-button.
 
 AGENTS.md ini fokus pada **schema generation rules** + cara AI bekerja di project. Untuk keputusan arsitektur, lihat `docs/adr/`. Untuk UI components, lihat `docs/components/`. Untuk status per-LP, lihat README.md.
@@ -118,6 +119,9 @@ Sebelum generate schema baru, cek dulu file referensi terdekat di folder yang se
 - `medicalSpecialty` TIDAK dipakai — expected type enumerasi `MedicalSpecialty`, string bebas memicu warning. Gunakan `knowsAbout`.
 - STR masuk `hasCredential` (`EducationalOccupationalCredential`, credentialCategory: STR) **hanya** jika nomor tampil penuh di UI. Yang disensor jangan dipaksa masuk.
 
+**Blog/Artikel:**
+- `blog/singlepost.php` — schema artikel dynamic via shortcode `[sozoskin_single]`: `MedicalWebPage` + `BlogPosting` + `Person` (reviewer, kondisional) + `BreadcrumbList` 3-level. `articleBody` + `wordCount` + `keywords` diisi dari konten. Template PHP, bukan dua-file HTML. Lihat ADR-0008.
+
 ### Aturan Konsistensi Harga
 
 - **Default:** `Service.offers` → `Offer` dengan field `priceSpecification` bertipe `PriceSpecification` (mengandung `price`, `priceCurrency`, `priceValidUntil`, `description` opsional).
@@ -138,7 +142,7 @@ Sebelum generate, cek dulu kategori URL-nya. Setiap kategori pakai tipe schema y
 | Product/ecommerce | `/product/*` | `Product` + `Offer` (BUKAN `Service`) | README §7. Lihat juga Dokumentasi.md §4 "Pemetaan Schema per Tipe Halaman" — Product schema khusus untuk rumpun ini. |
 | Landing page suplemen | `/suplemen-pelangsing/` | `WebPage` + `Organization` reference + `BreadcrumbList` | Di luar `/product/*`, jadi bukan Product schema. |
 | Static page | `/promo/`, `/testimoni/`, `/tentang-kami/`, `/editorial-board/`, `/kebijakan-privasi/` | `WebPage` + `Organization` reference + `BreadcrumbList` | FAQ boleh ditambahkan jika halaman punya konten FAQ. Editorial Board pakai `AboutPage` + `reviewedBy` (lihat `editorial-board.html`). |
-| Blog/artikel | `/blog/`, `/[artikel-slug]/` | `Article` atau `BlogPosting` (rekomendasi dynamic via PHP) | Belum ada satupun yang dibuat. Lihat Dokumentasi.md §8 "Pertimbangan: Custom Dynamic vs Manual". |
+| Blog/artikel | `/blog/`, `/[artikel-slug]/` | `MedicalWebPage` + `BlogPosting` + `BreadcrumbList` (+ `Person` reviewer kondisional) | Dynamic via `blog/singlepost.php`. `articleBody`, `wordCount`, `keywords` wajib ikut. Snippet `blog/wpcode-article-schema.php` deprecated — jangan diaktifkan (ADR-0008). |
 | Beauty hub utama | `/treatment/` | `CollectionPage` atau `WebPage` + `BreadcrumbList` | Belum ada schema. URL flat, hierarki breadcrumb perlu ditentukan manual. |
 
 **Aturan tambahan untuk lokasi cabang:**

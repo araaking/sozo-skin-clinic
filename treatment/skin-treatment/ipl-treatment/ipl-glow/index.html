@@ -3,12 +3,15 @@
   .sozo-sku-glow-wrapper {
     font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     color: #333333;
     line-height: 1.6;
     background-color: #ffffff;
     content-visibility: auto;
     contain-intrinsic-size: 0 1000px;
+    overflow-x: clip;
+    box-sizing: border-box;
   }
 
   .sozo-sku-glow-wrapper * { 
@@ -924,6 +927,24 @@
 
   /* --- RESPONSIVE MOBILE FRIENDLY --- */
   @media (max-width: 768px) {
+    /* Hide all slider navigation arrow buttons on touch mobile */
+    .sozo-sku-glow-wrapper button.sozo-slider-nav-btn {
+      display: none !important;
+    }
+
+    /* Breadcrumb Mobile */
+    .sozo-sku-glow-wrapper .sozo-breadcrumb {
+      padding: 12px 15px 18px 15px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .sozo-sku-glow-wrapper .sozo-breadcrumb ol {
+      gap: 6px !important;
+    }
+    .sozo-sku-glow-wrapper .sozo-breadcrumb li {
+      font-size: 12.5px !important;
+    }
+
     .sozo-sku-glow-wrapper .sozo-section-card,
     .sozo-sku-glow-wrapper .sozo-description-section,
     .sozo-sku-glow-wrapper .sozo-faq-section { 
@@ -932,6 +953,7 @@
       margin-left: 15px !important;
       margin-right: 15px !important;
       margin-bottom: 28px !important;
+      box-sizing: border-box !important;
     }
     .sozo-sku-glow-wrapper .sozo-section-title,
     .sozo-sku-glow-wrapper .sozo-description-section h2,
@@ -941,15 +963,25 @@
       line-height: 1.35 !important;
     }
 
-    /* Hero Section */
+    /* Hero Section Mobile */
     .sozo-sku-glow-wrapper .sozo-treatment-hero {
-      flex-direction: column;
-      gap: 20px;
-      padding: 0 15px 30px 15px;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 20px !important;
+      padding: 0 15px 30px 15px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .sozo-sku-glow-wrapper .sozo-hero-text {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
     }
     .sozo-sku-glow-wrapper .sozo-hero-text h1 { 
       font-size: 24px !important; 
       margin-bottom: 8px !important;
+      line-height: 1.25 !important;
     }
     .sozo-sku-glow-wrapper .sozo-hero-text p {
       font-size: 13px !important;
@@ -957,36 +989,47 @@
       margin-bottom: 16px !important;
     }
 
-    /* Badges Mobile (Sejajar dengan horizontal scroll halus) */
+    /* Badges Mobile (Wrap rapi seperti PRP Hair, tidak overflow) */
     .sozo-sku-glow-wrapper .sozo-badges-container {
-      gap: 5px !important;
-      margin-bottom: 12px !important;
-      overflow-x: auto !important;
-      flex-wrap: nowrap !important;
-      scrollbar-width: none !important;
-      -webkit-overflow-scrolling: touch !important;
-      padding-bottom: 2px !important;
-    }
-    .sozo-sku-glow-wrapper .sozo-badges-container::-webkit-scrollbar {
-      display: none !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 6px !important;
+      margin-bottom: 14px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: visible !important;
     }
     .sozo-sku-glow-wrapper .sozo-badge {
-      font-size: 10.5px !important;
-      padding: 3px 8px !important;
-      flex-shrink: 0 !important;
+      font-size: 11px !important;
+      padding: 4px 10px !important;
+      border-radius: 50px !important;
+      white-space: nowrap !important;
+      line-height: 1.35 !important;
     }
 
+    .sozo-sku-glow-wrapper .sozo-hero-image {
+      width: 100% !important;
+      max-width: 100% !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      box-sizing: border-box !important;
+    }
     .sozo-sku-glow-wrapper .sozo-hero-image img {
-      height: 220px; 
-      max-width: 100%;
-      border-radius: 16px;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 220px !important; 
+      border-radius: 16px !important;
+      object-fit: cover !important;
     }
     .sozo-sku-glow-wrapper .sozo-info-row { 
-      flex-direction: column; 
+      flex-direction: column !important; 
       gap: 10px !important; 
       padding: 12px 14px !important;
       margin-bottom: 18px !important;
       border-radius: 12px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .sozo-sku-glow-wrapper .sozo-info-col {
       gap: 10px !important;
@@ -995,6 +1038,7 @@
       width: 34px !important;
       height: 34px !important;
       border-radius: 8px !important;
+      flex-shrink: 0 !important;
     }
     .sozo-sku-glow-wrapper .sozo-info-icon svg {
       width: 16px !important;
@@ -1009,19 +1053,24 @@
     .sozo-sku-glow-wrapper .sozo-btn { 
       width: 100% !important;
       max-width: 100% !important; 
-      padding: 11px 20px !important;
+      padding: 12px 20px !important;
       font-size: 14px !important;
       border-radius: 50px !important;
+      box-sizing: border-box !important;
     }
 
-    /* CTA Banner */
+    /* CTA Banner Mobile */
     .sozo-sku-glow-wrapper .sozo-cta-wrapper {
       padding: 0 15px !important;
       margin-bottom: 28px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .sozo-sku-glow-wrapper .sozo-cta-banner { 
-      padding: 22px 16px !important; 
+      padding: 24px 18px !important; 
       border-radius: 16px !important; 
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     .sozo-sku-glow-wrapper .sozo-cta-banner h2 {
       font-size: 18px !important;
@@ -1040,6 +1089,7 @@
       padding: 10px 20px !important;
       font-size: 13px !important;
       border-radius: 50px !important;
+      box-sizing: border-box !important;
     }
 
     /* Slider Paket Promo Mobile */
@@ -1786,11 +1836,11 @@
 
         <!-- Banner 4 -->
         <div class="sz-promo-card" role="button" tabindex="0"
-             data-full-img="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/SEO-Banner-SKIN-Agustus-2026-16x9-8.webp"
-             onclick="sozoOpenGlowPromoModal('https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/SEO-Banner-SKIN-Agustus-2026-16x9-8.webp')">
+             data-full-img="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/ipl-glow-promo.webp"
+             onclick="sozoOpenGlowPromoModal('https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/ipl-glow-promo.webp')">
           <div class="sz-promo-image">
-            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/SEO-Banner-SKIN-Agustus-2026-16x9-8.webp"
-                 alt="Promo Skin Treatment SOZO 4"
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/ipl-glow-promo.webp"
+                 alt="Promo IPL Glow SOZO"
                  decoding="async"
                  loading="lazy">
             <div class="sz-promo-overlay">

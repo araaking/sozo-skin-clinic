@@ -1,6 +1,6 @@
 # 📝 Sozo Skin Clinic - Schema Markup Migration Project
 
-> **Versi:** 1.9 | **Tanggal Update:** 5 Agustus 2026
+> **Versi:** 1.10 | **Tanggal Update:** 21 September 2026
 > **Fokus Utama:** Schema markup (custom JSON-LD via `@graph`) + dokumentasi UI & SEO lengkap untuk `sozoskinclinic.com`
 
 Proyek ini bertujuan untuk mengontrol penuh struktur schema markup di `sozoskinclinic.com`, mengeliminasi error bawaan Yoast, dan membangun *Knowledge Graph* terpusat per tipe halaman untuk memaksimalkan SEO[cite: 1]. Seluruh schema Yoast telah dimatikan secara global via WPCode[cite: 1].
@@ -61,7 +61,8 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [ ] **Tentang Kami** (`https://sozoskinclinic.com/tentang-kami/`)
 - [x] **Editorial Board** (`https://sozoskinclinic.com/editorial-board/`) — *AboutPage + reviewedBy 3 dokter + BreadcrumbList, 5 Agustus 2026*
 - [ ] **Kebijakan Privasi** (`https://sozoskinclinic.com/kebijakan-privasi/`)
-- [ ] **Blog** (`https://sozoskinclinic.com/blog/`) — *di luar kategori treatment; rekomendasi Article/BlogPosting dynamic*
+- [x] **Artikel Blog (single post)** (`/blog/[slug]/`) — *dynamic via `blog/singlepost.php`: MedicalWebPage + BlogPosting (`articleBody`) + reviewer; snippet WPCode lama deprecated, 21 September 2026*
+- [ ] **Blog archive** (`https://sozoskinclinic.com/blog/`) — *halaman index, belum ada schema*
 
 ### 💇‍♀️ 2. Hair Removal Treatment (Category Hub & Subs)
 - [x] **Main Hub: Hair Removal Treatment** (`https://sozoskinclinic.com/hair-removal-treatment/`)[cite: 1]
@@ -150,7 +151,7 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [x] Diamond Laser Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/diamond-laser-facial/`)
     - [x] Collagen Mask (`https://sozoskinclinic.com/skin-treatment/facial-treatment/collagen-mask/`) — Rp 199.000 (schema siap, WPCode belum dipasang)
     - [x] Sylfirm X (`https://sozoskinclinic.com/skin-treatment/facial-treatment/sylfirm-x/`)
-- [ ] **Acne Treatment (Non-Facial)** (`https://sozoskinclinic.com/skin-treatment/acne-treatment/`)
+- [x] **Acne Treatment (Non-Facial)** (`https://sozoskinclinic.com/skin-treatment/acne-treatment/`)
     - [x] Pore Detox (`https://sozoskinclinic.com/skin-treatment/acne-treatment/pore-detox/`) — Rp 799.000 (schema siap, WPCode belum dipasang)
 - [x] **IPL Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/`)
     - [x] IPL Acne (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/ipl-acne/`) — Rp 399.000

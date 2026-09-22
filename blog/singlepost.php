@@ -141,7 +141,7 @@ function sz_get_reviewers_registry() {
             'schema_url'   => 'https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/',
             'schema_role'  => 'Dermatologi, Venereologi, & Estetika',
             'expertise'    => array('Trikoskopi', 'Bedah Kulit', 'Esetetika Medis'),
-            'image_url'    => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Elisabeth-Ryan-Sp.DVE_.webp',
+            'image_url'    => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr-eli.webp',
             'credentials'  => array(
                 array(
                     '@type'              => 'EducationalOccupationalCredential',
@@ -179,7 +179,7 @@ function sz_get_reviewers_registry() {
             'schema_url'   => 'https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/',
             'schema_role'  => 'Anti-Aging & Estetika',
             'expertise'    => array('Botox', 'Threadlift', 'Filler', 'Laser', 'Skinbooster'),
-            'image_url'    => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dokter-gesha-sozo.webp',
+            'image_url'    => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Gesha-Kautzar-Putri-M.Biomed-AAM.webp',
             'credentials'  => array(
                 array(
                     '@type'              => 'EducationalOccupationalCredential',
@@ -208,7 +208,7 @@ function sz_get_reviewers_registry() {
             'schema_url'   => 'https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/',
             'schema_role'  => 'Dermatologi, Venereologi, & Estetika',
             'expertise'    => array('Bedah Kulit', 'Bedah Kecantikan', 'Esetetika Medis'),
-            'image_url'    => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dokter-audi-sozo.webp',
+            'image_url'    => 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Audi-Sugiharto-Sp.D.V.E.webp',
             'credentials'  => array(
                 array(
                     '@type'              => 'EducationalOccupationalCredential',
@@ -406,6 +406,7 @@ function sz_single_post_shortcode() {
 
     $content_raw   = get_post_field('post_content', $post_id);
     $content_plain = wp_strip_all_tags(strip_shortcodes($content_raw));
+    $article_body  = trim(preg_replace('/\s+/u', ' ', $content_plain));
 
     if (has_excerpt($post_id)) {
         $description = wp_strip_all_tags(get_the_excerpt($post_id));
@@ -530,6 +531,19 @@ function sz_single_post_shortcode() {
         $reviewer_image_url = sz_reviewer_meta($post_id, 'sozo_reviewer_image_url', 'https://sozoskinclinic.com/wp-content/uploads/2026/04/sozologo.avif');
     }
 
+    // Reviewer diperlakukan sebagai Person kalau key registry valid, atau kalau
+    // post lama override schema_name + schema_url manual. Selain itu reviewedBy
+    // mengarah ke tim medis (#organization) supaya nama dokter di schema tidak
+    // beda dengan nama yang tampil di UI.
+    $reviewer_is_person = ($reviewer_key !== '' && isset($reviewers_registry[$reviewer_key]));
+
+    if (!$reviewer_is_person
+        && trim((string) get_post_meta($post_id, 'sozo_reviewer_schema_name', true)) !== ''
+        && trim((string) get_post_meta($post_id, 'sozo_reviewer_schema_url', true)) !== ''
+    ) {
+        $reviewer_is_person = true;
+    }
+
     // Label profile link: "Profil Dokter" kalau URL dokter spesifik,
     // "Standar Editorial" kalau URL generic (editorial board)
     $reviewer_profile_label = (strpos($reviewer_display_url, '/tim-dokter-sozo-skin/') !== false)
@@ -603,6 +617,8 @@ function sz_single_post_shortcode() {
     $sidebar_cta_phone_label = '+62 851-7522-5664';
     $sidebar_cta_button_text = 'Konsultasi Sekarang';
     $sidebar_cta_button_url  = 'https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Skin%20di%20Sozo%20%5Bsrc%3ABLOG-Skin%5D';
+    $sidebar_promo_img_url   = 'https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/cicilan0.webp';
+    $sidebar_promo_img_alt   = 'Promo Cicilan 0% Sozo Skin Clinic';
 
     $sidebar_recent_query = new WP_Query(array(
         'post_type'           => 'post',
@@ -787,6 +803,12 @@ function sz_single_post_shortcode() {
                         </ul>
                     </div>
                 <?php endif; ?>
+
+                <div class="sz-sidebar-promo-banner">
+                    <a href="<?php echo esc_url($sidebar_cta_button_url); ?>" target="_blank" rel="noopener" class="sz-sidebar-promo-link" aria-label="<?php echo esc_attr($sidebar_promo_img_alt); ?>">
+                        <img src="<?php echo esc_url($sidebar_promo_img_url); ?>" alt="<?php echo esc_attr($sidebar_promo_img_alt); ?>" width="245" height="306" loading="lazy" decoding="async">
+                    </a>
+                </div>
 
             </aside>
 
@@ -1084,10 +1106,13 @@ function sz_single_post_shortcode() {
     /**
      * ======================================================
      * JSON-LD Schema
-     * PERUBAHAN:
-     * 1. reviewedBy dihapus dari BlogPosting
-     * 2. telephone + contactPoint ditambahkan ke Organization
-     * 3. Schema reviewer selalu dr. Elisabeth, UI tetap "Tim Medis"
+     * Satu @graph per artikel:
+     * - MedicalWebPage  : wrapper halaman, reviewedBy + lastReviewed
+     * - BlogPosting     : isi artikel (articleBody, wordCount, keywords)
+     * - Person reviewer : hanya kalau reviewer spesifik dipilih
+     * - BreadcrumbList  : Beranda > Kategori > Judul
+     * #organization dan #website dideklarasikan penuh hanya di homepage,
+     * halaman ini mereferensikan lewat @id (lihat AGENTS.md §2).
      * ======================================================
      */
     $breadcrumb_items = array(
@@ -1122,7 +1147,14 @@ function sz_single_post_shortcode() {
         );
     }
 
-    // ── PERUBAHAN #3: Person node selalu dr. Elisabeth ──
+    // Keywords dari tag artikel (kalau ada)
+    $keywords = '';
+
+    if (!empty($tags) && !is_wp_error($tags)) {
+        $keywords = implode(', ', wp_list_pluck($tags, 'name'));
+    }
+
+    // ── Person node reviewer (hanya dipasang kalau reviewer spesifik) ──
     $person_node = array(
         '@type'    => 'Person',
         '@id'      => trailingslashit($reviewer_schema_url) . '#person',
@@ -1130,7 +1162,8 @@ function sz_single_post_shortcode() {
         'jobTitle' => $reviewer_schema_role,
         'url'      => esc_url_raw($reviewer_schema_url),
         'worksFor' => array(
-            '@id' => home_url('/#organization'),
+            '@type' => 'MedicalOrganization',
+            '@id'   => home_url('/#organization'),
         ),
     );
 
@@ -1159,6 +1192,16 @@ function sz_single_post_shortcode() {
         );
     }
 
+    // reviewedBy: Person kalau reviewer spesifik, kalau tim medis arahkan
+    // ke #organization (MedicalOrganization) supaya tidak menunjuk orang
+    // yang tidak tampil di UI.
+    $reviewed_by = $reviewer_is_person
+        ? array('@id' => $person_node['@id'])
+        : array(
+            '@type' => 'MedicalOrganization',
+            '@id'   => home_url('/#organization'),
+        );
+
     $schema_graph = array(
         array(
             '@type'        => 'MedicalWebPage',
@@ -1171,36 +1214,41 @@ function sz_single_post_shortcode() {
                 '@id' => home_url('/#website'),
             ),
             'about'        => array(
-                '@type' => 'Thing',
-                'name'  => $medical_topic,
+                '@id' => home_url('/#organization'),
             ),
             'mainEntity'   => array(
                 '@id' => trailingslashit($permalink) . '#article',
             ),
-            'reviewedBy'   => array(
-                '@id' => trailingslashit($reviewer_schema_url) . '#person',
-            ),
+            'reviewedBy'   => $reviewed_by,
             'lastReviewed' => $last_reviewed_iso,
             'breadcrumb'   => array(
                 '@id' => trailingslashit($permalink) . '#breadcrumb',
             ),
         ),
-        // ── PERUBAHAN #1: reviewedBy dihapus dari BlogPosting ──
+        // ── BlogPosting: isi artikel + atribusi E-E-A-T ──
         array(
-            '@type'            => 'BlogPosting',
-            '@id'              => trailingslashit($permalink) . '#article',
-            'mainEntityOfPage' => array(
+            '@type'               => 'BlogPosting',
+            '@id'                 => trailingslashit($permalink) . '#article',
+            'mainEntityOfPage'    => array(
                 '@id' => trailingslashit($permalink) . '#webpage',
             ),
-            'headline'         => $post_title,
-            'description'      => $description,
-            'inLanguage'       => 'id-ID',
-            'image'            => $image_schema,
-            'datePublished'    => $date_published_iso,
-            'dateModified'     => $date_modified_iso,
-            'articleSection'   => $cat_name,
-            'timeRequired'     => 'PT' . $reading_time . 'M',
-            'author'           => array(
+            'url'                 => esc_url_raw($permalink),
+            'headline'            => $post_title,
+            'description'         => $description,
+            'inLanguage'          => 'id-ID',
+            'about'               => array(
+                '@type' => 'Thing',
+                'name'  => $medical_topic,
+            ),
+            'image'               => $image_schema,
+            'datePublished'       => $date_published_iso,
+            'dateModified'        => $date_modified_iso,
+            'articleSection'      => $cat_name,
+            'articleBody'         => $article_body,
+            'wordCount'           => $word_count,
+            'timeRequired'        => 'PT' . $reading_time . 'M',
+            'isAccessibleForFree' => true,
+            'author'              => array(
                 '@type'    => 'Person',
                 '@id'      => trailingslashit($author_url) . '#person',
                 'name'     => $author_name,
@@ -1212,51 +1260,25 @@ function sz_single_post_shortcode() {
                     '@id'   => home_url('/#organization'),
                 ),
             ),
-            'publisher'        => array(
+            'publisher'           => array(
                 '@id' => home_url('/#organization'),
             ),
-        ),
-        $person_node,
-        // ── PERUBAHAN #2: telephone + contactPoint ditambahkan ──
-        array(
-            '@type'        => array('MedicalClinic', 'Organization'),
-            '@id'          => home_url('/#organization'),
-            'name'         => 'Sozo Skin Clinic',
-            'url'          => home_url('/'),
-            'telephone'    => '+6285175225664',
-            'contactPoint' => array(
-                '@type'             => 'ContactPoint',
-                'telephone'         => '+6285175225664',
-                'email'             => 'info@sozoskin.com',
-                'contactType'       => 'customer service',
-                'availableLanguage' => 'Indonesian',
-            ),
-            'logo'     => array(
-                '@type' => 'ImageObject',
-                'url'   => 'https://asset.sozoskinclinic.com/wp-content/uploads/2021/05/LOGO_SOZO-SKIN-WEB.png.webp',
-            ),
-            'sameAs'   => array(
-                'https://web.facebook.com/profile.php?id=100075487615952',
-                'https://www.instagram.com/sozo.skinclinic/',
-                'https://www.tiktok.com/@sozo.skin.clinic',
-            ),
-        ),
-        array(
-            '@type'      => 'WebSite',
-            '@id'        => home_url('/#website'),
-            'url'        => home_url('/'),
-            'name'       => 'Sozo Skin Clinic',
-            'inLanguage' => 'id-ID',
-            'publisher'  => array(
-                '@id' => home_url('/#organization'),
-            ),
-        ),
-        array(
-            '@type'           => 'BreadcrumbList',
-            '@id'             => trailingslashit($permalink) . '#breadcrumb',
-            'itemListElement' => $breadcrumb_items,
         ),
     );
+
+    if ($reviewer_is_person) {
+        $schema_graph[] = $person_node;
+    }
+
+    $schema_graph[] = array(
+        '@type'           => 'BreadcrumbList',
+        '@id'             => trailingslashit($permalink) . '#breadcrumb',
+        'itemListElement' => $breadcrumb_items,
+    );
+
+    if ($keywords !== '') {
+        $schema_graph[1]['keywords'] = $keywords;
+    }
 
     if (!empty($references)) {
         $schema_graph[1]['citation'] = array_values($references);

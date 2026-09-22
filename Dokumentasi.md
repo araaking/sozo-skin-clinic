@@ -4,9 +4,9 @@ Sozo Skin Clinic — sozoskinclinic.com
 
 *Migrasi dari Yoast SEO ke Custom Schema (JSON-LD)*
 
-Versi 1.8  •  5 Agustus 2026
+Versi 1.10  •  21 September 2026
 
-**Status: 75 dari 140 halaman memiliki custom schema + 2 schema siap WPCode (dr. Putri, editorial board review) + 1 README sync (URL baru Zo-Tox sub, Threadlift baru, Filler Premium, Infus Premium, Signature HIFU, Blog, Tim Dokter)**
+**Status: 75 dari 140 halaman memiliki custom schema + 2 schema siap WPCode (dr. Putri, editorial board review) + 1 README sync (URL baru Zo-Tox sub, Threadlift baru, Filler Premium, Infus Premium, Signature HIFU, Blog, Tim Dokter) + schema artikel blog dynamic (`blog/singlepost.php`, ADR-0008)**
 
 # **1\. Ringkasan Proyek**
 
@@ -1026,6 +1026,32 @@ Catatan QC: class wrapper LP memakai `sozo-sku-korean-lhala-wrapper` (bukan sisa
 
 Snippet WPCode kondisi: **Page URL contains `korean-lhala-peel`**.
 
+## **5.53 Acne Treatment Hub — SCHEMA & LP SIAP**
+
+URL: https://sozoskinclinic.com/skin-treatment/acne-treatment/
+
+File: `treatment/skin-treatment/acne-treatment/schema-markup.html` (schema) + `index.html` (layout all-in-one LP).
+
+Struktur `@graph` (4 node) — pola Treatment Hub multi-layanan:
+
+* `MedicalWebPage` (specialty Dermatology, isPartOf → #website, about → #organization, potentialAction ReadAction).
+* `BreadcrumbList` 3-level: Home → Skin Treatment → Acne Treatment.
+* `Service` + `hasOfferCatalog` berisi 6 Offer dengan wrapper `PriceSpecification`:
+  - Acne Micro Botox Standard (Rp 799.000)
+  - Acne Micro Botox Hydration (Rp 999.000)
+  - Acne Clear Facial Medical (Rp 299.000)
+  - IPL Acne (Rp 399.000)
+  - Acne Laser Facial (Rp 699.000)
+  - Meso Acne (Rp 499.000)
+* `FAQPage` 7 FAQ klinis seputar Acne Treatment di Sozo Skin Clinic.
+
+Catatan QC & UI:
+* Layout HTML, CSS, dan JS disatukan ke dalam satu file `index.html` (Elementor-safe scoped class `.sozo-acne-hub`).
+* Link WhatsApp seragam: `phone=6285175225664` dengan tag sumber `[src:ORG-Acne]`.
+* File lama `style-js.html` telah dihapus.
+
+Snippet WPCode kondisi: **Page URL contains `acne-treatment`**.
+
 ## **5.47 URL Baru Audit 5 Agustus 2026 — README SYNC**
 
 Daftar URL terbaru dari tim vs isi README.md. Hasilnya, 10 URL baru ditambahkan ke README + anomali ejaan dicatat:
@@ -1151,7 +1177,7 @@ Sebelum menandai sebuah halaman "selesai", pastikan:
 | Zo-Tox 10U, Zo-Tox Premium, Facelift, Perfect Facelift, Perfect Nose Job, Premium Filler, Premium Glow Infusion, Signature HIFU | 8 | Belum ada schema — URL baru §5.47 |
 | Halaman treatment lain (LP) | \~64 | Belum — pakai template Hair Removal |
 | Benerin nama breadcrumb "SEO –" | 114 halaman | Belum (jika masih relevan setelah custom) |
-| Schema blog / Article | — | Belum — pertimbangkan dynamic PHP |
+| Schema blog / Article (single post) | Semua post | **SELESAI** — dynamic PHP `blog/singlepost.php`: MedicalWebPage + BlogPosting (`articleBody`, `wordCount`, `keywords`) + reviewer kondisional. Snippet `wpcode-article-schema.php` di-deprecate (ADR-0008). |
 | Schema cabang (LocalBusiness) | 60+ cabang | Belum |
 | Refactor IPL Acne ke PriceSpecification | 1 | Inkonsisten dengan standar tim — bukan error, hanya stylistic |
 
@@ -1224,6 +1250,8 @@ Update perubahan di tiga dokumen utama tracked via version bump: README 1.7 → 
 
 Custom schema BISA dibuat dynamic via PHP (get\_the\_title(), get\_the\_date(), dll) sehingga auto-maintain seperti Yoast. Keputusannya bukan teknis tapi soal resource: siapa yang menanggung maintenance kode jangka panjang. Untuk blog yang isinya terus bertambah, dynamic PHP sangat dianjurkan agar tidak perlu generate manual tiap artikel.
 
+Blog single post sudah memakai pendekatan ini: `blog/singlepost.php` (shortcode `[sozoskin_single]`) menghasilkan `MedicalWebPage` + `BlogPosting` + `Person` reviewer + `BreadcrumbList` per artikel. Isi artikel ikut ke schema lewat `articleBody`, tag jadi `keywords`, dan `#organization`/`#website` hanya direferensikan lewat `@id` — deklarasi penuhnya tetap di homepage. Snippet lama `blog/wpcode-article-schema.php` di-deprecate supaya tidak ada dua node `#article`. Keputusan lengkap ada di ADR-0008.
+
 # **9\. Catatan Teknis Penting**
 
 | Topik | Catatan |
@@ -1233,5 +1261,49 @@ Custom schema BISA dibuat dynamic via PHP (get\_the\_title(), get\_the\_date(), 
 | Custom breadcrumb JS | Breadcrumb custom lama di-inject via JavaScript, makanya muncul di RRT (render JS) tapi tidak di validator (HTML mentah). |
 | CreativeWork di validator | Saat cek halaman treatment, \#website kadang muncul sebagai CreativeWork generik. Normal — validator tidak bisa resolve WebSite penuh dari halaman non-homepage. |
 | Organization muncul di halaman treatment | Normal. Tool me-resolve pointer @id ke homepage. Bukan duplikasi, bukan dari Yoast (Yoast sudah mati). |
+
+# **10\. Bulk Meta Editor — Plugin Admin (Tools)**
+
+Plugin kustom WordPress untuk edit massal meta title & meta description Yoast dari satu tabel admin, lengkap dengan history dan rollback. Source: `tools/plugin-meta-title-desc/`. Status: **belum dipasang di production** — uji staging sebelum aktivasi. Dokumentasi lengkap ada di `tools/plugin-meta-title-desc/README.md`.
+
+## **10.1 Keputusan**
+
+| Aspek | Keputusan | Alasan |
+| :-- | :-- | :-- |
+| Provider | Yoast only dulu; Rank Math/AIOSEO menyusul | Situs pakai Yoast. Adapter dipisah di `class-bme-provider.php`; provider baru cukup subclass + filter `bme_provider`. |
+| Target meta | `_yoast_wpseo_title`, `_yoast_wpseo_metadesc` | Yoast tetap source of truth, plugin tidak menyimpan meta sendiri. |
+| Nama & prefix | Bulk Meta Editor, `bme_`, tabel `{$wpdb->prefix}bme_history` | Generik, aman dipakai di situs lain dengan prefix DB berbeda. |
+| Default post type | `page` | Di Sozo hanya Pages. Post type publik lain tinggal dicentang di Settings. |
+| Workflow | Tabel inline + AJAX save + CSV import/export | 140+ halaman butuh batch dan audit trail. |
+| History | Append-only + rollback 1 klik | Log tidak pernah dihapus; rollback menulis entri baru dengan sumber `rollback`. |
+| Baseline | Rekam nilai yang sudah ada saat aktivasi, sumber `baseline` | Riwayat sebelum plugin tidak bisa direkonstruksi (WordPress/Yoast tidak menyimpan meta history). Baseline menyimpan nilai saat install sebagai titik awal + restore point; dikecualikan dari retensi dan dari kolom "terakhir diubah". |
+
+## **10.2 Struktur File**
+
+```text
+tools/plugin-meta-title-desc/
+├── bulk-meta-editor.php          # bootstrap, konstanta, activation/deactivation
+├── uninstall.php
+├── includes/
+│   ├── class-bme-provider.php    # adapter Yoast (+ filter bme_provider)
+│   ├── class-bme-db.php          # tabel bme_history, migrasi, cron cleanup
+│   ├── class-bme-settings.php    # post type, retensi, toggle log eksternal
+│   ├── class-bme-bulk-editor.php # editor AJAX + conflict detection
+│   ├── class-bme-history.php     # hook logger + rollback
+│   └── class-bme-csv.php         # export stream + import dry-run batch
+├── assets/admin.js, admin.css
+└── README.md                     # dokumentasi lengkap plugin
+```
+
+## **10.3 Checklist Uji Staging**
+
+- Aktivasi: tabel `bme_history` + cron `bme_daily_cleanup` terbentuk.
+- Baseline: nilai meta yang sudah ada masuk history dengan sumber `Baseline (sebelum plugin)`; jalankan ulang dari Settings tidak menghasilkan duplikat.
+- Edit dari tabel editor: nilai masuk di Yoast editor dan `<title>` front-end.
+- Edit dari metabox Yoast: tercatat di history sebagai `Manual / Yoast`.
+- Dua user edit bersamaan: baris kedua kena conflict warning, tidak overwrite buta.
+- CSV round-trip: export, ubah, import dry-run, apply.
+- Rollback satu baris: nilai kembali dan muncul entri `Rollback`.
+- Uninstall: tabel dan option bersih, tabel legacy `sozo_meta_history` tetap ada.
 
 *— Akhir Dokumen —*

@@ -1,0 +1,1819 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ================= 1. Global & Hero Container ================= */
+  .sozo-threads-hero {
+    --sozo-navy: #1A2080;
+    --sozo-navy-hover: #131761;
+    --sozo-blue-accent: #2563EB;
+    --sozo-badge-gold: #D9C7B1;
+    --sozo-text-dark: #1E293B;
+    --sozo-text-body: #475569;
+    --sozo-bg-cream: #FAF8F5;
+    
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    position: relative !important;
+    width: 100% !important;
+    background-color: var(--sozo-bg-cream) !important;
+    background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/threads-hero-lp-2.webp') !important;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;
+    background-size: cover !important;
+    overflow: hidden !important;
+    -webkit-font-smoothing: antialiased !important;
+    box-sizing: border-box !important;
+  }
+  
+  .sozo-threads-hero, 
+  .sozo-threads-hero * {
+    box-sizing: border-box !important;
+  }
+
+  /* Gradasi Dinonaktifkan */
+  .sozo-threads-hero::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: none !important;
+    background: none !important;
+    z-index: 1 !important;
+  }
+
+  .sozo-threads-hero__inner {
+    position: relative !important;
+    max-width: 1320px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    min-height: 560px !important;
+    padding: 56px 5% !important;
+    z-index: 2 !important;
+  }
+
+  .sozo-threads-hero__content {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 58% !important;
+    min-width: 320px !important;
+    max-width: 660px !important;
+    text-align: left !important;
+  }
+
+  /* Title */
+  .sozo-threads-hero__title {
+    font-family: 'Poppins', sans-serif !important;
+    color: var(--sozo-navy) !important;   
+    font-weight: 800 !important; 
+    font-size: clamp(26px, 3.2vw, 40px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+    margin: 0 0 16px 0 !important;
+  }
+
+  .sozo-title-top {
+    display: block !important;
+    font-weight: 800 !important;
+  }
+
+  /* Highlight aksen warna emas/nude khas SOZO */
+  .sozo-highlight-gold {
+    color: #D9C7B1 !important;
+    display: inline-block !important;
+    font-weight: 800 !important;
+  }
+
+  /* Description */
+  .sozo-threads-hero__desc {
+    color: var(--sozo-navy) !important;
+    font-size: clamp(14px, 1.05vw, 15.5px) !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
+    margin: 0 0 20px 0 !important;
+    max-width: 580px !important;
+  }
+
+  /* ================= 2. Price Badge & Notes ================= */
+  .sozo-price-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-bottom: 24px !important;
+  }
+
+  .sozo-price-badge {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    background: #ffffff !important;
+    border: 1.5px solid rgba(26, 32, 128, 0.16) !important;
+    padding: 12px 22px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 14px rgba(26, 32, 128, 0.08) !important;
+  }
+
+  .sozo-price-label {
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: var(--sozo-navy) !important;
+    letter-spacing: 0.1px !important;
+  }
+
+  .sozo-price-amount {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    color: var(--sozo-navy) !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.1 !important;
+  }
+
+  .sozo-price-note {
+    font-size: 12px !important;
+    color: var(--sozo-navy) !important;
+    display: inline-block !important;
+    opacity: 0.85 !important;
+    margin-top: 2px !important;
+  }
+
+  /* ================= 3. Checklist Features ================= */
+  .sozo-checklist-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 28px !important;
+  }
+
+  .sozo-checklist-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(26, 32, 128, 0.12) !important;
+    padding: 7px 14px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  .sozo-check-icon {
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 50% !important;
+    background-color: var(--sozo-navy) !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .sozo-check-icon svg {
+    width: 11px !important;
+    height: 11px !important;
+    stroke: #ffffff !important;
+    stroke-width: 2.8 !important;
+    fill: none !important;
+  }
+
+  .sozo-checklist-text {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: var(--sozo-navy) !important;
+    white-space: nowrap !important;
+  }
+
+  /* ================= 4. CTA Button ================= */
+  .sozo-button-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .sozo-btn-primary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    height: 48px !important;
+    padding: 0 32px !important;
+    background-color: var(--sozo-navy) !important;
+    color: #ffffff !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    border-radius: 50px !important;
+    border: 2px solid var(--sozo-navy) !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 6px 18px rgba(26, 32, 128, 0.25) !important;
+  }
+
+  .sozo-btn-primary svg {
+    width: 18px !important;
+    height: 18px !important;
+    fill: #ffffff !important;
+    transition: fill 0.25s ease !important;
+  }
+
+  .sozo-btn-primary:hover {
+    background-color: #ffffff !important;
+    color: var(--sozo-navy) !important;
+    border-color: var(--sozo-navy) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(26, 32, 128, 0.32) !important;
+  }
+
+  .sozo-btn-primary:hover svg {
+    fill: var(--sozo-navy) !important;
+  }
+
+  /* ================= 5. Responsiveness (Mobile) ================= */
+  @media (max-width: 820px) {
+    .sozo-threads-hero {
+      background-position: 85% center !important;
+    }
+
+    /* Overlay cerah di mobile agar teks bersih dan mudah terbaca */
+    .sozo-threads-hero::before {
+      content: '' !important;
+      display: block !important;
+      position: absolute !important;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(
+        180deg, 
+        rgba(255, 255, 255, 0.85) 0%, 
+        rgba(255, 255, 255, 0.65) 50%, 
+        rgba(255, 255, 255, 0.82) 100%
+      ) !important;
+      z-index: 1 !important;
+      pointer-events: none !important;
+    }
+
+    .sozo-threads-hero__inner {
+      min-height: 440px !important;
+      padding: 32px 16px 18px 18px !important;
+      position: relative !important;
+    }
+
+    .sozo-threads-hero__content {
+      position: static !important;
+      width: calc(100% - 85px) !important;
+      min-width: 0 !important;
+      max-width: 280px !important;
+    }
+
+    /* Ukuran font judul sama besar untuk kedua baris */
+    .sozo-threads-hero__title {
+      font-size: clamp(17px, 4.8vw, 21px) !important;
+      line-height: 1.25 !important;
+      margin: 0 0 10px 0 !important;
+    }
+
+    .sozo-title-top {
+      display: block !important;
+      font-size: inherit !important;
+      font-weight: 800 !important;
+      white-space: nowrap !important;
+      letter-spacing: -0.025em !important;
+      margin-bottom: 3px !important;
+    }
+
+    .sozo-threads-hero__desc {
+      font-size: clamp(10.5px, 2.8vw, 12px) !important;
+      line-height: 1.45 !important;
+      margin: 0 0 16px 0 !important;
+    }
+
+    /* Badge Harga */
+    .sozo-price-wrapper {
+      margin-bottom: 16px !important;
+    }
+
+    .sozo-price-badge {
+      width: 100% !important;
+      padding: 10px 14px !important;
+      gap: 3px !important;
+      border-radius: 14px !important;
+    }
+
+    .sozo-price-label {
+      font-size: 11.5px !important;
+    }
+
+    .sozo-price-amount {
+      font-size: 20px !important;
+    }
+
+    .sozo-price-note {
+      font-size: 10px !important;
+      margin-top: 1px !important;
+    }
+
+    /* Checklist Kanan Tersusun ke Bawah */
+    .sozo-checklist-group {
+      position: absolute !important;
+      right: 12px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 16px !important;
+      margin-bottom: 0 !important;
+      z-index: 3 !important;
+    }
+
+    .sozo-checklist-item {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      width: 68px !important;
+      text-align: center !important;
+    }
+
+    .sozo-check-icon {
+      width: 38px !important;
+      height: 38px !important;
+      border-radius: 50% !important;
+      background-color: #ffffff !important;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .sozo-check-icon svg {
+      width: 16px !important;
+      height: 16px !important;
+      stroke: var(--sozo-navy) !important;
+      stroke-width: 2.6 !important;
+    }
+
+    .sozo-checklist-text {
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      color: var(--sozo-navy) !important;
+      white-space: normal !important;
+      text-align: center !important;
+      line-height: 1.25 !important;
+    }
+
+    /* Tombol CTA */
+    .sozo-button-group {
+      width: 100% !important;
+    }
+
+    .sozo-btn-primary {
+      width: 100% !important;
+      height: 44px !important;
+      font-size: 11.5px !important;
+      letter-spacing: 0.3px !important;
+      padding: 0 10px !important;
+      gap: 6px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-btn-primary svg {
+      width: 15px !important;
+      height: 15px !important;
+    }
+  }
+
+  /* ========================================================
+     6. SKU Section (Treatment Area Intim)
+     ======================================================== */
+  .sozo-sku-section {
+    width: 100% !important;
+    background-color: var(--sozo-bg-cream, #FAF8F5) !important;
+    padding: 70px 5% 85px !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  }
+
+  .sozo-sku-section,
+  .sozo-sku-section * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-sku-container {
+    max-width: 1120px !important;
+    margin: 0 auto !important;
+  }
+
+  .sozo-sku-header {
+    text-align: center !important;
+    margin-bottom: 44px !important;
+  }
+
+  .sozo-sku-header__title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: clamp(24px, 3.2vw, 36px) !important;
+    font-weight: 800 !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    margin: 0 0 10px 0 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .sozo-sku-header__desc {
+    font-family: 'Inter', sans-serif !important;
+    font-size: clamp(14px, 1.1vw, 15.5px) !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    opacity: 0.88 !important;
+    margin: 0 auto !important;
+    max-width: 560px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Desktop Grid 3 Kolom */
+  .sozo-sku-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+  }
+
+  .sozo-sku-card {
+    background: #ffffff !important;
+    border-radius: 22px !important;
+    border: 1.5px solid rgba(26, 32, 128, 0.12) !important;
+    box-shadow: 0 4px 20px rgba(26, 32, 128, 0.06) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 24px 20px 22px 20px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+  }
+
+  .sozo-sku-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 30px rgba(26, 32, 128, 0.12) !important;
+  }
+
+  /* Card Popular (Tengah) */
+  .sozo-sku-card--popular {
+    border: 2px solid var(--sozo-navy, #1A2080) !important;
+    box-shadow: 0 8px 30px rgba(26, 32, 128, 0.14) !important;
+    padding: 0 0 22px 0 !important;
+    overflow: hidden !important;
+  }
+
+  .sozo-sku-badge-popular {
+    background-color: var(--sozo-navy, #1A2080) !important;
+    color: #ffffff !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    padding: 9px 0 !important;
+    width: 100% !important;
+  }
+
+  .sozo-sku-card__popular-inner {
+    padding: 16px 20px 0 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    justify-content: space-between !important;
+  }
+
+  /* Gambar Ilustrasi */
+  .sozo-sku-card__img-wrap {
+    text-align: center !important;
+    margin-bottom: 8px !important;
+  }
+
+  .sozo-sku-card__img {
+    width: 100% !important;
+    max-width: 240px !important;
+    height: auto !important;
+    display: inline-block !important;
+    object-fit: contain !important;
+    border-radius: 12px !important;
+  }
+
+  /* Konten Kartu */
+  .sozo-sku-card__body {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .sozo-sku-card__title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    margin: 8px 0 6px 0 !important;
+  }
+
+  .sozo-sku-card__desc {
+    font-size: 13.5px !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    opacity: 0.85 !important;
+    line-height: 1.45 !important;
+    margin: 0 0 14px 0 !important;
+  }
+
+  /* Kotak "Sudah termasuk:" khusus Intimate Glow */
+  .sozo-sku-include-box {
+    width: 100% !important;
+    background-color: #F4F8FA !important;
+    border-radius: 12px !important;
+    padding: 12px 14px !important;
+    margin-top: 6px !important;
+    margin-bottom: 14px !important;
+    text-align: left !important;
+  }
+
+  .sozo-sku-include-title {
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    margin-bottom: 6px !important;
+  }
+
+  .sozo-sku-include-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .sozo-sku-include-list li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 7px !important;
+    font-size: 11.5px !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    line-height: 1.4 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .sozo-sku-include-list li:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .sozo-sku-include-check {
+    font-weight: 800 !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Footer Kartu (Harga + Button) */
+  .sozo-sku-card__footer {
+    margin-top: auto !important;
+    padding-top: 14px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .sozo-sku-price-block {
+    margin-bottom: 14px !important;
+  }
+
+  .sozo-sku-price-old {
+    display: block !important;
+    font-size: 13.5px !important;
+    color: #94A3B8 !important;
+    text-decoration: line-through !important;
+    text-decoration-color: #EF4444 !important;
+    font-weight: 500 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .sozo-sku-price-promo {
+    display: block !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 4px !important;
+  }
+
+  .sozo-sku-price-note {
+    display: block !important;
+    font-size: 11.5px !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    opacity: 0.85 !important;
+    font-weight: 500 !important;
+  }
+
+  /* Button Pilih Treatment */
+  .sozo-sku-btn {
+    display: block !important;
+    width: 100% !important;
+    height: 46px !important;
+    line-height: 43px !important;
+    border-radius: 50px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    transition: all 0.25s ease !important;
+  }
+
+  .sozo-sku-btn--outline {
+    border: 1.5px solid var(--sozo-navy, #1A2080) !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    background: transparent !important;
+  }
+
+  .sozo-sku-btn--outline:hover {
+    background: var(--sozo-navy, #1A2080) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px rgba(26, 32, 128, 0.2) !important;
+  }
+
+  .sozo-sku-btn--solid {
+    border: 1.5px solid var(--sozo-navy, #1A2080) !important;
+    background: var(--sozo-navy, #1A2080) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(26, 32, 128, 0.25) !important;
+  }
+
+  .sozo-sku-btn--solid:hover {
+    background: var(--sozo-navy-hover, #131761) !important;
+    border-color: var(--sozo-navy-hover, #131761) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(26, 32, 128, 0.35) !important;
+  }
+
+  /* ================= Mobile Version (Horizontal Scroll & Compact) ================= */
+  @media (max-width: 820px) {
+    .sozo-sku-section {
+      margin-top: -36px !important;
+      position: relative !important;
+      z-index: 5 !important;
+      padding: 12px 0 50px 0 !important;
+    }
+
+    .sozo-sku-header {
+      padding: 0 20px !important;
+      margin-bottom: 22px !important;
+    }
+
+    .sozo-sku-header__title {
+      font-size: clamp(20px, 5.2vw, 25px) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .sozo-sku-header__desc {
+      font-size: 12.5px !important;
+      line-height: 1.45 !important;
+    }
+
+    /* Scroll Horizontal Container */
+    .sozo-sku-grid {
+      display: flex !important;
+      flex-direction: row !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      -webkit-overflow-scrolling: touch !important;
+      gap: 14px !important;
+      padding: 8px 20px 22px 20px !important;
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+    }
+
+    .sozo-sku-grid::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .sozo-sku-card {
+      flex: 0 0 265px !important;
+      width: 265px !important;
+      max-width: 82vw !important;
+      scroll-snap-align: start !important;
+      padding: 16px 14px 18px 14px !important;
+      border-radius: 18px !important;
+    }
+
+    .sozo-sku-card--popular {
+      padding: 0 0 18px 0 !important;
+    }
+
+    .sozo-sku-card--popular .sozo-sku-card__popular-inner {
+      padding: 12px 14px 0 14px !important;
+    }
+
+    .sozo-sku-badge-popular {
+      font-size: 11px !important;
+      padding: 7px 0 !important;
+      letter-spacing: 0.6px !important;
+    }
+
+    .sozo-sku-card__img {
+      max-width: 190px !important;
+    }
+
+    .sozo-sku-card__title {
+      font-size: 18px !important;
+      margin: 6px 0 4px 0 !important;
+    }
+
+    .sozo-sku-card__desc {
+      font-size: 12px !important;
+      margin-bottom: 10px !important;
+    }
+
+    .sozo-sku-include-box {
+      padding: 8px 10px !important;
+      margin-bottom: 10px !important;
+    }
+
+    .sozo-sku-include-title {
+      font-size: 11px !important;
+      margin-bottom: 4px !important;
+    }
+
+    .sozo-sku-include-list li {
+      font-size: 11px !important;
+      margin-bottom: 3px !important;
+    }
+
+    .sozo-sku-card__footer {
+      padding-top: 8px !important;
+    }
+
+    .sozo-sku-price-block {
+      margin-bottom: 10px !important;
+    }
+
+    .sozo-sku-price-old {
+      font-size: 12px !important;
+    }
+
+    .sozo-sku-price-promo {
+      font-size: 21px !important;
+      margin-bottom: 2px !important;
+    }
+
+    .sozo-sku-price-note {
+      font-size: 10.5px !important;
+    }
+
+    .sozo-sku-btn {
+      height: 40px !important;
+      line-height: 38px !important;
+      font-size: 12px !important;
+    }
+  }
+
+  /* ========================================================
+     7. Table Comparison Section (Bingung Pilih yang Mana?)
+     ======================================================== */
+  .sozo-table-section {
+    width: 100% !important;
+    background-color: #ffffff !important;
+    padding: 70px 5% 85px !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  }
+
+  .sozo-table-section,
+  .sozo-table-section * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-table-container {
+    max-width: 960px !important;
+    margin: 0 auto !important;
+  }
+
+  .sozo-table-header {
+    text-align: center !important;
+    margin-bottom: 36px !important;
+  }
+
+  .sozo-table-header__title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: clamp(24px, 3.2vw, 36px) !important;
+    font-weight: 800 !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    margin: 0 0 10px 0 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .sozo-table-header__desc {
+    font-family: 'Inter', sans-serif !important;
+    font-size: clamp(14px, 1.1vw, 16px) !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    opacity: 0.88 !important;
+    margin: 0 auto !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Table Card Container */
+  .sozo-table-card {
+    background: #ffffff !important;
+    border-radius: 18px !important;
+    border: 1.5px solid rgba(26, 32, 128, 0.12) !important;
+    box-shadow: 0 6px 24px rgba(26, 32, 128, 0.06) !important;
+    overflow: hidden !important;
+    margin-bottom: 40px !important;
+  }
+
+  .sozo-table-wrap {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .sozo-compare-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    text-align: left !important;
+  }
+
+  .sozo-compare-table th,
+  .sozo-compare-table td {
+    padding: 16px 20px !important;
+    border-bottom: 1px solid rgba(26, 32, 128, 0.08) !important;
+    border-right: 1px solid rgba(26, 32, 128, 0.08) !important;
+    vertical-align: middle !important;
+  }
+
+  .sozo-compare-table th:last-child,
+  .sozo-compare-table td:last-child {
+    border-right: none !important;
+  }
+
+  .sozo-compare-table tr:last-child td {
+    border-bottom: none !important;
+  }
+
+  .sozo-compare-table thead tr {
+    background-color: #F4F8FA !important;
+  }
+
+  .sozo-compare-table th {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .sozo-compare-table th.col-center,
+  .sozo-compare-table td.col-center {
+    text-align: center !important;
+    width: 22% !important;
+  }
+
+  .sozo-compare-table td.col-feature {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    line-height: 1.4 !important;
+    width: 34% !important;
+  }
+
+  .sozo-table-check {
+    width: 20px !important;
+    height: 20px !important;
+    stroke: var(--sozo-navy, #1A2080) !important;
+    stroke-width: 2.8 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+
+  .sozo-table-dash {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #94A3B8 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+
+  /* Trust Badges Row */
+  .sozo-trust-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+    padding: 0 10px !important;
+  }
+
+  .sozo-trust-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    flex: 1 !important;
+  }
+
+  .sozo-trust-icon {
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 50% !important;
+    background-color: #F0F4F8 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .sozo-trust-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+    stroke: var(--sozo-navy, #1A2080) !important;
+    stroke-width: 2 !important;
+    fill: none !important;
+  }
+
+  .sozo-trust-text {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Mobile Responsive (Compact) */
+  @media (max-width: 820px) {
+    .sozo-table-section {
+      padding: 40px 16px 48px 16px !important;
+    }
+
+    .sozo-table-header {
+      margin-bottom: 22px !important;
+    }
+
+    .sozo-table-header__title {
+      font-size: clamp(20px, 5.2vw, 25px) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .sozo-table-header__desc {
+      font-size: 12.5px !important;
+    }
+
+    .sozo-table-card {
+      border-radius: 14px !important;
+      margin-bottom: 28px !important;
+    }
+
+    .sozo-compare-table th,
+    .sozo-compare-table td {
+      padding: 10px 8px !important;
+    }
+
+    .sozo-compare-table th {
+      font-size: 11.5px !important;
+      padding: 10px 6px !important;
+    }
+
+    .sozo-compare-table td.col-feature {
+      font-size: 11.5px !important;
+      line-height: 1.3 !important;
+      padding: 10px 8px !important;
+      width: 37% !important;
+    }
+
+    .sozo-compare-table th.col-center,
+    .sozo-compare-table td.col-center {
+      width: 21% !important;
+      padding: 10px 4px !important;
+    }
+
+    .sozo-table-check {
+      width: 15px !important;
+      height: 15px !important;
+      stroke-width: 2.6 !important;
+    }
+
+    .sozo-table-dash {
+      font-size: 16px !important;
+    }
+
+    /* Trust Badges di Mobile: Sejajar Horizontal & Compact */
+    .sozo-trust-row {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 6px !important;
+      padding: 0 !important;
+      width: 100% !important;
+    }
+
+    .sozo-trust-item {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 5px !important;
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+    }
+
+    .sozo-trust-icon {
+      width: 28px !important;
+      height: 28px !important;
+      flex-shrink: 0 !important;
+    }
+
+    .sozo-trust-icon svg {
+      width: 14px !important;
+      height: 14px !important;
+      stroke-width: 2.2 !important;
+    }
+
+    .sozo-trust-text {
+      font-size: clamp(9px, 2.5vw, 10.5px) !important;
+      line-height: 1.25 !important;
+      white-space: normal !important;
+    }
+  }
+
+  /* ========================================================
+     8. CTA Banner Section (Siap Coba Treatment-nya?)
+     ======================================================== */
+  .sozo-cta-section {
+    width: 100% !important;
+    background-color: #ffffff !important;
+    padding: 20px 5% 70px !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  }
+
+  .sozo-cta-section,
+  .sozo-cta-section * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-cta-container {
+    max-width: 960px !important;
+    margin: 0 auto !important;
+  }
+
+  .sozo-cta-card {
+    background-color: var(--sozo-navy, #1A2080) !important;
+    border-radius: 24px !important;
+    padding: 50px 32px 40px 32px !important;
+    text-align: center !important;
+    box-shadow: 0 10px 35px rgba(26, 32, 128, 0.25) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .sozo-cta-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: clamp(24px, 3.2vw, 32px) !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin: 0 0 12px 0 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .sozo-cta-desc {
+    font-family: 'Inter', sans-serif !important;
+    font-size: clamp(14px, 1.15vw, 16px) !important;
+    color: #E2E8F0 !important;
+    margin: 0 auto 28px auto !important;
+    max-width: 540px !important;
+    line-height: 1.55 !important;
+  }
+
+  .sozo-cta-btn-wrap {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .sozo-cta-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    background-color: #ffffff !important;
+    color: var(--sozo-navy, #1A2080) !important;
+    height: 52px !important;
+    padding: 0 34px !important;
+    border-radius: 50px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.3px !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18) !important;
+    transition: all 0.25s ease !important;
+  }
+
+  .sozo-cta-btn:hover {
+    background-color: #F8FAFC !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .sozo-cta-btn-wa {
+    width: 22px !important;
+    height: 22px !important;
+    fill: var(--sozo-navy, #1A2080) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .sozo-cta-btn-arrow {
+    width: 18px !important;
+    height: 18px !important;
+    stroke: var(--sozo-navy, #1A2080) !important;
+    stroke-width: 2.6 !important;
+    fill: none !important;
+    flex-shrink: 0 !important;
+  }
+
+  .sozo-cta-note {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px !important;
+    color: #CBD5E1 !important;
+    margin: 24px auto 0 auto !important;
+    max-width: 620px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Mobile Version (Compact & Tidy) */
+  @media (max-width: 820px) {
+    .sozo-cta-section {
+      padding: 10px 16px 40px 16px !important;
+    }
+
+    .sozo-cta-card {
+      padding: 26px 14px 22px 14px !important;
+      border-radius: 18px !important;
+    }
+
+    .sozo-cta-title {
+      font-size: clamp(17px, 4.8vw, 21px) !important;
+      line-height: 1.25 !important;
+      margin-bottom: 8px !important;
+      white-space: normal !important;
+    }
+
+    .sozo-cta-desc {
+      font-size: 12px !important;
+      line-height: 1.45 !important;
+      margin-bottom: 18px !important;
+      max-width: 320px !important;
+      padding: 0 4px !important;
+    }
+
+    .sozo-cta-btn {
+      width: 100% !important;
+      height: 44px !important;
+      font-size: clamp(10px, 2.7vw, 11.5px) !important;
+      padding: 0 10px !important;
+      gap: 6px !important;
+      white-space: nowrap !important;
+      letter-spacing: 0.2px !important;
+    }
+
+    .sozo-cta-btn-wa {
+      width: 18px !important;
+      height: 18px !important;
+    }
+
+    .sozo-cta-btn-arrow {
+      width: 14px !important;
+      height: 14px !important;
+    }
+
+    .sozo-cta-note {
+      font-size: 10px !important;
+      line-height: 1.35 !important;
+      margin-top: 14px !important;
+      padding: 0 4px !important;
+    }
+  }
+
+  /* ========================================================
+     11. Simple Navbar
+     ======================================================== */
+  .sozo-simple-nav {
+    width: 100% !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    padding: 14px 20px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 50 !important;
+  }
+
+  .sozo-simple-nav,
+  .sozo-simple-nav * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-simple-nav__inner {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .sozo-simple-nav__logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+  }
+
+  .sozo-simple-nav__logo img {
+    height: 38px !important;
+    width: auto !important;
+    max-width: 180px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-simple-nav {
+      padding: 12px 16px !important;
+    }
+
+    .sozo-simple-nav__logo img {
+      height: 30px !important;
+      max-width: 145px !important;
+    }
+  }
+
+  /* ========================================================
+     12. Simple Minimalist Footer
+     ======================================================== */
+  .sozo-simple-footer {
+    width: 100% !important;
+    background: #1A2080 !important;
+    color: #ffffff !important;
+    padding: 48px 20px 28px !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  .sozo-simple-footer,
+  .sozo-simple-footer * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-simple-footer__container {
+    max-width: 960px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .sozo-simple-footer__logo-wrap {
+    margin-bottom: 24px !important;
+  }
+
+  .sozo-simple-footer__logo-wrap a {
+    display: inline-block !important;
+    text-decoration: none !important;
+  }
+
+  .sozo-simple-footer__logo-wrap img {
+    height: 42px !important;
+    width: auto !important;
+    max-width: 200px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  .sozo-simple-footer__info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 28px !important;
+    max-width: 640px !important;
+  }
+
+  .sozo-simple-footer__office {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .sozo-simple-footer__office-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #D9C7B1 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .sozo-simple-footer__address {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    color: #E2E8F0 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .sozo-simple-footer__address:hover {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+  }
+
+  .sozo-simple-footer__contacts {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px 14px !important;
+    margin-top: 4px !important;
+  }
+
+  .sozo-simple-footer__contact-link {
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    color: #E2E8F0 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .sozo-simple-footer__contact-link:hover {
+    color: #ffffff !important;
+  }
+
+  .sozo-simple-footer__sep {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 12px !important;
+  }
+
+  .sozo-simple-footer__bottom {
+    width: 100% !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding-top: 20px !important;
+  }
+
+  .sozo-simple-footer__bottom p {
+    margin: 0 !important;
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-simple-footer {
+      padding: 36px 16px 22px !important;
+    }
+
+    .sozo-simple-footer__logo-wrap {
+      margin-bottom: 20px !important;
+    }
+
+    .sozo-simple-footer__logo-wrap img {
+      height: 34px !important;
+      max-width: 160px !important;
+    }
+
+    .sozo-simple-footer__address {
+      font-size: 13px !important;
+      text-align: center !important;
+      flex-direction: column !important;
+      gap: 3px !important;
+    }
+
+    .sozo-simple-footer__contacts {
+      flex-direction: column !important;
+      gap: 8px !important;
+    }
+
+    .sozo-simple-footer__sep {
+      display: none !important;
+    }
+
+    .sozo-simple-footer__contact-link {
+      font-size: 13px !important;
+    }
+  }
+</style>
+
+<!-- ================= Simple Navbar ================= -->
+<header class="sozo-simple-nav">
+  <div class="sozo-simple-nav__inner">
+    <a href="#" class="sozo-simple-nav__logo" aria-label="Sozo Skin Clinic">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/LOGO_SOZO-SKIN-WEB.webp" alt="Sozo Skin Clinic Logo" width="160" height="42" loading="eager">
+    </a>
+  </div>
+</header>
+
+<div class="sozo-threads-hero">
+  <div class="sozo-threads-hero__inner">
+    <div class="sozo-threads-hero__content">
+      
+      <h1 class="sozo-threads-hero__title">
+        <span class="sozo-title-top">Hair Removal Area Intim</span>
+        <span class="sozo-highlight-gold">Lebih Nyaman &amp; Terawat</span>
+      </h1>
+      
+      <p class="sozo-threads-hero__desc">
+        Pilihan treatment untuk membantu mengurangi bulu sekaligus merawat area intim agar terasa lebih bersih, nyaman, dan terawat.
+      </p>
+
+      <!-- Kotak Badge Harga -->
+      <div class="sozo-price-wrapper">
+        <div class="sozo-price-badge">
+          <span class="sozo-price-label">Mulai dari</span>
+          <span class="sozo-price-amount">Rp249.000</span>
+          <span class="sozo-price-note">Harga khusus New Customer</span>
+        </div>
+      </div>
+
+      <!-- 3 Checklist Benefit -->
+      <div class="sozo-checklist-group">
+        
+        <div class="sozo-checklist-item">
+          <span class="sozo-check-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="sozo-checklist-text">Lebih Bersih</span>
+        </div>
+
+        <div class="sozo-checklist-item">
+          <span class="sozo-check-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="sozo-checklist-text">Lebih Nyaman</span>
+        </div>
+
+        <div class="sozo-checklist-item">
+          <span class="sozo-check-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="sozo-checklist-text">Tampil Lebih Terawat</span>
+        </div>
+
+      </div>
+      
+      <!-- Button KLAIM PROMO SEKARANG -->
+      <div class="sozo-button-group">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%20saya%20tertarik%20promo%20Hair%20Removal%20Brazilian%20249k%20%5Bsumber%3A%20thr-hr%5D" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="sozo-btn-primary">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.393-10.416c-4.28 0-7.763 3.483-7.763 7.764 0 1.365.355 2.646.974 3.762l-1.036 3.791 3.887-1.02c1.074.586 2.308.913 3.62.913 4.281 0 7.765-3.484 7.765-7.766 0-4.28-3.485-7.764-7.766-7.764z"/>
+          </svg>
+          <span>KLAIM PROMO SEKARANG</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= Section SKU Treatment ================= -->
+<div class="sozo-sku-section">
+  <div class="sozo-sku-container">
+    
+    <!-- Section Header -->
+    <div class="sozo-sku-header">
+      <h2 class="sozo-sku-header__title">Pilih Treatment Sesuai Kebutuhanmu</h2>
+      <p class="sozo-sku-header__desc">
+        Tiga pilihan treatment untuk area intim dengan harga spesial khusus New Customer.
+      </p>
+    </div>
+
+    <!-- SKU Cards Grid / Horizontal Scroll on Mobile -->
+    <div class="sozo-sku-grid">
+      
+      <!-- Card 1: Brazilian V -->
+      <div class="sozo-sku-card">
+        <div class="sozo-sku-card__img-wrap">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/brazilian-v-scaled.webp" 
+               alt="Treatment Brazilian V - Sozo Skin Clinic" 
+               class="sozo-sku-card__img" 
+               loading="lazy">
+        </div>
+        <div class="sozo-sku-card__body">
+          <h3 class="sozo-sku-card__title">Brazilian V</h3>
+          <p class="sozo-sku-card__desc">Hair removal untuk area bikini line.</p>
+        </div>
+        <div class="sozo-sku-card__footer">
+          <div class="sozo-sku-price-block">
+            <span class="sozo-sku-price-old">Rp499.000</span>
+            <span class="sozo-sku-price-promo">Rp249.000</span>
+            <span class="sozo-sku-price-note">Harga khusus New Customer</span>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%20saya%20tertarik%20promo%20Hair%20Removal%20Brazilian%20249k%20%5Bsumber%3A%20thr-hr%5D" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="sozo-sku-btn sozo-sku-btn--outline">
+            PILIH TREATMENT
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Brazilian VI (Most Popular) -->
+      <div class="sozo-sku-card sozo-sku-card--popular">
+        <div class="sozo-sku-badge-popular">
+          MOST POPULAR
+        </div>
+        <div class="sozo-sku-card__popular-inner">
+          <div class="sozo-sku-card__img-wrap">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/brazilian-vi.webp" 
+                 alt="Treatment Brazilian VI - Sozo Skin Clinic" 
+                 class="sozo-sku-card__img" 
+                 loading="lazy">
+          </div>
+          <div class="sozo-sku-card__body">
+            <h3 class="sozo-sku-card__title">Brazilian VI</h3>
+            <p class="sozo-sku-card__desc">Hair removal lebih menyeluruh untuk area intim.</p>
+          </div>
+          <div class="sozo-sku-card__footer">
+            <div class="sozo-sku-price-block">
+              <span class="sozo-sku-price-old">Rp599.000</span>
+              <span class="sozo-sku-price-promo">Rp249.000</span>
+              <span class="sozo-sku-price-note">Harga khusus New Customer</span>
+            </div>
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%20saya%20tertarik%20promo%20Hair%20Removal%20Brazilian%20249k%20%5Bsumber%3A%20thr-hr%5D" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="sozo-sku-btn sozo-sku-btn--solid">
+              PILIH TREATMENT
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Intimate Glow -->
+      <div class="sozo-sku-card">
+        <div class="sozo-sku-card__img-wrap">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/intimate-glow.webp" 
+               alt="Treatment Intimate Glow - Sozo Skin Clinic" 
+               class="sozo-sku-card__img" 
+               loading="lazy">
+        </div>
+        <div class="sozo-sku-card__body">
+          <h3 class="sozo-sku-card__title">Intimate Glow</h3>
+          <p class="sozo-sku-card__desc">Hair Removal + Intimate Peeling dalam 1 treatment.</p>
+          <div class="sozo-sku-include-box">
+            <div class="sozo-sku-include-title">Sudah termasuk:</div>
+            <ul class="sozo-sku-include-list">
+              <li>
+                <span class="sozo-sku-include-check">✓</span>
+                <span>1x Brazilian VI Hair Removal</span>
+              </li>
+              <li>
+                <span class="sozo-sku-include-check">✓</span>
+                <span>1x Intimate Peeling</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sozo-sku-card__footer">
+          <div class="sozo-sku-price-block">
+            <span class="sozo-sku-price-old">Rp898.000</span>
+            <span class="sozo-sku-price-promo">Rp399.000</span>
+            <span class="sozo-sku-price-note">Harga khusus New Customer</span>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%20saya%20tertarik%20promo%20Intimate%20Glow%20399k%20%5Bsumber%3A%20thr-hr%5D" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="sozo-sku-btn sozo-sku-btn--outline">
+            PILIH TREATMENT
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= Section Table Comparison ================= -->
+<div class="sozo-table-section">
+  <div class="sozo-table-container">
+    
+    <!-- Section Header -->
+    <div class="sozo-table-header">
+      <h2 class="sozo-table-header__title">Bingung Pilih yang Mana?</h2>
+      <p class="sozo-table-header__desc">Cek perbedaannya di sini.</p>
+    </div>
+
+    <!-- Table Card Wrapper -->
+    <div class="sozo-table-card">
+      <div class="sozo-table-wrap">
+        <table class="sozo-compare-table">
+          <thead>
+            <tr>
+              <th>Area Treatment</th>
+              <th class="col-center">Brazilian V</th>
+              <th class="col-center">Brazilian VI</th>
+              <th class="col-center">Intimate Glow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-feature">Bikini line (area luar)</td>
+              <td class="col-center">
+                <svg class="sozo-table-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+              <td class="col-center">
+                <svg class="sozo-table-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+              <td class="col-center">
+                <svg class="sozo-table-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-feature">Area intim lebih lengkap (Brazilian)</td>
+              <td class="col-center"><span class="sozo-table-dash">-</span></td>
+              <td class="col-center">
+                <svg class="sozo-table-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+              <td class="col-center">
+                <svg class="sozo-table-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-feature">Intimate Peeling (perawatan kulit area intim)</td>
+              <td class="col-center"><span class="sozo-table-dash">-</span></td>
+              <td class="col-center"><span class="sozo-table-dash">-</span></td>
+              <td class="col-center">
+                <svg class="sozo-table-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Trust Badges Row -->
+    <div class="sozo-trust-row">
+      
+      <!-- Trust 1: Treatment aman dan nyaman -->
+      <div class="sozo-trust-item">
+        <div class="sozo-trust-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+        </div>
+        <div class="sozo-trust-text">
+          Treatment aman<br>dan nyaman
+        </div>
+      </div>
+
+      <!-- Trust 2: Ditangani oleh tenaga profesional -->
+      <div class="sozo-trust-item">
+        <div class="sozo-trust-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3"></path>
+            <path d="M9 12.5v2.5a5 5 0 0 0 5 5h1a4 4 0 0 0 4-4v-1.5"></path>
+            <circle cx="19" cy="14.5" r="2"></circle>
+          </svg>
+        </div>
+        <div class="sozo-trust-text">
+          Ditangani oleh<br>tenaga profesional
+        </div>
+      </div>
+
+      <!-- Trust 3: Klinik bersih dan terpercaya -->
+      <div class="sozo-trust-item">
+        <div class="sozo-trust-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+        </div>
+        <div class="sozo-trust-text">
+          Klinik bersih<br>dan terpercaya
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= Section CTA Banner ================= -->
+<div class="sozo-cta-section">
+  <div class="sozo-cta-container">
+    <div class="sozo-cta-card">
+      <h2 class="sozo-cta-title">Siap Coba <span style="white-space: nowrap;">Treatment-nya?</span></h2>
+      <p class="sozo-cta-desc">
+        Dapatkan harga khusus New Customer dan pilih klinik SOZO terdekat untuk treatment kamu.
+      </p>
+      <div class="sozo-cta-btn-wrap">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%20saya%20tertarik%20promo%20Hair%20Removal%20Brazilian%20249k%20%5Bsumber%3A%20thr-hr%5D" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="sozo-cta-btn">
+          <svg class="sozo-cta-btn-wa" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.393-10.416c-4.28 0-7.763 3.483-7.763 7.764 0 1.365.355 2.646.974 3.762l-1.036 3.791 3.887-1.02c1.074.586 2.308.913 3.62.913 4.281 0 7.765-3.484 7.765-7.766 0-4.28-3.485-7.764-7.766-7.764z"/>
+          </svg>
+          <span>CHAT SEKARANG &amp; KLAIM PROMO</span>
+          <svg class="sozo-cta-btn-arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </div>
+      <p class="sozo-cta-note">
+        *Syarat dan ketentuan berlaku. Promo khusus customer baru dan dapat berbeda sesuai periode promo.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= Simple Minimalist Footer ================= -->
+<footer class="sozo-simple-footer">
+  <div class="sozo-simple-footer__container">
+    
+    <!-- Logo Putih -->
+    <div class="sozo-simple-footer__logo-wrap">
+      <a href="#" aria-label="Sozo Skin Clinic">
+        <img 
+          src="https://asset.sozoskinclinic.com/wp-content/uploads/2021/05/logo-sozo-skin-clinic-white-klinik-kecantikan-terdekat.png.webp" 
+          alt="Sozo Skin Clinic Logo White" 
+          width="180" 
+          height="45"
+          loading="lazy"
+        />
+      </a>
+    </div>
+
+    <!-- Info Alamat & Kontak -->
+    <div class="sozo-simple-footer__info">
+      <div class="sozo-simple-footer__office">
+        <span class="sozo-simple-footer__office-title">Head Office</span>
+        <a href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiI0o--9LKUAxUAAAAAHQAAAAAQBQ..i&pvq=Cg0vZy8xMXczX2JrdzFrIh4KGHNldmVuIHJldGFpbCBoZWFkIG9mZmljZRACGAM&lqi=ChhzZXZlbiByZXRhaWwgaGVhZCBvZmZpY2VIsdij9Y-7gIAIWjYQABABEAIQAxgAGAEYAhgDIhhzZXZlbiByZXRhaWwgaGVhZCBvZmZpY2VIsdij9Y-7gIAIWjYQABABEAIQAxgAGAEYAhgDIhhzZXZlbiByZXRhaWwgaGVhZCBvZmZpY2UqCggCEAAQARACEAOSARBjb3Jwb3JhdGVfb2ZmaWNl&fvr=1&cs=0&um=1&ie=UTF8&fb=1&gl=id&sa=X&ftid=0x8e8e3019fe4bd39d:0x382246fc24d6ed5f" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="sozo-simple-footer__address">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Jl. Bintaro Raya No.15, Kota Jakarta Selatan, DKI Jakarta 12240
+        </a>
+      </div>
+
+      <div class="sozo-simple-footer__contacts">
+        <a href="tel:+6285175225664" class="sozo-simple-footer__contact-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          +62 851-7522-5664
+        </a>
+        <span class="sozo-simple-footer__sep">•</span>
+        <a href="mailto:info@sozoskin.com" class="sozo-simple-footer__contact-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          info@sozoskin.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="sozo-simple-footer__bottom">
+      <p>© 2026 Sozo Skin Clinic. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>

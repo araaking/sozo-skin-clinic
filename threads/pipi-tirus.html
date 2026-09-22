@@ -1,0 +1,696 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ================= 1. Global & Hero Container ================= */
+  .sozo-tirus-hero {
+    --sozo-navy: #1A2080;
+    --sozo-navy-hover: #131761;
+    --sozo-blue-accent: #2563EB;
+    --sozo-text-dark: #0F172A;
+    --sozo-text-body: #475569;
+    --sozo-bg-white: #FFFFFF;
+    
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    position: relative !important;
+    width: 100% !important;
+    background: linear-gradient(135deg, #EFF5FF 0%, #FFFFFF 45%, #E6EEFA 100%) !important;
+    overflow: hidden !important;
+    -webkit-font-smoothing: antialiased !important;
+    box-sizing: border-box !important;
+    padding: 52px 20px 0 !important;
+  }
+  
+  .sozo-tirus-hero, 
+  .sozo-tirus-hero * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-tirus-hero__inner {
+    position: relative !important;
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* ================= 2. Centered Header Section ================= */
+  .sozo-tirus-hero__header {
+    max-width: 780px !important;
+    margin: 0 auto 32px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .sozo-tirus-hero__title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 44px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    color: var(--sozo-navy) !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 0 14px !important;
+    text-align: center !important;
+  }
+
+  .sozo-tirus-hero__highlight {
+    color: #D9C7B1 !important;
+    position: relative !important;
+    display: inline-block !important;
+  }
+
+  .sozo-tirus-hero__desc {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: var(--sozo-text-body) !important;
+    margin: 0 0 24px !important;
+    max-width: 580px !important;
+    text-align: center !important;
+  }
+
+  .sozo-tirus-hero__cta-wrap {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .sozo-tirus-hero__btn-wa {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    background-color: var(--sozo-navy) !important;
+    color: #FFFFFF !important;
+    font-size: 15.5px !important;
+    font-weight: 600 !important;
+    padding: 14px 36px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 8px 24px -4px rgba(26, 32, 128, 0.25) !important;
+  }
+
+  .sozo-tirus-hero__btn-wa:hover {
+    background-color: var(--sozo-navy-hover) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 28px -4px rgba(26, 32, 128, 0.35) !important;
+    color: #FFFFFF !important;
+  }
+
+  /* ================= 3. Visual Stage (Model Image) ================= */
+  .sozo-tirus-hero__stage {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 860px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+  }
+
+  .sozo-tirus-hero__model-wrap {
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .sozo-tirus-hero__model-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 580px !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* ================= 4. Mobile & Tablet Responsiveness ================= */
+  @media (max-width: 1024px) {
+    .sozo-tirus-hero__title {
+      font-size: 38px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-tirus-hero {
+      padding: 28px 16px 0 !important;
+    }
+
+    .sozo-tirus-hero__header {
+      margin-bottom: 18px !important;
+    }
+
+    .sozo-tirus-hero__title {
+      font-size: 24px !important;
+      line-height: 1.25 !important;
+      margin-bottom: 8px !important;
+    }
+
+    .sozo-tirus-hero__desc {
+      font-size: 13.5px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 18px !important;
+      padding: 0 8px !important;
+      max-width: 100% !important;
+    }
+
+    .sozo-tirus-hero__btn-wa {
+      width: 100% !important;
+      max-width: 280px !important;
+      font-size: 14px !important;
+      padding: 12px 20px !important;
+    }
+
+    .sozo-tirus-hero__model-img {
+      max-height: 310px !important;
+      width: 100% !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sozo-tirus-hero {
+      padding: 22px 14px 0 !important;
+    }
+
+    .sozo-tirus-hero__title {
+      font-size: 21px !important;
+      line-height: 1.25 !important;
+    }
+
+    .sozo-tirus-hero__desc {
+      font-size: 12.5px !important;
+      line-height: 1.45 !important;
+      margin-bottom: 14px !important;
+    }
+
+    .sozo-tirus-hero__btn-wa {
+      font-size: 13.5px !important;
+      padding: 11px 18px !important;
+    }
+
+    .sozo-tirus-hero__model-img {
+      max-height: 270px !important;
+    }
+  }
+
+  /* ================= 5. Section 2: Promo 2-in-1 Meso V-Line + RF ================= */
+  .sozo-tirus-promo {
+    width: 100% !important;
+    background-color: #FFFFFF !important;
+    padding: 72px 20px !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  .sozo-tirus-promo, 
+  .sozo-tirus-promo * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-tirus-promo__inner {
+    max-width: 1180px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: 1.15fr 1fr !important;
+    gap: 48px !important;
+    align-items: center !important;
+  }
+
+  /* Left: Before After Image */
+  .sozo-tirus-promo__visual {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .sozo-tirus-promo__img-card {
+    position: relative !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    box-shadow: 0 16px 36px -8px rgba(26, 32, 128, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid #E2E8F0 !important;
+    background: #000000 !important;
+  }
+
+  .sozo-tirus-promo__img-card img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  .sozo-tirus-promo__caption {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 12.5px !important;
+    font-weight: 500 !important;
+    color: #64748B !important;
+  }
+
+  .sozo-tirus-promo__caption-dot {
+    width: 7px !important;
+    height: 7px !important;
+    border-radius: 50% !important;
+    background: #10B981 !important;
+    display: inline-block !important;
+  }
+
+  /* Right: Offer Content */
+  .sozo-tirus-promo__content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .sozo-tirus-promo__badge {
+    display: inline-block !important;
+    background: #EFF6FF !important;
+    color: #2563EB !important;
+    border: 1px solid #DBEAFE !important;
+    padding: 5px 14px !important;
+    border-radius: 6px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 12px !important;
+  }
+
+  .sozo-tirus-promo__title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    color: #1A2080 !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 0 14px !important;
+  }
+
+  .sozo-tirus-promo__highlight {
+    color: #D9C7B1 !important;
+  }
+
+  .sozo-tirus-promo__desc {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    color: #475569 !important;
+    margin: 0 0 20px !important;
+  }
+
+  .sozo-tirus-promo__list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .sozo-tirus-promo__list-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #1E293B !important;
+  }
+
+  .sozo-tirus-promo__list-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    background: #EFF6FF !important;
+    color: #2563EB !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Pricing Box */
+  .sozo-tirus-promo__price-box {
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    border-left: 4px solid #1A2080 !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    width: 100% !important;
+    margin-bottom: 24px !important;
+  }
+
+  .sozo-tirus-promo__price-box--mobile {
+    display: none !important;
+  }
+
+  .sozo-tirus-promo__price-box--desktop {
+    display: block !important;
+  }
+
+  .sozo-tirus-promo__price-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .sozo-tirus-promo__price-old {
+    font-size: 14px !important;
+    color: #94A3B8 !important;
+    text-decoration: line-through !important;
+    font-weight: 500 !important;
+  }
+
+  .sozo-tirus-promo__discount-tag {
+    background: #FEE2E2 !important;
+    color: #DC2626 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 2px 8px !important;
+    border-radius: 4px !important;
+  }
+
+  .sozo-tirus-promo__price-deal {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 4px !important;
+  }
+
+  .sozo-tirus-promo__currency {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #1A2080 !important;
+  }
+
+  .sozo-tirus-promo__amount {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 34px !important;
+    font-weight: 800 !important;
+    color: #1A2080 !important;
+    line-height: 1 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .sozo-tirus-promo__period {
+    font-size: 13px !important;
+    color: #64748B !important;
+    font-weight: 500 !important;
+    margin-left: 4px !important;
+  }
+
+  /* Action & CTA */
+  .sozo-tirus-promo__action {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .sozo-tirus-promo__btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    background-color: #1A2080 !important;
+    color: #FFFFFF !important;
+    font-size: 15.5px !important;
+    font-weight: 600 !important;
+    padding: 14px 36px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 8px 20px -4px rgba(26, 32, 128, 0.28) !important;
+  }
+
+  .sozo-tirus-promo__btn:hover {
+    background-color: #131761 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 24px -4px rgba(26, 32, 128, 0.38) !important;
+    color: #FFFFFF !important;
+  }
+
+  .sozo-tirus-promo__note {
+    font-size: 12px !important;
+    color: #64748B !important;
+    font-weight: 500 !important;
+  }
+
+  /* Mobile Layout */
+  @media (max-width: 992px) {
+    .sozo-tirus-promo {
+      padding: 50px 20px !important;
+    }
+    .sozo-tirus-promo__inner {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-tirus-promo {
+      padding: 36px 16px !important;
+    }
+
+    .sozo-tirus-promo__inner {
+      gap: 20px !important;
+    }
+
+    .sozo-tirus-promo__visual {
+      order: 1 !important;
+      width: 100% !important;
+    }
+
+    .sozo-tirus-promo__price-box--mobile {
+      display: block !important;
+      margin-top: 14px !important;
+      margin-bottom: 0 !important;
+    }
+
+    .sozo-tirus-promo__price-box--desktop {
+      display: none !important;
+    }
+
+    .sozo-tirus-promo__content {
+      order: 2 !important;
+      width: 100% !important;
+    }
+
+    .sozo-tirus-promo__title {
+      font-size: 24px !important;
+      line-height: 1.25 !important;
+      margin-bottom: 10px !important;
+    }
+
+    .sozo-tirus-promo__desc {
+      font-size: 13.5px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .sozo-tirus-promo__list {
+      gap: 8px !important;
+      margin-bottom: 18px !important;
+    }
+
+    .sozo-tirus-promo__list-item {
+      font-size: 13px !important;
+    }
+
+    .sozo-tirus-promo__amount {
+      font-size: 28px !important;
+    }
+
+    .sozo-tirus-promo__price-box {
+      padding: 14px 16px !important;
+      margin-bottom: 18px !important;
+    }
+
+    .sozo-tirus-promo__btn {
+      width: 100% !important;
+      font-size: 14.5px !important;
+      padding: 13px 20px !important;
+    }
+
+    .sozo-tirus-promo__action {
+      align-items: center !important;
+      text-align: center !important;
+    }
+  }
+
+  /* ========================================================
+     0. Simple Navbar
+     ======================================================== */
+  .sozo-simple-nav {
+    width: 100% !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    padding: 14px 20px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 50 !important;
+  }
+
+  .sozo-simple-nav,
+  .sozo-simple-nav * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-simple-nav__inner {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .sozo-simple-nav__logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+  }
+
+  .sozo-simple-nav__logo img {
+    height: 38px !important;
+    width: auto !important;
+    max-width: 180px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-simple-nav {
+      padding: 12px 16px !important;
+    }
+
+    .sozo-simple-nav__logo img {
+      height: 30px !important;
+      max-width: 145px !important;
+    }
+  }
+</style>
+
+<!-- ================= Simple Navbar ================= -->
+<header class="sozo-simple-nav">
+  <div class="sozo-simple-nav__inner">
+    <a href="#" class="sozo-simple-nav__logo" aria-label="Sozo Skin Clinic">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/LOGO_SOZO-SKIN-WEB.webp" alt="Sozo Skin Clinic Logo" width="160" height="42" loading="eager">
+    </a>
+  </div>
+</header>
+
+<section class="sozo-tirus-hero">
+  <div class="sozo-tirus-hero__inner">
+    
+    <!-- 1. Centered Header -->
+    <div class="sozo-tirus-hero__header">
+      <h1 class="sozo-tirus-hero__title">
+        Wajah Lebih Tirus <span class="sozo-tirus-hero__highlight">Tanpa Perlu Operasi</span>
+      </h1>
+      
+      <p class="sozo-tirus-hero__desc">
+        Kecilkan pipi chubby dan bentuk garis rahang tegas alami dengan perawatan nyaman langsung oleh dokter ahli.
+      </p>
+
+      <div class="sozo-tirus-hero__cta-wrap">
+        <a href="https://api.whatsapp.com//send?phone=6285175318108&text=Halo SOZO, saya tertarik promo 2in1 pipi tirus 849k [sumber: thr-smn]" class="sozo-tirus-hero__btn-wa" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          Klaim Promo Sekarang
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. Centered Visual Stage -->
+    <div class="sozo-tirus-hero__stage">
+      <div class="sozo-tirus-hero__model-wrap">
+        <img 
+          class="sozo-tirus-hero__model-img" 
+          src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/hero-women-midle-threads-scaled.webp" 
+          alt="Treatment Pipi Tirus dan Wajah V-Shape di Sozo Skin Clinic"
+          width="820"
+          height="461"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= Section 2: Promo 2-in-1 Meso V-Line + RF ================= -->
+<section class="sozo-tirus-promo">
+  <div class="sozo-tirus-promo__inner">
+    
+    <!-- Left: Before-After Showcase -->
+    <div class="sozo-tirus-promo__visual">
+      <div class="sozo-tirus-promo__img-card">
+        <img 
+          src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/meso-v-line-after-scaled.webp" 
+          alt="Hasil Nyata Treatment 2-in-1 Pipi Tirus Meso V-Line dan RF Sozo Skin Clinic" 
+          width="1024" 
+          height="614" 
+          loading="lazy" 
+        />
+      </div>
+
+      <!-- Pricing Box Mobile (Di bawah gambar pada versi mobile) -->
+      <div class="sozo-tirus-promo__price-box sozo-tirus-promo__price-box--mobile">
+        <div class="sozo-tirus-promo__price-row">
+          <span class="sozo-tirus-promo__price-old">Rp 1.498.000</span>
+          <span class="sozo-tirus-promo__discount-tag">HEMAT 43%</span>
+        </div>
+        <div class="sozo-tirus-promo__price-deal">
+          <span class="sozo-tirus-promo__currency">Rp</span>
+          <span class="sozo-tirus-promo__amount">849.000</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Offer & Copywriting Details -->
+    <div class="sozo-tirus-promo__content">
+      <h2 class="sozo-tirus-promo__title">
+        2-in-1 Pipi Tirus: <span class="sozo-tirus-promo__highlight">Meso V-Line + RF</span>
+      </h2>
+
+      <p class="sozo-tirus-promo__desc">
+        Meso V-Line bekerja mengikis lemak berlebih di area pipi, sementara RF mengencangkan kulit yang mulai kendur. Kombinasi keduanya membentuk kontur wajah yang lebih tirus dan garis rahang yang lebih tegas hanya dalam satu sesi treatment, tanpa perlu tindakan bedah.
+      </p>
+
+      <!-- Pricing Box Desktop (Di dalam kolom teks pada versi desktop) -->
+      <div class="sozo-tirus-promo__price-box sozo-tirus-promo__price-box--desktop">
+        <div class="sozo-tirus-promo__price-row">
+          <span class="sozo-tirus-promo__price-old">Rp 1.498.000</span>
+          <span class="sozo-tirus-promo__discount-tag">HEMAT 43%</span>
+        </div>
+        <div class="sozo-tirus-promo__price-deal">
+          <span class="sozo-tirus-promo__currency">Rp</span>
+          <span class="sozo-tirus-promo__amount">849.000</span>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="sozo-tirus-promo__action">
+        <a href="https://api.whatsapp.com//send?phone=6285175318108&text=Halo SOZO, saya tertarik promo 2in1 pipi tirus 849k [sumber: thr-smn]" class="sozo-tirus-promo__btn" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          Reservasi Sekarang
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>

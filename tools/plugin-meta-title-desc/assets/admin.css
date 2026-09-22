@@ -1,0 +1,245 @@
+.bme-wrap .bme-toolbar {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 12px 0;
+}
+
+.bme-wrap .bme-check {
+	display: inline-flex;
+	gap: 6px;
+	align-items: center;
+}
+
+.bme-wrap .bme-summary {
+	margin: 4px 0 8px;
+	color: #646970;
+}
+
+.bme-wrap .bme-table input[type="text"],
+.bme-wrap .bme-table textarea {
+	width: 100%;
+}
+
+.bme-wrap .bme-table textarea {
+	resize: vertical;
+}
+
+.bme-wrap .bme-col-post {
+	width: 22%;
+}
+
+.bme-wrap .bme-col-title {
+	width: 38%;
+}
+
+.bme-wrap .bme-col-desc {
+	width: 40%;
+}
+
+.bme-wrap .bme-sub {
+	color: #646970;
+	font-size: 12px;
+}
+
+.bme-wrap .bme-last-edit {
+	margin-top: 2px;
+}
+
+.bme-wrap .bme-counter {
+	color: #646970;
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+.bme-wrap .bme-counter.over {
+	color: #b32d2e;
+	font-weight: 600;
+}
+
+.bme-wrap .bme-counter.good {
+	color: #008112;
+}
+
+.bme-wrap .bme-field-msg {
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+.bme-wrap .bme-msg-ok {
+	color: #008112;
+}
+
+.bme-wrap .bme-msg-error {
+	color: #b32d2e;
+}
+
+.bme-wrap tr.bme-dirty {
+	background-color: #fff8e5;
+}
+
+.bme-wrap tr.bme-dirty td:first-child {
+	box-shadow: inset 3px 0 0 #dba617;
+}
+
+.bme-wrap .bme-actions {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 12px;
+}
+
+.bme-wrap .bme-save-status {
+	font-weight: 600;
+}
+
+.bme-wrap .bme-save-status.bme-ok {
+	color: #008112;
+}
+
+.bme-wrap .bme-save-status.bme-warn {
+	color: #996800;
+}
+
+.bme-wrap .bme-save-status.bme-error {
+	color: #b32d2e;
+}
+
+.bme-wrap .bme-old,
+.bme-wrap .bme-new {
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.bme-wrap .bme-old {
+	color: #8a1f1f;
+}
+
+.bme-wrap .bme-new {
+	color: #00693e;
+	margin-top: 2px;
+}
+
+.bme-wrap .bme-old span,
+.bme-wrap .bme-new span {
+	font-size: 11px;
+	font-weight: 700;
+	color: #646970;
+}
+
+.bme-wrap .bme-change + .bme-change {
+	margin-top: 8px;
+	padding-top: 8px;
+	border-top: 1px dashed #dcdcde;
+}
+
+.bme-wrap .bme-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 16px 20px;
+	margin: 16px 0;
+	max-width: 960px;
+}
+
+.bme-wrap .bme-card h2 {
+	margin-top: 0;
+}
+
+.bme-wrap .bme-card form {
+	margin-top: 8px;
+}
+
+.bme-wrap .bme-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 2px 10px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 600;
+	background: #f0f0f1;
+	color: #50575e;
+}
+
+.bme-wrap .bme-pill-ok {
+	background: #edfaef;
+	color: #00693e;
+}
+
+.bme-wrap .bme-pill-warn {
+	background: #fcf9e8;
+	color: #996800;
+}
+
+.bme-wrap .bme-pill-error {
+	background: #fcf0f1;
+	color: #b32d2e;
+}
+
+.bme-wrap .bme-progress {
+	width: 100%;
+	max-width: 480px;
+	height: 8px;
+	background: #f0f0f1;
+	border-radius: 999px;
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+.bme-wrap .bme-progress-bar {
+	width: 0;
+	height: 100%;
+	background: #2271b1;
+	transition: width 0.2s ease;
+}
+
+/* Autocomplete post */
+
+.bme-wrap .bme-autocomplete {
+	position: relative;
+	min-width: 260px;
+}
+
+.bme-wrap .bme-autocomplete .bme-ac-input {
+	width: 100%;
+}
+
+.bme-wrap .bme-ac-results {
+	position: absolute;
+	z-index: 100;
+	top: 100%;
+	left: 0;
+	right: 0;
+	max-height: 240px;
+	overflow-y: auto;
+	background: #fff;
+	border: 1px solid #8c8f94;
+	border-top: none;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bme-wrap .bme-ac-item {
+	padding: 6px 10px;
+	cursor: pointer;
+	font-size: 13px;
+}
+
+.bme-wrap .bme-ac-item:hover {
+	background: #2271b1;
+	color: #fff;
+}
+
+.bme-wrap .bme-ac-empty {
+	padding: 6px 10px;
+	color: #646970;
+	font-size: 12px;
+}
+
+.bme-wrap .bme-date {
+	display: inline-flex;
+	gap: 4px;
+	align-items: center;
+}

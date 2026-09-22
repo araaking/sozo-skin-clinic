@@ -1,0 +1,349 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ================= 1. Global & Hero Container ================= */
+  .sozo-threads-hero {
+    --sozo-navy: #1A2080;
+    --sozo-navy-hover: #131761;
+    --sozo-blue-accent: #2563EB;
+    --sozo-badge-gold: #D9C7B1;
+    --sozo-text-dark: #1E293B;
+    --sozo-text-body: #475569;
+    --sozo-bg-cream: #FAF8F5;
+    
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    position: relative !important;
+    width: 100% !important;
+    background-color: var(--sozo-bg-cream) !important;
+    background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/threads-hero-lp-2.webp') !important;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;
+    background-size: cover !important;
+    overflow: hidden !important;
+    -webkit-font-smoothing: antialiased !important;
+    box-sizing: border-box !important;
+  }
+  
+  .sozo-threads-hero, 
+  .sozo-threads-hero * {
+    box-sizing: border-box !important;
+  }
+
+  /* Gradasi Dinonaktifkan */
+  .sozo-threads-hero::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: none !important;
+    background: none !important;
+    z-index: 1 !important;
+  }
+
+  .sozo-threads-hero__inner {
+    position: relative !important;
+    max-width: 1320px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    min-height: 560px !important;
+    padding: 56px 5% !important;
+    z-index: 2 !important;
+  }
+
+  .sozo-threads-hero__content {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 58% !important;
+    min-width: 320px !important;
+    max-width: 660px !important;
+    text-align: left !important;
+  }
+
+  /* Title */
+  .sozo-threads-hero__title {
+    font-family: 'Poppins', sans-serif !important;
+    color: var(--sozo-navy) !important;   
+    font-weight: 800 !important; 
+    font-size: clamp(26px, 3.2vw, 40px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+    margin: 0 0 16px 0 !important;
+  }
+
+  /* Highlight aksen warna emas/nude khas SOZO */
+  .sozo-highlight-gold {
+    color: #D9C7B1 !important;
+    display: inline-block !important;
+  }
+
+  /* Description */
+  .sozo-threads-hero__desc {
+    color: var(--sozo-navy) !important;
+    font-size: clamp(14px, 1.05vw, 15.5px) !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
+    margin: 0 0 20px 0 !important;
+    max-width: 580px !important;
+  }
+
+  /* ================= 2. Price Badge & Notes ================= */
+  .sozo-price-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .sozo-price-badge {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    gap: 8px !important;
+    background: #ffffff !important;
+    border: 1.5px solid rgba(26, 32, 128, 0.16) !important;
+    padding: 8px 18px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 14px rgba(26, 32, 128, 0.08) !important;
+  }
+
+  .sozo-price-label {
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: var(--sozo-navy) !important;
+    letter-spacing: 0.1px !important;
+  }
+
+  .sozo-price-amount {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    color: var(--sozo-navy) !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1 !important;
+  }
+
+  .sozo-price-note {
+    font-size: 12px !important;
+    color: var(--sozo-navy) !important;
+    font-style: italic !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding-left: 2px !important;
+    opacity: 0.85 !important;
+  }
+
+  /* ================= 3. Checklist Features ================= */
+  .sozo-checklist-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 28px !important;
+  }
+
+  .sozo-checklist-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(26, 32, 128, 0.12) !important;
+    padding: 7px 14px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  .sozo-check-icon {
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 50% !important;
+    background-color: var(--sozo-navy) !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .sozo-check-icon svg {
+    width: 11px !important;
+    height: 11px !important;
+    stroke: #ffffff !important;
+    stroke-width: 2.8 !important;
+    fill: none !important;
+  }
+
+  .sozo-checklist-text {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: var(--sozo-navy) !important;
+    white-space: nowrap !important;
+  }
+
+  /* ================= 4. CTA Button ================= */
+  .sozo-button-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .sozo-btn-primary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    height: 48px !important;
+    padding: 0 32px !important;
+    background-color: var(--sozo-navy) !important;
+    color: #ffffff !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    border-radius: 50px !important;
+    border: 2px solid var(--sozo-navy) !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 6px 18px rgba(26, 32, 128, 0.25) !important;
+  }
+
+  .sozo-btn-primary svg {
+    width: 18px !important;
+    height: 18px !important;
+    fill: #ffffff !important;
+    transition: fill 0.25s ease !important;
+  }
+
+  .sozo-btn-primary:hover {
+    background-color: #ffffff !important;
+    color: var(--sozo-navy) !important;
+    border-color: var(--sozo-navy) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(26, 32, 128, 0.32) !important;
+  }
+
+  .sozo-btn-primary:hover svg {
+    fill: var(--sozo-navy) !important;
+  }
+
+  /* ================= 5. Responsiveness (Mobile) ================= */
+  @media (max-width: 820px) {
+    .sozo-threads-hero {
+      background-position: 75% center !important;
+    }
+
+    .sozo-threads-hero__inner {
+      min-height: auto !important;
+      padding: 40px 20px 48px !important;
+    }
+
+    .sozo-threads-hero__content {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .sozo-threads-hero__title {
+      font-size: clamp(24px, 6.5vw, 32px) !important;
+      line-height: 1.28 !important;
+    }
+
+    .sozo-price-badge {
+      padding: 7px 14px !important;
+    }
+
+    .sozo-price-amount {
+      font-size: 18px !important;
+    }
+
+    .sozo-checklist-group {
+      gap: 8px !important;
+      margin-bottom: 24px !important;
+    }
+
+    .sozo-checklist-item {
+      padding: 6px 12px !important;
+      font-size: 12.5px !important;
+    }
+
+    .sozo-btn-primary {
+      width: 100% !important;
+      height: 50px !important;
+      font-size: 14px !important;
+    }
+  }
+</style>
+
+<div class="sozo-threads-hero">
+  <div class="sozo-threads-hero__inner">
+    <div class="sozo-threads-hero__content">
+      
+      <h1 class="sozo-threads-hero__title">
+        Hair Removal Area Intim<br>
+        <span class="sozo-highlight-gold">Lebih Nyaman &amp; Terawat</span>
+      </h1>
+      
+      <p class="sozo-threads-hero__desc">
+        Pilihan treatment untuk membantu mengurangi bulu sekaligus merawat area intim agar terasa lebih bersih, nyaman, dan terawat.
+      </p>
+
+      <!-- Kotak Badge Harga + Note New Customer -->
+      <div class="sozo-price-wrapper">
+        <div class="sozo-price-badge">
+          <span class="sozo-price-label">Mulai dari</span>
+          <span class="sozo-price-amount">Rp249.000</span>
+        </div>
+        <span class="sozo-price-note">*Harga khusus New Customer</span>
+      </div>
+
+      <!-- 3 Checklist Benefit -->
+      <div class="sozo-checklist-group">
+        
+        <div class="sozo-checklist-item">
+          <span class="sozo-check-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="sozo-checklist-text">Lebih Bersih</span>
+        </div>
+
+        <div class="sozo-checklist-item">
+          <span class="sozo-check-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="sozo-checklist-text">Lebih Nyaman</span>
+        </div>
+
+        <div class="sozo-checklist-item">
+          <span class="sozo-check-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span class="sozo-checklist-text">Tampil Lebih Terawat</span>
+        </div>
+
+      </div>
+      
+      <!-- Button KLAIM PROMO SEKARANG -->
+      <div class="sozo-button-group">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%2C%20saya%20mau%20klaim%20promo%20Hair%20Removal%20Area%20Intim%20Rp249rb%20%5Bsumber%3A%20SEM-hair-removal-intim%5D" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="sozo-btn-primary">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.393-10.416c-4.28 0-7.763 3.483-7.763 7.764 0 1.365.355 2.646.974 3.762l-1.036 3.791 3.887-1.02c1.074.586 2.308.913 3.62.913 4.281 0 7.765-3.484 7.765-7.766 0-4.28-3.485-7.764-7.766-7.764z"/>
+          </svg>
+          <span>KLAIM PROMO SEKARANG</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
