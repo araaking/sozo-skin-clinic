@@ -1,0 +1,1586 @@
+<style>
+  /* ==========================================================
+     PREMIUM REDESIGN: CENTERED HERO + DYNAMIC INDONESIA MAP
+     ========================================================== */
+  .sz-ultimate-hero {
+    font-family: 'Poppins', sans-serif !important;
+    background: transparent !important;
+    padding: 100px 20px 80px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+  .sz-ultimate-container { max-width: 1200px !important; margin: 0 auto !important; }
+  .sz-ultimate-header { max-width: 800px !important; margin: 0 auto 50px auto !important; }
+  
+  .sz-ultimate-tag {
+    display: inline-block !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 3px !important;
+    color: #1A2080 !important;
+    background-color: var(--color-brand-almond, #E9DFD5) !important;
+    padding: 6px 18px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    margin-bottom: 24px !important;
+  }
+  .sz-ultimate-header h1 {
+    font-size: clamp(36px, 5vw, 54px) !important;
+    line-height: 1.15 !important;
+    color: #1A2080 !important;
+    margin: 0 0 22px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px !important;
+  }
+  .sz-ultimate-header p {
+    font-size: clamp(16px, 1.8vw, 18px) !important;
+    color: var(--color-text-secondary, #41413E) !important;
+    line-height: 1.8 !important;
+    margin: 0 !important;
+  }
+
+  /* Map Canvas Wrapper */
+  .sz-map-canvas-wrapper {
+    width: 100% !important;
+    background: #ffffff !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-xl, 0 24px 60px rgba(23, 23, 21, 0.12)) !important;
+    border: 1px solid var(--color-border, #DFDBD4) !important;
+    position: relative !important;
+  }
+  #szLiveMap {
+    width: 100% !important;
+    height: 620px !important;
+    background: #f7f5f1 !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .sz-map-artwork {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 100% !important;
+    aspect-ratio: 2560 / 963 !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  .sz-map-grid {
+    position: absolute !important;
+    inset: 0 !important;
+    background-image: linear-gradient(rgba(26,32,128,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(26,32,128,.045) 1px, transparent 1px) !important;
+    background-size: 20% 25% !important;
+    pointer-events: none !important;
+  }
+  .sz-map-islands { 
+    position: absolute !important; 
+    inset: 0 !important; 
+    width: 100% !important; 
+    height: 100% !important; 
+    object-fit: contain !important;
+    pointer-events: none !important;
+  }
+  .sz-map-islands { filter: saturate(.62) sepia(.08) hue-rotate(15deg) !important; }
+  .sz-map-attribution { 
+    position: absolute !important; 
+    right: 8px !important; 
+    bottom: 6px !important; 
+    z-index: 2 !important; 
+    color: #555 !important; 
+    background: rgba(255,255,255,.85) !important; 
+    padding: 3px 6px !important; 
+    font: 11px Arial, sans-serif !important; 
+    border-radius: 4px !important;
+  }
+  .sz-map-attribution a { color: #1A2080 !important; }
+
+  /* FIX: Marker Pin Reset dengan !important */
+  .sz-map-marker {
+    position: absolute !important;
+    z-index: 5 !important;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 50% 50% 50% 0 !important;
+    background: #1A2080 !important;
+    box-shadow: 0 3px 8px rgba(26, 32, 128, 0.45) !important;
+    cursor: pointer !important;
+    outline: none !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    transform: translate(-50%, -100%) rotate(-45deg) !important;
+    transform-origin: 0% 100% !important;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease !important;
+  }
+
+  .sz-map-marker:hover,
+  .sz-map-marker:focus {
+    background: #e11d48 !important;
+    transform: translate(-50%, -115%) rotate(-45deg) scale(1.25) !important;
+    z-index: 20 !important;
+  }
+
+  .sz-map-marker::after {
+    content: "" !important;
+    position: absolute !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    left: 4px !important;
+    top: 4px !important;
+    box-shadow: none !important;
+  }
+
+  /* Popup Info Box */
+  .sz-map-popup {
+    position: absolute !important;
+    z-index: 30 !important;
+    display: none;
+    width: max-content !important;
+    max-width: 260px !important;
+    padding: 12px 14px !important;
+    border: 1px solid #dfdbd4 !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(23, 23, 21, 0.15) !important;
+    text-align: left !important;
+    transform: translate(-50%, -125%) !important;
+    pointer-events: auto !important;
+  }
+  .sz-map-popup.is-open { display: block !important; }
+  .sz-map-popup h3 { 
+    margin: 0 0 6px !important; 
+    color: #1A2080 !important; 
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    font-family: 'Poppins', sans-serif !important; 
+    line-height: 1.3 !important;
+  }
+  .sz-map-popup p { 
+    margin: 0 !important; 
+    color: #555555 !important; 
+    font-size: 11.5px !important;
+    line-height: 1.5 !important;
+    font-family: 'Poppins', sans-serif !important; 
+  }
+
+  /* Breadcrumb */
+  .sz-ultimate-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 0 24px 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px 10px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+  }
+  .sz-ultimate-breadcrumb a {
+    color: #64748b !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: color 0.3s ease !important;
+  }
+  .sz-ultimate-breadcrumb a:hover { color: #1A2080 !important; }
+  .sz-ultimate-breadcrumb .separator { color: #cbd5e1 !important; font-size: 10px !important; }
+  .sz-ultimate-breadcrumb .current { color: #1A2080 !important; font-weight: 600 !important; }
+
+  @media (max-width: 768px) {
+    .sz-ultimate-hero { padding: 60px 16px 40px 16px !important; }
+    #szLiveMap { height: clamp(240px, 55vw, 420px) !important; }
+    .sz-ultimate-breadcrumb ol { font-size: 12px !important; }
+  }
+</style>
+
+<section class="sz-ultimate-hero">
+  <div class="sz-ultimate-container">
+    <div class="sz-ultimate-header">
+      <nav class="sz-ultimate-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li class="separator" aria-hidden="true">&#9658;</li>
+          <li aria-current="page"><span class="current">Tentang Kami</span></li>
+        </ol>
+      </nav>
+      <div class="sz-ultimate-tag">Klinik Kecantikan Terbaik</div>
+      <h1>Tentang Sozo Skin Clinic</h1>
+      <p>Klinik kecantikan medis terbaik & tepercaya dengan 75+ lokasi di Indonesia. Menghadirkan perawatan yang aman, memberikan hasil nyata, dan ditangani langsung oleh dokter ahli profesional.</p>
+    </div>
+    <div class="sz-map-canvas-wrapper">
+      <div id="szLiveMap" role="group" aria-label="Peta persebaran cabang Sozo Skin Clinic di Indonesia">
+        <div class="sz-map-grid" aria-hidden="true"></div>
+        <div class="sz-map-artwork">
+          <img class="sz-map-islands" src="https://upload.wikimedia.org/wikipedia/commons/5/54/BlankMap-Indonesia.png" alt="" aria-hidden="true" decoding="async" loading="eager" fetchpriority="high">
+        </div>
+        <div class="sz-map-attribution">Peta: <a href="https://commons.wikimedia.org/wiki/File:BlankMap-Indonesia.png" target="_blank" rel="noopener">Amadhannn / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================
+     FILOSOFI & SEJARAH SECTION
+     ========================================================== */
+  .sz-philosophy-section {
+    font-family: 'Poppins', sans-serif !important;
+    background: transparent !important;
+    padding: 80px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .sz-philosophy-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 64px !important;
+    align-items: center !important;
+  }
+
+  .sz-philosophy-image-wrapper {
+    position: relative !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(23, 23, 21, 0.07)) !important;
+    border: 1px solid var(--color-border, #DFDBD4) !important;
+  }
+
+  .sz-philosophy-image-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: cover !important;
+    transition: transform 400ms ease !important;
+  }
+
+  .sz-philosophy-image-wrapper:hover img {
+    transform: scale(1.03) !important;
+  }
+
+  .sz-philosophy-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .sz-philosophy-tag {
+    display: inline-block !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 3px !important;
+    color: #1A2080 !important;
+    background-color: var(--color-brand-almond, #E9DFD5) !important;
+    padding: 6px 18px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    margin-bottom: 24px !important;
+    align-self: flex-start !important;
+  }
+
+  .sz-philosophy-content h2 {
+    font-size: clamp(32px, 4vw, 46px) !important;
+    line-height: 1.15 !important;
+    color: #1A2080 !important;
+    margin: 0 0 20px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .sz-philosophy-content p.sz-intro-text {
+    font-size: clamp(15px, 1.5vw, 16px) !important;
+    color: var(--color-text-secondary, #41413E) !important;
+    line-height: 1.8 !important;
+    margin: 0 0 28px 0 !important;
+  }
+
+  .sz-vm-box {
+    background: var(--color-brand-almond, #E9DFD5) !important;
+    border-left: 4px solid #1A2080 !important;
+    padding: 20px 24px !important;
+    border-radius: 0 16px 16px 0 !important;
+    margin-bottom: 20px !important;
+    transition: background 0.3s ease, transform 0.3s ease !important;
+  }
+
+  .sz-vm-box:hover {
+    background: var(--color-border, #DFDBD4) !important;
+    transform: translateX(4px) !important;
+  }
+
+  .sz-vm-box strong {
+    color: #1A2080 !important;
+    font-size: 16px !important;
+    display: block !important;
+    margin-bottom: 6px !important;
+    font-weight: 700 !important;
+  }
+
+  .sz-vm-box p {
+    font-size: 14px !important;
+    color: var(--color-text-secondary, #41413E) !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+  }
+
+  @media (max-width: 992px) {
+    .sz-philosophy-container {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+    .sz-philosophy-section {
+      padding: 56px 16px !important;
+    }
+  }
+</style>
+
+<section class="sz-philosophy-section">
+  <div class="sz-philosophy-container">
+    <div class="sz-philosophy-image-wrapper">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/ruang-tunggu-klinik-kecantikan-terdekat-sozo-skin-clinic.webp" alt="Ruang Tunggu Sozo Skin Clinic" loading="lazy">
+    </div>
+
+    <div class="sz-philosophy-content">
+      <div class="sz-philosophy-tag">Our Story</div>
+      <h2>Filosofi & Sejarah</h2>
+      <p class="sz-intro-text">Berdiri sejak 2021, <strong>Sozo Skin Clinic</strong> memadukan inovasi kecantikan modern dengan prosedur medis ketat.</p>
+
+      <div class="sz-vm-box">
+        <strong>Visi Kami</strong>
+        <p>Menjadi klinik estetika pilihan utama yang menetapkan standar emas keamanan pasien.</p>
+      </div>
+
+      <div class="sz-vm-box">
+        <strong>Misi Kami</strong>
+        <p>Menyediakan perawatan personal berteknologi terkini yang terbukti efektif dan dapat diakses dengan mudah oleh semua lapisan masyarakat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================
+     JARINGAN KLINIK
+     ========================================================== */
+  .sz-network-section {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 60px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+  }
+
+  .sz-network-wrapper {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 60px !important;
+  }
+
+  .sz-network-text { flex: 1.1 !important; }
+
+  .sz-network-text h2 {
+    font-size: clamp(28px, 3.5vw, 36px) !important;
+    color: #1A2080 !important;
+    margin: 0 0 20px 0 !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+  }
+
+  .sz-network-text p {
+    color: var(--color-text-secondary, #41413E) !important;
+    font-size: 15.5px !important;
+    line-height: 1.8 !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .sz-network-highlight {
+    margin-top: 24px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid var(--color-border, #DFDBD4) !important;
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+  }
+
+  .sz-network-highlight span {
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    margin-right: 6px !important;
+    vertical-align: middle !important;
+  }
+
+  .sz-network-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    min-height: 48px !important;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    padding: 0 24px !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    margin-top: 24px !important;
+    transition: background-color 0.2s ease, transform 0.2s ease !important;
+    border: none !important;
+  }
+
+  .sz-network-btn:hover {
+    background-color: #151A6D !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .sz-network-btn svg { transition: transform 0.3s ease !important; }
+  .sz-network-btn:hover svg { transform: translateX(4px) !important; }
+
+  .sz-network-img {
+    flex: 0.9 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(23, 23, 21, 0.07)) !important;
+  }
+
+  .sz-network-img img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: cover !important;
+    aspect-ratio: 4/3 !important;
+  }
+
+  @media (max-width: 900px) {
+    .sz-network-wrapper {
+      flex-direction: column-reverse !important;
+      gap: 32px !important;
+    }
+    .sz-network-img { width: 100% !important; }
+    .sz-network-section { padding: 40px 16px !important; }
+    .sz-network-btn {
+      display: flex !important;
+      justify-content: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  }
+</style>
+
+<section class="sz-network-section">
+  <div class="sz-network-wrapper">
+    <div class="sz-network-text">
+      <h2>Jaringan Klinik Terluas</h2>
+      <p>Untuk mendukung komitmen kami dalam mendekatkan layanan premium, Sozo Skin Clinic kini hadir di berbagai lokasi strategis di seluruh Indonesia, termasuk area Jabodetabek, Medan, dan Semarang.</p>
+      <p>Ekspansi yang luas dan terintegrasi ini dirancang secara khusus agar Anda dapat dengan mudah menikmati perawatan kulit berkualitas, di mana pun Anda berada, dengan standar pelayanan yang konsisten.</p>
+      <div class="sz-network-highlight">
+        <span>75+</span> Lokasi beroperasi di Indonesia
+      </div>
+      <a href="https://sozoskinclinic.com/lokasi/" class="sz-network-btn">
+        Cari Cabang Terdekat
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+    <div class="sz-network-img">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Sozo-Clinic-Surabaya-Bukit-Darmo.webp" alt="Sozo Skin Clinic - Jaringan Klinik Terluas" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================
+     CLEAN MEDICAL FEATURES
+     ========================================================== */
+  .sz-features-section {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 80px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+  }
+
+  .sz-features-container {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1.2fr !important;
+    gap: 64px !important;
+    align-items: start !important;
+  }
+
+  .sz-features-title-side {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 40px !important;
+  }
+
+  .sz-features-title-side h2 {
+    font-size: clamp(30px, 4vw, 42px) !important;
+    color: #1A2080 !important;
+    margin: 0 !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  .sz-features-content-side {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .sz-feature-item {
+    display: flex !important;
+    gap: 24px !important;
+    padding-bottom: 32px !important;
+    margin-bottom: 32px !important;
+    border-bottom: 1px solid var(--color-border, #DFDBD4) !important;
+  }
+
+  .sz-feature-item:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .sz-feature-num {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: var(--color-text-muted, #777771) !important;
+    padding-top: 2px !important;
+  }
+
+  .sz-feature-text h3 {
+    font-size: 20px !important;
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    margin: 0 0 10px 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  .sz-feature-text p {
+    color: var(--color-text-secondary, #41413E) !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    margin: 0 !important;
+  }
+
+  @media (max-width: 850px) {
+    .sz-features-container {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+    .sz-features-title-side { position: static !important; }
+    .sz-features-section { padding: 56px 16px !important; }
+    .sz-feature-item {
+      gap: 16px !important;
+      padding-bottom: 24px !important;
+      margin-bottom: 24px !important;
+    }
+  }
+</style>
+
+<section class="sz-features-section">
+  <div class="sz-features-container">
+    <div class="sz-features-title-side">
+      <h2>Ditangani Ahli Medis Professional</h2>
+    </div>
+    <div class="sz-features-content-side">
+      <div class="sz-feature-item">
+        <span class="sz-feature-num">01</span>
+        <div class="sz-feature-text">
+          <h3>Dokter Tersertifikasi</h3>
+          <p>Setiap prosedur estetika diawasi dan dilakukan langsung oleh dokter estetika serta dokter spesialis kulit (Sp.DVE) berlisensi resmi.</p>
+        </div>
+      </div>
+      <div class="sz-feature-item">
+        <span class="sz-feature-num">02</span>
+        <div class="sz-feature-text">
+          <h3>Analisa Personal</h3>
+          <p>Kami menerapkan analisa kulit mendalam menggunakan perangkat digital sebelum tindakan untuk memastikan protokol perawatan yang tepat sasaran.</p>
+        </div>
+      </div>
+      <div class="sz-feature-item">
+        <span class="sz-feature-num">03</span>
+        <div class="sz-feature-text">
+          <h3>Standar Keamanan</h3>
+          <p>Menerapkan protokol klinis yang ketat untuk memastikan hasil perawatan estetika yang optimal, natural, dan aman untuk jangka panjang.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================
+     CLEAN MEDICAL TECHNOLOGY
+     ========================================================== */
+  .sz-tech-section {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 80px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background-color: var(--color-brand-almond, #E9DFD5) !important;
+  }
+
+  .sz-tech-container {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 60px !important;
+  }
+
+  .sz-tech-text { flex: 1.1 !important; }
+
+  .sz-tech-text h2 {
+    font-size: clamp(28px, 3.5vw, 36px) !important;
+    color: #1A2080 !important;
+    margin: 0 0 24px 0 !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+  }
+
+  .sz-tech-lead {
+    font-size: 17px !important;
+    color: #1A2080 !important;
+    font-weight: 500 !important;
+    line-height: 1.8 !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .sz-tech-text p {
+    color: var(--color-text-secondary, #41413E) !important;
+    font-size: 15.5px !important;
+    line-height: 1.8 !important;
+    margin: 0 0 16px 0 !important;
+  }
+
+  .sz-tech-text p:last-child { margin-bottom: 0 !important; }
+
+  .sz-tech-image {
+    flex: 0.9 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(23, 23, 21, 0.07)) !important;
+  }
+
+  .sz-tech-image img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: cover !important;
+    aspect-ratio: 4/3 !important;
+  }
+
+  @media (max-width: 900px) {
+    .sz-tech-container {
+      flex-direction: column !important;
+      gap: 40px !important;
+    }
+    .sz-tech-image { width: 100% !important; }
+    .sz-tech-section { padding: 56px 16px !important; }
+  }
+</style>
+
+<section class="sz-tech-section">
+  <div class="sz-tech-container">
+    <div class="sz-tech-text">
+      <h2>Teknologi Medis Terkini</h2>
+      <p class="sz-tech-lead">Sozo Skin Clinic senantiasa berinvestasi pada teknologi estetika tercanggih di dunia untuk menjamin kualitas hasil perawatan setiap pasien.</p>
+      <p>Peralatan utama kami, termasuk mesin Pico Laser, perangkat HIFU, dan sistem Radiofrequency, telah disertifikasi oleh standar keamanan internasional (US-FDA / CE Approved).</p>
+      <p>Didukung oleh produk berbahan aktif bersertifikasi BPOM, seluruh perawatan kami dirancang khusus agar minim rasa sakit dengan waktu pemulihan yang sangat cepat.</p>
+    </div>
+    <div class="sz-tech-image">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/03/dpl-treatment-di-klinik-kecantikan.webp" alt="Teknologi Medis Sozo Skin Clinic" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================
+     AWARDS SECTION
+     ========================================================== */
+  .sz-awards-section {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 96px 24px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    text-align: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .sz-awards-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+  }
+
+  .sz-awards-container h2 {
+    font-size: clamp(28px, 3.5vw, 36px) !important;
+    color: #1A2080 !important;
+    margin: 0 0 16px 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  .sz-awards-container p {
+    color: var(--color-text-muted, #777771) !important;
+    font-size: clamp(14px, 1.5vw, 16px) !important;
+    max-width: 650px !important;
+    margin: 0 auto 60px auto !important;
+    line-height: 1.7 !important;
+    font-weight: 400 !important;
+  }
+
+  .sz-awards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 32px !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+  }
+
+  .sz-award-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: #ffffff !important;
+    border: 1px solid var(--color-border, #DFDBD4) !important;
+    border-radius: 16px !important;
+    padding: 32px 24px !important;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer !important;
+  }
+
+  .sz-logo-wrapper {
+    width: 100% !important;
+    height: 110px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 24px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+  }
+
+  .sz-award-img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    transform: scale(1) !important;
+    filter: none !important;
+    transition: transform 400ms ease !important;
+  }
+
+  .sz-award-item span {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #1A2080 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    text-align: center !important;
+    display: block !important;
+    margin-top: auto !important;
+    opacity: 0.8 !important;
+    transition: opacity 0.4s ease !important;
+  }
+
+  .sz-award-item:hover {
+    background: #ffffff !important;
+    border-color: var(--color-border-strong, #C8C3BA) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(23, 23, 21, 0.07)) !important;
+  }
+
+  .sz-award-item:hover .sz-award-img { transform: scale(1.03) !important; }
+  .sz-award-item:hover span { opacity: 1 !important; }
+
+  @media (max-width: 992px) {
+    .sz-awards-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 24px !important;
+    }
+    .sz-awards-section { padding: 64px 20px !important; }
+    .sz-logo-wrapper { height: 90px !important; }
+  }
+
+  @media (max-width: 480px) {
+    .sz-awards-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 16px !important;
+    }
+    .sz-award-item {
+      padding: 24px 16px !important;
+      border-radius: 10px !important;
+    }
+    .sz-logo-wrapper {
+      height: 75px !important;
+      margin-bottom: 16px !important;
+    }
+    .sz-awards-container p { margin-bottom: 40px !important; }
+  }
+</style>
+
+<section class="sz-awards-section">
+  <div class="sz-awards-container">
+    <h2>Apresiasi & Sertifikasi Global</h2>
+    <p>Bukti dedikasi Sozo Skin Clinic dalam menghadirkan layanan estetika medis tepercaya dengan menggunakan produk original bersertifikasi internasional.</p>
+
+    <div class="sz-awards-grid">
+      <div class="sz-award-item">
+        <div class="sz-logo-wrapper">
+          <img class="sz-award-img" src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/JALUPRO.webp" alt="Jalupro Logo Official">
+        </div>
+        <span>Authorized Treatment</span>
+      </div>
+      <div class="sz-award-item">
+        <div class="sz-logo-wrapper">
+          <img class="sz-award-img" src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/ASCE-PLUS.webp" alt="ASCE Plus Logo Official">
+        </div>
+        <span>Certified Clinic</span>
+      </div>
+      <div class="sz-award-item">
+        <div class="sz-logo-wrapper">
+          <img class="sz-award-img" src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/PLURYAL.webp" alt="Pluryal Logo Official">
+        </div>
+        <span>Official Partner</span>
+      </div>
+      <div class="sz-award-item">
+        <div class="sz-logo-wrapper">
+          <img class="sz-award-img" src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/SYLFIRM.webp" alt="Sylfirm X Logo Official">
+        </div>
+        <span>Authorized Provider</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================
+     COMPACT SLIDER
+     ========================================================== */
+  .sz-slider-section {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 40px 20px !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .sz-slider-section * { box-sizing: border-box !important; }
+
+  .sz-slider-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    margin-bottom: 30px !important;
+  }
+
+  .sz-slider-title-area { max-width: 700px !important; }
+
+  .sz-slider-header h2 {
+    color: #1A2080 !important;
+    font-size: clamp(22px, 3vw, 28px) !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .sz-slider-header p {
+    color: var(--color-text-muted, #777771) !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+  }
+
+  .sz-slider-nav {
+    display: flex !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .sz-nav-btn {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--color-border, #DFDBD4) !important;
+    background: #ffffff !important;
+    color: #1A2080 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    box-shadow: none !important;
+  }
+
+  .sz-nav-btn:hover {
+    background: #1A2080 !important;
+    color: #ffffff !important;
+    border-color: #1A2080 !important;
+  }
+
+  .sz-nav-btn svg {
+    width: 18px !important;
+    height: 18px !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    fill: none !important;
+  }
+
+  .sz-slider-container {
+    overflow: hidden !important;
+    width: 100% !important;
+  }
+
+  .sz-slider-track {
+    display: flex !important;
+    gap: 20px !important;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    will-change: transform !important;
+  }
+
+  .sz-treatment-card {
+    flex: 0 0 calc((100% - (3 * 20px)) / 4) !important;
+    background: #ffffff !important;
+    border: 1px solid var(--color-border, #DFDBD4) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: none !important;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+  }
+
+  .sz-treatment-card:hover {
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(23, 23, 21, 0.07)) !important;
+    transform: translateY(-2px) !important;
+    border-color: var(--color-border-strong, #C8C3BA) !important;
+  }
+
+  .sz-card-image {
+    width: 100% !important;
+    aspect-ratio: 4/3 !important;
+    overflow: hidden !important;
+    background: var(--color-brand-almond, #E9DFD5) !important;
+  }
+
+  .sz-card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 400ms ease !important;
+  }
+
+  .sz-treatment-card:hover .sz-card-image img { transform: scale(1.03) !important; }
+
+  .sz-card-info {
+    padding: 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+  }
+
+  .sz-card-info h3 {
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .sz-card-info p {
+    color: var(--color-text-secondary, #41413E) !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 16px 0 !important;
+    flex-grow: 1 !important;
+  }
+
+  .sz-card-btn {
+    width: 100% !important;
+    min-height: 40px !important;
+    background: transparent !important;
+    color: #1A2080 !important;
+    border: 1px solid #1A2080 !important;
+    border-radius: 999px !important;
+    padding: 0 20px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+  }
+
+  .sz-treatment-card:hover .sz-card-btn {
+    background: #1A2080 !important;
+    color: #ffffff !important;
+  }
+
+  .sz-slider-footer {
+    text-align: center !important;
+    margin-top: 30px !important;
+  }
+
+  .sz-view-all-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    color: #1A2080 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  .sz-view-all-link:hover { transform: translateX(4px) !important; }
+
+  @media (max-width: 900px) {
+    .sz-slider-header {
+      align-items: flex-start !important;
+      margin-bottom: 20px !important;
+    }
+    .sz-slider-nav { display: none !important; }
+    .sz-slider-container {
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .sz-slider-container::-webkit-scrollbar { display: none !important; }
+    .sz-slider-track { gap: 16px !important; }
+    .sz-treatment-card {
+      flex: 0 0 78% !important;
+      scroll-snap-align: start !important;
+    }
+  }
+</style>
+
+<section class="sz-slider-section">
+  <div class="sz-slider-header">
+    <div class="sz-slider-title-area">
+      <h2>Temukan Perawatan Wajah dan Kulit Terbaik</h2>
+      <p>Pilih perawatan terbaik yang dirancang khusus untuk kebutuhan kulit dan tubuh Anda.</p>
+    </div>
+    <div class="sz-slider-nav">
+      <button class="sz-nav-btn" id="szPrevBtn" aria-label="Previous">
+        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="sz-nav-btn" id="szNextBtn" aria-label="Next">
+        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="sz-slider-container" id="szSliderContainer">
+    <div class="sz-slider-track" id="szSliderTrack">
+      <div class="sz-treatment-card">
+        <div class="sz-card-image">
+          <img src="https://sozoskinclinic.com/wp-content/uploads/2025/07/laser-home.webp" alt="Skin Treatment" loading="lazy">
+        </div>
+        <div class="sz-card-info">
+          <h3>Skin Treatment</h3>
+          <p>Menggunakan energi cahaya tinggi untuk mengangkat sel kulit mati dan mempercepat regenerasi kulit wajah.</p>
+          <a href="https://sozoskinclinic.com/skin-treatment/laser-treatment/" class="sz-card-btn">Lihat Detail</a>
+        </div>
+      </div>
+
+      <div class="sz-treatment-card">
+        <div class="sz-card-image">
+          <img src="https://sozoskinclinic.com/wp-content/uploads/2025/07/hair-removal-home-1.webp" alt="Hair Removal Treatment" loading="lazy">
+        </div>
+        <div class="sz-card-info">
+          <h3>Hair Removal Treatment</h3>
+          <p>Metode penghilangan bulu menggunakan teknologi sinar laser modern untuk hasil bersih tahan lama.</p>
+          <a href="https://sozoskinclinic.com/hair-removal-treatment/" class="sz-card-btn">Lihat Detail</a>
+        </div>
+      </div>
+
+      <div class="sz-treatment-card">
+        <div class="sz-card-image">
+          <img src="https://sozoskinclinic.com/wp-content/uploads/2025/07/skinbooster-home.webp" alt="Injectable Treatment" loading="lazy">
+        </div>
+        <div class="sz-card-info">
+          <h3>Injectable Treatment</h3>
+          <p>Pemberian zat aktif langsung ke lapisan kulit untuk meningkatkan hidrasi, elastisitas, serta mencerahkan wajah.</p>
+          <a href="https://sozoskinclinic.com/injectable-treatment/" class="sz-card-btn">Lihat Detail</a>
+        </div>
+      </div>
+
+      <div class="sz-treatment-card">
+        <div class="sz-card-image">
+          <img src="https://sozoskinclinic.com/wp-content/uploads/2025/07/slimming-home.webp" alt="Slimming Treatment" loading="lazy">
+        </div>
+        <div class="sz-card-info">
+          <h3>Slimming Treatment</h3>
+          <p>Solusi pembentukan tubuh terarah untuk membantu mengurangi tumpukan lemak membandel secara efektif.</p>
+          <a href="https://sozoskinclinic.com/slimming-treatment/" class="sz-card-btn">Lihat Detail</a>
+        </div>
+      </div>
+
+      <div class="sz-treatment-card">
+        <div class="sz-card-image">
+          <img src="https://sozoskinclinic.com/wp-content/uploads/2025/07/hair-home.webp" alt="Hair Treatment" loading="lazy">
+        </div>
+        <div class="sz-card-info">
+          <h3>Hair Treatment</h3>
+          <p>Perawatan intensif terukur untuk merangsang akar rambut serta mengatasi masalah rambut rontok.</p>
+          <a href="https://sozoskinclinic.com/hair-treatment/" class="sz-card-btn">Lihat Detail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sz-slider-footer">
+    <a href="https://sozoskinclinic.com/treatment/" class="sz-view-all-link">
+      Lihat Semua Treatment Lebih Lengkap
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+    </a>
+  </div>
+</section>
+
+<script>
+(function() {
+  const track = document.getElementById('szSliderTrack');
+  const prevBtn = document.getElementById('szPrevBtn');
+  const nextBtn = document.getElementById('szNextBtn');
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  let currentIndex = 0;
+  const totalItems = 5;
+  const itemsPerView = 4;
+  const maxIndex = totalItems - itemsPerView;
+
+  function updateSlider() {
+    const cardEl = track.querySelector('.sz-treatment-card');
+    if (!cardEl) return;
+    const cardWidth = cardEl.getBoundingClientRect().width;
+    const gap = 20;
+    const moveAmount = (cardWidth + gap) * currentIndex;
+
+    track.style.transform = `translateX(-${moveAmount}px)`;
+    prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
+    prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+    nextBtn.style.opacity = currentIndex === maxIndex ? '0.3' : '1';
+    nextBtn.style.pointerEvents = currentIndex === maxIndex ? 'none' : 'auto';
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      updateSlider();
+    } else {
+      track.style.transform = 'none';
+    }
+  });
+
+  updateSlider();
+})();
+</script>
+
+<style>
+    /* --- SECTION FAQ --- */
+    .sozo-faq-wrapper {
+        padding: 80px 20px !important;
+        font-family: 'Poppins', sans-serif !important;
+        max-width: 900px !important;
+        margin: 0 auto !important;
+        background-color: #ffffff !important;
+    }
+
+    .sozo-faq-header {
+        text-align: center !important;
+        margin-bottom: 40px !important;
+    }
+
+    .sozo-faq-header h2 {
+        color: #1A2080 !important;
+        font-size: clamp(26px, 3.5vw, 32px) !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+
+    .sozo-faq-header p {
+        color: var(--color-text-muted, #777771) !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+    }
+
+    .sozo-faq-item {
+        margin-bottom: 16px !important;
+        border: 1px solid var(--color-border, #DFDBD4) !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    .sozo-faq-question {
+        padding: 20px 24px !important;
+        background: #ffffff !important;
+        cursor: pointer !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        transition: background 0.3s ease !important;
+    }
+
+    .sozo-faq-question h3 {
+        margin: 0 !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #1A2080 !important;
+        line-height: 1.4 !important;
+        padding-right: 20px !important;
+    }
+
+    .sozo-faq-icon {
+        width: 18px !important;
+        height: 18px !important;
+        position: relative !important;
+        transition: transform 0.3s ease !important;
+        flex-shrink: 0 !important;
+    }
+
+    .sozo-faq-icon::before,
+    .sozo-faq-icon::after {
+        content: '' !important;
+        position: absolute !important;
+        background-color: #1A2080 !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .sozo-faq-icon::before {
+        width: 100% !important;
+        height: 2px !important;
+        top: 50% !important;
+        left: 0 !important;
+        transform: translateY(-50%) !important;
+    }
+
+    .sozo-faq-icon::after {
+        width: 2px !important;
+        height: 100% !important;
+        top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .sozo-faq-answer {
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.4s cubic-bezier(0, 1, 0, 1) !important;
+        background: var(--color-brand-almond, #E9DFD5) !important;
+    }
+
+    .sozo-faq-answer-inner {
+        padding: 0 24px 20px 24px !important;
+        color: var(--color-text-secondary, #41413E) !important;
+        font-size: 14px !important;
+        line-height: 1.7 !important;
+    }
+
+    .sozo-faq-answer-inner p { margin: 0 !important; }
+
+    .sozo-faq-item.active {
+        border-color: #1A2080 !important;
+        box-shadow: var(--shadow-sm, 0 2px 8px rgba(23, 23, 21, 0.04)) !important;
+    }
+
+    .sozo-faq-item.active .sozo-faq-answer {
+        max-height: 1000px !important;
+        transition: max-height 0.4s ease-in-out !important;
+    }
+
+    .sozo-faq-item.active .sozo-faq-icon {
+        transform: rotate(45deg) !important;
+    }
+
+    @media (max-width: 767px) {
+        .sozo-faq-wrapper { padding: 56px 16px !important; }
+        .sozo-faq-question { padding: 16px 20px !important; }
+        .sozo-faq-question h3 { font-size: 14px !important; }
+        .sozo-faq-answer-inner { padding: 0 20px 16px 20px !important; font-size: 14px !important; }
+    }
+</style>
+
+<section class="sozo-faq-wrapper">
+    <div class="sozo-faq-header">
+        <h2>Pertanyaan yang Sering Diajukan</h2>
+        <p>Pelajari lebih lanjut tentang prosedur pelayanan, standar keamanan, dan komitmen perawatan di Sozo Skin Clinic.</p>
+    </div>
+
+    <div class="sozo-faq-container">
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Apakah saya harus berkonsultasi dengan dokter sebelum melakukan tindakan?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Ya, wajib. Kami menerapkan sistem analisa personal menggunakan perangkat digital sebelum tindakan medis dimulai. Dokter ahli kami akan memeriksa kondisi kulit Anda secara langsung untuk memastikan protokol perawatan yang diberikan tepat sasaran dan aman.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Apakah perawatan di Sozo Skin Clinic aman untuk semua jenis kulit?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Seluruh perawatan kami dirancang agar aman bagi berbagai kondisi kulit, termasuk kulit sensitif. Hal ini karena prosedur dilakukan di bawah pengawasan dokter, menggunakan teknologi bersertifikasi internasional (US-FDA / CE Approved), serta didukung oleh produk berbahan aktif yang telah terdaftar resmi di BPOM.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Berapa lama waktu pemulihan (downtime) setelah melakukan perawatan?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Sebagian besar perawatan estetika medis di klinik kami bersifat non-invasif dan dirancang untuk meminimalkan rasa sakit serta mempercepat waktu pemulihan. Sebagian besar pasien bisa langsung kembali beraktivitas normal setelah perawatan selesai.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Apakah kualitas dan harga pelayanan di seluruh cabang Sozo itu sama?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Benar. Seluruh 75+ lokasi Sozo Skin Clinic yang tersebar di Indonesia menerapkan standar protokol klinis, kualitas produk, kecanggihan teknologi, dan transparansi harga yang sepenuhnya seragam demi kenyamanan Anda.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function toggleFaq(element) {
+        const item = element.parentElement;
+        const isActive = item.classList.contains('active');
+
+        document.querySelectorAll('.sozo-faq-item').forEach(el => {
+            el.classList.remove('active');
+        });
+
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/tentang-kami/#webpage",
+      "url": "https://sozoskinclinic.com/tentang-kami/",
+      "name": "Tentang Sozo Skin Clinic",
+      "description": "Klinik kecantikan medis terbaik & tepercaya dengan 75+ lokasi di Indonesia. Menghadirkan perawatan yang aman, memberikan hasil nyata, dan ditangani langsung oleh dokter ahli profesional.",
+      "inLanguage": "id",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
+      "about": { "@id": "https://sozoskinclinic.com/#organization" },
+      "breadcrumb": { "@id": "https://sozoskinclinic.com/tentang-kami/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/tentang-kami/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://sozoskinclinic.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Tentang Kami" }
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+(function() {
+  const clinicsData = [
+    {"name": "Sozo Skin Clinic - Mangga Besar", "address": "Jl. Raya Mangga Besar No.84 13, RT.13/RW.1, Taman Sari, Kec. Taman Sari, Jakarta Barat, DKI Jakarta 11150", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Arteri Pondok Indah", "address": "Jl. Iskandar Muda No.68A, RT.3/RW.2, Kec. Kby. Lama, Jakarta Selatan, DKI Jakarta 12240", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Bendungan Hilir", "address": "Jl. Bendungan Hilir No 7 , RT.11/RW.3, Bend. Hilir, Kec. Tanah Abang, DKI Jakarta 10210", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Mampang", "address": "Jalan Mampang Prapatan Raya No. 99, Kel. Duren Tiga, Kec. Pancoran, Jakarta Selatan, DKI Jakarta 12760", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Jambi", "address": "Ruko Jambi Business Center (JBC) No. E1-12 & E1, Jl. Kapten Pattimura, No.15, Jambi, 36361", "province": "Jambi"},
+    {"name": "Sozo Skin Clinic - Cinere", "address": "Jl. Cinere Raya No. 9, Cinere, Kec. Cinere, Kota Depok, Jawa Barat 16514", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Samarinda", "address": "Jl. Dr. Sutomo No.8b, Sidodadi, Kec. Samarinda Ulu, Kalimantan Timur 75243", "province": "Kalimantan Timur"},
+    {"name": "Sozo Skin Clinic - Makassar", "address": "Ko. Business Centre Jade No.1, RT.001/RW.01, Masale, Kec. Panakkukang, Sulawesi Selatan 90231", "province": "Sulawesi Selatan"},
+    {"name": "Sozo Skin Clinic - Medan Cemara Asri", "address": "Jl. Cemara Boulevard Blok A-1 No. 40, Medan Estate, Deli Serdang, Sumatera Utara 20233", "province": "Sumatera Utara"},
+    {"name": "Sozo Skin Clinic - Puri Indah", "address": "Jl. Puri Indah Raya Blok T1 No.3A, RT.1/RW.2, Kembangan Selatan, DKI Jakarta 11610", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Surabaya Bukit Darmo", "address": "Office Park, Jl. Mayjend. Jonosewojo, Pradahkalikendal, Surabaya, Jawa Timur 60225", "province": "Jawa Timur"},
+    {"name": "Sozo Skin Clinic - Surabaya Manyar", "address": "Jl. Manyar Kertoarjo No.10A, Mojo, Kec. Gubeng, Surabaya, Jawa Timur 60285", "province": "Jawa Timur"},
+    {"name": "Sozo Skin Clinic - Solo", "address": "Jl. Prof. DR. Supomo 25-47, Timuran, Kec. Banjarsari, Surakarta, Jawa Tengah 57139", "province": "Jawa Tengah"},
+    {"name": "Sozo Skin Clinic - Kelapa Gading Boulevard", "address": "H 4 / 6, Jl. Boulevard Raya, Kelapa Gading Timur, Jakarta Utara, DKI Jakarta 14240", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Tebet", "address": "Jl. Tebet Utara Dalam No. 3A RT. 003 RW 002, Jakarta Selatan, DKI Jakarta 12820", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - JGC", "address": "Ruko New East, Jl. Jakarta Garden City Boulevard, Cakung, Jakarta Timur, DKI Jakarta 13910", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Bandung Surya Sumantri", "address": "Jalan Prof. Dr. Surya Sumantri No. 156, Sukajadi, Kota Bandung, Jawa Barat 40164", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Yogyakarta", "address": "Jl. Pangeran Diponegoro No.58, Jetis, Yogyakarta, DI Yogyakarta 55233", "province": "DI Yogyakarta"},
+    {"name": "Sozo Skin Clinic - Lampung", "address": "Jl. Kartini No.127 B, Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35127", "province": "Lainnya"},
+    {"name": "Sozo Skin Clinic - Malang", "address": "Jl. Pahlawan Trip No.23, Oro-oro Dowo, Kec. Klojen, Malang, Jawa Timur 65145", "province": "Jawa Timur"},
+    {"name": "Sozo Skin Clinic - Karawaci", "address": "Supermall Karawaci, Unit. FF # 11 Lippo Karawaci, Tangerang, Banten 15811", "province": "Banten"},
+    {"name": "Sozo Skin Signature - Tanjung Duren 2", "address": "Jl. Tanjung Duren Raya No.364A, Grogol petamburan, DKI Jakarta 11470", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Karawaci Palem Semi", "address": "Ruko CBD, Jl. Palem Semi No.32, Cibodas, Tangerang, Banten 15139", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Cirebon", "address": "Jl. DR. Cipto Mangunkusumo Komplek CSB Office Park Kav No. 5, Cirebon, Jawa Barat 45131", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Tasikmalaya", "address": "Komplek Ruko Permata Regency, Jl. HZ Mustofa, Kec. Tawang, Tasikmalaya, Jawa Barat 46115", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Green Lake City", "address": "Jl. Green Lake City Boulevard Blok D No. 26, Kota Tangerang, Banten 15147", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Tangerang City", "address": "Jl. Perintis Kemerdekaan Blok C No. 5 Tangcity Superblock, Kota Tangerang, Banten 15133", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Margonda Depok", "address": "Jl. Margonda No.27, Pondok Cina, Kec. Beji, Depok, Jawa Barat 16424", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Pekanbaru", "address": "Jl. Jend. Sudirman No.11, Bukit Raya, Pekanbaru, Riau 28125", "province": "Riau"},
+    {"name": "Sozo Skin Clinic - Bekasi Summarecon", "address": "Ruko Emerald Commercial Blok UA No 27, Bekasi Utara, Jawa Barat 17123", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Bogor Taman Yasmin", "address": "Komplek Ruko Permata Yasmin, Jl. Brigjen Saptadji Hadiprawira, Kota Bogor, Jawa Barat 16112", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Bandung Buah Batu", "address": "Jl. Buah Batu No 250, Kec. Lengkong, Bandung, Jawa Barat 40265", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Pondok Bambu", "address": "Jl. Pahlawan Revolusi No.2, Durensawit, East Jakarta, DKI Jakarta 13430", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Pontianak", "address": "Jl. Slt. Abdurrahman No.67, Sungai Bangkong, Pontianak, Kalimantan Barat 78116", "province": "Kalimantan Barat"},
+    {"name": "Sozo Skin Clinic - Semarang", "address": "Jl. Mayjend Sutoyo 960-81, Semarang Tengah, Jawa Tengah 50136", "province": "Jawa Tengah"},
+    {"name": "Sozo Skin Clinic - Cibinong", "address": "Jl. Raya Jakarta-Bogor KM. 45 No. 43a, Cibinong, Bogor, Jawa Barat 16195", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Cikarang", "address": "Jl. Raya Cikarang - Cibarusah No.1, Cikarang Selatan, Bekasi, Jawa Barat 17530", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Kota Wisata Cibubur", "address": "Ruko Downtown Madison Blok SHC6 No. 8, Gunung Putri, Bogor, Jawa Barat 16969", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Palembang", "address": "Jl. Jend. Basuki Rachmat No.12 B-C, Kemuning, Palembang, Sumatera Selatan 30128", "province": "Sumatera Selatan"},
+    {"name": "Sozo Skin Clinic - Balikpapan", "address": "Jl. Ruhui Rahayu Ring Road No.1, Balikpapan Selatan, Kalimantan Timur 76115", "province": "Kalimantan Timur"},
+    {"name": "Sozo Skin Clinic - Bekasi", "address": "Jl. Cemara Raya no. 1, Kavling 10D, Jakasampurna, Bekasi, Jawa Barat 17145", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Karawang", "address": "Jalan Bharata Blok J No. 3 Telukjambe Timur, Karawang, Jawa Barat 41361", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Kemang", "address": "Jalan Kemang Raya No. 72, Mampang Prapatan, Jakarta Selatan, DKI Jakarta 12730", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Bandung Paskal", "address": "Jalan Pajajaran No.68, Cicendo, Kota Bandung, Jawa Barat 40173", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Manado", "address": "Komp. Ruko Mega Mas Blok C1 No. 15-16, Kec. Wenang, Manado, Sulawesi Utara 95111", "province": "Sulawesi Utara"},
+    {"name": "Sozo Skin Clinic - Gading Serpong", "address": "Jl. Gading Serpong Boulevard, Ruko Odessa Blok AA 2 No.32, Tangerang, Banten 15810", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - PIK", "address": "Ruko Arcade, Jl Pantai Indah Utara 2, Penjaringan, Jakarta Utara, DKI Jakarta 14460", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Bali", "address": "Jl. Raya Puputan No.190 A, Denpasar Selatan, Bali 80226", "province": "Bali"},
+    {"name": "Sozo Skin Clinic - Tanjung Duren", "address": "Jl. Tanjung Duren Raya No. 41 D, DKI Jakarta 11470", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Rawamangun", "address": "Jl. Pemuda No.78 C, Pulo Gadung, Jakarta Timur, DKI Jakarta 13220", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Tebet Timur", "address": "Jl. Tebet Timur Raya No.67D, Jakarta Selatan, DKI Jakarta 12820", "province": "DKI Jakarta"},
+    {"name": "Sozo Skin Clinic - Bekasi Grand Galaxy", "address": "Jl. Boulevard Raya RGA No.67, Bekasi Selatan, Jawa Barat 17147", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Surabaya Jemursari", "address": "Jalan Jemursari No. 106A, Tenggilis Mejoyo, Surabaya, Jawa Timur 60292", "province": "Jawa Timur"},
+    {"name": "Sozo Skin Clinic - Serang", "address": "Jalan Jenderal Ahmad Yani No. 160, Kota Serang, Banten 42118", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Banjarmasin", "address": "Jalan Ahmad Yani KM 5,7 Nomor 7A, Banjarmasin Selatan, Kalimantan Selatan 70238", "province": "Kalimantan Selatan"},
+    {"name": "Sozo Skin Clinic - Batam", "address": "Teluk Tering, Kec. Batam Kota, Batam, Riau 29444", "province": "Riau"},
+    {"name": "Sozo Skin Clinic - BSD", "address": "Ruko Pasar Modern Timur 2, Letnan Sutopo, Serpong, Tangerang Selatan, Banten 15318", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Bogor", "address": "Jl. Bangbarung Raya No.24, Bogor Utara, Jawa Barat 16153", "province": "Jawa Barat"},
+    {"name": "Sozo Skin Clinic - Padang", "address": "Jl. H. Agus Salim No.17, Padang Timur, Sumatera Barat 25171", "province": "Lainnya"},
+    {"name": "Sozo Skin Clinic - Bintaro", "address": "Jl. Bintaro Utama V Blok EA 2, Ciputat Timur, Tangerang Selatan, Banten 15224", "province": "Banten"},
+    {"name": "Sozo Skin Clinic - Medan", "address": "Jalan iskandar muda no 23, Medan Baru, Sumatera Utara 20154", "province": "Sumatera Utara"}
+  ];
+
+  const regionalCoordinates = {
+    "DKI Jakarta": [-6.2088, 106.8456], "Banten": [-6.1783, 106.6319], "Jawa Barat": [-6.9175, 107.6191],
+    "Jawa Tengah": [-7.0051, 110.4381], "DI Yogyakarta": [-7.7956, 110.3695], "Jawa Timur": [-7.2575, 112.7521],
+    "Bali": [-8.4095, 115.1889], "Sumatera Utara": [3.5952, 98.6722], "Sumatera Selatan": [-2.9167, 104.7500],
+    "Riau": [0.5070, 101.4478], "Jambi": [-1.6100, 103.6100], "Kalimantan Barat": [-0.0263, 109.3425],
+    "Kalimantan Selatan": [-3.3167, 114.5900], "Kalimantan Timur": [-0.5021, 117.1536], "Sulawesi Utara": [1.4748, 124.8428],
+    "Sulawesi Selatan": [-5.1476, 119.4327], "Lainnya": [-5.3971, 105.2663]
+  };
+
+  function initSzLiveMap() {
+    const mapContainer = document.getElementById('szLiveMap');
+    if (!mapContainer || mapContainer.dataset.initialized === 'true') return;
+    mapContainer.dataset.initialized = 'true';
+
+    const mapArtwork = mapContainer.querySelector('.sz-map-artwork');
+    if (!mapArtwork) return;
+
+    // Approximate province-level positions projected onto the real Indonesia map.
+    const mapBounds = { west: 94, east: 142, north: 7, south: -11.5 };
+    const project = ([lat, lng]) => ({
+      x: Math.max(1, Math.min(99, ((lng - mapBounds.west) / (mapBounds.east - mapBounds.west)) * 100)),
+      y: Math.max(1, Math.min(99, ((mapBounds.north - lat) / (mapBounds.north - mapBounds.south)) * 100))
+    });
+
+    clinicsData.forEach((clinic, index) => {
+      const baseCoords = regionalCoordinates[clinic.province] || [-2.5489, 118.0149];
+      const clusterSize = clinic.province === 'DKI Jakarta' || clinic.province === 'Banten' ? 0.45 : 1.2;
+      const coords = [
+        baseCoords[0] + Math.sin(index * 12.9898) * clusterSize,
+        baseCoords[1] + Math.cos(index * 78.233) * clusterSize
+      ];
+      const point = project(coords);
+      const marker = document.createElement('button');
+      marker.type = 'button';
+      marker.className = 'sz-map-marker';
+      marker.style.left = `${point.x}%`;
+      marker.style.top = `${point.y}%`;
+      marker.setAttribute('aria-label', `${clinic.name}, ${clinic.address}`);
+      marker.title = clinic.name;
+
+      const popup = document.createElement('div');
+      popup.className = 'sz-map-popup';
+      popup.style.left = `${point.x}%`;
+      popup.style.top = `${point.y}%`;
+      const title = document.createElement('h3');
+      title.textContent = clinic.name;
+      const address = document.createElement('p');
+      address.textContent = `📍 ${clinic.address}`;
+      popup.append(title, address);
+
+      marker.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mapContainer.querySelectorAll('.sz-map-popup.is-open').forEach((item) => {
+          if (item !== popup) item.classList.remove('is-open');
+        });
+        popup.classList.toggle('is-open');
+      });
+      mapArtwork.append(marker, popup);
+    });
+
+    mapContainer.addEventListener('click', (event) => {
+      if (!event.target.closest('.sz-map-marker, .sz-map-popup')) {
+        mapContainer.querySelectorAll('.sz-map-popup.is-open').forEach((item) => item.classList.remove('is-open'));
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSzLiveMap);
+  } else {
+    initSzLiveMap();
+  }
+})();
+</script>

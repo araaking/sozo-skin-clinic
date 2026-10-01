@@ -71,111 +71,122 @@ if (!function_exists('sz_reviewed_by_shortcode')) {
         ?>
         <?php if ($sz_rev_print_css) : ?>
         <style>
-            .sz-rev-section { 
-                font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif !important; 
-                background: linear-gradient(135deg, #EFF5FF 0%, #FFFFFF 45%, #E6EEFA 100%) !important; 
-                padding: 72px 24px !important; 
+            .sz-rev-section {
+                font-family: 'Poppins', system-ui, -apple-system, sans-serif !important;
+                background: #ffffff !important;
+                padding: 80px 24px !important;
             }
             .sz-rev-section * { box-sizing: border-box !important; }
-            .sz-rev-container { max-width: 1120px !important; margin: 0 auto !important; }
-            .sz-rev-heading { font-size: 24px !important; font-weight: 800 !important; color: #1A2080 !important; margin: 0 0 32px 0 !important; letter-spacing: -0.3px !important; }
-            .sz-rev-grid { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 28px !important; }
-            
-            /* Card Styling */
-            .sz-rev-card { 
-                background: #ffffff !important; 
-                border: 1px solid #e2e8f0 !important; 
-                border-radius: 16px !important; 
-                overflow: hidden !important; 
-                display: flex !important; 
-                flex-direction: column !important; 
-                box-shadow: 0 8px 24px rgba(26, 32, 128, 0.04) !important;
-                transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+            .sz-rev-container { max-width: 1280px !important; margin: 0 auto !important; }
+            .sz-rev-heading { font-size: 32px !important; line-height: 1.25 !important; font-weight: 600 !important; color: #1A2080 !important; margin: 0 0 32px 0 !important; letter-spacing: 0 !important; }
+            .sz-rev-grid { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 24px !important; }
+            .sz-rev-card {
+                background: #ffffff !important;
+                border: 1px solid #DFDBD4 !important;
+                border-radius: 16px !important;
+                overflow: hidden !important;
+                display: flex !important;
+                flex-direction: column !important;
+                box-shadow: none !important;
+                transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
             }
-            .sz-rev-card:hover { 
-                transform: translateY(-4px) !important; 
-                box-shadow: 0 16px 32px rgba(26, 32, 128, 0.09) !important; 
+            .sz-rev-card:hover {
+                transform: translateY(-2px) !important;
+                border-color: #D9C7B1 !important;
+                box-shadow: 0 8px 24px rgba(23, 23, 21, 0.07) !important;
             }
-            .sz-rev-card-img { display: block !important; aspect-ratio: 16 / 10 !important; overflow: hidden !important; background: #f1f5f9 !important; }
-            .sz-rev-card-img img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; margin: 0 !important; transition: transform 0.4s ease !important; }
-            .sz-rev-card:hover .sz-rev-card-img img { transform: scale(1.04) !important; }
-            .sz-rev-card-body { padding: 20px !important; display: flex !important; flex-direction: column !important; flex-grow: 1 !important; }
-            .sz-rev-cat { font-size: 11px !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.06em !important; color: #1A2080 !important; text-decoration: none !important; margin-bottom: 8px !important; display: inline-block !important; }
-            .sz-rev-title { margin: 0 0 10px 0 !important; font-size: 16.5px !important; line-height: 1.45 !important; font-weight: 700 !important; }
-            .sz-rev-title a { color: #0f172a !important; text-decoration: none !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; }
+            .sz-rev-card:focus-within { outline: 2px solid #1A2080 !important; outline-offset: 3px !important; }
+            .sz-rev-card-img { display: block !important; aspect-ratio: 16 / 9 !important; overflow: hidden !important; background: #E9DFD5 !important; }
+            .sz-rev-card-img img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; margin: 0 !important; transition: transform 0.3s ease !important; }
+            .sz-rev-card:hover .sz-rev-card-img img { transform: scale(1.025) !important; }
+            .sz-rev-card-body { padding: 24px !important; display: flex !important; flex-direction: column !important; flex-grow: 1 !important; }
+            .sz-rev-cat { font-size: 12px !important; line-height: 1.4 !important; font-weight: 600 !important; text-transform: none !important; letter-spacing: 0 !important; color: #1A2080 !important; text-decoration: none !important; margin-bottom: 12px !important; display: inline-flex !important; align-self: flex-start !important; align-items: center !important; padding: 6px 10px !important; border-radius: 999px !important; background: #E9DFD5 !important; }
+            .sz-rev-cat:hover { background: #D9C7B1 !important; }
+            .sz-rev-title { margin: 0 0 12px 0 !important; font-size: 20px !important; line-height: 1.35 !important; font-weight: 600 !important; }
+            .sz-rev-title a { color: #171715 !important; text-decoration: none !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; }
             .sz-rev-title a:hover { color: #1A2080 !important; }
-            .sz-rev-excerpt { font-size: 13.5px !important; line-height: 1.6 !important; color: #475569 !important; margin: 0 0 16px 0 !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; }
-            .sz-rev-meta { margin-top: auto !important; display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 10px !important; font-size: 12.5px !important; color: #64748b !important; font-weight: 600 !important; }
-            .sz-rev-read { color: #1A2080 !important; font-weight: 700 !important; text-decoration: none !important; white-space: nowrap !important; }
-            .sz-rev-empty { background: #fff !important; border: 1px dashed #cbd5e1 !important; border-radius: 14px !important; padding: 40px 24px !important; text-align: center !important; color: #64748b !important; font-size: 14px !important; }
-            
-            /* Pagination - Renggang, Elegan & Anti Mepet */
-            .sz-rev-pagination { 
-                display: flex !important; 
-                justify-content: center !important; 
-                align-items: center !important; 
-                flex-wrap: wrap !important; 
-                gap: 12px !important; 
-                margin-top: 50px !important; 
-                padding-top: 10px !important; 
+            .sz-rev-excerpt { font-size: 14px !important; line-height: 1.55 !important; color: #41413E !important; margin: 0 0 24px 0 !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; }
+            .sz-rev-meta { margin-top: auto !important; display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 12px !important; font-size: 12px !important; line-height: 1.4 !important; color: #777771 !important; font-weight: 500 !important; }
+            .sz-rev-read { color: #1A2080 !important; font-weight: 600 !important; text-decoration: none !important; white-space: nowrap !important; }
+            .sz-rev-read:hover { text-decoration: underline !important; text-underline-offset: 3px !important; }
+            .sz-rev-empty { background: #ffffff !important; border: 1px solid #DFDBD4 !important; border-radius: 16px !important; padding: 32px 24px !important; text-align: center !important; color: #41413E !important; font-size: 14px !important; line-height: 1.55 !important; }
+            .sz-rev-pagination {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                flex-wrap: wrap !important;
+                gap: 8px !important;
+                margin-top: 40px !important;
+                padding-top: 0 !important;
             }
             .sz-rev-pagination .sz-page,
             .sz-rev-pagination a,
             .sz-rev-pagination span.current,
-            .sz-rev-pagination .page-numbers { 
-                min-width: 44px !important; 
-                height: 44px !important; 
-                padding: 0 14px !important; 
-                margin: 0 3px !important; 
-                display: inline-flex !important; 
-                align-items: center !important; 
-                justify-content: center !important; 
-                border: 1px solid #dbeafe !important; 
-                background: #ffffff !important; 
-                color: #1e293b !important; 
-                border-radius: 12px !important; 
-                font-size: 15px !important; 
-                font-weight: 700 !important; 
-                text-decoration: none !important; 
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
-                transition: all 0.25s ease !important; 
+            .sz-rev-pagination .page-numbers {
+                min-width: 44px !important;
+                height: 44px !important;
+                padding: 0 12px !important;
+                margin: 0 !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                border: 1px solid #DFDBD4 !important;
+                background: #ffffff !important;
+                color: #171715 !important;
+                border-radius: 12px !important;
+                font-size: 14px !important;
+                font-weight: 600 !important;
+                text-decoration: none !important;
+                box-shadow: none !important;
+                transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease !important;
             }
             .sz-rev-pagination .sz-page:hover,
-            .sz-rev-pagination a:hover { 
-                border-color: #1A2080 !important; 
-                color: #1A2080 !important; 
-                background: #f8faff !important;
-                transform: translateY(-2px) !important;
-                box-shadow: 0 6px 14px rgba(26, 32, 128, 0.12) !important;
+            .sz-rev-pagination a:hover {
+                border-color: #1A2080 !important;
+                color: #1A2080 !important;
+                background: #E9DFD5 !important;
             }
             .sz-rev-pagination .sz-page.active,
-            .sz-rev-pagination span.current { 
-                background: #1A2080 !important; 
-                border-color: #1A2080 !important; 
-                color: #ffffff !important; 
-                box-shadow: 0 6px 16px rgba(26, 32, 128, 0.25) !important;
+            .sz-rev-pagination span.current {
+                background: #1A2080 !important;
+                border-color: #1A2080 !important;
+                color: #ffffff !important;
+                box-shadow: none !important;
             }
+            .sz-rev-pagination a:focus-visible,
+            .sz-rev-cat:focus-visible,
+            .sz-rev-title a:focus-visible,
+            .sz-rev-read:focus-visible { outline: 2px solid #1A2080 !important; outline-offset: 3px !important; }
             .sz-rev-pagination .sz-arrow {
                 font-size: 18px !important;
                 line-height: 1 !important;
             }
             .sz-rev-pagination .sz-dots { 
-                color: #94a3b8 !important; 
+                color: #777771 !important; 
                 font-weight: 700 !important; 
                 padding: 0 4px !important; 
             }
-            @media (max-width: 920px) { .sz-rev-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+            @media (max-width: 920px) {
+                .sz-rev-section { padding: 64px 20px !important; }
+                .sz-rev-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+            }
             @media (max-width: 640px) { 
-                .sz-rev-section { padding: 48px 16px !important; } 
-                .sz-rev-grid { grid-template-columns: 1fr !important; gap: 20px !important; } 
+                .sz-rev-section { padding: 56px 16px !important; }
+                .sz-rev-heading { font-size: 24px !important; line-height: 1.3 !important; margin-bottom: 24px !important; }
+                .sz-rev-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+                .sz-rev-card-body { padding: 20px !important; }
+                .sz-rev-title { font-size: 18px !important; }
                 .sz-rev-pagination .sz-page,
                 .sz-rev-pagination a,
                 .sz-rev-pagination span.current {
-                    min-width: 38px !important;
-                    height: 38px !important;
+                    min-width: 40px !important;
+                    height: 40px !important;
                     padding: 0 10px !important;
-                    font-size: 13.5px !important;
+                    font-size: 13px !important;
                 }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .sz-rev-card, .sz-rev-card-img img, .sz-rev-pagination a { transition: none !important; }
             }
         </style>
         <?php endif; ?>

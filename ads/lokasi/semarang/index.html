@@ -1,0 +1,1199 @@
+<!-- Google Font Poppins Preconnect & Stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- SYSTEM PRELOAD FONTAWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="sozo-location-page-wrapper">
+  <div class="sozo-location-page-container">
+    
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <div class="sozo-clean-hero">
+      <h1 class="sozo-clean-title">Klinik Kecantikan Terbaik Di Semarang</h1>
+      <p class="sozo-clean-desc">Mencari klinik kecantikan Semarang yang terpercaya? Sozo Hadir di Semarang dengan kualitas terbaik, harga transparan dan terjangkau.</p>
+    </div>
+
+    <!-- ==================== 2. MASTER-DETAIL SECTION (MAPS & INFO) ==================== -->
+    <div class="sozo-clean-layout">
+      
+      <!-- SISI KIRI: SELECTOR CABANG UTAMA (Desktop Card / Mobile Pill) -->
+      <div class="sozo-clean-sidebar">
+        <!-- Cabang 1: Semarang (Semarang Tengah) -->
+        <button type="button" class="sozo-branch-pill active" data-branch="0" onclick="selectBranch(0)">
+          <svg class="sozo-pill-icon" viewBox="0 0 384 512">
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+          </svg>
+          <div class="sozo-pill-content">
+            <span class="sozo-pill-title">Semarang</span>
+            <span class="sozo-pill-sub">Semarang Tengah • ★ 4.8</span>
+          </div>
+        </button>
+
+        <!-- Cabang 2: Semarang Banyumanik -->
+        <button type="button" class="sozo-branch-pill" data-branch="1" onclick="selectBranch(1)">
+          <svg class="sozo-pill-icon" viewBox="0 0 384 512">
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+          </svg>
+          <div class="sozo-pill-content">
+            <span class="sozo-pill-title">Semarang Banyumanik</span>
+            <span class="sozo-pill-sub">Banyumanik • ★ 5.0</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- DETAIL PANEL -->
+      <div class="sozo-clean-content">
+        <div class="sozo-detail-card" id="sozoDetailCard">
+          
+          <div class="sozo-detail-map">
+            <iframe id="sozoMapIframe" src="https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Semarang&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+          </div>
+
+          <div class="sozo-detail-body">
+            <div class="sozo-detail-header">
+              <h2 class="sozo-detail-name" id="sozoDetailName">Sozo Skin Clinic - Semarang</h2>
+              <div class="sozo-detail-rating" id="sozoDetailRating">★ 4.8 (1.492 ulasan Google)</div>
+            </div>
+
+            <p class="sozo-detail-address" id="sozoDetailAddress">
+              Jl. Mayjend Sutoyo No.93, Karangkidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50136
+            </p>
+
+            <div class="sozo-detail-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Semarang%20%5Bsrc%3A%20SEM-SMG%5D" id="sozoWaBtn" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa sozo-master-cta">
+                Buat Jadwal
+              </a>
+              <a href="https://maps.google.com/?q=Sozo+Skin+Clinic+-+Semarang" id="sozoMapBtn" target="_blank" rel="noopener" class="sozo-btn sozo-btn-map">
+                Buka Maps &gt;
+              </a>
+            </div>
+
+            <div class="sozo-schedule-card">
+              <div class="sozo-schedule-header">
+                <svg viewBox="0 0 448 512">
+                  <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H64zm128 0c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H192zm128 0c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H320z"/>
+                </svg>
+                <span>Waktu Kerja</span>
+              </div>
+              <div class="sozo-schedule-list" id="sozoScheduleList">
+                <div class="sozo-schedule-row"><span>Senin</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Selasa</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Rabu</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Kamis</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Jumat</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Sabtu</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Minggu</span><span>09:00 - 20:00</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== 3. AMBIENCE GALLERY SLIDER ==================== -->
+    <div class="sozo-gallery-section">
+      <div class="sozo-gallery-header">
+        <div class="sozo-gallery-pill">Suasana Klinik</div>
+        <h2 class="sozo-gallery-title">Fasilitas & Ruang Perawatan Nyaman</h2>
+        <p class="sozo-gallery-desc">Ruang perawatan privat, higienis, dan berstandar medis untuk pengalaman treatment terbaikmu yang ada di klinik kecantikan Semarang.</p>
+      </div>
+
+      <div class="sozo-slider-wrapper">
+        <div class="sozo-slider-container" id="sozoSliderContainer">
+          <div class="sozo-slider-track" id="sozoSliderTrack">
+            <!-- Dynamic Injection Via JS -->
+          </div>
+        </div>
+
+        <button type="button" class="sozo-slider-btn sozo-slider-prev" id="sozoSliderPrev" aria-label="Foto Sebelumnya">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button type="button" class="sozo-slider-btn sozo-slider-next" id="sozoSliderNext" aria-label="Foto Selanjutnya">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="sozo-slider-dots" id="sozoSliderDots"></div>
+    </div>
+
+    <!-- ==================== 4. TREATMENT CATEGORIES ==================== -->
+    <div class="sozo-category-section">
+      <h2 class="sozo-category-heading">Pilihan Treatment di Sozo Skin Clinic Semarang</h2>
+      <p class="sozo-category-sub">Pilih kategori perawatan kulit & tubuh yang sesuai dengan kebutuhanmu</p>
+      
+      <div class="sozo-category-grid">
+        <a href="https://sozoskinclinic.com/ads/treatment-lokasi/?utm_source=lokasi-semarang#facial-treatment" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Skin-Bright-Facial-Medical-1.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Skin<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/ads/treatment-lokasi/?utm_source=lokasi-semarang#anti-aging" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Injection.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Injectable<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/ads/treatment-lokasi/?utm_source=lokasi-semarang#slimming-treatment" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Slimming-1-11.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Slimming<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/ads/treatment-lokasi/?utm_source=lokasi-semarang#hair-treatment" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/03/Gemini_Generated_Image_qncw0qncw0qncw0q.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/ads/treatment-lokasi/?utm_source=lokasi-semarang#hair-removal" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Hair-Removal-Underarm-Glow.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Removal</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/ads/treatment-lokasi/?utm_source=lokasi-semarang#acne-treatment" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Acne-Single-Treatment-Acne-laser-facial.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Acne<br>Treatment</span>
+        </a>
+      </div>
+
+      <div class="sozo-category-cta-wrap">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Semarang%20%5Bsrc%3A%20SEM-SMG%5D" target="_blank" rel="noopener" class="sozo-category-btn sozo-master-cta">
+          <span>Konsultasi Treatment Sekarang</span>
+          <svg viewBox="0 0 448 512" fill="currentColor"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ==================== 4.5 HASIL NYATA & TESTIMONI ==================== -->
+    <div class="sozo-results-section">
+      <div class="sozo-results-header">
+        <div class="sozo-results-pill">Bukti Klinis</div>
+        <h2 class="sozo-results-title">Hasil Nyata & Testimoni Pasien</h2>
+        <p class="sozo-results-desc">Bukti transformasi kulit sehat dan kepuasan pasien setelah perawatan di Sozo Skin Clinic Semarang.</p>
+      </div>
+
+      <!-- Sub-Block 1: Before After Gallery Slider -->
+      <div class="sozo-sub-slider-block">
+        <div class="sozo-sub-slider-head">
+          <span class="sozo-sub-slider-tag"><i class="fa-solid fa-camera-retro"></i> Transformasi Klinis</span>
+        </div>
+
+        <div class="sozo-slider-wrapper">
+          <div class="sozo-ba-slider-container" id="sozoBaSliderContainer">
+            <div class="sozo-ba-slider-track" id="sozoBaSliderTrack">
+              
+              <!-- BA 1 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/LP-Mockup-Suplemen-Pelangsing-Slimming-Program-Before-After-2.webp" alt="Before After Slimming Program" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 2 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/hifu-treatment-di-sozo-skin-clinic.webp" alt="Before After HIFU Treatment" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 3 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-pink-lips.webp" alt="Before After Pink Lips" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 4 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-underarm.webp" alt="Before After Underarm Treatment" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 5 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/BA-skin-booster.webp" alt="Before After Skin Booster" loading="lazy">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button type="button" class="sozo-slider-btn sozo-ba-prev" id="sozoBaPrev" aria-label="Hasil Sebelumnya">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button type="button" class="sozo-slider-btn sozo-ba-next" id="sozoBaNext" aria-label="Hasil Selanjutnya">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="sozo-slider-dots" id="sozoBaDots"></div>
+      </div>
+
+      <!-- Sub-Block 2: Testimonial Quotes Slider -->
+      <div class="sozo-sub-slider-block" style="margin-top: 30px;">
+        <div class="sozo-sub-slider-head">
+          <span class="sozo-sub-slider-tag"><i class="fa-solid fa-comment-dots"></i> Ulasan Pasien Terverifikasi</span>
+        </div>
+
+        <div class="sozo-slider-wrapper">
+          <div class="sozo-quote-slider-container" id="sozoQuoteSliderContainer">
+            <div class="sozo-quote-slider-track" id="sozoQuoteSliderTrack">
+              
+              <!-- Quote 1 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Pelayanan di Sozo Semarang sangat ramah dan profesional. Dokternya detail banget jelasin kondisi kulit tanpa memaksa beli paket mahal. Jerawat meradang saya kempes dalam 2 kali treatment!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">AN</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Anisa Novitasari</strong>
+                      <span class="sozo-author-meta">Pasien Acne Clear Facial • Semarang Tengah</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 2 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Tempatnya estetik, nyaman, dan bersih. Treatment Skin Booster di cabang Banyumanik hasilnya langsung kelihatan glowing natural tanpa downtime berlebih. Sangat recommended!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">RP</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Rizky Pratama</strong>
+                      <span class="sozo-author-meta">Pasien Skin Booster • Banyumanik</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 3 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Laser flek di Sozo beneran bikin noda hitam bekas jerawat memudar signifikan. Harganya transparan dari awal dan konsultasi dokternya gratis. Puas banget perawatan di sini.</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">ML</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Mega Lestari</strong>
+                      <span class="sozo-author-meta">Pasien Laser Rejuvenation • Semarang</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 4 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Klinik langganan sejak pertama kali buka di Semarang. Aksesnya gampang di pusat kota, terapisnya teliti pas ekstraksi komedo sama sekali nggak sakit. Wajib coba facial-nya!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">DH</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Dina Hapsari</strong>
+                      <span class="sozo-author-meta">Pasien Deep Cleansing Facial • Semarang Tengah</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button type="button" class="sozo-slider-btn sozo-quote-prev" id="sozoQuotePrev" aria-label="Ulasan Sebelumnya">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button type="button" class="sozo-slider-btn sozo-quote-next" id="sozoQuoteNext" aria-label="Ulasan Selanjutnya">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="sozo-slider-dots" id="sozoQuoteDots"></div>
+      </div>
+    </div>
+
+    <!-- ==================== 4.6 PROMO KHUSUS HARI INI ==================== -->
+    <div class="sozo-promo-section">
+      <div class="sozo-promo-header">
+        <div class="sozo-promo-pill">Penawaran Eksklusif</div>
+        <h2 class="sozo-promo-title">Promo Spesial Hari Ini di Semarang</h2>
+        <p class="sozo-promo-desc">Manfaatkan potongan harga treatment premium untuk perawatan kulit impian Anda di klinik kecantikan Semarang.</p>
+      </div>
+
+      <div class="sozo-slider-wrapper">
+        <div class="sozo-promo-slider-container" id="sozoPromoSliderContainer">
+          <div class="sozo-promo-slider-track" id="sozoPromoSliderTrack">
+            
+            <!-- Promo 1 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Cicilan 0%</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-0-scaled.webp" alt="Promo Cicilan 0% & Cashback s.d 500rb" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Cicilan 0% &amp; Cashback s.d 500rb</h3>
+                    <p class="sozo-promo-card-desc">Nikmati kemudahan cicilan bunga 0% dan cashback spesial hingga Rp 500.000 untuk treatment pilihan.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Semarang%20%5Bsrc%3A%20SEM-SMG%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 448 512" fill="currentColor"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 2 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Potongan 100rb</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-potongan100rb-scaled.webp" alt="Promo Potongan Langsung Rp 100.000" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Potongan Langsung Rp 100.000</h3>
+                    <p class="sozo-promo-card-desc">Dapatkan potongan harga spesial Rp 100.000 untuk kunjungan dan treatment pertama Anda.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Semarang%20%5Bsrc%3A%20SEM-SMG%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 448 512" fill="currentColor"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 3 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Special Deal</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/skin-booster-promo-scaled.webp" alt="Special Price Skin Booster" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Special Price Skin Booster</h3>
+                    <p class="sozo-promo-card-desc">Perawatan hidrasi mendalam dan kulit bercahaya dengan harga khusus terbatas.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Semarang%20%5Bsrc%3A%20SEM-SMG%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 448 512" fill="currentColor"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 4 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Hair Care</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/05/LP-Mockup-Landing-Page-Refreshment-MEI-Promo-banner-bye2-rontok.webp" alt="Promo Bye-Bye Rambut Rontok & Botak" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Promo Bye-Bye Rontok &amp; Botak</h3>
+                    <p class="sozo-promo-card-desc">Kembalikan kekuatan dan ketebalan rambut Anda dengan teknologi hair regrowth terbaik.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Semarang%20%5Bsrc%3A%20SEM-SMG%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 448 512" fill="currentColor"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <button type="button" class="sozo-slider-btn sozo-promo-prev" id="sozoPromoPrev" aria-label="Promo Sebelumnya">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button type="button" class="sozo-slider-btn sozo-promo-next" id="sozoPromoNext" aria-label="Promo Selanjutnya">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="sozo-slider-dots" id="sozoPromoDots"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ==================== 5. WHY CHOOSE US ==================== -->
+<section class="sozo-why-section">
+  <div class="sozo-why-container">
+    <div class="sozo-why-header">
+      <h2>Mengapa Memilih SOZO Skin Clinic Semarang?</h2>
+      <p>Dedikasi kami untuk memberikan standar perawatan medis terbaik, hasil teruji, dan kenyamanan tanpa kompromi.</p>
+    </div>
+
+    <div class="sozo-why-grid">
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Dokter Profesional</strong>
+          <p class="sozo-why-card-text">Ditangani langsung oleh dokter tersertifikasi dan berpengalaman.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Teknologi Terkini</strong>
+          <p class="sozo-why-card-text">Peralatan medis canggih dengan standar keamanan internasional.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Pelayanan Terbaik</strong>
+          <p class="sozo-why-card-text">Klinik kecantikan yang nyaman dan ramah di Kota Semarang.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-handshake-angle"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Konsultasi Dokter Gratis</strong>
+          <p class="sozo-why-card-text">Reservasi sekarang untuk konsultasi tepat tanpa biaya tambahan.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-tags"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Harga Terjangkau</strong>
+          <p class="sozo-why-card-text">Perawatan premium dengan transparansi harga tanpa biaya tersembunyi.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Klinik Kecantikan Terdekat</strong>
+          <p class="sozo-why-card-text">60+ cabang di Jakarta, Bogor, Depok, Tangerang, Bekasi, Bandung, Semarang, Medan, dan Surabaya.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6. COMPACT MINIMAL BANNER CTA ==================== -->
+<section class="sozo-compact-cta-section">
+  <div class="sozo-compact-cta-container">
+    <div class="sozo-compact-cta-box">
+      <div class="sozo-compact-cta-text">
+        <h3 class="sozo-compact-cta-title">Segera Kunjungi Klinik Kecantikan Semarang SOZO.</h3>
+        <p class="sozo-compact-cta-desc">Konsultasikan kondisi kulitmu dan temukan solusi treatment yang tepat bersama dokter profesional kami.</p>
+      </div>
+      <div class="sozo-compact-cta-action">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Semarang%20%5Bsrc%3A%20SEM-SMG%5D" target="_blank" rel="noopener" class="sozo-custom-cta-btn sozo-master-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>Hubungi Kami Untuk Reservasi</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6.5 CARA MENUJU LOKASI (EXPANDABLE) ==================== -->
+<section class="sozo-directions-section">
+  <div class="sozo-directions-container">
+    
+    <div class="sozo-directions-header">
+      <div class="sozo-directions-pill">Panduan Rute & Akses</div>
+      <h2 class="sozo-directions-title">Cara Menuju ke Lokasi SOZO Semarang</h2>
+      <p class="sozo-directions-desc">Panduan rute perjalanan untuk memudahkan Anda menuju klinik kecantikan SOZO menggunakan kendaraan pribadi maupun transportasi umum.</p>
+    </div>
+
+    <div class="sozo-directions-list">
+      
+      <!-- 1. Semarang (Semarang Tengah) -->
+      <div class="sozo-direction-item active">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="true">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>1. Menuju SOZO Skin Clinic Semarang (Semarang Tengah)</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content" style="max-height: 1200px;">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-lead">Jl. Mayjend Sutoyo No.93, Karangkidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50136</p>
+            <p class="sozo-direction-desc-text">SOZO Skin Clinic Semarang berlokasi di kawasan Semarang Tengah, salah satu area strategis di pusat Kota Semarang. Lokasinya mudah dijangkau dari berbagai landmark populer seperti Simpang Lima Semarang, Lawang Sewu, Paragon City Mall, DP Mall Semarang, Kota Lama Semarang, serta Stasiun Semarang Poncol.</p>
+            
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-car"></i> Akses Kendaraan Pribadi</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Dari Simpang Lima Semarang:</strong> Perjalanan menuju klinik dapat ditempuh melalui Jl. Pandanaran, kemudian melanjutkan perjalanan ke arah Jl. Mayjend Sutoyo. Waktu tempuh sekitar 5–10 menit, tergantung kondisi lalu lintas.</li>
+                <li><strong>Dari Lawang Sewu atau DP Mall Semarang:</strong> Lanjutkan perjalanan melalui Jl. Pemuda menuju kawasan Semarang Tengah, kemudian masuk ke Jl. Mayjend Sutoyo hingga menemukan SOZO Skin Clinic di sisi jalan.</li>
+                <li><strong>Dari Kota Lama Semarang:</strong> Arahkan kendaraan menuju Jl. Letjen Suprapto, kemudian lanjutkan melalui Jl. Pemuda menuju Jl. Mayjend Sutoyo. Perjalanan umumnya memakan waktu sekitar 10–15 menit.</li>
+                <li><strong>Dari Banyumanik atau Tembalang:</strong> Gunakan Jl. Setiabudi menuju Jl. Sultan Agung, lalu lanjutkan ke Jl. Mayjend Sutoyo melalui pusat Kota Semarang hingga tiba di lokasi klinik.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-train-subway"></i> Akses Transportasi Umum</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Trans Semarang (BRT):</strong> Gunakan Trans Semarang dengan rute yang melewati kawasan Simpang Lima, Pandanaran, atau Semarang Tengah, kemudian turun di halte terdekat di sekitar Jl. Mayjend Sutoyo. Dari halte, klinik dapat dijangkau dengan berjalan kaki atau menggunakan ojek online selama beberapa menit.</li>
+                <li><strong>Kereta Api:</strong> Jika datang menggunakan kereta, Anda dapat turun di Stasiun Semarang Poncol maupun Stasiun Semarang Tawang. Dari kedua stasiun tersebut, perjalanan menuju klinik dapat dilanjutkan menggunakan taksi atau ojek online dengan waktu tempuh sekitar 10–20 menit.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Semarang Banyumanik -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>2. Menuju SOZO Skin Clinic Semarang Banyumanik</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-lead">Jl. Setia Budi No.115, Srondol Kulon, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263</p>
+            <p class="sozo-direction-desc-text">SOZO Skin Clinic Semarang Banyumanik berada di kawasan Jl. Setiabudi, salah satu jalan utama di Semarang bagian selatan. Lokasinya mudah dijangkau dari berbagai landmark seperti Exit Tol Banyumanik, Universitas Diponegoro (UNDIP) Tembalang, Universitas Katolik Soegijapranata Kampus Bendan, Transmart Setiabudi, dan kawasan Ungaran.</p>
+            
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-car"></i> Akses Kendaraan Pribadi</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Dari Exit Tol Banyumanik:</strong> Setelah keluar dari gerbang tol, arahkan kendaraan menuju Jl. Setiabudi ke arah pusat Kota Semarang. Klinik berada di sepanjang jalan utama dan dapat dicapai dalam waktu sekitar 5–10 menit.</li>
+                <li><strong>Dari Universitas Diponegoro (UNDIP) Tembalang:</strong> Lanjutkan perjalanan melalui Jl. Prof. Soedarto menuju Jl. Setiabudi. Dari kawasan kampus, perjalanan menuju klinik umumnya memerlukan waktu sekitar 10–15 menit.</li>
+                <li><strong>Dari Simpang Lima Semarang:</strong> Arahkan kendaraan menuju Jl. Sultan Agung, kemudian lanjutkan ke Jl. Setiabudi hingga memasuki kawasan Banyumanik. Klinik berada di sisi jalan utama sehingga mudah ditemukan.</li>
+                <li><strong>Dari Ungaran:</strong> Masuk melalui Jl. Setiabudi menuju Banyumanik. Setelah melewati kawasan perdagangan dan perkantoran Banyumanik, lanjutkan perjalanan hingga menemukan SOZO Skin Clinic Semarang Banyumanik.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-train-subway"></i> Akses Transportasi Umum</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Trans Semarang (BRT):</strong> Gunakan Trans Semarang dengan rute yang melintasi koridor Banyumanik atau Jl. Setiabudi, kemudian turun di halte terdekat. Dari halte, Anda dapat berjalan kaki jika jaraknya memungkinkan atau melanjutkan perjalanan menggunakan ojek online.</li>
+                <li><strong>Angkutan Kota (Angkot):</strong> Beberapa trayek angkutan kota yang melintasi kawasan Jl. Setiabudi dapat menjadi pilihan menuju klinik. Turun di sekitar kawasan Srondol Kulon, kemudian lanjutkan dengan berjalan kaki menuju lokasi.</li>
+                <li><strong>Kereta Api:</strong> Apabila tiba di Stasiun Semarang Poncol atau Stasiun Semarang Tawang, perjalanan menuju klinik dapat dilanjutkan menggunakan taksi atau ojek online dengan estimasi waktu sekitar 25–35 menit, tergantung kondisi lalu lintas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 7. FAQ SECTION ==================== -->
+<section class="sozo-faq-section" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="sozo-faq-container">
+    <div class="sozo-faq-header">
+      <div class="sozo-faq-pill">FAQ</div>
+      <h2 class="sozo-faq-title">Pertanyaan yang Sering Diajukan</h2>
+      <p class="sozo-faq-desc">Informasi lengkap seputar layanan, reservasi, dan perawatan di Sozo Skin Clinic Semarang.</p>
+    </div>
+
+    <div class="sozo-faq-list">
+      
+      <!-- FAQ 1 -->
+      <div class="sozo-faq-item active" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="true">
+          <span itemprop="name">1. Di mana lokasi SOZO Skin Clinic Semarang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" style="max-height: 250px;" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">SOZO Skin Clinic memiliki dua cabang di Semarang, yaitu di kawasan Semarang Tengah (Jl. Mayjend Sutoyo No.93, Karangkidul) dan Banyumanik (Jl. Setia Budi No.115, Srondol Kulon). Kedua lokasi berada di area yang strategis dan mudah dijangkau menggunakan kendaraan pribadi maupun transportasi umum. Anda dapat memilih cabang yang paling dekat untuk melakukan konsultasi maupun treatment.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">2. Bagaimana cara membuat janji di SOZO Skin Clinic Semarang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Anda dapat melakukan reservasi terlebih dahulu melalui WhatsApp atau menghubungi cabang SOZO Skin Clinic Semarang yang ingin dikunjungi. Dengan melakukan reservasi, Anda dapat memilih jadwal konsultasi maupun treatment yang lebih sesuai dengan waktu Anda.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">3. Apakah saya harus reservasi sebelum datang ke klinik?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Reservasi sangat disarankan agar Anda mendapatkan jadwal konsultasi dan treatment sesuai ketersediaan dokter. Namun, beberapa cabang juga melayani pasien yang datang langsung (walk-in), tergantung antrean dan ketersediaan jadwal pada hari tersebut.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">4. Apakah saya bisa konsultasi dengan dokter sebelum menjalani treatment?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Sebelum treatment dilakukan, Anda akan berkonsultasi dengan dokter estetika untuk mengetahui kondisi kulit, keluhan yang dialami, serta mendapatkan rekomendasi treatment yang sesuai. Hal ini bertujuan agar perawatan yang dipilih sesuai dengan kebutuhan kulit Anda.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">5. Treatment apa saja yang tersedia di SOZO Skin Clinic Semarang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">SOZO Skin Clinic Semarang menyediakan berbagai pilihan treatment, mulai dari treatment wajah untuk jerawat, bekas jerawat, flek hitam, kulit kusam, anti-aging, laser, skin booster, peeling, facial, hingga treatment rambut, hair removal, infus whitening, dan program slimming. Ketersediaan treatment dapat berbeda pada setiap cabang.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">6. Apakah treatment di SOZO Skin Clinic Semarang ditangani oleh dokter?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Setiap pasien akan ditangani oleh dokter estetika profesional yang akan melakukan konsultasi dan menentukan rekomendasi treatment sesuai kondisi kulit maupun tujuan perawatan yang ingin dicapai.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">7. Berapa biaya treatment di SOZO Skin Clinic Semarang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Biaya treatment bergantung pada jenis perawatan yang dipilih serta kebutuhan masing-masing pasien. Setelah konsultasi, dokter akan memberikan rekomendasi treatment beserta estimasi biaya sehingga Anda dapat memilih perawatan yang sesuai dengan kebutuhan dan anggaran.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">8. Apakah SOZO Skin Clinic Semarang melayani pasien pria dan wanita?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">SOZO Skin Clinic Semarang melayani pasien pria maupun wanita dengan berbagai kebutuhan perawatan kulit, wajah, rambut, dan body treatment.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">9. Apakah tersedia treatment untuk mengatasi jerawat dan bekas jerawat?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">SOZO Skin Clinic Semarang memiliki berbagai pilihan treatment yang dapat membantu mengatasi jerawat aktif, bekas jerawat, pori-pori besar, hingga tekstur kulit yang tidak merata. Jenis treatment akan disesuaikan berdasarkan hasil konsultasi dengan dokter.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">10. Apakah tersedia treatment anti-aging di SOZO Skin Clinic Semarang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">SOZO Skin Clinic Semarang menyediakan berbagai treatment anti-aging yang bertujuan membantu mengurangi tampilan garis halus, kerutan, kulit kendur, serta menjaga elastisitas kulit. Dokter akan merekomendasikan treatment yang sesuai dengan kondisi kulit dan target hasil yang diinginkan.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 11 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">11. Bagaimana cara menuju SOZO Skin Clinic Semarang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Kedua cabang SOZO Skin Clinic Semarang dapat diakses menggunakan kendaraan pribadi, transportasi umum, maupun layanan transportasi online. Pada halaman ini Anda juga dapat melihat panduan rute menuju masing-masing cabang agar perjalanan menjadi lebih mudah.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 12 -->
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span itemprop="name">12. Mengapa memilih SOZO Skin Clinic Semarang?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">SOZO Skin Clinic Semarang didukung oleh dokter estetika profesional, teknologi modern, serta berbagai pilihan treatment untuk kulit, wajah, rambut, dan slimming. Setiap pasien akan mendapatkan konsultasi terlebih dahulu sehingga rekomendasi treatment dapat disesuaikan dengan kondisi dan kebutuhan masing-masing.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== JAVASCRIPT CONTROLLER ==================== -->
+<script>
+(function() {
+  const MASTER_WA_URL = "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Semarang%20%5Bsrc%3A%20SEM-SMG%5D";
+
+  const branches = [
+    {
+      name: "Sozo Skin Clinic - Semarang",
+      rating: "★ 4.8 (1.492 ulasan Google)",
+      address: "Jl. Mayjend Sutoyo No.93, Karangkidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50136",
+      mapSrc: "https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Semarang&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      mapLink: "https://maps.google.com/?q=Sozo+Skin+Clinic+-+Semarang",
+      hours: [
+        {day: "Senin", time: "09:00 - 20:00"},
+        {day: "Selasa", time: "09:00 - 20:00"},
+        {day: "Rabu", time: "09:00 - 20:00"},
+        {day: "Kamis", time: "09:00 - 20:00"},
+        {day: "Jumat", time: "09:00 - 20:00"},
+        {day: "Sabtu", time: "09:00 - 20:00"},
+        {day: "Minggu", time: "09:00 - 20:00"}
+      ],
+      gallery: [
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-1-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-muda-2-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-3-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-4-scaled.webp"
+      ]
+    },
+    {
+      name: "Sozo Skin Clinic - Semarang Banyumanik",
+      rating: "★ 5.0 (223 ulasan Google)",
+      address: "Jl. Setia Budi No.115, Srondol Kulon, Kec. Banyumanik, Kota Semarang, Jawa Tengah 50263",
+      mapSrc: "https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Semarang%20Banyumanik&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      mapLink: "https://maps.google.com/?q=Sozo+Skin+Clinic+-+Semarang+Banyumanik",
+      hours: [
+        {day: "Senin", time: "09:00 - 20:00"},
+        {day: "Selasa", time: "09:00 - 20:00"},
+        {day: "Rabu", time: "09:00 - 20:00"},
+        {day: "Kamis", time: "09:00 - 20:00"},
+        {day: "Jumat", time: "09:00 - 20:00"},
+        {day: "Sabtu", time: "09:00 - 20:00"},
+        {day: "Minggu", time: "09:00 - 20:00"}
+      ],
+      gallery: [
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/medan-cemara-1-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/ruang-konsultasi-medan-cemara-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/medan-cemara-2-perawatan-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/medan-cemara-resepsionis-scaled.webp"
+      ]
+    }
+  ];
+
+  function initGenericSlider(trackId, prevBtnId, nextBtnId, dotsId, containerId, autoInterval = 5000) {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    const dotsContainer = document.getElementById(dotsId);
+    const container = document.getElementById(containerId);
+
+    if (!track) return null;
+
+    let currentIndex = 0;
+    let autoPlayTimer = null;
+
+    function getSlides() {
+      return track.children;
+    }
+
+    function getVisibleCount() {
+      const w = window.innerWidth;
+      if (w <= 768) return 1;
+      if (w <= 992) return 2;
+      return 3;
+    }
+
+    function getMaxIndex() {
+      const slides = getSlides();
+      const visible = getVisibleCount();
+      return Math.max(0, slides.length - visible);
+    }
+
+    function buildDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      const maxIdx = getMaxIndex();
+      if (maxIdx <= 0) return;
+
+      for (let i = 0; i <= maxIdx; i++) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'sozo-slider-dot' + (i === currentIndex ? ' active' : '');
+        dot.setAttribute('aria-label', `Slide ${i + 1}`);
+        dot.addEventListener('click', () => {
+          goTo(i);
+          resetAuto();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      if (!dotsContainer) return;
+      const dots = dotsContainer.querySelectorAll('.sozo-slider-dot');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+    }
+
+    function goTo(index) {
+      const maxIdx = getMaxIndex();
+      currentIndex = Math.max(0, Math.min(index, maxIdx));
+      const slides = getSlides();
+      if (slides.length === 0) return;
+
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = 16;
+      const moveX = (slideWidth + gap) * currentIndex;
+
+      track.style.transform = `translateX(-${moveX}px)`;
+      updateDots();
+    }
+
+    function next() {
+      const maxIdx = getMaxIndex();
+      if (currentIndex >= maxIdx) {
+        goTo(0);
+      } else {
+        goTo(currentIndex + 1);
+      }
+    }
+
+    function prev() {
+      const maxIdx = getMaxIndex();
+      if (currentIndex <= 0) {
+        goTo(maxIdx);
+      } else {
+        goTo(currentIndex - 1);
+      }
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        next();
+        resetAuto();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prev();
+        resetAuto();
+      });
+    }
+
+    function startAuto() {
+      if (autoInterval > 0) {
+        stopAuto();
+        autoPlayTimer = setInterval(next, autoInterval);
+      }
+    }
+
+    function stopAuto() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    function resetAuto() {
+      stopAuto();
+      startAuto();
+    }
+
+    if (container) {
+      container.addEventListener('mouseenter', stopAuto);
+      container.addEventListener('mouseleave', startAuto);
+
+      let startX = 0;
+      let startY = 0;
+      let currentX = 0;
+      let isTouching = false;
+      let isHorizontal = null;
+
+      container.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 1) return;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        currentX = startX;
+        isTouching = true;
+        isHorizontal = null;
+        stopAuto();
+      }, { passive: true });
+
+      container.addEventListener('touchmove', (e) => {
+        if (!isTouching) return;
+        currentX = e.touches[0].clientX;
+        const diffX = currentX - startX;
+        const diffY = e.touches[0].clientY - startY;
+
+        if (isHorizontal === null) {
+          if (Math.abs(diffX) > 8 || Math.abs(diffY) > 8) {
+            isHorizontal = Math.abs(diffX) > Math.abs(diffY);
+          }
+        }
+
+        if (isHorizontal) {
+          track.style.transition = 'none';
+          const slides = getSlides();
+          if (slides.length > 0) {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            const gap = 16;
+            const baseMove = (slideWidth + gap) * currentIndex;
+            track.style.transform = `translateX(${-baseMove + diffX}px)`;
+          }
+        }
+      }, { passive: true });
+
+      function handleTouchEnd() {
+        if (!isTouching) return;
+        isTouching = false;
+        track.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)';
+
+        const diffX = startX - currentX;
+        if (isHorizontal && Math.abs(diffX) > 35) {
+          if (diffX > 0) next();
+          else prev();
+        } else {
+          goTo(currentIndex);
+        }
+        resetAuto();
+      }
+
+      container.addEventListener('touchend', handleTouchEnd, { passive: true });
+      container.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+    }
+
+    buildDots();
+    goTo(0);
+    startAuto();
+
+    return {
+      refresh: () => {
+        buildDots();
+        goTo(currentIndex);
+      },
+      goTo: goTo
+    };
+  }
+
+  let gallerySliderTrack = document.getElementById('sozoSliderTrack');
+  let ambienceSliderCtrl = null;
+
+  function renderAmbience(images) {
+    if (!gallerySliderTrack) return;
+    gallerySliderTrack.innerHTML = '';
+    images.forEach(imgUrl => {
+      const slide = document.createElement('div');
+      slide.className = 'sozo-slider-slide';
+      slide.innerHTML = `<img src="${imgUrl}" alt="Suasana Sozo Skin Clinic Semarang" loading="lazy">`;
+      gallerySliderTrack.appendChild(slide);
+    });
+
+    if (ambienceSliderCtrl) {
+      ambienceSliderCtrl.refresh();
+      ambienceSliderCtrl.goTo(0);
+    } else {
+      ambienceSliderCtrl = initGenericSlider(
+        'sozoSliderTrack',
+        'sozoSliderPrev',
+        'sozoSliderNext',
+        'sozoSliderDots',
+        'sozoSliderContainer',
+        4500
+      );
+    }
+  }
+
+  window.selectBranch = function(index) {
+    const b = branches[index];
+    if (!b) return;
+
+    document.querySelectorAll('.sozo-branch-pill').forEach((pill, i) => {
+      pill.classList.toggle('active', i === index);
+    });
+
+    const card = document.getElementById('sozoDetailCard');
+    if (!card) return;
+
+    card.classList.add('sliding');
+
+    setTimeout(() => {
+      const nameEl = document.getElementById('sozoDetailName');
+      const ratingEl = document.getElementById('sozoDetailRating');
+      const addrEl = document.getElementById('sozoDetailAddress');
+      const iframeEl = document.getElementById('sozoMapIframe');
+      const mapBtn = document.getElementById('sozoMapBtn');
+      const schedList = document.getElementById('sozoScheduleList');
+
+      if (nameEl) nameEl.textContent = b.name;
+      if (ratingEl) ratingEl.textContent = b.rating;
+      if (addrEl) addrEl.textContent = b.address;
+      if (iframeEl) iframeEl.src = b.mapSrc;
+      if (mapBtn) mapBtn.href = b.mapLink;
+
+      if (schedList && b.hours) {
+        schedList.innerHTML = '';
+        b.hours.forEach(h => {
+          const row = document.createElement('div');
+          row.className = 'sozo-schedule-row';
+          row.innerHTML = `<span>${h.day}</span><span>${h.time}</span>`;
+          schedList.appendChild(row);
+        });
+      }
+
+      renderAmbience(b.gallery);
+
+      card.classList.remove('sliding');
+    }, 140);
+  };
+
+  function setupDirections() {
+    document.querySelectorAll('.sozo-direction-item').forEach(item => {
+      const toggle = item.querySelector('.sozo-direction-toggle');
+      const content = item.querySelector('.sozo-direction-content');
+
+      if (!toggle || !content) return;
+
+      toggle.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+
+        document.querySelectorAll('.sozo-direction-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            const otherToggle = other.querySelector('.sozo-direction-toggle');
+            const otherContent = other.querySelector('.sozo-direction-content');
+            if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+            if (otherContent) otherContent.style.maxHeight = null;
+          }
+        });
+
+        if (!isOpen) {
+          item.classList.add('active');
+          toggle.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          item.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  function setupFaq() {
+    document.querySelectorAll('.sozo-faq-item').forEach(item => {
+      const btn = item.querySelector('.sozo-faq-question');
+      const ans = item.querySelector('.sozo-faq-answer');
+
+      if (!btn || !ans) return;
+
+      btn.addEventListener('click', () => {
+        const active = item.classList.contains('active');
+        document.querySelectorAll('.sozo-faq-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            const otherBtn = other.querySelector('.sozo-faq-question');
+            const otherAns = other.querySelector('.sozo-faq-answer');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            if (otherAns) otherAns.style.maxHeight = null;
+          }
+        });
+
+        if (!active) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          ans.style.maxHeight = ans.scrollHeight + "px";
+        } else {
+          item.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+          ans.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  let promoSliderCtrl = null;
+  let baSliderCtrl = null;
+  let quoteSliderCtrl = null;
+
+  function initSliders() {
+    promoSliderCtrl = initGenericSlider(
+      'sozoPromoSliderTrack',
+      'sozoPromoPrev',
+      'sozoPromoNext',
+      'sozoPromoDots',
+      'sozoPromoSliderContainer',
+      5500
+    );
+
+    baSliderCtrl = initGenericSlider(
+      'sozoBaSliderTrack',
+      'sozoBaPrev',
+      'sozoBaNext',
+      'sozoBaDots',
+      'sozoBaSliderContainer',
+      5000
+    );
+
+    quoteSliderCtrl = initGenericSlider(
+      'sozoQuoteSliderTrack',
+      'sozoQuotePrev',
+      'sozoQuoteNext',
+      'sozoQuoteDots',
+      'sozoQuoteSliderContainer',
+      6000
+    );
+  }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (ambienceSliderCtrl) ambienceSliderCtrl.refresh();
+      if (promoSliderCtrl) promoSliderCtrl.refresh();
+      if (baSliderCtrl) baSliderCtrl.refresh();
+      if (quoteSliderCtrl) quoteSliderCtrl.refresh();
+    }, 200);
+  });
+
+  function init() {
+    setupDirections();
+    setupFaq();
+    initSliders();
+    window.selectBranch(0);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>

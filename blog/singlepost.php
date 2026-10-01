@@ -643,7 +643,7 @@ function sz_single_post_shortcode() {
         <header class="sz-single-header">
 
             <div class="sz-breadcrumbs" aria-label="Breadcrumb">
-                <a href="<?php echo esc_url(home_url('/')); ?>">Beranda</a>
+                <a href="<?php echo esc_url(home_url('/blog/')); ?>">Blog</a>
                 <span aria-hidden="true">/</span>
                 <a href="<?php echo esc_url($cat_link); ?>"><?php echo esc_html($cat_name); ?></a>
             </div>
@@ -1105,22 +1105,26 @@ function sz_single_post_shortcode() {
 
     /**
      * ======================================================
-     * JSON-LD Schema
+     * JSON-LD Schema (versi simple — Article saja)
      * Satu @graph per artikel:
-     * - MedicalWebPage  : wrapper halaman, reviewedBy + lastReviewed
-     * - BlogPosting     : isi artikel (articleBody, wordCount, keywords)
-     * - Person reviewer : hanya kalau reviewer spesifik dipilih
-     * - BreadcrumbList  : Beranda > Kategori > Judul
-     * #organization dan #website dideklarasikan penuh hanya di homepage,
-     * halaman ini mereferensikan lewat @id (lihat AGENTS.md §2).
+     * - Article        : headline, image, dates, author minimal,
+     *                    publisher ref
+     * - BreadcrumbList : Blog > Kategori > Judul
+     * Tanpa reviewedBy (spec: properti itu hanya valid di WebPage).
+     * Info reviewer tetap tampil di byline + trust panel UI.
+     * Sengaja dibuang: MedicalWebPage wrapper, Person node detail
+     * (hasCredential/alumniOf/knowsAbout/image), articleBody,
+     * wordCount, timeRequired, keywords, citation, about medis.
+     * #organization dan #website hanya direferensikan lewat @id,
+     * deklarasi penuh tetap di homepage (lihat AGENTS.md §2).
      * ======================================================
      */
     $breadcrumb_items = array(
         array(
             '@type'    => 'ListItem',
             'position' => 1,
-            'name'     => 'Beranda',
-            'item'     => home_url('/'),
+            'name'     => 'Blog',
+            'item'     => home_url('/blog/'),
         ),
         array(
             '@type'    => 'ListItem',
@@ -1136,153 +1140,42 @@ function sz_single_post_shortcode() {
         ),
     );
 
-    $image_schema = array();
+    $blog_posting = array(
+        '@type'            => 'Article',
+        '@id'              => trailingslashit($permalink) . '#article',
+        'mainEntityOfPage' => esc_url_raw($permalink),
+        'url'              => esc_url_raw($permalink),
+        'headline'         => $post_title,
+        'description'      => $description,
+        'inLanguage'       => 'id-ID',
+        'isPartOf'         => array(
+            '@id' => home_url('/#website'),
+        ),
+        'datePublished'    => $date_published_iso,
+        'dateModified'     => $date_modified_iso,
+        'articleSection'   => $cat_name,
+        'author'           => array(
+            '@type' => 'Person',
+            'name'  => $author_name,
+            'url'   => esc_url_raw($author_url),
+        ),
+        'publisher'        => array(
+            '@id' => home_url('/#organization'),
+        ),
+    );
 
     if (!empty($thumb_url)) {
-        $image_schema[] = array(
-            '@type'  => 'ImageObject',
-            'url'    => esc_url_raw($thumb_url),
-            'width'  => (int) $thumb_w,
-            'height' => (int) $thumb_h,
-        );
+        $blog_posting['image'] = esc_url_raw($thumb_url);
     }
-
-    // Keywords dari tag artikel (kalau ada)
-    $keywords = '';
-
-    if (!empty($tags) && !is_wp_error($tags)) {
-        $keywords = implode(', ', wp_list_pluck($tags, 'name'));
-    }
-
-    // ── Person node reviewer (hanya dipasang kalau reviewer spesifik) ──
-    $person_node = array(
-        '@type'    => 'Person',
-        '@id'      => trailingslashit($reviewer_schema_url) . '#person',
-        'name'     => $reviewer_schema_name,
-        'jobTitle' => $reviewer_schema_role,
-        'url'      => esc_url_raw($reviewer_schema_url),
-        'worksFor' => array(
-            '@type' => 'MedicalOrganization',
-            '@id'   => home_url('/#organization'),
-        ),
-    );
-
-    // image: foto reviewer untuk E-E-A-T signal
-    if (!empty($reviewer_image_url)) {
-        $person_node['image'] = esc_url_raw($reviewer_image_url);
-    }
-
-    // hasCredential: dari registry/legacy (skip key kalau array kosong biar gak muncul [])
-    if (!empty($reviewer_credentials)) {
-        $person_node['hasCredential'] = array_values($reviewer_credentials);
-    }
-
-    // alumniOf: dari registry/legacy
-    if (!empty($reviewer_alumni)) {
-        $person_node['alumniOf'] = array_values($reviewer_alumni);
-    }
-
-    // knowsAbout: keahlian reviewer (bonus E-E-A-T signal)
-    if (!empty($reviewer_expertise)) {
-        $person_node['knowsAbout'] = array_map(
-            static function ($item) {
-                return array('@type' => 'Thing', 'name' => $item);
-            },
-            array_values($reviewer_expertise)
-        );
-    }
-
-    // reviewedBy: Person kalau reviewer spesifik, kalau tim medis arahkan
-    // ke #organization (MedicalOrganization) supaya tidak menunjuk orang
-    // yang tidak tampil di UI.
-    $reviewed_by = $reviewer_is_person
-        ? array('@id' => $person_node['@id'])
-        : array(
-            '@type' => 'MedicalOrganization',
-            '@id'   => home_url('/#organization'),
-        );
 
     $schema_graph = array(
+        $blog_posting,
         array(
-            '@type'        => 'MedicalWebPage',
-            '@id'          => trailingslashit($permalink) . '#webpage',
-            'url'          => esc_url_raw($permalink),
-            'name'         => $post_title,
-            'description'  => $description,
-            'inLanguage'   => 'id-ID',
-            'isPartOf'     => array(
-                '@id' => home_url('/#website'),
-            ),
-            'about'        => array(
-                '@id' => home_url('/#organization'),
-            ),
-            'mainEntity'   => array(
-                '@id' => trailingslashit($permalink) . '#article',
-            ),
-            'reviewedBy'   => $reviewed_by,
-            'lastReviewed' => $last_reviewed_iso,
-            'breadcrumb'   => array(
-                '@id' => trailingslashit($permalink) . '#breadcrumb',
-            ),
-        ),
-        // ── BlogPosting: isi artikel + atribusi E-E-A-T ──
-        array(
-            '@type'               => 'BlogPosting',
-            '@id'                 => trailingslashit($permalink) . '#article',
-            'mainEntityOfPage'    => array(
-                '@id' => trailingslashit($permalink) . '#webpage',
-            ),
-            'url'                 => esc_url_raw($permalink),
-            'headline'            => $post_title,
-            'description'         => $description,
-            'inLanguage'          => 'id-ID',
-            'about'               => array(
-                '@type' => 'Thing',
-                'name'  => $medical_topic,
-            ),
-            'image'               => $image_schema,
-            'datePublished'       => $date_published_iso,
-            'dateModified'        => $date_modified_iso,
-            'articleSection'      => $cat_name,
-            'articleBody'         => $article_body,
-            'wordCount'           => $word_count,
-            'timeRequired'        => 'PT' . $reading_time . 'M',
-            'isAccessibleForFree' => true,
-            'author'              => array(
-                '@type'    => 'Person',
-                '@id'      => trailingslashit($author_url) . '#person',
-                'name'     => $author_name,
-                'url'      => esc_url_raw($author_url),
-                'jobTitle' => $author_role,
-                'image'    => esc_url_raw($author_avatar),
-                'worksFor' => array(
-                    '@type' => 'MedicalOrganization',
-                    '@id'   => home_url('/#organization'),
-                ),
-            ),
-            'publisher'           => array(
-                '@id' => home_url('/#organization'),
-            ),
+            '@type'           => 'BreadcrumbList',
+            '@id'             => trailingslashit($permalink) . '#breadcrumb',
+            'itemListElement' => $breadcrumb_items,
         ),
     );
-
-    if ($reviewer_is_person) {
-        $schema_graph[] = $person_node;
-    }
-
-    $schema_graph[] = array(
-        '@type'           => 'BreadcrumbList',
-        '@id'             => trailingslashit($permalink) . '#breadcrumb',
-        'itemListElement' => $breadcrumb_items,
-    );
-
-    if ($keywords !== '') {
-        $schema_graph[1]['keywords'] = $keywords;
-    }
-
-    if (!empty($references)) {
-        $schema_graph[1]['citation'] = array_values($references);
-    }
 
     $schema = array(
         '@context' => 'https://schema.org',

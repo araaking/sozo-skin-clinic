@@ -1,0 +1,1523 @@
+<div class="clinic-testimonial-hero-wrapper">
+  <div class="testimonial-hero-container">
+
+    <!-- Kolom Kiri: Judul Halaman & Angka Kepercayaan -->
+    <div class="hero-text-side">
+      <nav class="testimonials-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li class="separator" aria-hidden="true">/</li>
+          <li aria-current="page"><span>Testimoni</span></li>
+        </ol>
+      </nav>
+      <div class="testimonial-hero-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        Ulasan Jujur Pasien
+      </div>
+      <h1 class="testimonial-hero-title">Cerita Nyata Di Balik Kulit Sehat & Percaya Diri</h1>
+      <p class="testimonial-hero-subtitle">Bukan sekadar janji manis, inilah kumpulan pengalaman langsung dan transformasi jujur dari mereka yang telah memercayakan perjalanan estetika kulitnya di Sozo Skin Clinic.</p>
+
+      <!-- Bukti Sosial / Statistik Singkat -->
+      <div class="hero-stats-row">
+        <div class="stat-item">
+          <div class="stat-number">
+            4.9
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <span class="stat-label">Rating Kepuasan Pasien</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">10K+</div>
+          <span class="stat-label">Transformasi Sukses</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kolom Kanan: Gambar Estetis (Senyum Pasien) -->
+    <div class="hero-image-side">
+      <div class="hero-img-blob-bg"></div>
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Acne-Single-Treatment-Acne-meso-redness.webp" alt="Pasien Puas Sozo Skin Clinic" fetchpriority="high" decoding="async">
+    </div>
+
+  </div>
+</div>
+
+<style>
+  /* HERO — canvas putih, token DS V1 */
+  .clinic-testimonial-hero-wrapper {
+    --primary-color: #1A2080 !important;
+    --text-dark: #171715 !important;
+    --text-muted: #41413E !important;
+    --star-color: #FFC200 !important;
+
+    font-family: 'Poppins', sans-serif !important;
+    background: #FFFFFF !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .clinic-testimonial-hero-wrapper * {
+    box-sizing: border-box !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .testimonials-breadcrumb {
+    width: 100% !important;
+    align-self: flex-start !important;
+    margin: 0 0 16px !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .testimonials-breadcrumb ol {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px 10px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .testimonials-breadcrumb a {
+    color: #777771 !important;
+    text-decoration: none !important;
+    transition: color 180ms ease !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .testimonials-breadcrumb a:hover,
+  .clinic-testimonial-hero-wrapper .testimonials-breadcrumb a:focus-visible {
+    color: #1A2080 !important;
+    text-decoration: none !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .testimonials-breadcrumb .separator {
+    color: #777771 !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .testimonials-breadcrumb [aria-current="page"] {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .testimonial-hero-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 40px 20px !important;
+    display: grid !important;
+    grid-template-columns: 1.1fr 0.9fr !important;
+    gap: 40px !important;
+    align-items: center !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .hero-text-side {
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .testimonial-hero-badge {
+    display: inline-flex;
+    align-items: center !important;
+    gap: 6px !important;
+    background-color: #E9DFD5 !important;
+    color: var(--primary-color) !important;
+    padding: 6px 14px !important;
+    border-radius: 999px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .testimonial-hero-title {
+    color: var(--primary-color) !important;
+    font-size: clamp(32px, 4.5vw, 48px) !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0 !important;
+    margin: 0 0 16px 0 !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .testimonial-hero-subtitle {
+    color: var(--text-muted) !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin: 0 0 32px 0 !important;
+    max-width: 600px !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .hero-stats-row {
+    display: flex;
+    align-items: center !important;
+    gap: 24px !important;
+    background: #ffffff !important;
+    padding: 16px 24px !important;
+    border-radius: 16px !important;
+    border: 1px solid #DFDBD4 !important;
+    box-shadow: 0 2px 8px rgba(23, 23, 21, 0.04) !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .stat-item {
+    display: flex;
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .stat-number {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    color: var(--primary-color) !important;
+    line-height: 1 !important;
+    display: flex;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .stat-label {
+    font-size: 13px !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .stat-divider {
+    width: 1px !important;
+    height: 40px !important;
+    background-color: #DFDBD4 !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .hero-image-side {
+    position: relative !important;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .hero-img-blob-bg {
+    position: absolute !important;
+    width: 110% !important;
+    height: 110% !important;
+    background: radial-gradient(circle, rgba(217, 199, 177, 0.35) 0%, transparent 65%) !important;
+    z-index: 1 !important;
+  }
+
+  .clinic-testimonial-hero-wrapper .hero-image-side img {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: 460px !important;
+    height: auto !important;
+    aspect-ratio: 1/1 !important;
+    object-fit: cover !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 24px rgba(23, 23, 21, 0.07) !important;
+    border: 6px solid #ffffff !important;
+  }
+
+  @media (max-width: 991px) {
+    .clinic-testimonial-hero-wrapper .testimonial-hero-container {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+      padding: 32px 20px !important;
+      text-align: center !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .hero-text-side {
+      align-items: center !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .testimonial-hero-subtitle {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .hero-stats-row {
+      margin: 0 auto !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .clinic-testimonial-hero-wrapper .testimonial-hero-container {
+      padding: 32px 20px 28px 20px !important;
+      gap: 20px !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .testimonial-hero-title {
+      font-size: 28px !important;
+      line-height: 1.2 !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .testimonial-hero-subtitle {
+      font-size: 15px !important;
+      margin-bottom: 20px !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .hero-stats-row {
+      gap: 16px !important;
+      padding: 16px 12px !important;
+      width: 100% !important;
+      justify-content: space-around !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .stat-item {
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .stat-label {
+      white-space: normal !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .stat-number {
+      font-size: 24px !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .stat-label {
+      font-size: 11px !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .hero-image-side img {
+      border-radius: 16px !important;
+      max-width: 320px !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .testimonials-breadcrumb {
+      align-self: center !important;
+      margin-bottom: 10px !important;
+    }
+
+    .clinic-testimonial-hero-wrapper .testimonials-breadcrumb ol {
+      justify-content: center !important;
+    }
+  }
+</style>
+
+<div class="clinic-ba-wrapper">
+
+  <!-- Header Section -->
+  <div class="ba-header">
+    <h2 class="ba-title">Bukti Nyata Transformasi Pasien Sozo</h2>
+    <p class="ba-subtitle">Lihat hasil nyata sebelum dan sesudah menjalani rangkaian perawatan intensif di klinik kami.</p>
+  </div>
+
+  <!-- Filter Kategori (Mobile Friendly - Bisa di-swipe kesamping) -->
+  <div class="ba-filters-container">
+    <div class="ba-filters">
+      <button class="ba-filter-btn active" data-filter="all" onclick="filterBA('all')">Semua Area</button>
+      <button class="ba-filter-btn" data-filter="wajah" onclick="filterBA('wajah')">Wajah & Bibir</button>
+      <button class="ba-filter-btn" data-filter="body" onclick="filterBA('body')">Slimming & Body</button>
+      <button class="ba-filter-btn" data-filter="hair" onclick="filterBA('hair')">Hair Treatment</button>
+    </div>
+  </div>
+
+  <!-- Grid Gallery -->
+  <div class="ba-grid" id="baGrid">
+
+    <!-- 1. Pink Lips -->
+    <div class="ba-card" data-category="wajah">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-pink-lips.webp" alt="Before After Pink Lips" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Pink Lips Treatment</h3>
+        <span class="ba-card-badge">Wajah & Bibir</span>
+      </div>
+    </div>
+
+    <!-- 2. Zotox -->
+    <div class="ba-card" data-category="wajah">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-Zotox.webp" alt="Before After Zo-tox" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Zo-tox Treatment</h3>
+        <span class="ba-card-badge">Wajah & Bibir</span>
+      </div>
+    </div>
+
+    <!-- 3. Skin Booster -->
+    <div class="ba-card" data-category="wajah">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/BA-skin-booster.webp" alt="Before After Skin Booster" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Skin Booster</h3>
+        <span class="ba-card-badge">Wajah & Bibir</span>
+      </div>
+    </div>
+
+    <!-- 4. Laser CO2 -->
+    <div class="ba-card" data-category="wajah">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/BA-Laser-1.webp" alt="Before After Laser CO2" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Laser CO2 Treatment</h3>
+        <span class="ba-card-badge">Wajah & Bibir</span>
+      </div>
+    </div>
+
+    <!-- 5. Laser Rejuve -->
+    <div class="ba-card" data-category="wajah">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/01/Before-After-Web-Laser_Laser-Rejuve.webp" alt="Before After Laser Rejuve" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Laser Rejuve</h3>
+        <span class="ba-card-badge">Wajah & Bibir</span>
+      </div>
+    </div>
+
+    <!-- 6. Meso V Line -->
+    <div class="ba-card" data-category="wajah">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Before-After-2.webp" alt="Before After Meso V Line" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Meso V-Line</h3>
+        <span class="ba-card-badge">Wajah & Bibir</span>
+      </div>
+    </div>
+
+    <!-- 7. Liftera HIFU -->
+    <div class="ba-card" data-category="wajah">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Before-After-Liftera-2-1-1.webp" alt="Before After Liftera HIFU" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Liftera HIFU</h3>
+        <span class="ba-card-badge">Wajah & Bibir</span>
+      </div>
+    </div>
+
+    <!-- 8. Underarm Hair Removal -->
+    <div class="ba-card" data-category="body">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/02/LP-Mockup-Underarm-Hair-Removal-BeforeAfterKetiak@0.7x.webp" alt="Before After Underarm Hair Removal" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Underarm Hair Removal</h3>
+        <span class="ba-card-badge">Slimming & Body</span>
+      </div>
+    </div>
+
+    <!-- 9. Fatburn Laser -->
+    <div class="ba-card" data-category="body">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/LP-Mockup-Slimming-Slimming-Badan-Before-After-Perut.webp" alt="Before After Fatburn Laser" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">FatBurn Laser</h3>
+        <span class="ba-card-badge">Slimming & Body</span>
+      </div>
+    </div>
+
+    <!-- 10. Slimming Treatment -->
+    <div class="ba-card" data-category="body">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Hero-Image-Before-After-Slimming-scaled.webp" alt="Before After Slimming Treatment" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Slimming Intensive Care</h3>
+        <span class="ba-card-badge">Slimming & Body</span>
+      </div>
+    </div>
+
+    <!-- 11. Hair Treatment -->
+    <div class="ba-card" data-category="hair">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Before-After-scaled.webp" alt="Before After Hair Treatment" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Hair Growth Therapy</h3>
+        <span class="ba-card-badge">Hair Treatment</span>
+      </div>
+    </div>
+
+    <!-- 12. Kebotakan -->
+    <div class="ba-card" data-category="hair">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Before-After-5-1.webp" alt="Before After Kebotakan" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Solusi Kebotakan (Alopecia)</h3>
+        <span class="ba-card-badge">Hair Treatment</span>
+      </div>
+    </div>
+
+    <!-- 13. Rambut Rontok -->
+    <div class="ba-card" data-category="hair">
+      <div class="ba-image-box" onclick="openBALightbox(this)">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Before-After-1.webp" alt="Before After Rambut Rontok" loading="lazy" decoding="async">
+        <div class="ba-overlay-zoom">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+      </div>
+      <div class="ba-info">
+        <h3 class="ba-card-title">Solusi Rambut Rontok</h3>
+        <span class="ba-card-badge">Hair Treatment</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Lightbox Modal Container -->
+<div id="baLightboxModal" class="ba-lightbox-modal" onclick="closeBALightbox()">
+  <span class="ba-lightbox-close">&times;</span>
+  <img class="ba-lightbox-content" id="baLightboxImage" alt="Zoomed View">
+</div>
+
+<style>
+  /* GALERI BEFORE-AFTER — token DS V1 */
+  .clinic-ba-wrapper {
+    --primary-color: #1A2080 !important;
+    --text-dark: #171715 !important;
+    --text-muted: #41413E !important;
+    --border-color: #DFDBD4 !important;
+    --card-bg: #ffffff !important;
+
+    font-family: 'Poppins', sans-serif !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 40px 20px !important;
+  }
+
+  .clinic-ba-wrapper * {
+    box-sizing: border-box !important;
+  }
+
+  .clinic-ba-wrapper .ba-header {
+    text-align: center !important;
+    max-width: 700px !important;
+    margin: 0 auto 20px auto !important;
+  }
+
+  .clinic-ba-wrapper .ba-title {
+    color: var(--primary-color) !important;
+    font-size: clamp(24px, 4vw, 32px) !important;
+    font-weight: 700 !important;
+    margin: 0 0 12px 0 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.3 !important;
+  }
+
+  .clinic-ba-wrapper .ba-subtitle {
+    color: var(--text-muted) !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  .clinic-ba-wrapper .ba-filters-container {
+    margin-bottom: 24px !important;
+  }
+
+  .clinic-ba-wrapper .ba-filters {
+    display: flex;
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+
+  .clinic-ba-wrapper .ba-filter-btn {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-muted) !important;
+    padding: 10px 20px !important;
+    border-radius: 999px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease;
+    white-space: nowrap !important;
+    font-family: inherit !important;
+  }
+
+  .clinic-ba-wrapper .ba-filter-btn:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+  }
+
+  .clinic-ba-wrapper .ba-filter-btn.active {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+  }
+
+  .clinic-ba-wrapper .ba-filter-btn:focus-visible {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+  }
+
+  .clinic-ba-wrapper .ba-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+    transition: opacity 0.3s ease;
+  }
+
+  .clinic-ba-wrapper .ba-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column !important;
+    box-shadow: none !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .clinic-ba-wrapper .ba-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(23, 23, 21, 0.07) !important;
+    border-color: #C8C3BA !important;
+  }
+
+  .clinic-ba-wrapper .ba-image-box {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 4/3 !important;
+    background-color: #E9DFD5 !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+  }
+
+  .clinic-ba-wrapper .ba-image-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 400ms ease;
+  }
+
+  .clinic-ba-wrapper .ba-card:hover .ba-image-box img {
+    transform: scale(1.03) !important;
+  }
+
+  .clinic-ba-wrapper .ba-overlay-zoom {
+    position: absolute !important;
+    top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important;
+    background-color: rgba(26, 32, 128, 0.2) !important;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s ease;
+    z-index: 2 !important;
+  }
+
+  .clinic-ba-wrapper .ba-image-box:hover .ba-overlay-zoom {
+    opacity: 1 !important;
+  }
+
+  .clinic-ba-wrapper .ba-overlay-zoom svg {
+    color: #ffffff !important;
+    transform: scale(0.8) !important;
+    transition: transform 0.2s ease;
+  }
+
+  .clinic-ba-wrapper .ba-image-box:hover .ba-overlay-zoom svg {
+    transform: scale(1) !important;
+  }
+
+  .clinic-ba-wrapper .ba-info {
+    padding: 16px 20px !important;
+    display: flex;
+    flex-direction: column !important;
+    gap: 6px !important;
+    background: #ffffff !important;
+  }
+
+  .clinic-ba-wrapper .ba-card-title {
+    color: var(--text-dark) !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  .clinic-ba-wrapper .ba-card-badge {
+    align-self: flex-start !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: var(--primary-color) !important;
+    background-color: #E9DFD5 !important;
+    padding: 3px 10px !important;
+    border-radius: 999px !important;
+  }
+
+  /* Lightbox Modal */
+  .ba-lightbox-modal {
+    display: none;
+    position: fixed !important;
+    z-index: 999999 !important;
+    padding-top: 60px !important;
+    left: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important;
+    overflow: auto !important;
+    background-color: rgba(23, 23, 21, 0.92) !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .ba-lightbox-content {
+    margin: auto !important;
+    display: block !important;
+    width: 90% !important;
+    max-width: 800px !important;
+    max-height: 80vh !important;
+    object-fit: contain !important;
+    border-radius: 16px !important;
+    box-shadow: 0 16px 40px rgba(23, 23, 21, 0.10) !important;
+    animation: baZoomIn 0.25s ease-out !important;
+  }
+
+  @keyframes baZoomIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .ba-lightbox-close {
+    position: absolute !important;
+    top: 20px !important; right: 30px !important;
+    color: #ffffff !important;
+    font-size: 40px !important;
+    font-weight: 300 !important;
+    transition: 0.2s;
+    cursor: pointer !important;
+    user-select: none !important;
+  }
+
+  .ba-lightbox-close:hover {
+    color: #ffffff !important;
+    transform: scale(1.1) !important;
+  }
+
+  @media (max-width: 991px) {
+    .clinic-ba-wrapper .ba-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 16px !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .clinic-ba-wrapper {
+      padding: 32px 16px !important;
+    }
+
+    .clinic-ba-wrapper .ba-filters-container {
+      margin-left: -16px !important;
+      margin-right: -16px !important;
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .clinic-ba-wrapper .ba-filters-container::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .clinic-ba-wrapper .ba-filters {
+      justify-content: flex-start !important;
+      gap: 8px !important;
+      padding-bottom: 4px !important;
+    }
+
+    .clinic-ba-wrapper .ba-filter-btn {
+      padding: 8px 16px !important;
+      font-size: 13px !important;
+    }
+
+    .clinic-ba-wrapper .ba-grid {
+      display: flex !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      gap: 16px !important;
+      padding: 10px 4px 24px 4px !important;
+      margin-left: -4px !important;
+      margin-right: -4px !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .clinic-ba-wrapper .ba-grid::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .clinic-ba-wrapper .ba-card {
+      flex: 0 0 85% !important;
+      max-width: 85% !important;
+      scroll-snap-align: start !important;
+    }
+
+    .clinic-ba-wrapper .ba-card {
+      border-radius: 16px !important;
+    }
+
+    .clinic-ba-wrapper .ba-card-title {
+      font-size: 14px !important;
+      line-height: 1.35 !important;
+    }
+
+    .clinic-ba-wrapper .ba-card-badge {
+      font-size: 11px !important;
+      padding: 3px 9px !important;
+    }
+
+    .clinic-ba-wrapper .ba-info {
+      padding: 14px 16px !important;
+    }
+
+    .ba-lightbox-close {
+      top: 15px !important; right: 20px !important;
+      font-size: 35px !important;
+    }
+  }
+</style>
+
+<script>
+  // Filter kategori galeri before-after, tanpa loading
+  function filterBA(category) {
+    const cards = document.querySelectorAll('.ba-card');
+    const buttons = document.querySelectorAll('.ba-filter-btn');
+    const gridContainer = document.getElementById('baGrid');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.ba-filter-btn[data-filter="${category}"]`).classList.add('active');
+
+    cards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+      if (category === 'all' || cardCategory === category) {
+        card.style.display = 'flex';
+        card.style.opacity = '0';
+        requestAnimationFrame(() => {
+          card.style.transition = 'opacity 0.3s ease';
+          card.style.opacity = '1';
+        });
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if(gridContainer) {
+      gridContainer.scrollLeft = 0;
+    }
+  }
+
+  // Buka lightbox zoom gambar
+  function openBALightbox(element) {
+    const imgSrc = element.querySelector('img').src;
+    const modal = document.getElementById('baLightboxModal');
+    const modalImg = document.getElementById('baLightboxImage');
+
+    modal.style.display = "flex";
+    modalImg.src = imgSrc;
+    document.body.style.overflow = "hidden";
+  }
+
+  // Tutup lightbox
+  function closeBALightbox() {
+    const modal = document.getElementById('baLightboxModal');
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeBALightbox();
+    }
+  });
+</script>
+
+<div class="clinic-testimonials-wrapper">
+
+  <div class="testimonials-header">
+    <h2 class="testimonials-title">Apa Kata Mereka?</h2>
+    <p class="testimonials-subtitle">Review jujur dari pasien yang telah mempercayakan kesehatan kulit, tubuh, dan rambutnya di Sozo Skin Clinic.</p>
+  </div>
+
+  <div class="tst-filters-container">
+    <div class="tst-filters">
+      <button class="tst-filter-btn active" data-filter="all" onclick="filterTestimonials('all')">Semua Review</button>
+      <button class="tst-filter-btn" data-filter="wajah" onclick="filterTestimonials('wajah')">Wajah & Acne</button>
+      <button class="tst-filter-btn" data-filter="slimming" onclick="filterTestimonials('slimming')">Slimming & Body</button>
+      <button class="tst-filter-btn" data-filter="hair" onclick="filterTestimonials('hair')">Hair Therapy</button>
+    </div>
+  </div>
+
+  <div class="testimonials-grid" id="testimonialsGrid">
+
+    <div class="testimonial-card" data-category="wajah">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Jerawat aku bikin ribet sampai harus nutupin pakai makeup terus. Nyoba 30 Days Acne Program karena saran temen, dan ternyata works di aku. Jerawat jadi jauh lebih kalem, bekasnya juga makin pudar, bikin pede naik!"</p>
+      <div class="user-profile">
+        <div class="user-avatar">AS</div>
+        <div class="user-info">
+          <h4 class="user-name">Asha</h4>
+          <span class="user-tag">Pasien 30 Days Acne Program</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="wajah">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Dulu sih gue jerawatan banget sampai males ketemu orang. Abis Pore Detox sekali, jerawat gue langsung kalem, terus bikin jerawat gue nggak gampang nongol lagi. Fix, ini treatment all-in banget sih!"</p>
+      <div class="user-profile">
+        <div class="user-avatar">HK</div>
+        <div class="user-info">
+          <h4 class="user-name">Hakim</h4>
+          <span class="user-tag">Pasien Pore Detox</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="wajah">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Sempet takut dan bertanya-tanya, emang bisa ya muka jerawatan di-facial? Ternyata bisa banget, malah bikin wajah gue jadi lebih bersih dan kemerahannya reda. Pokoknya aman deh untuk wajah berjerawat."</p>
+      <div class="user-profile">
+        <div class="user-avatar">HM</div>
+        <div class="user-info">
+          <h4 class="user-name">Hilman</h4>
+          <span class="user-tag">Pasien Acne Facial</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="wajah">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Bekas jerawat gak ilang-ilang, warna kulit jadi gak merata dan kusam. Udah cobain banyak serum masih gak ngaruh. Akhirnya cobain treatment Diamond Laser Facial, ternyata baru 1x treatment langsung keliatan hasilnya. Kemerahan hilang dan kulit jadi lebih cerah."</p>
+      <div class="user-profile">
+        <div class="user-avatar">CK</div>
+        <div class="user-info">
+          <h4 class="user-name">Chika</h4>
+          <span class="user-tag">Pasien Diamond Laser Facial</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="wajah">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Suka sekali dengan RF Wajah di sini. Kerutan halus di sekitar mata mulai tersamarkan dan wajah kelihatan lebih v-shape serta fresh. Tempatnya bersih dan nyaman banget."</p>
+      <div class="user-profile">
+        <div class="user-avatar">AP</div>
+        <div class="user-info">
+          <h4 class="user-name">Amanda Putri</h4>
+          <span class="user-tag">Pasien RF Wajah</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="wajah">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Pelayanan di Sozo Skin Clinic juara banget. Nggak cuma dapet treatment yang tepat, tapi juga dikasih tips skincare routine yang cocok buat jenis kulit saya."</p>
+      <div class="user-profile">
+        <div class="user-avatar">BS</div>
+        <div class="user-info">
+          <h4 class="user-name">Budi Santoso</h4>
+          <span class="user-tag">Pasien Skin Treatment</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="slimming">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Dulu tim oversized mulu karena nggak pede sama lemak & kulit kendor. Setelah jalanin program pelangsing Sozo, sekarang udah berani pake crop top & dress body-fit. Lemak luntur, kulit auto kenceng. Worth it parah!"</p>
+      <div class="user-profile">
+        <div class="user-avatar">AP</div>
+        <div class="user-info">
+          <h4 class="user-name">Amanda Putri</h4>
+          <span class="user-tag">Pasien Slimming Program</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="slimming">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"BB udah turun, tapi badan masih kurang kenceng. Semenjak ikut program pelangsing Sozo, massa otot jadi kebentuk dan badan lebih firm. Nggak nyangka prosesnya senyaman ini, tapi hasilnya nyata banget!"</p>
+      <div class="user-profile">
+        <div class="user-avatar">NZ</div>
+        <div class="user-info">
+          <h4 class="user-name">Rania Zalfa</h4>
+          <span class="user-tag">Pasien Slimming Program</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="slimming">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Setelah rutin treatment RF Body Slimming di Sozo, selulit di area paha berkurang banget dan kulit jadi terasa jauh lebih kencang. Dokternya ramah dan pengerjaannya sangat detail!"</p>
+      <div class="user-profile">
+        <div class="user-avatar">NR</div>
+        <div class="user-info">
+          <h4 class="user-name">Nadia Rahma</h4>
+          <span class="user-tag">Pasien RF Body Slimming</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="hair">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Rambutku Rontok dari umur 20an, cobain banyak cara tapi gak works. Aku coba treatment di Sozo ternyata perlu tahapan konsultasi sama dokter baru aku dapet solusi, aku beberapa kali treatment Express Hair Therapy dan pakai custom serum dari Sozo, sekarang rambut kuat gak rontok lagi!"</p>
+      <div class="user-profile">
+        <div class="user-avatar">RP</div>
+        <div class="user-info">
+          <h4 class="user-name">Rizka Purnadi</h4>
+          <span class="user-tag">Pasien Express Hair Therapy</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="hair">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Sempet botak di beberapa area, tapi PRP Hair bantu stimulasi folikel jadi mulai tumbuh rambut baru yang isi kebotakan. Perlahan, tapi berprogres!"</p>
+      <div class="user-profile">
+        <div class="user-avatar">MH</div>
+        <div class="user-info">
+          <h4 class="user-name">Mahran</h4>
+          <span class="user-tag">Pasien PRP Hair Treatment</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="hair">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Kondisi kebotakan yang cukup parah susah kalau cuman andelin 1 cara aja. Habis coba 90 Days Hair Growth Program, perawatannya lebih intensif dan dapet kombinasi vitamin dan serum, bikin rambut numbuh jadi lebih lebat dan padat!"</p>
+      <div class="user-profile">
+        <div class="user-avatar">AD</div>
+        <div class="user-info">
+          <h4 class="user-name">Andrew</h4>
+          <span class="user-tag">Pasien 90 Days Hair Growth</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="hair">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Dari pasrah punya rambut M-shape yang ketara banget, sampe akhirnya bisa pede karena rambut lebih keisi! Gak sia-sia nyobain PRP Hair buat stimulasi pertumbuhan rambut."</p>
+      <div class="user-profile">
+        <div class="user-avatar">RY</div>
+        <div class="user-info">
+          <h4 class="user-name">Ryan</h4>
+          <span class="user-tag">Pasien PRP Hair Treatment</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="hair">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Sempet pesimis sama rambut yang makin lama makin tipis. Setelah beraniin buat Hair Grow Combo, rambut gue udah mulai numbuh, pelan-pelan jadi keisi! Real minim effort tapi hasilnya yang gak sia-sia"</p>
+      <div class="user-profile">
+        <div class="user-avatar">RC</div>
+        <div class="user-info">
+          <h4 class="user-name">Richard</h4>
+          <span class="user-tag">Pasien Hair Grow Combo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card" data-category="hair">
+      <div class="card-top">
+        <div class="stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#FFC200" stroke="#FFC200"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="quote-icon">“</div>
+      </div>
+      <p class="testimonial-text">"Banyak teman merekomendasikan penanganan rambut tipis di Sozo. Akhirnya saya bareng pacar coba ambil paket Hair Grow Combo. Hanya butuh beberapa minggu, rambut baru mulai tumbuh lebat. Rekomendasi klinik kecantikan terbaik!"</p>
+      <div class="user-profile">
+        <div class="user-avatar">DC</div>
+        <div class="user-info">
+          <h4 class="user-name">Dianca</h4>
+          <span class="user-tag">Pasien Hair Grow Combo</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  /* GRID TESTIMONI — token DS V1 */
+  .clinic-testimonials-wrapper {
+    --primary-color: #1A2080 !important;
+    --text-dark: #171715 !important;
+    --text-muted: #41413E !important;
+    --border-color: #DFDBD4 !important;
+    --card-bg: #ffffff !important;
+
+    font-family: 'Poppins', sans-serif !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 40px 20px !important;
+  }
+
+  .clinic-testimonials-wrapper * {
+    box-sizing: border-box !important;
+  }
+
+  .clinic-testimonials-wrapper .testimonials-header {
+    text-align: center !important;
+    max-width: 700px !important;
+    margin: 0 auto 20px auto !important;
+  }
+
+  .clinic-testimonials-wrapper .testimonials-title {
+    color: var(--primary-color) !important;
+    font-size: clamp(24px, 4vw, 32px) !important;
+    font-weight: 700 !important;
+    margin: 0 0 12px 0 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.3 !important;
+  }
+
+  .clinic-testimonials-wrapper .testimonials-subtitle {
+    color: var(--text-muted) !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  .clinic-testimonials-wrapper .tst-filters-container {
+    margin-bottom: 24px !important;
+  }
+
+  .clinic-testimonials-wrapper .tst-filters {
+    display: flex;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  .clinic-testimonials-wrapper .tst-filter-btn {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-muted) !important;
+    padding: 10px 20px !important;
+    border-radius: 999px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease;
+    white-space: nowrap !important;
+    font-family: inherit !important;
+  }
+
+  .clinic-testimonials-wrapper .tst-filter-btn:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+  }
+
+  .clinic-testimonials-wrapper .tst-filter-btn.active {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+  }
+
+  .clinic-testimonials-wrapper .tst-filter-btn:focus-visible {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+  }
+
+  .clinic-testimonials-wrapper .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  .clinic-testimonials-wrapper .testimonial-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: none !important;
+  }
+
+  .clinic-testimonials-wrapper .testimonial-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(23, 23, 21, 0.07) !important;
+    border-color: #C8C3BA !important;
+  }
+
+  .clinic-testimonials-wrapper .card-top {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 16px !important;
+  }
+
+  .clinic-testimonials-wrapper .stars {
+    display: flex;
+    gap: 3px !important;
+  }
+
+  .clinic-testimonials-wrapper .quote-icon {
+    font-size: 40px !important;
+    line-height: 1 !important;
+    color: #DFDBD4 !important;
+    font-family: serif !important;
+    font-weight: bold !important;
+    height: 24px !important;
+    display: flex;
+    align-items: center !important;
+  }
+
+  .clinic-testimonials-wrapper .testimonial-text {
+    color: var(--text-dark) !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin: 0 0 20px 0 !important;
+    flex-grow: 1 !important;
+  }
+
+  .clinic-testimonials-wrapper .user-profile {
+    display: flex;
+    align-items: center !important;
+    gap: 12px !important;
+    border-top: 1px solid #DFDBD4 !important;
+    padding-top: 14px !important;
+  }
+
+  .clinic-testimonials-wrapper .user-avatar {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #1A2080 !important;
+    background-color: #E9DFD5 !important;
+    flex-shrink: 0 !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .clinic-testimonials-wrapper .user-info {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .clinic-testimonials-wrapper .user-name {
+    color: var(--primary-color) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin: 0 0 2px 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  .clinic-testimonials-wrapper .user-tag {
+    color: #777771 !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+  }
+
+  @media (max-width: 991px) {
+    .clinic-testimonials-wrapper .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 16px !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .clinic-testimonials-wrapper {
+      padding: 32px 16px !important;
+    }
+
+    .clinic-testimonials-wrapper .tst-filters-container {
+      margin-left: -16px !important;
+      margin-right: -16px !important;
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .clinic-testimonials-wrapper .tst-filters-container::-webkit-scrollbar {
+      display: none !important;
+    }
+    .clinic-testimonials-wrapper .tst-filters {
+      justify-content: flex-start !important;
+      gap: 8px !important;
+      padding-bottom: 4px !important;
+    }
+    .clinic-testimonials-wrapper .tst-filter-btn {
+      padding: 8px 16px !important;
+      font-size: 13px !important;
+    }
+
+    .clinic-testimonials-wrapper .testimonials-grid {
+      display: flex !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      gap: 16px !important;
+      padding: 10px 4px 24px 4px !important;
+      margin-left: -4px !important;
+      margin-right: -4px !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+    }
+    .clinic-testimonials-wrapper .testimonials-grid::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .clinic-testimonials-wrapper .testimonial-card {
+      flex: 0 0 85% !important;
+      max-width: 85% !important;
+      scroll-snap-align: start !important;
+      padding: 18px !important;
+    }
+
+    .clinic-testimonials-wrapper .testimonial-text {
+      font-size: 13px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .clinic-testimonials-wrapper .user-name {
+      font-size: 13px !important;
+    }
+
+    .clinic-testimonials-wrapper .user-tag {
+      font-size: 11px !important;
+    }
+  }
+</style>
+
+<script>
+  function filterTestimonials(category) {
+    const cards = document.querySelectorAll('.testimonial-card');
+    const buttons = document.querySelectorAll('.tst-filter-btn');
+    const gridContainer = document.getElementById('testimonialsGrid');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    const activeBtn = document.querySelector(`.tst-filter-btn[data-filter="${category}"]`);
+    if(activeBtn) {
+      activeBtn.classList.add('active');
+    }
+
+    cards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+      if (category === 'all' || cardCategory === category) {
+        card.style.setProperty('display', 'flex', 'important');
+        card.style.opacity = '0';
+        requestAnimationFrame(() => {
+          card.style.transition = 'opacity 0.3s ease';
+          card.style.opacity = '1';
+        });
+      } else {
+        card.style.setProperty('display', 'none', 'important');
+      }
+    });
+
+    if(gridContainer) {
+      gridContainer.scrollLeft = 0;
+    }
+  }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/testimoni/#webpage",
+      "url": "https://sozoskinclinic.com/testimoni/",
+      "name": "Testimoni & Ulasan Pasien - Sozo Skin Clinic",
+      "description": "Cerita nyata dan ulasan pasien tentang pengalaman serta transformasi perawatan kulit, tubuh, dan rambut di Sozo Skin Clinic.",
+      "inLanguage": "id",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
+      "about": { "@id": "https://sozoskinclinic.com/#organization" },
+      "breadcrumb": { "@id": "https://sozoskinclinic.com/testimoni/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/testimoni/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Testimoni"
+        }
+      ]
+    }
+  ]
+}
+</script>

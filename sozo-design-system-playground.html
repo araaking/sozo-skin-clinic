@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sozo Skin Clinic Design System V1 — interactive implementation playground." />
+  <title>SOZO — Design System V1 Playground</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Typography */
+      --font-family-primary: "Poppins", sans-serif;
+      --font-weight-regular: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+      --font-weight-extrabold: 800;
+
+      /* Brand + semantic tokens */
+      --color-brand-primary: #1A2080;
+      --color-brand-secondary: #D9C7B1;
+      --color-brand-almond: #E9DFD5;
+      --color-brand-isabelline: #DFDBD4;
+      --color-white: #FFFFFF;
+      --color-text-primary: #171715;
+      --color-text-secondary: #41413E;
+      --color-text-muted: #777771;
+      --color-border: #DFDBD4;
+      --color-border-strong: #C8C3BA;
+      --color-primary-hover: #151A6D;
+      --color-secondary-hover: #CBB79F;
+      --color-success: #267A57;
+      --color-warning: #A66A18;
+      --color-error: #B64242;
+      --color-info: #39718C;
+      --color-promo-red: #EC4242;
+      --color-promo-yellow: #FFC200;
+      --color-light-brown: #B5956A;
+
+      /* Spacing */
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 40px;
+      --space-8: 48px;
+      --space-9: 64px;
+      --space-10: 80px;
+      --space-11: 96px;
+      --space-12: 120px;
+
+      /* Radius */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 999px;
+
+      /* Shadows */
+      --shadow-none: none;
+      --shadow-sm: 0 2px 8px rgba(23, 23, 21, 0.04);
+      --shadow-md: 0 8px 24px rgba(23, 23, 21, 0.07);
+      --shadow-lg: 0 16px 40px rgba(23, 23, 21, 0.10);
+      --shadow-xl: 0 24px 60px rgba(23, 23, 21, 0.12);
+
+      --container: 1280px;
+      --section-pad: clamp(56px, 6vw, 96px);
+      --page-bg: #FDFCFA;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-family-primary);
+      color: var(--color-text-primary);
+      background: var(--page-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    /* ---------- Shell ---------- */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(223, 219, 212, .85);
+      background: rgba(253, 252, 250, .92);
+      backdrop-filter: blur(14px);
+    }
+    .topbar__inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      color: var(--color-brand-primary);
+    }
+    .wordmark__mark {
+      width: 10px;
+      height: 28px;
+      background: var(--color-brand-primary);
+      border-radius: 999px;
+    }
+    .nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--color-text-secondary);
+    }
+    .nav a:hover { color: var(--color-brand-primary); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(217,199,177,.34), transparent 28%),
+        radial-gradient(circle at 88% 16%, rgba(26,32,128,.08), transparent 32%),
+        var(--color-white);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .hero__inner {
+      min-height: 660px;
+      padding-block: clamp(72px, 9vw, 120px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
+      gap: 64px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-brand-primary);
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--color-brand-primary);
+    }
+    .hero h1 {
+      max-width: 760px;
+      margin: 16px 0 18px;
+      color: var(--color-brand-primary);
+      font-size: clamp(42px, 6vw, 64px);
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: -.035em;
+    }
+    .hero h1 em {
+      color: var(--color-text-primary);
+      font-style: normal;
+    }
+    .hero__lead {
+      max-width: 650px;
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+    }
+    .hero__actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .hero__meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .hero__visual {
+      position: relative;
+      min-height: 440px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--color-brand-secondary);
+      box-shadow: var(--shadow-md);
+    }
+    .hero__visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      object-fit: cover;
+      filter: saturate(.9);
+    }
+    .hero__visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(140deg, rgba(255,255,255,.10), rgba(26,32,128,.18));
+      pointer-events: none;
+    }
+    .hero__label {
+      position: absolute;
+      z-index: 2;
+      right: 24px;
+      bottom: 24px;
+      max-width: 250px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+    }
+    .hero__label strong { display: block; font-size: 14px; color: var(--color-brand-primary); }
+    .hero__label span { display: block; margin-top: 2px; font-size: 12px; color: var(--color-text-secondary); }
+
+    /* ---------- Generic ---------- */
+    .section { padding-block: var(--section-pad); }
+    .section--white { background: var(--color-white); }
+    .section--almond { background: var(--color-brand-almond); }
+    .section--dun { background: #F3ECE4; }
+    .section__heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 430px);
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 40px;
+    }
+    .section__heading h2 {
+      margin: 10px 0 0;
+      color: var(--color-brand-primary);
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.12;
+      font-weight: 700;
+      letter-spacing: -.025em;
+    }
+    .section__heading p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      font-size: 16px;
+      max-width: 65ch;
+    }
+    .section__action { margin-top: 28px; }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+    .demo-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+    .demo-card--6 { grid-column: span 6; }
+    .demo-card--4 { grid-column: span 4; }
+    .demo-card--8 { grid-column: span 8; }
+    .demo-card--12 { grid-column: span 12; }
+    .demo-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .demo-card__header h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .demo-card__header span {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .stack { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .stack--column { flex-direction: column; align-items: stretch; }
+    .divider { height: 1px; background: var(--color-border); margin: 20px 0; }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn:focus-visible,
+    .link:focus-visible,
+    .chip:focus-visible,
+    .token-btn:focus-visible {
+      outline: 2px solid var(--color-brand-primary);
+      outline-offset: 3px;
+    }
+    .btn--sm { min-height: 40px; padding-inline: 18px; font-size: 13px; }
+    .btn--lg { min-height: 56px; padding-inline: 28px; font-size: 15px; }
+    .btn--primary { background: var(--color-brand-primary); color: var(--color-white); }
+    .btn--primary:hover { background: var(--color-primary-hover); }
+    .btn--secondary { background: var(--color-brand-secondary); color: var(--color-brand-primary); }
+    .btn--secondary:hover { background: var(--color-secondary-hover); }
+    .btn--outline { background: transparent; color: var(--color-brand-primary); border-color: var(--color-brand-primary); }
+    .btn--outline:hover { background: rgba(26,32,128,.05); }
+    .btn--ghost { background: transparent; color: var(--color-brand-primary); padding-inline: 12px; }
+
+    .wa-icon, .arrow-icon, .map-icon { width: 18px; height: 18px; flex: none; }
+    .btn--primary .wa-icon circle { fill: rgba(255,255,255,.16); }
+    .btn--primary .wa-icon path { stroke: #fff; }
+    .btn--secondary .wa-icon path, .btn--outline .wa-icon path { stroke: var(--color-brand-primary); }
+
+    /* ---------- Tokens ---------- */
+    .swatches { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 12px; }
+    .swatch {
+      border: 1px solid var(--color-border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .swatch__color { height: 110px; }
+    .swatch__body { padding: 12px; }
+    .swatch strong { display:block; font-size:13px; font-weight:600; }
+    .swatch code { display:block; margin-top:4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:11px; color: var(--color-text-muted); }
+    .swatch small { display:block; margin-top:7px; color:var(--color-text-secondary); font-size:11px; line-height:1.45; }
+
+    .token-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .token-chip {
+      padding: 8px 10px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-white);
+      font-size: 12px;
+      color: var(--color-text-secondary);
+    }
+    .token-chip b { color: var(--color-brand-primary); font-weight: 600; }
+
+    .type-list { display: grid; gap: 12px; }
+    .type-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      padding-block: 8px;
+      border-bottom: 1px solid rgba(223,219,212,.7);
+    }
+    .type-row:last-child { border-bottom: 0; }
+    .type-meta {
+      font-size: 11px;
+      line-height: 1.45;
+      color: var(--color-text-muted);
+    }
+    .type-display-xl { font-size:64px; line-height:1.05; font-weight:700; color:var(--color-brand-primary); letter-spacing:-.035em; }
+    .type-display-lg { font-size:56px; line-height:1.10; font-weight:700; color:var(--color-brand-primary); letter-spacing:-.03em; }
+    .type-h1 { font-size:48px; line-height:1.15; font-weight:700; color:var(--color-brand-primary); }
+    .type-h2 { font-size:40px; line-height:1.20; font-weight:700; color:var(--color-brand-primary); }
+    .type-h3 { font-size:32px; line-height:1.25; font-weight:600; }
+    .type-body-lg { font-size:18px; line-height:1.65; }
+    .type-body { font-size:16px; line-height:1.60; }
+    .type-small { font-size:14px; line-height:1.55; }
+    .type-caption { font-size:12px; line-height:1.40; font-weight:500; }
+
+    /* ---------- Badges / Links ---------- */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .badge--brand { background: var(--color-brand-almond); color: var(--color-brand-primary); }
+    .badge--neutral { background: var(--color-brand-isabelline); color: var(--color-text-secondary); }
+    .badge--promo { background: var(--color-promo-yellow); color: #3b2e00; }
+    .badge--red { background: rgba(236,66,66,.12); color: var(--color-error); }
+    .link {
+      color: var(--color-brand-primary);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    /* ---------- Cards ---------- */
+    .card-grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; }
+    .card-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
+    .card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--color-border-strong); }
+    .card__media {
+      position: relative;
+      display: block;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--color-brand-almond);
+    }
+    .card__media img { width:100%; height:100%; object-fit:cover; transition:transform 400ms ease; }
+    .card:hover .card__media img { transform:scale(1.03); }
+    .card__media::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.12), transparent 40%); pointer-events:none; }
+    .card__content { padding:24px; }
+    .card__category { margin:0 0 8px; font-size:12px; line-height:1.4; font-weight:600; color:var(--color-text-muted); letter-spacing:.12em; text-transform:uppercase; }
+    .card__title { margin:0; font-size:24px; line-height:1.3; font-weight:600; color:var(--color-brand-primary); }
+    .card__description { margin:8px 0 20px; font-size:14px; line-height:1.55; color:var(--color-text-secondary); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+    .card__footer { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+
+    .promo-card { position:relative; }
+    .promo-card .card__media { aspect-ratio: 3 / 2; }
+    .promo-card .promo-sticker { position:absolute; left:16px; top:16px; z-index:2; }
+
+    .location-card__media { aspect-ratio: 16 / 9; }
+    .location-card__actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; }
+
+    /* ---------- Breadcrumb ---------- */
+    .breadcrumb {
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:8px;
+      font-size:13px;
+    }
+    .breadcrumb a { color:var(--color-text-muted); text-decoration:none; font-weight:500; }
+    .breadcrumb a:hover { color:var(--color-brand-primary); }
+    .breadcrumb__current { color:var(--color-brand-primary); font-weight:600; }
+    .breadcrumb__sep { color:var(--color-border-strong); }
+
+    /* ---------- Page preview ---------- */
+    .preview-wrap {
+      padding: 12px;
+      border: 1px solid var(--color-border);
+      border-radius: 28px;
+      background: #F3F1ED;
+    }
+    .preview-page {
+      overflow: hidden;
+      border-radius: 20px;
+      background: var(--color-white);
+      border: 1px solid #E7E3DC;
+      box-shadow: var(--shadow-md);
+    }
+    .preview-nav {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 24px;
+      border-bottom:1px solid var(--color-border);
+    }
+    .preview-nav .wordmark { font-size:16px; }
+    .preview-nav .wordmark__mark { width:8px; height:22px; }
+    .preview-links { display:flex; gap:18px; font-size:12px; font-weight:600; color:var(--color-text-muted); }
+    .preview-hero {
+      display:grid;
+      grid-template-columns: 1fr .86fr;
+      min-height: 390px;
+    }
+    .preview-hero__copy { padding:48px; display:flex; flex-direction:column; justify-content:center; }
+    .preview-hero__copy h3 { margin:12px 0 12px; font-size:38px; line-height:1.12; color:var(--color-brand-primary); }
+    .preview-hero__copy p { max-width:52ch; margin:0; color:var(--color-text-secondary); font-size:14px; }
+    .preview-hero__image { min-height:390px; background:var(--color-brand-secondary); }
+    .preview-hero__image img { width:100%; height:100%; object-fit:cover; }
+
+    /* ---------- Responsive controls ---------- */
+    .toolbar {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    .toolbar__group { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    .toolbar__label { font-size:12px; color:var(--color-text-muted); font-weight:600; text-transform:uppercase; letter-spacing:.08em; }
+    .token-btn {
+      border:1px solid var(--color-border);
+      background:var(--color-white);
+      color:var(--color-text-secondary);
+      border-radius:var(--radius-full);
+      min-height:36px;
+      padding:0 13px;
+      font-size:12px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .token-btn.is-active { border-color:var(--color-brand-primary); color:var(--color-brand-primary); background:rgba(26,32,128,.05); }
+
+    .mode-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 10px;
+      border:1px solid var(--color-border);
+      border-radius:var(--radius-full);
+      background:var(--color-white);
+      color:var(--color-text-muted);
+      font-size:11px;
+      font-weight:600;
+    }
+    .mode-dot { width:7px; height:7px; border-radius:50%; background:var(--color-success); }
+
+    /* ---------- Toast ---------- */
+    .toast {
+      position:fixed;
+      left:50%;
+      bottom:24px;
+      z-index:100;
+      transform:translate(-50%, 18px);
+      opacity:0;
+      pointer-events:none;
+      padding:11px 14px;
+      border-radius:var(--radius-full);
+      background:var(--color-brand-primary);
+      color:#fff;
+      box-shadow:var(--shadow-lg);
+      font-size:12px;
+      font-weight:600;
+      transition:opacity 180ms ease, transform 180ms ease;
+    }
+    .toast.is-visible { opacity:1; transform:translate(-50%,0); }
+
+    /* ---------- Footer ---------- */
+    footer { padding-block:32px 56px; }
+    .footer-line { display:flex; justify-content:space-between; align-items:center; gap:20px; padding-top:20px; border-top:1px solid var(--color-border); }
+    .footer-line p { margin:0; font-size:12px; color:var(--color-text-muted); }
+
+    @media (max-width: 1100px) {
+      .hero__inner { grid-template-columns: 1fr; min-height: auto; }
+      .hero__visual { min-height: 420px; max-width: 720px; width:100%; }
+      .swatches { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .card-grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .demo-card--4, .demo-card--6, .demo-card--8 { grid-column: span 6; }
+      .section__heading { grid-template-columns:1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width:min(calc(100% - 32px), var(--container)); }
+      .topbar__inner { min-height:64px; }
+      .nav { display:none; }
+      .hero h1 { font-size:clamp(40px, 13vw, 56px); }
+      .hero__visual { min-height: 360px; }
+      .hero__visual img { min-height:360px; }
+      .section { padding-block:56px; }
+      .demo-grid, .card-grid-3, .card-grid-2 { grid-template-columns:1fr; }
+      .demo-card--4, .demo-card--6, .demo-card--8, .demo-card--12 { grid-column: span 1; }
+      .swatches { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .type-row { grid-template-columns: 1fr; gap:8px; }
+      .type-display-xl { font-size:48px; }
+      .type-display-lg { font-size:42px; }
+      .type-h1 { font-size:38px; }
+      .type-h2 { font-size:32px; }
+      .type-h3 { font-size:28px; }
+      .location-card__actions { grid-template-columns:1fr; }
+      .preview-hero { grid-template-columns:1fr; }
+      .preview-hero__copy { padding:32px; }
+      .preview-hero__image { min-height:260px; }
+      .preview-hero__image img { min-height:260px; }
+      .footer-line { flex-direction:column; align-items:flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .swatches { grid-template-columns:1fr 1fr; gap:8px; }
+      .swatch__color { height:78px; }
+      .swatch__body { padding:10px; }
+      .hero__actions .btn { width:100%; }
+      .hero__meta { gap:8px; }
+      .demo-card { padding:18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="wordmark" href="#top" aria-label="Sozo Design System">
+        <span class="wordmark__mark" aria-hidden="true"></span>
+        SOZO
+      </a>
+      <nav class="nav" aria-label="Design system sections">
+        <a href="#foundations">Foundations</a>
+        <a href="#components">Components</a>
+        <a href="#cards">Cards</a>
+        <a href="#preview">Preview</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero__inner">
+        <div>
+          <span class="eyebrow">SOZO SKIN CLINIC · V1</span>
+          <h1>Clean clinical beauty, <em>implemented as a system.</em></h1>
+          <p class="hero__lead">
+            Playground ini menerjemahkan token dan komponen Design System V1 ke satu UI nyata — sehingga kelihatan bagaimana Blue, Dun, White, typography, spacing, card, dan CTA bekerja sebagai satu bahasa visual.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#components">
+              Explore Components
+              <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn--outline btn--lg" href="#preview">See Page Preview</a>
+          </div>
+
+          <div class="hero__meta" aria-label="System highlights">
+            <span class="mode-badge"><span class="mode-dot"></span>Poppins 400–800</span>
+            <span class="mode-badge">1280px max</span>
+            <span class="mode-badge">12 / 8 / 4 grid</span>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=85" alt="Portrait beauty editorial placeholder" />
+          <div class="hero__label">
+            <strong>Premium through precision.</strong>
+            <span>Whitespace, alignment, restrained motion, and a limited palette do the visual work.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="foundations">
+      <div class="container">
+        <div class="section__heading">
+          <div>
+            <span class="eyebrow">FOUNDATIONS</span>
+            <h2>Tokens sebelum komponen.</h2>
+          </div>
+          <p>
+            Sistem memakai raw brand values di token layer, lalu komponen mengonsumsi semantic variables. Ini membuat warna, spacing, radius, dan shadow konsisten tanpa hard-code berulang.
+          </p>
+        </div>
+
+        <div class="demo-grid">
+          <article class="demo-card demo-card--12">
+            <div class="demo-card__header">
+              <h3>Color System</h3>
+              <span>Brand + Supporting</span>
+            </div>
+            <div class="swatches">
+              <div class="swatch">
+                <div class="swatch__color" style="background:#1A2080"></div>
+                <div class="swatch__body"><strong>Resolution Blue</strong><code>#1A2080</code><small>Primary identity, action, selected state.</small></div>
+              </div>
+              <div class="swatch">
+                <div class="swatch__color" style="background:#D9C7B1"></div>
+                <div class="swatch__body"><strong>Dun</strong><code>#D9C7B1</code><small>Beauty accent, warm secondary action.</small></div>
+              </div>
+              <div class="swatch">
+                <div class="swatch__color" style="background:#E9DFD5"></div>
+                <div class="swatch__body"><strong>Almond</strong><code>#E9DFD5</code><small>Quiet surface and soft highlight.</small></div>
+              </div>
+              <div class="swatch">
+                <div class="swatch__color" style="background:#DFDBD4"></div>
+                <div class="swatch__body"><strong>Isabelline</strong><code>#DFDBD4</code><small>Border, divider, warm neutral.</small></div>
+              </div>
+              <div class="swatch">
+                <div class="swatch__color" style="background:#FFFFFF"></div>
+                <div class="swatch__body"><strong>White</strong><code>#FFFFFF</code><small>Primary canvas, cards, negative space.</small></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo-card demo-card--6">
+            <div class="demo-card__header"><h3>Spacing Rhythm</h3><span>4px base</span></div>
+            <div class="token-row">
+              <span class="token-chip"><b>4</b> px</span>
+              <span class="token-chip"><b>8</b> px</span>
+              <span class="token-chip"><b>12</b> px</span>
+              <span class="token-chip"><b>16</b> px</span>
+              <span class="token-chip"><b>24</b> px</span>
+              <span class="token-chip"><b>32</b> px</span>
+              <span class="token-chip"><b>40</b> px</span>
+              <span class="token-chip"><b>48</b> px</span>
+              <span class="token-chip"><b>64</b> px</span>
+              <span class="token-chip"><b>80</b> px</span>
+              <span class="token-chip"><b>96</b> px</span>
+              <span class="token-chip"><b>120</b> px</span>
+            </div>
+            <div class="divider"></div>
+            <div class="token-row">
+              <span class="token-chip"><b>Inside component</b> 8–24px</span>
+              <span class="token-chip"><b>Section</b> 80–96px</span>
+              <span class="token-chip"><b>Hero</b> up to 120px</span>
+            </div>
+          </article>
+
+          <article class="demo-card demo-card--6">
+            <div class="demo-card__header"><h3>Radius + Elevation</h3><span>Restrained</span></div>
+            <div class="token-row">
+              <span class="token-chip"><b>6</b> radius-sm</span>
+              <span class="token-chip"><b>10</b> radius-md</span>
+              <span class="token-chip"><b>16</b> radius-lg</span>
+              <span class="token-chip"><b>24</b> radius-xl</span>
+              <span class="token-chip"><b>999</b> radius-full</span>
+            </div>
+            <div class="divider"></div>
+            <div class="stack">
+              <div style="padding:12px 14px;border:1px solid var(--color-border);border-radius:12px;box-shadow:var(--shadow-none);font-size:12px;">shadow-none</div>
+              <div style="padding:12px 14px;border:1px solid var(--color-border);border-radius:12px;box-shadow:var(--shadow-sm);font-size:12px;">shadow-sm</div>
+              <div style="padding:12px 14px;border:1px solid var(--color-border);border-radius:12px;box-shadow:var(--shadow-md);font-size:12px;">shadow-md</div>
+            </div>
+          </article>
+
+          <article class="demo-card demo-card--12">
+            <div class="demo-card__header"><h3>Typography Scale</h3><span>Poppins</span></div>
+            <div class="type-list">
+              <div class="type-row"><div class="type-meta">Display XL<br>64 / 700 / 1.05</div><div class="type-display-xl">Skin confidence.</div></div>
+              <div class="type-row"><div class="type-meta">Display LG<br>56 / 700 / 1.10</div><div class="type-display-lg">Refined skin care.</div></div>
+              <div class="type-row"><div class="type-meta">H1<br>48 / 700 / 1.15</div><div class="type-h1">Pico Laser</div></div>
+              <div class="type-row"><div class="type-meta">H2<br>40 / 700 / 1.20</div><div class="type-h2">Featured Treatment</div></div>
+              <div class="type-row"><div class="type-meta">H3<br>32 / 600 / 1.25</div><div class="type-h3">Skin rejuvenation</div></div>
+              <div class="type-row"><div class="type-meta">Body Large<br>18 / 400 / 1.65</div><div class="type-body-lg">Lead copy uses readable width and calm hierarchy before decoration.</div></div>
+              <div class="type-row"><div class="type-meta">Body<br>16 / 400 / 1.60</div><div class="type-body">Treatment information, supporting copy, and general reading text.</div></div>
+              <div class="type-row"><div class="type-meta">Body Small<br>14 / 400 / 1.55</div><div class="type-small">Metadata and compact explanatory copy.</div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <div class="container">
+        <div class="section__heading">
+          <div>
+            <span class="eyebrow">CORE COMPONENTS</span>
+            <h2>Primitives yang membentuk bahasa Sozo.</h2>
+          </div>
+          <p>Button, WhatsApp CTA, link, badge, breadcrumb, dan media wrapper dipakai sebagai building blocks sebelum naik ke card-level components.</p>
+        </div>
+
+        <div class="demo-grid">
+          <article class="demo-card demo-card--6">
+            <div class="demo-card__header"><h3>Button</h3><span>Primary / Secondary / Outline</span></div>
+            <div class="stack">
+              <button class="btn btn--primary" type="button" data-toast="Primary button active">Primary</button>
+              <button class="btn btn--secondary" type="button" data-toast="Secondary button active">Secondary</button>
+              <button class="btn btn--outline" type="button" data-toast="Outline button active">Outline</button>
+              <button class="btn btn--primary btn--sm" type="button" data-toast="Small button active">Small</button>
+              <button class="btn btn--primary btn--lg" type="button" data-toast="Large button active">Large</button>
+            </div>
+          </article>
+
+          <article class="demo-card demo-card--6">
+            <div class="demo-card__header"><h3>WhatsApp CTA</h3><span>Conversion pattern</span></div>
+            <div class="stack stack--column">
+              <a class="btn btn--primary" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer">
+                <svg class="wa-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none"/><path d="M7.8 7.7c.3-.5.7-.5 1.1-.4l1.3.5c.3.1.4.3.5.6l.5 1.5c.1.3 0 .6-.2.8l-.7.7c.7 1.4 1.7 2.4 3.2 3.1l.6-.8c.2-.3.5-.4.8-.3l1.5.6c.3.1.5.3.5.6 0 .8-.3 1.5-.8 1.8-.5.4-1.1.5-1.8.4-1.6-.2-3.5-1.2-5.1-2.8-1.6-1.6-2.6-3.5-2.8-5.1-.1-.5-.1-.9.4-1.2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                Konsultasi via WhatsApp
+              </a>
+              <div class="stack">
+                <a class="btn btn--secondary btn--sm" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer">Tanya Treatment</a>
+                <a class="btn btn--outline btn--sm" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer">Booking via WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo-card demo-card--4">
+            <div class="demo-card__header"><h3>Badge / Tag</h3><span>Context markers</span></div>
+            <div class="stack">
+              <span class="badge badge--brand">SKIN</span>
+              <span class="badge badge--neutral">LOCATION</span>
+              <span class="badge badge--promo">PROMO</span>
+              <span class="badge badge--red">LIMITED</span>
+            </div>
+          </article>
+
+          <article class="demo-card demo-card--4">
+            <div class="demo-card__header"><h3>Links</h3><span>Navigation</span></div>
+            <div class="stack stack--column">
+              <a class="link" href="#cards">View Treatment →</a>
+              <a class="link" href="#preview">View Location →</a>
+              <a class="link" href="#foundations">Read System Notes →</a>
+            </div>
+          </article>
+
+          <article class="demo-card demo-card--4">
+            <div class="demo-card__header"><h3>Breadcrumb</h3><span>Hierarchy support</span></div>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <a href="#">Treatment</a>
+              <span class="breadcrumb__sep">/</span>
+              <a href="#">Skin</a>
+              <span class="breadcrumb__sep">/</span>
+              <a href="#">Laser</a>
+              <span class="breadcrumb__sep">/</span>
+              <span class="breadcrumb__current">Pico Laser</span>
+            </nav>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--almond" id="cards">
+      <div class="container">
+        <div class="section__heading">
+          <div>
+            <span class="eyebrow">SOZO COMPONENTS</span>
+            <h2>Card system: shared foundation, different content.</h2>
+          </div>
+          <p>Treatment dan Promo menggunakan base card yang sama. Konten dan CTA berubah sesuai job-to-be-done, bukan membuat visual language baru untuk setiap tipe.</p>
+        </div>
+
+        <div class="card-grid-3">
+          <article class="card">
+            <a class="card__media" href="#" aria-label="Open Pico Laser treatment">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=85" alt="Skin treatment placeholder" loading="lazy" />
+            </a>
+            <div class="card__content">
+              <p class="card__category">SKIN</p>
+              <h3 class="card__title">Pico Laser</h3>
+              <p class="card__description">Advanced laser treatment untuk membantu brightening, skin tone, dan rejuvenation.</p>
+              <div class="card__footer"><a class="link" href="#">View Treatment →</a><span class="badge badge--brand">4:3</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="card__media" href="#" aria-label="Open HIFU treatment">
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1000&q=85" alt="Facial treatment placeholder" loading="lazy" />
+            </a>
+            <div class="card__content">
+              <p class="card__category">SKIN</p>
+              <h3 class="card__title">HIFU</h3>
+              <p class="card__description">High-intensity focused ultrasound sebagai treatment untuk concerns terkait firmness dan contour.</p>
+              <div class="card__footer"><a class="link" href="#">View Treatment →</a><span class="badge badge--brand">4:3</span></div>
+            </div>
+          </article>
+
+          <article class="card promo-card">
+            <a class="card__media" href="#" aria-label="Open Glow Treatment promotion">
+              <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1200&q=85" alt="Beauty promo placeholder" loading="lazy" />
+              <span class="badge badge--promo promo-sticker">PROMO</span>
+            </a>
+            <div class="card__content">
+              <p class="card__category">SPECIAL OFFER</p>
+              <h3 class="card__title">Glow Treatment</h3>
+              <p class="card__description">Promo entry point yang tetap memakai hierarchy dan CTA dari system, bukan berubah menjadi banner.</p>
+              <a class="btn btn--primary" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer">Konsultasi via WhatsApp</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__action">
+          <a class="btn btn--outline" href="#">View All Treatments</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="container">
+        <div class="section__heading">
+          <div>
+            <span class="eyebrow">LOCATION</span>
+            <h2>Existing Location Card, normalized.</h2>
+          </div>
+          <p>Pattern ini mempertahankan mental model existing: media, region, clinic name, address, lalu WhatsApp dan Maps sebagai actions.</p>
+        </div>
+
+        <div class="card-grid-3">
+          <article class="card">
+            <a class="card__media location-card__media" href="#">
+              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=85" alt="Modern clinic interior placeholder" loading="lazy" />
+            </a>
+            <div class="card__content">
+              <div class="stack" style="justify-content:space-between;align-items:flex-start;">
+                <p class="card__category" style="margin:0">JAKARTA</p>
+                <span class="badge badge--brand">LOCATION</span>
+              </div>
+              <h3 class="card__title" style="margin-top:8px">Sozo Pondok Indah</h3>
+              <p class="card__description">Jl. Example No. 10, Jakarta Selatan. Pattern menjaga address tetap terbaca tanpa menambah metadata yang tidak dibutuhkan.</p>
+              <div class="location-card__actions">
+                <a class="btn btn--primary btn--sm" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+                <a class="btn btn--outline btn--sm" href="#">Maps</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo-card demo-card--8">
+            <div class="demo-card__header"><h3>Responsive composition</h3><span>Desktop → Tablet → Mobile</span></div>
+            <div class="toolbar">
+              <div class="toolbar__group">
+                <span class="toolbar__label">Card layout</span>
+                <button class="token-btn is-active" type="button" data-layout="desktop">Desktop</button>
+                <button class="token-btn" type="button" data-layout="tablet">Tablet</button>
+                <button class="token-btn" type="button" data-layout="mobile">Mobile</button>
+              </div>
+            </div>
+            <div id="responsive-demo" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+              <div style="height:112px;border:1px solid var(--color-border);border-radius:16px;background:var(--color-white);display:flex;align-items:flex-end;padding:12px;font-size:11px;color:var(--color-text-muted)">Treatment</div>
+              <div style="height:112px;border:1px solid var(--color-border);border-radius:16px;background:var(--color-white);display:flex;align-items:flex-end;padding:12px;font-size:11px;color:var(--color-text-muted)">Promo</div>
+              <div style="height:112px;border:1px solid var(--color-border);border-radius:16px;background:var(--color-white);display:flex;align-items:flex-end;padding:12px;font-size:11px;color:var(--color-text-muted)">Location</div>
+            </div>
+            <p style="margin:14px 0 0;font-size:12px;color:var(--color-text-muted)">Desktop uses horizontal space; mobile keeps hierarchy and tap comfort instead of blindly preserving desktop density.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dun" id="preview">
+      <div class="container">
+        <div class="section__heading">
+          <div>
+            <span class="eyebrow">REAL UI PREVIEW</span>
+            <h2>Begini rasanya saat tokens disatukan.</h2>
+          </div>
+          <p>Ini bukan page template produksi. Ini visual check untuk melihat apakah design system benar-benar terasa konsisten ketika dipakai lintas surface.</p>
+        </div>
+
+        <div class="preview-wrap">
+          <div class="preview-page">
+            <div class="preview-nav">
+              <a class="wordmark" href="#"><span class="wordmark__mark"></span>SOZO</a>
+              <div class="preview-links"><span>Treatments</span><span>Promo</span><span>Locations</span></div>
+              <a class="btn btn--primary btn--sm" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer">Konsultasi</a>
+            </div>
+            <div class="preview-hero">
+              <div class="preview-hero__copy">
+                <span class="eyebrow">SKIN REJUVENATION</span>
+                <h3>Healthy-looking skin, with a calmer visual language.</h3>
+                <p>White canvas, Resolution Blue for identity and action, Dun for warmth, and generous spacing to create a refined clinical beauty experience.</p>
+                <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;">
+                  <a class="btn btn--primary" href="#">Explore Treatment</a>
+                  <a class="link" href="#cards">View all →</a>
+                </div>
+              </div>
+              <div class="preview-hero__image">
+                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1200&q=85" alt="Beauty editorial placeholder" loading="lazy" />
+              </div>
+            </div>
+            <div style="padding:32px;background:#fff;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:22px;">
+                <div>
+                  <span class="eyebrow">TREATMENT</span>
+                  <h4 style="margin:8px 0 0;color:var(--color-brand-primary);font-size:30px;line-height:1.2;">Featured treatment</h4>
+                </div>
+                <a class="link" href="#">View all →</a>
+              </div>
+              <div class="card-grid-3">
+                <article class="card"><div class="card__media"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Treatment" loading="lazy"></div><div class="card__content"><p class="card__category">SKIN</p><h5 style="margin:0;color:var(--color-brand-primary);font-size:20px;line-height:1.35;">Pico Laser</h5><a class="link" style="display:inline-block;margin-top:12px;" href="#">View Treatment →</a></div></article>
+                <article class="card"><div class="card__media"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Treatment" loading="lazy"></div><div class="card__content"><p class="card__category">SKIN</p><h5 style="margin:0;color:var(--color-brand-primary);font-size:20px;line-height:1.35;">HIFU</h5><a class="link" style="display:inline-block;margin-top:12px;" href="#">View Treatment →</a></div></article>
+                <article class="card promo-card"><div class="card__media"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80" alt="Promotion" loading="lazy"><span class="badge badge--promo promo-sticker">PROMO</span></div><div class="card__content"><p class="card__category">SPECIAL OFFER</p><h5 style="margin:0;color:var(--color-brand-primary);font-size:20px;line-height:1.35;">Glow Treatment</h5></div></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <p>SOZO Skin Clinic — Design System V1 Playground</p>
+      <p>White · Resolution Blue · Dun · Almond · Isabelline</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // Tiny interaction layer: state demo + toast + responsive composition preview.
+    const toast = document.getElementById('toast');
+    let toastTimer;
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('is-visible');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 1400);
+    }
+
+    document.querySelectorAll('[data-toast]').forEach((el) => {
+      el.addEventListener('click', () => showToast(el.dataset.toast));
+    });
+
+    const responsiveDemo = document.getElementById('responsive-demo');
+    document.querySelectorAll('[data-layout]').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('[data-layout]').forEach((item) => item.classList.remove('is-active'));
+        button.classList.add('is-active');
+        const layout = button.dataset.layout;
+        if (layout === 'desktop') {
+          responsiveDemo.style.gridTemplateColumns = 'repeat(3, 1fr)';
+          showToast('Desktop: 3-column catalog layout');
+        }
+        if (layout === 'tablet') {
+          responsiveDemo.style.gridTemplateColumns = 'repeat(2, 1fr)';
+          showToast('Tablet: 2-column catalog layout');
+        }
+        if (layout === 'mobile') {
+          responsiveDemo.style.gridTemplateColumns = '1fr';
+          showToast('Mobile: compact 1-column layout');
+        }
+      });
+    });
+
+    // Respect reduced-motion preference.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  </script>
+</body>
+</html>

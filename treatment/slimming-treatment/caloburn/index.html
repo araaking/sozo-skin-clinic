@@ -1,0 +1,1179 @@
+<!-- ==========================================================
+     CALOBURN TREATMENT — SOZO SKIN CLINIC
+     File gabungan (rapi): Performance + Schema + Hero + Info
+     + Gallery + Before-After + Process + Promo + FAQ
+     WPCode: inject ke body halaman /caloburn-treatment/
+     ========================================================== -->
+
+<!-- ==========================================================
+     1. PERFORMANCE (preconnect & Font Awesome async)
+     ========================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+<!-- ==========================================================
+     2. SCHEMA MARKUP (JSON-LD)
+     2a. FAQPage + BreadcrumbList 4-level
+     ========================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apa itu Caloburn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Caloburn adalah treatment berbasis terapi panas yang menggunakan selimut hangat khusus untuk membantu meningkatkan suhu tubuh secara bertahap. Dengan meningkatnya suhu tubuh, sistem metabolisme akan bekerja lebih aktif, sehingga membantu proses detoksifikasi alami melalui keringat. Selain itu, Caloburn juga memberikan efek relaksasi yang membuat tubuh terasa lebih ringan, segar, dan nyaman setelah treatment selesai."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara kerja Caloburn dalam tubuh?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Caloburn bekerja dengan memanfaatkan panas yang menembus lapisan kulit untuk merangsang berbagai fungsi tubuh. Ketika suhu tubuh meningkat, pembuluh darah akan melebar sehingga aliran darah menjadi lebih lancar. Proses ini membantu distribusi oksigen dan nutrisi ke seluruh tubuh menjadi lebih optimal. Selain itu, tubuh juga akan mengeluarkan keringat sebagai bagian dari proses detoksifikasi, sekaligus membantu meningkatkan pembakaran kalori secara alami."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa saja manfaat utama dari Caloburn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Caloburn memiliki berbagai manfaat yang tidak hanya berfokus pada relaksasi, tetapi juga mendukung kesehatan tubuh secara keseluruhan. Beberapa manfaat utama yang bisa dirasakan antara lain membantu detoksifikasi tubuh, melancarkan sirkulasi darah, meningkatkan metabolisme, serta memberikan efek relaksasi yang dapat mengurangi stres dan kelelahan. Dalam jangka panjang, treatment ini juga dapat membantu mendukung program slimming dan menjaga tubuh tetap bugar."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sozoskinclinic.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Treatment", "item": "https://sozoskinclinic.com/treatment/" },
+    { "@type": "ListItem", "position": 3, "name": "Slimming Treatment", "item": "https://sozoskinclinic.com/slimming-treatment/" },
+    { "@type": "ListItem", "position": 4, "name": "Caloburn Treatment", "item": "https://sozoskinclinic.com/caloburn-treatment/" }
+  ]
+}
+</script>
+
+<!-- ==========================================================
+     3. STYLES (gabungan, dirapikan per section)
+     ========================================================== -->
+<style>
+  /* ---------- 3a. HERO ---------- */
+  .sozo-hero-section {
+    font-family: 'Poppins', sans-serif;
+    background: transparent;
+    padding: 60px 20px 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .sozo-hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .sozo-hero-content { flex: 1; max-width: 600px; }
+  .sozo-breadcrumb {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    font-weight: 500;
+  }
+  .sozo-breadcrumb a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+  }
+  .sozo-breadcrumb a:hover { color: #1A2080; }
+  .sozo-breadcrumb span.separator { color: #cbd5e1; font-size: 10px; display: inline-block; }
+  .sozo-breadcrumb span.current { color: #1A2080; font-weight: 600; }
+  .sozo-hero-content h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.2;
+    color: #1A2080;
+    margin: 0 0 15px 0;
+    font-weight: 800;
+  }
+  .sozo-hero-content p {
+    font-size: clamp(18px, 2vw, 22px);
+    color: #475569;
+    line-height: 1.4;
+    margin: 0 0 30px 0;
+    font-weight: 500;
+  }
+  .sozo-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1A2080;
+    color: #ffffff !important;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #1A2080;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(26, 32, 128, 0.2);
+  }
+  .sozo-hero-btn:hover {
+    background-color: transparent;
+    color: #1A2080 !important;
+    transform: translateY(-2px);
+  }
+  .sozo-hero-btn svg { width: 20px; height: 20px; fill: currentColor; }
+  .sozo-hero-image {
+    flex: 1;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  }
+  .sozo-hero-image img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* ---------- 3b. INFO ---------- */
+  .sozo-info-section {
+    padding: 0 20px 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .sozo-info-text {
+    background: #f8fafc;
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  /* ---------- 3c. GALLERY ---------- */
+  .sozo-gallery-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .sozo-gallery-section h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    color: #1A2080;
+    font-weight: 800;
+    margin-bottom: 40px;
+    line-height: 1.3;
+  }
+  .sozo-image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .sozo-image-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 1 / 1;
+  }
+  .sozo-image-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-image-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ---------- 3d. BEFORE-AFTER (contain version) ---------- */
+  .sozo-ba-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 80px 20px;
+    width: 100%;
+    background-color: #1A2080;
+    box-sizing: border-box;
+  }
+  .sozo-ba-container { max-width: 1200px; margin: 0 auto; }
+  .sozo-ba-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sozo-ba-header h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.3;
+  }
+  .sozo-ba-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+  }
+  .sozo-ba-list li {
+    font-size: 16px;
+    color: #e2e8f0;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.5;
+  }
+  .sozo-ba-list li::before {
+    content: '✓';
+    color: #1A2080;
+    font-weight: 900;
+    background: #ffffff;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  .sozo-ba-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 0 auto;
+  }
+  .sozo-ba-item {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    aspect-ratio: 4 / 5;
+    background-color: #000000;
+  }
+  .sozo-ba-item:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  .sozo-ba-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  /* ---------- 3e. PROCESS ---------- */
+  .sozo-process-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 80px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #F8FAFC;
+  }
+  .sozo-process-container { max-width: 1000px; margin: 0 auto; }
+  .sozo-process-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sozo-process-header h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    color: #1A2080;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+  .sozo-process-header p { font-size: 16px; color: #475569; line-height: 1.6; margin: 0; }
+  .sozo-process-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .sozo-process-card {
+    background-color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #E2E8F0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sozo-process-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(26, 32, 128, 0.08);
+    border-color: #cbd5e1;
+  }
+  .sozo-process-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .sozo-process-card h3 { font-size: 20px; color: #1A2080; font-weight: 700; margin: 0 0 12px 0; line-height: 1.3; }
+  .sozo-process-card p { font-size: 15px; color: #475569; line-height: 1.6; margin: 0; }
+
+  /* ---------- 3f. PROMO SLIDER ---------- */
+  .sozo-promo-section {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 30px 20px 40px 20px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+  .sozo-promo-section h2 {
+    font-size: clamp(28px, 4vw, 36px) !important;
+    color: #1A2080 !important;
+    font-weight: 800 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+  }
+  .sozo-promo-section > p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 25px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-promo-slider {
+    position: relative !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+  }
+  .sozo-promo-track { display: flex !important; transition: transform 0.5s ease !important; }
+  .sozo-promo-slide { flex: 0 0 33.3333% !important; padding: 0 8px !important; box-sizing: border-box !important; }
+  .sozo-promo-card {
+    aspect-ratio: 16 / 9 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 25px rgba(26, 32, 128, 0.12) !important;
+  }
+  .sozo-promo-card img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; }
+  .sozo-promo-cta {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 12px !important;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    padding: 11px 16px !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    border: 2px solid #1A2080 !important;
+    transition: all 0.3s ease !important;
+    white-space: nowrap !important;
+  }
+  .sozo-promo-cta:hover { background-color: #ffffff !important; color: #1A2080 !important; }
+  .sozo-promo-arrow {
+    position: absolute !important;
+    top: 38% !important;
+    transform: translateY(-50%) !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    color: #ffffff !important;
+    font-size: 0 !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    line-height: 1 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  }
+  .sozo-promo-arrow svg { width: 20px !important; height: 20px !important; flex-shrink: 0 !important; }
+  .sozo-promo-arrow:hover {
+    background: #ffffff !important;
+    color: #1A2080 !important;
+    border-color: #ffffff !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) !important;
+  }
+  .sozo-promo-prev { left: 14px !important; }
+  .sozo-promo-next { right: 14px !important; }
+  .sozo-promo-dots { display: flex !important; justify-content: center !important; gap: 8px !important; margin-top: 18px !important; }
+  .sozo-promo-dot {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    background: #cbd5e1 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    transition: all 0.3s ease !important;
+  }
+  .sozo-promo-dot.active { background: #1A2080 !important; width: 28px !important; border-radius: 6px !important; }
+
+  /* ---------- 3g. FAQ ---------- */
+  .sozo-faq-wrapper {
+    padding: 80px 20px;
+    font-family: 'Poppins', sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+  }
+  .sozo-faq-header { text-align: center; margin-bottom: 50px; }
+  .sozo-faq-header h2 { color: #1A2080; font-size: 32px; font-weight: 800; margin-bottom: 15px; }
+  .sozo-faq-header p { color: #555e7d; font-size: 16px; line-height: 1.6; }
+  .sozo-faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #f0f0f5;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .sozo-faq-question {
+    padding: 20px 25px;
+    background: #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+  }
+  .sozo-faq-question h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1A2080;
+    line-height: 1.4;
+    padding-right: 20px;
+  }
+  .sozo-faq-icon { width: 20px; height: 20px; position: relative; transition: transform 0.3s ease; flex-shrink: 0; }
+  .sozo-faq-icon::before,
+  .sozo-faq-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #1A2080;
+    transition: all 0.3s ease;
+  }
+  .sozo-faq-icon::before { width: 100%; height: 2px; top: 50%; left: 0; transform: translateY(-50%); }
+  .sozo-faq-icon::after { width: 2px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
+  .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+    background: #fcfcff;
+  }
+  .sozo-faq-answer-inner { padding: 0 25px 25px 25px; color: #555e7d; font-size: 14px; line-height: 1.7; }
+  .sozo-faq-answer-inner p { margin-top: 0; margin-bottom: 12px; }
+  .sozo-faq-answer-inner p:last-child { margin-bottom: 0; }
+  .sozo-faq-answer-inner ul { margin-top: 0; margin-bottom: 15px; padding-left: 20px; }
+  .sozo-faq-answer-inner li { margin-bottom: 8px; }
+  .sozo-faq-item.active { border-color: #1A2080; box-shadow: 0 10px 25px rgba(26, 32, 128, 0.05); }
+  .sozo-faq-item.active .sozo-faq-answer { max-height: 1200px; transition: max-height 0.4s ease-in-out; }
+  .sozo-faq-item.active .sozo-faq-icon { transform: rotate(45deg); }
+
+  /* ---------- 3h. PROBLEM (compact v4, disamakan Meso/RF/HIFU) ---------- */
+  .sozo-rf-problem-v4 {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 34px 8% 38px !important;
+    background: #ffffff !important;
+    color: #1e293b !important;
+    font-family: 'Poppins','Inter',system-ui,-apple-system,sans-serif !important;
+    box-sizing: border-box !important;
+  }
+  .sozo-rf-problem-v4 *,
+  .sozo-rf-problem-v4 *::before,
+  .sozo-rf-problem-v4 *::after { box-sizing: border-box !important; }
+  .sozo-rf-problem-v4 .rf-v4-inner { width: 100% !important; max-width: 1200px !important; margin: 0 auto !important; }
+  .sozo-rf-problem-v4 .rf-v4-heading {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+    gap: 30px !important;
+    margin-bottom: 20px !important;
+  }
+  .sozo-rf-problem-v4 .rf-v4-title-wrap h2 {
+    margin: 0 !important;
+    color: #1A2080 !important;
+    font-size: 25px !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    letter-spacing: -.4px !important;
+  }
+  .sozo-rf-problem-v4 .rf-v4-title-wrap h2 span { color: #1A2080 !important; }
+  .sozo-rf-problem-v4 .rf-v4-list {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+  .sozo-rf-problem-v4 .rf-v4-card {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: 26px minmax(0, 1fr) 24px !important;
+    gap: 9px !important;
+    align-items: center !important;
+    min-height: auto !important;
+    padding: 14px 12px !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    transition: transform .22s ease, border-color .22s ease, background-color .22s ease, box-shadow .22s ease !important;
+  }
+  .sozo-rf-problem-v4 .rf-v4-card:hover {
+    transform: translateY(-2px) !important;
+    background: #ffffff !important;
+    border-color: #cfd6e5 !important;
+    box-shadow: 0 6px 16px rgba(26,32,128,.06) !important;
+  }
+  .sozo-rf-problem-v4 .rf-v4-number {
+    color: #a1a8b5 !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    letter-spacing: .06em !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-rf-problem-v4 .rf-v4-card-text { min-width: 0 !important; }
+  .sozo-rf-problem-v4 .rf-v4-card-text h3 {
+    margin: 0 0 5px !important;
+    color: #1A2080 !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    font-weight: 700 !important;
+    letter-spacing: -.05px !important;
+  }
+  .sozo-rf-problem-v4 .rf-v4-card-text p {
+    margin: 0 !important;
+    color: #64748b !important;
+    font-size: 10.5px !important;
+    line-height: 1.45 !important;
+  }
+  .sozo-rf-problem-v4 .rf-v4-icon {
+    width: 23px !important;
+    height: 23px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid #dfe4ec !important;
+    border-radius: 50% !important;
+    color: #1A2080 !important;
+    font-size: 10px !important;
+    line-height: 1 !important;
+    transition: all .22s ease !important;
+  }
+  .sozo-rf-problem-v4 .rf-v4-card:hover .rf-v4-icon {
+    background: #eef2ff !important;
+    border-color: #d4daf5 !important;
+    transform: translate(1px,-1px) !important;
+  }
+  @media (max-width: 1024px) {
+    .sozo-rf-problem-v4 { padding-left: 20px !important; padding-right: 20px !important; }
+    .sozo-rf-problem-v4 .rf-v4-list { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  }
+  @media (max-width: 768px) {
+    .sozo-rf-problem-v4 { padding: 28px 16px 32px !important; }
+    .sozo-rf-problem-v4 .rf-v4-heading { display: block !important; margin-bottom: 16px !important; }
+    .sozo-rf-problem-v4 .rf-v4-title-wrap h2 { font-size: 20px !important; line-height: 1.3 !important; }
+    .sozo-rf-problem-v4 .rf-v4-list { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+    .sozo-rf-problem-v4 .rf-v4-card { grid-template-columns: 22px minmax(0,1fr) !important; min-height: auto !important; padding: 13px 12px !important; }
+    .sozo-rf-problem-v4 .rf-v4-icon { display: none !important; }
+    .sozo-rf-problem-v4 .rf-v4-card-text h3 { font-size: 12px !important; }
+    .sozo-rf-problem-v4 .rf-v4-card-text p { font-size: 10px !important; }
+  }
+  @media (max-width: 430px) {
+    .sozo-rf-problem-v4 .rf-v4-list { grid-template-columns: 1fr !important; }
+    .sozo-rf-problem-v4 .rf-v4-card { min-height: auto !important; grid-template-columns: 25px minmax(0,1fr) 24px !important; align-items: center !important; }
+    .sozo-rf-problem-v4 .rf-v4-icon { display: flex !important; }
+    .sozo-rf-problem-v4 .rf-v4-card-text h3 { margin-bottom: 3px !important; }
+  }
+
+  /* ---------- 3i. RESPONSIVE ---------- */
+  @media (max-width: 991px) {
+    .sozo-hero-container { flex-direction: column; text-align: center; }
+    .sozo-hero-content { max-width: 100%; }
+    .sozo-breadcrumb { justify-content: center; font-size: 12px; }
+    .sozo-ba-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 767px) {
+    .sozo-hero-section { padding: 40px 15px 20px 15px; }
+    .sozo-info-section { padding: 10px 15px 40px 15px; }
+    .sozo-hero-image { border-radius: 16px; margin-top: 20px; }
+    .sozo-hero-image img { width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .sozo-info-text { padding: 20px; font-size: 15px; }
+    .sozo-gallery-section { padding: 40px 15px; }
+    .sozo-gallery-section h2 { margin-bottom: 25px; }
+    .sozo-image-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .sozo-image-item { border-radius: 12px; }
+    .sozo-ba-section { padding: 60px 15px; }
+    .sozo-ba-grid { grid-template-columns: 1fr; gap: 25px; max-width: 350px; }
+    .sozo-process-section { padding: 60px 15px; }
+    .sozo-process-header { margin-bottom: 40px; }
+    .sozo-process-grid { grid-template-columns: 1fr; gap: 20px; }
+    .sozo-process-card { padding: 25px 20px; flex-direction: row; align-items: flex-start; gap: 20px; }
+    .sozo-process-icon { width: 50px; height: 50px; font-size: 20px; margin-bottom: 0; flex-shrink: 0; }
+    .sozo-process-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .sozo-process-card p { font-size: 14px; }
+    .sozo-promo-section { padding: 20px 15px 30px 15px !important; }
+    .sozo-promo-section > p { font-size: 14px !important; margin-bottom: 18px !important; }
+    .sozo-promo-slide { flex-basis: 100% !important; padding: 0 4px !important; }
+    .sozo-promo-card { border-radius: 14px !important; }
+    .sozo-promo-arrow { width: 40px !important; height: 40px !important; }
+    .sozo-promo-arrow svg { width: 16px !important; height: 16px !important; }
+    .sozo-promo-prev { left: 8px !important; }
+    .sozo-promo-next { right: 8px !important; }
+    .sozo-promo-cta { font-size: 14px !important; padding: 12px 16px !important; }
+    .sozo-faq-header h2 { font-size: 26px; }
+    .sozo-faq-wrapper { padding: 50px 20px; }
+    .sozo-faq-question h3 { font-size: 15px; }
+  }
+  @media (max-width: 480px) {
+    .sozo-image-grid { grid-template-columns: 1fr; max-width: 300px; margin-left: auto; margin-right: auto; }
+  }
+</style>
+
+<!-- ==========================================================
+     4. HERO
+     ========================================================== -->
+<section class="sozo-hero-section">
+  <div class="sozo-hero-container">
+    <div class="sozo-hero-content">
+      <nav class="sozo-breadcrumb" aria-label="breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">►</span>
+        <a href="/treatment">Treatment</a>
+        <span class="separator">►</span>
+        <a href="/slimming-treatment/">Slimming Treatment</a>
+        <span class="separator">►</span>
+        <span class="current">Caloburn Treatment</span>
+      </nav>
+      <h1>Caloburn Treatment</h1>
+      <p>Detoks Tubuh &amp; Relaksasi Maksimal</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Caloburn%20di%20Sozo%20%5Bsrc%3AORG-Caloburn%5D" target="_blank" rel="noopener noreferrer" class="sozo-hero-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        Konsultasi Sekarang
+      </a>
+    </div>
+    <div class="sozo-hero-image">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2025/07/Caloburn.webp" alt="Caloburn Treatment di Sozo Skin Clinic" fetchpriority="high" decoding="async" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     5. INFO
+     ========================================================== -->
+<section class="sozo-info-section">
+  <div class="sozo-info-text">
+    Rasakan sensasi hangat yang membantu meningkatkan sirkulasi darah, mempercepat detoksifikasi, dan membuat tubuh lebih ringan &amp; rileks.
+  </div>
+</section>
+
+<!-- ==========================================================
+     6. PROBLEM (Apakah Kamu Mulai Merasakan Hal Ini?)
+     ========================================================== -->
+<section class="sozo-rf-problem-v4" aria-labelledby="rf-problem-title-v4">
+  <div class="rf-v4-inner">
+    <div class="rf-v4-heading">
+      <div class="rf-v4-title-wrap">
+        <h2 id="rf-problem-title-v4">
+          Apakah Kamu Mulai Merasakan <span>Hal Ini?</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="rf-v4-list">
+      <div class="rf-v4-card">
+        <span class="rf-v4-number">01</span>
+        <div class="rf-v4-card-text">
+          <h3>Berat badan susah turun</h3>
+        </div>
+        <span class="rf-v4-icon">↗</span>
+      </div>
+
+      <div class="rf-v4-card">
+        <span class="rf-v4-number">02</span>
+        <div class="rf-v4-card-text">
+          <h3>Metabolisme tubuh terasa lambat</h3>
+        </div>
+        <span class="rf-v4-icon">↗</span>
+      </div>
+
+      <div class="rf-v4-card">
+        <span class="rf-v4-number">03</span>
+        <div class="rf-v4-card-text">
+          <h3>Proses pembakaran lemak tidak maksimal</h3>
+        </div>
+        <span class="rf-v4-icon">↗</span>
+      </div>
+
+      <div class="rf-v4-card">
+        <span class="rf-v4-number">04</span>
+        <div class="rf-v4-card-text">
+          <h3>Tubuh terasa berat &amp; kurang berenergi saat diet</h3>
+        </div>
+        <span class="rf-v4-icon">↗</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     7. GALLERY
+     ========================================================== -->
+<section class="sozo-gallery-section">
+  <h2>Badan Kencang Mulai dari Sini dengan Caloburn Treatment Sozo Skin Treatment</h2>
+  <div class="sozo-image-grid">
+    <div class="sozo-image-item">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2025/07/ultrasculpt.webp" alt="Ultrasculpt Sozo Skin Treatment 1" loading="lazy">
+    </div>
+    <div class="sozo-image-item">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Caloburn.avif" alt="Ultrasculpt Sozo Skin Treatment 2" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     8. BEFORE-AFTER
+     ========================================================== -->
+<section class="sozo-ba-section">
+  <div class="sozo-ba-container">
+    <div class="sozo-ba-header">
+      <h2>Badan Lebih Kencang &amp; Otot Tumbuh Optimal</h2>
+      <ul class="sozo-ba-list">
+        <li>Membantu mengurangi lemak dan membentuk otot</li>
+        <li>Tanpa operasi &amp; minim downtime</li>
+        <li>Hasil cepat terlihat</li>
+      </ul>
+    </div>
+    <div class="sozo-ba-grid">
+      <div class="sozo-ba-item">
+        <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Hero-Image-Before-After-Slimming-scaled.avif" alt="Before After Ultrasculpt Paha" loading="lazy">
+      </div>
+      <div class="sozo-ba-item">
+        <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Before-After-Perut.avif" alt="Before After Ultrasculpt Perut" loading="lazy">
+      </div>
+      <div class="sozo-ba-item">
+        <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Before-After-Perut-1.avif" alt="Before After Ultrasculpt Perut Samping" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     9. PROCESS
+     ========================================================== -->
+<section class="sozo-process-section">
+  <div class="sozo-process-container">
+    <div class="sozo-process-header">
+      <h2>Proses CaloBurn Treatment</h2>
+      <p>Pahami proses perawatan CaloBurn dan lihat hasil nyata yang bisa kamu dapatkan dengan cepat</p>
+    </div>
+    <div class="sozo-process-grid">
+      <div class="sozo-process-card">
+        <div class="sozo-process-icon"><i class="fa-solid fa-bed"></i></div>
+        <div>
+          <h3>Persiapan Treatment</h3>
+          <p>Tubuh dibalut dengan selimut khusus Caloburn untuk mengawali proses.</p>
+        </div>
+      </div>
+      <div class="sozo-process-card">
+        <div class="sozo-process-icon"><i class="fa-solid fa-temperature-three-quarters"></i></div>
+        <div>
+          <h3>Thermal Therapy</h3>
+          <p>Suhu hangat mulai meningkat secara bertahap untuk merangsang sirkulasi darah &amp; metabolisme.</p>
+        </div>
+      </div>
+      <div class="sozo-process-card">
+        <div class="sozo-process-icon"><i class="fa-solid fa-droplet"></i></div>
+        <div>
+          <h3>Proses Detoksifikasi</h3>
+          <p>Tubuh mulai berkeringat sebagai tanda detoksifikasi alami sedang berlangsung.</p>
+        </div>
+      </div>
+      <div class="sozo-process-card">
+        <div class="sozo-process-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+        <div>
+          <h3>Hasil Akhir</h3>
+          <p>Setelah treatment, tubuh terasa jauh lebih ringan, rileks, dan segar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     10. PROMO SLIDER
+     ========================================================== -->
+<section class="sozo-promo-section">
+  <h2>Promo Spesial Caloburn Treatment</h2>
+  <p>Klaim promo slimming treatment terbaik sebelum kehabisan!</p>
+
+  <div class="sozo-promo-slider" id="sozoPromoSlider">
+    <div class="sozo-promo-track" id="sozoPromoTrack">
+      <div class="sozo-promo-slide"><div class="sozo-promo-card">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/08/slimming-treatment-banner-1.webp" alt="Promo Caloburn Treatment 1" loading="lazy">
+      </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20klaim%20promo%20treatment%20Caloburn%20di%20Sozo%20%5Bsrc%3AORG-Caloburn%5D" target="_blank" rel="noopener noreferrer" class="sozo-promo-cta">Klaim Sekarang</a>
+      </div>
+      <div class="sozo-promo-slide"><div class="sozo-promo-card">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/08/slimming-treatment-banner-3.webp" alt="Promo Caloburn Treatment 2" loading="lazy">
+      </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20klaim%20promo%20treatment%20Caloburn%20di%20Sozo%20%5Bsrc%3AORG-Caloburn%5D" target="_blank" rel="noopener noreferrer" class="sozo-promo-cta">Klaim Sekarang</a>
+      </div>
+      <div class="sozo-promo-slide"><div class="sozo-promo-card">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/08/slimming-treatment-banner-4.webp" alt="Promo Caloburn Treatment 3" loading="lazy">
+      </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20klaim%20promo%20treatment%20Caloburn%20di%20Sozo%20%5Bsrc%3AORG-Caloburn%5D" target="_blank" rel="noopener noreferrer" class="sozo-promo-cta">Klaim Sekarang</a>
+      </div>
+      <div class="sozo-promo-slide"><div class="sozo-promo-card">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/08/slimming-treatment-banner-5.webp" alt="Promo Caloburn Treatment 4" loading="lazy">
+      </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20klaim%20promo%20treatment%20Caloburn%20di%20Sozo%20%5Bsrc%3AORG-Caloburn%5D" target="_blank" rel="noopener noreferrer" class="sozo-promo-cta">Klaim Sekarang</a>
+      </div>
+    </div>
+
+    <button class="sozo-promo-arrow sozo-promo-prev" onclick="sozoPromoMove(-1)" aria-label="Sebelumnya"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button class="sozo-promo-arrow sozo-promo-next" onclick="sozoPromoMove(1)" aria-label="Berikutnya"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+
+    <div class="sozo-promo-dots" id="sozoPromoDots"></div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     11. FAQ
+     ========================================================== -->
+<section class="sozo-faq-wrapper">
+  <div class="sozo-faq-header">
+    <h2>FaQ (Frequently Asked Question)</h2>
+    <p><b>Detoks Tubuh &amp; Relaksasi Maksimal dengan CaloBurn</b><br>
+    Ingin tubuh terasa lebih ringan dan rileks? Yuk, reservasi CaloBurn di Sozo Skin Clinic sekarang!</p>
+  </div>
+  <div class="sozo-faq-container">
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apa itu Caloburn?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Caloburn adalah treatment berbasis terapi panas yang menggunakan selimut hangat khusus untuk membantu meningkatkan suhu tubuh secara bertahap. Dengan meningkatnya suhu tubuh, sistem metabolisme akan bekerja lebih aktif, sehingga membantu proses detoksifikasi alami melalui keringat. Selain itu, Caloburn juga memberikan efek relaksasi yang membuat tubuh terasa lebih ringan, segar, dan nyaman setelah treatment selesai.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Bagaimana cara kerja Caloburn dalam tubuh?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Caloburn bekerja dengan memanfaatkan panas yang menembus lapisan kulit untuk merangsang berbagai fungsi tubuh. Ketika suhu tubuh meningkat, pembuluh darah akan melebar sehingga aliran darah menjadi lebih lancar. Proses ini membantu distribusi oksigen dan nutrisi ke seluruh tubuh menjadi lebih optimal. Selain itu, tubuh juga akan mengeluarkan keringat sebagai bagian dari proses detoksifikasi, sekaligus membantu meningkatkan pembakaran kalori secara alami.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apa saja manfaat utama dari Caloburn?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Caloburn memiliki berbagai manfaat yang tidak hanya berfokus pada relaksasi, tetapi juga mendukung kesehatan tubuh secara keseluruhan. Beberapa manfaat utama yang bisa dirasakan antara lain membantu detoksifikasi tubuh, melancarkan sirkulasi darah, meningkatkan metabolisme, serta memberikan efek relaksasi yang dapat mengurangi stres dan kelelahan. Dalam jangka panjang, treatment ini juga dapat membantu mendukung program slimming dan menjaga tubuh tetap bugar.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apakah Caloburn bisa membantu menurunkan berat badan?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Caloburn dapat membantu meningkatkan pembakaran kalori melalui peningkatan suhu tubuh and metabolisme, sehingga berperan sebagai pendukung dalam program penurunan berat badan. Namun, untuk hasil yang lebih optimal dan berkelanjutan, Caloburn sebaiknya dikombinasikan dengan pola makan sehat, olahraga ringan, serta treatment lain yang lebih spesifik untuk pembakaran lemak.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apa perbedaan Caloburn dengan sauna biasa?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Meskipun sama-sama menggunakan panas, Caloburn memiliki pendekatan yang lebih terarah dibandingkan sauna konvensional. Caloburn menggunakan selimut khusus yang membungkus tubuh sehingga panas dapat lebih fokus dan merata. Selain itu, suhu pada Caloburn cenderung lebih terkontrol, sehingga memberikan pengalaman yang lebih nyaman dan aman, terutama bagi pengguna yang tidak terbiasa dengan suhu panas ekstrem seperti di sauna.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Berapa lama durasi treatment Caloburn?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Durasi treatment Caloburn biasanya berkisar antara 30 hingga 60 menit, tergantung pada kondisi tubuh dan kebutuhan masing-masing individu. Selama sesi berlangsung, tubuh akan secara bertahap beradaptasi dengan suhu hangat, sehingga memberikan efek yang optimal tanpa menimbulkan rasa tidak nyaman.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Berapa kali treatment diperlukan untuk hasil yang maksimal?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Jumlah sesi Caloburn yang dibutuhkan dapat berbeda-beda untuk setiap orang, tergantung pada tujuan dan kondisi tubuh. Umumnya, treatment dilakukan 1 hingga 2 kali dalam seminggu dengan total 4 hingga 8 sesi untuk mendapatkan hasil yang lebih optimal. Konsistensi dalam menjalani treatment akan sangat berpengaruh terhadap hasil yang diperoleh.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Kapan hasil dari Caloburn mulai terasa?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Efek relaksasi dan tubuh yang terasa lebih ringan biasanya bisa langsung dirasakan setelah satu kali treatment. Namun, untuk manfaat yang lebih optimal seperti peningkatan metabolisme dan dukungan slimming, hasil akan lebih terasa setelah beberapa sesi dilakukan secara rutin.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apakah Caloburn aman untuk dilakukan?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Caloburn merupakan treatment non-invasive yang relatif aman karena tidak melibatkan tindakan medis atau penggunaan bahan kimia. Selama dilakukan sesuai prosedur dan di bawah pengawasan tenaga profesional, treatment ini dapat menjadi pilihan yang aman untuk membantu detoksifikasi dan relaksasi tubuh.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apakah treatment ini menimbulkan rasa sakit?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Caloburn tidak menimbulkan rasa sakit. Selama treatment, Anda hanya akan merasakan sensasi hangat yang nyaman, mirip seperti beristirahat di dalam selimut hangat. Sensasi ini justru membantu tubuh menjadi lebih rileks dan tenang.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apakah ada efek samping setelah Caloburn?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Efek samping dari Caloburn umumnya sangat ringan dan bersifat sementara. Beberapa orang mungkin akan mengalami peningkatan keringat, tubuh terasa hangat, atau sedikit pegal seperti setelah berolahraga ringan. Hal ini merupakan reaksi normal dari tubuh yang sedang mengalami peningkatan metabolisme.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Siapa saja yang cocok melakukan Caloburn?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Caloburn cocok untuk berbagai kalangan, terutama bagi Anda yang memiliki aktivitas padat, sering merasa lelah, atau ingin membantu proses detoksifikasi tubuh. Treatment ini juga cocok untuk Anda yang sedang menjalani program slimming atau ingin menjaga kebugaran tubuh secara menyeluruh.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apakah ada kondisi tertentu yang perlu diperhatikan sebelum treatment?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Meskipun aman, beberapa kondisi seperti kehamilan, gangguan jantung, atau penyakit tertentu memerlukan konsultasi terlebih dahulu sebelum menjalani Caloburn. Hal ini penting untuk memastikan treatment dilakukan dengan aman dan sesuai dengan kondisi tubuh Anda.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apakah Caloburn bisa dikombinasikan dengan treatment lain?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Ya, Caloburn sangat efektif jika dikombinasikan dengan treatment lain seperti slimming treatment, fat burning, atau lymphatic drainage. Kombinasi ini dapat membantu meningkatkan hasil, terutama dalam hal pembakaran lemak dan pembentukan tubuh.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apakah perlu persiapan khusus sebelum melakukan Caloburn?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Tidak ada persiapan khusus yang diperlukan. Namun, disarankan untuk mengonsumsi cukup air putih sebelum treatment agar tubuh tetap terhidrasi dengan baik selama proses berlangsung.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apa yang sebaiknya dilakukan setelah treatment?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Setelah treatment, disarankan untuk tetap menjaga hidrasi dengan minum air putih yang cukup. Selain itu, Anda juga dianjurkan untuk beristirahat sejenak agar tubuh dapat beradaptasi dengan kondisi setelah treatment dan memaksimalkan manfaat yang didapat.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apakah Caloburn membantu melancarkan peredaran darah?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Ya, salah satu manfaat utama Caloburn adalah membantu melancarkan sikhulasi darah. Peningkatan suhu tubuh membuat pembuluh darah melebar, sehingga aliran darah menjadi lebih lancar dan membantu distribusi oksigen ke seluruh tubuh.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apakah Caloburn bisa membantu mengurangi stres?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Caloburn memberikan efek relaksasi yang cukup signifikan karena sensasi hangat yang dihasilkan membantu tubuh menjadi lebih rileks. Hal ini dapat membantu mengurangi tingkat stres dan meningkatkan kenyamanan tubuh secara keseluruhan.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Apakah treatment ini cocok untuk pria dan wanita?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Ya, Caloburn aman dan dapat dilakukan oleh pria maupun wanita. Treatment ini bersifat umum dan dapat disesuaikan dengan kebutuhan masing-masing individu.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sozo-faq-item">
+      <div class="sozo-faq-question" onclick="toggleFaq(this)">
+        <h3>Berapa harga Caloburn treatment?</h3>
+        <div class="sozo-faq-icon"></div>
+      </div>
+      <div class="sozo-faq-answer">
+        <div class="sozo-faq-answer-inner">
+          <p>Harga Caloburn dapat berbeda-beda tergantung pada paket dan jumlah sesi yang diambil. Untuk mendapatkan informasi harga yang lebih akurat dan sesuai kebutuhan, disarankan untuk melakukan konsultasi terlebih dahulu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     12. SCRIPTS (promo slider + FAQ toggle + Yoast purge)
+     ========================================================== -->
+<script>
+(function () {
+  var index = 0;
+  var track = document.getElementById('sozoPromoTrack');
+  var dotsWrap = document.getElementById('sozoPromoDots');
+  if (!track || !dotsWrap) return;
+  var total = track.children.length;
+  function perView() { return window.innerWidth <= 767 ? 1 : 3; }
+  function maxIndex() { return total - perView(); }
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    for (var i = 0; i <= maxIndex(); i++) {
+      var dot = document.createElement('button');
+      dot.className = 'sozo-promo-dot' + (i === index ? ' active' : '');
+      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+      (function (n) { dot.addEventListener('click', function () { sozoPromoGo(n); }); })(i);
+      dotsWrap.appendChild(dot);
+    }
+  }
+  window.sozoPromoGo = function (n) {
+    var max = maxIndex();
+    if (n < 0) n = max;
+    if (n > max) n = 0;
+    index = n;
+    track.style.transform = 'translateX(-' + (index * (100 / perView())) + '%)';
+    var dots = dotsWrap.children;
+    for (var j = 0; j < dots.length; j++) { dots[j].classList.toggle('active', j === index); }
+  };
+  window.sozoPromoMove = function (dir) { sozoPromoGo(index + dir); };
+  window.addEventListener('resize', function () { buildDots(); sozoPromoGo(index); });
+  buildDots();
+  setInterval(function () { sozoPromoGo(index + 1); }, 5000);
+})();
+
+function toggleFaq(element) {
+  const item = element.parentElement;
+  const isActive = item.classList.contains('active');
+  document.querySelectorAll('.sozo-faq-item').forEach(function (el) { el.classList.remove('active'); });
+  if (!isActive) { item.classList.add('active'); }
+}
+
+/* Anti duplikasi breadcrumb Yoast */
+(function () {
+  function purgeYoastBreadcrumb() {
+    const yoastScript = document.querySelector('script.yoast-schema-graph');
+    if (yoastScript) {
+      try {
+        let schemaData = JSON.parse(yoastScript.text);
+        if (schemaData && schemaData['@graph']) {
+          const initialCount = schemaData['@graph'].length;
+          schemaData['@graph'] = schemaData['@graph'].filter(function (item) {
+            return item['@type'] !== 'BreadcrumbList';
+          });
+          if (schemaData['@graph'].length !== initialCount) {
+            yoastScript.text = JSON.stringify(schemaData);
+          }
+        }
+      } catch (err) {
+        console.error('Error processing Yoast JSON structural cleanup:', err);
+      }
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', purgeYoastBreadcrumb);
+  } else {
+    purgeYoastBreadcrumb();
+  }
+})();
+</script>

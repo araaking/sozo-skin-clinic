@@ -1,5 +1,7 @@
 # 🤖 System Instructions for AI Agent (Sozo Schema Migration)
 
+> **Pembaruan terakhir:** 1 Oktober 2026
+
 ## 1. Role & Persona
 You are an Expert Technical SEO and Schema Markup Developer. Your task is to assist developers in generating custom JSON-LD schema markup for `sozoskinclinic.com`. You are replacing the automated Yoast SEO schema with highly accurate, interconnected `@graph` schema injected via WPCode.
 
@@ -49,6 +51,7 @@ AGENTS.md ini fokus pada **schema generation rules** + cara AI bekerja di projec
 
 ## 2. Project Context & Architecture
 * **The Goal:** Build a centralized Knowledge Graph per page to avoid duplicate entities and errors.
+* **Standar saat ini (fokus):** setiap halaman cukup `WebPage` + `BreadcrumbList`. Homepage tetap hub: `Organization` + `WebSite` + `WebPage`. Untuk generate baru, jangan tambah `Service`, `FAQPage`, `MedicalWebPage`, atau `CreativeWork` sampai ada keputusan (ADR) baru.
 * **The Architecture:** The `Organization` and `WebSite` entities are fully declared ONLY on the homepage. All other pages MUST reference them using pointer `@id` (`https://sozoskinclinic.com/#organization` and `https://sozoskinclinic.com/#website`).
 
 ## 3. Strict Development Rules (CRITICAL)
@@ -57,13 +60,13 @@ When generating schema, you MUST adhere to these rules:
 
 ### A. Graph Structure & Connections
 * Always use the `@graph` array structure to encapsulate all entities.
-* The main page entity (`MedicalWebPage`, `ItemPage`, etc.) must include:
+* The main page entity (`WebPage`) must include:
 ```json
   "isPartOf": { "@id": "[https://sozoskinclinic.com/#website](https://sozoskinclinic.com/#website)" },
   "about": { "@id": "[https://sozoskinclinic.com/#organization](https://sozoskinclinic.com/#organization)" }
 ```
 
-## 4. Konvensi Penamaan File (per Halaman Treatment)
+## 4. Konvensi Penamaan File (per Halaman)
 
 Setiap folder halaman treatment berisi dua file dengan peran yang jelas:
 
@@ -72,89 +75,48 @@ Setiap folder halaman treatment berisi dua file dengan peran yang jelas:
 
 Pola lama (`fix.html` body + `index.html` JSON-LD) sudah dihapus via `git mv` di commit rename 13 Juli 2026. Saat generate halaman baru, langsung tulis dalam dua file terpisah sesuai konvensi ini — jangan gabung dalam satu file.
 
+Halaman statis di root mengikuti pola sama: `about-us.html` (body) + `about-us-schema-markup.html` (schema statis) + `about-us-schema-markup.php` (versi dinamis WPCode). Pastikan `about-us.html` hanya punya satu blok schema — blok `LocalBusiness`/`MedicalClinic` dan `FAQPage` lama sudah dihapus.
+
 Sebelum aktivasi, pastikan `index.html` sudah bersih dari microdata breadcrumb/Product/Offer/FAQPage duplikat (lihat catatan QC di §7 Dokumentasi.md).
 
 ## 5. Reference Implementations (Contoh File Jadi)
 
-Sebelum generate schema baru, cek dulu file referensi terdekat di folder yang sesuai. Pakai sebagai template, sesuaikan data halaman, harga, dan FAQ.
+Standar saat ini: `WebPage` + `BreadcrumbList`. Cek referensi terdekat sebelum generate.
 
-**Pola node standar:** `MedicalWebPage` (specialty Dermatology) → `BreadcrumbList` 3-level atau 4-level → `Service` + `offers` (single treatment) atau `Service` + `hasOfferCatalog` (hub multi-treatment) → `FAQPage`.
+**Homepage (hub):**
+- `schema-home.php` — canonical dinamis untuk WPCode: `Organization` + `WebSite` + `WebPage`; title & description dari meta Yoast (`_yoast_wpseo_title` / `_yoast_wpseo_metadesc`), fallback judul page → document title → default.
+- `schema-home.html` — contoh render statis `schema-home.php` untuk dokumentasi + validator. Jangan dipasang ke WPCode.
 
-### Referensi per Kategori
+**Halaman statis:**
+- `about-us-schema-markup.php` — snippet dinamis `/tentang-kami/`: `WebPage` + `BreadcrumbList`, title & description dari Yoast, guard slug di dalam fungsi.
+- `about-us-schema-markup.html` — versi statis untuk validator; isi harus sama dengan blok di `about-us.html`.
+- `about-us.html` — layout body; hanya satu blok schema (`WebPage` + `BreadcrumbList`), tanpa FAQ/CreativeWork.
+- `other/privacy.html` + `privacy-policy.html` — halaman Kebijakan Privasi, pola sama (`WebPage` + `BreadcrumbList`); UI mengikuti Sozo Design System V1.
+- `promo/index.php` — landing promo WordPress: schema `WebPage` + `BreadcrumbList` dirender di `wp_head` hanya saat `is_page('promo')`; breadcrumb visual memakai Beranda › Promo. Jangan deklarasikan ulang `Organization`/`WebSite`.
 
-**Hair Treatment (sub-halaman):**
-- `treatment/hair-treatment/salmon-dna-hair-treatment/index.html` — injeksi PDRN, PriceSpecification + 6 FAQ.
-- `treatment/hair-treatment/express-hair-therapy/index.html` — non-invasif deep cleansing, PriceSpecification + 9 FAQ.
-
-**Skin Booster (range harga lebar, 799rb–8,5 juta):**
-- `treatment/injectable-treatment/skin-booster-treatment/profhilo/index.html` — entry-mid high, 4-level breadcrumb, PriceSpecification + 6 FAQ.
-- `treatment/injectable-treatment/skin-booster-treatment/juvelook/index.html` — premium mid-tier, PriceSpecification + 5 FAQ.
-- `treatment/injectable-treatment/skin-booster-treatment/aquashine-treatment/index.html` — entry-level 14 FAQ (FAQ-rich reference).
-- `treatment/injectable-treatment/skin-booster-treatment/rejuran-healer/index.html` — 11 FAQ (FAQ-rich reference).
-- `treatment/injectable-treatment/skin-booster-treatment/rejuran-skin-booster/index.html` — Polynucleotide, PriceSpecification Rp 2.999.000 + 9 FAQ (beda dengan Rejuran Healer; lihat Q3 schema).
-- `treatment/injectable-treatment/skin-booster-treatment/collagen-mask/index.html` — facial treatment, bukan skin booster injeksi; contoh referesnsi penempatan treatment kulit di hub yang bukan injeksi.
-
-**Filler, Threadlift, Infus:**
-- `treatment/injectable-treatment/filler-treatment/filler-dagu/index.html` — PriceSpecification Rp 5.499.000 + 10 FAQ.
-- `treatment/injectable-treatment/threadlift-treatment/tanam-benang-hidung/index.html` — alternatif langsung `Offer` di `Service.offers` (masih dalam PriceSpecification wrapper).
-- `treatment/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow/index.html` — entry-level infus, PriceSpecification + 9 FAQ.
-
-**Meso, RF, HIFU:**
-- `treatment/slimming-treatment/meso-treatment/meso-slim-body/index.html` — 14 FAQ (FAQ-rich reference).
-- `treatment/slimming-treatment/meso-treatment/meso-bloatway/index.html` — PriceSpecification Rp 949.000 + 8 FAQ.
-- `treatment/radiofrequency-treatment/rf-face/index.html` — entry RF, PriceSpecification + 8 FAQ.
-- `treatment/slimming-treatment/hifu-treatment/lifetra-hifu/index.html` — HIFU 1-zona style, PriceSpecification + 6 FAQ.
-
-**Advanced Skin (IPL, Derma Peel, Acne Treatment):**
-- `treatment/skin-treatment/ipl-treatment/ipl-glow/index.html` — PriceSpecification + 4 FAQ. **(JANGAN pakai `treatment/skin-treatment/ipl-treatment/ipl-acne/index.html` sebagai referensi — IPL Acne pakai pola `Offer` langsung tanpa `PriceSpecification`, inkonsisten dengan standar tim.)**
-- `treatment/skin-treatment/derma-peel-treatment/acne-peel/index.html` — entry peel Rp 299.000 + 9 FAQ.
-- `treatment/skin-treatment/derma-peel-treatment/dazling-glow-peel/index.html` — premium peel Rp 889.000 + 3 FAQ.
-- `treatment/skin-treatment/acne-treatment/pore-detox/index.html` — paket multi-treatment dalam satu `Service`, PriceSpecification Rp 799.000 + 14 FAQ. File ini belum mencantumkan `priceValidUntil`; tambahkan field tersebut jika dipakai sebagai template baru.
-
-**Halaman Dokter (list & detail):**
-- `dokter/schema-markup-dokter.html` — list tim dokter: `CollectionPage` + `BreadcrumbList` (2 level) + `ItemList` berisi 5 `Person` ringan (name, jobTitle, url, image, worksFor → `#organization`). STR tidak masuk schema. Valid 0 error.
-- `dokter/dr-putri/schema-markup.html` — detail dokter: `ProfilePage` + `BreadcrumbList` (3 level) + `IndividualPhysician`. **WAJIB pakai array `"@type": ["Person", "IndividualPhysician"]`** — `IndividualPhysician` hanya turunan `Organization`, properti `jobTitle`/`worksFor`/`alumniOf`/`honorificPrefix` baru valid dengan `Person` di array.
-- Referensi `worksFor`/`practicesAt` → `#organization` **wajib diberi `@type` eksplisit**: `{"@type": "MedicalOrganization", "@id": "https://sozoskinclinic.com/#organization"}` — tanpa `@type`, validator membaca target sebagai `Thing` polos dan memunculkan error (kasus `practicesAt`).
-- `@id` Person di detail page harus **identik** dengan referensi di halaman list (`.../[slug]/#person`) agar entitas menyambung.
-- `medicalSpecialty` TIDAK dipakai — expected type enumerasi `MedicalSpecialty`, string bebas memicu warning. Gunakan `knowsAbout`.
-- STR masuk `hasCredential` (`EducationalOccupationalCredential`, credentialCategory: STR) **hanya** jika nomor tampil penuh di UI. Yang disensor jangan dipaksa masuk.
-
-**Blog/Artikel:**
-- `blog/singlepost.php` — schema artikel dynamic via shortcode `[sozoskin_single]`: `MedicalWebPage` + `BlogPosting` + `Person` (reviewer, kondisional) + `BreadcrumbList` 3-level. `articleBody` + `wordCount` + `keywords` diisi dari konten. Template PHP, bukan dua-file HTML. Lihat ADR-0008.
-
-### Aturan Konsistensi Harga
-
-- **Default:** `Service.offers` → `Offer` dengan field `priceSpecification` bertipe `PriceSpecification` (mengandung `price`, `priceCurrency`, `priceValidUntil`, `description` opsional).
-- **Jangan:** `Service.offers` → `Offer` langsung dengan `price` (tanpa PriceSpecification). IPL Acne adalah satu-satunya halaman yang saat ini memakai pola ini karena ditulis sebelum standar ditetapkan. Valid secara schema.org tapi tidak konsisten.
-- **Jika ragu:** copy struktur dari `treatment/hair-treatment/express-hair-therapy/index.html` (PriceSpecification paling clean).
+**Arsip pola lama (terpasang di production, jangan dipakai untuk generate baru):** halaman treatment memakai `MedicalWebPage` + `Service` + `FAQPage`; halaman dokter memakai `CollectionPage`/`ProfilePage` + `IndividualPhysician`; blog memakai `MedicalWebPage` + `BlogPosting` via `blog/singlepost.php`. Semua tetap valid dan dibiarkan apa adanya sampai ada ADR baru.
 
 ## 6. Tipe Schema per Kategori URL
 
-Sebelum generate, cek dulu kategori URL-nya. Setiap kategori pakai tipe schema yang berbeda. Master URL checklist ada di README.md §2–§9.
+Default fokus saat ini: `WebPage` + `BreadcrumbList`. Master URL checklist ada di README.md §2–§9.
 
-| Kategori URL | Pola URL | Tipe Schema Wajib | Catatan |
+| Kategori URL | Pola URL | Tipe Schema | Catatan |
 | :-- | :-- | :-- | :-- |
-| Treatment sub-halaman (single service) | `/treatment/*/layanan/` | `MedicalWebPage` + `BreadcrumbList` + `Service` (dengan `offers` + `PriceSpecification`) + `FAQPage` | Pola standar tim, lihat §5. |
-| Treatment hub (multi-service) | `/treatment/`, `/skin-treatment/`, `/hair-removal-treatment/` | `MedicalWebPage` + `BreadcrumbList` + `Service` + `hasOfferCatalog` (tanpa harga jika halaman tidak cantumkan harga spesifik) | Hair Removal & Injectable pakai pola ini. Skin Treatment tanpa FAQPage (konten tidak ada). |
-| List tim dokter | `/tim-dokter-sozo-skin/` | `CollectionPage` + `BreadcrumbList` + `ItemList` (item: `Person` ringan) | Lihat §5 "Halaman Dokter". Bukan `MedicalWebPage` — halaman index, bukan konten medis. |
-| Detail dokter | `/tim-dokter-sozo-skin/[slug]/` | `ProfilePage` + `BreadcrumbList` + `IndividualPhysician` (array `["Person", "IndividualPhysician"]`) | Lihat §5 "Halaman Dokter". STR via `hasCredential` hanya jika tampil penuh di UI. |
-| Lokasi cabang | `/lokasi/[kota]/`, `/lokasi/jakarta/[area]/` | `MedicalClinic` + `LocalBusiness` (bukan `MedicalWebPage`) | Wajib isi `address`, `geo`, `telephone`, `openingHoursSpecification`. Belum ada satupun yang dibuat — lihat Dokumentasi.md §5.42. |
-| Product/ecommerce | `/product/*` | `Product` + `Offer` (BUKAN `Service`) | README §7. Lihat juga Dokumentasi.md §4 "Pemetaan Schema per Tipe Halaman" — Product schema khusus untuk rumpun ini. |
-| Landing page suplemen | `/suplemen-pelangsing/` | `WebPage` + `Organization` reference + `BreadcrumbList` | Di luar `/product/*`, jadi bukan Product schema. |
-| Static page | `/promo/`, `/testimoni/`, `/tentang-kami/`, `/editorial-board/`, `/kebijakan-privasi/` | `WebPage` + `Organization` reference + `BreadcrumbList` | FAQ boleh ditambahkan jika halaman punya konten FAQ. Editorial Board pakai `AboutPage` + `reviewedBy` (lihat `editorial-board.html`). |
-| Blog/artikel | `/blog/`, `/[artikel-slug]/` | `MedicalWebPage` + `BlogPosting` + `BreadcrumbList` (+ `Person` reviewer kondisional) | Dynamic via `blog/singlepost.php`. `articleBody`, `wordCount`, `keywords` wajib ikut. Snippet `blog/wpcode-article-schema.php` deprecated — jangan diaktifkan (ADR-0008). |
-| Beauty hub utama | `/treatment/` | `CollectionPage` atau `WebPage` + `BreadcrumbList` | Belum ada schema. URL flat, hierarki breadcrumb perlu ditentukan manual. |
+| Homepage | `/` | `Organization` + `WebSite` + `WebPage` | Hub deklarasi penuh; lihat `schema-home.php`. |
+| Semua halaman lain (default) | — | `WebPage` + `BreadcrumbList` | Standar fokus saat ini; contoh `about-us-schema-markup.php`. Pointer `@id` ke `#organization` dan `#website` wajib. |
+| Promo landing | `/promo/` | `WebPage` + `BreadcrumbList` | Diintegrasikan dalam `promo/index.php` lewat hook `wp_head` dengan guard `is_page('promo')`; breadcrumb Beranda › Promo. |
+| Arsip: treatment | `/treatment/*` | `MedicalWebPage` + `BreadcrumbList` + `Service` (+ `FAQPage` opsional) | Terpasang di production; valid, tapi bukan arah generate baru. |
+| Arsip: list tim dokter | `/tim-dokter-sozo-skin/` | `CollectionPage` + `BreadcrumbList` + `ItemList` (Person ringan) | Terpasang; lihat `dokter/schema-markup-dokter.html`. |
+| Arsip: detail dokter | `/tim-dokter-sozo-skin/[slug]/` | `ProfilePage` + `BreadcrumbList` + `IndividualPhysician` (array `["Person", "IndividualPhysician"]`) | Schema siap, WPCode belum. STR via `hasCredential` hanya jika tampil penuh di UI. |
+| Arsip: blog/artikel | `/blog/`, `/[artikel-slug]/` | `MedicalWebPage` + `BlogPosting` + `BreadcrumbList` (+ `Person` reviewer kondisional) | Dynamic via `blog/singlepost.php`. `articleBody`, `wordCount`, `keywords` wajib ikut. Snippet `blog/wpcode-article-schema.php` deprecated (ADR-0008). |
+| Lokasi cabang (belum dibuat) | `/lokasi/[kota]/`, `/lokasi/jakarta/[area]/` | `MedicalClinic` + `LocalBusiness` | Wajib isi `address`, `geo`, `telephone`, `openingHoursSpecification`. Tunggu keputusan sebelum generate — lihat Dokumentasi.md §5.42. |
+| Product/ecommerce (belum dibuat) | `/product/*` | `Product` + `Offer` (BUKAN `Service`) | README §7. Product schema khusus untuk rumpun ini. |
 
-**Aturan tambahan untuk lokasi cabang:**
-- Selalu deklarasi `MedicalClinic` dan `LocalBusiness` di node yang sama (bukan nested). `MedicalClinic` adalah subtype dari `LocalBusiness` di schema.org.
-- Setiap lokasi harus memiliki `address` (PostalAddress), `geo` (GeoCoordinates), `telephone`, dan `openingHoursSpecification`.
-- `areaServed` mengacu ke kota/area, bukan Indonesia kecuali halaman secara eksplisit melayani seluruh Indonesia.
-- `image` untuk foto cabang jika ada di asset repo.
-
-**Aturan untuk static pages:**
-- Tidak perlu `Service` atau `FAQPage` kecuali halaman secara eksplisit punya konten tersebut.
-- `BreadcrumbList` minimal 1 item (Home) untuk halaman akar, atau hierarki sesuai URL.
-- Pointer `@id` ke `#organization` dan `#website` tetap wajib.
+**Aturan umum:**
+- `BreadcrumbList` minimal 2 level (`Beranda` + halaman saat ini); item terakhir boleh tanpa `item`. Nama item pakai bahasa Indonesia sesuai breadcrumb visual.
+- Pointer `@id` ke `#organization` dan `#website` tetap wajib di semua halaman.
+- Halaman statis tidak perlu `Service` atau `FAQPage` kecuali diminta eksplisit.
+- Jangan deklarasi ulang `Organization`/`WebSite` di halaman non-homepage — cukup pointer `@id`.
 
 ## 7. Master URL Checklist
 

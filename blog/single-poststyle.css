@@ -10,24 +10,24 @@
 .sz-single-wrapper,
 .sz-related-section {
     --sz-primary: #1A2080;
-    --sz-primary-hover: #12165c;
+    --sz-primary-hover: #151A6D;
 
-    --sz-text-dark: #0f172a;
-    --sz-text-body: #334155;
-    --sz-text-muted: #64748b;
+    --sz-text-dark: #171715;
+    --sz-text-body: #41413E;
+    --sz-text-muted: #777771;
 
-    --sz-bg-light: #f8fafc;
-    --sz-bg-soft: #f1f5f9;
-    --sz-border: #e2e8f0;
+    --sz-bg-light: #E9DFD5;
+    --sz-bg-soft: #DFDBD4;
+    --sz-border: #DFDBD4;
 
-    --sz-radius-sm: 8px;
-    --sz-radius-md: 14px;
-    --sz-radius-lg: 20px;
+    --sz-radius-sm: 6px;
+    --sz-radius-md: 16px;
+    --sz-radius-lg: 24px;
 
     --sz-content-w: 720px;
     --sz-toc-w: 220px;
     --sz-sidebar-w: 240px;
-    --sz-layout-gap: 28px;
+    --sz-layout-gap: 24px;
     --sz-layout-w: calc(var(--sz-toc-w) + var(--sz-layout-gap) + var(--sz-content-w));
     --sz-layout-w-medium: calc(var(--sz-content-w) + var(--sz-layout-gap) + var(--sz-sidebar-w));
     --sz-layout-w-full: calc(var(--sz-toc-w) + var(--sz-layout-gap) + var(--sz-content-w) + var(--sz-layout-gap) + var(--sz-sidebar-w));
@@ -51,7 +51,7 @@
 
 body.single-post,
 body.single {
-    background: linear-gradient(180deg, #F3F7FD 0%, #FFFFFF 650px) no-repeat !important;
+    background: linear-gradient(180deg, #E9DFD5 0%, #FFFFFF 650px) no-repeat !important;
     background-color: #ffffff !important;
 }
 
@@ -66,7 +66,7 @@ body.single-post .site-main {
 .sz-single-wrapper {
     max-width: calc(var(--sz-layout-w) + 40px);
     margin: 0 auto;
-    padding: 36px 20px 64px;
+    padding: 64px 20px 80px;
 }
 
 /* (BARU) Lebih lebar begitu sidebar kanan tampil berdampingan */
@@ -84,7 +84,7 @@ body.single-post .site-main {
 
 .sz-single-header {
     max-width: var(--sz-content-w);
-    margin: 0 auto 28px auto;
+    margin: 0 auto 32px auto;
     text-align: center;
 }
 
@@ -125,9 +125,9 @@ body.single-post .site-main {
     flex-wrap: wrap;
     gap: 12px;
     font-size: 0.8125rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--sz-primary);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
@@ -148,18 +148,18 @@ body.single-post .site-main {
 }
 
 .sz-dot {
-    color: #cbd5e1;
+    color: #C8C3BA;
 }
 
 .sz-single-wrapper .sz-single-title {
     max-width: var(--sz-content-w);
-    margin: 0 auto 22px auto;
+    margin: 0 auto 24px auto;
     padding: 0 !important;
     font-size: clamp(26px, 2.5vw, 36px) !important;
-    font-weight: 800 !important;
+    font-weight: 700 !important;
     line-height: 1.18;
     letter-spacing: -0.025em;
-    color: var(--sz-text-dark) !important;
+    color: var(--sz-primary) !important;
 }
 
 /* ==========================================================
@@ -170,11 +170,11 @@ body.single-post .site-main {
     display: block;
     text-align: center;
     padding: 12px 18px;
-    border: 1px solid rgba(226, 232, 240, 0.95);
+    border: 1px solid var(--sz-border);
     background: #ffffff;
     border-radius: var(--sz-radius-md);
     margin-bottom: 24px;
-    box-shadow: 0 2px 8px rgba(26, 32, 128, 0.03);
+    box-shadow: var(--shadow-sm, 0 2px 8px rgba(23, 23, 21, 0.04));
 }
 
 .sz-byline-info {
@@ -185,7 +185,7 @@ body.single-post .site-main {
 
 .sz-byline-info a {
     color: var(--sz-text-dark);
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -194,7 +194,7 @@ body.single-post .site-main {
 }
 
 .sz-byline-separator {
-    color: #cbd5e1;
+    color: #C8C3BA;
     margin: 0 8px;
 }
 
@@ -211,11 +211,11 @@ body.single-post .site-main {
 
 .sz-single-wrapper .sz-single-hero-img {
     max-width: var(--sz-content-w) !important;
-    margin: 20px auto 32px auto !important;
+    margin: 24px auto 32px auto !important;
     border-radius: var(--sz-radius-md);
     overflow: hidden;
     background-color: var(--sz-bg-light);
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(23, 23, 21, 0.07));
 }
 
 .sz-single-hero-img img {
@@ -246,7 +246,7 @@ body.single-post .site-main {
     .sz-article-layout.sz-has-toc {
         max-width: var(--sz-layout-w);
         grid-template-columns: minmax(180px, var(--sz-toc-w)) minmax(0, 1fr);
-        column-gap: 28px;
+        column-gap: 24px;
         justify-content: center;
         align-items: start;
     }
@@ -261,7 +261,7 @@ body.single-post .site-main {
     .sz-article-layout:not(.sz-has-toc) {
         max-width: var(--sz-layout-w-medium);
         grid-template-columns: minmax(0, 1fr) minmax(200px, var(--sz-sidebar-w));
-        column-gap: 28px;
+        column-gap: 24px;
         justify-content: center;
         align-items: start;
     }
@@ -291,7 +291,7 @@ body.single-post .site-main {
         max-width: var(--sz-layout-w-full);
         /* Kunci perbaikan: Gunakan 1fr di tengah, biarkan menyusut/melebar otomatis */
         grid-template-columns: minmax(180px, var(--sz-toc-w)) minmax(0, 1fr) minmax(200px, var(--sz-sidebar-w));
-        column-gap: 28px;
+        column-gap: 24px;
     }
 
     .sz-article-layout.sz-has-toc > .sz-side-sidebar {
@@ -331,13 +331,13 @@ body.single-post .site-main {
     border-radius: var(--sz-radius-md);
     padding: 16px 14px;
     text-align: center;
-    box-shadow: 0 10px 24px rgba(26, 32, 128, 0.16);
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(23, 23, 21, 0.07));
 }
 
 .sz-cta-banner-title {
     margin: 0 0 6px 0;
     font-size: 0.9375rem;
-    font-weight: 800;
+    font-weight: 600;
     line-height: 1.25;
     color: var(--sz-cta-text) !important;
 }
@@ -374,17 +374,18 @@ body.single-post .site-main {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
     width: 100%;
+    min-height: 40px;
     margin-top: 10px;
-    padding: 8px 12px;
+    padding: 8px 16px;
     line-height: 1;
-    border-radius: 6px;
+    border-radius: 999px;
     white-space: nowrap;
     background: #ffffff;
     color: var(--sz-cta-bg) !important;
-    font-size: 0.75rem;
-    font-weight: 750;
+    font-size: 0.875rem;
+    font-weight: 600;
     text-decoration: none;
     transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
 }
@@ -397,7 +398,7 @@ body.single-post .site-main {
 
 .sz-cta-banner-button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.14);
+    box-shadow: var(--shadow-sm, 0 2px 8px rgba(23, 23, 21, 0.04));
     color: var(--sz-cta-bg-hover);
 }
 
@@ -405,17 +406,17 @@ body.single-post .site-main {
 
 .sz-sidebar-promo-banner {
     background: #ffffff;
-    border: 1px solid rgba(226, 232, 240, 0.95);
+    border: 1px solid var(--sz-border);
     border-radius: var(--sz-radius-md);
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+    box-shadow: var(--shadow-sm, 0 2px 8px rgba(23, 23, 21, 0.04));
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     line-height: 0;
 }
 
 .sz-sidebar-promo-banner:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(26, 32, 128, 0.12);
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(23, 23, 21, 0.07));
 }
 
 .sz-sidebar-promo-link {
@@ -440,16 +441,16 @@ body.single-post .site-main {
 
 .sz-recent-posts {
     background: #ffffff;
-    border: 1px solid rgba(226, 232, 240, 0.95);
+    border: 1px solid var(--sz-border);
     border-radius: var(--sz-radius-md);
     padding: 14px 14px;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+    box-shadow: var(--shadow-sm, 0 2px 8px rgba(23, 23, 21, 0.04));
 }
 
 .sz-recent-posts-title {
     margin: 0;
     font-size: 0.875rem;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--sz-text-dark) !important;
 }
 
@@ -459,7 +460,7 @@ body.single-post .site-main {
     width: 24px;
     height: 2px;
     border-radius: 999px;
-    background: #e8ecff;
+    background: #D9C7B1;
     margin-bottom: 8px;
 }
 
@@ -513,7 +514,7 @@ body.single-post .site-main {
 }
 
 .sz-recent-post-body h4 a {
-    color: var(--sz-text-dark);
+    color: var(--sz-primary);
     font-weight: 700;
     text-decoration: none;
     display: -webkit-box;
@@ -523,7 +524,8 @@ body.single-post .site-main {
 }
 
 .sz-recent-post-body h4 a:hover {
-    color: var(--sz-primary);
+    color: var(--sz-primary-hover);
+    text-decoration: none !important;
 }
 
 @media (min-width: 1100px) {
@@ -558,7 +560,7 @@ body.single-post .site-main {
         background: transparent;
     }
     .sz-recent-posts-list::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
+        background: #C8C3BA;
         border-radius: 10px;
     }
     .sz-recent-posts-list::-webkit-scrollbar-thumb:hover {
@@ -580,8 +582,9 @@ body.single-post .site-main {
     z-index: 999999 !important; /* Pastikan di atas WA */
     border-radius: 0 !important; /* Hapus lengkungan karena nempel layar */
     overflow: visible;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15) !important; /* Shadow ke atas */
-    background: #ffffff !important; /* Background putih solid penutup WA */
+    box-shadow: var(--shadow-lg, 0 16px 40px rgba(23, 23, 21, 0.10)) !important;
+    background: #ffffff !important;
+}
 }
 
 .sz-mobile-cta-link {
@@ -607,7 +610,7 @@ body.single-post .site-main {
     width: 32px !important;
     height: 32px !important;
     border-radius: 50% !important;
-    background-color: #0f172a !important;
+    background-color: #171715 !important;
     color: #ffffff !important;
     border: 2px solid #ffffff !important;
     font-size: 20px !important;
@@ -618,7 +621,7 @@ body.single-post .site-main {
     justify-content: center !important;
     cursor: pointer !important;
     padding: 0 !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+    box-shadow: var(--shadow-sm, 0 2px 8px rgba(23, 23, 21, 0.04)) !important;
     z-index: 2 !important;
     text-shadow: none !important;
     outline: none !important;
@@ -660,17 +663,17 @@ body.single-post .site-main {
 }
 
 .sz-toc-details {
-    border: 1px solid rgba(226, 232, 240, 0.95);
+    border: 1px solid var(--sz-border);
     border-radius: var(--sz-radius-md);
     background: #ffffff;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(23, 23, 21, 0.07));
 }
 
 .sz-toc-summary {
     padding: 12px 14px;
-    background: #f8fafc;
-    font-weight: 800;
+    background: var(--sz-bg-soft);
+    font-weight: 600;
     font-size: 0.875rem;
     color: var(--sz-text-dark);
     cursor: pointer;
@@ -714,16 +717,16 @@ body.single-post .site-main {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    border-top: 1px solid rgba(226, 232, 240, 0.9);
+    border-top: 1px solid var(--sz-border);
 }
 
 .sz-toc-item a {
     display: block;
     padding: 6px 10px;
-    border-radius: 8px;
+    border-radius: 10px;
     color: var(--sz-text-muted);
     font-size: 0.8125rem;
-    font-weight: 650;
+    font-weight: 600;
     line-height: 1.35;
     text-decoration: none;
     transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
@@ -731,19 +734,20 @@ body.single-post .site-main {
 
 .sz-toc-item a:hover {
     color: var(--sz-primary);
-    background: #f1f5ff;
+    background: #E9DFD5;
+    text-decoration: none !important;
 }
 
 .sz-toc-item a.is-active {
     color: var(--sz-primary);
-    background: #f1f5ff;
+    background: #E9DFD5;
     box-shadow: inset 3px 0 0 var(--sz-primary);
 }
 
 .sz-toc-item.sz-toc-level-3 a {
     padding-left: 18px;
     font-size: 0.75rem;
-    font-weight: 550;
+    font-weight: 500;
 }
 
 /* --- TAMBAHAN FIX SCROLL DAFTAR ISI --- */
@@ -761,7 +765,7 @@ body.single-post .site-main {
         background: transparent;
     }
     .sz-toc-list::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
+        background: #C8C3BA;
         border-radius: 10px;
     }
     .sz-toc-list::-webkit-scrollbar-thumb:hover {
@@ -777,8 +781,8 @@ body.single-post .site-main {
     width: 100%;
     max-width: var(--sz-content-w);
     margin: 0 auto;
-    font-size: clamp(17px, 1.05vw, 18px);
-    line-height: 1.78;
+    font-size: 18px;
+    line-height: 1.65;
     color: var(--sz-text-body);
 }
 
@@ -787,18 +791,18 @@ body.single-post .site-main {
 }
 
 .sz-single-content p {
-    margin: 0 0 1.25rem 0;
+    margin: 0 0 1.5rem 0;
 }
 
 .sz-single-content h2 {
     font-size: clamp(24px, 2vw, 30px);
     line-height: 1.25;
-    margin: 3.25rem 0 1rem 0;
+    margin: 3rem 0 1rem 0;
     padding-bottom: 0;
     border-bottom: 0;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.015em;
-    color: var(--sz-text-dark);
+    color: var(--sz-primary);
     scroll-margin-top: 140px;
 }
 
@@ -808,24 +812,24 @@ body.single-post .site-main {
     width: 48px;
     height: 4px;
     border-radius: 999px;
-    background: #e8ecff;
+    background: #D9C7B1;
     margin-bottom: 14px;
 }
 
 .sz-single-content h3 {
     font-size: clamp(21px, 1.6vw, 24px);
     line-height: 1.35;
-    margin: 2.4rem 0 0.9rem 0;
-    font-weight: 750;
-    color: var(--sz-text-dark);
+    margin: 2.5rem 0 0.9rem 0;
+    font-weight: 600;
+    color: var(--sz-primary);
     scroll-margin-top: 140px;
 }
 
 .sz-single-content h4,
 .sz-single-content h5,
 .sz-single-content h6 {
-    color: var(--sz-text-dark);
-    font-weight: 750;
+    color: var(--sz-primary);
+    font-weight: 600;
     line-height: 1.35;
     margin: 2rem 0 0.8rem 0;
 }
@@ -834,7 +838,7 @@ body.single-post .site-main {
     color: var(--sz-primary);
     text-decoration: underline;
     text-underline-offset: 4px;
-    font-weight: 650;
+    font-weight: 600;
 }
 
 .sz-single-content a:hover {
@@ -848,7 +852,7 @@ body.single-post .site-main {
 }
 
 .sz-single-content li {
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.75rem;
 }
 
 .sz-single-content img {
@@ -857,8 +861,10 @@ body.single-post .site-main {
     display: block;
     float: none;
     max-width: min(var(--sz-content-w), 100%);
-    width: auto;
+    width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     margin: 2.5rem auto;
     border-radius: var(--sz-radius-sm);
 }
@@ -873,9 +879,13 @@ body.single-post .site-main {
 .sz-single-content figure img {
     display: block;
     max-width: 100%;
-    width: auto;
+    width: 100%;
     height: auto;
-    margin: 0;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    /* FIX root cause: margin 0 membuat image rata kiri di dalam figure
+       yang selebar parent. auto kembalikan ke tengah. */
+    margin: 0 auto;
 }
 
 .sz-single-content figcaption {
@@ -886,9 +896,40 @@ body.single-post .site-main {
     text-align: center;
 }
 
+/* WordPress Classic Editor alignment: jadikan alignment WP sebagai
+   sumber kebenaran, bukan ditimpa aturan global. Menangani output
+   <figure class="aligncenter"> dan <div class="wp-caption">. */
+.sz-single-content figure.aligncenter,
+.sz-single-content div.wp-caption.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sz-single-content figure.aligncenter img,
+.sz-single-content div.wp-caption img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sz-single-content div.wp-caption {
+    display: block;
+    float: none;
+    max-width: min(var(--sz-content-w), 100%);
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.sz-single-content div.wp-caption .wp-caption-text {
+    margin-top: 10px;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--sz-text-muted);
+    text-align: center;
+}
+
 .sz-single-content blockquote {
     font-size: 1.2rem;
-    font-weight: 650;
+    font-weight: 600;
     line-height: 1.6;
     color: var(--sz-primary);
     margin: 3rem 0;
@@ -906,16 +947,18 @@ body.single-post .site-main {
 
 .sz-single-content th,
 .sz-single-content td {
-    border: 1px solid var(--sz-border);
-    padding: 12px 14px;
+    border: none;
+    border-bottom: 1px solid var(--sz-border);
+    padding: 12px 16px;
     text-align: left;
     vertical-align: top;
 }
 
 .sz-single-content th {
-    background: var(--sz-bg-light);
-    color: var(--sz-text-dark);
-    font-weight: 750;
+    background: transparent;
+    color: var(--sz-primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--sz-primary);
 }
 
 /* ==========================================================
@@ -924,7 +967,7 @@ body.single-post .site-main {
 
 .sz-references-accordion {
     max-width: var(--sz-content-w);
-    margin: 44px auto 0 auto;
+    margin: 48px auto 0 auto;
     border: 1px solid var(--sz-border);
     border-radius: var(--sz-radius-md);
     background: #ffffff;
@@ -933,7 +976,7 @@ body.single-post .site-main {
 
 .sz-references-accordion summary {
     padding: 16px 20px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--sz-text-dark);
     cursor: pointer;
     list-style: none;
@@ -1026,16 +1069,16 @@ body.single-post .site-main {
 
 .sz-trust-panel {
     max-width: var(--sz-content-w);
-    margin: 60px auto 0 auto;
-    background: linear-gradient(180deg, #F8FAFC 0%, #F3F7FD 100%);
-    border: 1px solid rgba(226, 232, 240, 0.9);
+    margin: 64px auto 0 auto;
+    background: #ffffff;
+    border: 1px solid var(--sz-border);
     border-radius: var(--sz-radius-lg);
-    padding: 36px;
+    padding: 32px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 36px;
     position: relative;
-    box-shadow: 0 4px 20px rgba(26, 32, 128, 0.03);
+    box-shadow: none;
 }
 
 .sz-trust-panel::after {
@@ -1054,7 +1097,7 @@ body.single-post .site-main {
     letter-spacing: 0.06em;
     color: var(--sz-text-muted);
     margin: 0 0 16px 0;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .sz-trust-profile {
@@ -1079,7 +1122,7 @@ body.single-post .site-main {
     margin: 0 0 4px 0;
     font-size: 1.0625rem;
     line-height: 1.35;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .sz-trust-profile-info a {
@@ -1101,7 +1144,7 @@ body.single-post .site-main {
 .sz-profile-link {
     font-size: 0.875rem;
     color: var(--sz-primary) !important;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -1117,7 +1160,7 @@ body.single-post .site-main {
 .sz-related-section {
     background: #ffffff;
     border-top: 2px solid var(--sz-bg-soft);
-    padding: 72px 20px;
+    padding: 80px 20px;
 }
 
 .sz-related-container {
@@ -1128,10 +1171,10 @@ body.single-post .site-main {
 .sz-related-container h2 {
     font-size: clamp(26px, 2.4vw, 34px);
     line-height: 1.2;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
     margin: 0 0 44px 0;
-    color: var(--sz-text-dark);
+    color: var(--sz-primary);
     letter-spacing: -0.02em;
 }
 
@@ -1166,7 +1209,7 @@ body.single-post .site-main {
 }
 
 .sz-card:hover .sz-card-img img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .sz-card-body {
@@ -1182,8 +1225,8 @@ body.single-post .site-main {
 .sz-card-body h3 a {
     font-size: 1.2rem;
     line-height: 1.4;
-    color: var(--sz-text-dark);
-    font-weight: 800;
+    color: var(--sz-primary);
+    font-weight: 600;
     text-decoration: none;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -1192,7 +1235,8 @@ body.single-post .site-main {
 }
 
 .sz-card-body h3 a:hover {
-    color: var(--sz-primary);
+    color: var(--sz-primary-hover);
+    text-decoration: none !important;
 }
 
 .sz-meta {
@@ -1251,38 +1295,38 @@ body.single-post .site-main {
 
 @media (max-width: 768px) {
     .sz-single-wrapper {
-        padding: 32px 16px 48px !important;
+        padding: 40px 16px 48px !important;
     }
 
     .sz-single-header {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
 
     .sz-breadcrumbs {
-        margin-bottom: 14px;
-        font-size: 0.78rem;
-    }
-
-    .sz-single-meta-top {
-        gap: 8px;
-        margin-bottom: 14px;
+        margin-bottom: 10px;
         font-size: 0.75rem;
     }
 
+    .sz-single-meta-top {
+        gap: 6px;
+        margin-bottom: 10px;
+        font-size: 0.7rem;
+    }
+
     .sz-single-wrapper .sz-single-title {
-        font-size: 1.65rem !important;
-        line-height: 1.22;
-        margin-bottom: 18px;
+        font-size: 1.5rem !important;
+        line-height: 1.25;
+        margin-bottom: 14px;
     }
 
     .sz-editorial-byline {
-        border-radius: 14px;
-        padding: 12px 14px;
-        margin-bottom: 20px;
+        border-radius: 12px;
+        padding: 10px 12px;
+        margin-bottom: 16px;
     }
 
     .sz-byline-info {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .sz-byline-separator {
@@ -1294,8 +1338,8 @@ body.single-post .site-main {
     }
 
     .sz-single-wrapper .sz-single-hero-img {
-        margin: 20px auto 28px auto !important;
-        border-radius: 14px;
+        margin: 16px auto 24px auto !important;
+        border-radius: 12px;
     }
 
     .sz-single-hero-img img {
@@ -1316,7 +1360,7 @@ body.single-post .site-main {
     }
 
     .sz-cta-banner {
-        padding: 26px 22px;
+        padding: 24px;
         border-radius: 18px;
     }
 
@@ -1337,16 +1381,16 @@ body.single-post .site-main {
     }
 
     .sz-single-content {
-        font-size: 16.5px;
-        line-height: 1.72;
+        font-size: 16px;
+        line-height: 1.6;
     }
 
     .sz-single-content p {
-        margin-bottom: 1.15rem;
+        margin-bottom: 1.25rem;
     }
 
     .sz-single-content h2 {
-        margin: 2.8rem 0 0.9rem 0;
+        margin: 2.25rem 0 0.9rem 0;
         scroll-margin-top: 100px;
     }
 
@@ -1357,13 +1401,24 @@ body.single-post .site-main {
     }
 
     .sz-single-content h3 {
-        margin: 2.1rem 0 0.8rem 0;
+        margin: 1.75rem 0 0.8rem 0;
         scroll-margin-top: 100px;
+    }
+
+    .sz-single-content table {
+        display: block;
+        overflow-x: auto;
+        font-size: 0.85rem;
+    }
+
+    .sz-single-content th,
+    .sz-single-content td {
+        padding: 10px 12px;
     }
 
     .sz-trust-panel {
         grid-template-columns: 1fr;
-        padding: 28px 20px;
+        padding: 32px 24px;
         gap: 28px;
     }
 
@@ -1377,7 +1432,7 @@ body.single-post .site-main {
     }
 
     .sz-related-section {
-        padding: 50px 16px;
+        padding: 56px 16px;
     }
 }
 
@@ -1479,18 +1534,17 @@ body.single-post .site-main {
     position: fixed;
     bottom: 24px;
     right: 24px;
-    /* Warna krem sesuai screenshot kamu */
-    background-color: #dfcdb3;
+    background-color: #D9C7B1;
     color: #1A2080 !important;
     padding: 10px 18px;
-    border-radius: 6px;
+    border-radius: 999px;
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 15px;
     font-weight: 700;
     text-decoration: none !important;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow-lg, 0 16px 40px rgba(23, 23, 21, 0.10));
     z-index: 999998;
 
     /* Animasi awal: ngumpet di bawah layar */
@@ -1505,9 +1559,9 @@ body.single-post .site-main {
 }
 
 .sz-custom-wa-float:hover {
-    background-color: #d1bfa4;
+    background-color: #CBB79F;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-xl, 0 24px 60px rgba(23, 23, 21, 0.12));
 }
 
 /* Class ini ditambahkan oleh Javascript saat tombol X diklik */
@@ -1522,4 +1576,59 @@ body.single-post .site-main {
     .sz-custom-wa-float {
         display: none !important;
     }
+}
+
+/* ==========================================================
+   FIX: WORDPRESS CLASSIC EDITOR IMAGE ALIGNMENT
+   ========================================================== */
+
+.sz-single-content img {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.sz-single-content .aligncenter {
+    display: block !important;
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.sz-single-content figure {
+    display: block !important;
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+.sz-single-content figure img {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.sz-single-content .wp-caption {
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+.sz-single-content .wp-caption img {
+    display: block !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }

@@ -1,6 +1,6 @@
 # 📝 Sozo Skin Clinic - Schema Markup Migration Project
 
-> **Versi:** 1.10 | **Tanggal Update:** 21 September 2026
+> **Versi:** 1.12 | **Tanggal Update:** 1 Oktober 2026
 > **Fokus Utama:** Schema markup (custom JSON-LD via `@graph`) + dokumentasi UI & SEO lengkap untuk `sozoskinclinic.com`
 
 Proyek ini bertujuan untuk mengontrol penuh struktur schema markup di `sozoskinclinic.com`, mengeliminasi error bawaan Yoast, dan membangun *Knowledge Graph* terpusat per tipe halaman untuk memaksimalkan SEO[cite: 1]. Seluruh schema Yoast telah dimatikan secara global via WPCode[cite: 1].
@@ -15,10 +15,10 @@ Tiga dokumen utama + dua folder ekstensi:
 
 | Dokumen | Fokus | Update terakhir |
 | :-- | :-- | :-- |
-| **README.md** (file ini) | Status per-LP, SOP schema, integrasi WPCode, struktur docs | 5 Agustus 2026 |
-| **AGENTS.md** | Schema generation rules + cara AI bekerja di project | 5 Agustus 2026 |
-| **Dokumentasi.md** | Log implementasi §5.x, troubleshooting, sisa pekerjaan, template per tipe halaman | 5 Agustus 2026 |
-| `docs/adr/` | Architecture Decision Records (saat ini 7 ADR) | 13 Juli 2026 |
+| **README.md** (file ini) | Status per-LP, SOP schema, integrasi WPCode, struktur docs | 1 Oktober 2026 |
+| **AGENTS.md** | Schema generation rules + cara AI bekerja di project | 1 Oktober 2026 |
+| **Dokumentasi.md** | Log implementasi §5.x, troubleshooting, sisa pekerjaan, template per tipe halaman | 1 Oktober 2026 |
+| `docs/adr/` | Architecture Decision Records (saat ini 8 ADR) | 22 September 2026 |
 | `docs/components/` | UI component specs (saat ini 5: button, table, card, accordion, whatsapp-button) | 13 Juli 2026 |
 
 **Audience:** Developer yang maintain LP + designer. Schema JSON-LD adalah salah satu aspek; UI components adalah aspek lain yang sekarang terdokumentasi. Untuk komponen UI, distandardisasi di level atom (button, input, badge) — bukan di level section (hero, info-row) yang memang bervariasi antar LP.
@@ -31,22 +31,21 @@ Jika Anda menugaskan AI atau *Developer* untuk membuat *schema* halaman baru, me
 
 ### 📋 1. Kebutuhan Data (Input untuk AI)
 Berikan data berikut ke AI sebelum meminta kode:
-1. **URL Lengkap Halaman & Keyword Utama** (Ambil dari daftar di bawah).
-2. **Title & Meta Description** halaman asli.
-3. **Daftar Sub-Layanan & Harga** yang tertera pada halaman tersebut (Jika tidak ada harga, hilangkan properti `priceSpecification`).
-4. **Konten FAQ** asli halaman tersebut.
+1. **URL Lengkap Halaman** (Ambil dari daftar di bawah).
+2. **Nama breadcrumb** yang tampil di UI (level Home otomatis).
+3. **Title & Meta Description dari Yoast** — untuk versi dinamis schema membaca langsung `_yoast_wpseo_title` dan `_yoast_wpseo_metadesc`, tidak perlu hardcode.
 
 ### 💬 2. Template Prompt untuk AI
-> Buatkan custom schema JSON-LD dengan struktur `@graph` untuk halaman klinik kecantikan berdasarkan ketentuan Sozo Skin Clinic:
-> 1. Gunakan node `MedicalWebPage` (specialty: Dermatology), `BreadcrumbList`, dan `Service` (berisi `hasOfferCatalog`).
-> 2. Pointer `@id` untuk entitas `isPartOf` dan `about` wajib mengarah ke `https://sozoskinclinic.com/#website` dan `https://sozoskinclinic.com/#organization`.
-> 3. Jika halaman tidak memiliki harga, hilangkan properti `priceSpecification`. Jangan gunakan skema Product/Offer.
-> 4. Urutan breadcrumb mengikuti struktur hierarki URL di bawah ini. Semua ListItem wajib memiliki properti 'item' (URL).
-> 
+> Buatkan custom schema JSON-LD dengan struktur `@graph` untuk halaman sozoskinclinic.com:
+> 1. Gunakan node `WebPage` + `BreadcrumbList` saja. Jangan tambah `Service`, `FAQPage`, `MedicalWebPage`, atau `CreativeWork`.
+> 2. `url` dan `@id` pakai `[URL]/#webpage`; breadcrumb pakai `[URL]/#breadcrumb`.
+> 3. Pointer `isPartOf` → `https://sozoskinclinic.com/#website` dan `about` → `https://sozoskinclinic.com/#organization`.
+> 4. Versi dinamis (PHP/WPCode): title & description ambil dari Yoast, jangan hardcode.
+> 5. Item terakhir breadcrumb boleh tanpa `item`; level pertama pakai `Beranda`.
+>
 > Data Halaman:
 > - URL: [Masukkan URL dari daftar]
-> - Keyword/Name: [Masukkan Nama/Keyword dari daftar]
-> - FAQ & Layanan: [Paste konten halaman di sini]
+> - Nama breadcrumb: [Masukkan nama halaman]
 
 ---
 
@@ -56,11 +55,11 @@ Berikan data berikut ke AI sebelum meminta kode:
 
 ### 🏠 1. Core & Static Pages
 - [x] **Homepage** (`https://sozoskinclinic.com/`) - *Keyword: klinik kecantikan terdekat*[cite: 1]
-- [ ] **Promo Page** (`https://sozoskinclinic.com/promo/`) - *Keyword: promo sozo*
+- [x] **Promo Page** (`https://sozoskinclinic.com/promo/`) — *WebPage + BreadcrumbList; UI/CTA promo diperbarui di `promo/index.php`, schema memakai guard `is_page('promo')`, 1 Oktober 2026*
 - [ ] **Testimoni** (`https://sozoskinclinic.com/testimoni/`)
-- [ ] **Tentang Kami** (`https://sozoskinclinic.com/tentang-kami/`)
-- [x] **Editorial Board** (`https://sozoskinclinic.com/editorial-board/`) — *AboutPage + reviewedBy 3 dokter + BreadcrumbList, 5 Agustus 2026*
-- [ ] **Kebijakan Privasi** (`https://sozoskinclinic.com/kebijakan-privasi/`)
+- [x] **Tentang Kami** (`https://sozoskinclinic.com/tentang-kami/`) — *WebPage + BreadcrumbList; `about-us-schema-markup.php` (dinamis) + `about-us-schema-markup.html` (statis) + blok inline `about-us.html`, 30 September 2026*
+- [x] **Editorial Board** (`https://sozoskinclinic.com/editorial-board/`) — *WebPage + BreadcrumbList; UI Design System V1; `other/editorial-board.html`, 30 September 2026*
+- [x] **Kebijakan Privasi** (`https://sozoskinclinic.com/kebijakan-privasi/`) — *WebPage + BreadcrumbList; `privacy-policy.html` + `other/privacy.html`, UI Design System V1, 30 September 2026*
 - [x] **Artikel Blog (single post)** (`/blog/[slug]/`) — *dynamic via `blog/singlepost.php`: MedicalWebPage + BlogPosting (`articleBody`) + reviewer; snippet WPCode lama deprecated, 21 September 2026*
 - [ ] **Blog archive** (`https://sozoskinclinic.com/blog/`) — *halaman index, belum ada schema*
 
@@ -253,9 +252,10 @@ Setiap schema yang di-generate harus mematuhi aturan standar Google (update 2026
 
 | Kasus | Panduan Wajib Penanganan |
 | :--- | :--- |
-| **Aturan Tanpa Harga (No Price)** | Jika halaman tidak mencantumkan harga spesifik (hanya tombol konsultasi), blok `priceSpecification` dalam `hasOfferCatalog` **DILARANG** dimasukkan. |
-| **Field Item Breadcrumb** | Setiap `ListItem` dalam breadcrumb **WAJIB** memiliki *field* `item` (URL)[cite: 1]. Jika item terakhir tidak memiliki URL, Google Search Console akan mengeluarkan error "Missing field item"[cite: 1]. |
-| **Skema Product** | **HANYA** gunakan skema `Product` untuk rumpun URL di kategori nomor 7 (`/product/*`). Halaman kategori 2 sampai 6 wajib menggunakan skema `Service` demi menghindari error massal di Google[cite: 1]. |
+| **Fokus schema saat ini** | Default cukup `WebPage` + `BreadcrumbList`. Jangan tambah `Service`, `FAQPage`, `MedicalWebPage`, atau `CreativeWork` sampai ada keputusan baru. Pengecualian: pola arsip yang sudah terpasang (treatment/dokter/blog) dan kategori yang menunggu keputusan (lokasi, product). |
+| **Title & Description** | Versi dinamis mengambil dari Yoast (`_yoast_wpseo_title`, `_yoast_wpseo_metadesc`), fallback judul page → document title → default. Jangan hardcode. |
+| **Field Item Breadcrumb** | Item terakhir (halaman saat ini) boleh tanpa `item`. Item lain wajib punya `item` (URL). Nama item pakai bahasa Indonesia sesuai breadcrumb visual (level pertama `Beranda`). |
+| **Skema Product** | **HANYA** gunakan skema `Product` untuk rumpun URL kategori nomor 7 (`/product/*`). Halaman treatment memakai `Service` (pola arsip), bukan Product. |
 
 ---
 

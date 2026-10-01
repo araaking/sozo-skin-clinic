@@ -8,6 +8,13 @@
     
     <!-- ==================== 1. HERO SECTION ==================== -->
     <div class="sozo-hero-section">
+      <nav class="sozo-locator-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li class="separator" aria-hidden="true">/</li>
+          <li aria-current="page"><span>Lokasi</span></li>
+        </ol>
+      </nav>
       <span class="sozo-hero-badge">Lokasi Sozo</span>
       <h1 class="sozo-hero-title">Cari Klinik Sozo Terdekat di Kotamu</h1>
       <p class="sozo-hero-desc">70+ cabang tersebar di seluruh Indonesia, siap memberikan perawatan kulit terbaik untukmu</p>
@@ -179,14 +186,14 @@
     padding: 50px 15px 70px !important;
     position: relative !important;
     overflow: hidden !important;
-    background: linear-gradient(135deg, #EFF5FF 0%, #FFFFFF 45%, #E6EEFA 100%) !important;
+    background: #FFFFFF !important;
   }
 
   .sozo-locator-container {
     max-width: 1200px !important;
     margin: 0 auto !important;
     padding: 0 !important;
-    color: #1f242e !important;
+    color: #171715 !important;
     line-height: 1.5 !important;
   }
 
@@ -197,9 +204,43 @@
     max-width: 860px !important;
     margin: 0 auto !important;
   }
+  .sozo-locator-breadcrumb {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 0 16px !important;
+  }
+  .sozo-locator-breadcrumb ol {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px 10px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+  }
+  .sozo-locator-breadcrumb a {
+    color: #777771 !important;
+    text-decoration: none !important;
+    transition: color 180ms ease !important;
+  }
+  .sozo-locator-breadcrumb a:hover,
+  .sozo-locator-breadcrumb a:focus-visible {
+    color: #1A2080 !important;
+    text-decoration: none !important;
+  }
+  .sozo-locator-breadcrumb .separator { color: #777771 !important; }
+  .sozo-locator-breadcrumb [aria-current="page"] {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+  }
   .sozo-hero-badge {
     display: inline-block !important;
-    background: #eef0fb !important;
+    background: #E9DFD5 !important;
     color: #1A2080 !important;
     font-size: 12px !important;
     font-weight: 700 !important;
@@ -219,7 +260,7 @@
   }
   .sozo-hero-desc {
     font-size: clamp(14px, 1.8vw, 16px) !important;
-    color: #475569 !important;
+    color: #41413E !important;
     line-height: 1.6 !important;
     margin: 0 auto !important;
     max-width: 650px !important;
@@ -249,7 +290,7 @@
     font-weight: 700 !important;
     color: #1A2080 !important;
     box-shadow: 0 -4px 15px rgba(26, 32, 128, 0.05) !important;
-    border: 1px solid #e2e5eb !important;
+    border: 1px solid #DFDBD4 !important;
     border-bottom: 2px solid #ffffff !important;
   }
   .sozo-tab-item svg {
@@ -260,7 +301,7 @@
 
   .sozo-search-card {
     background: #ffffff !important;
-    border: 1px solid #e2e5eb !important;
+    border: 1px solid #DFDBD4 !important;
     border-radius: 24px !important;
     padding: 10px 12px !important;
     display: flex !important;
@@ -273,9 +314,9 @@
     align-items: center !important;
     gap: 10px !important;
     padding: 11px 16px !important;
-    border: 1px solid #e9ecf2 !important;
+    border: 1px solid #DFDBD4 !important;
     border-radius: 14px !important;
-    background: #fafbfe !important;
+    background: #FFFFFF !important;
     transition: all 0.25s ease !important;
   }
   .sozo-trigger-field {
@@ -291,7 +332,7 @@
     flex: 1 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
-    color: #1f242e !important;
+    color: #171715 !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
@@ -305,7 +346,7 @@
   .sozo-chevron {
     width: 12px !important;
     height: 12px !important;
-    fill: #8c93a4 !important;
+    fill: #777771 !important;
     flex-shrink: 0 !important;
   }
 
@@ -318,7 +359,7 @@
     background: transparent !important;
     outline: none !important;
     font-size: 14px !important;
-    color: #1f242e !important;
+    color: #171715 !important;
     box-shadow: none !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -353,7 +394,7 @@
     fill: #ffffff !important;
   }
   .sozo-submit-btn:hover {
-    background: #11164f !important;
+    background: #1A2080 !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 8px 20px rgba(26, 32, 128, 0.35) !important;
   }
@@ -380,10 +421,10 @@
     align-items: center !important;
     gap: 6px !important;
     padding: 8px 18px !important;
-    border: 1px solid #e2e5eb !important;
+    border: 1px solid #DFDBD4 !important;
     border-radius: 50px !important;
     background-color: #ffffff !important;
-    color: #444444 !important;
+    color: #41413E !important;
     font-size: 13px !important;
     font-weight: 600 !important;
     white-space: nowrap !important;
@@ -401,7 +442,7 @@
   .sozo-quick-link-btn:hover {
     border-color: #1A2080 !important;
     color: #1A2080 !important;
-    background-color: #eef0fb !important;
+    background-color: #E9DFD5 !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 4px 12px rgba(26, 32, 128, 0.1) !important;
   }
@@ -416,7 +457,7 @@
   }
   .sozo-map-card {
     background: #ffffff !important;
-    border: 1px solid #e7ebf3 !important;
+    border: 1px solid #DFDBD4 !important;
     border-radius: 20px !important;
     overflow: hidden !important;
     box-shadow: 0 6px 20px -4px rgba(26, 32, 128, 0.07) !important;
@@ -427,12 +468,12 @@
   .sozo-map-card:hover {
     transform: translateY(-6px) !important;
     box-shadow: 0 18px 36px rgba(26, 32, 128, 0.12) !important;
-    border-color: #c9cfee !important;
+    border-color: #DFDBD4 !important;
   }
   .sozo-card-media {
     width: 100% !important;
     height: 175px !important;
-    background-color: #eef1f5 !important;
+    background-color: #E9DFD5 !important;
     position: relative !important;
   }
   .sozo-card-media iframe {
@@ -460,7 +501,7 @@
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
     color: #1A2080 !important;
-    background: #eef0fb !important;
+    background: #E9DFD5 !important;
     padding: 4px 10px !important;
     border-radius: 50px !important;
     margin-bottom: 10px !important;
@@ -478,7 +519,7 @@
     font-weight: 700 !important;
   }
   .sozo-address {
-    color: #5e6676 !important;
+    color: #41413E !important;
     font-size: 13.5px !important;
     line-height: 1.6 !important;
     margin: 0 0 20px 0 !important;
@@ -520,19 +561,19 @@
     fill: #ffffff !important;
   }
   .sozo-btn-wa:hover {
-    background-color: #11164f !important;
+    background-color: #1A2080 !important;
     color: #ffffff !important;
   }
   .sozo-btn-maps {
     background-color: #ffffff !important;
     color: #1A2080 !important;
-    border: 1.5px solid #dcdef0 !important;
+    border: 1.5px solid #DFDBD4 !important;
   }
   .sozo-btn-maps svg {
     stroke: #1A2080 !important;
   }
   .sozo-btn-maps:hover {
-    background-color: #eef0fb !important;
+    background-color: #E9DFD5 !important;
     border-color: #1A2080 !important;
   }
 
@@ -550,7 +591,7 @@
     padding: 0 6px !important;
     border-radius: 50% !important;
     background: transparent !important;
-    color: #4b5563 !important;
+    color: #41413E !important;
     cursor: pointer !important;
     font-weight: 600 !important;
     font-size: 14px !important;
@@ -562,7 +603,7 @@
     user-select: none !important;
   }
   .sozo-page-item:hover:not(.active):not(.dots) {
-    background: #eef1fc !important;
+    background: #E9DFD5 !important;
     color: #1A2080 !important;
   }
   .sozo-page-item.active {
@@ -572,7 +613,7 @@
   }
   .sozo-page-item.dots {
     cursor: default !important;
-    color: #9ca3af !important;
+    color: #777771 !important;
   }
   .sozo-page-arrow {
     display: inline-flex !important;
@@ -589,10 +630,10 @@
     user-select: none !important;
   }
   .sozo-page-arrow:hover {
-    background: #eef1fc !important;
+    background: #E9DFD5 !important;
   }
   .sozo-page-arrow.disabled {
-    color: #d1d5db !important;
+    color: #DFDBD4 !important;
     cursor: not-allowed !important;
     pointer-events: none !important;
   }
@@ -603,7 +644,7 @@
     padding: 50px 20px !important;
     background: #ffffff !important;
     border-radius: 20px !important;
-    border: 1.5px dashed #cdd2e0 !important;
+    border: 1.5px dashed #DFDBD4 !important;
     margin: 20px 0 !important;
   }
   .sozo-empty-icon {
@@ -617,7 +658,7 @@
     font-weight: 700 !important;
   }
   .sozo-empty-state p {
-    color: #5e6676 !important;
+    color: #41413E !important;
     font-size: 14px !important;
     margin: 0 0 16px 0 !important;
   }
@@ -666,19 +707,19 @@
     justify-content: space-between !important;
     align-items: center !important;
     padding: 18px 22px !important;
-    border-bottom: 1px solid #eef0f5 !important;
+    border-bottom: 1px solid #DFDBD4 !important;
   }
   .sozo-modal-header h3 {
     margin: 0 !important;
     font-size: 17px !important;
     font-weight: 700 !important;
-    color: #1f242e !important;
+    color: #171715 !important;
   }
   .sozo-modal-close-btn {
     background: transparent !important;
     border: none !important;
     font-size: 26px !important;
-    color: #7b8395 !important;
+    color: #777771 !important;
     cursor: pointer !important;
     line-height: 1 !important;
     padding: 0 !important;
@@ -692,22 +733,22 @@
     display: flex !important;
     align-items: center !important;
     gap: 10px !important;
-    border-bottom: 1px solid #edf0f5 !important;
+    border-bottom: 1px solid #DFDBD4 !important;
   }
   .sozo-modal-search-wrapper svg {
     width: 15px !important;
     height: 15px !important;
-    fill: #8c93a4 !important;
+    fill: #777771 !important;
   }
   .sozo-modal-search-wrapper input {
     width: 100% !important;
-    border: 1px solid #e2e5eb !important;
+    border: 1px solid #DFDBD4 !important;
     padding: 10px 14px !important;
     border-radius: 10px !important;
     outline: none !important;
     font-size: 13.5px !important;
     background: #ffffff !important;
-    color: #1f242e !important;
+    color: #171715 !important;
     box-shadow: none !important;
     font-weight: 500 !important;
   }
@@ -725,18 +766,18 @@
     align-items: center !important;
     justify-content: space-between !important;
     padding: 12px 4px !important;
-    border-bottom: 1px solid #f0f2f7 !important;
+    border-bottom: 1px solid #DFDBD4 !important;
     cursor: pointer !important;
   }
   .sozo-modal-item:hover {
-    background-color: #f5f7ff !important;
+    background-color: #E9DFD5 !important;
   }
   .sozo-modal-item label {
     font-size: 14px !important;
     font-weight: 500 !important;
     cursor: pointer !important;
     flex: 1 !important;
-    color: #1f242e !important;
+    color: #171715 !important;
     margin: 0 !important;
   }
   .sozo-modal-item input[type="radio"] {
@@ -749,7 +790,7 @@
 
   .sozo-modal-footer {
     padding: 16px 22px !important;
-    border-top: 1px solid #e2e5eb !important;
+    border-top: 1px solid #DFDBD4 !important;
     background: #ffffff !important;
   }
   .sozo-apply-btn {
@@ -767,7 +808,7 @@
     box-shadow: 0 4px 12px rgba(26, 32, 128, 0.2) !important;
   }
   .sozo-apply-btn:hover {
-    background: #11164f !important;
+    background: #1A2080 !important;
   }
 
   /* --- FLOATING PROMO BUTTON --- */
@@ -789,7 +830,7 @@
     cursor: pointer !important;
   }
   .sozo-floating-promo:hover {
-    background: #11164f !important;
+    background: #1A2080 !important;
     color: #ffffff !important;
     transform: translateY(-4px) scale(1.04) !important;
   }
@@ -871,7 +912,7 @@
       gap: 0 !important;
       margin-bottom: 20px !important;
       min-height: auto !important;
-      border-top: 1px solid #f0f2f7 !important;
+      border-top: 1px solid #DFDBD4 !important;
     }
 
     /* Flat List Item */
@@ -882,7 +923,7 @@
       padding: 16px 4px !important;
       border-radius: 0 !important;
       border: none !important;
-      border-bottom: 1px solid #f0f2f7 !important;
+      border-bottom: 1px solid #DFDBD4 !important;
       box-shadow: none !important;
       gap: 14px !important;
       background: transparent !important;
@@ -899,7 +940,7 @@
       flex-shrink: 0 !important;
       border-radius: 8px !important;
       overflow: hidden !important;
-      background: #eef1fc !important;
+      background: #E9DFD5 !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -914,7 +955,7 @@
       justify-content: center !important;
       width: 100% !important;
       height: 100% !important;
-      background: linear-gradient(145deg, #1A2080 0%, #2b35b5 100%) !important;
+      background: #1A2080 !important;
       color: #ffffff !important;
       border-radius: 8px !important;
     }
@@ -953,7 +994,7 @@
       font-size: 11.5px !important;
       line-height: 1.5 !important;
       margin: 0 0 10px 0 !important;
-      color: #64748b !important;
+      color: #41413E !important;
       display: block !important;
     }
 
@@ -1317,7 +1358,7 @@
             <h3>${cleanName}</h3>
             <p class="sozo-address">${clinic.address}</p>
             <div class="sozo-action-buttons">
-              <a href="${waLink}" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa">
+              <a href="${waLink}" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic">
                 <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> BUAT JADWAL
               </a>
               <a href="${mapRedirectUrl}" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps">
@@ -1517,4 +1558,40 @@
     initSozoLocator();
   }
 })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/lokasi/#webpage",
+      "url": "https://sozoskinclinic.com/lokasi/",
+      "name": "Lokasi Klinik Sozo Skin Clinic",
+      "description": "Temukan lokasi klinik Sozo Skin Clinic terdekat dari kotamu dan lihat informasi cabang di berbagai wilayah Indonesia.",
+      "inLanguage": "id",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
+      "about": { "@id": "https://sozoskinclinic.com/#organization" },
+      "breadcrumb": { "@id": "https://sozoskinclinic.com/lokasi/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/lokasi/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lokasi"
+        }
+      ]
+    }
+  ]
+}
 </script>

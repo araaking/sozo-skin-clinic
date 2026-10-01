@@ -4,9 +4,9 @@ Sozo Skin Clinic — sozoskinclinic.com
 
 *Migrasi dari Yoast SEO ke Custom Schema (JSON-LD)*
 
-Versi 1.10  •  21 September 2026
+Versi 1.12  •  1 Oktober 2026
 
-**Status: 75 dari 140 halaman memiliki custom schema + 2 schema siap WPCode (dr. Putri, editorial board review) + 1 README sync (URL baru Zo-Tox sub, Threadlift baru, Filler Premium, Infus Premium, Signature HIFU, Blog, Tim Dokter) + schema artikel blog dynamic (`blog/singlepost.php`, ADR-0008)**
+**Status: 77 dari 140 halaman memiliki custom schema (Tentang Kami, Kebijakan Privasi & Editorial Board termigrasi: WebPage + BreadcrumbList) + 2 schema siap WPCode (dr. Putri, editorial board review) + schema artikel blog dynamic (`blog/singlepost.php`, ADR-0008). Source Promo Page kini juga memuat `WebPage` + `BreadcrumbList` (§5.56); aktivasi di WordPress belum diverifikasi. Arah schema saat ini disederhanakan: fokus `WebPage` + `BreadcrumbList`.**
 
 # **1\. Ringkasan Proyek**
 
@@ -83,14 +83,16 @@ Catatan: saat cek halaman treatment di validator/RRT, Organization akan tetap mu
 
 ## **Pemetaan Schema per Tipe Halaman**
 
-| Tipe Halaman | Schema yang Dipakai | Sumber |
+| Tipe Halaman | Schema yang Dipakai | Status |
 | :---- | :---- | :---- |
-| Homepage | Organization \+ WebSite \+ WebPage \+ BreadcrumbList \+ FAQPage | Custom (WPCode) |
-| Halaman Treatment | MedicalWebPage \+ BreadcrumbList \+ Service \+ FAQPage | Custom (WPCode) |
-| Halaman List Tim Dokter | CollectionPage \+ BreadcrumbList \+ ItemList (Person ringan) | Custom (WPCode) |
-| Halaman Detail Dokter | ProfilePage \+ BreadcrumbList \+ IndividualPhysician (array \["Person", "IndividualPhysician"\]) | Custom (WPCode) |
-| Editorial Board | AboutPage \+ reviewedBy \+ BreadcrumbList | Custom (WPCode) |
-| Blog / Artikel | Article / BlogPosting (rekomendasi dynamic) | Belum dikerjakan |
+| Homepage | Organization + WebSite + WebPage | Custom (WPCode), hub deklarasi penuh |
+| Halaman statis / halaman lain (default) | WebPage + BreadcrumbList | Standar fokus saat ini — contoh Tentang Kami (§5.54) & Kebijakan Privasi (§5.55) |
+| Promo landing (`/promo/`) | WebPage + BreadcrumbList | Diimplementasikan bersyarat di `promo/index.php` melalui `wp_head` + `is_page('promo')`; breadcrumb Beranda › Promo (§5.56) |
+| Arsip: Halaman Treatment | MedicalWebPage + BreadcrumbList + Service (+ FAQPage) | Terpasang; tidak dipakai untuk generate baru |
+| Arsip: List Tim Dokter | CollectionPage + BreadcrumbList + ItemList (Person ringan) | Terpasang (WPCode) |
+| Arsip: Detail Dokter | ProfilePage + BreadcrumbList + IndividualPhysician (array \["Person", "IndividualPhysician"\]) | Schema siap, WPCode belum |
+| Editorial Board | WebPage + BreadcrumbList | Selesai migrasi + UI Design System V1 (lihat §5.46) |
+| Arsip: Blog / Artikel | MedicalWebPage + BlogPosting + BreadcrumbList | Dynamic via `blog/singlepost.php` |
 | Halaman Cabang | LocalBusiness / MedicalClinic per lokasi | Belum dikerjakan |
 
 # **5\. Langkah yang Sudah Dilakukan**
@@ -113,13 +115,13 @@ Perbaikan yang dilakukan dari versi Yoast:
 
 * Organization duplikat dihapus → 1 node, sisanya pointer @id.
 
-* Logo dikonsolidasi ke satu URL (.avif).
+* Logo dikonsolidasi ke satu URL.
 
 * inLanguage diubah dari en-US ke id.
 
-* BreadcrumbList homepage: 1 item (Home) dengan field item URL lengkap.
+* Output sekarang `Organization` + `WebSite` + `WebPage` (3 node), tanpa BreadcrumbList/FAQ.
 
-Dipasang via WPCode tipe HTML, kondisi: **Type of page Is Homepage**. Status validator: 0 error, 0 warning.
+Dipasang via WPCode tipe PHP (`schema-home.php`), kondisi: Run Everywhere — guard `is_front_page()` di dalam fungsi. Versi statis untuk dokumentasi + validator: `schema-home.html`. Status validator: 0 error, 0 warning.
 
 ## **5.3 Hair Removal Treatment — SELESAI**
 
@@ -931,19 +933,25 @@ Struktur `@graph` (4 node):
 
 * Validasi: JSON valid (parse OK), target 0 error 0 warning di validator.schema.org. Snippet WPCode kondisi: **Page URL contains `dr-rr-putri-rizkya`**.
 
-## **5.46 Editorial Board — SELESAI (schema lengkap)**
+## **5.46 Editorial Board — SELESAI (migrasi WebPage + BreadcrumbList)**
 
 URL: https://sozoskinclinic.com/editorial-board/
 
-File: `editorial-board.html`. Struktur `@graph` (3 node):
+File: `other/editorial-board.html` — body + satu blok schema inline.
 
-* **AboutPage** — `#webpage`, pointer `isPartOf` → `#website`, `about` → `#organization`, `breadcrumb` → `#breadcrumb`, `reviewedBy` (3 Person: Audi, Gesha, Elisabeth).
+Struktur `@graph` (2 node):
 
-* **BreadcrumbList** — Home › Tim Editorial (2 level).
+* **WebPage** — `#webpage`, `url`, `name` "Tim Editorial & Standar Konten Sozo", `description` bahasa Indonesia, `inLanguage: id`, pointer `isPartOf` → `#website`, `about` → `#organization`, `breadcrumb` → `#breadcrumb`.
 
-* **WebSite** — pointer standar.
+* **BreadcrumbList** — Beranda › Tim Editorial & Standar Konten (item terakhir tanpa `item`).
 
-Nama 3 dokter reviewer di section HTML juga di-link ke halaman profil masing-masing (`/tim-dokter-sozo-skin/[slug]/`) untuk distribusi authority internal. JSON valid.
+Catatan:
+
+* Migrasi dari pola lama `AboutPage` + `reviewedBy` (3 Person) + node `WebSite` lokal → standar saat ini `WebPage` + `BreadcrumbList`. Node `WebSite` lokal dihapus, cukup pointer `@id`.
+* UI dirombak mengikuti Sozo Design System V1: Poppins, token warna (`#1A2080`, `#D9C7B1`, `#E9DFD5`, `#DFDBD4`), container `min(100% - 40px, 1280px)`, badge Almond, section kebijakan pakai surface Almond radius 24px, radius card 16px.
+* Breadcrumb visual + schema pakai bahasa Indonesia; level pertama `Beranda`.
+* Nama 3 dokter reviewer tetap di-link ke profil masing-masing (`/tim-dokter-sozo-skin/[slug]/`) untuk distribusi authority internal.
+* JSON valid; target validator schema.org 0 error 0 warning.
 
 ## **5.48 Detail Dokter (dr. Syerli) — SCHEMA SIAP, WPCODE BELUM**
 
@@ -1072,6 +1080,59 @@ Daftar URL terbaru dari tim vs isi README.md. Hasilnya, 10 URL baru ditambahkan 
   - `hifu-treatment/liftera-hifu/` — URL live benar; folder lokal `lifetra-hifu` (typo), penulisan konsisten ke URL live
 * **Catatan — daftar user menghilangkan canonical `brow-grow/`** (`hair-treatment/brow-grow/`). URL itu tetap canonical untuk Treatment Alis (lihat §5.43); alias `treatment-alis-brow-grow/` tetap tercatat di README.
 
+## **5.54 Tentang Kami — SELESAI**
+
+URL: https://sozoskinclinic.com/tentang-kami/
+
+File: `about-us.html` (layout body + satu blok schema inline), `about-us-schema-markup.php` (snippet dinamis WPCode), `about-us-schema-markup.html` (versi statis untuk validator).
+
+Struktur `@graph` (2 node) — standar fokus saat ini:
+
+* **WebPage** — `#webpage`, `url`, `name` & `description` dari meta Yoast (fallback judul page → document title → default), `inLanguage: id`, pointer `isPartOf` → `#website`, `about` → `#organization`, `breadcrumb` → `#breadcrumb`.
+
+* **BreadcrumbList** — Home › Tentang Kami (2 level, item terakhir tanpa `item`).
+
+Catatan QC:
+
+* `about-us.html` dibersihkan: blok `LocalBusiness`/`MedicalClinic` dan `FAQPage` inline lama dihapus, kini hanya satu blok schema.
+* Angka lokasi diselaraskan ke **75+ lokasi** (hero, highlight jaringan, jawaban FAQ).
+* Versi dinamis memakai guard slug `tentang-kami` + `is_page()`, aman dipasang Run Everywhere.
+* Validator schema.org: 0 error, 0 warning. Stub `CreativeWork`/`Thing` yang muncul di validator adalah label range properti `isPartOf`/`about`, bukan node tambahan (lihat §9).
+
+## **5.55 Kebijakan Privasi — SELESAI**
+
+URL: https://sozoskinclinic.com/kebijakan-privasi/
+
+File: `privacy-policy.html` (root) + `other/privacy.html` — keduanya identik: body + satu blok schema inline.
+
+Struktur `@graph` (2 node):
+
+* **WebPage** — `#webpage`, `url`, `name` "Kebijakan Privasi", `description` bahasa Indonesia, `inLanguage: id`, pointer `isPartOf` → `#website`, `about` → `#organization`, `breadcrumb` → `#breadcrumb`.
+
+* **BreadcrumbList** — Beranda › Kebijakan Privasi (item terakhir tanpa `item`).
+
+Catatan:
+
+* Node `WebSite` lokal dihapus dari graph — cukup pointer `@id` (sebelumnya privacy mendeklarasi ulang WebSite).
+* UI dirombak mengikuti Sozo Design System V1: Poppins, token warna (`#1A2080`, `#E9DFD5`, `#DFDBD4`), container `min(100% - 40px, 1280px)`, reading measure `65ch`, radius 16px, heading section `h2`, breadcrumb + judul + meta di tengah.
+* Breadcrumb visual dan schema pakai bahasa Indonesia; level pertama `Beranda` (konvensi baru, menggantikan `Home`).
+* Konvensi `Beranda` juga diterapkan ke Tentang Kami: `about-us.html`, `about-us-schema-markup.html`, `about-us-schema-markup.php`.
+
+## **5.56 Promo Page — SELESAI**
+
+URL: https://sozoskinclinic.com/promo/
+
+File: `promo/index.php` (shortcode landing, UI, dan schema page).
+
+Schema memakai `@graph` dua node dan hanya dirender pada halaman Promo melalui hook `wp_head` dengan guard `is_page('promo')`:
+
+* **WebPage** — `@id` `https://sozoskinclinic.com/promo/#webpage`, URL canonical `/promo/`, `inLanguage: id`, pointer `isPartOf` ke `#website` dan `about` ke `#organization`, serta pointer breadcrumb ke `#breadcrumb`.
+* **BreadcrumbList** — Beranda › Promo; item terakhir tanpa `item`.
+
+UI Promo mengikuti token Design System V1. Kartu promo menampilkan gambar dan tombol Klaim Promo; gambar membuka modal untuk melihat detail, sedangkan tombol klaim tetap langsung menuju WhatsApp. Modal menutup lewat tombol X, klik backdrop, atau Escape; ukuran gambar dibatasi di desktop dan menyesuaikan viewport mobile. Di mobile, CTA hero memakai label “Lihat Promo” dan “Konsultasi Gratis”, tombol banner pembayaran memakai “Ambil Promo”, navigasi kategori dapat digeser secara horizontal, dan jarak sebelum Cara Klaim Promo dirapatkan.
+
+Catatan: schema terpasang di source `promo/index.php`; status publikasi/aktivasi WordPress tidak diverifikasi dalam perubahan dokumentasi ini.
+
 # **6\. Cara Memasang Schema (WPCode)**
 
 ## **Untuk Schema Baru (HTML)**
@@ -1106,13 +1167,17 @@ Sebelum menandai sebuah halaman "selesai", pastikan:
 
 * Tidak ada BreadcrumbList dobel (cuma 1 blok).
 
-* Setiap ListItem breadcrumb punya field **item** (URL) — termasuk item terakhir.
+* Item terakhir breadcrumb boleh tanpa `item`; item lain wajib punya `item` (URL).
+
+* Nama breadcrumb pakai bahasa Indonesia sesuai visual; level pertama `Beranda`.
 
 * Breadcrumb mengikuti hierarki konten yang benar (bukan nama tercemar "SEO –").
 
 * Tidak ada nilai konflik (inLanguage, datePublished).
 
-* Harga pakai PriceSpecification dalam Service, BUKAN Product/Offer.
+* Halaman baru default: `WebPage` + `BreadcrumbList`, tanpa `Service`/`FAQPage`/`CreativeWork`.
+
+* Harga (khusus halaman treatment arsip) pakai PriceSpecification dalam Service, BUKAN Product/Offer.
 
 * Kondisi WPCode di-set ke halaman yang tepat (tidak Run Everywhere kecuali memang perlu).
 
@@ -1169,31 +1234,31 @@ Sebelum menandai sebuah halaman "selesai", pastikan:
 | **Detail Dokter (Eli, Audi)** | 2 | SCHEMA SIAP, WPCODE BELUM (lihat §5.49–§5.50) |
 | **Detail Dokter (Gesha)** | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.51) |
 | **Korean LHALA Peel** | 1 | SCHEMA SIAP, WPCODE BELUM (lihat §5.52) |
-| **Editorial Board** | 1 | **SELESAI** — AboutPage + reviewedBy + BreadcrumbList (lihat §5.46) |
+| **Editorial Board** | 1 | **SELESAI** — WebPage + BreadcrumbList + UI Design System V1 (lihat §5.46) |
+| **Tentang Kami** | 1 | **SELESAI** — WebPage + BreadcrumbList (lihat §5.54) |
+| **Kebijakan Privasi** | 1 | **SELESAI** — WebPage + BreadcrumbList + UI Design System V1 (lihat §5.55) |
 | DPL Treatment | 1 | Belum ada schema — lihat §5.42 |
 | Treatment Alis Brow Grow (alias URL) | 1 | Verifikasi canonical dulu — lihat §5.43 |
 | Sublemen Pelangsing (landing page) | 1 | Belum ada schema |
 | Halaman cabang baru: Tangerang (3 sub), Palembang, Pekanbaru, Manado, Batam | 7 | Belum ada schema |
 | Zo-Tox 10U, Zo-Tox Premium, Facelift, Perfect Facelift, Perfect Nose Job, Premium Filler, Premium Glow Infusion, Signature HIFU | 8 | Belum ada schema — URL baru §5.47 |
-| Halaman treatment lain (LP) | \~64 | Belum — pakai template Hair Removal |
+| Halaman treatment lain (LP) | \~64 | Belum — standar baru `WebPage` + `BreadcrumbList` (template §5.54) |
 | Benerin nama breadcrumb "SEO –" | 114 halaman | Belum (jika masih relevan setelah custom) |
 | Schema blog / Article (single post) | Semua post | **SELESAI** — dynamic PHP `blog/singlepost.php`: MedicalWebPage + BlogPosting (`articleBody`, `wordCount`, `keywords`) + reviewer kondisional. Snippet `wpcode-article-schema.php` di-deprecate (ADR-0008). |
-| Schema cabang (LocalBusiness) | 60+ cabang | Belum |
+| Schema cabang (LocalBusiness) | 75+ cabang | Belum |
 | Refactor IPL Acne ke PriceSpecification | 1 | Inkonsisten dengan standar tim — bukan error, hanya stylistic |
 
-## **Template untuk Halaman Treatment Berikutnya**
+## **Template untuk Halaman Berikutnya**
 
-Gunakan schema Hair Removal sebagai template. Yang perlu diganti per halaman:
+Standar saat ini `WebPage` + `BreadcrumbList`. Gunakan `about-us-schema-markup.php` (dinamis) atau `about-us-schema-markup.html` (statis) sebagai template. Yang perlu diganti per halaman:
 
-* URL halaman (di @id, url, breadcrumb, ReadAction).
+* URL halaman (di `@id`, `url`, `#webpage`, `#breadcrumb`).
 
-* name & description (judul \+ meta halaman).
+* Nama breadcrumb level terakhir.
 
-* Breadcrumb path (sesuai hierarki konten).
+* `name` & `description` — versi dinamis ambil dari Yoast, versi statis isi manual.
 
-* Daftar sub-treatment \+ harga di hasOfferCatalog.
-
-* Daftar FAQ (dari konten halaman tsb).
+* Item terakhir breadcrumb boleh tanpa `item`.
 
 ---
 
@@ -1244,7 +1309,7 @@ Standar atom/molekul UI yang dipakai di LP treatment. 5 specs saat ini:
 - Per-LP manifest format (perlu pilot 1-2 LP beneran untuk validasi).
 - Brand tokens + font rules didokumentasikan di `docs/design-system/colors-typography.md` (v1.1, 6 Agustus 2026) — diselaraskan dengan Elementor global (Primary Font Inter, heading H1–H6 Poppins).
 
-Update perubahan di tiga dokumen utama tracked via version bump: README 1.7 → 1.8, Dokumentasi 1.6 → 1.7, AGENTS.md (no version sebelumnya) → section 1.7 baru ditambahkan.
+Update perubahan di tiga dokumen utama tracked via version bump. Versi saat ini: README 1.12, Dokumentasi 1.12, AGENTS.md tanpa nomor versi.
 
 ## **Pertimbangan: Custom Dynamic vs Manual**
 
@@ -1259,7 +1324,7 @@ Blog single post sudah memakai pendekatan ini: `blog/singlepost.php` (shortcode 
 | Field item wajib | Google strict: SEMUA ListItem breadcrumb harus punya field item (URL), termasuk item terakhir. Tanpa ini muncul error "Missing field item". |
 | URL flat & breadcrumb | URL boleh flat (sozoskinclinic.com/caloburn-treatment/) tapi breadcrumb tetap bisa menampilkan hierarki (Home › Treatment › Slimming › Caloburn). Ini valid menurut Google. |
 | Custom breadcrumb JS | Breadcrumb custom lama di-inject via JavaScript, makanya muncul di RRT (render JS) tapi tidak di validator (HTML mentah). |
-| CreativeWork di validator | Saat cek halaman treatment, \#website kadang muncul sebagai CreativeWork generik. Normal — validator tidak bisa resolve WebSite penuh dari halaman non-homepage. |
+| CreativeWork di validator | Saat cek halaman non-homepage, `#website`/`#organization` kadang muncul sebagai `CreativeWork`/`Thing` generik. Itu label range properti `isPartOf`/`about` untuk target @id yang dideklarasi di homepage. Normal — bukan node tambahan. |
 | Organization muncul di halaman treatment | Normal. Tool me-resolve pointer @id ke homepage. Bukan duplikasi, bukan dari Yoast (Yoast sudah mati). |
 
 # **10\. Bulk Meta Editor — Plugin Admin (Tools)**

@@ -1227,7 +1227,7 @@ function sz_single_post_shortcode() {
             'contactPoint' => array(
                 '@type'             => 'ContactPoint',
                 'telephone'         => '+6285175225664',
-                'email'             => 'info@sozoskin.com',
+                'email'             => 'info@sozoskinclinic.com',
                 'contactType'       => 'customer service',
                 'availableLanguage' => 'Indonesian',
             ),

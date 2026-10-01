@@ -6,41 +6,84 @@
     /* --- RESET & TYPOGRAPHY --- */
     .sozo-minimal-doc-section {
         font-family: 'Poppins', sans-serif !important;
-        background: linear-gradient(135deg, #EFF5FF 0%, #FFFFFF 45%, #E6EEFA 100%) !important;
-        padding: 100px 24px !important;
-        color: #334155 !important;
+        background: #FFFFFF !important;
+        padding: 80px 24px !important;
+        color: #171715 !important;
     }
 
     .sozo-minimal-doc-section * {
         box-sizing: border-box !important;
     }
 
-    /* --- CONTAINER MAX WIDTH 1200px --- */
+    /* --- CONTAINER --- */
     .sozo-container {
-        max-width: 1200px !important;
+        width: 100% !important;
+        max-width: 1280px !important;
         margin: 0 auto !important;
+    }
+
+    /* --- BREADCRUMB --- */
+    .sozo-doc-breadcrumb {
+        margin: 0 0 32px !important;
+    }
+
+    .sozo-doc-breadcrumb ol {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px 10px !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        line-height: 1.4 !important;
+    }
+
+    .sozo-doc-breadcrumb a {
+        color: #777771 !important;
+        text-decoration: none !important;
+        transition: color 180ms ease !important;
+    }
+
+    .sozo-doc-breadcrumb a:hover,
+    .sozo-doc-breadcrumb a:focus-visible {
+        color: #1A2080 !important;
+        text-decoration: underline !important;
+    }
+
+    .sozo-doc-breadcrumb .separator {
+        color: #aaa69f !important;
+        font-size: 10px !important;
+    }
+
+    .sozo-doc-breadcrumb .current {
+        color: #1A2080 !important;
+        font-weight: 600 !important;
     }
 
     /* --- SECTION HEADER --- */
     .sozo-min-header {
-        max-width: 800px !important;
-        margin: 0 auto 64px auto !important;
+        max-width: 820px !important;
+        margin: 0 auto 64px !important;
         text-align: center !important;
     }
 
     .sozo-min-header h1 {
-        font-size: 40px !important;
-        font-weight: 600 !important;
+        font-size: clamp(36px, 4.2vw, 48px) !important;
+        font-weight: 700 !important;
         color: #1A2080 !important;
-        letter-spacing: -1px !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.6px !important;
         margin: 0 0 16px 0 !important;
     }
 
     .sozo-min-header p {
-        font-size: 16px !important;
-        color: #64748b !important;
-        line-height: 1.6 !important;
-        max-width: 600px !important;
+        font-size: 18px !important;
+        color: #41413E !important;
+        line-height: 1.65 !important;
+        max-width: 65ch !important;
         margin: 0 auto !important;
     }
 
@@ -48,9 +91,9 @@
     .sozo-min-grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        max-width: 1100px !important;
+        width: 100% !important;
         margin: 0 auto !important;
-        gap: 32px !important;
+        gap: 24px !important;
     }
 
     /* --- CARD DOCTOR BLOCK --- */
@@ -61,23 +104,23 @@
         text-decoration: none !important;
         background-color: #ffffff !important;
         border-radius: 16px !important;
-        border: 1px solid #E2E8F0 !important;
+        border: 1px solid #DFDBD4 !important;
         overflow: hidden !important;
-        box-shadow: 0 4px 6px -1px rgba(26, 32, 128, 0.05), 0 2px 4px -1px rgba(26, 32, 128, 0.03) !important;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 0 8px 24px rgba(23, 23, 21, 0.07) !important;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease !important;
     }
 
     .sozo-min-card:hover {
-        transform: translateY(-8px) !important;
-        border-color: #93C5FD !important;
-        box-shadow: 0 20px 25px -5px rgba(26, 32, 128, 0.1), 0 10px 10px -5px rgba(26, 32, 128, 0.04) !important;
+        transform: translateY(-3px) !important;
+        border-color: #C8C3BA !important;
+        box-shadow: 0 16px 40px rgba(23, 23, 21, 0.10) !important;
     }
 
     /* --- IMAGE WRAPPER --- */
     .sozo-min-img-wrapper {
         width: 100% !important;
-        aspect-ratio: 4 / 5 !important;
-        background-color: #F1F5F9 !important;
+        aspect-ratio: 1 / 1 !important;
+        background-color: #E9DFD5 !important;
         overflow: hidden !important;
         position: relative !important;
     }
@@ -85,13 +128,14 @@
     .sozo-min-img-wrapper img {
         width: 100% !important;
         height: 100% !important;
+        display: block !important;
         object-fit: cover !important;
-        transition: transform 0.7s ease !important;
+        transition: transform 300ms ease !important;
     }
 
     /* Zoom standar saat hover (berlaku seragam untuk semua gambar) */
     .sozo-min-card:hover .sozo-min-img-wrapper img {
-        transform: scale(1.05) !important;
+        transform: scale(1.03) !important;
     }
 
     /* --- INFO SECTION --- */
@@ -104,12 +148,12 @@
 
     .sozo-min-name {
         font-size: 20px !important;
-        font-weight: 700 !important;
-        color: #0F172A !important;
+        font-weight: 600 !important;
+        color: #171715 !important;
         margin: 0 0 6px 0 !important;
         line-height: 1.3 !important;
-        min-height: 52px !important;
-        transition: color 0.3s ease !important;
+        min-height: 54px !important;
+        transition: color 180ms ease !important;
     }
 
     .sozo-min-card:hover .sozo-min-name {
@@ -117,21 +161,22 @@
     }
 
     .sozo-min-title {
-        font-size: 13px !important;
+        font-size: 14px !important;
         font-weight: 600 !important;
-        color: #2563EB !important;
+        color: #1A2080 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.5px !important;
-        margin-bottom: 20px !important;
+        letter-spacing: 0.3px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 16px !important;
         display: block !important;
     }
 
     /* --- META (STR & KEAHLIAN) --- */
     .sozo-min-meta {
-        font-size: 13px !important;
-        color: #64748B !important;
+        font-size: 12px !important;
+        color: #777771 !important;
         line-height: 1.6 !important;
-        border-top: 1px dashed #E2E8F0 !important;
+        border-top: 1px solid #DFDBD4 !important;
         padding-top: 16px !important;
     }
 
@@ -145,18 +190,18 @@
     }
 
     .sozo-min-meta strong {
-        color: #334155 !important;
+        color: #41413E !important;
         font-weight: 500 !important;
     }
 
     .sozo-min-meta .str-number {
         font-family: 'Poppins', monospace !important;
         color: #1A2080 !important;
-        background-color: #EFF6FF !important;
+        background-color: #E9DFD5 !important;
         padding: 2px 6px !important;
         border-radius: 4px !important;
         font-size: 12px !important;
-        letter-spacing: 0.5px !important;
+        letter-spacing: 0.2px !important;
     }
 
     /* --- RESPONSIVE LAYOUT --- */
@@ -170,17 +215,15 @@
 
     @media (max-width: 640px) {
         .sozo-minimal-doc-section {
-            padding: 60px 16px !important;
+            padding: 56px 20px !important;
         }
         .sozo-min-header {
-            margin-bottom: 40px !important;
+            margin-bottom: 48px !important;
         }
-        .sozo-min-header h1 {
-            font-size: 32px !important;
-        }
+        .sozo-doc-breadcrumb { margin-bottom: 24px !important; }
         .sozo-min-grid {
             grid-template-columns: 1fr !important;
-            gap: 32px !important;
+            gap: 24px !important;
         }
         .sozo-min-name {
             min-height: auto !important;
@@ -190,6 +233,14 @@
 
 <div class="sozo-minimal-doc-section">
     <div class="sozo-container">
+
+        <nav class="sozo-doc-breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+                <li class="separator" aria-hidden="true">›</li>
+                <li aria-current="page"><span class="current">Tim Dokter</span></li>
+            </ol>
+        </nav>
 
         <div class="sozo-min-header">
             <h1>Dokter Komite</h1>
@@ -281,3 +332,39 @@
         </div>
     </div>
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/#webpage",
+      "url": "https://sozoskinclinic.com/tim-dokter-sozo-skin/",
+      "name": "Dokter Komite",
+      "description": "Profil profesional dewan dokter komite spesialis dan praktisi medis Sozo Skin Clinic yang tersertifikasi resmi.",
+      "inLanguage": "id",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
+      "about": { "@id": "https://sozoskinclinic.com/#organization" },
+      "breadcrumb": { "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/tim-dokter-sozo-skin/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tim Dokter"
+        }
+      ]
+    }
+  ]
+}
+</script>
