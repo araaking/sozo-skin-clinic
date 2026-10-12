@@ -187,7 +187,7 @@ function sozo_render_category_gallery_slider($category_slug, $custom_wa_link = '
     }
 
     if (empty($images)) {
-        return '<p style="font-size:14px; color:#666;">Belum ada promo aktif untuk kategori ini.</p>';
+        return '<p class="sz-promo-empty">Belum ada promo aktif untuk kategori ini.</p>';
     }
 
     ob_start();
@@ -195,7 +195,7 @@ function sozo_render_category_gallery_slider($category_slug, $custom_wa_link = '
     <div class="sz-promo-slider-container <?php echo $is_general ? 'sz-slider-general' : ''; ?>">
         <?php if (!$is_general): ?>
         <button class="sz-promo-nav-btn prev" aria-label="Promo sebelumnya" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
         </button>
         <?php endif; ?>
 
@@ -223,7 +223,7 @@ function sozo_render_category_gallery_slider($category_slug, $custom_wa_link = '
 
         <?php if (!$is_general): ?>
         <button class="sz-promo-nav-btn next" aria-label="Promo berikutnya" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
         </button>
         <?php endif; ?>
     </div>
@@ -245,8 +245,7 @@ add_shortcode('sozo_promo_hero', function() {
                     <nav class="sozo-promo-breadcrumb" aria-label="Breadcrumb">
                         <ol>
                             <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
-                            <li class="separator" aria-hidden="true">/</li>
-                            <li aria-current="page"><span>Promo</span></li>
+                            <li><span aria-current="page">Promo</span></li>
                         </ol>
                     </nav>
                     <span class="hero-eyebrow">Promo Bulan Ini</span>
@@ -254,12 +253,12 @@ add_shortcode('sozo_promo_hero', function() {
                     <p>Diskon treatment wajah, tubuh, dan rambut — plus cicilan 0% dan cashback hingga Rp500.000 untuk booking bulan ini.</p>
                     <div class="hero-actions">
                         <a href="#all-promos" class="btn-primary">Lihat Promo</a>
-                        <a href="<?php echo esc_url($wa_link); ?>" target="_blank" class="btn-ghost">Konsultasi Gratis</a>
+                        <a href="<?php echo esc_url($wa_link); ?>" target="_blank" rel="noopener noreferrer" class="btn-ghost">Konsultasi Gratis</a>
                     </div>
                 </div>
                 <div class="hero-visual">
                     <div class="hero-poster">
-                        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/diskon-potongan-100rb.webp" alt="Promo SOZO Skin Potongan 100rb">
+                        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/diskon-potongan-100rb.webp" alt="Promo SOZO Skin Potongan 100rb" width="800" height="800" fetchpriority="high" decoding="async">
                     </div>
                     <div class="hero-tag">Promo Terbatas</div>
                 </div>
@@ -288,7 +287,7 @@ add_shortcode('sozo_promo_special', function() {
                             <a href="<?php echo esc_url($wa_link); ?>" target="_blank" rel="noopener noreferrer" class="special-cta"><span class="special-cta-desktop">Klaim Promo Pembayaran</span><span class="special-cta-mobile">Ambil Promo</span></a>
                         </div>
                         <div class="special-visual">
-                            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/cicilan0.webp" alt="Cicilan 0% SOZO Skin">
+                            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/cicilan0.webp" alt="Cicilan 0% SOZO Skin" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -356,22 +355,22 @@ add_shortcode('sozo_promo_claim', function() {
                         <div class="claim-grid">
                             <div class="claim-step">
                                 <div class="claim-num">01</div>
-                                <h4>Pilih Promo</h4>
+                                <h3>Pilih Promo</h3>
                                 <p>Pilih promo yang sesuai dengan kebutuhanmu.</p>
                             </div>
                             <div class="claim-step">
                                 <div class="claim-num">02</div>
-                                <h4>Booking via WA</h4>
+                                <h3>Booking via WA</h3>
                                 <p>Tekan tombol Klaim Promo pada kartu untuk langsung menghubungi tim kami via WhatsApp.</p>
                             </div>
                             <div class="claim-step">
                                 <div class="claim-num">03</div>
-                                <h4>Datang ke Klinik</h4>
+                                <h3>Datang ke Klinik</h3>
                                 <p>Tunjukkan konfirmasi booking ke resepsionis di outlet SOZO Skin pilihanmu.</p>
                             </div>
                             <div class="claim-step">
                                 <div class="claim-num">04</div>
-                                <h4>Nikmati Treatment</h4>
+                                <h3>Nikmati Treatment</h3>
                                 <p>Harga promo otomatis berlaku di kasir, tanpa proses tambahan.</p>
                             </div>
                         </div>
@@ -395,7 +394,7 @@ add_shortcode('sozo_promo_cta', function() {
             <div class="wrap">
                 <h2>Masih bingung pilih promo yang mana?</h2>
                 <p>Konsultasi gratis dengan tim kami, kami bantu rekomendasikan treatment yang paling pas.</p>
-                <a href="<?php echo esc_url($wa_link); ?>" target="_blank" class="btn-primary">Chat via WhatsApp</a>
+                <a href="<?php echo esc_url($wa_link); ?>" target="_blank" rel="noopener noreferrer" class="btn-primary">Chat via WhatsApp</a>
             </div>
         </section>
     </div>
@@ -418,7 +417,7 @@ add_shortcode('sozo_promo_landing', function() {
         <!-- FLOATING BUTTON -->
         <div class="sozo-promo-wrapper">
             <button class="sz-floating-promo-btn" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                     <polyline points="20 12 20 22 4 22 4 12"></polyline>
                     <rect x="2" y="7" width="20" height="5"></rect>
                     <line x1="12" y1="22" x2="12" y2="7"></line>
@@ -460,8 +459,8 @@ add_shortcode('sozo_promo_kategori', function($atts) {
 
     ob_start();
     ?>
-    <div class="sozo-promo-wrapper sozo-promo-kategori-wrapper" style="background: transparent; max-width:1200px; margin:40px auto; padding:0 20px; box-sizing:border-box;">
-        <div class="cat-block" id="<?php echo esc_attr($atts['slug']); ?>" style="margin-bottom: 0;" data-custom-wa="<?php echo esc_url($final_wa_link); ?>">
+    <div class="sozo-promo-wrapper sozo-promo-kategori-wrapper">
+        <div class="cat-block" id="<?php echo esc_attr($atts['slug']); ?>" data-custom-wa="<?php echo esc_url($final_wa_link); ?>">
             <?php if ($show_header): ?>
             <div class="sz-promo-header">
                 <div class="sz-promo-text">
@@ -545,404 +544,577 @@ add_action('wp_head', function() {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style id="sozo-promo-inline-css">
-        :root {
-            --sozo-blue: #1A2080;
-            --sozo-blue-hover: #1A2080;
-            --sozo-text: #41413E;
-            --sozo-border: #DFDBD4;
-            --sozo-almond: #E9DFD5;
-            --sozo-dun: #D9C7B1;
-            --sozo-gradient-bg: #FFFFFF;
-            --sozo-white: #FFFFFF;
-            --sozo-font-heading: 'Poppins', system-ui, -apple-system, sans-serif;
-            --sozo-font-body: 'Poppins', system-ui, -apple-system, sans-serif;
-            --card-radius: 20px;
+        /* ============================================================
+           Sozo Design System V1.2 (design-system/), Elementor Safe.
+           Token di-scope ke wrapper promo + lightbox, tidak di :root,
+           supaya tidak bentrok dengan halaman lain.
+           ============================================================ */
+        .sozo-promo-wrapper,
+        .sz-promo-lightbox {
+            --color-brand-primary: #1A2080;
+            --color-brand-secondary: #D9C7B1;
+            --color-brand-almond: #E9DFD5;
+            --color-white: #FFFFFF;
+            --color-text-primary: #171715;
+            --color-text-secondary: #41413E;
+            --color-text-muted: #777771;
+            --color-text-on-primary: #FFFFFF;
+            --color-border: #DFDBD4;
+            --color-border-strong: #C8C3BA;
+            --color-primary-hover: #151A6D;
+            --color-secondary-hover: #CBB79F;
+            --color-primary-subtle: rgba(26, 32, 128, 0.05);
+            --overlay-modal: rgba(23, 23, 21, 0.88);
+
+            --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --text-h1: clamp(38px, 33.856px + 1.105vw, 48px);
+            --text-h2: clamp(32px, 28.685px + 0.884vw, 40px);
+            --text-h3: clamp(28px, 26.343px + 0.442vw, 32px);
+            --text-h5: 20px;
+            --text-body-lg: 18px;
+            --text-body: 16px;
+            --text-body-sm: 14px;
+            --text-caption: 12px;
+            --text-label: 12px;
+            --leading-h1: 1.15;
+            --leading-h2: 1.20;
+            --leading-h3: 1.25;
+            --leading-h5: 1.35;
+            --leading-body: 1.60;
+            --leading-body-sm: 1.55;
+            --leading-caption: 1.40;
+            --tracking-eyebrow: 0.12em;
+            --tracking-label: 0.25em;
+
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 24px;
+            --space-6: 32px;
+            --space-7: 40px;
+            --space-8: 48px;
+            --space-9: 64px;
+
+            --container-pad: 32px;
+            --grid-gap: 24px;
+
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 999px;
+            --shadow-sm: 0 2px 8px rgba(23, 23, 21, 0.04);
+            --shadow-md: 0 8px 24px rgba(23, 23, 21, 0.07);
+            --shadow-lg: 0 16px 40px rgba(23, 23, 21, 0.10);
+            --focus-ring: 2px solid var(--color-brand-primary);
+            --focus-ring-inverse: 2px solid var(--color-white);
+            --focus-offset: 3px;
+
+            --duration-fast: 180ms;
+            --duration-card: 220ms;
+            --duration-media: 400ms;
+            --ease-standard: ease;
+        }
+        @media (max-width: 1024px) {
+            .sozo-promo-wrapper { --grid-gap: 20px; }
+        }
+        @media (max-width: 768px) {
+            .sozo-promo-wrapper { --container-pad: 20px; --grid-gap: 16px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .sozo-promo-wrapper,
+            .sz-promo-lightbox { --duration-fast: 0ms; --duration-card: 0ms; --duration-media: 0ms; }
         }
 
-        .sozo-promo-wrapper { 
-            background: var(--sozo-gradient-bg) !important; 
-            color: var(--sozo-text); 
-            font-family: var(--sozo-font-body); 
+        .sozo-promo-wrapper {
+            background: var(--color-white) !important;
+            color: var(--color-text-secondary) !important;
+            font-family: var(--font-family-primary) !important;
+            line-height: var(--leading-body) !important;
         }
-        .sozo-promo-wrapper h1, 
-        .sozo-promo-wrapper h2, 
-        .sozo-promo-wrapper h3, 
-        .sozo-promo-wrapper h4 { 
-            font-family: var(--sozo-font-heading); 
-            color: var(--sozo-blue); 
+        .sozo-promo-wrapper *,
+        .sozo-promo-wrapper *::before,
+        .sozo-promo-wrapper *::after { box-sizing: border-box !important; }
+        .sozo-promo-wrapper h1,
+        .sozo-promo-wrapper h2,
+        .sozo-promo-wrapper h3 {
+            font-family: var(--font-family-primary) !important;
+            color: var(--color-brand-primary) !important;
         }
-        .sozo-promo-wrapper .wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+        .sozo-promo-wrapper .wrap { max-width: 1160px !important; margin: 0 auto !important; padding: 0 var(--container-pad) !important; }
 
-        .sozo-promo-breadcrumb { display: flex !important; justify-content: flex-start !important; margin: 0 0 20px !important; }
-        .sozo-promo-breadcrumb ol { display: flex !important; align-items: center !important; flex-wrap: wrap !important; gap: 8px 10px !important; list-style: none !important; margin: 0 !important; padding: 0 !important; font-size: 12px !important; font-weight: 500 !important; line-height: 1.4 !important; }
-        .sozo-promo-breadcrumb a { color: #777771 !important; text-decoration: none !important; transition: color 180ms ease !important; }
-        .sozo-promo-breadcrumb a:hover, .sozo-promo-breadcrumb a:focus-visible { color: var(--sozo-blue) !important; text-decoration: none !important; }
-        .sozo-promo-breadcrumb .separator { color: #777771 !important; }
-        .sozo-promo-breadcrumb [aria-current="page"] { color: var(--sozo-blue) !important; font-weight: 600 !important; }
+        /* ---------- Breadcrumb (components/breadcrumb.md) ---------- */
+        .sozo-promo-breadcrumb { display: flex !important; justify-content: flex-start !important; margin: 0 0 var(--space-5) !important; }
+        .sozo-promo-breadcrumb ol {
+            display: flex !important; align-items: center !important; flex-wrap: wrap !important;
+            gap: var(--space-2) !important; list-style: none !important; margin: 0 !important; padding: 0 !important;
+            font-size: 13px !important; line-height: var(--leading-caption) !important;
+        }
+        .sozo-promo-breadcrumb li { display: inline-flex !important; align-items: center !important; gap: var(--space-2) !important; margin: 0 !important; }
+        .sozo-promo-breadcrumb li + li::before { content: "/" !important; color: var(--color-border-strong) !important; }
+        .sozo-promo-breadcrumb a { color: var(--color-text-muted) !important; font-weight: 500 !important; text-decoration: none !important; transition: color var(--duration-fast) var(--ease-standard) !important; }
+        .sozo-promo-breadcrumb a:hover { color: var(--color-brand-primary) !important; }
+        .sozo-promo-breadcrumb a:focus-visible { outline: var(--focus-ring) !important; outline-offset: 2px !important; }
+        .sozo-promo-breadcrumb [aria-current="page"] { color: var(--color-brand-primary) !important; font-weight: 600 !important; }
 
-        .sozo-promo-wrapper .hero { padding: 60px 0 70px; }
-        .sozo-promo-wrapper .hero-grid { display: grid; grid-template-columns: 1fr 0.86fr; gap: 48px; align-items: center; }
-        .sozo-promo-wrapper .hero-eyebrow { 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 8px; 
-            color: var(--sozo-blue) !important; 
-            font-size: 13px; 
-            font-weight: 700; 
-            letter-spacing: .12em; 
-            text-transform: uppercase; 
-            margin-bottom: 20px; 
+        /* ---------- Badge label section (components/badge.md, badge--label) ---------- */
+        .sozo-promo-wrapper .hero-eyebrow,
+        .sozo-promo-wrapper .section-head .section-eyebrow {
+            display: inline-flex !important;
+            align-items: center !important;
+            min-height: 30px !important;
+            margin: 0 0 var(--space-5) !important;
+            padding: 0 18px !important;
+            border-radius: var(--radius-full) !important;
+            background-color: var(--color-brand-almond) !important;
+            color: var(--color-brand-primary) !important;
+            font-size: var(--text-label) !important;
+            font-weight: 600 !important;
+            line-height: var(--leading-caption) !important;
+            letter-spacing: var(--tracking-label) !important;
+            text-transform: uppercase !important;
         }
-        .sozo-promo-wrapper .hero-eyebrow::before { 
-            content: ""; 
-            width: 20px; 
-            height: 2.5px; 
-            background: var(--sozo-blue) !important; 
-            border-radius: 2px;
-        }
-        .sozo-promo-wrapper .hero h1 { font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.25; color: var(--sozo-blue); font-weight: 800; margin-bottom: 18px; }
-        .sozo-promo-wrapper .hero h1 em { font-style: normal; color: var(--sozo-blue); font-weight: 800; text-decoration: underline; text-decoration-color: rgba(26, 32, 128, 0.3); }
-        .sozo-promo-wrapper .hero p { font-size: 16px; color: var(--sozo-text); line-height: 1.65; max-width: 430px; margin-bottom: 30px; }
-        .sozo-promo-wrapper .hero-actions { display: flex; gap: 12px; align-items: center; }
-        .sozo-promo-wrapper .special-cta-mobile { display: none !important; }
-        
-        .sozo-promo-wrapper .btn-primary { 
-            background: var(--sozo-blue) !important; 
-            color: var(--sozo-white) !important; 
-            border: 2px solid var(--sozo-blue) !important; 
-            padding: 14px 28px !important; 
-            border-radius: 50px !important; 
-            font-weight: 600 !important; 
-            font-size: 15px !important; 
-            text-decoration: none !important; 
-            display: inline-block !important; 
-            transition: all .3s ease !important; 
-            box-shadow: 0 4px 15px rgba(26, 32, 128, 0.2) !important;
-        }
-        .sozo-promo-wrapper .btn-primary:hover { 
-            background: transparent !important; 
-            color: var(--sozo-blue) !important; 
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(26, 32, 128, 0.15) !important;
-        }
-        
-        .sozo-promo-wrapper .btn-ghost { 
-            background: transparent !important; 
-            border: 2px solid var(--sozo-blue) !important; 
-            color: var(--sozo-blue) !important; 
-            padding: 14px 26px !important; 
-            border-radius: 50px !important; 
-            font-weight: 600 !important; 
-            font-size: 15px !important; 
-            text-decoration: none !important; 
-            display: inline-block !important; 
-            transition: all .3s ease !important; 
-        }
-        .sozo-promo-wrapper .btn-ghost:hover { 
-            background: var(--sozo-blue) !important; 
-            color: var(--sozo-white) !important; 
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(26, 32, 128, 0.15) !important;
-        }
-        
-        .sozo-promo-wrapper .hero-visual { position: relative; }
-        .sozo-promo-wrapper .hero-poster { width: 100%; aspect-ratio: 1/1; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 48px -18px rgba(26, 32, 128, 0.2); }
-        .sozo-promo-wrapper .hero-poster img { width: 100%; height: 100%; object-fit: cover; }
-        .sozo-promo-wrapper .hero-tag { position: absolute; top: 18px; left: 18px; background: var(--sozo-white); color: var(--sozo-blue); font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 999px; box-shadow: 0 8px 16px -6px rgba(26, 32, 128, 0.2); }
+        .sozo-promo-wrapper .section-head .section-eyebrow { margin-bottom: var(--space-3) !important; }
 
-        .sozo-promo-wrapper .section { padding: 60px 0; }
-        
-        .sozo-promo-wrapper .section-head { 
-            display: flex !important; 
-            justify-content: space-between !important; 
-            align-items: flex-end !important; 
-            margin-bottom: 32px !important; 
-            gap: 24px !important; 
-            flex-wrap: wrap !important; 
-        }
-        .sozo-promo-wrapper .section-eyebrow { 
-            font-size: 12px; 
-            font-weight: 700; 
-            letter-spacing: .12em; 
-            text-transform: uppercase; 
-            color: var(--sozo-blue) !important; 
-            margin-bottom: 8px; 
-            display: block; 
-        }
-        .sozo-promo-wrapper .section-head h2 { font-size: clamp(1.5rem, 2.5vw, 2rem) !important; color: var(--sozo-blue) !important; font-weight: 700 !important; margin: 0 !important; line-height: 1.2 !important; }
-        
-        .sozo-promo-wrapper .section-head p { 
-            color: var(--sozo-text) !important; 
-            font-size: 14.5px !important; 
-            max-width: 320px !important; 
-            line-height: 1.5 !important;
-            margin: 0 !important;
+        /* Eyebrow teks di atas surface biru (Almond-on-Blue tidak dipakai) */
+        .sozo-promo-wrapper .section-eyebrow {
+            display: block !important;
+            margin: 0 0 var(--space-3) !important;
+            font-size: var(--text-label) !important;
+            font-weight: 600 !important;
+            line-height: var(--leading-caption) !important;
+            letter-spacing: var(--tracking-eyebrow) !important;
+            text-transform: uppercase !important;
+            color: var(--color-brand-primary) !important;
         }
 
-        .sozo-promo-wrapper .special { background: var(--sozo-blue); border-radius: 24px; overflow: hidden; color: var(--sozo-white); box-shadow: 0 20px 40px rgba(26, 32, 128, 0.15); }
-        .sozo-promo-wrapper .special-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; }
-        .sozo-promo-wrapper .special-content { padding: 52px 48px; }
-        .sozo-promo-wrapper .special-content .section-eyebrow { color: rgba(255, 255, 255, 0.85) !important; }
-        .sozo-promo-wrapper .special-content h2 { color: var(--sozo-white); font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 14px; font-weight: 700; }
-        .sozo-promo-wrapper .special-content h2 em { font-style: normal; color: #FFFFFF; font-weight: 800; text-decoration: underline; }
-        .sozo-promo-wrapper .special-content p { color: rgba(255, 255, 255, 0.9); font-size: 14.5px; max-width: 380px; margin-bottom: 24px; line-height: 1.6; }
-        .sozo-promo-wrapper .pay-logos { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
-        
-        .sozo-promo-wrapper .pay-logos span { 
-            background: rgba(255, 255, 255, 0.15) !important; 
-            border: 1px solid rgba(255, 255, 255, 0.25) !important; 
-            padding: 7px 14px !important; 
-            border-radius: 8px !important; 
-            font-size: 12px !important; 
-            font-weight: 600 !important; 
-            color: var(--sozo-white) !important; 
-            display: inline-block !important;
-        }
-        
+        /* ---------- Button (components/button.md) ---------- */
+        .sozo-promo-wrapper .btn-primary,
+        .sozo-promo-wrapper .btn-ghost,
         .sozo-promo-wrapper .special-cta,
-        a.special-cta { 
-            background: var(--sozo-white) !important; 
-            color: var(--sozo-blue) !important; 
-            border: 2px solid var(--sozo-white) !important; 
-            padding: 13px 26px !important; 
-            border-radius: 50px !important; 
-            font-weight: 600 !important; 
-            font-size: 14px !important; 
-            cursor: pointer !important; 
-            display: inline-block !important; 
-            text-decoration: none !important; 
-            box-shadow: 0 4px 14px rgba(0,0,0,0.12) !important;
-            transition: all .3s ease !important; 
+        .sozo-promo-wrapper .sz-promo-btn-mobile {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: var(--space-2) !important;
+            min-height: 56px !important;
+            padding: 0 28px !important;
+            border: 1px solid transparent !important;
+            border-radius: var(--radius-full) !important;
+            font-family: var(--font-family-primary) !important;
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            line-height: 1 !important;
+            white-space: nowrap !important;
+            text-decoration: none !important;
+            box-shadow: none !important;
+            cursor: pointer !important;
+            transition:
+                background-color var(--duration-fast) var(--ease-standard),
+                color var(--duration-fast) var(--ease-standard),
+                border-color var(--duration-fast) var(--ease-standard),
+                transform var(--duration-fast) var(--ease-standard) !important;
         }
-        .sozo-promo-wrapper .special-cta:hover { 
-            background: transparent !important; 
-            color: var(--sozo-white) !important; 
-            transform: translateY(-2px);
+        .sozo-promo-wrapper .btn-primary,
+        .sozo-promo-wrapper .sz-promo-btn-mobile {
+            background: var(--color-brand-primary) !important;
+            color: var(--color-text-on-primary) !important;
         }
-        
-        .sozo-promo-wrapper .special-visual { height: 100%; min-height: 380px; }
-        .sozo-promo-wrapper .special-visual img { width: 100%; height: 100%; object-fit: cover; }
+        .sozo-promo-wrapper .btn-primary:hover,
+        .sozo-promo-wrapper .sz-promo-btn-mobile:hover {
+            background: var(--color-primary-hover) !important;
+            color: var(--color-text-on-primary) !important;
+            transform: translateY(-1px) !important;
+        }
+        .sozo-promo-wrapper .btn-ghost {
+            background: transparent !important;
+            color: var(--color-brand-primary) !important;
+            border-color: var(--color-brand-primary) !important;
+        }
+        .sozo-promo-wrapper .btn-ghost:hover {
+            background: var(--color-primary-subtle) !important;
+            color: var(--color-brand-primary) !important;
+            transform: translateY(-1px) !important;
+        }
+        /* Di atas surface biru: Secondary (Dun), bukan tombol putih */
+        .sozo-promo-wrapper .special-cta {
+            min-height: 48px !important;
+            padding: 0 var(--space-5) !important;
+            font-size: 14px !important;
+            background: var(--color-brand-secondary) !important;
+            color: var(--color-brand-primary) !important;
+        }
+        .sozo-promo-wrapper .special-cta:hover {
+            background: var(--color-secondary-hover) !important;
+            color: var(--color-brand-primary) !important;
+            transform: translateY(-1px) !important;
+        }
+        .sozo-promo-wrapper .btn-primary:active,
+        .sozo-promo-wrapper .btn-ghost:active,
+        .sozo-promo-wrapper .special-cta:active,
+        .sozo-promo-wrapper .sz-promo-btn-mobile:active { transform: translateY(0) !important; }
+        .sozo-promo-wrapper .btn-primary:focus-visible,
+        .sozo-promo-wrapper .btn-ghost:focus-visible,
+        .sozo-promo-wrapper .sz-promo-btn-mobile:focus-visible { outline: var(--focus-ring) !important; outline-offset: var(--focus-offset) !important; }
+        .sozo-promo-wrapper .special-cta:focus-visible { outline: var(--focus-ring-inverse) !important; outline-offset: var(--focus-offset) !important; }
 
-        .sozo-promo-wrapper .cat-nav { display: flex; gap: 8px; flex-wrap: nowrap; overflow-x: auto; margin-bottom: 36px; padding: 2px 2px 10px; scrollbar-width: none; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-        .sozo-promo-wrapper .cat-nav::-webkit-scrollbar { display: none; }
-        .sozo-promo-wrapper .cat-nav a { 
-            text-decoration: none !important; 
-            color: var(--sozo-text) !important; 
-            font-weight: 600 !important; 
-            font-size: 13.5px !important; 
-            padding: 9px 18px !important; 
-            border-radius: 999px !important; 
-            border: 1px solid var(--sozo-border) !important; 
-            background: var(--sozo-white) !important; 
-            display: inline-block !important; 
-            flex: 0 0 auto !important;
-            scroll-snap-align: start;
-            transition: all .2s !important; 
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+        /* ---------- Hero ---------- */
+        .sozo-promo-wrapper .hero { padding: 60px 0 70px !important; }
+        .sozo-promo-wrapper .hero-grid { display: grid !important; grid-template-columns: 1fr 0.86fr !important; gap: var(--space-8) !important; align-items: center !important; }
+        .sozo-promo-wrapper .hero h1 {
+            font-size: var(--text-h1) !important;
+            line-height: var(--leading-h1) !important;
+            font-weight: 700 !important;
+            margin: 0 0 var(--space-4) !important;
         }
-        .sozo-promo-wrapper .cat-nav a:hover { 
-            color: var(--sozo-blue) !important; 
-            border-color: var(--sozo-blue) !important; 
-            transform: translateY(-1px);
+        .sozo-promo-wrapper .hero h1 em {
+            font-style: normal !important;
+            font-weight: 800 !important;
+            color: var(--color-brand-primary) !important;
+            text-decoration: underline !important;
+            text-decoration-color: var(--color-brand-secondary) !important;
+            text-decoration-thickness: 4px !important;
+            text-underline-offset: 6px !important;
         }
-        .sozo-promo-wrapper .cat-block { margin-bottom: 44px; scroll-margin-top: 90px; }
-        .sozo-promo-wrapper .cat-block:last-of-type { margin-bottom: 12px; }
-        .sozo-promo-wrapper #all-promos { padding-bottom: 12px; }
-        .sozo-promo-wrapper #claim { padding-top: 28px; }
-        .sozo-promo-wrapper .cat-block-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--sozo-border); }
-        .sozo-promo-wrapper .cat-block-head h3 { font-size: 1.25rem; color: var(--sozo-blue); font-weight: 700; }
+        .sozo-promo-wrapper .hero p {
+            max-width: 430px !important;
+            margin: 0 0 var(--space-6) !important;
+            font-size: var(--text-body) !important;
+            line-height: var(--leading-body) !important;
+            color: var(--color-text-secondary) !important;
+        }
+        .sozo-promo-wrapper .hero-actions { display: flex !important; gap: var(--space-3) !important; align-items: center !important; }
+        .sozo-promo-wrapper .hero-visual { position: relative !important; }
+        .sozo-promo-wrapper .hero-poster { width: 100% !important; aspect-ratio: 1 / 1 !important; border-radius: var(--radius-xl) !important; overflow: hidden !important; background: var(--color-brand-almond) !important; box-shadow: var(--shadow-lg) !important; }
+        .sozo-promo-wrapper .hero-poster img { display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important; }
+        .sozo-promo-wrapper .hero-tag {
+            position: absolute !important; top: 18px !important; left: 18px !important;
+            display: inline-flex !important; align-items: center !important; min-height: 30px !important; padding: 0 var(--space-4) !important;
+            border-radius: var(--radius-full) !important;
+            background: var(--color-white) !important; color: var(--color-brand-primary) !important;
+            font-size: var(--text-label) !important; font-weight: 600 !important; line-height: var(--leading-caption) !important;
+            box-shadow: var(--shadow-md) !important;
+        }
 
+        /* ---------- Section umum ---------- */
+        .sozo-promo-wrapper .section { padding: 60px 0 !important; }
+        .sozo-promo-wrapper .section-head {
+            display: flex !important; justify-content: space-between !important; align-items: flex-end !important;
+            flex-wrap: wrap !important; gap: var(--space-5) !important; margin-bottom: var(--space-6) !important;
+        }
+        .sozo-promo-wrapper .section-head h2 {
+            margin: 0 !important;
+            font-size: var(--text-h3) !important;
+            font-weight: 700 !important;
+            line-height: var(--leading-h3) !important;
+        }
+        .sozo-promo-wrapper .section-head p {
+            max-width: 320px !important;
+            margin: 0 !important;
+            font-size: var(--text-body-sm) !important;
+            line-height: var(--leading-body-sm) !important;
+            color: var(--color-text-secondary) !important;
+        }
+
+        /* ---------- Promo pembayaran (surface biru) ---------- */
+        .sozo-promo-wrapper .special { background: var(--color-brand-primary) !important; border-radius: var(--radius-xl) !important; overflow: hidden !important; color: var(--color-text-on-primary) !important; box-shadow: none !important; }
+        .sozo-promo-wrapper .special-inner { display: grid !important; grid-template-columns: 1.1fr 0.9fr !important; align-items: center !important; }
+        .sozo-promo-wrapper .special-content { padding: 52px var(--space-8) !important; }
+        .sozo-promo-wrapper .special-content .section-eyebrow { color: var(--color-text-on-primary) !important; }
+        .sozo-promo-wrapper .special-content h2 {
+            margin: 0 0 var(--space-4) !important;
+            font-size: var(--text-h3) !important;
+            font-weight: 700 !important;
+            line-height: var(--leading-h3) !important;
+            color: var(--color-text-on-primary) !important;
+        }
+        .sozo-promo-wrapper .special-content h2 em {
+            font-style: normal !important;
+            font-weight: 800 !important;
+            color: var(--color-text-on-primary) !important;
+            text-decoration: underline !important;
+            text-decoration-color: var(--color-brand-secondary) !important;
+            text-decoration-thickness: 3px !important;
+            text-underline-offset: 5px !important;
+        }
+        .sozo-promo-wrapper .special-content p {
+            max-width: 380px !important;
+            margin: 0 0 var(--space-5) !important;
+            font-size: var(--text-body-sm) !important;
+            line-height: var(--leading-body) !important;
+            color: var(--color-text-on-primary) !important;
+        }
+        .sozo-promo-wrapper .pay-logos { display: flex !important; flex-wrap: wrap !important; gap: var(--space-2) !important; margin-bottom: var(--space-5) !important; }
+        .sozo-promo-wrapper .pay-logos span {
+            display: inline-flex !important; align-items: center !important; min-height: 30px !important;
+            padding: 0 var(--space-3) !important;
+            border: 1px solid rgba(255, 255, 255, 0.35) !important;
+            border-radius: var(--radius-sm) !important;
+            background: rgba(255, 255, 255, 0.12) !important;
+            color: var(--color-text-on-primary) !important;
+            font-size: var(--text-label) !important; font-weight: 600 !important;
+        }
+        .sozo-promo-wrapper .special-cta-mobile { display: none !important; }
+        .sozo-promo-wrapper .special-visual { height: 100% !important; min-height: 380px !important; }
+        .sozo-promo-wrapper .special-visual img { display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important; }
+
+        /* ---------- Navigasi kategori: chip (sama dengan /treatment/) ---------- */
+        .sozo-promo-wrapper .cat-nav {
+            display: flex !important; flex-wrap: nowrap !important; gap: var(--space-2) !important;
+            overflow-x: auto !important; margin-bottom: var(--space-7) !important; padding: 2px 2px var(--space-2) !important;
+            scrollbar-width: none !important; scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        }
+        .sozo-promo-wrapper .cat-nav::-webkit-scrollbar { display: none !important; }
+        .sozo-promo-wrapper .cat-nav a {
+            display: inline-flex !important; align-items: center !important; flex: 0 0 auto !important;
+            min-height: 40px !important; padding: 0 var(--space-4) !important;
+            border: 1px solid var(--color-border) !important; border-radius: var(--radius-full) !important;
+            background: var(--color-white) !important; color: var(--color-text-secondary) !important;
+            font-size: var(--text-body-sm) !important; font-weight: 500 !important; line-height: 1.2 !important;
+            white-space: nowrap !important; text-decoration: none !important; box-shadow: none !important;
+            scroll-snap-align: start !important;
+            transition:
+                border-color var(--duration-fast) var(--ease-standard),
+                color var(--duration-fast) var(--ease-standard) !important;
+        }
+        .sozo-promo-wrapper .cat-nav a:hover { border-color: var(--color-brand-primary) !important; color: var(--color-brand-primary) !important; }
+        .sozo-promo-wrapper .cat-nav a:focus-visible { outline: var(--focus-ring) !important; outline-offset: 2px !important; }
+
+        .sozo-promo-wrapper .cat-block { margin-bottom: 44px !important; scroll-margin-top: 90px !important; }
+        .sozo-promo-wrapper .cat-block:last-of-type { margin-bottom: var(--space-3) !important; }
+        .sozo-promo-wrapper #all-promos { padding-bottom: var(--space-3) !important; }
+        .sozo-promo-wrapper #claim { padding-top: 28px !important; }
+        .sozo-promo-wrapper .cat-block-head {
+            display: flex !important; align-items: baseline !important; gap: var(--space-3) !important;
+            margin-bottom: var(--space-5) !important; padding-bottom: var(--space-4) !important;
+            border-bottom: 1px solid var(--color-border) !important;
+        }
+        .sozo-promo-wrapper .cat-block-head h3 { margin: 0 !important; font-size: var(--text-h5) !important; font-weight: 600 !important; line-height: var(--leading-h5) !important; }
+        .sozo-promo-wrapper .sz-promo-empty { margin: 0 !important; font-size: var(--text-body-sm) !important; color: var(--color-text-secondary) !important; }
+
+        /* ---------- Slider + kartu promo (components/promo-card.md, EX-02 untuk banner 16:9) ---------- */
         .sz-promo-slider-container { position: relative !important; }
-        .sz-promo-grid { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; scroll-behavior: smooth !important; gap: 20px !important; padding: 10px 0 20px 0 !important; -webkit-overflow-scrolling: touch !important; scrollbar-width: none !important; }
+        .sz-promo-grid {
+            display: flex !important; flex-wrap: nowrap !important; gap: 20px !important;
+            overflow-x: auto !important; scroll-snap-type: x mandatory !important; scroll-behavior: smooth !important;
+            padding: 10px 0 20px !important; scrollbar-width: none !important; -webkit-overflow-scrolling: touch !important;
+        }
         .sz-promo-grid::-webkit-scrollbar { display: none !important; }
 
-        /* Promo cards: image-first, 4 cards per row, 1:1 imagery */
-        .sz-promo-card { flex: 0 0 calc(25% - 15px) !important; scroll-snap-align: start !important; display: flex !important; flex-direction: column !important; overflow: hidden !important; border: 1px solid var(--sozo-border) !important; border-radius: 12px !important; background: var(--sozo-white) !important; box-shadow: none !important; transition: transform 0.22s ease, box-shadow 0.22s ease !important; }
-        .sz-promo-card:hover { transform: translateY(-2px) !important; box-shadow: 0 4px 16px rgba(26, 32, 128, 0.08) !important; }
-        .sz-promo-image-trigger { display: block !important; width: 100% !important; aspect-ratio: 1 / 1 !important; overflow: hidden !important; padding: 0 !important; border: 0 !important; background: var(--sozo-almond) !important; cursor: zoom-in !important; appearance: none !important; -webkit-appearance: none !important; }
-        .sz-promo-image-trigger img { display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important; }
-        .sz-promo-image-trigger:focus-visible { outline: 2px solid var(--sozo-blue) !important; outline-offset: -3px !important; }
-        .sz-promo-card.sz-card-banner { flex-basis: calc(33.333% - 11px) !important; }
-        .sz-promo-card.sz-card-banner .sz-promo-image-trigger { aspect-ratio: 16 / 9 !important; }
-        .sz-promo-claim-btn { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; margin: 16px 20px 20px !important; padding: 11px 16px !important; border: 1px solid var(--sozo-blue) !important; border-radius: 999px !important; background: var(--sozo-blue) !important; color: var(--sozo-white) !important; font-size: 13px !important; font-weight: 600 !important; line-height: 1.4 !important; text-decoration: none !important; transition: background-color 180ms ease, color 180ms ease !important; }
-        .sz-promo-claim-btn:hover, .sz-promo-claim-btn:focus-visible { background: var(--sozo-white) !important; color: var(--sozo-blue) !important; text-decoration: none !important; }
-        .sz-promo-claim-btn svg { width: 16px !important; height: 16px !important; fill: none !important; stroke: currentColor !important; stroke-width: 1.8 !important; stroke-linecap: round !important; stroke-linejoin: round !important; }
-
-        /* Tombol Navigasi Kategori Standar */
-        button.sz-promo-nav-btn {
-            position: absolute !important; top: 50% !important; transform: translateY(-50%) !important;
-            width: 46px !important; height: 46px !important; border-radius: 50% !important;
-            background: #ffffff !important; color: #1A2080 !important; box-shadow: 0 4px 14px rgba(26, 32, 128, 0.18) !important;
-            display: flex !important; align-items: center !important; justify-content: center !important;
-            cursor: pointer !important; z-index: 10 !important; border: 1px solid #e2e8f0 !important;
-            padding: 0 !important; margin: 0 !important; outline: none !important; transition: all 0.3s ease !important;
+        .sz-promo-card {
+            flex: 0 0 calc(25% - 15px) !important; scroll-snap-align: start !important;
+            display: flex !important; flex-direction: column !important; overflow: hidden !important;
+            border: 1px solid var(--color-border) !important; border-radius: var(--radius-lg) !important;
+            background: var(--color-white) !important; box-shadow: none !important;
+            transition:
+                transform var(--duration-card) var(--ease-standard),
+                box-shadow var(--duration-card) var(--ease-standard),
+                border-color var(--duration-card) var(--ease-standard) !important;
+        }
+        .sz-promo-card:hover { transform: translateY(-2px) !important; box-shadow: var(--shadow-md) !important; border-color: var(--color-border-strong) !important; }
+        .sz-promo-image-trigger {
+            display: block !important; width: 100% !important; aspect-ratio: 1 / 1 !important; overflow: hidden !important;
+            margin: 0 !important; padding: 0 !important; border: 0 !important; border-radius: 0 !important;
+            background: var(--color-brand-almond) !important; cursor: zoom-in !important;
             appearance: none !important; -webkit-appearance: none !important;
         }
-        button.sz-promo-nav-btn:hover { background: #1A2080 !important; color: #ffffff !important; border-color: #1A2080 !important; }
-        button.sz-promo-nav-btn svg { width: 24px !important; height: 24px !important; stroke: currentColor !important; fill: none !important; display: block !important; margin: 0 !important; }
+        .sz-promo-image-trigger img { display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important; transition: transform var(--duration-media) var(--ease-standard) !important; }
+        .sz-promo-image-trigger:hover img { transform: scale(1.03) !important; }
+        .sz-promo-image-trigger:focus-visible { outline: var(--focus-ring) !important; outline-offset: -3px !important; }
+        .sz-promo-card.sz-card-banner { flex-basis: calc(33.333% - 11px) !important; }
+        .sz-promo-card.sz-card-banner .sz-promo-image-trigger { aspect-ratio: 16 / 9 !important; }
+
+        /* Tombol kartu: Button Primary sm */
+        .sz-promo-claim-btn {
+            display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: var(--space-2) !important;
+            min-height: 40px !important; margin: var(--space-4) 20px 20px !important; padding: 0 18px !important;
+            border: 1px solid var(--color-brand-primary) !important; border-radius: var(--radius-full) !important;
+            background: var(--color-brand-primary) !important; color: var(--color-text-on-primary) !important;
+            font-family: var(--font-family-primary) !important; font-size: 13px !important; font-weight: 600 !important; line-height: 1 !important;
+            text-decoration: none !important;
+            transition:
+                background-color var(--duration-fast) var(--ease-standard),
+                transform var(--duration-fast) var(--ease-standard) !important;
+        }
+        .sz-promo-claim-btn:hover { background: var(--color-primary-hover) !important; color: var(--color-text-on-primary) !important; text-decoration: none !important; transform: translateY(-1px) !important; }
+        .sz-promo-claim-btn:focus-visible { outline: var(--focus-ring) !important; outline-offset: var(--focus-offset) !important; }
+        .sz-promo-claim-btn svg { width: 16px !important; height: 16px !important; fill: none !important; stroke: currentColor !important; stroke-width: 1.8 !important; stroke-linecap: round !important; stroke-linejoin: round !important; }
+
+        /* Tombol navigasi slider */
+        button.sz-promo-nav-btn {
+            position: absolute !important; top: 50% !important; transform: translateY(-50%) !important; z-index: 10 !important;
+            display: flex !important; align-items: center !important; justify-content: center !important;
+            width: 46px !important; height: 46px !important; margin: 0 !important; padding: 0 !important;
+            border: 1px solid var(--color-border) !important; border-radius: var(--radius-full) !important;
+            background: var(--color-white) !important; color: var(--color-brand-primary) !important;
+            box-shadow: var(--shadow-md) !important; cursor: pointer !important;
+            appearance: none !important; -webkit-appearance: none !important;
+            transition:
+                background-color var(--duration-fast) var(--ease-standard),
+                border-color var(--duration-fast) var(--ease-standard) !important;
+        }
+        button.sz-promo-nav-btn:hover { background: var(--color-white) !important; color: var(--color-brand-primary) !important; border-color: var(--color-brand-primary) !important; }
+        button.sz-promo-nav-btn:focus-visible { outline: var(--focus-ring) !important; outline-offset: var(--focus-offset) !important; }
+        button.sz-promo-nav-btn svg { display: block !important; width: 24px !important; height: 24px !important; margin: 0 !important; stroke: currentColor !important; stroke-width: 2 !important; fill: none !important; }
         button.sz-promo-nav-btn.prev { left: -20px !important; }
         button.sz-promo-nav-btn.next { right: -20px !important; }
 
-        /* General Promo: banner 16:9, three cards, no arrow buttons */
-        .sz-promo-slider-container.sz-slider-general .sz-promo-grid { gap: 16px !important; }
+        .sz-promo-slider-container.sz-slider-general .sz-promo-grid { gap: var(--space-4) !important; }
         .sz-promo-slider-container.sz-slider-general button.sz-promo-nav-btn { display: none !important; }
 
-        .sz-promo-lightbox { position: fixed !important; inset: 0 !important; z-index: 999999 !important; display: none !important; align-items: center !important; justify-content: center !important; padding: 24px !important; background: rgba(23, 23, 21, 0.88) !important; }
+        /* ---------- Lightbox (z-index di atas header Elementor, EX-03) ---------- */
+        .sz-promo-lightbox {
+            position: fixed !important; inset: 0 !important; z-index: 999999 !important;
+            display: none !important; align-items: center !important; justify-content: center !important;
+            padding: var(--space-5) !important; background: var(--overlay-modal) !important;
+        }
         .sz-promo-lightbox.is-open { display: flex !important; }
         .sz-promo-lightbox-dialog { position: relative !important; display: flex !important; align-items: center !important; justify-content: center !important; max-width: 100% !important; max-height: 100% !important; }
-        #szPromoLightbox .sz-promo-lightbox-dialog img { display: block !important; width: auto !important; height: auto !important; max-width: min(78vw, 1050px) !important; max-height: 78vh !important; object-fit: contain !important; border-radius: 12px !important; background: #FFFFFF !important; }
-        #szPromoLightbox .sz-promo-lightbox-close { position: absolute !important; top: 12px !important; right: 12px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 42px !important; min-width: 42px !important; max-width: 42px !important; height: 42px !important; min-height: 42px !important; max-height: 42px !important; margin: 0 !important; padding: 0 !important; box-sizing: border-box !important; border: 1px solid rgba(255,255,255,.55) !important; border-radius: 50% !important; background: rgba(26, 32, 128, .92) !important; color: #FFFFFF !important; font-family: Arial, sans-serif !important; font-size: 26px !important; font-weight: 300 !important; line-height: 1 !important; cursor: pointer !important; box-shadow: 0 3px 12px rgba(23, 23, 21, .22) !important; transition: transform 180ms ease, background-color 180ms ease !important; }
-        #szPromoLightbox .sz-promo-lightbox-close:hover { background: #1A2080 !important; transform: scale(1.05) !important; }
-        #szPromoLightbox .sz-promo-lightbox-close:focus-visible { outline: 2px solid #FFFFFF !important; outline-offset: 3px !important; }
+        #szPromoLightbox .sz-promo-lightbox-dialog img {
+            display: block !important; width: auto !important; height: auto !important;
+            max-width: min(78vw, 1050px) !important; max-height: 78vh !important; object-fit: contain !important;
+            border-radius: var(--radius-lg) !important; background: var(--color-white) !important;
+        }
+        #szPromoLightbox .sz-promo-lightbox-close {
+            position: absolute !important; top: var(--space-3) !important; right: var(--space-3) !important;
+            display: inline-flex !important; align-items: center !important; justify-content: center !important;
+            width: 44px !important; min-width: 44px !important; max-width: 44px !important;
+            height: 44px !important; min-height: 44px !important; max-height: 44px !important;
+            margin: 0 !important; padding: 0 !important;
+            border: 1px solid var(--color-white) !important; border-radius: var(--radius-full) !important;
+            background: var(--color-brand-primary) !important; color: var(--color-text-on-primary) !important;
+            font-family: var(--font-family-primary) !important; font-size: 26px !important; font-weight: 400 !important; line-height: 1 !important;
+            box-shadow: var(--shadow-md) !important; cursor: pointer !important;
+            transition: background-color var(--duration-fast) var(--ease-standard) !important;
+        }
+        #szPromoLightbox .sz-promo-lightbox-close:hover { background: var(--color-primary-hover) !important; }
+        #szPromoLightbox .sz-promo-lightbox-close:focus-visible { outline: var(--focus-ring-inverse) !important; outline-offset: var(--focus-offset) !important; }
 
-        /* Header Kategori */
-        .sozo-promo-wrapper .sz-promo-header{
-            display:flex !important; justify-content:space-between !important; align-items:center !important;
-            gap:20px !important; margin-bottom:24px !important;
+        /* ---------- Header shortcode kategori ---------- */
+        .sozo-promo-wrapper.sozo-promo-kategori-wrapper {
+            max-width: 1200px !important;
+            margin: var(--space-7) auto !important;
+            padding: 0 20px !important;
+            background: transparent !important;
         }
-        .sozo-promo-wrapper .sz-promo-text{ flex:1 !important; }
-        .sozo-promo-wrapper .sz-promo-title{
-            color:#1A2080 !important; font-family:var(--sozo-font-heading) !important;
-            font-size:28px !important; font-weight:700 !important; margin:0 0 8px 0 !important; line-height:1.3 !important;
+        .sozo-promo-kategori-wrapper .cat-block { margin-bottom: 0 !important; }
+        .sozo-promo-wrapper .sz-promo-header {
+            display: flex !important; justify-content: space-between !important; align-items: center !important;
+            gap: 20px !important; margin-bottom: var(--space-5) !important;
         }
-        .sozo-promo-wrapper .sz-promo-subtitle{
-            color:var(--sozo-text) !important; font-family:var(--sozo-font-body) !important;
-            font-size:15px !important; margin:0 !important; line-height:1.5 !important;
+        .sozo-promo-wrapper .sz-promo-text { flex: 1 !important; }
+        .sozo-promo-wrapper .sz-promo-title {
+            margin: 0 0 var(--space-2) !important;
+            font-size: var(--text-h3) !important; font-weight: 700 !important; line-height: var(--leading-h3) !important;
         }
-        .sozo-promo-wrapper .sz-promo-link-desktop{
-            display:inline-flex !important; align-items:center !important; gap:6px !important;
-            color:#1A2080 !important; font-size:15px !important; font-weight:600 !important;
-            text-decoration:none !important; white-space:nowrap !important; transition:all 0.3s ease !important;
+        .sozo-promo-wrapper .sz-promo-subtitle {
+            margin: 0 !important;
+            font-size: var(--text-body-sm) !important; line-height: var(--leading-body-sm) !important;
+            color: var(--color-text-secondary) !important;
         }
-        .sozo-promo-wrapper .sz-promo-link-desktop:hover{ color:#1A2080 !important; transform:translateX(4px) !important; }
-        .sozo-promo-wrapper .sz-promo-footer.mobile-only{ display:none !important; }
-        .sozo-promo-wrapper .sz-promo-btn-mobile{
-            display:inline-flex !important; align-items:center !important; justify-content:center !important;
-            width:100% !important; gap:8px !important; background:#1A2080 !important; color:#fff !important;
-            padding:14px 20px !important; border-radius:30px !important; font-size:15px !important;
-            font-weight:600 !important; text-decoration:none !important; box-shadow:0 4px 15px rgba(26,32,128,.2) !important;
+        /* Link standalone (components/link.md) */
+        .sozo-promo-wrapper .sz-promo-link-desktop {
+            display: inline-flex !important; align-items: center !important; gap: var(--space-1) !important;
+            color: var(--color-brand-primary) !important; font-size: var(--text-body-sm) !important; font-weight: 600 !important;
+            white-space: nowrap !important; text-decoration: none !important; text-underline-offset: 4px !important;
         }
+        .sozo-promo-wrapper .sz-promo-link-desktop:hover { color: var(--color-brand-primary) !important; text-decoration: underline !important; }
+        .sozo-promo-wrapper .sz-promo-link-desktop:focus-visible { outline: var(--focus-ring) !important; outline-offset: var(--focus-offset) !important; }
+        .sozo-promo-wrapper .sz-promo-footer.mobile-only { display: none !important; }
+        .sozo-promo-wrapper .sz-promo-btn-mobile { width: 100% !important; min-height: 48px !important; font-size: 14px !important; }
 
+        /* ---------- Floating CTA (DEC-24: shadow-lg, tanpa animasi terus-menerus) ---------- */
         .sozo-promo-wrapper button.sz-floating-promo-btn,
         button.sz-floating-promo-btn {
-            position: fixed !important;
-            bottom: 24px !important;
-            right: 24px !important;
-            z-index: 999 !important;
-            background-color: #1A2080 !important;
-            color: #FFFFFF !important;
-            border: 2px solid #FFFFFF !important;
-            padding: 14px 24px !important;
-            border-radius: 50px !important;
-            font-size: 14px !important;
-            font-weight: 600 !important;
-            font-family: var(--sozo-font-body) !important;
-            cursor: pointer !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 10px !important;
-            box-shadow: 0 8px 25px rgba(26, 32, 128, 0.35) !important;
-            transition: all 0.3s ease !important;
-            outline: none !important;
-            appearance: none !important;
-            -webkit-appearance: none !important;
-            animation: sz-pulse 2s infinite !important;
+            position: fixed !important; bottom: var(--space-5) !important; right: var(--space-5) !important; z-index: 900 !important;
+            display: flex !important; align-items: center !important; gap: var(--space-2) !important;
+            min-height: 48px !important; padding: 0 var(--space-5) !important;
+            border: 2px solid var(--color-white) !important; border-radius: var(--radius-full) !important;
+            background-color: var(--color-brand-primary) !important; color: var(--color-text-on-primary) !important;
+            font-family: var(--font-family-primary) !important; font-size: 14px !important; font-weight: 600 !important; line-height: 1 !important;
+            box-shadow: var(--shadow-lg) !important; cursor: pointer !important;
+            appearance: none !important; -webkit-appearance: none !important;
+            transition:
+                opacity var(--duration-fast) var(--ease-standard),
+                visibility var(--duration-fast) var(--ease-standard),
+                transform var(--duration-fast) var(--ease-standard),
+                background-color var(--duration-fast) var(--ease-standard) !important;
         }
-        
-        button.sz-floating-promo-btn.hidden { 
-            opacity: 0 !important; 
-            visibility: hidden !important; 
-            transform: translateY(20px) !important; 
-            pointer-events: none !important; 
-        }
-        button.sz-floating-promo-btn:hover { 
-            background-color: #1A2080 !important; 
-            transform: translateY(-3px) scale(1.03) !important; 
-        }
-        button.sz-floating-promo-btn svg { 
-            width: 20px !important; 
-            height: 20px !important; 
-            fill: none !important; 
-            stroke: currentColor !important; 
-            stroke-width: 2 !important; 
-            stroke-linecap: round !important; 
-            stroke-linejoin: round !important; 
-            display: block !important; 
-        }
+        button.sz-floating-promo-btn.hidden { opacity: 0 !important; visibility: hidden !important; transform: translateY(20px) !important; pointer-events: none !important; }
+        button.sz-floating-promo-btn:hover { background-color: var(--color-primary-hover) !important; transform: translateY(-1px) !important; }
+        button.sz-floating-promo-btn:focus-visible { outline: var(--focus-ring) !important; outline-offset: var(--focus-offset) !important; }
+        button.sz-floating-promo-btn svg { display: block !important; width: 20px !important; height: 20px !important; fill: none !important; stroke: currentColor !important; stroke-width: 2 !important; stroke-linecap: round !important; stroke-linejoin: round !important; }
 
-        .sozo-promo-wrapper .claim { background: var(--sozo-white); border: 1px solid var(--sozo-border); border-radius: 24px; box-shadow: 0 10px 30px rgba(26, 32, 128, 0.05); }
-        .sozo-promo-wrapper .claim-inner { padding: 56px 48px; }
-        .sozo-promo-wrapper .claim-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-        .sozo-promo-wrapper .claim-num { font-family: var(--sozo-font-heading); font-size: 40px; font-weight: 800; color: var(--sozo-blue) !important; margin-bottom: 14px; }
-        
-        .sozo-promo-wrapper .claim-note { 
-            margin-top: 36px !important; 
-            background: transparent !important; 
-            border: none !important; 
-            border-top: 1px dashed var(--sozo-border) !important; 
-            border-radius: 0 !important; 
-            padding: 18px 0 0 0 !important; 
-            display: block !important; 
-            box-shadow: none !important;
+        /* ---------- Cara klaim ---------- */
+        .sozo-promo-wrapper .claim { background: var(--color-white) !important; border: 1px solid var(--color-border) !important; border-radius: var(--radius-xl) !important; box-shadow: none !important; }
+        .sozo-promo-wrapper .claim-inner { padding: 56px var(--space-8) !important; }
+        .sozo-promo-wrapper .claim-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 28px !important; }
+        .sozo-promo-wrapper .claim-num { margin-bottom: var(--space-3) !important; font-size: 40px !important; font-weight: 800 !important; line-height: 1 !important; color: var(--color-brand-primary) !important; }
+        .sozo-promo-wrapper .claim-step h3 { margin: 0 0 var(--space-2) !important; font-size: var(--text-h5) !important; font-weight: 600 !important; line-height: var(--leading-h5) !important; }
+        .sozo-promo-wrapper .claim-step p { margin: 0 !important; font-size: var(--text-body-sm) !important; line-height: var(--leading-body-sm) !important; color: var(--color-text-secondary) !important; }
+        .sozo-promo-wrapper .claim-note {
+            margin-top: 36px !important; padding: 18px 0 0 !important;
+            background: transparent !important; border: none !important; border-top: 1px dashed var(--color-border) !important;
+            border-radius: 0 !important; box-shadow: none !important; display: block !important;
         }
-        .sozo-promo-wrapper .claim-note p { 
-            font-size: 12.5px !important; 
-            color: #64748b !important; 
-            line-height: 1.6 !important; 
-            margin: 0 !important; 
-        }
-        .sozo-promo-wrapper .claim-note strong { color: var(--sozo-blue) !important; font-weight: 700 !important; }
+        .sozo-promo-wrapper .claim-note p { margin: 0 !important; font-size: var(--text-caption) !important; font-weight: 500 !important; line-height: var(--leading-body) !important; color: var(--color-text-muted) !important; }
+        .sozo-promo-wrapper .claim-note strong { color: var(--color-brand-primary) !important; font-weight: 600 !important; }
 
-        .sozo-promo-wrapper .final-cta { padding: 64px 0; text-align: center; }
-        .sozo-promo-wrapper .final-cta h2 { font-size: clamp(1.5rem, 2.5vw, 2rem) !important; color: var(--sozo-blue) !important; margin-bottom: 12px !important; font-weight: 700 !important; }
-        .sozo-promo-wrapper .final-cta p { 
-            color: var(--sozo-text) !important; 
-            margin-bottom: 28px !important; 
-            font-size: 15px !important; 
-            line-height: 1.6 !important; 
-        }
+        /* ---------- CTA penutup ---------- */
+        .sozo-promo-wrapper .final-cta { padding: var(--space-9) 0 !important; text-align: center !important; }
+        .sozo-promo-wrapper .final-cta h2 { margin: 0 0 var(--space-3) !important; font-size: var(--text-h3) !important; font-weight: 700 !important; line-height: var(--leading-h3) !important; }
+        .sozo-promo-wrapper .final-cta p { margin: 0 0 var(--space-6) !important; font-size: var(--text-body) !important; line-height: var(--leading-body) !important; color: var(--color-text-secondary) !important; }
 
-        @keyframes sz-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(26, 32, 128, 0.6) !important; }
-            70% { box-shadow: 0 0 0 12px rgba(26, 32, 128, 0) !important; }
-            100% { box-shadow: 0 0 0 0 rgba(26, 32, 128, 0) !important; }
-        }
-
-        @media (max-width: 1024px){ .sz-promo-card { flex: 0 0 calc(33.333% - 14px) !important; } }
-        @media (max-width: 980px){ 
-            .sozo-promo-wrapper .hero-grid, .sozo-promo-wrapper .special-inner { grid-template-columns: 1fr; } 
-            .sozo-promo-wrapper .claim-grid { grid-template-columns: repeat(2,1fr); } 
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .sz-promo-card { flex: 0 0 calc(33.333% - 14px) !important; }
+            .sozo-promo-wrapper .hero-grid,
+            .sozo-promo-wrapper .special-inner { grid-template-columns: 1fr !important; }
+            .sozo-promo-wrapper .claim-grid { grid-template-columns: repeat(2, 1fr) !important; }
             .sozo-promo-wrapper .claim-inner { padding: 36px 28px !important; }
         }
-        @media (max-width: 768px){
-            .sozo-promo-breadcrumb { justify-content: center !important; margin-bottom: 16px !important; }
+        @media (max-width: 768px) {
+            .sozo-promo-breadcrumb { justify-content: center !important; margin-bottom: var(--space-4) !important; }
             .sozo-promo-breadcrumb ol { justify-content: center !important; }
-            .sozo-promo-wrapper .hero-actions { width: 100% !important; gap: 8px !important; }
+            .sozo-promo-wrapper .hero-actions { width: 100% !important; gap: var(--space-2) !important; }
             .sozo-promo-wrapper .hero-actions .btn-primary,
-            .sozo-promo-wrapper .hero-actions .btn-ghost { flex: 1 1 0 !important; min-width: 0 !important; padding: 11px 8px !important; font-size: 13px !important; line-height: 1.35 !important; text-align: center !important; white-space: nowrap !important; }
+            .sozo-promo-wrapper .hero-actions .btn-ghost { flex: 1 1 0 !important; min-width: 0 !important; min-height: 48px !important; padding: 0 var(--space-2) !important; font-size: 13px !important; }
             .sozo-promo-wrapper .hero p { margin-bottom: 22px !important; }
+            .sozo-promo-wrapper .special-content { padding: 36px 28px !important; }
             .sozo-promo-wrapper .special-cta-desktop { display: none !important; }
             .sozo-promo-wrapper .special-cta-mobile { display: inline !important; }
-            .sz-promo-wrapper { padding: 0 16px !important; margin: 24px auto !important; }
-            .sz-promo-wrapper .sz-promo-header{ flex-direction:column !important; align-items:flex-start !important; gap:12px !important; margin-bottom:20px !important; }
-            .sz-promo-wrapper .sz-promo-title{ font-size:22px !important; }
-            .sozo-promo-wrapper .sz-promo-subtitle{ font-size:14px !important; }
-            .sozo-promo-wrapper .sz-promo-link-desktop, button.sz-promo-nav-btn { display: none !important; }
-            .mobile-only { display: block !important; }
-            .sz-promo-grid { gap: 16px !important; padding-bottom: 10px !important; }
-            .sz-promo-card { flex: 0 0 min(82%, 340px) !important; border-radius: 12px !important; }
-            .sz-promo-card.sz-card-banner { flex-basis: min(82%, 340px) !important; }
-            .sozo-promo-wrapper .sz-promo-footer{ margin-top: 10px !important; text-align: center !important; }
-            .sz-promo-btn-mobile { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 100% !important; box-sizing: border-box !important; gap: 8px !important; background-color: #1A2080 !important; color: #ffffff !important; padding: 14px 20px !important; border-radius: 30px !important; font-size: 15px !important; font-weight: 600 !important; text-decoration: none !important; box-shadow: 0 4px 12px rgba(26,32,128,0.2) !important; }
-            .sozo-promo-wrapper #all-promos { padding-bottom: 8px !important; }
-            .sozo-promo-wrapper .cat-block { margin-bottom: 32px !important; }
-            .sozo-promo-wrapper .cat-block:last-of-type { margin-bottom: 8px !important; }
+            .sozo-promo-wrapper.sozo-promo-kategori-wrapper { padding: 0 var(--space-4) !important; margin: var(--space-5) auto !important; }
+            .sozo-promo-wrapper .sz-promo-header { flex-direction: column !important; align-items: flex-start !important; gap: var(--space-3) !important; margin-bottom: 20px !important; }
+            .sozo-promo-wrapper .sz-promo-link-desktop,
+            button.sz-promo-nav-btn { display: none !important; }
+            .sozo-promo-wrapper .mobile-only,
+            .sozo-promo-wrapper .sz-promo-footer.mobile-only { display: block !important; }
+            .sozo-promo-wrapper .sz-promo-footer { margin-top: 10px !important; text-align: center !important; }
+            .sz-promo-grid { gap: var(--space-4) !important; padding-bottom: 10px !important; }
+            .sz-promo-card,
+            .sz-promo-card.sz-card-banner { flex: 0 0 min(82%, 340px) !important; }
+            .sozo-promo-wrapper #all-promos { padding-bottom: var(--space-2) !important; }
+            .sozo-promo-wrapper .cat-block { margin-bottom: var(--space-6) !important; }
+            .sozo-promo-wrapper .cat-block:last-of-type { margin-bottom: var(--space-2) !important; }
             .sozo-promo-wrapper #claim { padding-top: 20px !important; }
-            .sz-promo-lightbox { padding: 16px !important; }
+            .sozo-promo-wrapper button.sz-floating-promo-btn,
+            button.sz-floating-promo-btn { bottom: var(--space-4) !important; right: var(--space-4) !important; }
+            .sz-promo-lightbox { padding: var(--space-4) !important; }
             #szPromoLightbox .sz-promo-lightbox-dialog img { max-width: calc(100vw - 32px) !important; max-height: calc(100dvh - 32px) !important; }
         }
-        @media (max-width: 560px){ .sozo-promo-wrapper .claim-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 560px){ .sozo-promo-wrapper .claim-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 480px) {
+            .sozo-promo-wrapper .claim-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .sz-promo-card:hover,
+            .sz-promo-image-trigger:hover img,
+            .sozo-promo-wrapper .btn-primary:hover,
+            .sozo-promo-wrapper .btn-ghost:hover,
+            .sozo-promo-wrapper .special-cta:hover,
+            .sz-promo-claim-btn:hover,
+            button.sz-floating-promo-btn:hover { transform: none !important; }
+        }
     </style>
     <?php
 });

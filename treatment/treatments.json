@@ -1,0 +1,1514 @@
+{
+  "_readme": "Sumber data kartu di treatment/index.html. Setelah mengubah file ini, jalankan: node treatment/build-treatment-list.mjs",
+  "categories": [
+    {
+      "id": "skin-booster",
+      "label": "Skin Booster",
+      "title": "Skin Booster Treatment",
+      "link": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/",
+      "description": "Perawatan injeksi premium untuk hidrasi mendalam, peremajaan kulit, dan stimulasi kolagen."
+    },
+    {
+      "id": "injectable-treatment",
+      "label": "Injectable",
+      "title": "Injectable Treatment",
+      "link": "https://sozoskinclinic.com/injectable-treatment/",
+      "description": "Solusi perawatan estetika medis dengan injeksi botox, filler, threadlift, dan infus whitening untuk hasil yang optimal."
+    },
+    {
+      "id": "facial-treatment",
+      "label": "Facial",
+      "title": "Facial Treatment",
+      "link": "https://sozoskinclinic.com/skin-treatment/facial-treatment/",
+      "description": "Dapatkan kulit bersih, cerah, dan sehat dengan pilihan facial treatment terbaik dari SOZO Skin Clinic."
+    },
+    {
+      "id": "laser-treatment",
+      "label": "Laser",
+      "title": "Laser Treatment",
+      "link": "https://sozoskinclinic.com/skin-treatment/laser-treatment/",
+      "description": "Solusi laser modern untuk pigmentasi, tekstur kulit, peremajaan, dan penghapusan tato secara efektif."
+    },
+    {
+      "id": "hair-treatment",
+      "label": "Hair",
+      "title": "Hair Treatment",
+      "link": "https://sozoskinclinic.com/hair-treatment/",
+      "description": "Perawatan komprehensif untuk kulit kepala dan rambut yang lebih sehat dan lebat."
+    },
+    {
+      "id": "hair-removal",
+      "label": "Hair Removal",
+      "title": "Hair Removal Treatment",
+      "link": "https://sozoskinclinic.com/hair-removal-treatment/",
+      "description": "Solusi efektif dan tahan lama untuk menghilangkan bulu yang tidak diinginkan."
+    },
+    {
+      "id": "acne-treatment",
+      "label": "Acne",
+      "title": "Acne Treatment",
+      "link": "https://sozoskinclinic.com/skin-treatment/acne-treatment/",
+      "description": "Solusi perawatan jerawat menyeluruh mulai dari facial medis, laser, mesotherapy, hingga botox untuk kulit bebas jerawat."
+    },
+    {
+      "id": "meso-treatment",
+      "label": "Meso",
+      "title": "Meso Treatment",
+      "link": "https://sozoskinclinic.com/meso-treatment/",
+      "description": "Perawatan mesotherapy untuk membentuk kontur wajah, membakar lemak, mengurangi selulit, dan mencapai body goals ideal."
+    },
+    {
+      "id": "ipl-treatment",
+      "label": "IPL",
+      "title": "IPL Treatment",
+      "link": "https://sozoskinclinic.com/skin-treatment/ipl-treatment/",
+      "description": ""
+    },
+    {
+      "id": "derma-peel",
+      "label": "Derma Peel",
+      "title": "Derma Peel",
+      "link": "https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/",
+      "description": ""
+    },
+    {
+      "id": "scar-treatment",
+      "label": "Scar",
+      "title": "Scar Treatment",
+      "link": "https://sozoskinclinic.com/skin-treatment/scar-treatment/",
+      "description": ""
+    },
+    {
+      "id": "rf-treatment",
+      "label": "RF",
+      "title": "RF Treatment",
+      "link": "https://sozoskinclinic.com/radiofrequency-treatment/",
+      "description": ""
+    },
+    {
+      "id": "hifu-treatment",
+      "label": "HIFU",
+      "title": "HIFU Treatment",
+      "link": "https://sozoskinclinic.com/hifu-treatment/",
+      "description": ""
+    }
+  ],
+  "concerns": [
+    {
+      "id": "jerawat",
+      "label": "Jerawat",
+      "solutions": [
+        "Acne Treatment",
+        "Jerawat",
+        "Acne",
+        "Komedo",
+        "Bakteri Jerawat",
+        "Inflamasi"
+      ]
+    },
+    {
+      "id": "bekas-jerawat",
+      "label": "Bekas Jerawat",
+      "solutions": [
+        "Bopeng",
+        "Scar Treatment",
+        "Acne Scar Solution",
+        "Bekas Jerawat",
+        "Subcision"
+      ]
+    },
+    {
+      "id": "kusam",
+      "label": "Kulit Kusam",
+      "solutions": [
+        "Brightening",
+        "Cerah",
+        "Glow",
+        "Glowing",
+        "Mencerahkan",
+        "Whitening",
+        "Kusam",
+        "Infus Whitening",
+        "Body & Face Brightening Solution"
+      ]
+    },
+    {
+      "id": "flek",
+      "label": "Flek & Melasma",
+      "solutions": [
+        "Melasma",
+        "Pigmentasi",
+        "Hiperpigmentasi"
+      ]
+    },
+    {
+      "id": "penuaan",
+      "label": "Penuaan",
+      "solutions": [
+        "Anti Aging",
+        "Anti Aging Solution",
+        "Kerutan",
+        "Pengencangan",
+        "Lifting",
+        "Rejuvenation",
+        "Kolagen",
+        "Facelift"
+      ]
+    },
+    {
+      "id": "pori",
+      "label": "Pori Besar",
+      "solutions": [
+        "Pori-pori",
+        "Pori-pori Besar"
+      ]
+    },
+    {
+      "id": "rambut-rontok",
+      "label": "Rambut Rontok",
+      "solutions": [
+        "Hair Care Solution",
+        "Kerontokan",
+        "Kulit Kepala"
+      ]
+    },
+    {
+      "id": "bulu",
+      "label": "Bulu Berlebih",
+      "solutions": [
+        "Hair Removal Solution"
+      ]
+    },
+    {
+      "id": "lemak",
+      "label": "Lemak & Selulit",
+      "solutions": [
+        "Bakar Lemak",
+        "Selulit",
+        "Slimming",
+        "Body Contouring",
+        "Body Goals"
+      ]
+    }
+  ],
+  "treatments": [
+    {
+      "id": "sb1",
+      "name": "Rejuran Healer",
+      "category": "skin-booster",
+      "price": "Rp 6.499.000",
+      "duration": "90 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Healer1.avif",
+      "solutions": [
+        "Skin Booster",
+        "Anti Aging",
+        "Regenerasi"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-healer/"
+    },
+    {
+      "id": "sb2",
+      "name": "Rejuran Skin Booster",
+      "category": "skin-booster",
+      "price": "Rp 2.999.000",
+      "duration": "90 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Scar1.avif",
+      "solutions": [
+        "Skin Booster",
+        "Hidrasi"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-skin-booster/"
+    },
+    {
+      "id": "sb3",
+      "name": "Rejuran HB",
+      "category": "skin-booster",
+      "price": "Rp 8.198.000",
+      "duration": "90 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-HB.avif",
+      "solutions": [
+        "Skin Booster",
+        "Hidrasi Maksimal"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-hb-treatment/"
+    },
+    {
+      "id": "sb4",
+      "name": "Jalupro",
+      "category": "skin-booster",
+      "price": "Rp 8.598.000",
+      "duration": "60 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/09/jalupro.webp",
+      "solutions": [
+        "Skin Booster",
+        "Kolagen",
+        "Mata Panda"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/jalupro-treatment/"
+    },
+    {
+      "id": "sb5",
+      "name": "Profhilo",
+      "category": "skin-booster",
+      "price": "Rp 6.999.000",
+      "duration": "75 Menit",
+      "rating": 5,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/12/profhilo-treatment-1.avif",
+      "solutions": [
+        "Skin Booster",
+        "Remodeling Kulit",
+        "Lifting"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/profhilo/"
+    },
+    {
+      "id": "sb6",
+      "name": "DNA Glow (DNA Salmon)",
+      "category": "skin-booster",
+      "price": "Rp 1.599.000",
+      "duration": "75 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/K-Glow-DNA-boost.avif",
+      "solutions": [
+        "Skin Booster",
+        "DNA Salmon",
+        "Cerah"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/dna-glow/"
+    },
+    {
+      "id": "sb7",
+      "name": "Glass Skin Booster",
+      "category": "skin-booster",
+      "price": "Rp 2.099.000",
+      "duration": "75 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Glass-Skin-Skinbooster1.avif",
+      "solutions": [
+        "Skin Booster",
+        "Glowing",
+        "Pori-pori"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster/glass-skin-booster/"
+    },
+    {
+      "id": "sb8",
+      "name": "Exosome Face",
+      "category": "skin-booster",
+      "price": "Rp 8.398.000",
+      "duration": "90 Menit",
+      "rating": 5,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Exosome-Face.avif",
+      "solutions": [
+        "Skin Booster",
+        "Exosome",
+        "Sensitif"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster/exosome-skin-booster/"
+    },
+    {
+      "id": "sb9",
+      "name": "Xela Rederm",
+      "category": "skin-booster",
+      "price": "Rp 8.598.000",
+      "duration": "75 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Xela-Rederm1.avif",
+      "solutions": [
+        "Skin Booster",
+        "Anti Aging"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster/xela-rederm-treatment/"
+    },
+    {
+      "id": "sb10",
+      "name": "Juvelook",
+      "category": "skin-booster",
+      "price": "Rp 11.198.000",
+      "duration": "75 Menit",
+      "rating": 5,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/09/juvelook.webp",
+      "solutions": [
+        "Skin Booster",
+        "Volume",
+        "Kolagen"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster/juvelook/"
+    },
+    {
+      "id": "sb11",
+      "name": "Nucleofill",
+      "category": "skin-booster",
+      "price": "Rp 6.499.000",
+      "duration": "80 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2024/07/nucleofill-skinbooster-treatment.avif",
+      "solutions": [
+        "Skin Booster",
+        "Regenerasi"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster/nucleofil-treatment/"
+    },
+    {
+      "id": "sb12",
+      "name": "Restylane Skinbooster",
+      "category": "skin-booster",
+      "price": "Rp 7.798.000",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Restylance-Scar.avif",
+      "solutions": [
+        "Skin Booster",
+        "Hidrasi",
+        "Kolagen"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster/restylane-skinbooster/"
+    },
+    {
+      "id": "sb13",
+      "name": "Aqua Shine Skinbooster",
+      "category": "skin-booster",
+      "price": "Rp 2.599.000",
+      "duration": "60 Menit",
+      "rating": 4.7,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/09/aquashine.webp",
+      "solutions": [
+        "Skin Booster",
+        "Hidrasi"
+      ]
+    },
+    {
+      "id": "sb14",
+      "name": "Sozo Pink Bomb",
+      "category": "skin-booster",
+      "price": "Rp 3.099.000",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/09/sozo-pink-bomb.webp",
+      "solutions": [
+        "Skin Booster",
+        "Mencerahkan"
+      ]
+    },
+    {
+      "id": "sb15",
+      "name": "Rejuran Eye (Rejuran I)",
+      "category": "skin-booster",
+      "price": "Rp 6.198.000",
+      "duration": "45 Menit",
+      "rating": 4.9,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/12/Rejuran-Eye.webp",
+      "solutions": [
+        "Eye Treatment",
+        "Mata Panda"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster/rejuran-eye/"
+    },
+    {
+      "id": "sb16",
+      "name": "Panda Eye Booster",
+      "category": "skin-booster",
+      "price": "Rp 2.099.000",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/under-eye-filler-mata-panda-1.avif",
+      "solutions": [
+        "Eye Treatment",
+        "Mata Panda"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster/eye-booster/"
+    },
+    {
+      "id": "sb17",
+      "name": "Pink Lips Booster",
+      "category": "skin-booster",
+      "price": "Rp 1.599.000",
+      "duration": "30 Menit",
+      "rating": 4.7,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pink-Lips.avif",
+      "solutions": [
+        "Lip Treatment",
+        "Bibir Hitam"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/skin-booster/pink-lips-booster/"
+    },
+    {
+      "id": "sb-whitening-booster",
+      "name": "Whitening Booster",
+      "category": "skin-booster",
+      "price": "Rp 899.000",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/K-Glow-DNA-boost.avif",
+      "solutions": [
+        "Skin Booster",
+        "Whitening",
+        "Brightening"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "sb-vitaran-h",
+      "name": "Vitaran H",
+      "category": "skin-booster",
+      "price": "Rp 7.598.000",
+      "duration": "75 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Healer1.avif",
+      "solutions": [
+        "Skin Booster",
+        "Anti Aging",
+        "Regenerasi"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "inj1",
+      "name": "Zo-Tox / Botox Standar 10u",
+      "category": "injectable-treatment",
+      "price": "Konsultasikan",
+      "duration": "50 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2024/04/zo-tox-treatment-standar-10u.jpg",
+      "solutions": [
+        "Botox",
+        "Anti Aging",
+        "Kerutan"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Botox%20Standar%2010u%20[sumber:%20ORG-botox%20standar%2010u]"
+    },
+    {
+      "id": "inj2",
+      "name": "Zo-Tox / Botox Premium 10u",
+      "category": "injectable-treatment",
+      "price": "Konsultasikan",
+      "duration": "50 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2024/04/zo-tox-treatment-premium-10u.jpg",
+      "solutions": [
+        "Botox",
+        "Anti Aging",
+        "Kerutan"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Botox%20Premium%2010u%20[sumber:%20ORG-botox%20premium%2010u]"
+    },
+    {
+      "id": "inj3",
+      "name": "Botox Underarm",
+      "category": "injectable-treatment",
+      "price": "Konsultasikan",
+      "duration": "90 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Botox-Underarm-Premium-100u.avif",
+      "solutions": [
+        "Botox",
+        "Hyperhidrosis",
+        "Ketiak"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Botox%20treatment%20[sumber:%20ORG-botox%20treatment]"
+    },
+    {
+      "id": "inj4",
+      "name": "Korean Filler",
+      "category": "injectable-treatment",
+      "price": "Konsultasikan",
+      "duration": "75 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Korean-Filler.avif",
+      "solutions": [
+        "Filler",
+        "Volume Wajah",
+        "Kolagen"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/filler-treatment/korean-filler/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20korean%20filler%20%5Bsumber:%20ORG-korean%20filler%5D"
+    },
+    {
+      "id": "inj5",
+      "name": "Premium Filler",
+      "category": "injectable-treatment",
+      "price": "Konsultasikan",
+      "duration": "75 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Premium-Filler.avif",
+      "solutions": [
+        "Filler",
+        "Anti Aging",
+        "Pengencangan"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20premium%20filler%20%5Bsumber:%20ORG-premium%20filler%5D"
+    },
+    {
+      "id": "inj6",
+      "name": "Filler Dagu",
+      "category": "injectable-treatment",
+      "price": "Konsultasikan",
+      "duration": "75 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Premium-Filler.avif",
+      "solutions": [
+        "Filler",
+        "V-Shape",
+        "Kontur Dagu"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/filler-treatment/filler-dagu/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20filler%20dagu%20%5Bsumber:%20ORG-filler%20dagu%5D"
+    },
+    {
+      "id": "inj7",
+      "name": "Facelift (Threadlift)",
+      "category": "injectable-treatment",
+      "price": "Konsultasikan",
+      "duration": "75 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2024/03/facelift-sozo-skin-clinic.avif",
+      "solutions": [
+        "Threadlift",
+        "Facelift",
+        "Anti Aging"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20facelift%20%5Bsumber:%20ORG-facelift%5D"
+    },
+    {
+      "id": "inj8",
+      "name": "Perfect Facelift",
+      "category": "injectable-treatment",
+      "price": "Konsultasikan",
+      "duration": "90 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2024/03/perfect-facelift-sozo-skin-clinic.avif",
+      "solutions": [
+        "Threadlift",
+        "Facelift",
+        "Pengencangan"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20perfect%20facelift%20%5Bsumber:%20ORG-perfect%20facelift%5D"
+    },
+    {
+      "id": "inj9",
+      "name": "Nose Job (Threadlift)",
+      "category": "injectable-treatment",
+      "price": "Konsultasikan",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2024/03/nose-job-sozo-skin-clinic.avif",
+      "solutions": [
+        "Threadlift",
+        "Hidung",
+        "Nose Job"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20nosejob%20%5Bsumber:%20ORG-nosejob%5D"
+    },
+    {
+      "id": "inj10",
+      "name": "Perfect Nose Job",
+      "category": "injectable-treatment",
+      "price": "Konsultasikan",
+      "duration": "60 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2024/03/perfect-nose-job-sozo-skin-clinic.avif",
+      "solutions": [
+        "Threadlift",
+        "Hidung",
+        "Nose Job"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20perfect%20nosejob%20%5Bsumber:%20ORG-perfect%20nosejob%5D"
+    },
+    {
+      "id": "inj11",
+      "name": "Immune Glow Injection",
+      "category": "injectable-treatment",
+      "price": "Rp 199.000",
+      "duration": "15 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.png",
+      "solutions": [
+        "Infus Whitening",
+        "Vitamin C",
+        "Cerah"
+      ],
+      "detailLink": "https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow-injection/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Immune%20Glow%20Injection%20199rb%20%5Bsumber:%20ORG-Immune%20Glow%20Injection%5D"
+    },
+    {
+      "id": "inj12",
+      "name": "Immune Glow Infusion",
+      "category": "injectable-treatment",
+      "price": "Mulai Rp 399.000",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.png",
+      "solutions": [
+        "Infus Whitening",
+        "Imunitas",
+        "Cerah"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Immune%20Glow%20Infusion%20399rb%20%5Bsumber:%20ORG-Immune%20Glow%20Infusion%5D"
+    },
+    {
+      "id": "inj13",
+      "name": "Premium Glow Infusion",
+      "category": "injectable-treatment",
+      "price": "Rp 1.299.000",
+      "duration": "100 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.png",
+      "solutions": [
+        "Infus Whitening",
+        "Stamina",
+        "Regenerasi"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Premium%20Glow%20Infusion%20849rb%20%5Bsumber:%20ORG-Premium%20Glow%20Infusion%5D"
+    },
+    {
+      "id": "fc1",
+      "name": "Mini Facial",
+      "category": "facial-treatment",
+      "price": "Rp 149.000",
+      "duration": "30 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Mini-Facial.avif",
+      "solutions": [
+        "Facial Treatment",
+        "Komedo",
+        "Mencerahkan"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/facial-treatment/mini-facial-treatment/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20mini%20facial%20149rb%20[sumber:%20ORG-mini%20facial]"
+    },
+    {
+      "id": "fc2",
+      "name": "Acne Clear Facial",
+      "category": "facial-treatment",
+      "price": "Rp 299.000",
+      "duration": "45 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.avif",
+      "solutions": [
+        "Facial Treatment",
+        "Acne Scar Solution",
+        "Jerawat"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-clear-facial/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20acne%20clear%20facial%20199rb%20[sumber:%20ORG-acne%20clear%20facial]"
+    },
+    {
+      "id": "fc3",
+      "name": "Skin Bright Facial",
+      "category": "facial-treatment",
+      "price": "Rp 299.000",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.avif",
+      "solutions": [
+        "Facial Treatment",
+        "Body & Face Brightening Solution",
+        "Kusam"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/facial-treatment/brightening-facial/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20skin%20bright%20facial%20199rb%20[sumber:%20ORG-skin%20bright%20facial]"
+    },
+    {
+      "id": "fc4",
+      "name": "Sozo Signature Facial",
+      "category": "facial-treatment",
+      "price": "Rp 699.000",
+      "duration": "60 Menit",
+      "rating": 5,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_SOZO-Signature-Facial.avif",
+      "solutions": [
+        "Facial Treatment",
+        "Anti Aging Solution",
+        "Signature"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/facial-treatment/signature-facial/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20sozo%20signature%20facial%20399rb%20[sumber:%20ORG-sozo%20signature%20facial]"
+    },
+    {
+      "id": "fc5",
+      "name": "Diamond Laser Facial",
+      "category": "facial-treatment",
+      "price": "Rp 1.499.000",
+      "duration": "60 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.avif",
+      "solutions": [
+        "Facial Treatment",
+        "Anti Aging Solution",
+        "Pori-pori"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/facial-treatment/diamond-laser-facial/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20diamond%20laser%20facial%20699rb%20[sumber:%20ORG-diamond%20laser%20facial]"
+    },
+    {
+      "id": "fc6",
+      "name": "Sylfirm X",
+      "category": "facial-treatment",
+      "price": "Rp 7.999.000",
+      "duration": "60 Menit",
+      "rating": 5,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.avif",
+      "solutions": [
+        "Facial Treatment",
+        "Melasma",
+        "Acne Scar Solution"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/facial-treatment/sylfirm-x/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20sylfirm%20x%20[sumber:%20ORG-sylfirm]"
+    },
+    {
+      "id": "fc7",
+      "name": "Acne Laser Facial",
+      "category": "facial-treatment",
+      "price": "Rp 1.499.000",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Laser-Facial.avif",
+      "solutions": [
+        "Facial Treatment",
+        "Jerawat",
+        "Acne Scar Solution"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-laser-facial/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20acne%20laser%20facial%20699rb%20[sumber:%20ORG-acne%20laser%20facial]"
+    },
+    {
+      "id": "fc8",
+      "name": "Collagen Mask",
+      "category": "facial-treatment",
+      "price": "Rp 199.000",
+      "duration": "30 Menit",
+      "rating": 4.7,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Mini-Facial.avif",
+      "solutions": [
+        "Facial Treatment",
+        "Glowing",
+        "Mask"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/facial-treatment/collagen-mask/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20collagen%20mask%20[sumber:%20ORG-collagen%20mask]"
+    },
+    {
+      "id": "fc-lhala-peel",
+      "name": "Korean LHALA Peel",
+      "category": "facial-treatment",
+      "price": "Rp 599.000",
+      "duration": "60 Menit",
+      "rating": 4.9,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2022/05/P1123791-Peeling-2-scaled.webp",
+      "solutions": [
+        "Facial Treatment",
+        "Peel",
+        "Brightening"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "ls1",
+      "name": "Nano Laser",
+      "category": "laser-treatment",
+      "price": "Rp 1.199.000",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Nano-Laser.avif",
+      "solutions": [
+        "Laser Treatment",
+        "Pigmentasi",
+        "Rejuvenation"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/laser-treatment/nano-laser-treatment/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20nano%20laser%20499rb%20%5Bsumber:%20ORG-nano%20laser%5D"
+    },
+    {
+      "id": "ls2",
+      "name": "Pico Laser",
+      "category": "laser-treatment",
+      "price": "Rp 1.199.000",
+      "duration": "45 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pico-Laser.avif",
+      "solutions": [
+        "Laser Treatment",
+        "Pigmentasi",
+        "Melasma"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/laser-treatment/pico-laser-treatment/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20picolux%20499rb%20%5Bsumber:%20ORG-picolux%5D"
+    },
+    {
+      "id": "ls3",
+      "name": "Laser CO2",
+      "category": "laser-treatment",
+      "price": "Rp 1.199.000",
+      "duration": "60 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Laser-CO2.avif",
+      "solutions": [
+        "Laser Treatment",
+        "Bopeng",
+        "Pori-pori Besar"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-co2-treatment/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Laser%20CO2%20599rb%20%5Bsumber:%20ORG-LaserCO2%5D"
+    },
+    {
+      "id": "ls4",
+      "name": "Pink Lips Laser",
+      "category": "laser-treatment",
+      "price": "Rp 499.000",
+      "duration": "30 Menit",
+      "rating": 4.7,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pink-Lips.avif",
+      "solutions": [
+        "Laser Treatment",
+        "Bibir",
+        "Rejuvenation"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/laser-treatment/pink-lips-laser-treatment/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Pink%20Lips%20199rb%20%5Bsumber:%20ORG-Pink%20lips%5D"
+    },
+    {
+      "id": "ls5",
+      "name": "Laser Tattoo Removal",
+      "category": "laser-treatment",
+      "price": "Rp 499.000",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Tatto-Laser.avif",
+      "solutions": [
+        "Laser Treatment",
+        "Tattoo Removal"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-tattoo-removal-treatment/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20laser%20treatment%20%5Bsumber:%20ORG-laser%20treatment%5D"
+    },
+    {
+      "id": "ls6",
+      "name": "Laser Rejuve",
+      "category": "laser-treatment",
+      "price": "Rp 1.199.000",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Nano-Laser.avif",
+      "solutions": [
+        "Laser Treatment",
+        "Rejuvenation",
+        "Anti Aging"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-rejuve-treatment/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20laser%20rejuve%20%5Bsumber:%20ORG-laser%20rejuve%5D"
+    },
+    {
+      "id": "ht1",
+      "name": "Hair Grow Booster",
+      "category": "hair-treatment",
+      "price": "Rp 1.499.000",
+      "duration": "45 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Hair-Grow-Booster-1.avif",
+      "solutions": [
+        "Hair Care Solution",
+        "Kerontokan"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-treatment/hair-grow-booster-treatment/"
+    },
+    {
+      "id": "ht2",
+      "name": "PRP Hair",
+      "category": "hair-treatment",
+      "price": "Mulai Rp 1.749.000",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_PRP-Hair-1.avif",
+      "solutions": [
+        "Hair Care Solution",
+        "Kerontokan"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/"
+    },
+    {
+      "id": "ht3",
+      "name": "Biolight Hair",
+      "category": "hair-treatment",
+      "price": "Mulai Rp 199.000",
+      "duration": "70 Menit",
+      "rating": 4.7,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Biolight-Hair-1.avif",
+      "solutions": [
+        "Hair Care Solution",
+        "Kerontokan"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-treatment/biolight-hair-treatment/"
+    },
+    {
+      "id": "ht4",
+      "name": "Salmon DNA Hair",
+      "category": "hair-treatment",
+      "price": "Mulai Rp 1.399.000",
+      "duration": "80 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Salmon-DNA-Hair-1.avif",
+      "solutions": [
+        "Hair Care Solution",
+        "Kulit Kepala"
+      ]
+    },
+    {
+      "id": "ht5",
+      "name": "Exosome Hair 5cc",
+      "category": "hair-treatment",
+      "price": "Mulai Rp 3.849.000",
+      "duration": "80 Menit",
+      "rating": 5,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Exosome-Hair-5cc-1.avif",
+      "solutions": [
+        "Hair Care Solution",
+        "Kerontokan"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/"
+    },
+    {
+      "id": "ht6",
+      "name": "Express Hair Therapy",
+      "category": "hair-treatment",
+      "price": "Konsultasikan",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Hair-Therapy-1.avif",
+      "solutions": [
+        "Hair Care Solution",
+        "Kulit Kepala"
+      ]
+    },
+    {
+      "id": "ht7",
+      "name": "Brow Grow",
+      "category": "hair-treatment",
+      "price": "Mulai Rp 599.000",
+      "duration": "80 Menit",
+      "rating": 4.6,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Brow-Grow-1.avif",
+      "solutions": [
+        "Hair Care Solution",
+        "Alis & Jenggot"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-treatment/treatment-alis-brow-grow/"
+    },
+    {
+      "id": "ht8",
+      "name": "Beard Grow",
+      "category": "hair-treatment",
+      "price": "Mulai Rp 749.000",
+      "duration": "80 Menit",
+      "rating": 4.7,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Beard-Grow-1.avif",
+      "solutions": [
+        "Hair Care Solution",
+        "Alis & Jenggot"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-treatment/beard-grow-treatment/"
+    },
+    {
+      "id": "hr1",
+      "name": "Laser Hair Removal",
+      "category": "hair-removal",
+      "price": "Mulai Rp 799.000",
+      "duration": "30 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Laser-Hair-Removal.avif",
+      "solutions": [
+        "Hair Removal Solution",
+        "Laser"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-removal-treatment/laser-hair-removal-treatment/"
+    },
+    {
+      "id": "hr2",
+      "name": "Underarm Removal Treatment",
+      "category": "hair-removal",
+      "price": "Mulai Rp 249.000",
+      "duration": "20 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_IPL-Underarm.avif",
+      "solutions": [
+        "Hair Removal Solution",
+        "Underarm"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-removal-treatment/underarm-hair-removal-treatment/"
+    },
+    {
+      "id": "hr3",
+      "name": "Underarm Brightening Treatment",
+      "category": "hair-removal",
+      "price": "Mulai Rp 597.000",
+      "duration": "30 Menit",
+      "rating": 4.7,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Underarm-Brightening.avif",
+      "solutions": [
+        "Hair Removal Solution",
+        "Underarm",
+        "Brightening"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-removal-treatment/underarm-brightening-treatment/"
+    },
+    {
+      "id": "hr4",
+      "name": "Brazilian Hair Removal",
+      "category": "hair-removal",
+      "price": "Mulai Rp 1.199.000",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Brazilian.avif",
+      "solutions": [
+        "Hair Removal Solution",
+        "Body"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-removal-treatment/brazilian-hair-removal-treatment/"
+    },
+    {
+      "id": "hr5",
+      "name": "Body Hair Removal (Med/Large)",
+      "category": "hair-removal",
+      "price": "Mulai Rp 1.598.000",
+      "duration": "60 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Hair-Removal-Large.avif",
+      "solutions": [
+        "Hair Removal Solution",
+        "Body"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hair-removal-treatment/hair-removal-body-treatment/"
+    },
+    {
+      "id": "ac1",
+      "name": "Acne Micro Botox Standard",
+      "category": "acne-treatment",
+      "price": "Konsultasikan",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Injection.webp",
+      "solutions": [
+        "Acne Treatment",
+        "Botox",
+        "Inflamasi"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D"
+    },
+    {
+      "id": "ac2",
+      "name": "Acne Micro Botox Hydration",
+      "category": "acne-treatment",
+      "price": "Konsultasikan",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Clear-Facial-2.webp",
+      "solutions": [
+        "Acne Treatment",
+        "Botox",
+        "Hidrasi"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D"
+    },
+    {
+      "id": "ac3",
+      "name": "Acne Clear Facial - Medical",
+      "category": "acne-treatment",
+      "price": "Konsultasikan",
+      "duration": "60 Menit",
+      "rating": 4.9,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/IPL-Acne-2048x2048.webp",
+      "solutions": [
+        "Acne Treatment",
+        "Facial",
+        "Komedo"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D"
+    },
+    {
+      "id": "ac4",
+      "name": "Intense Pulse Light Acne",
+      "category": "acne-treatment",
+      "price": "Konsultasikan",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Laser-Facial1.webp",
+      "solutions": [
+        "Acne Treatment",
+        "IPL",
+        "Bakteri Jerawat"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D"
+    },
+    {
+      "id": "ac5",
+      "name": "Acne Laser Facial",
+      "category": "acne-treatment",
+      "price": "Konsultasikan",
+      "duration": "75 Menit",
+      "rating": 4.9,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Meso-Acne.webp",
+      "solutions": [
+        "Acne Treatment",
+        "Laser",
+        "Bekas Jerawat"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D"
+    },
+    {
+      "id": "ac6",
+      "name": "Meso Acne",
+      "category": "acne-treatment",
+      "price": "Konsultasikan",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Meso-Acne.webp",
+      "solutions": [
+        "Acne Treatment",
+        "Mesotherapy",
+        "Inflamasi"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20acne%20treatment%20%5Bsumber:%20ORG-Acne%20General%5D"
+    },
+    {
+      "id": "ms1",
+      "name": "Meso V Line",
+      "category": "meso-treatment",
+      "price": "Konsultasikan",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-3-1.webp",
+      "solutions": [
+        "Meso Treatment",
+        "V-Shape",
+        "Kontur Wajah"
+      ],
+      "detailLink": "https://sozoskinclinic.com/meso-treatment/meso-v-line/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Meso%20V%20Line%20[sumber:%20ORG-Meso]"
+    },
+    {
+      "id": "ms2",
+      "name": "Meso Slim Body Premium",
+      "category": "meso-treatment",
+      "price": "Konsultasikan",
+      "duration": "75 Menit",
+      "rating": 4.9,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-4-1.webp",
+      "solutions": [
+        "Meso Treatment",
+        "Slimming",
+        "Body Goals"
+      ],
+      "detailLink": "https://sozoskinclinic.com/meso-treatment/meso-slim-body/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Meso%20Slim%20Body%20Premium%20[sumber:%20ORG-Meso]"
+    },
+    {
+      "id": "ms3",
+      "name": "Meso Metabolic Boost",
+      "category": "meso-treatment",
+      "price": "Konsultasikan",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-5-1.webp",
+      "solutions": [
+        "Meso Treatment",
+        "Metabolisme",
+        "Bakar Lemak"
+      ],
+      "detailLink": "https://sozoskinclinic.com/meso-treatment/meso-metabolic-boost/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Meso%20Metabolic%20Boost%20[sumber:%20ORG-Meso]"
+    },
+    {
+      "id": "ms4",
+      "name": "Meso Cellulift",
+      "category": "meso-treatment",
+      "price": "Konsultasikan",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-8.webp",
+      "solutions": [
+        "Meso Treatment",
+        "Selulit",
+        "Body Contouring"
+      ],
+      "detailLink": "https://sozoskinclinic.com/meso-treatment/meso-cellulift/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Meso%20Cellulift%20[sumber:%20ORG-Meso]"
+    },
+    {
+      "id": "ms5",
+      "name": "Meso BloatAway",
+      "category": "meso-treatment",
+      "price": "Konsultasikan",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-9.webp",
+      "solutions": [
+        "Meso Treatment",
+        "Bakar Lemak",
+        "Slimming"
+      ],
+      "detailLink": "https://sozoskinclinic.com/meso-treatment/meso-bloataway/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Meso%20BloatAway%20[sumber:%20ORG-Meso]"
+    },
+    {
+      "id": "ipl-acne",
+      "name": "IPL Acne",
+      "category": "ipl-treatment",
+      "price": "Rp 299.000",
+      "duration": "30 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Laser-Facial.avif",
+      "solutions": [
+        "IPL Treatment",
+        "Jerawat",
+        "Acne"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/ipl-treatment/ipl-acne/"
+    },
+    {
+      "id": "ipl-glow",
+      "name": "IPL Glow",
+      "category": "ipl-treatment",
+      "price": "Rp 299.000",
+      "duration": "30 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.avif",
+      "solutions": [
+        "IPL Treatment",
+        "Glow",
+        "Brightening"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/ipl-treatment/ipl-glow/"
+    },
+    {
+      "id": "glow-peel",
+      "name": "Glow Peel",
+      "category": "derma-peel",
+      "price": "Rp 399.000",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.avif",
+      "solutions": [
+        "Derma Peel",
+        "Glow",
+        "Brightening"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/glow-peel/"
+    },
+    {
+      "id": "acne-peel",
+      "name": "Acne Peel",
+      "category": "derma-peel",
+      "price": "Rp 299.000",
+      "duration": "45 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.avif",
+      "solutions": [
+        "Derma Peel",
+        "Acne",
+        "Komedo"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/acne-peel/"
+    },
+    {
+      "id": "dazzling-glow-peel",
+      "name": "Dazzling Glow Peel",
+      "category": "derma-peel",
+      "price": "Rp 499.000",
+      "duration": "60 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.avif",
+      "solutions": [
+        "Derma Peel",
+        "Glow",
+        "Anti Aging"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/dazzling-glow-peel/"
+    },
+    {
+      "id": "eternal-bloom-peel",
+      "name": "Eternal Bloom Peel",
+      "category": "derma-peel",
+      "price": "Rp 699.000",
+      "duration": "60 Menit",
+      "rating": 5,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_SOZO-Signature-Facial.avif",
+      "solutions": [
+        "Derma Peel",
+        "Anti Aging",
+        "Hiperpigmentasi"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/"
+    },
+    {
+      "id": "rejuran-scar",
+      "name": "Rejuran Scar",
+      "category": "scar-treatment",
+      "price": "Rp 5.499.000",
+      "duration": "90 Menit",
+      "rating": 4.9,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/10/Rejuran-Scar-2048x2048.webp",
+      "solutions": [
+        "Scar Treatment",
+        "Bopeng",
+        "Regenerasi"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/scar-treatment/rejuran-scar-treatment/"
+    },
+    {
+      "id": "restylane-scar",
+      "name": "Restylane Scar",
+      "category": "scar-treatment",
+      "price": "Rp 7.798.000",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Restylance-Scar.avif",
+      "solutions": [
+        "Scar Treatment",
+        "Bopeng",
+        "Skin Booster"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/scar-treatment/restylane-scar/"
+    },
+    {
+      "id": "prp-face",
+      "name": "PRP Treatment (Face)",
+      "category": "scar-treatment",
+      "price": "Rp 1.499.000",
+      "duration": "75 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/10/PRP-Face-2048x2048.webp",
+      "solutions": [
+        "Scar Treatment",
+        "Bopeng",
+        "PRP"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/"
+    },
+    {
+      "id": "laser-co2-rejuve",
+      "name": "Laser CO2 (Rejuve)",
+      "category": "scar-treatment",
+      "price": "Rp 1.199.000",
+      "duration": "75 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Laser-CO2.avif",
+      "solutions": [
+        "Scar Treatment",
+        "Rejuvenation",
+        "Laser"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-rejuve-treatment/"
+    },
+    {
+      "id": "laser-co2-scar-pores",
+      "name": "Laser CO2 (Scar/Pores)",
+      "category": "scar-treatment",
+      "price": "Rp 1.499.000",
+      "duration": "75 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/10/Laser-CO2-Acne-scar-_-Pores-Full-Face.webp",
+      "solutions": [
+        "Scar Treatment",
+        "Bopeng",
+        "Pori-pori"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/scar-treatment/laser-co2-treatment/"
+    },
+    {
+      "id": "pore-detox",
+      "name": "Pore Detox",
+      "category": "scar-treatment",
+      "price": "Rp 599.000",
+      "duration": "90 Menit",
+      "rating": 4.7,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Scar-Package-Treatment-Scar-Repair-PRP-I.avif",
+      "solutions": [
+        "Scar Treatment",
+        "Pori-pori",
+        "Komedo"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/scar-treatment/pores-treatment/"
+    },
+    {
+      "id": "subcision",
+      "name": "Subcision",
+      "category": "scar-treatment",
+      "price": "Rp 299.000",
+      "duration": "75 Menit",
+      "rating": 4.8,
+      "img": "https://sozoskinclinic.com/wp-content/uploads/2025/10/Website-Acne-Campaign_USP-Before-After-Scar-Scar-Fighter-1-768x576.webp",
+      "solutions": [
+        "Scar Treatment",
+        "Bopeng",
+        "Subcision"
+      ],
+      "detailLink": "https://sozoskinclinic.com/skin-treatment/scar-treatment/subsicion-treatment/"
+    },
+    {
+      "id": "rf-body-slimming",
+      "name": "RF Body Slimming",
+      "category": "rf-treatment",
+      "price": "Konsultasikan",
+      "duration": "60 Menit",
+      "rating": 4.8,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/DSC05449-edit-RF-Body-sozo-signature-1.webp",
+      "solutions": [
+        "RF Treatment",
+        "Slimming",
+        "Selulit"
+      ],
+      "detailLink": "https://sozoskinclinic.com/radiofrequency-treatment/rf-body/"
+    },
+    {
+      "id": "rf-wajah",
+      "name": "RF Wajah",
+      "category": "rf-treatment",
+      "price": "Konsultasikan",
+      "duration": "45 Menit",
+      "rating": 4.9,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/Untitled-design-1-1.webp",
+      "solutions": [
+        "RF Treatment",
+        "Anti Aging",
+        "Pengencangan"
+      ],
+      "detailLink": "https://sozoskinclinic.com/radiofrequency-treatment/rf-face/"
+    },
+    {
+      "id": "liftera-hifu",
+      "name": "Liftera HIFU",
+      "category": "hifu-treatment",
+      "price": "Konsultasikan",
+      "duration": "75 Menit",
+      "rating": 4.9,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/DSC09073-1-scaled.webp",
+      "solutions": [
+        "HIFU",
+        "Pengencangan",
+        "Kolagen"
+      ],
+      "detailLink": "https://sozoskinclinic.com/hifu-treatment/liftera-hifu/",
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Liftera2%20HIFU%20[sumber:%20ORG-Hifu]"
+    },
+    {
+      "id": "signature-hifu",
+      "name": "Signature HIFU",
+      "category": "hifu-treatment",
+      "price": "Konsultasikan",
+      "duration": "75 Menit",
+      "rating": 4.9,
+      "img": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/DSC06476-scaled-HIFU.webp",
+      "solutions": [
+        "HIFU",
+        "Lifting",
+        "Anti Aging"
+      ],
+      "waLink": "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Signature%20HIFU%20[sumber:%20ORG-Hifu]"
+    }
+  ]
+}

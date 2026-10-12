@@ -1,0 +1,857 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================
+   SOZO SKIN - HOMEPAGE BLOG COMPACT & THEME-SAFE CSS
+   ========================================================== */
+
+.sz-blog-wrapper {
+    --sz-primary: #1A2080;
+    --sz-primary-hover: #12165c;
+    --sz-primary-soft: #f0f4ff;
+    --sz-text-dark: #1A2080;
+    --sz-text-body: #24345c;
+    --sz-text-muted: #2b3e68;
+    --sz-text-meta: #4d6599;
+    --sz-border: #e2e8f0;
+    --sz-bg-light: #f8fafc;
+    
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    color: var(--sz-text-body) !important;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    line-height: 1.5 !important;
+    box-sizing: border-box !important;
+    overflow-x: clip !important;
+}
+
+.sz-blog-wrapper *,
+.sz-blog-wrapper *::before,
+.sz-blog-wrapper *::after {
+    box-sizing: inherit !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.sz-blog-wrapper a {
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+}
+
+.sz-blog-wrapper img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* ==========================================================
+   1. Hero Header Section (Compact Editorial Header)
+   ========================================================== */
+
+.sz-hero-banner-section {
+    background: linear-gradient(180deg, #F3F7FD 0%, #FFFFFF 100%) !important;
+    padding: 36px 20px 32px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+    box-sizing: border-box !important;
+}
+
+.sz-hero-container {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+.sz-hero-header-text {
+    max-width: 680px !important;
+    margin-bottom: 24px !important;
+    text-align: left !important;
+}
+
+.sz-hero-badge {
+    display: inline-block !important;
+    background: #dbeafe !important;
+    color: var(--sz-primary) !important;
+    padding: 4px 12px !important;
+    border-radius: 999px !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 8px !important;
+}
+
+.sz-hero-main-title {
+    font-size: clamp(22px, 2.5vw, 30px) !important;
+    font-weight: 800 !important;
+    color: var(--sz-primary) !important;
+    line-height: 1.2 !important;
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+    letter-spacing: -0.02em !important;
+}
+
+.sz-hero-subtitle {
+    font-size: clamp(13px, 1.1vw, 14.5px) !important;
+    color: #24345c !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ==========================================================
+   2. Hero Section - Editorial Split Layout (Untitled UI Style)
+   ========================================================== */
+
+.sz-hero-split-grid {
+    display: grid !important;
+    grid-template-columns: 1.15fr 1fr !important;
+    gap: 36px !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* KARTU UTAMA DI KIRI */
+.sz-hero-main-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.sz-hero-main-img-wrap {
+    width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    display: block !important;
+    background: #eef2ff !important;
+}
+
+.sz-hero-main-img-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    margin: 0 !important;
+}
+
+.sz-hero-main-card:hover .sz-hero-main-img-wrap img {
+    transform: scale(1.03) !important;
+}
+
+.sz-hero-main-body {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    padding-top: 18px !important;
+    box-sizing: border-box !important;
+}
+
+.sz-hero-meta {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #4d6599 !important;
+    margin-bottom: 8px !important;
+}
+
+.sz-hero-meta-dot {
+    color: #94a3b8 !important;
+    font-size: 14px !important;
+}
+
+.sz-hero-main-card-title {
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+}
+
+.sz-hero-main-link {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    color: var(--sz-primary) !important;
+    font-size: clamp(20px, 2.2vw, 25px) !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.sz-hero-main-link:hover {
+    color: var(--sz-primary-hover) !important;
+}
+
+.sz-hero-arrow-icon {
+    flex-shrink: 0 !important;
+    margin-top: 4px !important;
+    color: var(--sz-primary) !important;
+    transition: transform 0.25s ease, color 0.25s ease !important;
+}
+
+.sz-hero-main-card:hover .sz-hero-arrow-icon {
+    transform: translate(3px, -3px) !important;
+    color: var(--sz-primary-hover) !important;
+}
+
+.sz-hero-main-excerpt {
+    color: #24345c !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+/* TIGA KARTU SAMPING DI KANAN */
+.sz-hero-side-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 22px !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.sz-hero-side-card {
+    display: grid !important;
+    grid-template-columns: 200px 1fr !important;
+    gap: 18px !important;
+    align-items: flex-start !important;
+    box-sizing: border-box !important;
+}
+
+.sz-hero-side-img-wrap {
+    width: 100% !important;
+    aspect-ratio: 16 / 11 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    display: block !important;
+    background: #eef2ff !important;
+}
+
+.sz-hero-side-img-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    margin: 0 !important;
+}
+
+.sz-hero-side-card:hover .sz-hero-side-img-wrap img {
+    transform: scale(1.04) !important;
+}
+
+.sz-hero-side-body {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+}
+
+.sz-hero-side-card-title {
+    margin: 0 0 6px 0 !important;
+    padding: 0 !important;
+}
+
+.sz-hero-side-card-title a {
+    color: var(--sz-primary) !important;
+    font-size: 16px !important;
+    font-weight: 750 !important;
+    line-height: 1.35 !important;
+    text-decoration: none !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    transition: color 0.2s ease !important;
+}
+
+.sz-hero-side-card-title a:hover {
+    color: var(--sz-primary-hover) !important;
+}
+
+.sz-hero-side-excerpt {
+    color: #24345c !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+/* PILL TAGS KATEGORI BER-BORDER */
+.sz-pill-list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    align-items: center !important;
+}
+
+.sz-pill-tag {
+    display: inline-block !important;
+    padding: 3px 12px !important;
+    border-radius: 999px !important;
+    border: 1.5px solid #cbd7f1 !important;
+    background: #f4f7ff !important;
+    color: var(--sz-primary) !important;
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.sz-pill-tag:hover {
+    background: var(--sz-primary) !important;
+    color: #ffffff !important;
+    border-color: var(--sz-primary) !important;
+}
+
+/* ==========================================================
+   3. Main Content Section (Filter, Search, Grid)
+   ========================================================== */
+
+.sz-blog-main-section {
+    padding: 26px 20px 50px !important;
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+.sz-blog-container {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Controls Bar: Category Filter Pills + Search Input */
+.sz-controls-bar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 16px !important;
+    border-bottom: 1.5px solid var(--sz-border) !important;
+    padding-bottom: 16px !important;
+    margin-bottom: 26px !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.sz-filter-tabs {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
+}
+
+.sz-filter-tabs::-webkit-scrollbar {
+    display: none !important;
+}
+
+.sz-filter-tab {
+    padding: 7px 18px !important;
+    border-radius: 999px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: var(--sz-text-muted) !important;
+    background: #f1f5f9 !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    white-space: nowrap !important;
+    border: 1px solid transparent !important;
+    display: inline-block !important;
+}
+
+.sz-filter-tab:hover {
+    color: var(--sz-primary) !important;
+    background: #e8ecff !important;
+    border-color: #cbd5e1 !important;
+}
+
+.sz-filter-tab.active {
+    color: #ffffff !important;
+    background: var(--sz-primary) !important;
+    font-weight: 700 !important;
+    border-color: var(--sz-primary) !important;
+    box-shadow: 0 3px 10px rgba(26, 32, 128, 0.2) !important;
+}
+
+/* Search Box */
+.sz-search-box {
+    position: relative !important;
+    width: 260px !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.sz-search-icon {
+    position: absolute !important;
+    left: 14px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #94a3b8 !important;
+    pointer-events: none !important;
+}
+
+.sz-search-input {
+    width: 100% !important;
+    padding: 9px 16px 9px 40px !important;
+    border-radius: 999px !important;
+    border: 1.5px solid var(--sz-border) !important;
+    background: #ffffff !important;
+    font-size: 13px !important;
+    color: var(--sz-text-dark) !important;
+    outline: none !important;
+    transition: all 0.25s ease !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+}
+
+.sz-search-input:focus {
+    border-color: var(--sz-primary) !important;
+    box-shadow: 0 0 0 3px rgba(26, 32, 128, 0.1) !important;
+}
+
+/* Search Result Heading */
+.sz-search-results-heading {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 22px !important;
+    padding-bottom: 12px !important;
+    border-bottom: 1px solid var(--sz-border) !important;
+}
+
+.sz-search-results-heading h3 {
+    font-size: 16px !important;
+    color: var(--sz-text-dark) !important;
+    margin: 0 !important;
+    font-weight: 700 !important;
+}
+
+.sz-search-results-heading h3 span {
+    color: var(--sz-primary) !important;
+}
+
+.sz-clear-search {
+    font-size: 13px !important;
+    color: #ef4444 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+}
+
+.sz-clear-search:hover {
+    text-decoration: underline !important;
+}
+
+/* ==========================================================
+   4. Articles Grid & Modern Cards
+   ========================================================== */
+
+.sz-article-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.sz-card {
+    background: #ffffff !important;
+    border: 1px solid var(--sz-border) !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03) !important;
+    box-sizing: border-box !important;
+}
+
+.sz-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08) !important;
+    border-color: #cbd5e1 !important;
+}
+
+.sz-card-img {
+    aspect-ratio: 16 / 10 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    display: block !important;
+    background: #f1f5f9 !important;
+    position: relative !important;
+}
+
+.sz-card-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.5s ease !important;
+    display: block !important;
+    margin: 0 !important;
+}
+
+.sz-card:hover .sz-card-img img {
+    transform: scale(1.04) !important;
+}
+
+.sz-card-body {
+    padding: 18px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    box-sizing: border-box !important;
+}
+
+.sz-card-cat-wrap {
+    margin-bottom: 6px !important;
+}
+
+.sz-card-cat {
+    display: inline-block !important;
+    font-size: 11.5px !important;
+    font-weight: 750 !important;
+    color: var(--sz-primary) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    text-decoration: none !important;
+}
+
+.sz-card-cat:hover {
+    color: var(--sz-primary-hover) !important;
+}
+
+.sz-card-title {
+    margin: 0 0 8px 0 !important;
+    font-size: 16.5px !important;
+    font-weight: 800 !important;
+    line-height: 1.35 !important;
+    padding: 0 !important;
+}
+
+.sz-card-title a {
+    color: var(--sz-primary) !important;
+    text-decoration: none !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    transition: color 0.2s ease !important;
+}
+
+.sz-card-title a:hover {
+    color: var(--sz-primary-hover) !important;
+}
+
+.sz-card-excerpt {
+    font-size: 13.5px !important;
+    color: #24345c !important;
+    line-height: 1.5 !important;
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.sz-card-meta {
+    margin-top: auto !important;
+    padding-top: 12px !important;
+    border-top: 1px solid #f1f5f9 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 12px !important;
+    color: #4d6599 !important;
+}
+
+.sz-card-date {
+    font-weight: 500 !important;
+    color: #4d6599 !important;
+    font-size: 12px !important;
+}
+
+.sz-card-read-link {
+    font-weight: 700 !important;
+    color: var(--sz-primary) !important;
+    text-transform: uppercase !important;
+    font-size: 11.5px !important;
+    letter-spacing: 0.03em !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.sz-card-read-link:hover {
+    color: var(--sz-primary-hover) !important;
+    transform: translateX(2px) !important;
+}
+
+.sz-no-posts {
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+    padding: 50px 20px !important;
+    background: #f8fafc !important;
+    border-radius: 16px !important;
+    border: 1px dashed #cbd5e1 !important;
+}
+
+.sz-no-posts p {
+    font-size: 15px !important;
+    color: var(--sz-text-muted) !important;
+    margin: 0 0 14px 0 !important;
+}
+
+.sz-btn-secondary {
+    display: inline-block !important;
+    background: var(--sz-primary) !important;
+    color: #ffffff !important;
+    padding: 9px 22px !important;
+    border-radius: 999px !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+}
+
+.sz-btn-secondary:hover {
+    background: var(--sz-primary-hover) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ==========================================================
+   5. Pagination Modern SEO
+   ========================================================== */
+
+.sz-pagination-wrapper {
+    margin-top: 44px !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.sz-pagination {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.sz-page {
+    min-width: 38px !important;
+    height: 38px !important;
+    padding: 0 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1.5px solid var(--sz-border) !important;
+    border-radius: 9px !important;
+    color: #1e293b !important;
+    font-weight: 700 !important;
+    font-size: 13.5px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    background: #ffffff !important;
+    box-sizing: border-box !important;
+}
+
+.sz-page:hover {
+    border-color: var(--sz-primary);
+    color: var(--sz-primary) !important;
+    transform: translateY(-2px) !important;
+}
+
+.sz-page.active {
+    background: var(--sz-primary) !important;
+    color: #ffffff !important;
+    border-color: var(--sz-primary) !important;
+    box-shadow: 0 4px 12px rgba(26, 32, 128, 0.25) !important;
+    pointer-events: none !important;
+}
+
+.sz-dots {
+    padding: 0 6px !important;
+    color: #94a3b8 !important;
+    font-weight: 700 !important;
+}
+
+.sz-arrow {
+    font-size: 14px !important;
+    color: var(--sz-primary) !important;
+    background: #f8fafc !important;
+}
+
+/* ==========================================================
+   6. Responsive Mobile & Tablet
+   ========================================================== */
+
+@media (max-width: 991px) {
+    .sz-hero-banner-section {
+        padding: 28px 18px 24px !important;
+    }
+
+    .sz-hero-split-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+
+    .sz-hero-side-card {
+        grid-template-columns: 180px 1fr !important;
+    }
+
+    .sz-article-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .sz-hero-banner-section {
+        padding: 22px 14px 20px !important;
+    }
+
+    .sz-hero-header-text {
+        margin-bottom: 18px !important;
+    }
+
+    .sz-hero-badge {
+        font-size: 10.5px !important;
+        padding: 3px 10px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .sz-hero-main-title {
+        font-size: 21px !important;
+        margin-bottom: 6px !important;
+        line-height: 1.25 !important;
+    }
+
+    .sz-hero-subtitle {
+        font-size: 12.5px !important;
+        line-height: 1.45 !important;
+    }
+
+    .sz-hero-split-grid {
+        gap: 24px !important;
+    }
+
+    .sz-hero-main-link {
+        font-size: 18px !important;
+    }
+
+    .sz-hero-main-excerpt {
+        font-size: 13px !important;
+        line-height: 1.45 !important;
+        -webkit-line-clamp: 2 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .sz-hero-side-stack {
+        gap: 16px !important;
+    }
+
+    .sz-hero-side-card {
+        grid-template-columns: 110px 1fr !important;
+        gap: 12px !important;
+    }
+
+    .sz-hero-side-card-title a {
+        font-size: 14px !important;
+        line-height: 1.3 !important;
+    }
+
+    .sz-hero-side-excerpt {
+        display: none !important;
+    }
+
+    .sz-pill-tag {
+        font-size: 10.5px !important;
+        padding: 2px 8px !important;
+    }
+
+    .sz-hero-meta {
+        font-size: 11px !important;
+        gap: 6px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .sz-blog-main-section {
+        padding: 20px 14px 44px !important;
+    }
+
+    .sz-controls-bar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        padding-bottom: 14px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .sz-filter-tabs {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-bottom: 4px !important;
+    }
+
+    .sz-filter-tab {
+        padding: 6px 14px !important;
+        font-size: 12.5px !important;
+    }
+
+    .sz-search-box {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .sz-article-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
+    .sz-card {
+        border-radius: 14px !important;
+    }
+
+    .sz-card-body {
+        padding: 14px 16px !important;
+    }
+
+    .sz-card-title {
+        font-size: 15.5px !important;
+    }
+
+    .sz-pagination-wrapper {
+        margin-top: 32px !important;
+    }
+
+    .sz-page {
+        min-width: 34px !important;
+        height: 34px !important;
+        font-size: 12.5px !important;
+        padding: 0 8px !important;
+    }
+}

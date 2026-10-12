@@ -384,110 +384,6 @@
   border-radius: 10px !important;
 }
 
-/* 4. TREATMENT CATEGORIES */
-.sozo-category-section {
-  margin-top: 60px !important;
-  padding-top: 50px !important;
-  border-top: 1px solid #eef2f7 !important;
-  width: 100% !important;
-}
-.sozo-category-heading {
-  text-align: center !important;
-  color: #1A2080 !important;
-  font-size: clamp(22px, 3vw, 28px) !important;
-  font-weight: 700 !important;
-  margin: 0 0 8px 0 !important;
-  line-height: 1.3 !important;
-}
-.sozo-category-sub {
-  text-align: center !important;
-  color: #556177 !important;
-  font-size: clamp(13px, 1.5vw, 14.5px) !important;
-  margin: 0 0 35px 0 !important;
-  line-height: 1.6 !important;
-}
-.sozo-category-grid {
-  display: grid !important;
-  grid-template-columns: repeat(6, 1fr) !important;
-  gap: 16px !important;
-  margin-bottom: 35px !important;
-}
-.sozo-category-card {
-  position: relative !important;
-  border-radius: 18px !important;
-  overflow: hidden !important;
-  aspect-ratio: 3 / 4 !important;
-  cursor: pointer !important;
-  text-decoration: none !important;
-  display: flex !important;
-  align-items: flex-end !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-.sozo-category-card:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 14px 28px rgba(26, 32, 128, 0.16) !important;
-}
-.sozo-cat-bg {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  background-size: cover !important;
-  background-position: center !important;
-  transition: transform 0.5s ease !important;
-  z-index: 1 !important;
-}
-.sozo-category-card:hover .sozo-cat-bg { transform: scale(1.06) !important; }
-.sozo-cat-overlay {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: linear-gradient(to top, rgba(16, 20, 50, 0.8) 0%, rgba(16, 20, 50, 0.1) 70%) !important;
-  z-index: 2 !important;
-  transition: background 0.35s ease !important;
-}
-.sozo-category-card:hover .sozo-cat-overlay {
-  background: linear-gradient(to top, rgba(26, 32, 128, 0.85) 0%, rgba(26, 32, 128, 0.2) 70%) !important;
-}
-.sozo-cat-label {
-  position: relative !important;
-  z-index: 3 !important;
-  color: #ffffff !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  padding: 16px 12px !important;
-  width: 100% !important;
-  letter-spacing: 0.02em !important;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.3) !important;
-  line-height: 1.3 !important;
-}
-.sozo-category-cta-wrap { text-align: center !important; }
-.sozo-category-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  background: #1A2080 !important;
-  color: #ffffff !important;
-  font-size: 14.5px !important;
-  font-weight: 700 !important;
-  padding: 13px 32px !important;
-  border-radius: 50px !important;
-  text-decoration: none !important;
-  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease !important;
-  box-shadow: 0 6px 18px rgba(26, 32, 128, 0.18) !important;
-}
-.sozo-category-btn:hover {
-  background: #11164f !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 10px 25px rgba(26, 32, 128, 0.28) !important;
-}
-.sozo-category-btn svg { width: 16px !important; height: 16px !important; }
-
 /* 4.5 HASIL NYATA & TESTIMONI */
 .sozo-results-section {
   margin-top: 60px !important;
@@ -565,80 +461,6 @@
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
-}
-
-/* Quote Slides */
-.sozo-quote-slide {
-  flex: 0 0 calc(33.333% - (32px / 3)) !important;
-  min-width: 0 !important;
-  display: flex !important;
-}
-.sozo-quote-card {
-  background: #ffffff !important;
-  border: 1.5px solid #edf2f7 !important;
-  border-radius: 16px !important;
-  padding: 24px 20px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  width: 100% !important;
-  box-shadow: none !important;
-  position: relative !important;
-  transition: transform 0.25s ease, border-color 0.25s ease !important;
-}
-.sozo-quote-card:hover {
-  border-color: #cbd5e1 !important;
-  transform: translateY(-3px) !important;
-  box-shadow: none !important;
-}
-.sozo-quote-icon {
-  font-size: 28px !important;
-  font-family: Georgia, serif !important;
-  line-height: 1 !important;
-  color: #94a3b8 !important;
-  opacity: 0.6 !important;
-  margin-bottom: 10px !important;
-}
-.sozo-quote-text {
-  font-size: 13.5px !important;
-  color: #475569 !important;
-  line-height: 1.6 !important;
-  margin: 0 0 20px 0 !important;
-  flex-grow: 1 !important;
-  font-style: italic !important;
-}
-.sozo-quote-author {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  border-top: 1px solid #f1f5f9 !important;
-  padding-top: 14px !important;
-}
-.sozo-author-avatar {
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 50% !important;
-  background: #1A2080 !important;
-  color: #ffffff !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 12.5px !important;
-  font-weight: 700 !important;
-  flex-shrink: 0 !important;
-  letter-spacing: 0.5px !important;
-}
-.sozo-author-info { display: flex !important; flex-direction: column !important; }
-.sozo-author-name {
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  color: #1A2080 !important;
-  line-height: 1.2 !important;
-}
-.sozo-author-meta {
-  font-size: 11.5px !important;
-  color: #64748b !important;
-  margin-top: 2px !important;
 }
 
 /* 4.6 PROMO KHUSUS HARI INI */
@@ -775,95 +597,6 @@
   transform: translateX(3px) !important;
 }
 
-/* 5. WHY CHOOSE US */
-.sozo-why-section {
-  background-color: #1A2080 !important;
-  color: #ffffff !important;
-  padding: 80px 20px !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
-.sozo-why-container {
-  max-width: 1200px !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-  position: relative !important;
-  z-index: 1 !important;
-}
-.sozo-why-header {
-  text-align: center !important;
-  max-width: 700px !important;
-  margin: 0 auto 50px auto !important;
-}
-.sozo-why-header h2 {
-  font-size: clamp(28px, 4vw, 36px) !important;
-  color: #ffffff !important;
-  margin: 0 0 16px 0 !important;
-  font-weight: 700 !important;
-}
-.sozo-why-header p {
-  font-size: 16px !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-  line-height: 1.6 !important;
-  margin: 0 !important;
-}
-.sozo-why-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 25px !important;
-}
-.sozo-why-card {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 20px !important;
-  padding: 35px 25px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-  gap: 20px !important;
-  transition: transform 0.3s ease, background-color 0.3s, border-color 0.3s, box-shadow 0.3s !important;
-  backdrop-filter: blur(10px) !important;
-}
-.sozo-why-card:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-  transform: translateY(-5px) !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
-}
-.sozo-why-icon {
-  width: 60px !important;
-  height: 60px !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-radius: 16px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 26px !important;
-  color: #ffffff !important;
-  transition: all 0.3s ease !important;
-}
-.sozo-why-card:hover .sozo-why-icon {
-  background: #ffffff !important;
-  color: #1A2080 !important;
-  transform: scale(1.1) !important;
-}
-.sozo-why-card-title {
-  font-size: 18px !important;
-  color: #ffffff !important;
-  margin: 0 0 10px 0 !important;
-  font-weight: 600 !important;
-  line-height: 1.4 !important;
-}
-.sozo-why-card-text {
-  font-size: 14px !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  margin: 0 !important;
-  line-height: 1.6 !important;
-}
-
 /* 6. BANNER CTA */
 .sozo-compact-cta-section {
   padding: 50px 20px 30px !important;
@@ -926,300 +659,40 @@
   transform: translateY(-1px) !important;
 }
 
-/* 6.5 CARA MENUJU LOKASI */
-.sozo-directions-section {
-  padding: 60px 20px 40px !important;
-  background: #ffffff !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  border-top: 1px solid #eef2f7 !important;
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-}
-.sozo-directions-container {
-  max-width: 860px !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-  box-sizing: border-box !important;
-}
-.sozo-directions-header {
-  text-align: center !important;
-  margin-bottom: 35px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-.sozo-directions-pill {
-  display: inline-block !important;
-  background: #eef2fb !important;
-  color: #1A2080 !important;
-  font-size: 11.5px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  padding: 5px 14px !important;
-  border-radius: 50px !important;
-  margin-bottom: 10px !important;
-}
-.sozo-directions-title {
-  font-size: clamp(24px, 3.5vw, 32px) !important;
-  font-weight: 700 !important;
-  color: #1A2080 !important;
-  margin: 0 0 10px 0 !important;
-  line-height: 1.25 !important;
-}
-.sozo-directions-desc {
-  font-size: clamp(13.5px, 1.5vw, 15px) !important;
-  color: #556177 !important;
-  line-height: 1.6 !important;
-  margin: 0 !important;
-}
-.sozo-directions-list {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 14px !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-.sozo-direction-item {
-  background: #ffffff !important;
-  border: 1.5px solid #e8ecf4 !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
-}
-.sozo-direction-item.active {
-  border-color: #1A2080 !important;
-  box-shadow: 0 6px 20px rgba(26, 32, 128, 0.06) !important;
-}
-.sozo-direction-toggle {
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-  background: none !important;
-  border: none !important;
-  padding: 18px 22px !important;
-  text-align: left !important;
-  font-size: 15.5px !important;
-  font-weight: 700 !important;
-  color: #1f242e !important;
-  cursor: pointer !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  gap: 15px !important;
-  white-space: normal !important;
-  transition: color 0.2s ease !important;
-}
-.sozo-direction-toggle:hover {
-  color: #1A2080 !important;
-}
-.sozo-direction-title-wrap {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  flex: 1 1 auto !important;
-  min-width: 0 !important;
-}
-.sozo-direction-title-wrap i {
-  color: #1A2080 !important;
-  font-size: 15px !important;
-  flex-shrink: 0 !important;
-}
-.sozo-direction-title-wrap span {
-  font-size: 15.5px !important;
-  font-weight: 700 !important;
-  line-height: 1.4 !important;
-  color: inherit !important;
-  word-wrap: break-word !important;
-  overflow-wrap: break-word !important;
-}
-.sozo-direction-icon {
-  font-size: 14px !important;
-  color: #8b95a5 !important;
-  transition: transform 0.3s ease, color 0.3s ease !important;
-  flex-shrink: 0 !important;
-  flex: 0 0 14px !important;
-  width: 14px !important;
-  text-align: right !important;
-}
-.sozo-direction-item.active .sozo-direction-icon {
-  transform: rotate(180deg) !important;
-  color: #1A2080 !important;
-}
-.sozo-direction-content {
-  max-height: 0;
-  overflow: hidden;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
-}
-.sozo-direction-body {
-  padding: 0 22px 24px 22px !important;
-  border-top: 1px dashed #edf0f7 !important;
-  padding-top: 16px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-.sozo-direction-lead {
-  font-size: 13.5px !important;
-  color: #1A2080 !important;
-  font-weight: 600 !important;
-  line-height: 1.6 !important;
-  margin: 0 0 8px 0 !important;
-}
-.sozo-direction-desc-text {
-  font-size: 13.5px !important;
-  color: #556177 !important;
-  line-height: 1.6 !important;
-  margin: 0 0 16px 0 !important;
-}
-.sozo-route-block {
-  margin-top: 16px !important;
-  background: #f8fafc !important;
-  border: 1px solid #edf2f7 !important;
-  border-radius: 12px !important;
-  padding: 16px 18px !important;
-  box-sizing: border-box !important;
-}
-.sozo-route-title {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  color: #1A2080 !important;
-  margin: 0 0 10px 0 !important;
-}
-.sozo-route-title i {
-  color: #1A2080 !important;
-}
-.sozo-route-list {
-  margin: 0 !important;
-  padding-left: 20px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 8px !important;
-}
-.sozo-route-list li {
-  font-size: 13px !important;
-  color: #475569 !important;
-  line-height: 1.6 !important;
-}
-.sozo-route-list li strong {
-  color: #1f242e !important;
-}
-
-/* 7. FAQ SECTION */
-.sozo-faq-section { 
-  max-width: 900px !important;
-  margin: 0 auto 80px auto !important; 
-  padding: 0 20px !important; 
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-.sozo-section-header {
-  text-align: center !important;
-  margin-bottom: 40px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-.sozo-section-header h2 {
-  font-size: clamp(24px, 3.5vw, 32px) !important;
-  font-weight: 700 !important;
-  color: #1A2080 !important;
-  margin: 0 0 10px 0 !important;
-  line-height: 1.25 !important;
-}
-
-.sozo-section-header p {
-  font-size: clamp(13.5px, 1.5vw, 15px) !important;
-  color: #556177 !important;
-  margin: 0 !important;
-}
-
-.sozo-faq-wrapper {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 16px !important;
-  width: 100% !important;
-}
-
-.sozo-faq-item {
-  background: #ffffff !important;
-  border: 1px solid #ececf2 !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
-  box-shadow: 0 2px 8px rgba(16,18,64,0.03) !important;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease !important;
-  width: 100% !important;
-}
-
-.sozo-faq-item:hover {
-  box-shadow: 0 6px 16px rgba(26,32,128,0.08) !important;
-  border-color: #d9dbf0 !important;
-}
-
-.sozo-faq-item summary {
-  padding: 20px 24px !important;
-  font-weight: 700 !important;
-  font-size: 16px !important;
-  color: #1A2080 !important;
-  cursor: pointer !important;
-  list-style: none !important;
-  position: relative !important;
-  background-color: #ffffff !important;
-  transition: background 0.2s ease !important;
-  padding-right: 50px !important;
-}
-
-.sozo-faq-item summary:hover {
-  background-color: #fcfcfd !important;
-}
-
-/* Menghilangkan panah bawaan browser */
-.sozo-faq-item summary::-webkit-details-marker {
-  display: none !important;
-}
-
-/* Membuat icon Plus (+) kustom */
-.sozo-faq-item summary::after {
-  content: '+' !important;
-  position: absolute !important;
-  right: 24px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  font-size: 24px !important;
-  color: #1A2080 !important;
-  font-weight: 300 !important;
-  transition: transform 0.3s ease !important;
-}
-
-/* Merubah icon menjadi Minus (-) saat terbuka */
-.sozo-faq-item[open] summary::after {
-  content: '−' !important;
-  transform: translateY(-50%) rotate(180deg) !important;
-}
-
-.sozo-faq-item[open] summary {
-  border-bottom: 1px solid #ececf2 !important;
-  background-color: #f8f9fc !important;
-}
-
-.sozo-faq-content {
-  padding: 20px 24px !important;
-  color: #555555 !important;
-  font-size: 15px !important;
-  line-height: 1.7 !important;
-  background-color: #ffffff !important;
-}
-
 /* ==================== TABLET VIEW (992px) ==================== */
+/* 8. FLOATING WHATSAPP CTA */
+.sozo-floating-wa {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 99999 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background: #25D366 !important;
+  color: #ffffff !important;
+  padding: 12px 22px !important;
+  border-radius: 50px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.sozo-floating-wa:hover {
+  background: #20ba59 !important;
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5) !important;
+  color: #ffffff !important;
+}
+.sozo-floating-wa svg {
+  width: 20px !important;
+  height: 20px !important;
+  fill: #ffffff !important;
+  flex-shrink: 0 !important;
+}
+
 @media (max-width: 992px) {
   .sozo-slider-slide, .sozo-ba-slide, .sozo-quote-slide, .sozo-promo-slide {
     flex: 0 0 calc(50% - 8px) !important;
@@ -1368,47 +841,6 @@
     font-size: 13px !important;
   }
 
-  /* 4. Treatment Categories Mobile */
-  .sozo-category-section {
-    margin-top: 35px !important;
-    padding-top: 30px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .sozo-category-heading {
-    font-size: clamp(19px, 4.5vw, 22px) !important;
-  }
-  .sozo-category-sub {
-    font-size: 13px !important;
-    margin-bottom: 20px !important;
-  }
-  .sozo-category-grid {
-    display: flex !important;
-    overflow-x: auto !important;
-    gap: 12px !important;
-    padding-bottom: 12px !important;
-    scrollbar-width: none !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .sozo-category-grid::-webkit-scrollbar { display: none !important; }
-  .sozo-category-card {
-    flex: 0 0 130px !important;
-    max-width: 130px !important;
-    height: 175px !important;
-    box-sizing: border-box !important;
-  }
-  .sozo-cat-label {
-    font-size: 12px !important;
-    padding: 12px 8px !important;
-  }
-  .sozo-category-btn {
-    font-size: 13px !important;
-    padding: 10px 22px !important;
-  }
-
   /* 4.5 Results & Testimonial Mobile */
   .sozo-results-section {
     margin-top: 35px !important;
@@ -1479,58 +911,6 @@
     padding: 9px 14px !important;
   }
 
-  /* 5. Why Choose Us Mobile */
-  .sozo-why-section {
-    padding: 45px 14px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-  }
-  .sozo-why-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .sozo-why-header {
-    margin-bottom: 28px !important;
-  }
-  .sozo-why-header h2 {
-    font-size: clamp(20px, 5vw, 24px) !important;
-    margin-bottom: 8px !important;
-  }
-  .sozo-why-header p {
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-  }
-  .sozo-why-grid {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .sozo-why-card {
-    padding: 22px 16px !important;
-    gap: 14px !important;
-    border-radius: 16px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .sozo-why-icon {
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 22px !important;
-    border-radius: 14px !important;
-  }
-  .sozo-why-card-title {
-    font-size: 15px !important;
-    margin-bottom: 6px !important;
-  }
-  .sozo-why-card-text {
-    font-size: 12.5px !important;
-    line-height: 1.5 !important;
-  }
-
   /* 6. Compact Banner CTA Mobile */
   .sozo-compact-cta-section {
     padding: 30px 14px 20px !important;
@@ -1586,101 +966,11 @@
     flex-shrink: 0 !important;
   }
 
-  /* 6.5 Directions Mobile */
-  .sozo-directions-section {
-    padding: 35px 14px 25px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-  }
-  .sozo-directions-header {
-    margin-bottom: 22px !important;
-  }
-  .sozo-directions-title {
-    font-size: clamp(20px, 5vw, 24px) !important;
-    line-height: 1.3 !important;
-  }
-  .sozo-directions-desc {
+  /* Floating WhatsApp Mobile */
+  .sozo-floating-wa {
+    bottom: 18px !important;
+    right: 14px !important;
+    padding: 10px 18px !important;
     font-size: 13px !important;
-    line-height: 1.5 !important;
-  }
-  .sozo-direction-item {
-    border-radius: 14px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .sozo-direction-toggle {
-    padding: 14px 15px !important;
-    font-size: 14px !important;
-    gap: 10px !important;
-  }
-  .sozo-direction-title-wrap {
-    gap: 8px !important;
-  }
-  .sozo-direction-title-wrap i {
-    font-size: 13px !important;
-  }
-  .sozo-direction-title-wrap span {
-    font-size: 13.5px !important;
-    line-height: 1.35 !important;
-  }
-  .sozo-direction-icon {
-    font-size: 12px !important;
-  }
-  .sozo-direction-body {
-    padding: 0 14px 18px 14px !important;
-    padding-top: 12px !important;
-  }
-  .sozo-direction-lead {
-    font-size: 12.5px !important;
-    margin-bottom: 6px !important;
-  }
-  .sozo-direction-desc-text {
-    font-size: 12.5px !important;
-    line-height: 1.55 !important;
-    margin-bottom: 12px !important;
-  }
-  .sozo-route-block {
-    padding: 12px 14px !important;
-    margin-top: 12px !important;
-    border-radius: 10px !important;
-  }
-  .sozo-route-title {
-    font-size: 13px !important;
-    margin-bottom: 8px !important;
-  }
-  .sozo-route-list {
-    padding-left: 16px !important;
-    gap: 6px !important;
-  }
-
-  /* 7. FAQ Mobile */
-  .sozo-faq-section { 
-    margin-bottom: 60px !important; 
-    padding: 0 14px !important;
-  }
-  .sozo-section-header {
-    margin-bottom: 24px !important;
-  }
-  .sozo-section-header h2 {
-    font-size: clamp(20px, 5vw, 24px) !important;
-    line-height: 1.3 !important;
-    margin-bottom: 8px !important;
-  }
-  .sozo-section-header p {
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-  }
-  .sozo-faq-item summary { 
-    font-size: 15px !important; 
-    padding: 16px 20px !important; 
-    padding-right: 45px !important; 
-  }
-  .sozo-faq-content { 
-    font-size: 14px !important; 
-    padding: 16px 20px !important; 
-  }
-  .sozo-faq-item summary::after { 
-    right: 16px !important; 
   }
 }

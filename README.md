@@ -20,6 +20,10 @@ Tiga dokumen utama + dua folder ekstensi:
 | **Dokumentasi.md** | Log implementasi §5.x, troubleshooting, sisa pekerjaan, template per tipe halaman | 1 Oktober 2026 |
 | `docs/adr/` | Architecture Decision Records (saat ini 8 ADR) | 22 September 2026 |
 | `docs/components/` | UI component specs (saat ini 5: button, table, card, accordion, whatsapp-button) | 13 Juli 2026 |
+| `design-system/` | Design System V1.1: `tokens.css`, 6 foundations, 10 component specs, checklists, decisions | 8 Oktober 2026 |
+| `treatment/treatments.json` + `treatment/build-treatment-list.mjs` | Data katalog halaman `/treatment/` (88 treatment, 13 kategori, 9 keluhan) dan generator yang menulis kartunya sebagai HTML statis ke `treatment/index.html`. Jalankan `node treatment/build-treatment-list.mjs` setiap kali data berubah | 8 Oktober 2026 |
+| `tools/searlo-rank-test/run.mjs` | Tes akurasi rank tracking Searlo: bandingkan posisi organik `/search/web` dengan `/rankings/check` dan `/serp` (Google Indonesia, 6 keyword). Butuh env `SEARLO_API_KEY`; output ke `tools/searlo-rank-test/output/<timestamp>/` | 12 Oktober 2026 |
+| `tools/searlo-rank-tracker/` | Rank check manual `sozoskinclinic.com` (Google Indonesia, top 30) via Searlo `/rankings/batch`. Keyword di `keywords.txt`; output `output/rank-YYYY-MM-DD.tsv` + `.md` siap paste ke spreadsheet. Lihat README di folder itu | 12 Oktober 2026 |
 
 **Audience:** Developer yang maintain LP + designer. Schema JSON-LD adalah salah satu aspek; UI components adalah aspek lain yang sekarang terdokumentasi. Untuk komponen UI, distandardisasi di level atom (button, input, badge) — bukan di level section (hero, info-row) yang memang bervariasi antar LP.
 
@@ -110,8 +114,8 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [ ] Perfect Facelift (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/perfect-facelift/`) — *sub-treatment baru, schema belum dibuat*
     - [ ] Perfect Nose Job (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/perfect-nose-job/`) — *sub-treatment baru, schema belum dibuat*
 - [x] **Infus Whitening Hub** (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/`)
-    - [x] Infus Vitamin C Immune Glow (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow-injection/`) — Rp 1.099.000
-    - [ ] Premium Glow Infusion (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/`) — *sub-treatment baru, schema belum dibuat*
+    - [x] Infus Vitamin C Immune Glow (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow-injection/`) — Rp 199.000 (schema digabung di `index.html`)
+    - [x] Premium Glow Infusion (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/`) — Rp 1.299.000 (schema digabung di `index.html`)
 - [x] **Filler Treatment Hub** (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/`)
     - [x] Filler Dagu (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/filler-dagu/`) — Rp 5.499.000
     - [x] Korean Filler (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/korean-filler/`) — Rp 2.999.000
@@ -136,7 +140,7 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [x] Pink Lips Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-lips-booster/`) — Rp 1.799.000
 
 ### 🧪 6. Advanced Skin & Facial Treatment
-- [ ] **Main Hub: Beauty Treatment** (`https://sozoskinclinic.com/treatment/`)
+- [x] **Main Hub: Beauty Treatment** (`https://sozoskinclinic.com/treatment/`) — `WebPage` + `BreadcrumbList` digabung di `treatment/index.html`
 - [x] **Skin Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/`)
 - [x] **HIFU Treatment Hub** (`https://sozoskinclinic.com/hifu-treatment/`)
     - [x] Liftera HIFU (`https://sozoskinclinic.com/hifu-treatment/liftera-hifu/`) — Rp 699.000

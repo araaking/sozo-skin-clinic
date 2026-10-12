@@ -1,364 +1,394 @@
+<!-- ============================================================
+     HALAMAN EDITORIAL BOARD - SOZO SKIN CLINIC
+     URL     : https://sozoskinclinic.com/editorial-board/
+     Style   : Sozo Design System V1.2 (design-system/), Elementor Safe, scoped
+               ke .sozo-ed-page. Layout lama dipertahankan.
+     Seksi   : Hero (breadcrumb, badge label, H1) -> Kebijakan & Komitmen ->
+               Medical Reviewer -> Tim Editorial
+     JSON-LD : WebPage + BreadcrumbList.
+     ============================================================ -->
+
+<!-- Font resmi Sozo: Poppins 400-800 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-    /* --- FONTS & BASE REGULATOR --- */
-    .sozo-ed-page {
-        --ed-primary: #1A2080;
-        --ed-secondary: #D9C7B1;
-        --ed-almond: #E9DFD5;
-        --ed-border: #DFDBD4;
-        --ed-text: #171715;
-        --ed-text-secondary: #41413E;
-        font-family: 'Poppins', sans-serif !important;
-        color: var(--ed-text) !important;
-        background-color: #ffffff !important;
-        line-height: 1.6 !important;
-        width: min(calc(100% - 48px), 1280px) !important;
-        max-width: 1280px !important;
-        margin: 0 auto !important;
-        padding: 80px 0 !important;
-    }
+  /* Token Sozo Design System V1.2, di-scope ke .sozo-ed-page */
+  .sozo-ed-page {
+    --color-brand-primary: #1A2080;
+    --color-brand-almond: #E9DFD5;
+    --color-white: #FFFFFF;
+    --color-text-primary: #171715;
+    --color-text-secondary: #41413E;
+    --color-text-muted: #777771;
+    --color-border: #DFDBD4;
+    --color-border-strong: #C8C3BA;
 
-    .sozo-ed-page * {
-        box-sizing: border-box !important;
-    }
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --text-h1: clamp(38px, 33.856px + 1.105vw, 48px);
+    --text-h2: clamp(32px, 28.685px + 0.884vw, 40px);
+    --text-h3: clamp(28px, 26.343px + 0.442vw, 32px);
+    --text-h5: 20px;
+    --text-body-lg: 18px;
+    --text-body: 16px;
+    --text-body-sm: 14px;
+    --text-label: 12px;
+    --leading-h1: 1.15;
+    --leading-h2: 1.20;
+    --leading-h3: 1.25;
+    --leading-h5: 1.35;
+    --leading-body-lg: 1.65;
+    --leading-body: 1.60;
+    --leading-body-sm: 1.55;
+    --leading-caption: 1.40;
+    --tracking-label: 0.25em;
+    --measure: 65ch;
 
-    /* --- TYPOGRAPHY HERO --- */
-    .sozo-ed-hero {
-        max-width: 860px !important;
-        margin-bottom: 80px !important;
-    }
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 40px;
+    --space-8: 48px;
+    --space-9: 64px;
+    --space-10: 80px;
+    --space-11: 96px;
 
-    .sozo-ed-breadcrumb {
-        margin: 0 0 32px !important;
-    }
+    --container-max: 1280px;
+    --container-pad: 32px;
+    --section-y: 80px;
 
-    .sozo-ed-breadcrumb ol {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        align-items: center !important;
-        gap: 8px 10px !important;
-        list-style: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        font-size: 12px !important;
-        font-weight: 500 !important;
-        line-height: 1.4 !important;
-    }
+    --radius-full: 999px;
+    --focus-ring: 2px solid var(--color-brand-primary);
+    --duration-fast: 180ms;
+    --ease-standard: ease;
 
-    .sozo-ed-breadcrumb a {
-        color: #777771 !important;
-        text-decoration: none !important;
-        transition: color 180ms ease !important;
-    }
+    font-family: var(--font-family-primary) !important;
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-white) !important;
+    line-height: var(--leading-body) !important;
+    width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
+    max-width: var(--container-max) !important;
+    margin: 0 auto !important;
+    padding: var(--section-y) 0 !important;
+  }
+  .sozo-ed-page *,
+  .sozo-ed-page *::before,
+  .sozo-ed-page *::after { box-sizing: border-box !important; }
 
-    .sozo-ed-breadcrumb a:hover,
-    .sozo-ed-breadcrumb a:focus-visible {
-        color: var(--ed-primary) !important;
-        text-decoration: underline !important;
-    }
+  @media (max-width: 1024px) {
+    .sozo-ed-page { --section-y: 64px; }
+  }
+  @media (max-width: 768px) {
+    .sozo-ed-page { --container-pad: 20px; --section-y: 56px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-ed-page { --duration-fast: 0ms; }
+  }
 
-    .sozo-ed-breadcrumb .separator {
-        color: #aaa69f !important;
-        font-size: 10px !important;
-    }
+  /* ---------- Hero ---------- */
+  .sozo-ed-page .sozo-ed-hero {
+    max-width: 860px !important;
+    margin-bottom: var(--space-10) !important;
+  }
 
-    .sozo-ed-breadcrumb .current {
-        color: var(--ed-primary) !important;
-        font-weight: 600 !important;
-    }
+  /* Breadcrumb (components/breadcrumb.md) */
+  .sozo-ed-page .sozo-ed-breadcrumb { margin: 0 0 var(--space-6) !important; }
+  .sozo-ed-page .sozo-ed-breadcrumb ol {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+    line-height: var(--leading-caption) !important;
+  }
+  .sozo-ed-page .sozo-ed-breadcrumb li {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+  }
+  .sozo-ed-page .sozo-ed-breadcrumb li + li::before {
+    content: "/" !important;
+    color: var(--color-border-strong) !important;
+  }
+  .sozo-ed-page .sozo-ed-breadcrumb a {
+    color: var(--color-text-muted) !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+  .sozo-ed-page .sozo-ed-breadcrumb a:hover { color: var(--color-brand-primary) !important; }
+  .sozo-ed-page .sozo-ed-breadcrumb a:focus-visible { outline: var(--focus-ring) !important; outline-offset: 2px !important; }
+  .sozo-ed-page .sozo-ed-breadcrumb .current { color: var(--color-brand-primary) !important; font-weight: 600 !important; }
 
-    .sozo-ed-badge {
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 1px !important;
-        color: var(--ed-primary) !important;
-        background: var(--ed-almond) !important;
-        border-radius: 999px !important;
-        padding: 6px 12px !important;
-        margin-bottom: 16px !important;
-        display: inline-flex !important;
-        align-items: center !important;
-    }
+  /* Badge label (components/badge.md, badge--label) */
+  .sozo-ed-page .sozo-ed-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 30px !important;
+    margin: 0 0 var(--space-5) !important;
+    padding: 0 18px !important;
+    border-radius: var(--radius-full) !important;
+    background: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-label) !important;
+    text-transform: uppercase !important;
+  }
 
-    .sozo-ed-hero h1 {
-        font-size: clamp(36px, 4.2vw, 48px) !important;
-        font-weight: 700 !important;
-        color: var(--ed-primary) !important;
-        line-height: 1.15 !important;
-        margin: 0 0 16px 0 !important;
-        letter-spacing: -0.6px !important;
-    }
+  .sozo-ed-page .sozo-ed-hero h1 {
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-h1) !important;
+    font-weight: 700 !important;
+    line-height: var(--leading-h1) !important;
+    color: var(--color-brand-primary) !important;
+    margin: 0 0 var(--space-4) !important;
+  }
+  .sozo-ed-page .sozo-ed-hero__desc {
+    max-width: var(--measure) !important;
+    font-size: var(--text-body-lg) !important;
+    line-height: var(--leading-body-lg) !important;
+    color: var(--color-text-secondary) !important;
+    margin: 0 !important;
+  }
 
-    .sozo-ed-hero p {
-        max-width: 68ch !important;
-        font-size: 18px !important;
-        line-height: 1.65 !important;
-        color: var(--ed-text-secondary) !important;
-        margin: 0 !important;
-    }
+  /* ---------- Kebijakan & Komitmen ---------- */
+  .sozo-ed-page .sozo-ed-grid-info {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr !important;
+    gap: var(--space-9) !important;
+    border-top: 1px solid var(--color-border) !important;
+    padding-top: var(--space-8) !important;
+    margin-bottom: var(--space-11) !important;
+  }
+  .sozo-ed-page .sozo-ed-section-title {
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-h3) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-h3) !important;
+    color: var(--color-brand-primary) !important;
+    margin: 0 !important;
+  }
+  .sozo-ed-page .sozo-ed-intro {
+    max-width: var(--measure) !important;
+    font-size: var(--text-body) !important;
+    line-height: var(--leading-body) !important;
+    color: var(--color-text-secondary) !important;
+    margin: 0 0 var(--space-6) !important;
+  }
+  .sozo-ed-page .sozo-ed-process-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-6) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+  .sozo-ed-page .sozo-process-item { margin: 0 !important; }
+  .sozo-ed-page .sozo-process-item h3 {
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-h5) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-h5) !important;
+    color: var(--color-brand-primary) !important;
+    margin: 0 0 var(--space-2) !important;
+  }
+  .sozo-ed-page .sozo-process-item p {
+    font-size: var(--text-body-sm) !important;
+    line-height: var(--leading-body-sm) !important;
+    color: var(--color-text-secondary) !important;
+    margin: 0 !important;
+  }
 
-    /* --- MINIMALIST WORKFLOW SECTION --- */
-    .sozo-ed-grid-info {
-        display: grid !important;
-        grid-template-columns: 1fr 2fr !important;
-        gap: 64px !important;
-        border-top: 1px solid var(--ed-border) !important;
-        padding-top: 48px !important;
-        margin-bottom: 96px !important;
-    }
+  /* ---------- Board (medical reviewer, tim editorial) ---------- */
+  .sozo-ed-page .sozo-board-container {
+    border-top: 1px solid var(--color-border) !important;
+    padding-top: var(--space-8) !important;
+    margin-bottom: var(--space-9) !important;
+  }
+  .sozo-ed-page .sozo-board-container--plain {
+    border-top: none !important;
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .sozo-ed-page .sozo-board-head { margin-bottom: var(--space-6) !important; }
+  .sozo-ed-page .sozo-board-head h2 {
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-h2) !important;
+    font-weight: 700 !important;
+    line-height: var(--leading-h2) !important;
+    color: var(--color-brand-primary) !important;
+    margin: 0 !important;
+  }
+  .sozo-ed-page .sozo-member-row {
+    display: grid !important;
+    grid-template-columns: minmax(220px, 0.7fr) 2fr !important;
+    gap: var(--space-7) !important;
+    padding: var(--space-6) 0 !important;
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+  .sozo-ed-page .sozo-member-meta h3 {
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-h5) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-h5) !important;
+    color: var(--color-text-primary) !important;
+    margin: 0 0 var(--space-2) !important;
+  }
+  .sozo-ed-page .sozo-member-meta h3 a {
+    color: var(--color-text-primary) !important;
+    text-decoration: none !important;
+    text-underline-offset: 4px !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+  .sozo-ed-page .sozo-member-meta h3 a:hover {
+    color: var(--color-brand-primary) !important;
+    text-decoration: underline !important;
+  }
+  .sozo-ed-page .sozo-member-meta h3 a:focus-visible { outline: var(--focus-ring) !important; outline-offset: 3px !important; }
+  .sozo-ed-page .sozo-member-tag {
+    display: block !important;
+    font-size: var(--text-body-sm) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-body-sm) !important;
+    color: var(--color-brand-primary) !important;
+  }
+  .sozo-ed-page .sozo-member-bio {
+    max-width: var(--measure) !important;
+    font-size: var(--text-body) !important;
+    line-height: var(--leading-body) !important;
+    color: var(--color-text-secondary) !important;
+    margin: 0 !important;
+  }
 
-    .sozo-ed-section-title {
-        font-size: clamp(24px, 3vw, 32px) !important;
-        font-weight: 600 !important;
-        line-height: 1.25 !important;
-        color: var(--ed-primary) !important;
-        margin: 0 !important;
-    }
-
-    .sozo-ed-process-list {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 32px 32px !important;
-    }
-
-    .sozo-process-item h3 {
-        font-size: 18px !important;
-        font-weight: 600 !important;
-        line-height: 1.35 !important;
-        color: var(--ed-primary) !important;
-        margin: 0 0 8px 0 !important;
-    }
-
-    .sozo-process-item p {
-        font-size: 14px !important;
-        line-height: 1.55 !important;
-        color: var(--ed-text-secondary) !important;
-        margin: 0 !important;
-    }
-
-    /* --- BOARD TEAM LAYOUT (MINIMALIST CARDLESS) --- */
-    .sozo-board-container {
-        border-top: 1px solid var(--ed-border) !important;
-        padding-top: 48px !important;
-        margin-bottom: 60px !important;
-    }
-
-    .sozo-board-head {
-        margin-bottom: 32px !important;
-    }
-
-    .sozo-board-head h2 {
-        font-size: clamp(28px, 3.2vw, 40px) !important;
-        font-weight: 700 !important;
-        line-height: 1.2 !important;
-        color: var(--ed-primary) !important;
-        margin: 0 !important;
-    }
-
-    .sozo-member-row {
-        display: grid !important;
-        grid-template-columns: minmax(220px, 0.7fr) 2fr !important;
-        gap: 40px !important;
-        padding: 32px 0 !important;
-        border-bottom: 1px solid var(--ed-border) !important;
-    }
-
-    .sozo-member-meta h3 {
-        font-size: 20px !important;
-        font-weight: 600 !important;
-        line-height: 1.35 !important;
-        color: var(--ed-text) !important;
-        margin: 0 0 6px 0 !important;
-    }
-
-    .sozo-member-meta h3 a {
-        color: var(--ed-text) !important;
-        text-decoration: none !important;
-        transition: color 0.3s ease !important;
-    }
-
-    .sozo-member-meta h3 a:hover {
-        color: var(--ed-primary) !important;
-        text-decoration: underline !important;
-    }
-
-    .sozo-member-tag {
-        font-size: 14px !important;
-        font-weight: 600 !important;
-        line-height: 1.5 !important;
-        color: var(--ed-primary) !important;
-        display: block !important;
-    }
-
-    .sozo-member-bio {
-        max-width: 68ch !important;
-        font-size: 16px !important;
-        line-height: 1.6 !important;
-        color: var(--ed-text-secondary) !important;
-        margin: 0 !important;
-    }
-
-    /* --- SUB-LIST UNTUK DATA DOKTER --- */
-    .sozo-doc-detail-section {
-        margin-top: 0 !important;
-    }
-
-    .sozo-doc-detail-section h4 {
-        font-size: 12px !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.8px !important;
-        color: var(--ed-text-secondary) !important;
-        margin: 0 0 12px 0 !important;
-        font-weight: 700 !important;
-    }
-
-    .sozo-doc-detail-section h4:not(:first-child) {
-        margin-top: 28px !important;
-    }
-
-    .sozo-doc-list {
-        padding-left: 18px !important;
-        margin: 0 !important;
-    }
-
-    .sozo-doc-list li {
-        font-size: 14px !important;
-        color: var(--ed-text-secondary) !important;
-        margin-bottom: 6px !important;
-        line-height: 1.6 !important;
-    }
-
-    /* --- RESPONSIVE DESIGN --- */
-    @media (max-width: 868px) {
-        .sozo-ed-grid-info, .sozo-member-row {
-            grid-template-columns: 1fr !important;
-            gap: 24px !important;
-        }
-        .sozo-member-row {
-            padding: 32px 0 !important;
-        }
-    }
-
-    @media (max-width: 640px) {
-        .sozo-ed-page { width: calc(100% - 32px) !important; padding: 56px 0 !important; }
-        .sozo-ed-hero { margin-bottom: 64px !important; }
-        .sozo-ed-breadcrumb { margin-bottom: 24px !important; }
-        .sozo-ed-process-list {
-            grid-template-columns: 1fr !important;
-        }
-        .sozo-ed-grid-info { gap: 32px !important; margin-bottom: 64px !important; }
-        .sozo-board-container { padding-top: 40px !important; }
-        .sozo-board-head { margin-bottom: 24px !important; }
-    }
+  /* ---------- Responsive ---------- */
+  @media (max-width: 768px) {
+    .sozo-ed-page .sozo-ed-grid-info,
+    .sozo-ed-page .sozo-member-row { grid-template-columns: 1fr !important; gap: var(--space-5) !important; }
+    .sozo-ed-page .sozo-ed-hero { margin-bottom: var(--space-9) !important; }
+    .sozo-ed-page .sozo-ed-breadcrumb { margin-bottom: var(--space-5) !important; }
+    .sozo-ed-page .sozo-ed-grid-info { gap: var(--space-6) !important; margin-bottom: var(--space-9) !important; }
+    .sozo-ed-page .sozo-board-container { padding-top: var(--space-7) !important; }
+    .sozo-ed-page .sozo-board-head { margin-bottom: var(--space-5) !important; }
+  }
+  @media (max-width: 480px) {
+    .sozo-ed-page .sozo-ed-process-list { grid-template-columns: 1fr !important; }
+  }
 </style>
 
 <div class="sozo-ed-page">
 
+  <header class="sozo-ed-hero">
     <nav class="sozo-ed-breadcrumb" aria-label="Breadcrumb">
-        <ol>
-            <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
-            <li class="separator" aria-hidden="true">›</li>
-            <li aria-current="page"><span class="current">Editorial Board</span></li>
-        </ol>
+      <ol>
+        <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+        <li><span class="current" aria-current="page">Editorial Board</span></li>
+      </ol>
     </nav>
+    <p class="sozo-ed-badge">Transparansi Informasi</p>
+    <h1>Tim Editorial & Standar Konten Sozo</h1>
+    <p class="sozo-ed-hero__desc">Di balik setiap artikel edukasi dan panduan perawatan kecantikan Sozo Skin Clinic, terdapat dewan medis, penulis, dan editor yang berkomitmen menyajikan informasi yang jelas, akurat, dan dapat dipertanggungjawabkan secara klinis.</p>
+  </header>
 
-    <header class="sozo-ed-hero">
-        <span class="sozo-ed-badge">Transparansi Informasi</span>
-        <h1>Tim Editorial & Standar Konten Sozo</h1>
-        <p>Di balik setiap artikel edukasi dan panduan perawatan kecantikan Sozo Skin Clinic, terdapat dewan medis, penulis, dan editor yang berkomitmen menyajikan informasi yang jelas, akurat, dan dapat dipertanggungjawabkan secara klinis.</p>
-    </header>
+  <section class="sozo-ed-grid-info">
+    <div>
+      <h2 class="sozo-ed-section-title">Kebijakan & Komitmen Kami</h2>
+    </div>
+    <div>
+      <p class="sozo-ed-intro">Misi utama kami adalah memastikan pembaca mendapatkan referensi yang andal seputar perawatan kulit dan estetika medis. Setiap konten yang kami produksi melewati riset komprehensif serta peninjauan medis agar terbebas dari klaim sepihak dan mitos kecantikan yang keliru.</p>
 
-    <section class="sozo-ed-grid-info">
-        <div>
-            <h2 class="sozo-ed-section-title">Kebijakan & Komitmen Kami</h2>
-        </div>
-        <div>
-            <p style="font-size: 16px; line-height: 1.6; margin-bottom: 32px !important; color: var(--ed-text-secondary);">Misi utama kami adalah memastikan pembaca mendapatkan referensi yang andal seputar perawatan kulit dan estetika medis. Setiap konten yang kami produksi melewati riset komprehensif serta peninjauan medis agar terbebas dari klaim sepihak dan mitos kecantikan yang keliru.</p>
-            
-            <div class="sozo-ed-process-list">
-                <div class="sozo-process-item">
-                    <h3>Akurasi Informasi</h3>
-                    <p>Penyusunan artikel wajib mengacu pada literatur estetika tepercaya, panduan resmi badan kesehatan, dan regulasi kosmetik (BPOM).</p>
-                </div>
-                <div class="sozo-process-item">
-                    <h3>Bahasa yang Sederhana</h3>
-                    <p>Kami menyederhanakan istilah-istilah dermatologi yang rumit agar bisa diakses dan diaplikasikan dengan mudah dalam perawatan harian Anda.</p>
-                </div>
-                <div class="sozo-process-item">
-                    <h3>Koreksi Cepat</h3>
-                    <p>Kami berkomitmen untuk segera melakukan pembaruan atau klarifikasi jika ditemukan kekeliruan data atau ejaan pada artikel kami.</p>
-                </div>
-                <div class="sozo-process-item">
-                    <h3>Relevansi Tren</h3>
-                    <p>Konten disesuaikan dengan kebutuhan perawatan kulit masyarakat urban di Indonesia serta perkembangan teknologi estetika terbaru.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <ul class="sozo-ed-process-list">
+        <li class="sozo-process-item">
+          <h3>Akurasi Informasi</h3>
+          <p>Penyusunan artikel wajib mengacu pada literatur estetika tepercaya, panduan resmi badan kesehatan, dan regulasi kosmetik (BPOM).</p>
+        </li>
+        <li class="sozo-process-item">
+          <h3>Bahasa yang Sederhana</h3>
+          <p>Kami menyederhanakan istilah-istilah dermatologi yang rumit agar bisa diakses dan diaplikasikan dengan mudah dalam perawatan harian Anda.</p>
+        </li>
+        <li class="sozo-process-item">
+          <h3>Koreksi Cepat</h3>
+          <p>Kami berkomitmen untuk segera melakukan pembaruan atau klarifikasi jika ditemukan kekeliruan data atau ejaan pada artikel kami.</p>
+        </li>
+        <li class="sozo-process-item">
+          <h3>Relevansi Tren</h3>
+          <p>Konten disesuaikan dengan kebutuhan perawatan kulit masyarakat urban di Indonesia serta perkembangan teknologi estetika terbaru.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- SECTION 1: MEDICAL REVIEWER -->
-    <section class="sozo-board-container">
-        <div class="sozo-board-head">
-            <h2>Medical Reviewer</h2>
-        </div>
+  <!-- SECTION 1: MEDICAL REVIEWER -->
+  <section class="sozo-board-container">
+    <div class="sozo-board-head">
+      <h2>Medical Reviewer</h2>
+    </div>
 
-        <div class="sozo-member-row">
-            <div class="sozo-member-meta">
-                <h3><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/">dr. Audi Sugiharto, Sp.D.V.E</a></h3>
-                <span class="sozo-member-tag">Spesialis Kulit, Kelamin, dan Estetika</span>
-            </div>
-            <div>
-                <p class="sozo-member-bio">Dokter spesialis dermatologi, venereologi, dan estetika dengan pengalaman menangani konsultasi serta tindakan medis di berbagai klinik dan rumah sakit di Jakarta. Menyelesaikan Program Adaptasi Spesialis Dermatologi dan Venereologi di Universitas Andalas / RSUP Dr. M. Djamil, Padang, serta pelatihan residensi di Research Institute for Tropical Medicine, Manila. Aktif meninjau artikel kesehatan kulit agar sesuai dengan praktik medis berbasis bukti.</p>
-            </div>
-        </div>
+    <div class="sozo-member-row">
+      <div class="sozo-member-meta">
+        <h3><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/">dr. Audi Sugiharto, Sp.D.V.E</a></h3>
+        <span class="sozo-member-tag">Spesialis Kulit, Kelamin, dan Estetika</span>
+      </div>
+      <div>
+        <p class="sozo-member-bio">Dokter spesialis dermatologi, venereologi, dan estetika dengan pengalaman menangani konsultasi serta tindakan medis di berbagai klinik dan rumah sakit di Jakarta. Menyelesaikan Program Adaptasi Spesialis Dermatologi dan Venereologi di Universitas Andalas / RSUP Dr. M. Djamil, Padang, serta pelatihan residensi di Research Institute for Tropical Medicine, Manila. Aktif meninjau artikel kesehatan kulit agar sesuai dengan praktik medis berbasis bukti.</p>
+      </div>
+    </div>
 
-        <div class="sozo-member-row">
-            <div class="sozo-member-meta">
-                <h3><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/">dr. Gesha Kautzar Putri, M.Biomed (AAM)</a></h3>
-                <span class="sozo-member-tag">Dokter Estetika Medis & Anti Aging Medicine</span>
-            </div>
-            <div>
-                <p class="sozo-member-bio">Memiliki pengalaman 13 tahun di bidang estetika medis dan manajerial. Lulusan Fakultas Kedokteran Universitas Tarumanagara dengan gelar magister Biomedik peminatan Anti Aging Medicine dari Universitas Udayana, Bali. Saat ini menjabat sebagai Dokter Komite di SOZO Clinic dan turut meninjau keakuratan informasi tindakan estetika seperti botox, filler, threadlift, dan skinbooster.</p>
-            </div>
-        </div>
+    <div class="sozo-member-row">
+      <div class="sozo-member-meta">
+        <h3><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/">dr. Gesha Kautzar Putri, M.Biomed (AAM)</a></h3>
+        <span class="sozo-member-tag">Dokter Estetika Medis & Anti Aging Medicine</span>
+      </div>
+      <div>
+        <p class="sozo-member-bio">Memiliki pengalaman 13 tahun di bidang estetika medis dan manajerial. Lulusan Fakultas Kedokteran Universitas Tarumanagara dengan gelar magister Biomedik peminatan Anti Aging Medicine dari Universitas Udayana, Bali. Saat ini menjabat sebagai Dokter Komite di SOZO Clinic dan turut meninjau keakuratan informasi tindakan estetika seperti botox, filler, threadlift, dan skinbooster.</p>
+      </div>
+    </div>
 
-        <div class="sozo-member-row">
-            <div class="sozo-member-meta">
-                <h3><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/">dr. Elisabeth Ryan, Sp.D.V.E</a></h3>
-                <span class="sozo-member-tag">Dermatologi, Venereologi, &amp; Estetika</span>
-            </div>
-            <div>
-                <p class="sozo-member-bio">Dokter spesialis dermatologi, venereologi, dan estetika dengan pengalaman lebih dari 10 tahun, termasuk residensi dermatologi di Filipina dan fellowship trichoscopy di Polandia. Lulusan Fakultas Kedokteran Universitas Kristen Krida Wacana, Jakarta, dengan gelar spesialis dari program adaptasi Universitas Indonesia (2024). Menangani kasus dermatologi umum, tropis, imunodermatologi, hingga prosedur estetika seperti Botox, filler, skin booster, laser, dan HIFU, serta aktif dalam publikasi ilmiah dan kongres dermatologi internasional.</p>
-            </div>
-        </div>
-    </section>
+    <div class="sozo-member-row">
+      <div class="sozo-member-meta">
+        <h3><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/">dr. Elisabeth Ryan, Sp.D.V.E</a></h3>
+        <span class="sozo-member-tag">Dermatologi, Venereologi, &amp; Estetika</span>
+      </div>
+      <div>
+        <p class="sozo-member-bio">Dokter spesialis dermatologi, venereologi, dan estetika dengan pengalaman lebih dari 10 tahun, termasuk residensi dermatologi di Filipina dan fellowship trichoscopy di Polandia. Lulusan Fakultas Kedokteran Universitas Kristen Krida Wacana, Jakarta, dengan gelar spesialis dari program adaptasi Universitas Indonesia (2024). Menangani kasus dermatologi umum, tropis, imunodermatologi, hingga prosedur estetika seperti Botox, filler, skin booster, laser, dan HIFU, serta aktif dalam publikasi ilmiah dan kongres dermatologi internasional.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- SECTION 2: TIM EDITORIAL -->
-    <section class="sozo-board-container" style="border-top: none !important; padding-top: 0 !important;">
-        <div class="sozo-board-head">
-            <h2>Tim Editorial</h2>
-        </div>
+  <!-- SECTION 2: TIM EDITORIAL -->
+  <section class="sozo-board-container sozo-board-container--plain">
+    <div class="sozo-board-head">
+      <h2>Tim Editorial</h2>
+    </div>
 
-        <div class="sozo-member-row">
-            <div class="sozo-member-meta">
-                <h3>Alfian Dimas</h3>
-                <span class="sozo-member-tag">Content Editor</span>
-            </div>
-            <div>
-                <p class="sozo-member-bio">Bertanggung jawab dalam meriset literatur, melakukan penyuntingan narasi edukasi, serta memastikan setiap artikel kecantikan yang dipublikasikan di platform Sozo Skin Clinic akurat, faktual, dan mudah dipahami oleh pembaca.</p>
-            </div>
-        </div>
+    <div class="sozo-member-row">
+      <div class="sozo-member-meta">
+        <h3>Alfian Dimas</h3>
+        <span class="sozo-member-tag">Content Editor</span>
+      </div>
+      <div>
+        <p class="sozo-member-bio">Bertanggung jawab dalam meriset literatur, melakukan penyuntingan narasi edukasi, serta memastikan setiap artikel kecantikan yang dipublikasikan di platform Sozo Skin Clinic akurat, faktual, dan mudah dipahami oleh pembaca.</p>
+      </div>
+    </div>
 
-        <div class="sozo-member-row">
-            <div class="sozo-member-meta">
-                <h3>Dimas Tri Wibowo</h3>
-                <span class="sozo-member-tag">Content Editor</span>
-            </div>
-            <div>
-                <p class="sozo-member-bio">Berperan aktif dalam menjaga kualitas penulisan dan keterbacaan konten, menyelaraskan tren perawatan kulit masyarakat modern dengan informasi yang aman, serta mengelola konsistensi alur publikasi artikel harian.</p>
-            </div>
-        </div>
-    </section>
+    <div class="sozo-member-row">
+      <div class="sozo-member-meta">
+        <h3>Dimas Tri Wibowo</h3>
+        <span class="sozo-member-tag">Content Editor</span>
+      </div>
+      <div>
+        <p class="sozo-member-bio">Berperan aktif dalam menjaga kualitas penulisan dan keterbacaan konten, menyelaraskan tren perawatan kulit masyarakat modern dengan informasi yang aman, serta mengelola konsistensi alur publikasi artikel harian.</p>
+      </div>
+    </div>
+  </section>
 
 </div>
 

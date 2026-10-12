@@ -1,0 +1,174 @@
+/*
+ * Sozo Skin Clinic Design System V1.2 — token source
+ * Satu-satunya tempat nilai mentah (hex, px, rgba) boleh ditulis.
+ * Komponen dan halaman memakai var(--...), bukan nilai mentah.
+ * Aturan pemakaian: design-system/README.md
+ */
+
+:root {
+  /* ---------- Color: brand (LOCKED) ---------- */
+  --color-brand-primary: #1A2080;    /* Resolution Blue */
+  --color-brand-secondary: #D9C7B1;  /* Dun */
+  --color-brand-almond: #E9DFD5;     /* Almond */
+  --color-brand-isabelline: #DFDBD4; /* Isabelline White */
+  --color-white: #FFFFFF;            /* White */
+
+  /* ---------- Color: complementary (WORKING, belum diverifikasi ke brand guide) ---------- */
+  --color-promo-red: #EC4242;        /* Bright Red */
+  --color-promo-yellow: #FFC200;     /* Dark Yellow */
+  --color-light-brown: #B5956A;      /* Light Brown */
+
+  /* ---------- Color: text ---------- */
+  --color-text-primary: #171715;     /* 17.95:1 di atas White */
+  --color-text-secondary: #41413E;   /* 10.24:1 di atas White */
+  --color-text-muted: #777771;       /* 4.50:1 di atas White, hanya di atas White */
+  --color-text-on-primary: #FFFFFF;  /* 13.44:1 di atas Resolution Blue */
+
+  /* ---------- Color: border ---------- */
+  --color-border: #DFDBD4;
+  --color-border-strong: #C8C3BA;
+
+  /* ---------- Color: interaction ---------- */
+  --color-primary-hover: #151A6D;
+  --color-secondary-hover: #CBB79F;
+  --color-primary-subtle: rgba(26, 32, 128, 0.05); /* hover Outline button */
+
+  /* ---------- Color: surface ---------- */
+  --color-surface-warm: #F7F5F1;     /* kanvas peta/ilustrasi. Blue 12.35:1, text secondary 9.41:1 */
+
+  /* ---------- Color: semantic (feedback only) ---------- */
+  --color-success: #267A57;
+  --color-warning: #A66A18;          /* 4.47:1, jangan dipakai untuk teks kecil */
+  --color-error: #B64242;
+  --color-error-subtle: #FDE8E8;     /* background badge alert */
+  --color-info: #39718C;
+
+  /* ---------- Typography ---------- */
+  --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Fluid: nilai mobile di 375px, nilai desktop di 1280px */
+  --text-display-xl: clamp(48px, 41.37px + 1.768vw, 64px);
+  --text-display-lg: clamp(42px, 36.2px + 1.547vw, 56px);
+  --text-h1: clamp(38px, 33.856px + 1.105vw, 48px);
+  --text-h2: clamp(32px, 28.685px + 0.884vw, 40px);
+  --text-h3: clamp(28px, 26.343px + 0.442vw, 32px);
+  --text-h4: 24px;
+  --text-h5: 20px;
+  --text-body-lg: 18px;
+  --text-body: 16px;
+  --text-body-sm: 14px;
+  --text-caption: 12px;
+  --text-label: 12px;
+
+  --leading-display-xl: 1.05;
+  --leading-display-lg: 1.10;
+  --leading-h1: 1.15;
+  --leading-h2: 1.20;
+  --leading-h3: 1.25;
+  --leading-h4: 1.30;
+  --leading-h5: 1.35;
+  --leading-body-lg: 1.65;
+  --leading-body: 1.60;
+  --leading-body-sm: 1.55;
+  --leading-caption: 1.40;
+  --leading-label: 1.40;
+
+  --tracking-eyebrow: 0.12em;        /* label uppercase: eyebrow, kategori kartu */
+  --tracking-badge: 0.02em;
+  --tracking-label: 0.25em;          /* badge--label (label section berbentuk pill) */
+
+  --measure: 65ch;                   /* lebar baca maksimal paragraf */
+
+  /* ---------- Spacing (4px base) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 80px;
+  --space-11: 96px;
+  --space-12: 120px;
+
+  /* ---------- Layout ---------- */
+  --container-max: 1280px;
+  --container-pad: 32px;             /* desktop & tablet */
+  --grid-columns: 12;
+  --grid-gap: 24px;
+  --section-y: 80px;                 /* section normal */
+  --section-y-major: 96px;           /* section besar */
+  --section-y-hero: 120px;           /* hero */
+
+  /* ---------- Border ---------- */
+  --border-width: 1px;
+  --border-width-focus: 2px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* ---------- Shadow ---------- */
+  --shadow-none: none;
+  --shadow-sm: 0 2px 8px rgba(23, 23, 21, 0.04);
+  --shadow-md: 0 8px 24px rgba(23, 23, 21, 0.07);
+  --shadow-lg: 0 16px 40px rgba(23, 23, 21, 0.10);
+  --shadow-xl: 0 24px 60px rgba(23, 23, 21, 0.12);
+  --shadow-pin: 0 3px 8px rgba(26, 32, 128, 0.45); /* KHUSUS pin peta, lihat DEC-28 */
+
+  /* ---------- Focus ---------- */
+  --focus-ring: 2px solid var(--color-brand-primary);
+  --focus-ring-inverse: 2px solid var(--color-white); /* di atas background biru */
+  --focus-offset: 3px;
+
+  /* ---------- Motion ---------- */
+  --duration-fast: 180ms;            /* warna, border, state UI */
+  --duration-card: 220ms;            /* lift kartu */
+  --duration-media: 400ms;           /* zoom gambar */
+  --ease-standard: ease;
+
+  /* ---------- Layer ---------- */
+  --z-floating: 900;                 /* floating WhatsApp, floating promo */
+  --z-modal: 1000;
+}
+
+/* Tablet: 769px sampai 1024px */
+@media (max-width: 1024px) {
+  :root {
+    --grid-columns: 8;
+    --grid-gap: 20px;
+    --section-y: 64px;
+    --section-y-major: 80px;
+    --section-y-hero: 96px;
+  }
+}
+
+/* Mobile: sampai 768px */
+@media (max-width: 768px) {
+  :root {
+    --container-pad: 20px;
+    --grid-columns: 4;
+    --grid-gap: 16px;
+    --section-y: 56px;
+    --section-y-major: 64px;
+    --section-y-hero: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-card: 0ms;
+    --duration-media: 0ms;
+  }
+}

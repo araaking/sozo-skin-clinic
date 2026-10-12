@@ -1,0 +1,2556 @@
+{
+  "started_at": "2026-10-12T04:33:09.635Z",
+  "domain": "sozoskinclinic.com",
+  "gl": "id",
+  "hl": "id",
+  "requests": [
+    {
+      "label": "search/countries",
+      "method": "GET",
+      "path": "/search/countries",
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.636Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2999",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "engine": "all",
+        "countries": [
+          {
+            "code": "US",
+            "name": "United States",
+            "states": true,
+            "exit": true
+          }
+        ]
+      }
+    },
+    {
+      "label": "rankings/check | klinik kecantikan terdekat",
+      "method": "POST",
+      "path": "/rankings/check",
+      "body": {
+        "keyword": "klinik kecantikan terdekat",
+        "domain": "sozoskinclinic.com",
+        "depth": 30,
+        "gl": "id",
+        "hl": "id",
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.675Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2998",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "schema": "ranking-check.v1",
+        "result": {
+          "position": 3,
+          "url": "https://www.sozoskinclinic.com/a/",
+          "found": true,
+          "gl": "id",
+          "competitors_above": [
+            "alodokter.com",
+            "halodoc.com"
+          ]
+        },
+        "credits": {
+          "used": 9
+        }
+      }
+    },
+    {
+      "label": "search/web p1 | klinik kecantikan terdekat",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "klinik kecantikan terdekat",
+        "limit": 10,
+        "page": 1,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.676Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2997",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p2 | klinik kecantikan terdekat",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "klinik kecantikan terdekat",
+        "limit": 10,
+        "page": 2,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.678Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2996",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p2alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p2halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p2sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p2foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p2healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p2webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p2erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p2bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p2mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p2x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p3 | klinik kecantikan terdekat",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "klinik kecantikan terdekat",
+        "limit": 10,
+        "page": 3,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.678Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2995",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p3alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p3halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p3sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p3foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p3healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p3webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p3erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p3bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p3mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p3x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "serp | klinik kecantikan terdekat",
+      "method": "GET",
+      "path": "/serp",
+      "params": {
+        "q": "klinik kecantikan terdekat",
+        "gl": "id",
+        "hl": "id",
+        "pages": 1,
+        "num": 10,
+        "aioverview": false,
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.678Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2994",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "organic": [
+          {
+            "position": 1,
+            "url": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "position": 2,
+            "url": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "position": 3,
+            "url": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "position": 4,
+            "url": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "position": 5,
+            "url": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "position": 6,
+            "url": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "position": 7,
+            "url": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "position": 8,
+            "url": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "position": 9,
+            "url": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "position": 10,
+            "url": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "rankings/check | beauty treatment",
+      "method": "POST",
+      "path": "/rankings/check",
+      "body": {
+        "keyword": "beauty treatment",
+        "domain": "sozoskinclinic.com",
+        "depth": 30,
+        "gl": "id",
+        "hl": "id",
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.680Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2993",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "schema": "ranking-check.v1",
+        "result": {
+          "position": 3,
+          "url": "https://www.sozoskinclinic.com/a/",
+          "found": true,
+          "gl": "id",
+          "competitors_above": [
+            "alodokter.com",
+            "halodoc.com"
+          ]
+        },
+        "credits": {
+          "used": 9
+        }
+      }
+    },
+    {
+      "label": "search/web p1 | beauty treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "beauty treatment",
+        "limit": 10,
+        "page": 1,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.681Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2992",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p2 | beauty treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "beauty treatment",
+        "limit": 10,
+        "page": 2,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.681Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2991",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p2alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p2halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p2sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p2foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p2healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p2webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p2erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p2bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p2mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p2x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p3 | beauty treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "beauty treatment",
+        "limit": 10,
+        "page": 3,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.681Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2990",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p3alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p3halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p3sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p3foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p3healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p3webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p3erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p3bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p3mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p3x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "serp | beauty treatment",
+      "method": "GET",
+      "path": "/serp",
+      "params": {
+        "q": "beauty treatment",
+        "gl": "id",
+        "hl": "id",
+        "pages": 1,
+        "num": 10,
+        "aioverview": false,
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.681Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2989",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "organic": [
+          {
+            "position": 1,
+            "url": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "position": 2,
+            "url": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "position": 3,
+            "url": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "position": 4,
+            "url": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "position": 5,
+            "url": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "position": 6,
+            "url": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "position": 7,
+            "url": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "position": 8,
+            "url": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "position": 9,
+            "url": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "position": 10,
+            "url": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "rankings/check | hair treatment",
+      "method": "POST",
+      "path": "/rankings/check",
+      "body": {
+        "keyword": "hair treatment",
+        "domain": "sozoskinclinic.com",
+        "depth": 30,
+        "gl": "id",
+        "hl": "id",
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.682Z",
+      "status": 503,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2988",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": false,
+        "code": "UPSTREAM_UNAVAILABLE",
+        "retryable": false,
+        "message": "down"
+      }
+    },
+    {
+      "label": "search/web p1 | hair treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "hair treatment",
+        "limit": 10,
+        "page": 1,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.682Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2987",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p2 | hair treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "hair treatment",
+        "limit": 10,
+        "page": 2,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.682Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2986",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p2alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p2halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p2sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p2foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p2healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p2webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p2erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p2bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p2mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p2x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p3 | hair treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "hair treatment",
+        "limit": 10,
+        "page": 3,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.683Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2985",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p3alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p3halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p3sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p3foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p3healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p3webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p3erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p3bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p3mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p3x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "serp | hair treatment",
+      "method": "GET",
+      "path": "/serp",
+      "params": {
+        "q": "hair treatment",
+        "gl": "id",
+        "hl": "id",
+        "pages": 1,
+        "num": 10,
+        "aioverview": false,
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.683Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2984",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "organic": [
+          {
+            "position": 1,
+            "url": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "position": 2,
+            "url": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "position": 3,
+            "url": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "position": 4,
+            "url": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "position": 5,
+            "url": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "position": 6,
+            "url": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "position": 7,
+            "url": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "position": 8,
+            "url": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "position": 9,
+            "url": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "position": 10,
+            "url": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "rankings/check | hair growth treatment",
+      "method": "POST",
+      "path": "/rankings/check",
+      "body": {
+        "keyword": "hair growth treatment",
+        "domain": "sozoskinclinic.com",
+        "depth": 30,
+        "gl": "id",
+        "hl": "id",
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.683Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2983",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "schema": "ranking-check.v1",
+        "result": {
+          "position": 3,
+          "url": "https://www.sozoskinclinic.com/a/",
+          "found": true,
+          "gl": "id",
+          "competitors_above": [
+            "alodokter.com",
+            "halodoc.com"
+          ]
+        },
+        "credits": {
+          "used": 9
+        }
+      }
+    },
+    {
+      "label": "search/web p1 | hair growth treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "hair growth treatment",
+        "limit": 10,
+        "page": 1,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.683Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2982",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p2 | hair growth treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "hair growth treatment",
+        "limit": 10,
+        "page": 2,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.684Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2981",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p2alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p2halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p2sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p2foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p2healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p2webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p2erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p2bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p2mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p2x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p3 | hair growth treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "hair growth treatment",
+        "limit": 10,
+        "page": 3,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.684Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2980",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p3alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p3halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p3sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p3foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p3healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p3webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p3erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p3bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p3mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p3x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "serp | hair growth treatment",
+      "method": "GET",
+      "path": "/serp",
+      "params": {
+        "q": "hair growth treatment",
+        "gl": "id",
+        "hl": "id",
+        "pages": 1,
+        "num": 10,
+        "aioverview": false,
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.684Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2979",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "organic": [
+          {
+            "position": 1,
+            "url": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "position": 2,
+            "url": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "position": 3,
+            "url": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "position": 4,
+            "url": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "position": 5,
+            "url": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "position": 6,
+            "url": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "position": 7,
+            "url": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "position": 8,
+            "url": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "position": 9,
+            "url": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "position": 10,
+            "url": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "rankings/check | perawatan rambut rontok",
+      "method": "POST",
+      "path": "/rankings/check",
+      "body": {
+        "keyword": "perawatan rambut rontok",
+        "domain": "sozoskinclinic.com",
+        "depth": 30,
+        "gl": "id",
+        "hl": "id",
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.684Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2978",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "schema": "ranking-check.v1",
+        "result": {
+          "position": 3,
+          "url": "https://www.sozoskinclinic.com/a/",
+          "found": true,
+          "gl": "id",
+          "competitors_above": [
+            "alodokter.com",
+            "halodoc.com"
+          ]
+        },
+        "credits": {
+          "used": 9
+        }
+      }
+    },
+    {
+      "label": "search/web p1 | perawatan rambut rontok",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "perawatan rambut rontok",
+        "limit": 10,
+        "page": 1,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.684Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2977",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p2 | perawatan rambut rontok",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "perawatan rambut rontok",
+        "limit": 10,
+        "page": 2,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.684Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2976",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p2alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p2halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p2sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p2foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p2healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p2webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p2erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p2bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p2mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p2x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p3 | perawatan rambut rontok",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "perawatan rambut rontok",
+        "limit": 10,
+        "page": 3,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.685Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2975",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p3alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p3halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p3sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p3foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p3healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p3webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p3erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p3bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p3mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p3x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "serp | perawatan rambut rontok",
+      "method": "GET",
+      "path": "/serp",
+      "params": {
+        "q": "perawatan rambut rontok",
+        "gl": "id",
+        "hl": "id",
+        "pages": 1,
+        "num": 10,
+        "aioverview": false,
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.685Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2974",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "organic": [
+          {
+            "position": 1,
+            "url": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "position": 2,
+            "url": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "position": 3,
+            "url": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "position": 4,
+            "url": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "position": 5,
+            "url": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "position": 6,
+            "url": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "position": 7,
+            "url": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "position": 8,
+            "url": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "position": 9,
+            "url": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "position": 10,
+            "url": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "rankings/check | prp hair treatment",
+      "method": "POST",
+      "path": "/rankings/check",
+      "body": {
+        "keyword": "prp hair treatment",
+        "domain": "sozoskinclinic.com",
+        "depth": 30,
+        "gl": "id",
+        "hl": "id",
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.685Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2973",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "schema": "ranking-check.v1",
+        "result": {
+          "position": 3,
+          "url": "https://www.sozoskinclinic.com/a/",
+          "found": true,
+          "gl": "id",
+          "competitors_above": [
+            "alodokter.com",
+            "halodoc.com"
+          ]
+        },
+        "credits": {
+          "used": 9
+        }
+      }
+    },
+    {
+      "label": "search/web p1 | prp hair treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "prp hair treatment",
+        "limit": 10,
+        "page": 1,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.685Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2972",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p2 | prp hair treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "prp hair treatment",
+        "limit": 10,
+        "page": 2,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.685Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2971",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p2alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p2halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p2sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p2foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p2healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p2webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p2erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p2bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p2mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p2x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "search/web p3 | prp hair treatment",
+      "method": "GET",
+      "path": "/search/web",
+      "params": {
+        "q": "prp hair treatment",
+        "limit": 10,
+        "page": 3,
+        "gl": "id",
+        "hl": "id"
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.685Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2970",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "items": [
+          {
+            "rank": 1,
+            "link": "https://p3alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "rank": 2,
+            "link": "https://p3halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "rank": 3,
+            "link": "https://p3sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "rank": 4,
+            "link": "https://p3foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "rank": 5,
+            "link": "https://p3healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "rank": 6,
+            "link": "https://p3webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "rank": 7,
+            "link": "https://p3erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "rank": 8,
+            "link": "https://p3bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "rank": 9,
+            "link": "https://p3mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "rank": 10,
+            "link": "https://p3x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    },
+    {
+      "label": "serp | prp hair treatment",
+      "method": "GET",
+      "path": "/serp",
+      "params": {
+        "q": "prp hair treatment",
+        "gl": "id",
+        "hl": "id",
+        "pages": 1,
+        "num": 10,
+        "aioverview": false,
+        "cache": false
+      },
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:33:09.685Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": "1",
+        "x-credits-remaining": "2969",
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "organic": [
+          {
+            "position": 1,
+            "url": "https://alodokter.com/a",
+            "domain": "alodokter.com"
+          },
+          {
+            "position": 2,
+            "url": "https://halodoc.com/a",
+            "domain": "halodoc.com"
+          },
+          {
+            "position": 3,
+            "url": "https://sozoskinclinic.com/a",
+            "domain": "sozoskinclinic.com"
+          },
+          {
+            "position": 4,
+            "url": "https://foo.co.id/a",
+            "domain": "foo.co.id"
+          },
+          {
+            "position": 5,
+            "url": "https://healthline.com/a",
+            "domain": "healthline.com"
+          },
+          {
+            "position": 6,
+            "url": "https://webmd.com/a",
+            "domain": "webmd.com"
+          },
+          {
+            "position": 7,
+            "url": "https://erhaclinic.com/a",
+            "domain": "erhaclinic.com"
+          },
+          {
+            "position": 8,
+            "url": "https://bar.id/a",
+            "domain": "bar.id"
+          },
+          {
+            "position": 9,
+            "url": "https://mayoclinic.org/a",
+            "domain": "mayoclinic.org"
+          },
+          {
+            "position": 10,
+            "url": "https://x.com/a",
+            "domain": "x.com"
+          }
+        ]
+      }
+    }
+  ],
+  "finished_at": "2026-10-12T04:33:09.686Z",
+  "rows": [
+    {
+      "keyword": "klinik kecantikan terdekat",
+      "local": true,
+      "errors": [],
+      "rank_check_position": 3,
+      "rank_check_url": "https://www.sozoskinclinic.com/a/",
+      "rank_check_found": true,
+      "rank_check_gl": "id",
+      "competitors_above": [
+        "alodokter.com",
+        "halodoc.com"
+      ],
+      "web_rank_reset": true,
+      "web_page_first_ranks": [
+        {
+          "page": 1,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 2,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 3,
+          "first_rank": 1,
+          "count": 10
+        }
+      ],
+      "web_position": 3,
+      "web_url": "https://sozoskinclinic.com/a",
+      "web_found": true,
+      "web_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_id_sites": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "erhaclinic.com",
+        "bar.id"
+      ],
+      "serp_non_id_sites": [
+        "healthline.com",
+        "webmd.com",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "jumlah_situs_indonesia": 6,
+      "selisih_posisi": 0,
+      "found_sepakat": true,
+      "url_sama": true,
+      "overlap": 10,
+      "credits_terpakai": 5,
+      "credits_header_missing": false
+    },
+    {
+      "keyword": "beauty treatment",
+      "local": false,
+      "errors": [],
+      "rank_check_position": 3,
+      "rank_check_url": "https://www.sozoskinclinic.com/a/",
+      "rank_check_found": true,
+      "rank_check_gl": "id",
+      "competitors_above": [
+        "alodokter.com",
+        "halodoc.com"
+      ],
+      "web_rank_reset": true,
+      "web_page_first_ranks": [
+        {
+          "page": 1,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 2,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 3,
+          "first_rank": 1,
+          "count": 10
+        }
+      ],
+      "web_position": 3,
+      "web_url": "https://sozoskinclinic.com/a",
+      "web_found": true,
+      "web_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_id_sites": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "erhaclinic.com",
+        "bar.id"
+      ],
+      "serp_non_id_sites": [
+        "healthline.com",
+        "webmd.com",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "jumlah_situs_indonesia": 6,
+      "selisih_posisi": 0,
+      "found_sepakat": true,
+      "url_sama": true,
+      "overlap": 10,
+      "credits_terpakai": 5,
+      "credits_header_missing": false
+    },
+    {
+      "keyword": "hair treatment",
+      "local": false,
+      "errors": [
+        "rankings/check gagal: HTTP 503 UPSTREAM_UNAVAILABLE down"
+      ],
+      "web_rank_reset": true,
+      "web_page_first_ranks": [
+        {
+          "page": 1,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 2,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 3,
+          "first_rank": 1,
+          "count": 10
+        }
+      ],
+      "web_position": 3,
+      "web_url": "https://sozoskinclinic.com/a",
+      "web_found": true,
+      "web_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_id_sites": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "erhaclinic.com",
+        "bar.id"
+      ],
+      "serp_non_id_sites": [
+        "healthline.com",
+        "webmd.com",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "jumlah_situs_indonesia": 6,
+      "overlap": 10,
+      "credits_terpakai": 5,
+      "credits_header_missing": false
+    },
+    {
+      "keyword": "hair growth treatment",
+      "local": false,
+      "errors": [],
+      "rank_check_position": 3,
+      "rank_check_url": "https://www.sozoskinclinic.com/a/",
+      "rank_check_found": true,
+      "rank_check_gl": "id",
+      "competitors_above": [
+        "alodokter.com",
+        "halodoc.com"
+      ],
+      "web_rank_reset": true,
+      "web_page_first_ranks": [
+        {
+          "page": 1,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 2,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 3,
+          "first_rank": 1,
+          "count": 10
+        }
+      ],
+      "web_position": 3,
+      "web_url": "https://sozoskinclinic.com/a",
+      "web_found": true,
+      "web_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_id_sites": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "erhaclinic.com",
+        "bar.id"
+      ],
+      "serp_non_id_sites": [
+        "healthline.com",
+        "webmd.com",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "jumlah_situs_indonesia": 6,
+      "selisih_posisi": 0,
+      "found_sepakat": true,
+      "url_sama": true,
+      "overlap": 10,
+      "credits_terpakai": 5,
+      "credits_header_missing": false
+    },
+    {
+      "keyword": "perawatan rambut rontok",
+      "local": false,
+      "errors": [],
+      "rank_check_position": 3,
+      "rank_check_url": "https://www.sozoskinclinic.com/a/",
+      "rank_check_found": true,
+      "rank_check_gl": "id",
+      "competitors_above": [
+        "alodokter.com",
+        "halodoc.com"
+      ],
+      "web_rank_reset": true,
+      "web_page_first_ranks": [
+        {
+          "page": 1,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 2,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 3,
+          "first_rank": 1,
+          "count": 10
+        }
+      ],
+      "web_position": 3,
+      "web_url": "https://sozoskinclinic.com/a",
+      "web_found": true,
+      "web_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_id_sites": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "erhaclinic.com",
+        "bar.id"
+      ],
+      "serp_non_id_sites": [
+        "healthline.com",
+        "webmd.com",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "jumlah_situs_indonesia": 6,
+      "selisih_posisi": 0,
+      "found_sepakat": true,
+      "url_sama": true,
+      "overlap": 10,
+      "credits_terpakai": 5,
+      "credits_header_missing": false
+    },
+    {
+      "keyword": "prp hair treatment",
+      "local": false,
+      "errors": [],
+      "rank_check_position": 3,
+      "rank_check_url": "https://www.sozoskinclinic.com/a/",
+      "rank_check_found": true,
+      "rank_check_gl": "id",
+      "competitors_above": [
+        "alodokter.com",
+        "halodoc.com"
+      ],
+      "web_rank_reset": true,
+      "web_page_first_ranks": [
+        {
+          "page": 1,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 2,
+          "first_rank": 1,
+          "count": 10
+        },
+        {
+          "page": 3,
+          "first_rank": 1,
+          "count": 10
+        }
+      ],
+      "web_position": 3,
+      "web_url": "https://sozoskinclinic.com/a",
+      "web_found": true,
+      "web_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_top10": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "healthline.com",
+        "webmd.com",
+        "erhaclinic.com",
+        "bar.id",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "serp_id_sites": [
+        "alodokter.com",
+        "halodoc.com",
+        "sozoskinclinic.com",
+        "foo.co.id",
+        "erhaclinic.com",
+        "bar.id"
+      ],
+      "serp_non_id_sites": [
+        "healthline.com",
+        "webmd.com",
+        "mayoclinic.org",
+        "x.com"
+      ],
+      "jumlah_situs_indonesia": 6,
+      "selisih_posisi": 0,
+      "found_sepakat": true,
+      "url_sama": true,
+      "overlap": 10,
+      "credits_terpakai": 5,
+      "credits_header_missing": false
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "started_at": "2026-10-12T04:24:31.837Z",
+  "domain": "sozoskinclinic.com",
+  "gl": "id",
+  "hl": "id",
+  "requests": [
+    {
+      "label": "search/countries",
+      "method": "GET",
+      "path": "/search/countries",
+      "attempt": 0,
+      "sent_at": "2026-10-12T04:24:31.837Z",
+      "status": 200,
+      "headers": {
+        "x-credits-deducted": null,
+        "x-credits-remaining": null,
+        "x-cache": null,
+        "retry-after": null
+      },
+      "response": {
+        "success": true,
+        "engine": "all",
+        "countries": [
+          {
+            "code": "US",
+            "name": "United States",
+            "states": true,
+            "exit": true
+          },
+          {
+            "code": "GB",
+            "name": "United Kingdom",
+            "states": false,
+            "exit": true
+          },
+          {
+            "code": "CA",
+            "name": "Canada",
+            "states": false,
+            "exit": true
+          },
+          {
+            "code": "AU",
+            "name": "Australia",
+            "states": false,
+            "exit": true
+          },
+          {
+            "code": "DE",
+            "name": "Germany",
+            "states": false,
+            "exit": true
+          },
+          {
+            "code": "FR",
+            "name": "France",
+            "states": false,
+            "exit": true
+          },
+          {
+            "code": "ES",
+            "name": "Spain",
+            "states": false,
+            "exit": true
+          },
+          {
+            "code": "IT",
+            "name": "Italy",
+            "states": false,
+            "exit": true
+          },
+          {
+            "code": "NL",
+            "name": "Netherlands",
+            "states": false,
+            "exit": true
+          },
+          {
+            "code": "IE",
+            "name": "Ireland",
+            "states": false,
+            "exit": true
+          },
+          {
+            "code": "IN",
+            "name": "India",
+            "states": false,
+            "exit": true
+          }
+        ]
+      }
+    }
+  ],
+  "finished_at": "2026-10-12T04:24:33.159Z",
+  "rows": []
+}

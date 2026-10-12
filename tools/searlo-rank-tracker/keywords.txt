@@ -1,0 +1,8 @@
+# Satu keyword per baris. Baris kosong dan baris diawali # diabaikan.
+# Urutan di file ini = urutan baris di output.
+klinik kecantikan terdekat
+beauty treatment
+hair treatment
+hair growth treatment
+perawatan rambut rontok
+prp hair treatment

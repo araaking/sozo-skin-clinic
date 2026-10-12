@@ -1,336 +1,385 @@
+<!-- ============================================================
+     HALAMAN TIM DOKTER - SOZO SKIN CLINIC
+     URL     : https://sozoskinclinic.com/tim-dokter-sozo-skin/
+     Style   : Sozo Design System V1.2 (design-system/), Elementor Safe, scoped
+               ke .sozo-minimal-doc-section. Layout lama dipertahankan.
+     Seksi   : Breadcrumb -> Header (H1, deskripsi) -> Grid kartu dokter
+     Kartu   : <article> + stretched link di nama dokter (components/card-base.md)
+     JSON-LD : WebPage + BreadcrumbList.
+     ============================================================ -->
+
+<!-- Font resmi Sozo: Poppins 400-800 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-    /* --- RESET & TYPOGRAPHY --- */
-    .sozo-minimal-doc-section {
-        font-family: 'Poppins', sans-serif !important;
-        background: #FFFFFF !important;
-        padding: 80px 24px !important;
-        color: #171715 !important;
-    }
+  /* Token Sozo Design System V1.2, di-scope ke .sozo-minimal-doc-section */
+  .sozo-minimal-doc-section {
+    --color-brand-primary: #1A2080;
+    --color-brand-almond: #E9DFD5;
+    --color-white: #FFFFFF;
+    --color-text-primary: #171715;
+    --color-text-secondary: #41413E;
+    --color-text-muted: #777771;
+    --color-border: #DFDBD4;
+    --color-border-strong: #C8C3BA;
 
-    .sozo-minimal-doc-section * {
-        box-sizing: border-box !important;
-    }
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --text-h1: clamp(38px, 33.856px + 1.105vw, 48px);
+    --text-h5: 20px;
+    --text-body-lg: 18px;
+    --text-label: 12px;
+    --text-caption: 12px;
+    --leading-h1: 1.15;
+    --leading-body-lg: 1.65;
+    --leading-body: 1.60;
+    --leading-caption: 1.40;
+    --tracking-eyebrow: 0.12em;
+    --measure: 65ch;
 
-    /* --- CONTAINER --- */
-    .sozo-container {
-        width: 100% !important;
-        max-width: 1280px !important;
-        margin: 0 auto !important;
-    }
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
+    --space-9: 64px;
 
-    /* --- BREADCRUMB --- */
-    .sozo-doc-breadcrumb {
-        margin: 0 0 32px !important;
-    }
+    --container-max: 1280px;
+    --container-pad: 32px;
+    --section-y: 80px;
+    --grid-gap: 24px;
 
-    .sozo-doc-breadcrumb ol {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 8px 10px !important;
-        list-style: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        font-size: 12px !important;
-        font-weight: 500 !important;
-        line-height: 1.4 !important;
-    }
+    --radius-sm: 6px;
+    --radius-lg: 16px;
+    --shadow-md: 0 8px 24px rgba(23, 23, 21, 0.07);
+    --focus-ring: 2px solid var(--color-brand-primary);
+    --focus-offset: 3px;
+    --duration-fast: 180ms;
+    --duration-card: 220ms;
+    --duration-media: 400ms;
+    --ease-standard: ease;
 
-    .sozo-doc-breadcrumb a {
-        color: #777771 !important;
-        text-decoration: none !important;
-        transition: color 180ms ease !important;
-    }
+    font-family: var(--font-family-primary) !important;
+    background: var(--color-white) !important;
+    color: var(--color-text-primary) !important;
+    line-height: var(--leading-body) !important;
+    padding: var(--section-y) var(--container-pad) !important;
+  }
+  .sozo-minimal-doc-section *,
+  .sozo-minimal-doc-section *::before,
+  .sozo-minimal-doc-section *::after { box-sizing: border-box !important; }
 
-    .sozo-doc-breadcrumb a:hover,
-    .sozo-doc-breadcrumb a:focus-visible {
-        color: #1A2080 !important;
-        text-decoration: underline !important;
-    }
+  @media (max-width: 1024px) {
+    .sozo-minimal-doc-section { --section-y: 64px; --grid-gap: 20px; }
+  }
+  @media (max-width: 768px) {
+    .sozo-minimal-doc-section { --container-pad: 20px; --section-y: 56px; --grid-gap: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-minimal-doc-section { --duration-fast: 0ms; --duration-card: 0ms; --duration-media: 0ms; }
+  }
 
-    .sozo-doc-breadcrumb .separator {
-        color: #aaa69f !important;
-        font-size: 10px !important;
-    }
+  .sozo-minimal-doc-section .sozo-container {
+    width: 100% !important;
+    max-width: var(--container-max) !important;
+    margin: 0 auto !important;
+  }
 
-    .sozo-doc-breadcrumb .current {
-        color: #1A2080 !important;
-        font-weight: 600 !important;
-    }
+  /* ---------- Breadcrumb (components/breadcrumb.md) ---------- */
+  .sozo-minimal-doc-section .sozo-doc-breadcrumb { margin: 0 0 var(--space-6) !important; }
+  .sozo-minimal-doc-section .sozo-doc-breadcrumb ol {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--space-2) !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+    line-height: var(--leading-caption) !important;
+  }
+  .sozo-minimal-doc-section .sozo-doc-breadcrumb li {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+  }
+  .sozo-minimal-doc-section .sozo-doc-breadcrumb li + li::before {
+    content: "/" !important;
+    color: var(--color-border-strong) !important;
+  }
+  .sozo-minimal-doc-section .sozo-doc-breadcrumb a {
+    color: var(--color-text-muted) !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+  .sozo-minimal-doc-section .sozo-doc-breadcrumb a:hover { color: var(--color-brand-primary) !important; }
+  .sozo-minimal-doc-section .sozo-doc-breadcrumb a:focus-visible { outline: var(--focus-ring) !important; outline-offset: 2px !important; }
+  .sozo-minimal-doc-section .sozo-doc-breadcrumb .current { color: var(--color-brand-primary) !important; font-weight: 600 !important; }
 
-    /* --- SECTION HEADER --- */
-    .sozo-min-header {
-        max-width: 820px !important;
-        margin: 0 auto 64px !important;
-        text-align: center !important;
-    }
+  /* ---------- Header ---------- */
+  .sozo-minimal-doc-section .sozo-min-header {
+    max-width: 820px !important;
+    margin: 0 auto var(--space-9) !important;
+    text-align: center !important;
+  }
+  .sozo-minimal-doc-section .sozo-min-header h1 {
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-h1) !important;
+    font-weight: 700 !important;
+    line-height: var(--leading-h1) !important;
+    color: var(--color-brand-primary) !important;
+    margin: 0 0 var(--space-4) !important;
+  }
+  .sozo-minimal-doc-section .sozo-min-header p {
+    max-width: var(--measure) !important;
+    margin: 0 auto !important;
+    font-size: var(--text-body-lg) !important;
+    line-height: var(--leading-body-lg) !important;
+    color: var(--color-text-secondary) !important;
+  }
 
-    .sozo-min-header h1 {
-        font-size: clamp(36px, 4.2vw, 48px) !important;
-        font-weight: 700 !important;
-        color: #1A2080 !important;
-        line-height: 1.15 !important;
-        letter-spacing: -0.6px !important;
-        margin: 0 0 16px 0 !important;
-    }
+  /* ---------- Grid ---------- */
+  .sozo-minimal-doc-section .sozo-min-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: var(--grid-gap) !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+  .sozo-minimal-doc-section .sozo-min-grid > li { display: flex !important; margin: 0 !important; }
 
-    .sozo-min-header p {
-        font-size: 18px !important;
-        color: #41413E !important;
-        line-height: 1.65 !important;
-        max-width: 65ch !important;
-        margin: 0 auto !important;
-    }
+  /* ---------- Kartu dokter (Base Card, interaktif) ---------- */
+  .sozo-minimal-doc-section .sozo-min-card {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    background-color: var(--color-white) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    transition:
+      transform var(--duration-card) var(--ease-standard),
+      box-shadow var(--duration-card) var(--ease-standard),
+      border-color var(--duration-card) var(--ease-standard) !important;
+  }
+  .sozo-minimal-doc-section .sozo-min-card:hover {
+    transform: translateY(-2px) !important;
+    border-color: var(--color-border-strong) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+  .sozo-minimal-doc-section .sozo-min-card:focus-within { outline: var(--focus-ring) !important; outline-offset: var(--focus-offset) !important; }
 
-    /* --- MINIMAL GRID --- */
-    .sozo-min-grid {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-        gap: 24px !important;
-    }
+  .sozo-minimal-doc-section .sozo-min-img-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    background-color: var(--color-brand-almond) !important;
+    overflow: hidden !important;
+  }
+  .sozo-minimal-doc-section .sozo-min-img-wrapper img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    transition: transform var(--duration-media) var(--ease-standard) !important;
+  }
+  .sozo-minimal-doc-section .sozo-min-card:hover .sozo-min-img-wrapper img { transform: scale(1.03) !important; }
 
-    /* --- CARD DOCTOR BLOCK --- */
-    .sozo-min-card {
-        display: flex !important;
-        flex-direction: column !important;
-        height: 100% !important;
-        text-decoration: none !important;
-        background-color: #ffffff !important;
-        border-radius: 16px !important;
-        border: 1px solid #DFDBD4 !important;
-        overflow: hidden !important;
-        box-shadow: 0 8px 24px rgba(23, 23, 21, 0.07) !important;
-        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease !important;
-    }
+  .sozo-minimal-doc-section .sozo-min-info {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    padding: var(--space-5) !important;
+  }
+  .sozo-minimal-doc-section .sozo-min-name {
+    font-family: var(--font-family-primary) !important;
+    min-height: 54px !important;
+    margin: 0 0 var(--space-2) !important;
+    font-size: var(--text-h5) !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+    color: var(--color-text-primary) !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+  .sozo-minimal-doc-section .sozo-min-name a { color: inherit !important; text-decoration: none !important; }
+  .sozo-minimal-doc-section .sozo-min-name a:focus-visible { outline: none !important; }
+  /* Stretched link: seluruh kartu bisa diklik */
+  .sozo-minimal-doc-section .sozo-min-name a::after { content: "" !important; position: absolute !important; inset: 0 !important; }
+  .sozo-minimal-doc-section .sozo-min-card:hover .sozo-min-name { color: var(--color-brand-primary) !important; }
 
-    .sozo-min-card:hover {
-        transform: translateY(-3px) !important;
-        border-color: #C8C3BA !important;
-        box-shadow: 0 16px 40px rgba(23, 23, 21, 0.10) !important;
-    }
+  .sozo-minimal-doc-section .sozo-min-title {
+    display: block !important;
+    margin-bottom: var(--space-4) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+    letter-spacing: var(--tracking-eyebrow) !important;
+    text-transform: uppercase !important;
+    color: var(--color-brand-primary) !important;
+  }
 
-    /* --- IMAGE WRAPPER --- */
-    .sozo-min-img-wrapper {
-        width: 100% !important;
-        aspect-ratio: 1 / 1 !important;
-        background-color: #E9DFD5 !important;
-        overflow: hidden !important;
-        position: relative !important;
-    }
+  /* Meta: STR & keahlian */
+  .sozo-minimal-doc-section .sozo-min-meta {
+    margin-top: auto !important;
+    padding-top: var(--space-4) !important;
+    border-top: 1px solid var(--color-border) !important;
+    font-size: var(--text-caption) !important;
+    font-weight: 500 !important;
+    line-height: var(--leading-body) !important;
+    color: var(--color-text-muted) !important;
+  }
+  .sozo-minimal-doc-section .sozo-min-meta span { display: block !important; margin-bottom: 6px !important; }
+  .sozo-minimal-doc-section .sozo-min-meta span:last-child { margin-bottom: 0 !important; }
+  .sozo-minimal-doc-section .sozo-min-meta strong { color: var(--color-text-secondary) !important; font-weight: 500 !important; }
+  /* Nomor STR: Poppins dengan angka rata lebar, tanpa font ketiga */
+  .sozo-minimal-doc-section .sozo-min-meta .str-number {
+    padding: 2px 6px !important;
+    border-radius: var(--radius-sm) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: var(--text-caption) !important;
+    font-weight: 600 !important;
+    font-variant-numeric: tabular-nums !important;
+    letter-spacing: 0.02em !important;
+  }
 
-    .sozo-min-img-wrapper img {
-        width: 100% !important;
-        height: 100% !important;
-        display: block !important;
-        object-fit: cover !important;
-        transition: transform 300ms ease !important;
-    }
-
-    /* Zoom standar saat hover (berlaku seragam untuk semua gambar) */
-    .sozo-min-card:hover .sozo-min-img-wrapper img {
-        transform: scale(1.03) !important;
-    }
-
-    /* --- INFO SECTION --- */
-    .sozo-min-info {
-        padding: 24px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        flex-grow: 1 !important;
-    }
-
-    .sozo-min-name {
-        font-size: 20px !important;
-        font-weight: 600 !important;
-        color: #171715 !important;
-        margin: 0 0 6px 0 !important;
-        line-height: 1.3 !important;
-        min-height: 54px !important;
-        transition: color 180ms ease !important;
-    }
-
-    .sozo-min-card:hover .sozo-min-name {
-        color: #1A2080 !important;
-    }
-
-    .sozo-min-title {
-        font-size: 14px !important;
-        font-weight: 600 !important;
-        color: #1A2080 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.3px !important;
-        line-height: 1.5 !important;
-        margin-bottom: 16px !important;
-        display: block !important;
-    }
-
-    /* --- META (STR & KEAHLIAN) --- */
-    .sozo-min-meta {
-        font-size: 12px !important;
-        color: #777771 !important;
-        line-height: 1.6 !important;
-        border-top: 1px solid #DFDBD4 !important;
-        padding-top: 16px !important;
-    }
-
-    .sozo-min-meta span {
-        display: block !important;
-        margin-bottom: 6px !important;
-    }
-
-    .sozo-min-meta span:last-child {
-        margin-bottom: 0 !important;
-    }
-
-    .sozo-min-meta strong {
-        color: #41413E !important;
-        font-weight: 500 !important;
-    }
-
-    .sozo-min-meta .str-number {
-        font-family: 'Poppins', monospace !important;
-        color: #1A2080 !important;
-        background-color: #E9DFD5 !important;
-        padding: 2px 6px !important;
-        border-radius: 4px !important;
-        font-size: 12px !important;
-        letter-spacing: 0.2px !important;
-    }
-
-    /* --- RESPONSIVE LAYOUT --- */
-    @media (max-width: 1024px) {
-        .sozo-min-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 24px !important;
-            max-width: 800px !important;
-        }
-    }
-
-    @media (max-width: 640px) {
-        .sozo-minimal-doc-section {
-            padding: 56px 20px !important;
-        }
-        .sozo-min-header {
-            margin-bottom: 48px !important;
-        }
-        .sozo-doc-breadcrumb { margin-bottom: 24px !important; }
-        .sozo-min-grid {
-            grid-template-columns: 1fr !important;
-            gap: 24px !important;
-        }
-        .sozo-min-name {
-            min-height: auto !important;
-        }
-    }
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1024px) {
+    .sozo-minimal-doc-section .sozo-min-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; max-width: 800px !important; }
+  }
+  @media (max-width: 768px) {
+    .sozo-minimal-doc-section .sozo-min-header { margin-bottom: var(--space-8) !important; }
+    .sozo-minimal-doc-section .sozo-doc-breadcrumb { margin-bottom: var(--space-5) !important; }
+  }
+  @media (max-width: 480px) {
+    .sozo-minimal-doc-section .sozo-min-grid { grid-template-columns: 1fr !important; }
+    .sozo-minimal-doc-section .sozo-min-name { min-height: 0 !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-minimal-doc-section .sozo-min-card:hover,
+    .sozo-minimal-doc-section .sozo-min-card:hover .sozo-min-img-wrapper img { transform: none !important; }
+  }
 </style>
 
 <div class="sozo-minimal-doc-section">
-    <div class="sozo-container">
+  <div class="sozo-container">
 
-        <nav class="sozo-doc-breadcrumb" aria-label="Breadcrumb">
-            <ol>
-                <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
-                <li class="separator" aria-hidden="true">›</li>
-                <li aria-current="page"><span class="current">Tim Dokter</span></li>
-            </ol>
-        </nav>
+    <nav class="sozo-doc-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+        <li><span class="current" aria-current="page">Tim Dokter</span></li>
+      </ol>
+    </nav>
 
-        <div class="sozo-min-header">
-            <h1>Dokter Komite</h1>
-            <p>Profil profesional dewan dokter komite spesialis dan praktisi medis Sozo Skin Clinic yang tersertifikasi resmi.</p>
-        </div>
-
-        <div class="sozo-min-grid">
-
-            <!-- Dokter 1: dr. Elisabeth Ryan -->
-            <a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/" class="sozo-min-card">
-                <div class="sozo-min-img-wrapper">
-                    <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr-eli.webp" alt="dr. Elisabeth Ryan, Sp.DVE">
-                </div>
-                <div class="sozo-min-info">
-                    <h3 class="sozo-min-name">dr. Elisabeth Ryan, Sp.D.V.E</h3>
-                    <span class="sozo-min-title">Dermatologi, Venereologi, & Estetika</span>
-
-                    <div class="sozo-min-meta">
-                        <span>STR: <strong class="str-number">UI00001652595312</strong></span>
-                        <span>Keahlian: <strong>Trikoskopi, Bedah Kulit &amp; Estetika Medis</strong></span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Dokter 2: dr. Gesha Kautzar Putri -->
-            <a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/" class="sozo-min-card">
-                <div class="sozo-min-img-wrapper">
-                    <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Gesha-Kautzar-Putri-M.Biomed-AAM.webp" alt="dr. Gesha Kautzar Putri, M.Biomed (AAM)">
-                </div>
-                <div class="sozo-min-info">
-                    <h3 class="sozo-min-name">dr. Gesha Kautzar Putri, M.Biomed (AAM)</h3>
-                    <span class="sozo-min-title">Anti-Aging & Estetika</span>
-
-                    <div class="sozo-min-meta">
-                        <span>STR: <strong class="str-number">KT00000123255767</strong></span>
-                        <span>Keahlian: <strong>Botox, Threadlift, Filler, Laser &amp; Skinbooster</strong></span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Dokter 3: dr. Audi Sugiharto -->
-            <a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/" class="sozo-min-card">
-                <div class="sozo-min-img-wrapper">
-                    <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Audi-Sugiharto-Sp.D.V.E.webp" alt="dr. Audi Sugiharto, Sp.D.V.E">
-                </div>
-                <div class="sozo-min-info">
-                    <h3 class="sozo-min-name">dr. Audi Sugiharto, Sp.D.V.E</h3>
-                    <span class="sozo-min-title">Dermatologi, Venereologi, & Estetika</span>
-
-                    <div class="sozo-min-meta">
-                        <span>STR: <strong class="str-number">VP00000073538568</strong></span>
-                        <span>Keahlian: <strong>Bedah Kulit, Bedah Kecantikan & Estetika Medis</strong></span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Dokter 4: dr. RR. Putri Rizkya -->
-            <a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-rr-putri-rizkya/" class="sozo-min-card">
-                <div class="sozo-min-img-wrapper">
-                    <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dokter-putri.webp" alt="dr. RR. Putri Rizkya">
-                </div>
-                <div class="sozo-min-info">
-                    <h3 class="sozo-min-name">dr. Putri Rizkya</h3>
-                    <span class="sozo-min-title">Anti-Aging & Estetika</span>
-
-                    <div class="sozo-min-meta">
-                        <span>STR: <strong class="str-number">3559 &bull;&bull;&bull;&bull;&bull;&bull; 2353</strong></span>
-                        <span>Keahlian: <strong>Injeksi, Kontur Wajah, Laser &amp; Skin Booster</strong></span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Dokter 5: dr. Syerli Rahmadeni -->
-            <a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/" class="sozo-min-card">
-                <div class="sozo-min-img-wrapper">
-                    <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr-sherly.webp" alt="dr. Syerli Rahmadeni">
-                </div>
-                <div class="sozo-min-info">
-                    <h3 class="sozo-min-name">dr. Syerli Rahmadeni</h3>
-                    <span class="sozo-min-title">Anti-Aging & Estetika</span>
-
-                    <div class="sozo-min-meta">
-                        <span>STR: <strong class="str-number">1321100222169296</strong></span>
-                        <span>Keahlian: <strong>Estetika Wajah, Peremajaan &amp; Kontur Wajah</strong></span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
+    <div class="sozo-min-header">
+      <h1>Dokter Komite</h1>
+      <p>Profil profesional dewan dokter komite spesialis dan praktisi medis Sozo Skin Clinic yang tersertifikasi resmi.</p>
     </div>
+
+    <ul class="sozo-min-grid">
+
+      <!-- Dokter 1: dr. Elisabeth Ryan -->
+      <li>
+        <article class="sozo-min-card">
+          <div class="sozo-min-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr-eli.webp" alt="dr. Elisabeth Ryan, Sp.DVE" width="800" height="800" loading="eager" decoding="async">
+          </div>
+          <div class="sozo-min-info">
+            <h2 class="sozo-min-name"><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/elisabeth-ryan/">dr. Elisabeth Ryan, Sp.D.V.E</a></h2>
+            <span class="sozo-min-title">Dermatologi, Venereologi, & Estetika</span>
+
+            <div class="sozo-min-meta">
+              <span>STR: <strong class="str-number">UI00001652595312</strong></span>
+              <span>Keahlian: <strong>Trikoskopi, Bedah Kulit &amp; Estetika Medis</strong></span>
+            </div>
+          </div>
+        </article>
+      </li>
+
+      <!-- Dokter 2: dr. Gesha Kautzar Putri -->
+      <li>
+        <article class="sozo-min-card">
+          <div class="sozo-min-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Gesha-Kautzar-Putri-M.Biomed-AAM.webp" alt="dr. Gesha Kautzar Putri, M.Biomed (AAM)" width="800" height="800" loading="eager" decoding="async">
+          </div>
+          <div class="sozo-min-info">
+            <h2 class="sozo-min-name"><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/gesha-kautzar-putri/">dr. Gesha Kautzar Putri, M.Biomed (AAM)</a></h2>
+            <span class="sozo-min-title">Anti-Aging & Estetika</span>
+
+            <div class="sozo-min-meta">
+              <span>STR: <strong class="str-number">KT00000123255767</strong></span>
+              <span>Keahlian: <strong>Botox, Threadlift, Filler, Laser &amp; Skinbooster</strong></span>
+            </div>
+          </div>
+        </article>
+      </li>
+
+      <!-- Dokter 3: dr. Audi Sugiharto -->
+      <li>
+        <article class="sozo-min-card">
+          <div class="sozo-min-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr.-Audi-Sugiharto-Sp.D.V.E.webp" alt="dr. Audi Sugiharto, Sp.D.V.E" width="800" height="800" loading="eager" decoding="async">
+          </div>
+          <div class="sozo-min-info">
+            <h2 class="sozo-min-name"><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/audi-sugiharto/">dr. Audi Sugiharto, Sp.D.V.E</a></h2>
+            <span class="sozo-min-title">Dermatologi, Venereologi, & Estetika</span>
+
+            <div class="sozo-min-meta">
+              <span>STR: <strong class="str-number">VP00000073538568</strong></span>
+              <span>Keahlian: <strong>Bedah Kulit, Bedah Kecantikan & Estetika Medis</strong></span>
+            </div>
+          </div>
+        </article>
+      </li>
+
+      <!-- Dokter 4: dr. RR. Putri Rizkya -->
+      <li>
+        <article class="sozo-min-card">
+          <div class="sozo-min-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dokter-putri.webp" alt="dr. RR. Putri Rizkya" width="800" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="sozo-min-info">
+            <h2 class="sozo-min-name"><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-rr-putri-rizkya/">dr. Putri Rizkya</a></h2>
+            <span class="sozo-min-title">Anti-Aging & Estetika</span>
+
+            <div class="sozo-min-meta">
+              <span>STR: <strong class="str-number">3559 &bull;&bull;&bull;&bull;&bull;&bull; 2353</strong></span>
+              <span>Keahlian: <strong>Injeksi, Kontur Wajah, Laser &amp; Skin Booster</strong></span>
+            </div>
+          </div>
+        </article>
+      </li>
+
+      <!-- Dokter 5: dr. Syerli Rahmadeni -->
+      <li>
+        <article class="sozo-min-card">
+          <div class="sozo-min-img-wrapper">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/dr-sherly.webp" alt="dr. Syerli Rahmadeni" width="800" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="sozo-min-info">
+            <h2 class="sozo-min-name"><a href="https://sozoskinclinic.com/tim-dokter-sozo-skin/dr-syerli-rahmadeni/">dr. Syerli Rahmadeni</a></h2>
+            <span class="sozo-min-title">Anti-Aging & Estetika</span>
+
+            <div class="sozo-min-meta">
+              <span>STR: <strong class="str-number">1321100222169296</strong></span>
+              <span>Keahlian: <strong>Estetika Wajah, Peremajaan &amp; Kontur Wajah</strong></span>
+            </div>
+          </div>
+        </article>
+      </li>
+
+    </ul>
+  </div>
 </div>
 
 <script type="application/ld+json">

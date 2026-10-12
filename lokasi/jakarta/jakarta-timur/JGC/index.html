@@ -1,0 +1,890 @@
+<!-- Google Font Poppins Preconnect & Stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- SYSTEM PRELOAD FONTAWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="sozo-location-page-wrapper">
+  <div class="sozo-location-page-container">
+
+
+    <!-- ==================== 2. MASTER-DETAIL SECTION (MAPS & INFO - SINGLE BRANCH) ==================== -->
+    <div class="sozo-clean-layout-single" id="lokasi">
+
+      <nav class="sozo-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li class="separator" aria-hidden="true">/</li>
+          <li><a href="https://sozoskinclinic.com/lokasi/">Lokasi</a></li>
+          <li class="separator" aria-hidden="true">/</li>
+          <li><a href="https://sozoskinclinic.com/lokasi/jakarta/">Jakarta</a></li>
+          <li class="separator" aria-hidden="true">/</li>
+          <li><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/">Jakarta Timur</a></li>
+          <li class="separator" aria-hidden="true">/</li>
+          <li aria-current="page"><span class="current">JGC</span></li>
+        </ol>
+      </nav>
+      <div class="sozo-gallery-header" style="margin-bottom:24px;">
+        <h2 class="sozo-gallery-title"> Klinik Kecantikan Terbaik di JGC (Jakarta Garden City)</h2>
+        <p class="sozo-gallery-desc">Pilih lokasi SOZO Skin Clinic yang paling dekat denganmu di area JGC, Jakarta Timur</p>
+      </div>
+
+      <!-- BADGE / PILL CABANG (SATU CABANG) -->
+      <div class="sozo-single-branch-nav">
+        <button type="button" class="sozo-branch-pill active" data-branch="0">
+          <svg class="sozo-pill-icon" viewBox="0 0 384 512">
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+          </svg>
+          <div class="sozo-pill-content">
+            <span class="sozo-pill-title">JGC</span>
+            <span class="sozo-pill-sub">Cakung, Jakarta Timur</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- DETAIL CARD -->
+      <div class="sozo-clean-content-single">
+        <div class="sozo-detail-card" id="sozoDetailCard">
+
+          <div class="sozo-detail-map">
+            <iframe id="sozoMapIframe" src="https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20JGC%20Jakarta%20Garden%20City&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
+          </div>
+
+          <div class="sozo-detail-body">
+            <div class="sozo-detail-header">
+              <h2 class="sozo-detail-name" id="sozoDetailName">Sozo Skin Clinic JGC</h2>
+              <!-- TODO: rating & jumlah ulasan Google untuk cabang JGC tidak ada di halaman sumber, jadi tidak saya isi angka. Ganti dengan angka aslinya, atau pakai link di bawah. -->
+              <a class="sozo-detail-rating" id="sozoDetailRating" href="https://maps.google.com/?q=Sozo+Skin+Clinic+-+JGC+Jakarta+Garden+City" target="_blank" rel="noopener"> ★ 4,9 (1.090 ulasan di Google Maps)</a>
+            </div>
+
+            <p class="sozo-detail-address" id="sozoDetailAddress">
+              Ruko New East, Jl. Jakarta Garden City Boulevard, Cakung, Jakarta Timur, DKI Jakarta 13910
+            </p>
+
+            <div class="sozo-detail-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20JGC%20%5Bsrc%3AORG-JGC%5D" id="sozoWaBtn" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa sozo-master-cta">
+                Buat Jadwal
+              </a>
+              <a href="https://maps.google.com/?q=Sozo+Skin+Clinic+-+JGC+Jakarta+Garden+City" id="sozoMapBtn" target="_blank" rel="noopener" class="sozo-btn sozo-btn-map">
+                Buka Maps &gt;
+              </a>
+            </div>
+
+            <div class="sozo-schedule-card">
+              <div class="sozo-schedule-header">
+                <svg viewBox="0 0 448 512">
+                  <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H64zm128 0c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H192zm128 0c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V288c0-8.8-7.2-16-16-16H320z"/>
+                </svg>
+                <span>Waktu Kerja</span>
+              </div>
+              <!-- Jam operasional JGC menurut FAQ di halaman sumber: 09.00 - 20.00 setiap hari -->
+              <div class="sozo-schedule-list" id="sozoScheduleList">
+                <div class="sozo-schedule-row"><span>Senin</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Selasa</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Rabu</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Kamis</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Jumat</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Sabtu</span><span>09:00 - 20:00</span></div>
+                <div class="sozo-schedule-row"><span>Minggu</span><span>09:00 - 20:00</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== 3. CLINIC AMBIENCE SLIDER ==================== -->
+    <!-- TODO: foto suasana klinik JGC (ruang tunggu/treatment/konsultasi) tidak ikut terambil dari halaman sumber.
+         Ganti array `gallery` di branches[] pada script di bawah dengan URL foto asli klinik JGC. -->
+    <div class="sozo-gallery-section">
+      <div class="sozo-gallery-header">
+        <div class="sozo-gallery-pill">Suasana Klinik</div>
+        <h2 class="sozo-gallery-title">Fasilitas &amp; Ruang Perawatan Nyaman</h2>
+        <p class="sozo-gallery-desc">Ruang perawatan privat, higienis, dan berstandar medis untuk pengalaman treatment terbaikmu yang ada di klinik kecantikan JGC.</p>
+      </div>
+
+      <div class="sozo-slider-wrapper">
+        <div class="sozo-slider-container" id="sozoSliderContainer">
+          <div class="sozo-slider-track" id="sozoSliderTrack"></div>
+          <button type="button" class="sozo-slider-btn sozo-slider-prev" id="sozoSliderPrev" aria-label="Slide Sebelumnya">❮</button>
+          <button type="button" class="sozo-slider-btn sozo-slider-next" id="sozoSliderNext" aria-label="Slide Selanjutnya">❯</button>
+          <div class="sozo-slider-dots" id="sozoSliderDots"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 4. TREATMENT CATEGORIES ==================== -->
+    <!-- Kategori diambil dari tab kategori treatment yang ada di halaman JGC (Acne & Scar, Brightening,
+         Anti-Aging, Hair, Slimming), ditata ulang jadi grid kategori seperti di template Yogyakarta.
+         TODO: gambar kategori belum ada versi khusus JGC di halaman sumber, jadi sementara saya pakai
+         foto kategori yang sama dengan yang dipakai di halaman Yogyakarta (aset ini tampaknya generik/
+         dipakai lintas cabang). Ganti kalau kamu punya foto kategori yang lebih sesuai. -->
+    <div class="sozo-category-section">
+      <h2 class="sozo-category-heading">Temukan Perawatan Wajah dan Kulit di Klinik Kecantikan JGC Sozo Skin Clinic</h2>
+      <p class="sozo-category-sub">Pilih kategori perawatan kulit &amp; tubuh yang sesuai dengan kebutuhanmu</p>
+
+      <div class="sozo-category-grid">
+        <a href="https://sozoskinclinic.com/skin-treatment/acne-treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Acne-Single-Treatment-Acne-laser-facial.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Acne &amp;<br>Scar</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/skin-treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Skin-Bright-Facial-Medical-1.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Brightening</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/injectable-treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Injection.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Anti-Aging</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/hair-treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/03/Gemini_Generated_Image_qncw0qncw0qncw0q.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/slimming-treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Slimming-1-11.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Slimming</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/hair-removal-treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Hair-Removal-Underarm-Glow.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Removal</span>
+        </a>
+      </div>
+
+      <div class="sozo-category-cta-wrap">
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-btn">
+          <span>Lihat Semua Treatment</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ==================== 4.5 TESTIMONI & PROMO ====================
+         TODO: halaman JGC yang saya fetch tidak memuat teks testimoni before/after, kutipan pasien,
+         maupun kartu promo yang spesifik untuk cabang JGC (beda dengan halaman Yogyakarta). Karena
+         instruksinya tidak boleh mengarang copywriting, dua section ini (mirip section 4.5 & 4.6 di
+         kode Yogyakarta) sengaja saya lewati dulu. Kalau kamu punya foto before/after, kutipan pasien,
+         atau promo khusus JGC, kirim ke saya dan saya pasangkan dengan komponen slider yang sama
+         persis seperti di halaman Yogyakarta.
+    -->
+
+  </div>
+</div>
+
+<!-- ==================== 5. WHY CHOOSE SOZO SECTION ==================== -->
+<section class="sozo-why-section">
+  <div class="sozo-why-container">
+
+    <div class="sozo-why-header">
+      <h2>Keunggulan Sozo Dibanding Beauty Clinic Lain</h2>
+      <p>Komitmen kami adalah memberikan pelayanan terbaik, aman, dan tepercaya untuk pancarkan pesona alami Anda.</p>
+    </div>
+
+    <div class="sozo-why-grid">
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Tenaga Medis Profesional</strong>
+          <p class="sozo-why-card-text">Ditangani oleh Dokter berpengalaman.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-microscope"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Teknologi Terkini</strong>
+          <p class="sozo-why-card-text">Mesin berkualitas tinggi untuk hasil maksimal.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Pelayanan Terbaik</strong>
+          <p class="sozo-why-card-text">Klinik kecantikan yang nyaman dan ramah.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-handshake-angle"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Konsultasi Dokter Gratis</strong>
+          <p class="sozo-why-card-text">Reservasi sekarang, diskon 100rb!</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-tags"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Harga Terjangkau</strong>
+          <p class="sozo-why-card-text">Perawatan premium dengan harga terjangkau.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Klinik Kecantikan Terdekat</strong>
+          <p class="sozo-why-card-text">60+ cabang di Jakarta, Bogor, Depok, Tangerang, Bekasi, Medan, dan Semarang.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6. COMPACT MINIMAL BANNER CTA ==================== -->
+<section class="sozo-compact-cta-section">
+  <div class="sozo-compact-cta-container">
+    <div class="sozo-compact-cta-box">
+      <div class="sozo-compact-cta-text">
+        <h3 class="sozo-compact-cta-title">Temukan Lokasi Klinik Kecantikan Sozo terdekat di JGC. Hubungi Untuk Reservasi</h3>
+      </div>
+      <div class="sozo-compact-cta-action">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20JGC%20%5Bsrc%3AORG-JGC%5D" target="_blank" rel="noopener" class="sozo-custom-cta-btn sozo-master-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>Reservasi via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6.5 CARA MENUJU LOKASI (EXPANDABLE) ==================== -->
+<section class="sozo-directions-section">
+  <div class="sozo-directions-container">
+
+    <div class="sozo-directions-header">
+      <div class="sozo-directions-pill">Panduan Rute &amp; Akses</div>
+      <h2 class="sozo-directions-title">Cara Menuju ke Lokasi Sozo Skin Clinic JGC</h2>
+      <p class="sozo-directions-desc">Sozo Skin Clinic JGC berlokasi di kawasan Jakarta Garden City (JGC), tepatnya di Ruko New East, Jl. Jakarta Garden City Boulevard, Cakung, Jakarta Timur. Klinik berada di kawasan komersial yang berkembang pesat dan mudah dijangkau dari berbagai area di Jakarta Timur maupun Bekasi. Lokasinya juga dekat dengan pusat perbelanjaan, kawasan hunian, serta akses jalan utama sehingga memudahkan Anda datang untuk konsultasi maupun treatment.</p>
+    </div>
+
+    <div class="sozo-directions-list">
+
+      <!-- JGC -->
+      <div class="sozo-direction-item active">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="true">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Menuju Sozo Skin Clinic JGC</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content" style="max-height: 2000px;">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-lead">Ruko New East, Jl. Jakarta Garden City Boulevard, Cakung, Jakarta Timur, DKI Jakarta 13910</p>
+            <p class="sozo-direction-desc-text">Klinik berada di kawasan komersial yang berkembang pesat dan mudah dijangkau dari berbagai area di Jakarta Timur maupun Bekasi. Lokasinya juga dekat dengan pusat perbelanjaan, kawasan hunian, serta akses jalan utama sehingga memudahkan Anda datang untuk konsultasi maupun treatment.</p>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-car"></i> Akses Kendaraan Pribadi</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Dari arah Kelapa Gading:</strong> Arahkan kendaraan menuju Jl. Boulevard Barat kemudian lanjutkan melalui Jl. Raya Bekasi menuju kawasan Jakarta Garden City. Masuk ke Jl. Jakarta Garden City Boulevard dan ikuti jalan utama hingga menemukan kawasan Ruko New East, tempat Sozo Skin Clinic – JGC berada.</li>
+                <li><strong>Dari arah Harapan Indah / Bekasi Barat:</strong> Melalui Jl. Harapan Indah Boulevard atau Jl. Sultan Agung, arahkan kendaraan menuju kawasan Cakung kemudian masuk ke Jakarta Garden City Boulevard. Klinik berada di area komersial yang mudah diakses dan memiliki area parkir yang nyaman.</li>
+                <li><strong>Dari arah Pulomas / Cempaka Putih:</strong> Gunakan akses melalui Jl. Perintis Kemerdekaan menuju Cakung, kemudian lanjutkan perjalanan ke Jakarta Garden City Boulevard. Sozo Skin Clinic berada di kawasan Ruko New East, yang dapat ditemukan dengan mudah menggunakan Google Maps.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-bus"></i> Akses Transportasi Umum</h4>
+              <ul class="sozo-route-list">
+                <li><strong>KRL Commuter Line:</strong> Jika menggunakan KRL Commuter Line, Anda dapat turun di Stasiun Klender Baru atau Stasiun Cakung, kemudian melanjutkan perjalanan menggunakan ojek atau taksi online menuju Sozo Skin Clinic – JGC dengan estimasi waktu sekitar 10–15 menit.</li>
+                <li><strong>TransJakarta:</strong> Anda dapat menggunakan layanan TransJakarta menuju koridor yang melayani kawasan Cakung atau Jakarta Garden City, kemudian melanjutkan perjalanan menggunakan ojek atau taksi online menuju Ruko New East.</li>
+                <li><strong>Ojek Online / Taksi Online:</strong> Cukup masukkan tujuan Sozo Skin Clinic – JGC atau alamat Ruko New East, Jl. Jakarta Garden City Boulevard, Cakung pada aplikasi navigasi. Lokasi klinik berada di kawasan komersial JGC yang mudah ditemukan dan memiliki akses kendaraan yang baik.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-building"></i> Landmark Terdekat</h4>
+              <ul class="sozo-route-list">
+                <li>AEON Mall Jakarta Garden City</li>
+                <li>Jakarta Garden City (JGC)</li>
+                <li>Ruko New East</li>
+                <li>Global Mandiri School</li>
+                <li>Modern Golf &amp; Country Club</li>
+                <li>Jalan Jakarta Garden City Boulevard</li>
+                <li>Akses Tol JORR (Jakarta Outer Ring Road)</li>
+              </ul>
+              <p class="sozo-direction-desc-text">Lokasi yang strategis ini memudahkan Anda melakukan treatment sebelum atau setelah berbelanja, bekerja, mengantar anak sekolah, maupun beraktivitas di kawasan Jakarta Garden City, Cakung, Harapan Indah, Kelapa Gading, dan sekitarnya.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== 7. FAQ SECTION ==================== -->
+<section class="sozo-faq-section">
+  <div class="sozo-section-header">
+    <h2>Pertanyaan yang Sering Diajukan di Klinik Kecantikan JGC</h2>
+  </div>
+
+  <div class="sozo-faq-wrapper">
+    <details class="sozo-faq-item">
+      <summary>Apa yang membuat Sozo Skin menjadi pilihan klinik kecantikan di JGC?</summary>
+      <div class="sozo-faq-content">Sozo Skin Clinic menghadirkan layanan perawatan yang menggabungkan konsultasi dokter estetika, teknologi modern, serta pilihan treatment yang lengkap dalam satu klinik. Sebelum menentukan jenis treatment, dokter akan melakukan analisis kondisi kulit sehingga setiap pasien mendapatkan rekomendasi yang sesuai dengan kebutuhan, bukan berdasarkan tren semata.<br><br>Selain kualitas treatment, Sozo Skin juga mengutamakan kenyamanan selama proses perawatan melalui ruang treatment yang bersih, prosedur sterilisasi alat, serta pelayanan yang profesional. Pendekatan ini membantu setiap pasien menjalani treatment dengan lebih aman dan nyaman.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Di mana lokasi Sozo Skin Clinic JGC?</summary>
+      <div class="sozo-faq-content">Sozo Skin Clinic JGC berlokasi di Ruko New East, Jl. Jakarta Garden City Boulevard, Cakung, Jakarta Timur, DKI Jakarta 13910. Lokasinya berada di kawasan Jakarta Garden City yang mudah dijangkau dari Cakung, Harapan Indah, Kelapa Gading, Pulomas, hingga wilayah Bekasi Barat.<br><br>Klinik juga berada tidak jauh dari AEON Mall Jakarta Garden City serta berbagai kawasan hunian dan pusat bisnis di JGC, sehingga mudah ditemukan menggunakan Google Maps maupun aplikasi navigasi lainnya.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Treatment apa saja yang tersedia di Sozo Skin Clinic JGC?</summary>
+      <div class="sozo-faq-content">Sozo Skin Clinic JGC menyediakan berbagai treatment untuk wajah, kulit, rambut, hingga tubuh. Anda dapat memilih facial treatment, acne treatment, chemical peeling, IPL, laser treatment, skin booster, botox, filler, thread lift, hingga berbagai treatment anti-aging yang bertujuan menjaga kesehatan dan penampilan kulit.<br><br>Selain itu tersedia pula hair treatment untuk membantu mengatasi rambut rontok serta berbagai slimming treatment dan body contouring yang dirancang untuk membantu membentuk proporsi tubuh secara lebih optimal. Seluruh treatment akan direkomendasikan berdasarkan hasil konsultasi bersama dokter.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Bagaimana penanganan jerawat dan bekas jerawat di Sozo Skin JGC?</summary>
+      <div class="sozo-faq-content">Penanganan jerawat dilakukan berdasarkan kondisi kulit masing-masing pasien. Setelah konsultasi, dokter dapat merekomendasikan kombinasi treatment seperti facial acne, IPL Acne, chemical peeling, maupun laser untuk membantu mengurangi jerawat aktif, minyak berlebih, dan peradangan pada kulit.<br><br>Untuk bekas jerawat seperti noda hitam maupun bopeng, tersedia berbagai pilihan treatment yang bertujuan memperbaiki tekstur kulit dan merangsang pembentukan kolagen, seperti laser, subcision, PRP, maupun kombinasi treatment lainnya. Dokter akan menjelaskan estimasi jumlah sesi serta hasil yang dapat diharapkan sesuai kondisi kulit Anda.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Pilihan treatment anti-aging apa saja yang tersedia?</summary>
+      <div class="sozo-faq-content">Sozo Skin JGC menyediakan berbagai treatment anti-aging untuk membantu mengurangi garis halus, kerutan, kulit kendur, maupun tanda-tanda penuaan lainnya. Pilihan treatment meliputi skin booster, botox, filler, thread lift, HIFU, hingga laser rejuvenation yang bekerja merangsang produksi kolagen agar kulit tetap terasa kencang dan tampak lebih muda.<br><br>Rekomendasi treatment akan disesuaikan dengan usia, kondisi kulit, serta tujuan perawatan sehingga hasil yang diperoleh tetap natural dan sesuai kebutuhan masing-masing pasien.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Apakah tersedia treatment untuk rambut rontok?</summary>
+      <div class="sozo-faq-content">Sozo Skin JGC juga menyediakan berbagai pilihan hair treatment yang bertujuan membantu mengurangi rambut rontok, menjaga kesehatan kulit kepala, serta merangsang pertumbuhan rambut baru.<br><br>Sebelum memulai treatment, dokter akan melakukan evaluasi terhadap kondisi kulit kepala dan penyebab rambut rontok. Berdasarkan hasil pemeriksaan tersebut, dokter akan menyusun rencana perawatan yang paling sesuai agar hasil treatment menjadi lebih optimal.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Apakah tersedia treatment slimming di Sozo Skin JGC?</summary>
+      <div class="sozo-faq-content">Selain perawatan wajah, Sozo Skin JGC menyediakan berbagai pilihan treatment slimming dan body contouring untuk membantu mengurangi lemak di area tertentu seperti perut, paha, lengan, maupun bagian tubuh lainnya tanpa prosedur operasi.<br><br>Program treatment akan disesuaikan dengan kondisi tubuh, target yang ingin dicapai, serta jumlah sesi yang direkomendasikan oleh dokter. Pendekatan ini membantu hasil perawatan menjadi lebih optimal dan realistis.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Siapa saja yang dapat melakukan treatment di Sozo Skin JGC?</summary>
+      <div class="sozo-faq-content">Sozo Skin JGC melayani pasien pria maupun wanita dengan berbagai kebutuhan perawatan kulit dan tubuh. Banyak treatment yang memang dirancang untuk semua kalangan, seperti facial, acne treatment, laser, hair treatment, hingga treatment anti-aging.<br><br>Dokter akan menyesuaikan metode perawatan berdasarkan karakteristik kulit, gaya hidup, maupun tujuan treatment sehingga setiap pasien memperoleh penanganan yang lebih personal.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Mengapa konsultasi dengan dokter penting sebelum treatment?</summary>
+      <div class="sozo-faq-content">Konsultasi merupakan tahap awal untuk mengetahui kondisi kulit secara menyeluruh sebelum menjalani treatment. Pada sesi ini dokter akan mengevaluasi keluhan, riwayat perawatan sebelumnya, serta menjelaskan pilihan treatment yang paling sesuai berdasarkan kebutuhan masing-masing pasien.<br><br>Melalui konsultasi, pasien juga memperoleh informasi mengenai manfaat treatment, jumlah sesi yang disarankan, kemungkinan hasil yang dapat dicapai, serta perawatan setelah treatment sehingga proses perawatan menjadi lebih terarah dan sesuai ekspektasi.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Bagaimana jam operasional Sozo Skin Clinic JGC?</summary>
+      <div class="sozo-faq-content">Sozo Skin Clinic JGC melayani pasien setiap hari dengan jam operasional yang dirancang agar tetap nyaman bagi pasien yang bekerja, berkuliah, maupun memiliki aktivitas padat. Jam operasional Sozo JGC adalah di jam 09.00 - 20.00.<br><br>Anda dapat menghubungi tim Sozo Skin melalui WhatsApp atau melihat informasi pada website resmi.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Bagaimana cara melakukan reservasi di Sozo Skin Clinic JGC?</summary>
+      <div class="sozo-faq-content">Reservasi dapat dilakukan melalui WhatsApp, telepon, maupun formulir booking yang tersedia di website Sozo Skin Clinic. Dengan melakukan reservasi terlebih dahulu, Anda dapat memilih jadwal konsultasi maupun treatment sesuai waktu yang diinginkan sehingga proses kunjungan menjadi lebih praktis.<br><br>Bagi pasien yang masih bingung menentukan treatment, tim Sozo Skin akan membantu menjadwalkan konsultasi dengan dokter agar Anda mendapatkan rekomendasi perawatan berdasarkan kondisi kulit, kebutuhan, serta hasil yang ingin dicapai.</div>
+    </details>
+
+    <details class="sozo-faq-item">
+      <summary>Mengapa memilih Sozo Skin Clinic JGC dibanding klinik kecantikan lainnya?</summary>
+      <div class="sozo-faq-content">Sozo Skin Clinic JGC menawarkan lebih dari sekadar treatment kecantikan. Setiap pasien mendapatkan pendekatan yang personal melalui konsultasi dokter, analisis kondisi kulit, serta rekomendasi perawatan yang disesuaikan dengan kebutuhan masing-masing.<br><br>Lokasinya yang berada di kawasan Jakarta Garden City juga memberikan kemudahan akses bagi masyarakat di Cakung, Harapan Indah, Kelapa Gading, Pulomas, hingga Bekasi Barat. Didukung teknologi modern, tenaga medis profesional, serta pilihan treatment yang lengkap, Sozo Skin menjadi solusi bagi Anda yang ingin melakukan perawatan kulit dan tubuh secara optimal.</div>
+    </details>
+  </div>
+</section>
+
+<!-- FAQ styles - identik dengan yang dipakai di halaman Yogyakarta -->
+<style>
+  .sozo-faq-section {
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+  }
+
+  .sozo-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .sozo-section-header h2 {
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 700;
+    color: #1A2080;
+    margin: 0 0 10px 0;
+    line-height: 1.25;
+  }
+
+  .sozo-section-header p {
+    font-size: clamp(13.5px, 1.5vw, 15px);
+    color: #41413E;
+    margin: 0;
+  }
+
+  .sozo-faq-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .sozo-faq-item {
+    background: #ffffff;
+    border: 1px solid #ececf2;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(16,18,64,0.03);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .sozo-faq-item:hover {
+    box-shadow: 0 6px 16px rgba(26,32,128,0.08);
+    border-color: #d9dbf0;
+  }
+
+  .sozo-faq-item summary {
+    padding: 20px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #1A2080;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    background-color: #ffffff;
+    transition: background 0.2s ease;
+    padding-right: 50px;
+  }
+
+  .sozo-faq-item summary:hover {
+    background-color: #fcfcfd;
+  }
+
+  .sozo-faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .sozo-faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #1A2080;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+  }
+
+  .sozo-faq-item[open] summary::after {
+    content: '−';
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .sozo-faq-item[open] summary {
+    border-bottom: 1px solid #ececf2;
+    background-color: #f8f9fc;
+  }
+
+  .sozo-faq-content {
+    padding: 20px 24px;
+    color: #41413E;
+    font-size: 15px;
+    line-height: 1.7;
+    background-color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-faq-section { margin-bottom: 60px; }
+    .sozo-faq-item summary { font-size: 15px; padding: 16px 20px; padding-right: 45px; }
+    .sozo-faq-content { font-size: 14px; padding: 16px 20px; }
+    .sozo-faq-item summary::after { right: 16px; }
+  }
+</style>
+
+<!-- ==================== SCHEMA MARKUP (WEBPAGE + BREADCRUMBLIST) ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/jgc/#webpage",
+      "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/jgc/",
+      "name": "Klinik Kecantikan Terbaik di JGC (Jakarta Garden City) - Sozo Skin Clinic",
+      "description": "Pilih lokasi SOZO Skin Clinic yang paling dekat denganmu di area JGC, Jakarta Timur.",
+      "inLanguage": "id",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
+      "about": { "@id": "https://sozoskinclinic.com/#organization" },
+      "breadcrumb": { "@id": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/jgc/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/jgc/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lokasi",
+          "item": "https://sozoskinclinic.com/lokasi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Jakarta",
+          "item": "https://sozoskinclinic.com/lokasi/jakarta/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Jakarta Timur",
+          "item": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "JGC"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ==================== JAVASCRIPT CONTROLLER ==================== -->
+<script>
+(function() {
+  const MASTER_WA_URL = "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20JGC%20%5Bsrc%3AORG-JGC%5D";
+
+  const branches = [
+    {
+      name: "Sozo Skin Clinic JGC",
+      address: "Ruko New East, Jl. Jakarta Garden City Boulevard, Cakung, Jakarta Timur, DKI Jakarta 13910",
+      mapSrc: "https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20JGC%20Jakarta%20Garden%20City&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      mapLink: "https://maps.google.com/?q=Sozo+Skin+Clinic+-+JGC+Jakarta+Garden+City",
+      hours: [
+        {day: "Senin", time: "09:00 - 20:00"},
+        {day: "Selasa", time: "09:00 - 20:00"},
+        {day: "Rabu", time: "09:00 - 20:00"},
+        {day: "Kamis", time: "09:00 - 20:00"},
+        {day: "Jumat", time: "09:00 - 20:00"},
+        {day: "Sabtu", time: "09:00 - 20:00"},
+        {day: "Minggu", time: "09:00 - 20:00"}
+      ],
+      // TODO: ganti dengan foto interior klinik JGC yang asli (belum tersedia di halaman sumber)
+      gallery: [
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-1-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-muda-2-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-3-scaled.webp",
+        "https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/sozo-iskandar-4-scaled.webp"
+      ]
+    }
+  ];
+
+  function getPerView() {
+    const w = window.innerWidth;
+    if (w <= 768) return 1;
+    if (w <= 992) return 2;
+    return 3;
+  }
+
+  function initGenericSlider(trackId, prevId, nextId, dotsId, containerId, autoInterval) {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const dotsContainer = document.getElementById(dotsId);
+    const container = document.getElementById(containerId);
+
+    if (!track) return null;
+
+    let currentIndex = 0;
+    let autoTimer = null;
+
+    function getSlides() {
+      return track.children;
+    }
+
+    function buildDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      const total = getSlides().length;
+      const perView = getPerView();
+      const count = Math.max(1, total - perView + 1);
+
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'sozo-slider-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dot.addEventListener('click', () => {
+          goTo(i);
+          resetAuto();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function goTo(index) {
+      const slides = getSlides();
+      const total = slides.length;
+      if (total === 0) return;
+
+      const perView = getPerView();
+      const maxIndex = Math.max(0, total - perView);
+
+      if (index < 0) index = 0;
+      if (index > maxIndex) index = maxIndex;
+      currentIndex = index;
+
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = 16;
+      const move = (slideWidth + gap) * currentIndex;
+
+      track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+      track.style.transform = `translateX(-${move}px)`;
+
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.sozo-slider-dot');
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === currentIndex));
+      }
+    }
+
+    function next() {
+      const total = getSlides().length;
+      const maxIndex = Math.max(0, total - getPerView());
+      if (currentIndex >= maxIndex) goTo(0);
+      else goTo(currentIndex + 1);
+    }
+
+    function prev() {
+      const total = getSlides().length;
+      const maxIndex = Math.max(0, total - getPerView());
+      if (currentIndex <= 0) goTo(maxIndex);
+      else goTo(currentIndex - 1);
+    }
+
+    function startAuto() {
+      if (autoInterval && !autoTimer) {
+        autoTimer = setInterval(next, autoInterval);
+      }
+    }
+
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function resetAuto() {
+      stopAuto();
+      startAuto();
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        next();
+        resetAuto();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prev();
+        resetAuto();
+      });
+    }
+
+    if (container) {
+      container.addEventListener('mouseenter', stopAuto);
+      container.addEventListener('mouseleave', startAuto);
+
+      let startX = 0;
+      let startY = 0;
+      let currentX = 0;
+      let isTouching = false;
+      let isHorizontal = null;
+
+      container.addEventListener('touchstart', (e) => {
+        stopAuto();
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        currentX = startX;
+        isTouching = true;
+        isHorizontal = null;
+      }, { passive: true });
+
+      container.addEventListener('touchmove', (e) => {
+        if (!isTouching) return;
+        const touch = e.touches[0];
+        currentX = touch.clientX;
+        const diffX = currentX - startX;
+        const diffY = touch.clientY - startY;
+
+        if (isHorizontal === null) {
+          if (Math.abs(diffX) > 6 || Math.abs(diffY) > 6) {
+            isHorizontal = Math.abs(diffX) > Math.abs(diffY);
+          }
+        }
+
+        if (isHorizontal) {
+          track.style.transition = 'none';
+          const slides = getSlides();
+          if (slides.length > 0) {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            const gap = 16;
+            const baseMove = (slideWidth + gap) * currentIndex;
+            track.style.transform = `translateX(${-baseMove + diffX}px)`;
+          }
+        }
+      }, { passive: true });
+
+      function handleTouchEnd() {
+        if (!isTouching) return;
+        isTouching = false;
+        track.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)';
+
+        const diffX = startX - currentX;
+        if (isHorizontal && Math.abs(diffX) > 35) {
+          if (diffX > 0) next();
+          else prev();
+        } else {
+          goTo(currentIndex);
+        }
+        resetAuto();
+      }
+
+      container.addEventListener('touchend', handleTouchEnd, { passive: true });
+      container.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+    }
+
+    buildDots();
+    goTo(0);
+    startAuto();
+
+    return {
+      refresh: () => {
+        buildDots();
+        goTo(currentIndex);
+      },
+      goTo: goTo
+    };
+  }
+
+  let gallerySliderTrack = document.getElementById('sozoSliderTrack');
+  let ambienceSliderCtrl = null;
+
+  function renderAmbience(images) {
+    if (!gallerySliderTrack) return;
+    gallerySliderTrack.innerHTML = images.map(img => `
+      <div class="sozo-slider-slide">
+        <img src="${img}" alt="Suasana Sozo Skin Clinic JGC" loading="lazy">
+      </div>
+    `).join('');
+
+    ambienceSliderCtrl = initGenericSlider(
+      'sozoSliderTrack',
+      'sozoSliderPrev',
+      'sozoSliderNext',
+      'sozoSliderDots',
+      'sozoSliderContainer',
+      4500
+    );
+  }
+
+  window.selectBranch = function(idx) {
+    document.querySelectorAll('.sozo-branch-pill').forEach(btn => {
+      btn.classList.toggle('active', parseInt(btn.getAttribute('data-branch')) === idx);
+    });
+
+    const data = branches[idx];
+    const card = document.getElementById('sozoDetailCard');
+    if (!card || !data) return;
+    card.classList.add('sliding');
+
+    setTimeout(() => {
+      document.getElementById('sozoMapIframe').src = data.mapSrc;
+      document.getElementById('sozoDetailName').textContent = data.name;
+      document.getElementById('sozoDetailAddress').textContent = data.address;
+      document.getElementById('sozoMapBtn').href = data.mapLink;
+      document.getElementById('sozoWaBtn').href = MASTER_WA_URL;
+
+      const scheduleBox = document.getElementById('sozoScheduleList');
+      if (scheduleBox) {
+        scheduleBox.innerHTML = data.hours.map(h => `
+          <div class="sozo-schedule-row"><span>${h.day}</span><span>${h.time}</span></div>
+        `).join('');
+      }
+
+      renderAmbience(data.gallery);
+      card.classList.remove('sliding');
+    }, 140);
+  };
+
+  function setupDirections() {
+    document.querySelectorAll('.sozo-direction-item').forEach(item => {
+      const toggle = item.querySelector('.sozo-direction-toggle');
+      const content = item.querySelector('.sozo-direction-content');
+
+      if (!toggle || !content) return;
+
+      toggle.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+
+        document.querySelectorAll('.sozo-direction-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            const otherToggle = other.querySelector('.sozo-direction-toggle');
+            const otherContent = other.querySelector('.sozo-direction-content');
+            if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+            if (otherContent) otherContent.style.maxHeight = null;
+          }
+        });
+
+        if (!isOpen) {
+          item.classList.add('active');
+          toggle.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          item.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (ambienceSliderCtrl) ambienceSliderCtrl.refresh();
+    }, 200);
+  });
+
+  function init() {
+    setupDirections();
+    window.selectBranch(0);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
