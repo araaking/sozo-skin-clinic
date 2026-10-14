@@ -1,537 +1,1167 @@
+<!-- ============================================================
+     UI SUBSISI (SUBCISION) TREATMENT - SOZO SKIN CLINIC
+     URL     : https://sozoskinclinic.com/skin-treatment/scar-treatment/subcision-treatment/
+     Style   : Sozo Design System V1.1 (design-system/), Elementor Safe, scoped
+     Layout  : Sama dengan halaman Immune Glow Injection
+     Seksi   : Breadcrumb -> Hero (H1, masalah, deskripsi, info, CTA, gambar)
+               -> Bottom Content (Deskripsi Ringkas Treatment & Expandable Detail)
+               -> FAQ
+     CSS+JS  : Sudah digabung di file ini (Font Awesome preload, Poppins,
+               CSS .sozo-sku-subcision-wrapper, JS FAQ).
+     JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList + FAQPage).
+               Isi FAQPage harus sama dengan FAQ di bawah. schema-markup.html
+               tidak dipakai lagi untuk halaman ini.
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/skin-treatment/scar-treatment/subcision-treatment/#webpage",
+      "url": "https://sozoskinclinic.com/skin-treatment/scar-treatment/subcision-treatment/",
+      "name": "Subsisi (Subcision) Treatment | Sozo Skin Clinic",
+      "description": "Subsisi membantu mengangkat bekas jerawat bopeng dengan melepas jaringan parut yang menarik kulit ke bawah. Hasilnya, permukaan kulit tampak lebih rata dan halus.",
+      "inLanguage": "id",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
+      "about": { "@id": "https://sozoskinclinic.com/#organization" },
+      "breadcrumb": { "@id": "https://sozoskinclinic.com/skin-treatment/scar-treatment/subcision-treatment/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/skin-treatment/scar-treatment/subcision-treatment/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://sozoskinclinic.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Treatment", "item": "https://sozoskinclinic.com/treatment/" },
+        { "@type": "ListItem", "position": 3, "name": "Skin Treatment", "item": "https://sozoskinclinic.com/skin-treatment/" },
+        { "@type": "ListItem", "position": 4, "name": "Scar Treatment", "item": "https://sozoskinclinic.com/skin-treatment/scar-treatment/" },
+        { "@type": "ListItem", "position": 5, "name": "Subsisi" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sozoskinclinic.com/skin-treatment/scar-treatment/subcision-treatment/#faq",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/skin-treatment/scar-treatment/subcision-treatment/#webpage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu subsisi (subcision)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Subsisi adalah perawatan untuk memperbaiki bekas jerawat bopeng dengan melepas jaringan parut di bawah kulit yang menarik kulit ke bawah. Setelah dilepas, kulit perlahan terangkat dan tampak lebih rata."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah subsisi sakit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wajah dibius terlebih dahulu, jadi rasa sakitnya minimal. Anda mungkin hanya merasakan sedikit tekanan saat tindakan berlangsung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ada downtime setelah subsisi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ada, tapi ringan. Biasanya muncul memar, bengkak, dan kemerahan yang mereda dalam beberapa hari. Anda tetap bisa beraktivitas seperti biasa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa sesi yang dibutuhkan dan kapan hasilnya terlihat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Subsisi dilakukan 1x sebulan. Jumlah sesinya tergantung kedalaman dan banyaknya bopeng, dan dokter akan menentukannya saat konsultasi. Hasil mulai terlihat setelah bengkak hilang, lalu terus membaik seiring terbentuknya kolagen baru."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah hasilnya permanen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jaringan parut yang sudah dilepas umumnya tidak menarik kulit lagi, jadi hasilnya tahan lama. Untuk bopeng yang cukup dalam, kadang dibutuhkan sesi tambahan atau kombinasi dengan treatment lain."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Siapa yang perlu konsultasi dulu sebelum subsisi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Beri tahu dokter jika Anda sedang berjerawat aktif di wajah, punya riwayat keloid, sedang minum obat pengencer darah, atau sedang hamil dan menyusui."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang perlu dilakukan setelah subsisi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jangan memijat atau memencet area wajah yang ditangani. Kompres dingin untuk mengurangi bengkak, hindari makeup dan olahraga berat beberapa hari, dan selalu pakai sunscreen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa harga subsisi di SOZO Skin Clinic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harga subsisi saat ini Rp299.000 dari harga normal Rp459.000. Klik tombol Buat Jadwal untuk konsultasi dan booking lewat WhatsApp."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+<!-- Font resmi Sozo: Poppins 400-800, di-load sekali -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  /* ============================================================
+     Token Sozo Design System V1.1, di-scope ke wrapper supaya
+     tidak bocor ke halaman Elementor lain. Density: compact
+     (treatment detail), sama dengan halaman Immune Glow.
+     ============================================================ */
   .sozo-sku-subcision-wrapper {
-    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #333;
-    line-height: 1.6;
-    background-color: #ffffff;
+    /* Color */
+    --color-brand-primary: #1A2080;
+    --color-brand-almond: #E9DFD5;
+    --color-white: #FFFFFF;
+    --color-text-primary: #171715;
+    --color-text-secondary: #41413E;
+    --color-text-muted: #777771;
+    --color-text-on-primary: #FFFFFF;
+    --color-border: #DFDBD4;
+    --color-border-strong: #C8C3BA;
+    --color-primary-hover: #151A6D;
+
+    /* Typography */
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --text-section-title: clamp(24px, 3vw, 32px);
+    --text-body: 16px;
+    --text-body-sm: 14px;
+    --text-label: 12px;
+    --leading-caption: 1.40;
+    --tracking-eyebrow: 0.12em;
+    --tracking-badge: 0.02em;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
+
+    /* Layout (compact: treatment detail) */
+    --container-max: 1280px;
+    --container-pad: 32px;
+    --section-y: var(--space-6);
+
+    /* Shape */
+    --radius-lg: 16px;
+    --radius-full: 999px;
+    --focus-ring: 2px solid var(--color-brand-primary);
+    --focus-offset: 3px;
+
+    /* Motion */
+    --duration-fast: 180ms;
+    --duration-card: 220ms;
+    --ease-standard: ease;
+
+    font-family: var(--font-family-primary) !important;
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-white) !important;
+    line-height: 1.5 !important;
   }
 
-  .sozo-sku-subcision-wrapper * { 
-    box-sizing: border-box; 
+  @media (max-width: 768px) {
+    .sozo-sku-subcision-wrapper {
+      --container-pad: 20px;
+      --section-y: var(--space-5);
+    }
   }
 
-  /* --- STYLING BREADCRUMB --- */
-  .sozo-sku-subcision-wrapper .sozo-breadcrumb {
-    padding: 15px 20px 25px 20px;
-    width: 100%;
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-subcision-wrapper {
+      --duration-fast: 0ms;
+      --duration-card: 0ms;
+    }
   }
-  .sozo-sku-subcision-wrapper .sozo-breadcrumb ol {
-    list-style: none !important;
+
+  .sozo-sku-subcision-wrapper,
+  .sozo-sku-subcision-wrapper * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-sku-subcision-wrapper h1,
+  .sozo-sku-subcision-wrapper h2,
+  .sozo-sku-subcision-wrapper h3,
+  .sozo-sku-subcision-wrapper p,
+  .sozo-sku-subcision-wrapper ul,
+  .sozo-sku-subcision-wrapper ol {
     margin: 0 !important;
     padding: 0 !important;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px; 
+    font-family: var(--font-family-primary) !important;
   }
-  .sozo-sku-subcision-wrapper .sozo-breadcrumb li {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #1A2080;
-  }
-  .sozo-sku-subcision-wrapper .sozo-breadcrumb a {
+
+  .sozo-sku-subcision-wrapper a {
     text-decoration: none !important;
-    color: #64748b !important;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  .sozo-sku-subcision-wrapper .sozo-breadcrumb a:hover { 
-    color: #1A2080 !important; 
-  }
-  .sozo-sku-subcision-wrapper .sozo-breadcrumb .separator {
-    color: #cbd5e1;
-    margin: 0 4px;
-    font-size: 12px;
-    user-select: none;
   }
 
-  /* --- STYLING HERO / DETAIL TREATMENT --- */
-  .sozo-sku-subcision-wrapper .sozo-treatment-hero {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 50px;
-    align-items: center;
-    margin-bottom: 50px;
-    padding: 0 20px;
-  }
-  .sozo-sku-subcision-wrapper .sozo-hero-text {
-    flex: 1; 
-  }
-  .sozo-sku-subcision-wrapper .sozo-hero-text h1 {
-    font-size: clamp(32px, 4vw, 42px) !important;
-    color: #1A2080 !important; 
-    margin: 0 0 16px 0 !important;
-    line-height: 1.2 !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.5px;
-  }
-  .sozo-sku-subcision-wrapper .sozo-hero-text p {
-    font-size: 16px !important;
-    color: #475569 !important;
-    margin: 0 0 30px 0 !important;
-    line-height: 1.6 !important;
-  }
-  
-  /* FIXED IMAGE SIZING */
-  .sozo-sku-subcision-wrapper .sozo-hero-image {
-    flex: 1; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .sozo-sku-subcision-wrapper .sozo-hero-image img {
-    width: 100%;
-    max-width: 480px; 
-    height: 340px; 
-    border-radius: 24px;
-    object-fit: cover;
-    object-position: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    display: block;
+  .sozo-sku-subcision-wrapper .sb-container {
+    width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
+    margin-inline: auto !important;
   }
 
-  /* Box Info (Durasi & Harga) */
-  .sozo-sku-subcision-wrapper .sozo-info-row {
-    display: flex;
-    gap: 40px; 
-    margin-bottom: 35px;
-    padding: 24px;
-    background-color: #f8fafc;
-    border-radius: 16px;
-    border: 1px solid #f1f5f9;
-  }
-  .sozo-sku-subcision-wrapper .sozo-info-col {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-  }
-  .sozo-sku-subcision-wrapper .sozo-info-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    background-color: #EEF2FF;
-    border-radius: 12px;
-    color: #1A2080;
-  }
-  .sozo-sku-subcision-wrapper .sozo-info-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .sozo-sku-subcision-wrapper .sozo-info-label {
-    font-size: 13px !important;
-    color: #64748b !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .sozo-sku-subcision-wrapper .sozo-info-value {
-    font-size: 20px !important;
-    color: #1A2080 !important; 
-    font-weight: 700 !important;
-  }
-  .sozo-sku-subcision-wrapper .sozo-price-old {
+  /* ============ BUTTON (design-system/components/button.md) ============ */
+  .sozo-sku-subcision-wrapper .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--space-2) !important;
+    min-height: 48px !important;
+    padding: 0 var(--space-6) !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--radius-full) !important;
+    font-family: var(--font-family-primary) !important;
     font-size: 14px !important;
-    color: #94a3b8 !important;
-    text-decoration: line-through;
-    margin-right: 8px;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .btn:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .btn:active {
+    transform: translateY(0) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: var(--focus-offset) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .btn--primary,
+  .sozo-sku-subcision-wrapper .btn--primary:visited {
+    background-color: var(--color-brand-primary) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .btn--primary:hover {
+    background-color: var(--color-primary-hover) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .btn__icon {
+    width: 16px !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    flex: none !important;
+  }
+
+  /* ============ BADGE (design-system/components/badge.md) ============ */
+  .sozo-sku-subcision-wrapper .badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 30px !important;
+    padding: 0 var(--space-3) !important;
+    border-radius: var(--radius-full) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-badge) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .badge--brand {
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .badge--label {
+    min-height: 30px !important;
+    padding: 0 18px !important;
+    margin-bottom: var(--space-4) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    letter-spacing: 0.25em !important;
+    text-transform: uppercase !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ BREADCRUMB (design-system/components/breadcrumb.md) ============ */
+  .sozo-sku-subcision-wrapper .breadcrumb {
+    padding-top: var(--space-4) !important;
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .breadcrumb__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: 13px !important;
+    line-height: var(--leading-caption) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .breadcrumb__list li {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-subcision-wrapper .breadcrumb__list li + li::before {
+    content: "/" !important;
+    color: var(--color-border-strong) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .breadcrumb a {
+    color: var(--color-text-muted) !important;
     font-weight: 500 !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
   }
 
-  /* Styling Tombol Primary */
-  .sozo-sku-subcision-wrapper .sozo-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 320px;
-    padding: 16px 24px;
-    background-color: #1A2080 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-size: 16px !important;
+  .sozo-sku-subcision-wrapper .breadcrumb a:hover {
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .breadcrumb a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-subcision-wrapper .breadcrumb__current {
+    color: var(--color-brand-primary) !important;
     font-weight: 600 !important;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
-    border: 2px solid #1A2080 !important;
-  }
-  .sozo-sku-subcision-wrapper .sozo-btn:hover {
-    background-color: #ffffff !important;
-    color: #1A2080 !important;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
   }
 
-  /* --- STYLING CTA BANNER --- */
-  .sozo-sku-subcision-wrapper .sozo-cta-wrapper {
-    padding: 0 20px;
+  /* ============ HERO ============ */
+  .sozo-sku-subcision-wrapper .sb-hero {
+    padding-bottom: var(--section-y) !important;
   }
-  .sozo-sku-subcision-wrapper .sozo-cta-banner {
-    background-color: #1A2080;
-    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
-    border-radius: 24px;
-    padding: 50px 30px;
-    margin-bottom: 50px;
-    text-align: center;
-    color: #ffffff;
-    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+
+  .sozo-sku-subcision-wrapper .sb-hero__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important;
+    gap: var(--space-8) !important;
+    align-items: center !important;
   }
-  .sozo-sku-subcision-wrapper .sozo-cta-banner h2 {
-    font-size: clamp(24px, 3vw, 32px) !important;
-    color: #ffffff !important;
-    margin: 0 0 15px 0 !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.5px;
-  }
-  .sozo-sku-subcision-wrapper .sozo-cta-banner p {
-    font-size: 16px !important;
-    color: #e2e8f0 !important;
-    margin: 0 auto 30px auto !important;
-    max-width: 600px;
-    line-height: 1.6 !important;
-  }
-  
-  .sozo-sku-subcision-wrapper .sozo-btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 36px;
-    background-color: #ffffff !important;
-    color: #1A2080 !important;
-    text-decoration: none !important;
-    font-size: 16px !important;
+
+  .sozo-sku-subcision-wrapper .sb-hero__title {
+    margin-bottom: var(--space-4) !important;
+    font-size: clamp(28px, 2.8vw, 38px) !important;
     font-weight: 700 !important;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border: 2px solid #ffffff !important;
-  }
-  .sozo-sku-subcision-wrapper .sozo-btn-secondary:hover {
-    background-color: transparent !important;
-    color: #ffffff !important;
-    transform: translateY(-3px);
+    line-height: 1.2 !important;
+    color: var(--color-brand-primary) !important;
   }
 
-  /* --- STYLING EXPLANATION & LOAD MORE --- */
-  .sozo-sku-subcision-wrapper .sozo-content-wrapper {
-    padding: 0 20px;
+  /* Masalah yang bisa diatasi */
+  .sozo-sku-subcision-wrapper .sb-problems {
+    margin-bottom: var(--space-4) !important;
   }
-  .sozo-sku-subcision-wrapper .sozo-description-section {
-    background-color: #ffffff;
-    border: 1px solid #f1f5f9;
-    border-radius: 24px;
-    padding: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  }
-  .sozo-sku-subcision-wrapper .sozo-description-section h2 {
-    font-size: 24px !important;
-    color: #1A2080 !important;
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-    font-weight: 800 !important;
-  }
-  .sozo-sku-subcision-wrapper .sozo-description-section p {
-    color: #475569 !important;
-    margin-bottom: 16px !important;
-    font-size: 16px !important;
-  }
-  
-  .sozo-sku-subcision-wrapper .sozo-expandable-content {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.4s ease-out;
-  }
-  .sozo-sku-subcision-wrapper .sozo-expandable-content.expanded {
-    grid-template-rows: 1fr;
-  }
-  .sozo-sku-subcision-wrapper .sozo-expandable-inner {
-    overflow: hidden;
-  }
-  
-  .sozo-sku-subcision-wrapper .sozo-load-more-btn {
-    background: none !important;
-    border: none !important;
-    color: #1A2080 !important;
-    font-size: 15px !important;
+
+  .sozo-sku-subcision-wrapper .sb-problems__label {
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-label) !important;
     font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-eyebrow) !important;
+    text-transform: uppercase !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-problems__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-problems__list li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Paragraf intro: justify, selebar kolom (sama dengan Infus Whitening) */
+  .sozo-sku-subcision-wrapper .sb-hero__desc {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    text-align: justify !important;
+    hyphens: auto !important;
+  }
+
+  /* Info: durasi, frekuensi, harga */
+  .sozo-sku-subcision-wrapper .sb-info {
+    list-style: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    margin-bottom: var(--space-5) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-info__item {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-3) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: var(--space-4) !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-info__item + .sb-info__item {
+    border-left: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-info__icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-info__text {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-info__label {
+    font-size: var(--text-label) !important;
+    font-weight: 500 !important;
+    line-height: var(--leading-caption) !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-info__value {
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Harga normal (dicoret) di atas harga promo */
+  .sozo-sku-subcision-wrapper .sb-info__price-old {
+    font-size: var(--text-label) !important;
+    font-weight: 500 !important;
+    line-height: var(--leading-caption) !important;
+    color: var(--color-text-muted) !important;
+    text-decoration: line-through !important;
+  }
+
+  /* Gambar treatment: standalone, rasio 4:3 (design-system/components/image.md) */
+  .sozo-sku-subcision-wrapper .sb-hero__media img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  /* ============ BOTTOM CONTENT (DESKRIPSI TREATMENT) ============ */
+  .sozo-sku-subcision-wrapper .sb-content {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-section-title {
+    margin-bottom: var(--space-4) !important;
+    font-size: var(--text-section-title) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-content__desc {
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    margin-bottom: var(--space-4) !important;
+    text-align: justify !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-content__subtitle {
+    margin: var(--space-2) 0 var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-content__checklist {
+    list-style: none !important;
+    margin: 0 0 var(--space-4) !important;
     padding: 0 !important;
-    margin-top: 15px !important;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: opacity 0.2s ease;
   }
-  .sozo-sku-subcision-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
-  .sozo-sku-subcision-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
-  .sozo-sku-subcision-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
 
-  /* --- STYLING FAQ ACCORDION --- */
-  .sozo-sku-subcision-wrapper .sozo-faq-section {
-    background-color: #ffffff;
-    border: 1px solid #f1f5f9;
-    border-radius: 24px;
-    padding: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  .sozo-sku-subcision-wrapper .sb-content__checklist li {
+    position: relative !important;
+    padding-left: 28px !important;
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
   }
-  .sozo-sku-subcision-wrapper .sozo-faq-section h2 {
-    font-size: 24px !important;
-    color: #1A2080 !important;
-    margin-top: 0 !important;
-    margin-bottom: 24px !important;
-    font-weight: 800 !important;
+
+  .sozo-sku-subcision-wrapper .sb-content__checklist li::before {
+    content: "\2713" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    font-weight: 700 !important;
+    color: var(--color-brand-primary) !important;
   }
-  .sozo-sku-subcision-wrapper .sozo-faq-item {
-    border-bottom: 1px solid #f1f5f9;
-    padding: 16px 0;
+
+  .sozo-sku-subcision-wrapper .sb-expandable {
+    display: grid !important;
+    grid-template-rows: 0fr !important;
+    transition: grid-template-rows var(--duration-card) var(--ease-standard) !important;
   }
-  .sozo-sku-subcision-wrapper .sozo-faq-item:last-child {
-    border-bottom: none;
+
+  .sozo-sku-subcision-wrapper .sb-expandable.is-expanded {
+    grid-template-rows: 1fr !important;
   }
-  .sozo-sku-subcision-wrapper .sozo-faq-question {
-    width: 100%;
+
+  .sozo-sku-subcision-wrapper .sb-expandable__inner {
+    overflow: hidden !important;
+    min-height: 0 !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-expand-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
     background: none !important;
     border: none !important;
-    text-align: left;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    color: #1e293b !important;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0 8px 0 !important;
-  }
-  .sozo-sku-subcision-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
-  .sozo-sku-subcision-wrapper .sozo-faq-question svg {
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-    margin-left: 16px;
-  }
-  .sozo-sku-subcision-wrapper .sozo-faq-question.active svg {
-    transform: rotate(180deg);
-    color: #1A2080;
-  }
-  .sozo-sku-subcision-wrapper .sozo-faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-  .sozo-sku-subcision-wrapper .sozo-faq-answer p {
-    color: #475569 !important;
+    padding: 0 !important;
+    margin-top: var(--space-1) !important;
+    color: var(--color-brand-primary) !important;
+    font-family: var(--font-family-primary) !important;
     font-size: 15px !important;
-    margin: 8px 0 16px 0 !important;
-    line-height: 1.6 !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard),
+                opacity var(--duration-fast) var(--ease-standard) !important;
   }
 
-  /* --- RESPONSIVE MOBILE FRIENDLY --- */
-  @media (max-width: 768px) {
-    .sozo-sku-subcision-wrapper .sozo-treatment-hero {
-      flex-direction: column;
-      gap: 30px;
-    }
-    .sozo-sku-subcision-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
-    
-    .sozo-sku-subcision-wrapper .sozo-hero-image img {
-      height: 250px; 
-      max-width: 100%;
+  .sozo-sku-subcision-wrapper .sb-expand-btn:hover {
+    color: var(--color-primary-hover) !important;
+    opacity: 0.85 !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-expand-btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-expand-btn svg {
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-expand-btn.is-active svg {
+    transform: rotate(180deg) !important;
+  }
+
+  /* ============ FAQ ============ */
+  .sozo-sku-subcision-wrapper .sb-faq {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__item {
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__question {
+    width: 100% !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: var(--space-4) !important;
+    padding: 18px 0 !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    color: var(--color-text-primary) !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__question:hover {
+    color: var(--color-brand-primary) !important;
+    background: none !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__question:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__question > span {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__question svg {
+    flex-shrink: 0 !important;
+    color: var(--color-brand-primary) !important;
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__item.is-open .sb-faq__question svg {
+    transform: rotate(180deg) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__answer {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__item.is-open .sb-faq__answer {
+    max-height: 1000px !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__answer p {
+    padding-bottom: 18px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__answer a,
+  .sozo-sku-subcision-wrapper .sb-faq__answer a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-subcision-wrapper .sb-faq__answer a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* ============================================================
+     RESPONSIVE (breakpoint design system: 1024 / 768 / 480)
+     ============================================================ */
+  @media (max-width: 1024px) {
+    /* Hero satu kolom: teks dulu, gambar di bawah CTA */
+    .sozo-sku-subcision-wrapper .sb-hero__grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: var(--space-5) !important;
     }
 
-    .sozo-sku-subcision-wrapper .sozo-info-row { 
-      flex-direction: column; 
-      gap: 20px; 
-      padding: 20px;
+    .sozo-sku-subcision-wrapper .sb-hero__media img {
+      aspect-ratio: 16 / 9 !important;
+      max-height: 400px !important;
     }
-    .sozo-sku-subcision-wrapper .sozo-btn { max-width: 100%; }
-    .sozo-sku-subcision-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
-    .sozo-sku-subcision-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
-    .sozo-sku-subcision-wrapper .sozo-description-section, 
-    .sozo-sku-subcision-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-subcision-wrapper .breadcrumb {
+      padding-top: var(--space-3) !important;
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-subcision-wrapper .breadcrumb__list {
+      font-size: var(--text-label) !important;
+    }
+
+    .sozo-sku-subcision-wrapper .breadcrumb__list,
+    .sozo-sku-subcision-wrapper .breadcrumb__list li {
+      gap: 6px !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-hero__title {
+      margin-bottom: var(--space-3) !important;
+      font-size: 22px !important;
+      line-height: 1.25 !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-problems {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    /* Badge masalah: satu baris, geser ke samping kalau tidak muat (EX-04) */
+    .sozo-sku-subcision-wrapper .sb-problems__list {
+      flex-wrap: nowrap !important;
+      gap: 6px !important;
+      overflow-x: auto !important;
+      scrollbar-width: none !important;
+      -webkit-overflow-scrolling: touch !important;
+      -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+      mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-problems__list::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .sozo-sku-subcision-wrapper .badge {
+      flex: none !important;
+      min-height: 26px !important;
+      padding: 0 10px !important;
+      font-size: 11px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-hero__desc {
+      margin-bottom: var(--space-4) !important;
+      font-size: var(--text-body-sm) !important;
+    }
+
+    /* Info tetap 3 kolom, ikon disembunyikan supaya ringkas */
+    .sozo-sku-subcision-wrapper .sb-info {
+      margin-bottom: var(--space-4) !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-info__item {
+      justify-content: center !important;
+      padding: var(--space-3) var(--space-2) !important;
+      text-align: center !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-info__icon {
+      display: none !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-info__value {
+      font-size: 15px !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-info__price-old {
+      font-size: 11px !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-section-title {
+      font-size: 22px !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-content__desc {
+      font-size: var(--text-body-sm) !important;
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-expand-btn {
+      font-size: 14px !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-faq__question {
+      padding: 14px 0 !important;
+      font-size: var(--text-body-sm) !important;
+    }
+
+    .sozo-sku-subcision-wrapper .sb-faq__answer p {
+      padding-bottom: 14px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sozo-sku-subcision-wrapper .btn--block-mobile {
+      display: flex !important;
+      width: 100% !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-subcision-wrapper .btn:hover {
+      transform: none !important;
+    }
+  }
+
+  /* ============ FLOATING WHATSAPP (design-system/components/whatsapp-cta.md) ============
+     JS memindahkan tombol ke <body> supaya position: fixed tidak terkunci
+     oleh transform di container Elementor. Karena itu token ditulis langsung
+     di class ini, bukan lewat wrapper. Tombol tampil sejak halaman dibuka.
+     Bentuk pill + label "Buat Jadwal", sama dengan CTA hero. */
+  .sozo-wa-float {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 40px !important;
+    z-index: 900 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 48px !important;
+    padding: 0 24px !important;
+    border-radius: 999px !important;
+    background-color: #E9DFD5 !important;
+    color: #1A2080 !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 16px 40px rgba(23, 23, 21, 0.10) !important;
+    text-decoration: none !important;
+    transition:
+      opacity 180ms ease,
+      visibility 180ms ease,
+      transform 180ms ease,
+      background-color 180ms ease !important;
+  }
+
+  /* Disembunyikan saat footer terlihat supaya tidak menutupi link footer */
+  .sozo-wa-float.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(8px) !important;
+  }
+
+  /* Hover berubah ke biru brand supaya jelas tombol bisa diklik */
+  .sozo-wa-float:hover {
+    background-color: #1A2080 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-wa-float:focus-visible {
+    outline: 2px solid #1A2080 !important;
+    outline-offset: 3px !important;
+  }
+
+  .sozo-wa-float i {
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  /* Mobile: lebih ringkas supaya tidak banyak menutupi konten */
+  @media (max-width: 768px) {
+    .sozo-wa-float {
+      right: 16px !important;
+      bottom: 28px !important;
+      gap: 6px !important;
+      height: 42px !important;
+      padding: 0 16px !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-wa-float i {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-wa-float,
+    .sozo-wa-float:hover {
+      transform: none !important;
+      transition: none !important;
+    }
   }
 </style>
 
 <div class="sozo-sku-subcision-wrapper" id="sozo-subcision-widget">
-  
-  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
-    <ol>
-      <li>
-        <a href="https://sozoskinclinic.com/">
-          <span>Home</span>
-        </a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/skin-treatment/">
-          <span>Skin Treatment</span>
-        </a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/">
-          <span>Scar Treatment</span>
-        </a>
-      </li>
-      <li class="separator">/</li>
-      <li aria-current="page">
-        <span style="color: #1A2080; font-weight: 600;">Subcision Treatment</span>
-      </li>
-    </ol>
-  </nav>
 
-  <div class="sozo-treatment-hero">
-    <div class="sozo-hero-text">
-      <h1>Subcision Treatment</h1>
-      <p>
-        Subcision membantu memperbaiki bekas jerawat dalam, meratakan tekstur kulit, serta membuat permukaan wajah tampak lebih halus dan tidak berlekuk.
+  <!-- HERO -->
+  <section class="sb-hero">
+    <div class="sb-container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li><a href="https://sozoskinclinic.com/treatment/">Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/">Scar Treatment</a></li>
+          <li><span class="breadcrumb__current" aria-current="page">Subsisi</span></li>
+        </ol>
+      </nav>
+
+      <div class="sb-hero__grid">
+        <div class="sb-hero__content">
+          <h1 class="sb-hero__title">Subsisi (Subcision) Treatment</h1>
+
+          <div class="sb-problems">
+            <p class="sb-problems__label" id="sb-problems-label">Membantu mengatasi</p>
+            <ul class="sb-problems__list" aria-labelledby="sb-problems-label">
+              <li class="badge badge--brand">Bekas Jerawat Bopeng</li>
+              <li class="badge badge--brand">Bekas Jerawat Cekung</li>
+              <li class="badge badge--brand">Tekstur Kulit Bergelombang</li>
+              <li class="badge badge--brand">Kulit Tidak Rata</li>
+            </ul>
+          </div>
+
+          <p class="sb-hero__desc">
+            Subsisi membantu mengangkat bekas jerawat bopeng dengan melepas jaringan parut yang menarik kulit ke bawah. Hasilnya, permukaan kulit tampak lebih rata dan halus.
+          </p>
+
+          <ul class="sb-info">
+            <li class="sb-info__item">
+              <span class="sb-info__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </span>
+              <span class="sb-info__text">
+                <span class="sb-info__label">Estimasi Treatment</span>
+                <span class="sb-info__value">75 Menit</span>
+              </span>
+            </li>
+            <li class="sb-info__item">
+              <span class="sb-info__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              </span>
+              <span class="sb-info__text">
+                <span class="sb-info__label">Frekuensi Sesi</span>
+                <span class="sb-info__value">1x Sebulan</span>
+              </span>
+            </li>
+            <li class="sb-info__item">
+              <span class="sb-info__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" x2="7.01" y1="7" y2="7"></line></svg>
+              </span>
+              <span class="sb-info__text">
+                <span class="sb-info__label">Harga</span>
+                <del class="sb-info__price-old">Rp 459.000</del>
+                <span class="sb-info__value">Rp 299.000</span>
+              </span>
+            </li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Subsisi%20di%20Sozo%20%5Bsrc%3AORG-Subsisi%5D" class="btn btn--primary btn--block-mobile" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+        </div>
+
+        <div class="sb-hero__media">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Scar-Package-Treatment-Premium-Subcision-.webp" alt="Subsisi (Subcision) untuk bekas jerawat bopeng di Sozo Skin Clinic" width="800" height="600" fetchpriority="high">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM CONTENT (DESKRIPSI TREATMENT) -->
+  <section class="sb-content" aria-labelledby="sb-content-title">
+    <div class="sb-container">
+
+      <span class="badge badge--label">TENTANG TREATMENT</span>
+      <h2 class="sb-section-title" id="sb-content-title">Mengenal Subsisi (Subcision) untuk Bekas Jerawat Bopeng</h2>
+
+      <p class="sb-content__desc">
+        Subsisi atau subcision adalah perawatan untuk memperbaiki bekas jerawat bopeng. Bopeng terbentuk karena ada jaringan parut di bawah kulit yang "mengikat" dan menarik permukaan kulit ke bawah, sehingga muncul cekungan. Saat subsisi, dokter menyisipkan jarum khusus di bawah kulit untuk melepas ikatan tersebut, lalu kulit perlahan terangkat kembali.
       </p>
 
-      <div class="sozo-info-row">
-        <div class="sozo-info-col">
-          <div class="sozo-info-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          </div>
-          <div class="sozo-info-text">
-            <span class="sozo-info-label">Durasi</span>
-            <span class="sozo-info-value">75 Menit</span>
-          </div>
-        </div>
-        
-        <div class="sozo-info-col">
-          <div class="sozo-info-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-          </div>
-          <div class="sozo-info-text">
-            <span class="sozo-info-label">Harga Mulai</span>
-            <span class="sozo-info-value">
-              <span class="sozo-price-old">Rp 459.000</span>
-              Rp 299.000
-            </span>
-          </div>
-        </div>
-      </div>
+      <p class="sb-content__desc">
+        Setelah ikatannya lepas, kulit akan memperbaiki diri dan membentuk kolagen baru di area bopeng. Karena itu hasil subsisi terlihat bertahap dalam beberapa minggu. Untuk hasil yang lebih maksimal, subsisi sering dikombinasikan dengan treatment bekas jerawat lainnya.
+      </p>
 
-      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20scar%20treatment%20[sumber:%20ORG-Scar%20General]" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
-    </div>
+      <!-- Expandable content (tetap ada di HTML DOM agar terbaca penuh oleh Google) -->
+      <div class="sb-expandable" id="sbContentExpandable">
+        <div class="sb-expandable__inner">
+          <h3 class="sb-content__subtitle">Manfaat Subsisi</h3>
+          <ul class="sb-content__checklist">
+            <li>Mengangkat bekas jerawat bopeng agar sejajar dengan kulit sekitarnya</li>
+            <li>Meratakan tekstur kulit yang bergelombang</li>
+            <li>Merangsang kolagen baru di area bekas jerawat</li>
+            <li>Hasilnya tahan lama karena jaringan parut yang menarik kulit sudah dilepas</li>
+          </ul>
 
-    <div class="sozo-hero-image">
-      <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Scar-Package-Treatment-Premium-Subcision-.avif" alt="Subcision Treatment Sozo Skin Clinic">
-    </div>
-  </div>
+          <h3 class="sb-content__subtitle">Jenis Bopeng yang Cocok untuk Subsisi</h3>
+          <p class="sb-content__desc">
+            Tidak semua bopeng bentuknya sama. Subsisi paling efektif untuk bopeng yang lebar dan landai, yaitu yang membuat kulit terlihat bergelombang saat terkena cahaya dari samping. Subsisi juga membantu untuk bopeng berbentuk kotak dengan tepi yang tegas.
+          </p>
+          <p class="sb-content__desc">
+            Untuk bopeng berupa lubang kecil yang sempit dan dalam, seperti bekas tusukan jarum, dokter biasanya menyarankan treatment lain atau kombinasi. Saat konsultasi, dokter akan memeriksa jenis bopeng Anda dan menentukan perawatan yang paling sesuai.
+          </p>
 
-  <div class="sozo-cta-wrapper">
-    <div class="sozo-cta-banner">
-      <h2>Perbaiki Bekas Jerawat Dalam dengan Subcision Treatment</h2>
-      <p>Subcision adalah prosedur medis minimal invasif yang bertujuan untuk memperbaiki bekas jerawat berbentuk cekungan (atrophic scar). Treatment ini dilakukan dengan cara memutus jaringan parut di bawah kulit yang menyebabkan permukaan kulit tampak tidak rata.</p>
-      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20klaim%20promo%20scar%20treatment%20[sumber:%20ORG-Scar%20General]" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
-    </div>
-  </div>
-
-  <div class="sozo-content-wrapper">
-    <div class="sozo-description-section">
-      <h2>Solusi Efektif untuk Bekas Jerawat Cekung dan Tekstur Kulit Tidak Rata</h2>
-      <p>Subcision adalah prosedur medis minimal invasif yang bertujuan untuk memperbaiki bekas jerawat berbentuk cekungan (atrophic scar). Treatment ini dilakukan dengan cara memutus jaringan parut di bawah kulit yang menyebabkan permukaan kulit tampak tidak rata.</p>
-      <p>Dengan teknik ini, kulit dapat terangkat dan terlihat lebih halus. Subcision sering dikombinasikan dengan treatment lain untuk hasil yang lebih optimal.</p>
-      
-      <div class="sozo-expandable-content sozo-subcision-desc-content" id="treatmentDescriptionSubcision">
-        <div class="sozo-expandable-inner">
-          <p>Cocok untuk Anda yang memiliki bekas jerawat dalam dan ingin memperbaiki tekstur kulit secara signifikan. Subcision direkomendasikan bagi pasien dengan bekas jerawat atau tekstur kulit tidak rata yang sulit diatasi hanya dengan perawatan luar.</p>
+          <h3 class="sb-content__subtitle">Berapa Lama Waktu Prosedurnya?</h3>
+          <p class="sb-content__desc">
+            Sekitar 75 menit, tetapi durasi tiap pasien bisa berbeda tergantung luas area dan kondisi kulit. Prosedur diawali konsultasi dan pemeriksaan kulit oleh dokter, pembersihan wajah, lalu pemberian bius agar Anda tetap nyaman selama tindakan.
+          </p>
         </div>
       </div>
-      
-      <button class="sozo-load-more-btn sozo-subcision-read-more" onclick="toggleSubcisionDescription()">
-        <span id="subcisionReadMoreText">Baca Selengkapnya</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+      <button type="button" class="sb-expand-btn" id="sbExpandBtn" onclick="toggleSubcisionDesc()" aria-expanded="false" aria-controls="sbContentExpandable">
+        <span id="sbExpandBtnText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
       </button>
+
     </div>
+  </section>
 
-    <div class="sozo-faq-section">
-      <h2>Pertanyaan Seputar Subcision Treatment</h2>
-      
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleSubcisionFaq(this)">
-          <span>Apa itu subcision?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Subcision adalah prosedur untuk memperbaiki bekas jerawat cekung dengan memutus jaringan parut di bawah kulit.</p>
+  <!-- FAQ -->
+  <section class="sb-faq" aria-labelledby="sb-faq-title">
+    <div class="sb-container">
+      <h2 class="sb-section-title" id="sb-faq-title">Pertanyaan Seputar Subsisi</h2>
+
+      <div class="sb-faq__item">
+        <h3><button type="button" class="sb-faq__question" onclick="toggleSubcisionFaq(this)" aria-expanded="false" aria-controls="sb-faq-1-content" id="sb-faq-1-trigger">
+          <span>Apa itu subsisi (subcision)?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="sb-faq__answer" id="sb-faq-1-content" role="region" aria-labelledby="sb-faq-1-trigger">
+          <p>Subsisi adalah perawatan untuk memperbaiki bekas jerawat bopeng dengan melepas jaringan parut di bawah kulit yang menarik kulit ke bawah. Setelah dilepas, kulit perlahan terangkat dan tampak lebih rata.</p>
         </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleSubcisionFaq(this)">
-          <span>Apakah subcision sakit?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Treatment ini dilakukan dengan anestesi sehingga akan meminimalkan rasa tidak nyaman.</p>
+      <div class="sb-faq__item">
+        <h3><button type="button" class="sb-faq__question" onclick="toggleSubcisionFaq(this)" aria-expanded="false" aria-controls="sb-faq-2-content" id="sb-faq-2-trigger">
+          <span>Apakah subsisi sakit?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="sb-faq__answer" id="sb-faq-2-content" role="region" aria-labelledby="sb-faq-2-trigger">
+          <p>Wajah dibius terlebih dahulu, jadi rasa sakitnya minimal. Anda mungkin hanya merasakan sedikit tekanan saat tindakan berlangsung.</p>
         </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleSubcisionFaq(this)">
-          <span>Siapa yang cocok untuk subcision treatment?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Treatment ini cocok untuk pasien dengan bekas jerawat dalam atau tekstur kulit tidak rata.</p>
+      <div class="sb-faq__item">
+        <h3><button type="button" class="sb-faq__question" onclick="toggleSubcisionFaq(this)" aria-expanded="false" aria-controls="sb-faq-3-content" id="sb-faq-3-trigger">
+          <span>Apakah ada downtime setelah subsisi?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="sb-faq__answer" id="sb-faq-3-content" role="region" aria-labelledby="sb-faq-3-trigger">
+          <p>Ada, tapi ringan. Biasanya muncul memar, bengkak, dan kemerahan yang mereda dalam beberapa hari. Anda tetap bisa beraktivitas seperti biasa.</p>
         </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleSubcisionFaq(this)">
+      <div class="sb-faq__item">
+        <h3><button type="button" class="sb-faq__question" onclick="toggleSubcisionFaq(this)" aria-expanded="false" aria-controls="sb-faq-4-content" id="sb-faq-4-trigger">
+          <span>Berapa sesi yang dibutuhkan dan kapan hasilnya terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="sb-faq__answer" id="sb-faq-4-content" role="region" aria-labelledby="sb-faq-4-trigger">
+          <p>Subsisi dilakukan 1x sebulan. Jumlah sesinya tergantung kedalaman dan banyaknya bopeng, dan dokter akan menentukannya saat konsultasi. Hasil mulai terlihat setelah bengkak hilang, lalu terus membaik seiring terbentuknya kolagen baru.</p>
+        </div>
+      </div>
+
+      <div class="sb-faq__item">
+        <h3><button type="button" class="sb-faq__question" onclick="toggleSubcisionFaq(this)" aria-expanded="false" aria-controls="sb-faq-5-content" id="sb-faq-5-trigger">
           <span>Apakah hasilnya permanen?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Hasil dari subcision bisa bertahan lama, terutama jika dikombinasikan dengan treatment lain.</p>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="sb-faq__answer" id="sb-faq-5-content" role="region" aria-labelledby="sb-faq-5-trigger">
+          <p>Jaringan parut yang sudah dilepas umumnya tidak menarik kulit lagi, jadi hasilnya tahan lama. Untuk bopeng yang cukup dalam, kadang dibutuhkan sesi tambahan atau kombinasi dengan treatment lain.</p>
+        </div>
+      </div>
+
+      <div class="sb-faq__item">
+        <h3><button type="button" class="sb-faq__question" onclick="toggleSubcisionFaq(this)" aria-expanded="false" aria-controls="sb-faq-6-content" id="sb-faq-6-trigger">
+          <span>Siapa yang perlu konsultasi dulu sebelum subsisi?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="sb-faq__answer" id="sb-faq-6-content" role="region" aria-labelledby="sb-faq-6-trigger">
+          <p>Beri tahu dokter jika Anda sedang berjerawat aktif di wajah, punya riwayat keloid, sedang minum obat pengencer darah, atau sedang hamil dan menyusui.</p>
+        </div>
+      </div>
+
+      <div class="sb-faq__item">
+        <h3><button type="button" class="sb-faq__question" onclick="toggleSubcisionFaq(this)" aria-expanded="false" aria-controls="sb-faq-7-content" id="sb-faq-7-trigger">
+          <span>Apa yang perlu dilakukan setelah subsisi?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="sb-faq__answer" id="sb-faq-7-content" role="region" aria-labelledby="sb-faq-7-trigger">
+          <p>Jangan memijat atau memencet area wajah yang ditangani. Kompres dingin untuk mengurangi bengkak, hindari makeup dan olahraga berat beberapa hari, dan selalu pakai sunscreen.</p>
+        </div>
+      </div>
+
+      <div class="sb-faq__item">
+        <h3><button type="button" class="sb-faq__question" onclick="toggleSubcisionFaq(this)" aria-expanded="false" aria-controls="sb-faq-8-content" id="sb-faq-8-trigger">
+          <span>Berapa harga subsisi di SOZO Skin Clinic?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="sb-faq__answer" id="sb-faq-8-content" role="region" aria-labelledby="sb-faq-8-trigger">
+          <p>Harga subsisi saat ini Rp299.000 dari harga normal Rp459.000. Klik tombol Buat Jadwal untuk konsultasi dan booking lewat WhatsApp.</p>
         </div>
       </div>
 
     </div>
-  </div>
-
+  </section>
 </div>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Subsisi%20di%20Sozo%20%5Bsrc%3AORG-Subsisi%5D" class="sozo-wa-float" id="sbWaFloat" target="_blank" rel="noopener noreferrer" aria-label="Buat Jadwal via WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+
 <script>
-  function toggleSubcisionDescription() {
-    const content = document.getElementById('treatmentDescriptionSubcision');
-    const btn = document.querySelector('.sozo-subcision-read-more');
-    const btnText = document.getElementById('subcisionReadMoreText');
-    
-    if (!content || !btn) return;
-    
-    content.classList.toggle('expanded');
-    btn.classList.toggle('active');
-    
-    if (content.classList.contains('expanded')) {
-      btnText.textContent = 'Tampilkan Lebih Sedikit';
-    } else {
-      btnText.textContent = 'Baca Selengkapnya';
-    }
+  function toggleSubcisionFaq(btn) {
+    var item = btn.closest('.sb-faq__item');
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    var widget = document.getElementById('sozo-subcision-widget');
+    var items = widget ? widget.querySelectorAll('.sb-faq__item') : [];
+
+    Array.prototype.forEach.call(items, function (other) {
+      if (other !== item) {
+        other.querySelector('.sb-faq__question').setAttribute('aria-expanded', 'false');
+        other.classList.remove('is-open');
+      }
+    });
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    item.classList.toggle('is-open', !isOpen);
   }
 
-  function toggleSubcisionFaq(button) {
-    const answer = button.nextElementSibling;
-    if (!answer) return;
-    
-    button.classList.toggle('active');
-    
-    if (answer.style.maxHeight) {
-      answer.style.maxHeight = null;
-    } else {
-      answer.style.maxHeight = answer.scrollHeight + "px";
-    }
+  function toggleSubcisionDesc() {
+    var content = document.getElementById('sbContentExpandable');
+    var btn = document.getElementById('sbExpandBtn');
+    var btnText = document.getElementById('sbExpandBtnText');
+    if (!content || !btn || !btnText) return;
+
+    var isExpanded = content.classList.contains('is-expanded');
+    content.classList.toggle('is-expanded', !isExpanded);
+    btn.classList.toggle('is-active', !isExpanded);
+    btn.setAttribute('aria-expanded', String(!isExpanded));
+    btnText.textContent = !isExpanded ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
   }
+
+  (function initSubcisionWaFloat() {
+    var fab = document.getElementById('sbWaFloat');
+    if (!fab) return;
+    document.body.appendChild(fab);
+
+    // Footer situs berupa Custom HTML Elementor (tanpa class footer yang pasti),
+    // jadi tombol disembunyikan saat scroll sudah dekat dasar halaman.
+    // Angka zona = perkiraan tinggi footer (mobile lebih tinggi karena menumpuk).
+    var ticking = false;
+    function updateFab() {
+      ticking = false;
+      var zone = window.innerWidth <= 768 ? 700 : 400;
+      var distanceToBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      fab.classList.toggle('is-hidden', distanceToBottom < zone);
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateFab);
+      }
+    }, { passive: true });
+    window.addEventListener('resize', updateFab);
+    window.addEventListener('load', updateFab);
+  })();
 </script>
-
