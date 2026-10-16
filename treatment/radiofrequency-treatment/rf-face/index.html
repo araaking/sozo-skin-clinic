@@ -1,540 +1,1159 @@
+<!-- ============================================================
+     UI RF WAJAH (RADIOFREQUENCY FACE) - SOZO SKIN CLINIC
+     URL     : https://sozoskinclinic.com/radiofrequency-treatment/rf-face/
+     Style   : Sozo Design System V1.1 (design-system/), Elementor Safe, scoped
+     Layout  : Sama dengan halaman Immune Glow Injection
+     Seksi   : Breadcrumb -> Hero (H1, masalah, deskripsi, info, CTA, gambar)
+               -> Bottom Content (Deskripsi Ringkas Treatment & Expandable Detail)
+               -> FAQ -> Floating WhatsApp
+     CSS+JS  : Sudah digabung di file ini (Font Awesome preload, Poppins,
+               CSS .sozo-sku-rfface-wrapper, JS FAQ, floating WA).
+     JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList + FAQPage).
+               Isi FAQPage harus sama dengan FAQ di bawah. schema-markup.html
+               tidak dipakai lagi untuk halaman ini.
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/radiofrequency-treatment/rf-face/#webpage",
+      "url": "https://sozoskinclinic.com/radiofrequency-treatment/rf-face/",
+      "name": "RF Wajah (Radiofrequency Face) | Sozo Skin Clinic",
+      "description": "Treatment pengencangan wajah dengan energi gelombang radio. Panas dari alat RF merangsang pembentukan kolagen, sehingga kulit pipi dan area bawah dagu tampak lebih kencang.",
+      "inLanguage": "id",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
+      "about": { "@id": "https://sozoskinclinic.com/#organization" },
+      "breadcrumb": { "@id": "https://sozoskinclinic.com/radiofrequency-treatment/rf-face/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/radiofrequency-treatment/rf-face/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://sozoskinclinic.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Treatment", "item": "https://sozoskinclinic.com/treatment/" },
+        { "@type": "ListItem", "position": 3, "name": "Radiofrequency Treatment", "item": "https://sozoskinclinic.com/radiofrequency-treatment/" },
+        { "@type": "ListItem", "position": 4, "name": "RF Wajah" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sozoskinclinic.com/radiofrequency-treatment/rf-face/#faq",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/radiofrequency-treatment/rf-face/#webpage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu RF Wajah?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Treatment yang memakai energi gelombang radio elektromagnetik untuk mengencangkan kulit wajah. Energi ini merangsang pembentukan kolagen di kulit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Area wajah mana yang bisa ditangani?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RF Wajah bisa dilakukan di area pipi dan double chin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah RF Wajah sakit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak sakit. Anda hanya akan merasakan sensasi hangat dari alat RF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa sesi yang dibutuhkan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tergantung kondisi kulit masing-masing. Rata-rata dibutuhkan 4–8 sesi untuk hasil optimal, dengan jarak setidaknya 2 minggu sekali."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kapan hasilnya terlihat dan apakah permanen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hasilnya berbeda pada tiap orang, dan biasanya lebih terlihat jika treatment dilakukan rutin setiap 2 minggu. Hasilnya tidak permanen, jadi perlu perawatan rutin agar kulit tetap kencang."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah perlu waktu pemulihan setelah treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak perlu. Anda bisa langsung beraktivitas setelah treatment. Area wajah mungkin terasa hangat, sedikit merah, atau bengkak karena panas dari alat RF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang perlu dihindari sebelum treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hindari skincare atau treatment yang bikin kulit mengelupas (eksfoliasi), misalnya scrub atau peeling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa harga RF Wajah di Sozo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rp 599.000 per sesi. Untuk info promo, hubungi tim kami lewat WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana lokasi treatment RF Wajah terdekat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cari cabang Sozo Skin Clinic terdekat dari domisili Anda di halaman Lokasi Cabang Sozo Skin Clinic, atau tanyakan ketersediaan RF Wajah ke tim kami lewat WhatsApp."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+<!-- Font resmi Sozo: Poppins 400-800, di-load sekali -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
-  .sozo-sku-glow-wrapper {
-    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #333;
-    line-height: 1.6;
-    background-color: #ffffff;
-  }
+  /* ============================================================
+     Token Sozo Design System V1.1, di-scope ke wrapper supaya
+     tidak bocor ke halaman Elementor lain. Density: compact
+     (treatment detail), sama dengan halaman Immune Glow.
+     ============================================================ */
+  .sozo-sku-rfface-wrapper {
+    /* Color */
+    --color-brand-primary: #1A2080;
+    --color-brand-almond: #E9DFD5;
+    --color-white: #FFFFFF;
+    --color-text-primary: #171715;
+    --color-text-secondary: #41413E;
+    --color-text-muted: #777771;
+    --color-text-on-primary: #FFFFFF;
+    --color-border: #DFDBD4;
+    --color-border-strong: #C8C3BA;
+    --color-primary-hover: #151A6D;
 
-  .sozo-sku-glow-wrapper * { 
-    box-sizing: border-box; 
-  }
+    /* Typography */
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --text-section-title: clamp(24px, 3vw, 32px);
+    --text-body: 16px;
+    --text-body-sm: 14px;
+    --text-label: 12px;
+    --leading-caption: 1.40;
+    --tracking-eyebrow: 0.12em;
+    --tracking-badge: 0.02em;
 
-  /* --- STYLING BREADCRUMB --- */
-  .sozo-sku-glow-wrapper .sozo-breadcrumb {
-    padding: 15px 20px 25px 20px;
-    width: 100%;
-  }
-  .sozo-sku-glow-wrapper .sozo-breadcrumb ol {
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px; 
-  }
-  .sozo-sku-glow-wrapper .sozo-breadcrumb li {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #1A2080;
-  }
-  .sozo-sku-glow-wrapper .sozo-breadcrumb a {
-    text-decoration: none !important;
-    color: #64748b !important;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  .sozo-sku-glow-wrapper .sozo-breadcrumb a:hover { 
-    color: #1A2080 !important; 
-  }
-  .sozo-sku-glow-wrapper .sozo-breadcrumb .separator {
-    color: #cbd5e1;
-    margin: 0 4px;
-    font-size: 12px;
-    user-select: none;
-  }
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
 
-  /* --- STYLING HERO --- */
-  .sozo-sku-glow-wrapper .sozo-treatment-hero {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 50px;
-    align-items: center;
-    margin-bottom: 50px;
-    padding: 0 20px;
-  }
-  .sozo-sku-glow-wrapper .sozo-hero-text {
-    flex: 1; 
-  }
-  .sozo-sku-glow-wrapper .sozo-hero-text h1 {
-    font-size: clamp(32px, 4vw, 42px) !important;
-    color: #1A2080 !important; 
-    margin: 0 0 16px 0 !important;
-    line-height: 1.2 !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.5px;
-  }
-  .sozo-sku-glow-wrapper .sozo-hero-text p {
-    font-size: 16px !important;
-    color: #475569 !important;
-    margin: 0 0 30px 0 !important;
-    line-height: 1.6 !important;
-  }
-  
-  .sozo-sku-glow-wrapper .sozo-hero-image {
-    flex: 1; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .sozo-sku-glow-wrapper .sozo-hero-image img {
-    width: 100%;
-    max-width: 480px;
-    height: 340px;
-    border-radius: 24px;
-    object-fit: cover;
-    object-position: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    display: block;
-  }
+    /* Layout (compact: treatment detail) */
+    --container-max: 1280px;
+    --container-pad: 32px;
+    --section-y: var(--space-6);
 
-  /* Box Info */
-  .sozo-sku-glow-wrapper .sozo-info-row {
-    display: flex;
-    gap: 40px; 
-    margin-bottom: 35px;
-    padding: 24px;
-    background-color: #f8fafc;
-    border-radius: 16px;
-    border: 1px solid #f1f5f9;
-  }
-  .sozo-sku-glow-wrapper .sozo-info-col {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-  }
-  .sozo-sku-glow-wrapper .sozo-info-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    background-color: #EEF2FF;
-    border-radius: 12px;
-    color: #1A2080;
-  }
-  .sozo-sku-glow-wrapper .sozo-info-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .sozo-sku-glow-wrapper .sozo-info-label {
-    font-size: 13px !important;
-    color: #64748b !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .sozo-sku-glow-wrapper .sozo-info-value {
-    font-size: 20px !important;
-    color: #1A2080 !important; 
-    font-weight: 700 !important;
-  }
-  .sozo-sku-glow-wrapper .sozo-price-old {
-    font-size: 14px !important;
-    color: #94a3b8 !important;
-    text-decoration: line-through;
-    margin-right: 8px;
-    font-weight: 500 !important;
-  }
+    /* Shape */
+    --radius-lg: 16px;
+    --radius-full: 999px;
+    --focus-ring: 2px solid var(--color-brand-primary);
+    --focus-offset: 3px;
 
-  /* Styling Tombol Primary */
-  .sozo-sku-glow-wrapper .sozo-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 320px;
-    padding: 16px 24px;
-    background-color: #1A2080 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
-    border: 2px solid #1A2080 !important;
-  }
-  .sozo-sku-glow-wrapper .sozo-btn:hover {
-    background-color: #ffffff !important;
-    color: #1A2080 !important;
-    transform: translateY(-3px);
-  }
+    /* Motion */
+    --duration-fast: 180ms;
+    --duration-card: 220ms;
+    --ease-standard: ease;
 
-  /* --- STYLING CTA BANNER --- */
-  .sozo-sku-glow-wrapper .sozo-cta-wrapper {
-    padding: 0 20px;
-  }
-  .sozo-sku-glow-wrapper .sozo-cta-banner {
-    background-color: #1A2080;
-    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
-    border-radius: 24px;
-    padding: 50px 30px;
-    margin-bottom: 50px;
-    text-align: center;
-    color: #ffffff;
-    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
-  }
-  .sozo-sku-glow-wrapper .sozo-cta-banner h2 {
-    font-size: clamp(24px, 3vw, 32px) !important;
-    color: #ffffff !important;
-    margin: 0 0 15px 0 !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.5px;
-  }
-  .sozo-sku-glow-wrapper .sozo-cta-banner p {
-    font-size: 16px !important;
-    color: #e2e8f0 !important;
-    margin: 0 auto 30px auto !important;
-    max-width: 600px;
-    line-height: 1.6 !important;
-  }
-  
-  .sozo-sku-glow-wrapper .sozo-btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 36px;
-    background-color: #ffffff !important;
-    color: #1A2080 !important;
-    text-decoration: none !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border: 2px solid #ffffff !important;
-  }
-  .sozo-sku-glow-wrapper .sozo-btn-secondary:hover {
-    background-color: transparent !important;
-    color: #ffffff !important;
-    transform: translateY(-3px);
-  }
-
-  /* --- DESCRIPTION SECTION --- */
-  .sozo-sku-glow-wrapper .sozo-content-wrapper {
-    padding: 0 20px;
-  }
-  .sozo-sku-glow-wrapper .sozo-description-section {
-    background-color: #ffffff;
-    border: 1px solid #f1f5f9;
-    border-radius: 24px;
-    padding: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  }
-  .sozo-sku-glow-wrapper .sozo-description-section h2 {
-    font-size: 24px !important;
-    color: #1A2080 !important;
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-    font-weight: 800 !important;
-  }
-  .sozo-sku-glow-wrapper .sozo-description-section p {
-    color: #475569 !important;
-    margin-bottom: 16px !important;
-    font-size: 16px !important;
-  }
-  
-  .sozo-sku-glow-wrapper .sozo-expandable-content {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.4s ease-out;
-  }
-  .sozo-sku-glow-wrapper .sozo-expandable-content.expanded {
-    grid-template-rows: 1fr;
-  }
-  .sozo-sku-glow-wrapper .sozo-expandable-inner {
-    overflow: hidden;
-  }
-  
-  .sozo-sku-glow-wrapper .sozo-load-more-btn {
-    background: none !important;
-    border: none !important;
-    color: #1A2080 !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
-    padding: 0 !important;
-    margin-top: 15px !important;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: opacity 0.2s ease;
-  }
-
-  /* --- PERBAIKAN FAQ RESPONSIVE (UPDATE TERBARU) --- */
-  .sozo-sku-glow-wrapper .sozo-faq-section {
-    background-color: #ffffff;
-    border: 1px solid #f1f5f9;
-    border-radius: 24px;
-    padding: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  }
-  .sozo-sku-glow-wrapper .sozo-faq-section h2 {
-    font-size: 24px !important;
-    color: #1A2080 !important;
-    margin-top: 0 !important;
-    margin-bottom: 24px !important;
-    font-weight: 800 !important;
-  }
-  .sozo-sku-glow-wrapper .sozo-faq-item {
-    border-bottom: 1px solid #f1f5f9;
-    padding: 16px 0;
-  }
-  .sozo-sku-glow-wrapper .sozo-faq-item:last-child {
-    border-bottom: none;
-  }
-
-  /* Tombol pertanyaan diperbaiki agar teks bisa wrap */
-  .sozo-sku-glow-wrapper .sozo-faq-question {
-    width: 100% !important;
-    background: none !important;
-    border: none !important;
-    text-align: left !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    color: #1e293b !important;
-    cursor: pointer !important;
-    
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: flex-start !important; /* Icon tetap di atas saat teks turun */
-    
-    white-space: normal !important; /* Mematikan paksaan satu baris */
-    padding: 12px 0 !important;
-    gap: 15px !important;
+    font-family: var(--font-family-primary) !important;
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-white) !important;
     line-height: 1.5 !important;
   }
 
-  .sozo-sku-glow-wrapper .sozo-faq-question span {
-    flex: 1 !important;
-    display: block !important;
-    white-space: normal !important;
-    word-wrap: break-word !important;
-  }
-
-  .sozo-sku-glow-wrapper .sozo-faq-question svg {
-    flex-shrink: 0 !important;
-    margin-top: 4px !important;
-    transition: transform 0.3s ease !important;
-  }
-
-  .sozo-sku-glow-wrapper .sozo-faq-question.active svg {
-    transform: rotate(180deg);
-    color: #1A2080;
-  }
-
-  .sozo-sku-glow-wrapper .sozo-faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-  .sozo-sku-glow-wrapper .sozo-faq-answer p {
-    color: #475569 !important;
-    font-size: 15px !important;
-    margin: 8px 0 16px 0 !important;
-    line-height: 1.6 !important;
-  }
-
-  /* --- RESPONSIVE MOBILE FRIENDLY --- */
   @media (max-width: 768px) {
-    .sozo-sku-glow-wrapper .sozo-treatment-hero { flex-direction: column; gap: 30px; }
-    .sozo-sku-glow-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
-    .sozo-sku-glow-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
-    .sozo-sku-glow-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
-    .sozo-sku-glow-wrapper .sozo-btn { max-width: 100%; }
-    .sozo-sku-glow-wrapper .sozo-faq-section, .sozo-sku-glow-wrapper .sozo-description-section { padding: 25px; border-radius: 20px; }
-    .sozo-sku-glow-wrapper .sozo-faq-question { font-size: 15px !important; }
+    .sozo-sku-rfface-wrapper {
+      --container-pad: 20px;
+      --section-y: var(--space-5);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-rfface-wrapper {
+      --duration-fast: 0ms;
+      --duration-card: 0ms;
+    }
+  }
+
+  .sozo-sku-rfface-wrapper,
+  .sozo-sku-rfface-wrapper * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-sku-rfface-wrapper h1,
+  .sozo-sku-rfface-wrapper h2,
+  .sozo-sku-rfface-wrapper h3,
+  .sozo-sku-rfface-wrapper p,
+  .sozo-sku-rfface-wrapper ul,
+  .sozo-sku-rfface-wrapper ol {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: var(--font-family-primary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper a {
+    text-decoration: none !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-container {
+    width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
+    margin-inline: auto !important;
+  }
+
+  /* ============ BUTTON (design-system/components/button.md) ============ */
+  .sozo-sku-rfface-wrapper .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--space-2) !important;
+    min-height: 48px !important;
+    padding: 0 var(--space-6) !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--radius-full) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .btn:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .btn:active {
+    transform: translateY(0) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: var(--focus-offset) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .btn--primary,
+  .sozo-sku-rfface-wrapper .btn--primary:visited {
+    background-color: var(--color-brand-primary) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .btn--primary:hover {
+    background-color: var(--color-primary-hover) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .btn__icon {
+    width: 16px !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    flex: none !important;
+  }
+
+  /* ============ BADGE (design-system/components/badge.md) ============ */
+  .sozo-sku-rfface-wrapper .badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 30px !important;
+    padding: 0 var(--space-3) !important;
+    border-radius: var(--radius-full) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-badge) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .badge--brand {
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .badge--label {
+    min-height: 30px !important;
+    padding: 0 18px !important;
+    margin-bottom: var(--space-4) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    letter-spacing: 0.25em !important;
+    text-transform: uppercase !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ BREADCRUMB (design-system/components/breadcrumb.md) ============ */
+  .sozo-sku-rfface-wrapper .breadcrumb {
+    padding-top: var(--space-4) !important;
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .breadcrumb__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: 13px !important;
+    line-height: var(--leading-caption) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .breadcrumb__list li {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-rfface-wrapper .breadcrumb__list li + li::before {
+    content: "/" !important;
+    color: var(--color-border-strong) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .breadcrumb a {
+    color: var(--color-text-muted) !important;
+    font-weight: 500 !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .breadcrumb a:hover {
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .breadcrumb a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-rfface-wrapper .breadcrumb__current {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ HERO ============ */
+  .sozo-sku-rfface-wrapper .rf-hero {
+    padding-bottom: var(--section-y) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-hero__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important;
+    gap: var(--space-8) !important;
+    align-items: center !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-hero__title {
+    margin-bottom: var(--space-4) !important;
+    font-size: clamp(28px, 2.8vw, 38px) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Masalah yang bisa diatasi */
+  .sozo-sku-rfface-wrapper .rf-problems {
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-problems__label {
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-eyebrow) !important;
+    text-transform: uppercase !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-problems__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-problems__list li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Paragraf intro: justify, selebar kolom (sama dengan Infus Whitening) */
+  .sozo-sku-rfface-wrapper .rf-hero__desc {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    text-align: justify !important;
+    hyphens: auto !important;
+  }
+
+  /* Info: durasi, frekuensi, harga */
+  .sozo-sku-rfface-wrapper .rf-info {
+    list-style: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    margin-bottom: var(--space-5) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-info__item {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-3) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: var(--space-4) !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-info__item + .rf-info__item {
+    border-left: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-info__icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-info__text {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-info__label {
+    font-size: var(--text-label) !important;
+    font-weight: 500 !important;
+    line-height: var(--leading-caption) !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-info__value {
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Gambar treatment: standalone, rasio 4:3 (design-system/components/image.md) */
+  .sozo-sku-rfface-wrapper .rf-hero__media img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  /* ============ BOTTOM CONTENT (DESKRIPSI TREATMENT) ============ */
+  .sozo-sku-rfface-wrapper .rf-content {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-section-title {
+    margin-bottom: var(--space-4) !important;
+    font-size: var(--text-section-title) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-content__desc {
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    margin-bottom: var(--space-4) !important;
+    text-align: justify !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-content__subtitle {
+    margin: var(--space-2) 0 var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-content__checklist {
+    list-style: none !important;
+    margin: 0 0 var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-content__checklist li {
+    position: relative !important;
+    padding-left: 28px !important;
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-content__checklist li::before {
+    content: "\2713" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    font-weight: 700 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-expandable {
+    display: grid !important;
+    grid-template-rows: 0fr !important;
+    transition: grid-template-rows var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-expandable.is-expanded {
+    grid-template-rows: 1fr !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-expandable__inner {
+    overflow: hidden !important;
+    min-height: 0 !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-expand-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-top: var(--space-1) !important;
+    color: var(--color-brand-primary) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard),
+                opacity var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-expand-btn:hover {
+    color: var(--color-primary-hover) !important;
+    opacity: 0.85 !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-expand-btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-expand-btn svg {
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-expand-btn.is-active svg {
+    transform: rotate(180deg) !important;
+  }
+
+  /* ============ FAQ ============ */
+  .sozo-sku-rfface-wrapper .rf-faq {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__item {
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__question {
+    width: 100% !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: var(--space-4) !important;
+    padding: 18px 0 !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    color: var(--color-text-primary) !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__question:hover {
+    color: var(--color-brand-primary) !important;
+    background: none !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__question:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__question > span {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__question svg {
+    flex-shrink: 0 !important;
+    color: var(--color-brand-primary) !important;
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__item.is-open .rf-faq__question svg {
+    transform: rotate(180deg) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__answer {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__item.is-open .rf-faq__answer {
+    max-height: 1000px !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__answer p {
+    padding-bottom: 18px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__answer a,
+  .sozo-sku-rfface-wrapper .rf-faq__answer a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-rfface-wrapper .rf-faq__answer a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* ============================================================
+     RESPONSIVE (breakpoint design system: 1024 / 768 / 480)
+     ============================================================ */
+  @media (max-width: 1024px) {
+    /* Hero satu kolom: teks dulu, gambar di bawah CTA */
+    .sozo-sku-rfface-wrapper .rf-hero__grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: var(--space-5) !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-hero__media img {
+      aspect-ratio: 16 / 9 !important;
+      max-height: 400px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-rfface-wrapper .breadcrumb {
+      padding-top: var(--space-3) !important;
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-rfface-wrapper .breadcrumb__list {
+      font-size: var(--text-label) !important;
+    }
+
+    .sozo-sku-rfface-wrapper .breadcrumb__list,
+    .sozo-sku-rfface-wrapper .breadcrumb__list li {
+      gap: 6px !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-hero__title {
+      margin-bottom: var(--space-3) !important;
+      font-size: 22px !important;
+      line-height: 1.25 !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-problems {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    /* Badge masalah: satu baris, geser ke samping kalau tidak muat (EX-04) */
+    .sozo-sku-rfface-wrapper .rf-problems__list {
+      flex-wrap: nowrap !important;
+      gap: 6px !important;
+      overflow-x: auto !important;
+      scrollbar-width: none !important;
+      -webkit-overflow-scrolling: touch !important;
+      -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+      mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-problems__list::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .sozo-sku-rfface-wrapper .badge {
+      flex: none !important;
+      min-height: 26px !important;
+      padding: 0 10px !important;
+      font-size: 11px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-hero__desc {
+      margin-bottom: var(--space-4) !important;
+      font-size: var(--text-body-sm) !important;
+    }
+
+    /* Info tetap 3 kolom, ikon disembunyikan supaya ringkas */
+    .sozo-sku-rfface-wrapper .rf-info {
+      margin-bottom: var(--space-4) !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-info__item {
+      justify-content: center !important;
+      padding: var(--space-3) var(--space-2) !important;
+      text-align: center !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-info__icon {
+      display: none !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-info__value {
+      font-size: 15px !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-section-title {
+      font-size: 22px !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-content__desc {
+      font-size: var(--text-body-sm) !important;
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-expand-btn {
+      font-size: 14px !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-faq__question {
+      padding: 14px 0 !important;
+      font-size: var(--text-body-sm) !important;
+    }
+
+    .sozo-sku-rfface-wrapper .rf-faq__answer p {
+      padding-bottom: 14px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sozo-sku-rfface-wrapper .btn--block-mobile {
+      display: flex !important;
+      width: 100% !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-rfface-wrapper .btn:hover {
+      transform: none !important;
+    }
+  }
+
+  /* ============ FLOATING WHATSAPP (design-system/components/whatsapp-cta.md) ============
+     JS memindahkan tombol ke <body> supaya position: fixed tidak terkunci
+     oleh transform di container Elementor. Karena itu token ditulis langsung
+     di class ini, bukan lewat wrapper. Tombol tampil sejak halaman dibuka.
+     Bentuk pill + label "Buat Jadwal", sama dengan CTA hero. */
+  .sozo-wa-float {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 40px !important;
+    z-index: 900 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 48px !important;
+    padding: 0 24px !important;
+    border-radius: 999px !important;
+    background-color: #E9DFD5 !important;
+    color: #1A2080 !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 16px 40px rgba(23, 23, 21, 0.10) !important;
+    text-decoration: none !important;
+    transition:
+      opacity 180ms ease,
+      visibility 180ms ease,
+      transform 180ms ease,
+      background-color 180ms ease !important;
+  }
+
+  /* Disembunyikan saat footer terlihat supaya tidak menutupi link footer */
+  .sozo-wa-float.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(8px) !important;
+  }
+
+  /* Hover berubah ke biru brand supaya jelas tombol bisa diklik */
+  .sozo-wa-float:hover {
+    background-color: #1A2080 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-wa-float:focus-visible {
+    outline: 2px solid #1A2080 !important;
+    outline-offset: 3px !important;
+  }
+
+  .sozo-wa-float i {
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  /* Mobile: lebih ringkas supaya tidak banyak menutupi konten */
+  @media (max-width: 768px) {
+    .sozo-wa-float {
+      right: 16px !important;
+      bottom: 28px !important;
+      gap: 6px !important;
+      height: 42px !important;
+      padding: 0 16px !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-wa-float i {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-wa-float,
+    .sozo-wa-float:hover {
+      transform: none !important;
+      transition: none !important;
+    }
   }
 </style>
 
-<div class="sozo-sku-glow-wrapper" id="sozo-glow-widget">
-  
-  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
-    <ol>
-      <li>
-        <a href="https://sozoskinclinic.com/"><span>Home</span></a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/radiofrequency-treatment/"><span>Radiofrequency Treatment</span></a>
-      </li>
-      <li class="separator">/</li>
-      <li aria-current="page">
-        <span style="color: #1A2080; font-weight: 600;">Radiofrequency Face</span>
-      </li>
-    </ol>
-  </nav>
+<div class="sozo-sku-rfface-wrapper" id="sozo-rfface-widget">
 
-  <div class="sozo-treatment-hero">
-    <div class="sozo-hero-text">
-      <h1>Radiofrequency Face</h1>
-      <p>RF wajah membantu mengencangkan kulit, mengurangi kerutan, meningkatkan elastisitas, serta membuat wajah tampak lebih halus, cerah, dan awet muda secara alami.</p>
+  <!-- HERO -->
+  <section class="rf-hero">
+    <div class="rf-container">
 
-      <div class="sozo-info-row">
-        <div class="sozo-info-col">
-          <div class="sozo-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
-          <div class="sozo-info-text">
-            <span class="sozo-info-label">Durasi</span>
-            <span class="sozo-info-value">30 Menit</span>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li><a href="https://sozoskinclinic.com/treatment/">Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/radiofrequency-treatment/">Radiofrequency Treatment</a></li>
+          <li><span class="breadcrumb__current" aria-current="page">RF Wajah</span></li>
+        </ol>
+      </nav>
+
+      <div class="rf-hero__grid">
+        <div class="rf-hero__content">
+          <h1 class="rf-hero__title">RF Wajah (Radiofrequency Face)</h1>
+
+          <div class="rf-problems">
+            <p class="rf-problems__label" id="rf-problems-label">Membantu mengatasi</p>
+            <ul class="rf-problems__list" aria-labelledby="rf-problems-label">
+              <li class="badge badge--brand">Kulit Wajah Kendur</li>
+              <li class="badge badge--brand">Pipi Kendur</li>
+              <li class="badge badge--brand">Double Chin</li>
+            </ul>
           </div>
+
+          <p class="rf-hero__desc">
+            Treatment pengencangan wajah dengan energi gelombang radio. Panas dari alat RF merangsang pembentukan kolagen, sehingga kulit pipi dan area bawah dagu tampak lebih kencang.
+          </p>
+
+          <ul class="rf-info">
+            <li class="rf-info__item">
+              <span class="rf-info__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </span>
+              <span class="rf-info__text">
+                <span class="rf-info__label">Estimasi Treatment</span>
+                <span class="rf-info__value">30–60 Menit</span>
+              </span>
+            </li>
+            <li class="rf-info__item">
+              <span class="rf-info__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              </span>
+              <span class="rf-info__text">
+                <span class="rf-info__label">Frekuensi Sesi</span>
+                <span class="rf-info__value">2 Minggu Sekali</span>
+              </span>
+            </li>
+            <li class="rf-info__item">
+              <span class="rf-info__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" x2="7.01" y1="7" y2="7"></line></svg>
+              </span>
+              <span class="rf-info__text">
+                <span class="rf-info__label">Harga</span>
+                <span class="rf-info__value">Rp 599.000</span>
+              </span>
+            </li>
+          </ul>
+
+          <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Rf%20Face%20di%20Sozo%20%5Bsrc%3AORG-Rf-Face%5D" class="btn btn--primary btn--block-mobile" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
         </div>
-        
-        <div class="sozo-info-col">
-          <div class="sozo-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg></div>
-          <div class="sozo-info-text">
-            <span class="sozo-info-label">Harga Mulai</span>
-            <span class="sozo-info-value">
-              <span class="sozo-price-old">Rp 459.000</span>
-              Rp 299.000
-            </span>
-          </div>
+
+        <div class="rf-hero__media">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/RF-wajah.webp" alt="RF Wajah (Radiofrequency Face) di Sozo Skin Clinic" width="800" height="600" fetchpriority="high">
         </div>
       </div>
-      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20booking%20RF%20Face%20Treatment" class="sozo-btn" target="_blank">Reservasi Sekarang</a>
-    </div>
 
-    <div class="sozo-hero-image">
-      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Radiofrequency-Face.webp" alt="Radiofrequency Face Sozo Skin Clinic">
     </div>
-  </div>
+  </section>
 
-  <div class="sozo-cta-wrapper">
-    <div class="sozo-cta-banner">
-      <h2>Kencangkan Wajah dan Samarkan Kerutan dengan RF Face</h2>
-      <p>Dapatkan tampilan wajah yang lebih kencang, kenyal, dan awet muda tanpa prosedur bedah. Tingkatkan produksi kolagen alami Anda untuk hasil yang halus dan segar bersama tim ahli medis kami.</p>
-      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20seputar%20RF%20Face" class="sozo-btn-secondary" target="_blank">Konsultasi Gratis</a>
-    </div>
-  </div>
+  <!-- BOTTOM CONTENT (DESKRIPSI TREATMENT) -->
+  <section class="rf-content" aria-labelledby="rf-content-title">
+    <div class="rf-container">
 
-  <div class="sozo-content-wrapper">
-    <div class="sozo-description-section">
-      <h2>Radiofrequency untuk Pengencangan Wajah</h2>
-      <p>RF Face adalah treatment radiofrequency untuk wajah yang bekerja dengan menghantarkan energi panas ke dalam kulit guna merangsang kolagen.</p>
-      <div class="sozo-expandable-content" id="treatmentDescriptionGlow">
-        <div class="sozo-expandable-inner">
-          <p>Perawatan ini efektif untuk mengurangi kerutan, mengencangkan kulit kendur, serta meningkatkan elastisitas dan tekstur wajah. Hasilnya membuat wajah tampak lebih tirus dan segar tanpa prosedur invasif.</p>
+      <span class="badge badge--label">TENTANG TREATMENT</span>
+      <h2 class="rf-section-title" id="rf-content-title">Mengenal RF Wajah, Treatment untuk Mengencangkan Kulit Wajah</h2>
+
+      <p class="rf-content__desc">
+        RF Wajah (Radiofrequency Face) memakai energi gelombang radio elektromagnetik untuk mengencangkan kulit wajah. Alat RF menghantarkan panas ke kulit dan merangsang pembentukan kolagen, yaitu protein yang menjaga kulit tetap kencang.
+      </p>
+
+      <p class="rf-content__desc">
+        Selama tindakan, Anda hanya merasakan sensasi hangat. Treatment ini tidak butuh waktu pemulihan, jadi Anda bisa langsung beraktivitas setelahnya.
+      </p>
+
+      <!-- Expandable content (tetap ada di HTML DOM agar terbaca penuh oleh Google) -->
+      <div class="rf-expandable" id="rfContentExpandable">
+        <div class="rf-expandable__inner">
+          <h3 class="rf-content__subtitle">Manfaat RF Wajah</h3>
+          <ul class="rf-content__checklist">
+            <li>Membantu mengencangkan kulit wajah</li>
+            <li>Merangsang pembentukan kolagen</li>
+            <li>Membantu mengencangkan kulit pipi</li>
+            <li>Membantu mengencangkan kulit di area double chin</li>
+            <li>Tanpa waktu pemulihan, bisa langsung beraktivitas</li>
+          </ul>
+
+          <h3 class="rf-content__subtitle">Siapa yang Cocok?</h3>
+          <p class="rf-content__desc">
+            RF Wajah cocok untuk Anda yang mulai merasa kulit pipi atau area bawah dagu kendur. Dokter akan memeriksa kondisi kulit Anda sebelum tindakan. Beberapa hari sebelum treatment, hindari skincare atau treatment yang bikin kulit mengelupas.
+          </p>
+
+          <h3 class="rf-content__subtitle">Berapa Lama dan Berapa Sesi?</h3>
+          <p class="rf-content__desc">
+            Satu sesi berlangsung sekitar 30–60 menit. Rata-rata dibutuhkan 4–8 sesi dengan jarak 2 minggu sekali untuk hasil optimal. Hasil RF tidak permanen, jadi perawatan rutin membantu menjaga kulit tetap kencang.
+          </p>
         </div>
       </div>
-      <button class="sozo-load-more-btn" onclick="toggleGlowDescription()">
-        <span id="glowReadMoreText">Baca Selengkapnya</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+
+      <button type="button" class="rf-expand-btn" id="rfExpandBtn" onclick="toggleRfFaceDesc()" aria-expanded="false" aria-controls="rfContentExpandable">
+        <span id="rfExpandBtnText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
       </button>
-    </div>
 
-    <div class="sozo-faq-section">
-      <h2>Pertanyaan Seputar Radiofrequency Face</h2>
-      
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Apa itu RF wajah dan bagaimana cara kerjanya dalam mengencangkan kulit wajah?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>RF wajah adalah treatment non-invasif yang menggunakan energi radiofrequency untuk menghantarkan panas ke lapisan dalam kulit. Energi ini merangsang produksi kolagen baru dan memperbaiki jaringan kulit sehingga wajah menjadi lebih kencang dan elastis.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="rf-faq" aria-labelledby="rf-faq-title">
+    <div class="rf-container">
+      <h2 class="rf-section-title" id="rf-faq-title">Pertanyaan Seputar RF Wajah</h2>
+
+      <div class="rf-faq__item">
+        <h3><button type="button" class="rf-faq__question" onclick="toggleRfFaceFaq(this)" aria-expanded="false" aria-controls="rf-faq-1-content" id="rf-faq-1-trigger">
+          <span>Apa itu RF Wajah?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rf-faq__answer" id="rf-faq-1-content" role="region" aria-labelledby="rf-faq-1-trigger">
+          <p>Treatment yang memakai energi gelombang radio elektromagnetik untuk mengencangkan kulit wajah. Energi ini merangsang pembentukan kolagen di kulit.</p>
         </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Apa manfaat utama RF wajah untuk kulit? </span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>RF wajah membantu mengurangi kerutan, mengencangkan kulit kendur, memperbaiki tekstur kulit, meningkatkan elastisitas, serta memberikan tampilan wajah yang lebih halus dan segar.
-</p>
+      <div class="rf-faq__item">
+        <h3><button type="button" class="rf-faq__question" onclick="toggleRfFaceFaq(this)" aria-expanded="false" aria-controls="rf-faq-2-content" id="rf-faq-2-trigger">
+          <span>Area wajah mana yang bisa ditangani?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rf-faq__answer" id="rf-faq-2-content" role="region" aria-labelledby="rf-faq-2-trigger">
+          <p>RF Wajah bisa dilakukan di area pipi dan double chin.</p>
         </div>
       </div>
-      
-        <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Apakah RF wajah bisa membantu mengurangi tanda penuaan?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Ya, RF wajah sangat efektif untuk mengurangi tanda penuaan seperti garis halus, kerutan, dan kulit yang mulai kendur karena meningkatkan kolagen secara alami.</p>
+
+      <div class="rf-faq__item">
+        <h3><button type="button" class="rf-faq__question" onclick="toggleRfFaceFaq(this)" aria-expanded="false" aria-controls="rf-faq-3-content" id="rf-faq-3-trigger">
+          <span>Apakah RF Wajah sakit?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rf-faq__answer" id="rf-faq-3-content" role="region" aria-labelledby="rf-faq-3-trigger">
+          <p>Tidak sakit. Anda hanya akan merasakan sensasi hangat dari alat RF.</p>
         </div>
       </div>
-      
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Berapa kali treatment diperlukan untuk hasil optimal?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Biasanya diperlukan 4–6 sesi dengan interval tertentu untuk hasil maksimal, tergantung kondisi kulit masing-masing..</p>
+
+      <div class="rf-faq__item">
+        <h3><button type="button" class="rf-faq__question" onclick="toggleRfFaceFaq(this)" aria-expanded="false" aria-controls="rf-faq-4-content" id="rf-faq-4-trigger">
+          <span>Berapa sesi yang dibutuhkan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rf-faq__answer" id="rf-faq-4-content" role="region" aria-labelledby="rf-faq-4-trigger">
+          <p>Tergantung kondisi kulit masing-masing. Rata-rata dibutuhkan 4–8 sesi untuk hasil optimal, dengan jarak setidaknya 2 minggu sekali.</p>
         </div>
       </div>
-      
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Apakah RF wajah aman dan menyakitkan?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Treatment ini aman dan tidak menyakitkan. Sensasi yang dirasakan hanya hangat pada kulit selama prosedur berlangsung.</p>
+
+      <div class="rf-faq__item">
+        <h3><button type="button" class="rf-faq__question" onclick="toggleRfFaceFaq(this)" aria-expanded="false" aria-controls="rf-faq-5-content" id="rf-faq-5-trigger">
+          <span>Kapan hasilnya terlihat dan apakah permanen?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rf-faq__answer" id="rf-faq-5-content" role="region" aria-labelledby="rf-faq-5-trigger">
+          <p>Hasilnya berbeda pada tiap orang, dan biasanya lebih terlihat jika treatment dilakukan rutin setiap 2 minggu. Hasilnya tidak permanen, jadi perlu perawatan rutin agar kulit tetap kencang.</p>
         </div>
       </div>
-      
-        <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Kapan hasil mulai terlihat?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Hasil terlihat secara bertahap dalam beberapa minggu, dengan peningkatan yang terus berlanjut seiring produksi kolagen.</p>
+
+      <div class="rf-faq__item">
+        <h3><button type="button" class="rf-faq__question" onclick="toggleRfFaceFaq(this)" aria-expanded="false" aria-controls="rf-faq-6-content" id="rf-faq-6-trigger">
+          <span>Apakah perlu waktu pemulihan setelah treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rf-faq__answer" id="rf-faq-6-content" role="region" aria-labelledby="rf-faq-6-trigger">
+          <p>Tidak perlu. Anda bisa langsung beraktivitas setelah treatment. Area wajah mungkin terasa hangat, sedikit merah, atau bengkak karena panas dari alat RF.</p>
         </div>
       </div>
-      
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Apakah RF wajah bisa dikombinasikan dengan treatment lain?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Ya, RF sering dikombinasikan dengan facial, skin booster, atau HIFU untuk hasil yang lebih maksimal..</p>
+
+      <div class="rf-faq__item">
+        <h3><button type="button" class="rf-faq__question" onclick="toggleRfFaceFaq(this)" aria-expanded="false" aria-controls="rf-faq-7-content" id="rf-faq-7-trigger">
+          <span>Apa yang perlu dihindari sebelum treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rf-faq__answer" id="rf-faq-7-content" role="region" aria-labelledby="rf-faq-7-trigger">
+          <p>Hindari skincare atau treatment yang bikin kulit mengelupas (eksfoliasi), misalnya scrub atau peeling.</p>
         </div>
       </div>
-      
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
-          <span>Siapa yang cocok melakukan RF wajah?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer">
-          <p>Cocok untuk Anda yang ingin mengencangkan wajah tanpa operasi dan mengurangi tanda penuaan secara alami.</p>
+
+      <div class="rf-faq__item">
+        <h3><button type="button" class="rf-faq__question" onclick="toggleRfFaceFaq(this)" aria-expanded="false" aria-controls="rf-faq-8-content" id="rf-faq-8-trigger">
+          <span>Berapa harga RF Wajah di Sozo?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rf-faq__answer" id="rf-faq-8-content" role="region" aria-labelledby="rf-faq-8-trigger">
+          <p>Rp 599.000 per sesi. Untuk info promo, hubungi tim kami lewat WhatsApp.</p>
         </div>
       </div>
-      
+
+      <div class="rf-faq__item">
+        <h3><button type="button" class="rf-faq__question" onclick="toggleRfFaceFaq(this)" aria-expanded="false" aria-controls="rf-faq-9-content" id="rf-faq-9-trigger">
+          <span>Di mana lokasi treatment RF Wajah terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rf-faq__answer" id="rf-faq-9-content" role="region" aria-labelledby="rf-faq-9-trigger">
+          <p>Cari cabang Sozo Skin Clinic terdekat dari domisili Anda di halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang Sozo Skin Clinic</a>, atau tanyakan ketersediaan RF Wajah ke tim kami lewat WhatsApp.</p>
+        </div>
+      </div>
+
     </div>
-  </div>
+  </section>
 </div>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Rf%20Face%20di%20Sozo%20%5Bsrc%3AORG-Rf-Face%5D" class="sozo-wa-float" id="rfWaFloat" target="_blank" rel="noopener noreferrer" aria-label="Buat Jadwal via WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+
 <script>
-  function toggleGlowDescription() {
-    const content = document.getElementById('treatmentDescriptionGlow');
-    const btnText = document.getElementById('glowReadMoreText');
-    content.classList.toggle('expanded');
-    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  function toggleRfFaceFaq(btn) {
+    var item = btn.closest('.rf-faq__item');
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    var widget = document.getElementById('sozo-rfface-widget');
+    var items = widget ? widget.querySelectorAll('.rf-faq__item') : [];
+
+    Array.prototype.forEach.call(items, function (other) {
+      if (other !== item) {
+        other.querySelector('.rf-faq__question').setAttribute('aria-expanded', 'false');
+        other.classList.remove('is-open');
+      }
+    });
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    item.classList.toggle('is-open', !isOpen);
   }
 
-  function toggleGlowFaq(button) {
-    const answer = button.nextElementSibling;
-    button.classList.toggle('active');
-    if (answer.style.maxHeight) {
-      answer.style.maxHeight = null;
-    } else {
-      answer.style.maxHeight = answer.scrollHeight + "px";
-    }
+  function toggleRfFaceDesc() {
+    var content = document.getElementById('rfContentExpandable');
+    var btn = document.getElementById('rfExpandBtn');
+    var btnText = document.getElementById('rfExpandBtnText');
+    if (!content || !btn || !btnText) return;
+
+    var isExpanded = content.classList.contains('is-expanded');
+    content.classList.toggle('is-expanded', !isExpanded);
+    btn.classList.toggle('is-active', !isExpanded);
+    btn.setAttribute('aria-expanded', String(!isExpanded));
+    btnText.textContent = !isExpanded ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
   }
+
+  (function initRfFaceWaFloat() {
+    var fab = document.getElementById('rfWaFloat');
+    if (!fab) return;
+    document.body.appendChild(fab);
+    var ticking = false;
+    function updateFab() {
+      ticking = false;
+      var zone = window.innerWidth <= 768 ? 700 : 400;
+      var distanceToBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      fab.classList.toggle('is-hidden', distanceToBottom < zone);
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(updateFab); }
+    }, { passive: true });
+    window.addEventListener('resize', updateFab);
+    window.addEventListener('load', updateFab);
+  })();
 </script>

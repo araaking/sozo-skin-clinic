@@ -1,0 +1,876 @@
+<style>
+  /* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-glow-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+
+  .sozo-sku-glow-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-glow-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-glow-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-glow-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-glow-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-glow-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-glow-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO --- */
+  .sozo-sku-glow-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-glow-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-glow-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-glow-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-glow-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-glow-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info */
+  .sozo-sku-glow-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-glow-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-glow-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-glow-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-glow-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-glow-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-price-old {
+    font-size: 14px !important;
+    color: #94a3b8 !important;
+    text-decoration: line-through;
+    margin-right: 8px;
+    font-weight: 500 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-glow-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-glow-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-glow-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-glow-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-glow-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-glow-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- STYLING STRUCTURAL CONTENT SECTIONS (Baru) --- */
+  .sozo-sku-glow-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-glow-wrapper .sozo-section-card,
+  .sozo-sku-glow-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-glow-wrapper .sozo-section-card h2,
+  .sozo-sku-glow-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-expandable-inner h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 30px !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-expandable-inner h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-section-card p,
+  .sozo-sku-glow-wrapper .sozo-description-section p,
+  .sozo-sku-glow-wrapper .sozo-expandable-inner p {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-description-section ul, 
+  .sozo-sku-glow-wrapper .sozo-expandable-inner ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: #475569;
+  }
+  .sozo-sku-glow-wrapper .sozo-description-section li, 
+  .sozo-sku-glow-wrapper .sozo-expandable-inner li {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  /* --- PROBLEM GRID & CARDS SYSTEM (Baru) --- */
+  .sozo-sku-glow-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .sozo-sku-glow-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+  .sozo-sku-glow-wrapper .sozo-problem-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    border-color: #cbd5e1;
+  }
+  .sozo-sku-glow-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 18px;
+    color: #1A2080;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .sozo-sku-glow-wrapper .sozo-problem-card span {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.5;
+    display: block;
+  }
+
+  /* --- PROCESS STEPS STYLING (Baru) --- */
+  .sozo-sku-glow-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+  .sozo-sku-glow-wrapper .sozo-process-step:last-child {
+    margin-bottom: 0;
+  }
+  .sozo-sku-glow-wrapper .sozo-step-num {
+    background-color: #EEF2FF;
+    color: #1A2080;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+    border: 1px solid #e0e7ff;
+  }
+  .sozo-sku-glow-wrapper .sozo-step-text {
+    flex: 1;
+  }
+  .sozo-sku-glow-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .sozo-sku-glow-wrapper .sozo-step-text p {
+    margin: 0 !important;
+    font-size: 15px !important;
+    color: #475569 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-step-text ul {
+    padding-left: 18px;
+    margin-top: 10px;
+    color: #475569;
+  }
+  .sozo-sku-glow-wrapper .sozo-step-text li {
+    font-size: 15px !important;
+    margin-bottom: 6px;
+  }
+
+  /* --- LOAD MORE ANIMATION BOX --- */
+  .sozo-sku-glow-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-glow-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-glow-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-glow-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-glow-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-glow-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-glow-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- PERBAIKAN FAQ RESPONSIVE & SCHEMA H3 --- */
+  .sozo-sku-glow-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Tombol pertanyaan diperbaiki agar teks bisa wrap */
+  .sozo-sku-glow-wrapper .sozo-faq-question {
+    width: 100% !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important; 
+    
+    padding: 12px 0 !important;
+    gap: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* H3 digunakan untuk FAQ Question Schema namun style sama dengan aslinya */
+  .sozo-sku-glow-wrapper .sozo-faq-question h3 {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 1 !important;
+    display: block !important;
+    text-align: left !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    transition: color 0.2s ease;
+  }
+  
+  .sozo-sku-glow-wrapper .sozo-faq-question:hover h3 { color: #1A2080 !important; }
+
+  .sozo-sku-glow-wrapper .sozo-faq-question svg {
+    flex-shrink: 0 !important;
+    margin-top: 4px !important;
+    transition: transform 0.3s ease !important;
+    color: #64748b;
+  }
+
+  .sozo-sku-glow-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+
+  .sozo-sku-glow-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-glow-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-glow-wrapper .sozo-treatment-hero { flex-direction: column; gap: 30px; }
+    .sozo-sku-glow-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-glow-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
+    .sozo-sku-glow-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
+    .sozo-sku-glow-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-glow-wrapper .sozo-faq-section, 
+    .sozo-sku-glow-wrapper .sozo-description-section,
+    .sozo-sku-glow-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+    .sozo-sku-glow-wrapper .sozo-faq-question h3 { font-size: 15px !important; }
+    
+    .sozo-sku-glow-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+</style>
+
+<div class="sozo-sku-glow-wrapper" id="sozo-glow-widget">
+  
+  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="https://sozoskinclinic.com/">
+          <span itemprop="name">Home</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li class="separator">/</li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="https://sozoskinclinic.com/radiofrequency-treatment/">
+          <span itemprop="name">Radiofrequency Treatment</span>
+        </a>
+        <meta itemprop="position" content="2" />
+      </li>
+      <li class="separator">/</li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+        <span itemprop="name" style="color: #1A2080; font-weight: 600;">Radiofrequency Face</span>
+        <meta itemprop="item" content="https://sozoskinclinic.com/radiofrequency-treatment/radiofrequency-face/" />
+        <meta itemprop="position" content="3" />
+      </li>
+    </ol>
+  </nav>
+
+  <div class="sozo-treatment-hero" itemscope itemtype="https://schema.org/Product">
+    <div class="sozo-hero-text">
+      <h1 itemprop="name">RF Wajah (Radiofrequency Face)</h1>
+      <p itemprop="description">RF Wajah (Radiofrequency Face) adalah treatment non-bedah yang membantu mengencangkan kulit wajah dengan merangsang produksi kolagen menggunakan energi radiofrequency. Perawatan ini efektif mengurangi garis halus, meningkatkan elastisitas kulit, serta membuat wajah tampak lebih kencang, halus, dan awet muda secara alami.</p>
+
+      <div class="sozo-info-row">
+        <div class="sozo-info-col">
+          <div class="sozo-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Durasi</span>
+            <span class="sozo-info-value">30 - 60 Menit</span>
+          </div>
+        </div>
+        
+        <div class="sozo-info-col" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <div class="sozo-info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg></div>
+          <div class="sozo-info-text">
+            <span class="sozo-info-label">Harga Mulai</span>
+            <span class="sozo-info-value">
+              <meta itemprop="priceCurrency" content="IDR" />
+              <meta itemprop="price" content="299000" />
+              <span class="sozo-price-old">Rp 459.000</span>
+              Rp 299.000
+            </span>
+          </div>
+        </div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Rf%20Face%20di%20Sozo%20%5Bsrc%3AORG-Rf-Face%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
+    </div>
+
+    <div class="sozo-hero-image">
+      <img itemprop="image" src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Radiofrequency-Face.webp" alt="Radiofrequency Face Sozo Skin Clinic">
+    </div>
+  </div>
+
+  <div class="sozo-cta-wrapper">
+    <div class="sozo-cta-banner">
+      <h2>Kencangkan Wajah dan Samarkan Kerutan dengan RF Face</h2>
+      <p>Dapatkan tampilan wajah yang lebih kencang, kenyal, dan awet muda tanpa prosedur bedah. Tingkatkan produksi kolagen alami Anda untuk hasil yang halus dan segar bersama tim ahli medis kami.</p>
+      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Rf%20Face%20di%20Sozo%20%5Bsrc%3AORG-Rf-Face%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
+    </div>
+  </div>
+
+  <div class="sozo-content-wrapper">
+    
+    <!-- SECTION 1: MASALAH KULIT -->
+    <div class="sozo-section-card">
+      <h2>Masalah Kulit yang Sering Dialami dan Dapat Dibantu dengan RF Wajah</h2>
+      <p>Kulit yang mulai kendur, muncul garis halus, hingga kontur wajah yang terlihat kurang tegas merupakan beberapa tanda penuaan yang sering dikeluhkan. RF Wajah (Radiofrequency Face) membantu merangsang produksi kolagen sehingga kulit terasa lebih kencang, elastis, dan tampak lebih muda secara bertahap.</p>
+      <p>Beberapa masalah kulit yang sering menjadi alasan pasien memilih RF Wajah antara lain:</p>
+      
+      <div class="sozo-problem-grid">
+        <div class="sozo-problem-card">
+          <strong>Kulit Wajah Mulai Kendur</strong>
+          <span>Berkurangnya produksi kolagen dapat membuat kulit kehilangan kekencangan, terutama pada area pipi, rahang, dan bawah dagu. RF Wajah membantu meningkatkan elastisitas kulit sehingga wajah tampak lebih kencang.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Garis Halus dan Kerutan</strong>
+          <span>Garis halus pada dahi, area mata, maupun garis senyum merupakan tanda penuaan yang umum terjadi. RF Wajah membantu menyamarkan tampilan garis halus dengan merangsang pembentukan kolagen alami.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Kontur Wajah Kurang Tegas</strong>
+          <span>Kulit yang mulai mengendur dapat membuat jawline terlihat kurang terdefinisi. RF Wajah membantu mengencangkan kulit sehingga kontur wajah tampak lebih proporsional.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Elastisitas Kulit Mulai Berkurang</strong>
+          <span>Kulit yang terasa kurang kenyal merupakan salah satu tanda menurunnya kualitas kolagen. RF Wajah membantu meningkatkan elastisitas sehingga kulit terasa lebih padat dan kenyal.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Tekstur Kulit Terasa Kurang Halus</strong>
+          <span>Penurunan kualitas kulit dapat membuat permukaan wajah terasa kasar dan tampak kurang merata. RF Wajah membantu memperbaiki tekstur kulit sehingga wajah terasa lebih halus dan tampak lebih sehat.</span>
+        </div>
+        <div class="sozo-problem-card">
+          <strong>Ingin Menjaga Kulit Tetap Awet Muda</strong>
+          <span>RF Wajah juga banyak dipilih sebagai treatment anti-aging untuk membantu menjaga kekencangan kulit dan memperlambat munculnya tanda-tanda penuaan, sehingga wajah tetap terlihat segar dan terawat.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: RICH DESCRIPTION (BODY TEXT) -->
+    <div class="sozo-description-section">
+      <h2>Apa Itu RF Wajah (Radiofrequency Face)?</h2>
+      <p>RF Wajah (Radiofrequency Face) adalah treatment non-invasif yang menggunakan energi radiofrequency untuk membantu mengencangkan kulit wajah melalui stimulasi produksi kolagen dan elastin alami. Energi panas yang dihantarkan secara terkontrol ke lapisan dermis membantu mengaktifkan fibroblast, yaitu sel yang berperan dalam pembentukan kolagen, sehingga kulit menjadi lebih kencang, elastis, dan tampak lebih muda.</p>
+      <p>Seiring bertambahnya usia, produksi kolagen akan terus menurun sehingga kulit mulai kehilangan kekencangan, muncul garis halus, kerutan, hingga kontur wajah yang terlihat kurang tegas. RF Wajah membantu memperlambat munculnya tanda-tanda penuaan tersebut dengan merangsang proses regenerasi kulit dari dalam tanpa tindakan operasi maupun prosedur invasif.</p>
+      <p>Karena bekerja pada lapisan kulit yang berperan dalam pembentukan kolagen, RF Wajah sering dipilih sebagai salah satu treatment anti-aging untuk membantu menjaga kualitas kulit sekaligus memberikan efek pengencangan wajah secara bertahap.</p>
+      
+      <div class="sozo-expandable-content" id="treatmentDescriptionGlow">
+        <div class="sozo-expandable-inner">
+          
+          <h2>Bagaimana Cara Kerja RF Wajah?</h2>
+          <p>RF Wajah bekerja dengan menghantarkan energi radiofrequency ke lapisan dermis kulit sehingga menghasilkan panas yang terkontrol. Suhu tersebut membantu merangsang aktivitas fibroblast untuk memproduksi kolagen dan elastin baru, dua komponen penting yang berperan dalam menjaga kekencangan, elastisitas, dan struktur kulit.</p>
+          <p>Proses stimulasi kolagen ini berlangsung secara bertahap sehingga hasil treatment akan terus berkembang seiring proses regenerasi alami kulit.</p>
+          <p>Melalui mekanisme tersebut, RF Wajah membantu:</p>
+          <ul>
+            <li>Merangsang produksi kolagen dan elastin alami.</li>
+            <li>Membantu mengencangkan kulit yang mulai kehilangan elastisitas.</li>
+            <li>Mengurangi tampilan garis halus dan kerutan.</li>
+            <li>Memperbaiki tekstur kulit agar terasa lebih halus.</li>
+            <li>Membantu membuat kontur wajah terlihat lebih tegas.</li>
+            <li>Mendukung proses peremajaan kulit tanpa tindakan bedah.</li>
+          </ul>
+          <p>Karena tidak memerlukan sayatan maupun injeksi, RF Wajah menjadi pilihan bagi banyak orang yang menginginkan perawatan pengencangan wajah dengan downtime yang minimal.</p>
+
+          <h2>Manfaat RF Wajah untuk Kulit</h2>
+          <p>RF Wajah menawarkan berbagai manfaat bagi kulit yang mulai menunjukkan tanda-tanda penuaan maupun penurunan elastisitas.</p>
+          
+          <h3>Membantu Mengencangkan Kulit Wajah</h3>
+          <p>Produksi kolagen yang meningkat membantu kulit terasa lebih padat dan kencang sehingga wajah tampak lebih segar serta memiliki kontur yang lebih tegas.</p>
+          
+          <h3>Membantu Mengurangi Garis Halus dan Kerutan</h3>
+          <p>RF Wajah membantu memperbaiki struktur kulit sehingga garis halus dan kerutan halus dapat tampak lebih tersamarkan secara bertahap.</p>
+          
+          <h3>Meningkatkan Elastisitas Kulit</h3>
+          <p>Kolagen dan elastin baru membantu kulit menjadi lebih lentur sehingga wajah terasa lebih kenyal dan tidak mudah terlihat kendur.</p>
+          
+          <h3>Membantu Memperbaiki Tekstur Kulit</h3>
+          <p>Selain memberikan efek pengencangan, RF Wajah juga membantu membuat permukaan kulit terasa lebih halus, lembut, dan tampak lebih merata.</p>
+          
+          <h3>Membuat Wajah Tampak Lebih Segar dan Awet Muda</h3>
+          <p>Dengan meningkatnya kualitas kulit dari dalam, wajah dapat terlihat lebih cerah, sehat, dan memiliki tampilan yang lebih youthful tanpa mengubah bentuk alami wajah.</p>
+
+          <h2>Area yang Dapat Dilakukan RF Wajah</h2>
+          <p>RF Wajah dapat diaplikasikan pada beberapa area yang mulai mengalami penurunan elastisitas atau muncul tanda-tanda penuaan, seperti:</p>
+          <ul>
+            <li>Pipi.</li>
+            <li>Rahang (jawline).</li>
+            <li>Area bawah dagu.</li>
+            <li>Dahi.</li>
+            <li>Area sekitar mata.</li>
+            <li>Leher.</li>
+          </ul>
+          <p>Dokter akan menentukan area treatment berdasarkan kondisi kulit, tingkat elastisitas, serta hasil konsultasi sebelum tindakan dilakukan.</p>
+
+          <h2>RF Wajah vs HIFU, Apa Perbedaannya?</h2>
+          <p>RF Wajah dan HIFU sama-sama digunakan sebagai treatment pengencangan wajah, tetapi keduanya memiliki cara kerja yang berbeda.</p>
+          <p>RF Wajah menggunakan energi radiofrequency yang bekerja pada lapisan dermis untuk merangsang pembentukan kolagen dan elastin. Treatment ini lebih berfokus pada peningkatan kualitas kulit, membantu mengurangi garis halus, memperbaiki tekstur kulit, serta mengencangkan kulit secara bertahap.</p>
+          <p>Sementara itu, HIFU menggunakan energi ultrasound yang mampu menjangkau lapisan kulit yang lebih dalam sehingga umumnya dipilih untuk membantu memberikan efek lifting pada kulit yang mengalami kekenduran lebih signifikan.</p>
+          <p>Dokter akan merekomendasikan treatment yang paling sesuai berdasarkan kondisi kulit, tingkat kekenduran, dan hasil yang ingin dicapai. Pada beberapa kasus, RF Wajah juga dapat dikombinasikan dengan treatment lain untuk mendapatkan hasil yang lebih optimal.</p>
+
+          <h2>Proses RF Wajah dan Downtime</h2>
+          <p>Sebelum treatment dimulai, dokter akan melakukan konsultasi untuk mengevaluasi kondisi kulit, tingkat elastisitas, serta menentukan area yang akan dilakukan tindakan. Setelah wajah dibersihkan, gel khusus akan diaplikasikan agar energi radiofrequency dapat dihantarkan secara optimal selama treatment berlangsung.</p>
+          <p>Selama prosedur, alat RF akan digerakkan secara perlahan pada area wajah yang telah ditentukan. Pasien umumnya hanya merasakan sensasi hangat yang nyaman di permukaan kulit. Durasi treatment biasanya berlangsung sekitar 30–60 menit, tergantung area yang dirawat.</p>
+
+          <h2>Downtime Setelah RF Wajah</h2>
+          <p>RF Wajah umumnya tidak memerlukan downtime yang lama sehingga pasien dapat kembali beraktivitas setelah treatment selesai. Sebagian orang mungkin mengalami kemerahan ringan atau sensasi hangat pada kulit, namun kondisi tersebut biasanya akan mereda dalam beberapa jam.</p>
+          <p>Untuk membantu menjaga hasil treatment, dokter juga akan memberikan anjuran perawatan setelah tindakan, termasuk penggunaan sunscreen, pelembap, serta jadwal treatment lanjutan sesuai kebutuhan kulit masing-masing pasien.</p>
+
+        </div>
+      </div>
+      
+      <button class="sozo-load-more-btn" onclick="toggleGlowDescription()">
+        <span id="glowReadMoreText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+
+    <!-- SECTION 3: PROSES & CARA KERJA -->
+    <div class="sozo-section-card">
+      <h2>Proses & Cara Kerja RF Wajah</h2>
+      <p>RF Wajah (Radiofrequency Face) merupakan treatment non-invasif yang menggunakan energi radiofrequency untuk menghantarkan panas terkontrol ke lapisan dermis kulit. Energi tersebut membantu merangsang aktivitas fibroblast, yaitu sel yang berperan dalam pembentukan kolagen dan elastin, sehingga kulit terasa lebih kencang, elastis, dan tampak lebih muda secara bertahap.</p>
+      <p>Sebelum treatment dilakukan, dokter akan melakukan konsultasi dan analisis kondisi kulit untuk menentukan area yang akan dirawat serta memastikan RF Wajah merupakan treatment yang sesuai dengan kebutuhan pasien.</p>
+      <h3 style="font-size: 20px !important; margin-bottom: 25px !important;">Tahapan RF Wajah di Sozo Skin Clinic</h3>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">1</div>
+        <div class="sozo-step-text">
+          <strong>Konsultasi dan Analisis Kondisi Kulit</strong>
+          <p>Dokter akan mengevaluasi kondisi kulit, tingkat elastisitas, serta masalah yang ingin diperbaiki, seperti kulit kendur, garis halus, atau kontur wajah yang mulai kehilangan definisi. Dari hasil konsultasi tersebut, dokter akan menentukan rencana treatment yang paling sesuai.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">2</div>
+        <div class="sozo-step-text">
+          <strong>Persiapan Area Treatment</strong>
+          <p>Area wajah akan dibersihkan terlebih dahulu untuk mengangkat sisa makeup, minyak, dan kotoran pada kulit. Selanjutnya, gel khusus akan diaplikasikan agar energi radiofrequency dapat dihantarkan secara optimal sekaligus meningkatkan kenyamanan selama treatment.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">3</div>
+        <div class="sozo-step-text">
+          <strong>Proses RF Wajah (Radiofrequency Face)</strong>
+          <p>Handpiece RF akan digerakkan secara perlahan pada area wajah yang telah ditentukan. Energi radiofrequency akan menghasilkan panas terkontrol yang bekerja pada lapisan dermis untuk membantu:</p>
+          <ul>
+            <li>Merangsang produksi kolagen dan elastin alami.</li>
+            <li>Membantu mengencangkan kulit yang mulai kehilangan elastisitas.</li>
+            <li>Menyamarkan tampilan garis halus dan kerutan.</li>
+            <li>Memperbaiki tekstur kulit sehingga terasa lebih halus dan tampak lebih sehat.</li>
+          </ul>
+          <p>Selama prosedur, pasien umumnya hanya merasakan sensasi hangat pada kulit tanpa rasa nyeri yang berarti.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-process-step">
+        <div class="sozo-step-num">4</div>
+        <div class="sozo-step-text">
+          <strong>Setelah Treatment dan Masa Pemulihan</strong>
+          <p>RF Wajah umumnya tidak memerlukan downtime yang lama sehingga sebagian besar pasien dapat langsung kembali beraktivitas setelah treatment selesai. Beberapa pasien mungkin mengalami kemerahan ringan atau sensasi hangat pada area treatment, namun kondisi tersebut biasanya akan mereda dalam beberapa jam. Untuk membantu mendapatkan hasil yang optimal, dokter akan memberikan anjuran perawatan setelah treatment serta jadwal sesi berikutnya sesuai kondisi kulit masing-masing pasien.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: FAQ SECTION (Dioptimasi untuk Schema Markup) -->
+    <div class="sozo-faq-section" itemscope itemtype="https://schema.org/FAQPage">
+      <h2>Pertanyaan Seputar RF Wajah (Radiofrequency Face)</h2>
+      
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Berapa kali treatment RF wajah diperlukan agar hasilnya optimal?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Jumlah sesi RF wajah akan disesuaikan dengan kondisi kulit dan tujuan perawatan setiap pasien. Umumnya dokter merekomendasikan sekitar 4–6 sesi dengan interval tertentu untuk membantu mendapatkan hasil yang lebih optimal. Setelah itu, treatment maintenance dapat disarankan sesuai kebutuhan agar hasil pengencangan kulit tetap terjaga.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Kapan hasil RF wajah mulai terlihat?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Sebagian pasien dapat merasakan kulit terasa lebih halus dan kencang setelah treatment. Namun, hasil yang lebih optimal biasanya terlihat secara bertahap dalam beberapa minggu hingga beberapa bulan karena proses pembentukan kolagen membutuhkan waktu.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Berapa lama hasil RF wajah dapat bertahan?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Hasil RF wajah dapat bertahan selama beberapa bulan, tergantung kondisi kulit, usia, gaya hidup, serta rutinitas perawatan yang dijalani. Dokter dapat merekomendasikan jadwal maintenance untuk membantu mempertahankan hasil treatment dalam jangka waktu yang lebih lama.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Apakah RF wajah aman dan terasa sakit?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">RF wajah merupakan treatment non-invasif yang umumnya terasa nyaman saat dilakukan. Selama prosedur, pasien biasanya hanya merasakan sensasi hangat pada kulit. Treatment ini sebaiknya dilakukan oleh tenaga medis profesional agar keamanan dan kenyamanan selama prosedur tetap terjaga.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Apakah RF wajah memiliki downtime?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">RF wajah umumnya tidak memerlukan downtime yang lama. Setelah treatment, kulit mungkin tampak sedikit kemerahan atau terasa hangat untuk sementara waktu, namun kondisi tersebut biasanya akan membaik dalam beberapa jam sehingga sebagian besar pasien dapat kembali beraktivitas seperti biasa.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Berapa lama satu sesi RF wajah berlangsung?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Durasi treatment RF wajah umumnya sekitar 30–60 menit, tergantung area yang dirawat dan kondisi kulit masing-masing pasien. Setelah treatment selesai, sebagian besar pasien dapat langsung melanjutkan aktivitas sehari-hari sesuai anjuran dokter.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Apakah RF wajah bisa membuat wajah terlihat lebih tirus?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">RF wajah membantu mengencangkan kulit dan mempertegas kontur wajah melalui stimulasi kolagen. Pada beberapa orang, efek ini dapat membuat wajah tampak lebih ramping atau lebih terdefinisi. Namun, apabila tujuan utama adalah mengurangi lemak di area wajah atau bawah dagu, dokter mungkin akan merekomendasikan kombinasi treatment lain sesuai kondisi masing-masing pasien.</p>
+        </div>
+      </div>
+      
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Apa perbedaan RF wajah dan HIFU?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">RF wajah menggunakan energi radiofrequency untuk membantu meningkatkan produksi kolagen pada lapisan dermis sehingga kulit terasa lebih kencang dan elastis. Sementara itu, HIFU menggunakan energi ultrasound yang bekerja hingga lapisan kulit yang lebih dalam dan lebih berfokus pada efek lifting. Dokter akan menentukan treatment yang paling sesuai berdasarkan kondisi kulit dan hasil yang ingin dicapai.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Apakah RF wajah dapat dikombinasikan dengan treatment lain?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ya. RF wajah dapat dikombinasikan dengan treatment lain seperti Skin Booster, facial treatment, maupun HIFU sesuai kebutuhan kulit dan hasil yang ingin dicapai. Dokter akan menentukan kombinasi treatment yang paling sesuai setelah melakukan konsultasi dan analisis kondisi kulit.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Apakah RF wajah bisa dilakukan setiap bulan?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Frekuensi treatment RF wajah akan disesuaikan dengan kondisi kulit dan program perawatan yang direkomendasikan dokter. Pada fase awal biasanya diperlukan beberapa sesi dengan interval tertentu, kemudian dapat dilanjutkan sebagai treatment maintenance untuk membantu menjaga hasil yang telah diperoleh.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Kapan saya boleh menggunakan makeup setelah RF wajah?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Sebagian besar pasien dapat kembali menggunakan makeup setelah kondisi kulit stabil sesuai anjuran dokter. Untuk membantu menjaga hasil treatment, sebaiknya tetap gunakan sunscreen setiap hari dan ikuti petunjuk perawatan yang diberikan oleh dokter setelah tindakan.</p>
+        </div>
+      </div>
+
+      <div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="sozo-faq-question" onclick="toggleGlowFaq(this)">
+          <h3 itemprop="name">Siapa yang cocok menjalani RF wajah?</h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">RF wajah cocok untuk pria maupun wanita yang mulai mengalami penurunan elastisitas kulit, muncul garis halus, kulit wajah terasa kendur, atau ingin melakukan perawatan anti-aging tanpa prosedur bedah. Sebelum treatment dilakukan, dokter akan mengevaluasi kondisi kulit untuk menentukan apakah RF wajah merupakan pilihan yang tepat sesuai kebutuhan Anda.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleGlowDescription() {
+    const content = document.getElementById('treatmentDescriptionGlow');
+    const btn = document.querySelector('.sozo-load-more-btn');
+    const btnText = document.getElementById('glowReadMoreText');
+    
+    if (!content || !btn) return;
+    
+    content.classList.toggle('expanded');
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('expanded')) {
+      btnText.textContent = 'Tampilkan Lebih Sedikit';
+    } else {
+      btnText.textContent = 'Baca Selengkapnya';
+    }
+  }
+
+  function toggleGlowFaq(button) {
+    const answer = button.nextElementSibling;
+    if (!answer) return;
+    
+    button.classList.toggle('active');
+    
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+</script>
