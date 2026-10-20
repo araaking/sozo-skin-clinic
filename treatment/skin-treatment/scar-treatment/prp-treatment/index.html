@@ -1,687 +1,1358 @@
-<style>
+<!-- ============================================================
+     UI PRP WAJAH - SOZO SKIN CLINIC
+     URL     : https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/
+     Style   : Sozo Design System V1.1 (design-system/), Elementor Safe, scoped
+     Layout  : Sama dengan halaman Restylane Skin Booster
+     Seksi   : Breadcrumb -> Hero (H1, masalah, deskripsi, info, CTA, gambar)
+               -> Tentang Treatment (deskripsi ringkas + Baca Selengkapnya)
+               -> FAQ -> Floating WhatsApp
+     Pakai   : Copy seluruh file ke widget HTML Elementor halaman ini.
+     CSS+JS  : Sudah digabung di file ini (Font Awesome preload, Poppins,
+               CSS .sozo-sku-prp-wrapper, JS FAQ, Baca Selengkapnya, floating WA).
+     JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList + FAQPage).
+               Isi FAQPage harus sama dengan FAQ di bawah. schema-markup.html
+               tidak dipakai lagi untuk halaman ini.
+     Backup  : Versi lama ada di backup.html.
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/#webpage",
+      "url": "https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/",
+      "name": "PRP Wajah (PRP Face) Treatment untuk Bopeng dan Bekas Jerawat | Sozo Skin Clinic",
+      "description": "PRP Wajah (Platelet Rich Plasma) memakai plasma dari darah Anda sendiri yang kaya trombosit dan faktor pertumbuhan. Plasma ini membantu regenerasi kulit, sehingga bopeng bekas jerawat dan tekstur kulit tidak rata tampak tersamarkan secara bertahap.",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/#website"
+      },
+      "about": {
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Treatment",
+          "item": "https://sozoskinclinic.com/treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Skin Treatment",
+          "item": "https://sozoskinclinic.com/skin-treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Scar Treatment",
+          "item": "https://sozoskinclinic.com/skin-treatment/scar-treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "PRP Wajah"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/#faq",
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/skin-treatment/scar-treatment/prp-treatment/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu PRP Treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PRP Treatment adalah perawatan yang menggunakan Platelet Rich Plasma atau plasma darah sendiri yang kaya trombosit untuk membantu mendukung proses regenerasi kulit. Pada wajah, PRP sering digunakan untuk membantu menyamarkan bopeng bekas jerawat, memperbaiki tekstur kulit, dan mendukung kulit tampak lebih sehat secara bertahap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah PRP Treatment sama dengan Vampire Facial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PRP Treatment sering dikenal sebagai Vampire Facial karena menggunakan plasma dari darah pasien sendiri. Perbedaannya, PRP Treatment menjelaskan metode medis yang digunakan, sedangkan Vampire Facial adalah istilah populer yang sering dipakai untuk perawatan wajah berbasis PRP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah PRP Treatment bisa membantu bopeng bekas jerawat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PRP Treatment dapat membantu mendukung perbaikan tekstur kulit dan menyamarkan bopeng bekas jerawat secara bertahap. Tingkat perbaikan dapat berbeda pada setiap orang, tergantung kedalaman bopeng, kondisi kulit awal, dan respons kulit terhadap rangkaian perawatan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah PRP Treatment aman dilakukan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PRP Treatment umumnya aman bila dilakukan dengan prosedur steril dan evaluasi dokter. Karena menggunakan plasma dari darah sendiri, risiko reaksi alergi cenderung lebih rendah, namun konsultasi tetap diperlukan untuk memastikan tindakan sesuai dengan kondisi kulit dan riwayat kesehatan Anda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama durasi PRP Treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Durasi PRP Treatment di SOZO Skin Clinic sekitar 75 menit, termasuk persiapan, proses pengambilan darah, pemisahan plasma, dan tindakan pada area wajah."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa harga PRP Treatment di SOZO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harga promo PRP Treatment di SOZO Skin Clinic mulai dari Rp 1.079.000 per sesi. Untuk informasi promo terbaru dan rekomendasi paket perawatan, Anda dapat menghubungi tim SOZO melalui WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa kali sesi PRP Treatment yang diperlukan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jumlah sesi PRP Treatment dapat berbeda pada setiap orang. Dokter biasanya akan menyesuaikan rekomendasi sesi berdasarkan kondisi kulit, kedalaman bopeng, target perawatan, dan respons kulit setelah tindakan pertama."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ada downtime setelah PRP Treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Setelah PRP Treatment, kulit dapat tampak kemerahan, terasa hangat, atau lebih sensitif selama 1 sampai 3 hari. Reaksi ini umumnya bersifat sementara. Dokter akan memberikan arahan perawatan setelah tindakan agar pemulihan lebih nyaman."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana lokasi PRP Treatment atau PRP wajah terdekat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jika Anda sedang mencari klinik kecantikan untuk PRP Treatment atau PRP wajah terdekat dengan prosedur yang aman dan nyaman, Anda bisa mengunjungi seluruh cabang SOZO Skin Clinic. Setiap klinik kami didukung fasilitas medis modern, menggunakan produk berkualitas tinggi, dan ditangani langsung oleh terapis serta Dokter Kecantikan profesional. Klinik kami tersebar di berbagai wilayah Jabodetabek, termasuk Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Untuk menemukan cabang yang paling mudah dijangkau dari domisili Anda, silakan cek halaman Lokasi Cabang SOZO Skin Clinic Terdekat."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+<!-- Font resmi Sozo: Poppins 400-800, di-load sekali -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>/* ============================================================
+     Token Sozo Design System V1.1, di-scope ke wrapper supaya
+     tidak bocor ke halaman Elementor lain. Density: compact
+     (treatment detail), sama dengan halaman Restylane Skin Booster.
+     ============================================================ */
   .sozo-sku-prp-wrapper {
-    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #333;
-    line-height: 1.6;
-    background-color: #ffffff;
-  }
-  .sozo-sku-prp-wrapper * { box-sizing: border-box; }
+    /* Color */
+    --color-brand-primary: #1A2080;
+    --color-brand-almond: #E9DFD5;
+    --color-white: #FFFFFF;
+    --color-text-primary: #171715;
+    --color-text-secondary: #41413E;
+    --color-text-muted: #777771;
+    --color-text-on-primary: #FFFFFF;
+    --color-border: #DFDBD4;
+    --color-border-strong: #C8C3BA;
+    --color-primary-hover: #151A6D;
 
-  .sozo-sku-prp-wrapper .sozo-breadcrumb {
-    padding: 15px 20px 25px 20px;
-    width: 100%;
-  }
-  .sozo-sku-prp-wrapper .sozo-breadcrumb ol {
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-  }
-  .sozo-sku-prp-wrapper .sozo-breadcrumb li {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #1A2080;
-  }
-  .sozo-sku-prp-wrapper .sozo-breadcrumb a {
-    text-decoration: none !important;
-    color: #64748b !important;
-    font-weight: 500;
-  }
-  .sozo-sku-prp-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
-  .sozo-sku-prp-wrapper .sozo-breadcrumb .separator {
-    color: #cbd5e1;
-    margin: 0 4px;
-    font-size: 12px;
-  }
+    /* Typography */
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --text-section-title: clamp(24px, 3vw, 32px);
+    --text-body: 16px;
+    --text-body-sm: 14px;
+    --text-label: 12px;
+    --leading-caption: 1.40;
+    --tracking-eyebrow: 0.12em;
+    --tracking-badge: 0.02em;
 
-  .sozo-sku-prp-wrapper .sozo-treatment-hero {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 50px;
-    align-items: center;
-    margin-bottom: 50px;
-    padding: 0 20px;
-  }
-  .sozo-sku-prp-wrapper .sozo-hero-text { flex: 1; }
-  .sozo-sku-prp-wrapper .sozo-hero-text h1 {
-    font-size: clamp(32px, 4vw, 42px) !important;
-    color: #1A2080 !important;
-    margin: 0 0 16px 0 !important;
-    line-height: 1.2 !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.5px;
-  }
-  .sozo-sku-prp-wrapper .sozo-hero-text p {
-    font-size: 16px !important;
-    color: #475569 !important;
-    margin: 0 0 30px 0 !important;
-    line-height: 1.6 !important;
-  }
-  .sozo-sku-prp-wrapper .sozo-hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .sozo-sku-prp-wrapper .sozo-hero-image img {
-    width: 100%;
-    max-width: 480px;
-    height: 340px;
-    border-radius: 24px;
-    object-fit: cover;
-    object-position: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    display: block;
-  }
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
 
-  .sozo-sku-prp-wrapper .sozo-info-row {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 35px;
-    padding: 24px;
-    background-color: #f8fafc;
-    border-radius: 16px;
-    border: 1px solid #f1f5f9;
-  }
-  .sozo-sku-prp-wrapper .sozo-info-col {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-  }
-  .sozo-sku-prp-wrapper .sozo-info-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    background-color: #EEF2FF;
-    border-radius: 12px;
-    color: #1A2080;
-  }
-  .sozo-sku-prp-wrapper .sozo-info-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .sozo-sku-prp-wrapper .sozo-info-label {
-    font-size: 13px !important;
-    color: #64748b !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .sozo-sku-prp-wrapper .sozo-info-value {
-    font-size: 20px !important;
-    color: #1A2080 !important;
-    font-weight: 700 !important;
-  }
-  .sozo-sku-prp-wrapper .sozo-price-old {
-    font-size: 14px !important;
-    color: #94a3b8 !important;
-    text-decoration: line-through;
-    margin-right: 8px;
-    font-weight: 500 !important;
-  }
+    /* Layout (compact: treatment detail) */
+    --container-max: 1280px;
+    --container-pad: 32px;
+    --section-y: var(--space-6);
 
-  .sozo-sku-prp-wrapper .sozo-btn,
-  .sozo-sku-prp-wrapper .sozo-related-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 320px;
-    padding: 16px 24px;
-    background-color: #1A2080 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
-    border: 2px solid #1A2080 !important;
-  }
-  .sozo-sku-prp-wrapper .sozo-btn:hover,
-  .sozo-sku-prp-wrapper .sozo-related-btn:hover {
-    background-color: #ffffff !important;
-    color: #1A2080 !important;
-    transform: translateY(-3px);
-  }
+    /* Shape */
+    --radius-lg: 16px;
+    --radius-full: 999px;
+    --focus-ring: 2px solid var(--color-brand-primary);
+    --focus-offset: 3px;
 
-  .sozo-sku-prp-wrapper .sozo-cta-wrapper { padding: 0 20px; }
-  .sozo-sku-prp-wrapper .sozo-cta-banner {
-    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
-    border-radius: 24px;
-    padding: 50px 30px;
-    margin-bottom: 50px;
-    text-align: center;
-    color: #ffffff;
-    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
-  }
-  .sozo-sku-prp-wrapper .sozo-cta-banner h2 {
-    font-size: clamp(24px, 3vw, 32px) !important;
-    color: #ffffff !important;
-    margin: 0 0 15px 0 !important;
-    font-weight: 800 !important;
-  }
-  .sozo-sku-prp-wrapper .sozo-cta-banner p {
-    font-size: 16px !important;
-    color: #e2e8f0 !important;
-    margin: 0 auto 30px auto !important;
-    max-width: 650px;
-  }
-  .sozo-sku-prp-wrapper .sozo-btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 36px;
-    background-color: #ffffff !important;
-    color: #1A2080 !important;
-    text-decoration: none !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    border-radius: 100px;
-    border: 2px solid #ffffff !important;
-  }
+    /* Motion */
+    --duration-fast: 180ms;
+    --duration-card: 220ms;
+    --ease-standard: ease;
 
-  .sozo-sku-prp-wrapper .sozo-content-wrapper { padding: 0 20px; }
-  .sozo-sku-prp-wrapper .sozo-section-card,
-  .sozo-sku-prp-wrapper .sozo-faq-section {
-    background-color: #ffffff;
-    border: 1px solid #f1f5f9;
-    border-radius: 24px;
-    padding: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  }
-  .sozo-sku-prp-wrapper .sozo-section-card h2,
-  .sozo-sku-prp-wrapper .sozo-faq-section h2 {
-    font-size: 24px !important;
-    color: #1A2080 !important;
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-    font-weight: 800 !important;
-  }
-  .sozo-sku-prp-wrapper .sozo-section-card h3 {
-    font-size: 18px !important;
-    color: #1A2080 !important;
-    margin-top: 24px !important;
-    margin-bottom: 12px !important;
-    font-weight: 700 !important;
-  }
-  .sozo-sku-prp-wrapper .sozo-section-card p,
-  .sozo-sku-prp-wrapper .sozo-section-card li {
-    color: #475569 !important;
-    font-size: 16px !important;
-  }
-  .sozo-sku-prp-wrapper .sozo-section-card ul {
-    padding-left: 20px !important;
-    margin-bottom: 20px !important;
-  }
-
-  .sozo-sku-prp-wrapper .sozo-problem-grid,
-  .sozo-sku-prp-wrapper .sozo-related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .sozo-sku-prp-wrapper .sozo-problem-card {
-    background-color: #f8fafc;
-    border: 1px solid #f1f5f9;
-    border-radius: 14px;
-    padding: 20px;
-  }
-  .sozo-sku-prp-wrapper .sozo-problem-card strong {
-    display: block;
-    color: #1A2080;
-    font-size: 16px;
-    margin-bottom: 6px;
-  }
-  .sozo-sku-prp-wrapper .sozo-problem-card span {
-    color: #475569;
-    font-size: 14px;
-  }
-
-  .sozo-sku-prp-wrapper .sozo-process-step {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  .sozo-sku-prp-wrapper .sozo-step-num {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #EEF2FF;
-    color: #1A2080;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .sozo-sku-prp-wrapper .sozo-step-text strong {
-    display: block;
-    color: #1A2080;
-    font-size: 16px;
-    margin-bottom: 4px;
-  }
-  .sozo-sku-prp-wrapper .sozo-step-text p {
-    margin: 0 !important;
-    color: #475569 !important;
-    font-size: 15px !important;
-  }
-
-  .sozo-sku-prp-wrapper .sozo-related-card {
-    border: 1px solid #f1f5f9;
-    border-radius: 16px;
-    overflow: hidden;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-  }
-  .sozo-sku-prp-wrapper .sozo-related-card img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    display: block;
-  }
-  .sozo-sku-prp-wrapper .sozo-related-body {
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-  }
-  .sozo-sku-prp-wrapper .sozo-related-body h3 {
-    font-size: 16px !important;
-    color: #1A2080 !important;
-    margin: 0 !important;
-  }
-  .sozo-sku-prp-wrapper .sozo-related-body p {
-    font-size: 14px !important;
-    color: #475569 !important;
-    margin: 0 !important;
-    flex: 1;
-  }
-  .sozo-sku-prp-wrapper .sozo-related-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .sozo-sku-prp-wrapper .sozo-related-btn {
-    max-width: none;
-    padding: 11px 16px;
-    font-size: 14px !important;
-    box-shadow: none;
-  }
-  .sozo-sku-prp-wrapper .sozo-related-link {
-    color: #1A2080 !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-    text-decoration: none !important;
-    text-align: center;
-  }
-
-  .sozo-sku-prp-wrapper .sozo-expandable-content {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.4s ease-out;
-  }
-  .sozo-sku-prp-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
-  .sozo-sku-prp-wrapper .sozo-expandable-inner { overflow: hidden; }
-  .sozo-sku-prp-wrapper .sozo-load-more-btn {
-    background: none !important;
-    border: none !important;
-    color: #1A2080 !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
-    padding: 0 !important;
-    margin-top: 15px !important;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .sozo-sku-prp-wrapper .sozo-faq-item {
-    border-bottom: 1px solid #f1f5f9;
-    padding: 16px 0;
-  }
-  .sozo-sku-prp-wrapper .sozo-faq-item:last-child { border-bottom: none; }
-  .sozo-sku-prp-wrapper .sozo-faq-question {
-    width: 100%;
-    background: none !important;
-    border: none !important;
-    text-align: left;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    color: #1e293b !important;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0 8px 0 !important;
-  }
-  .sozo-sku-prp-wrapper .sozo-faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-  .sozo-sku-prp-wrapper .sozo-faq-answer p {
-    color: #475569 !important;
-    font-size: 15px !important;
-    margin: 8px 0 16px 0 !important;
-  }
-  .sozo-sku-prp-wrapper .sozo-faq-answer a {
-    color: #1A2080 !important;
-    text-decoration: underline !important;
-    font-weight: 500;
+    font-family: var(--font-family-primary) !important;
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-white) !important;
+    line-height: 1.5 !important;
   }
 
   @media (max-width: 768px) {
-    .sozo-sku-prp-wrapper .sozo-treatment-hero {
-      flex-direction: column-reverse;
-      gap: 30px;
+    .sozo-sku-prp-wrapper {
+      --container-pad: 20px;
+      --section-y: var(--space-5);
     }
-    .sozo-sku-prp-wrapper .sozo-hero-image img { height: 250px; }
-    .sozo-sku-prp-wrapper .sozo-info-row { flex-direction: column; gap: 20px; }
-    .sozo-sku-prp-wrapper .sozo-btn,
-    .sozo-sku-prp-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
-    .sozo-sku-prp-wrapper .sozo-section-card,
-    .sozo-sku-prp-wrapper .sozo-faq-section { padding: 25px; }
-    .sozo-sku-prp-wrapper .sozo-problem-grid,
-    .sozo-sku-prp-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
   }
-</style>
 
-<div class="sozo-sku-prp-wrapper" id="sozo-prp-treatment-widget">
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-prp-wrapper {
+      --duration-fast: 0ms;
+      --duration-card: 0ms;
+    }
+  }
 
-  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
-    <ol>
-      <li>
-        <a href="https://sozoskinclinic.com/">Home</a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/">Scar Treatment</a>
-      </li>
-      <li class="separator">/</li>
-      <li aria-current="page">
-        <span style="color: #1A2080; font-weight: 600;">PRP Treatment</span>
-      </li>
-    </ol>
-  </nav>
+  .sozo-sku-prp-wrapper,
+  .sozo-sku-prp-wrapper * {
+    box-sizing: border-box !important;
+  }
 
-  <div class="sozo-treatment-hero">
-    <div class="sozo-hero-text">
-      <h1>PRP Treatment Wajah untuk Bopeng dan Bekas Jerawat</h1>
-      <p>PRP Treatment atau Platelet Rich Plasma wajah adalah perawatan regeneratif yang menggunakan plasma darah sendiri untuk membantu menyamarkan bopeng bekas jerawat, memperbaiki tekstur kulit tidak rata, dan mendukung kulit tampak lebih sehat secara bertahap.</p>
+  .sozo-sku-prp-wrapper h1,
+  .sozo-sku-prp-wrapper h2,
+  .sozo-sku-prp-wrapper h3,
+  .sozo-sku-prp-wrapper p,
+  .sozo-sku-prp-wrapper ul,
+  .sozo-sku-prp-wrapper ol {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: var(--font-family-primary) !important;
+  }
 
-      <div class="sozo-info-row">
-        <div class="sozo-info-col">
-          <div class="sozo-info-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+  .sozo-sku-prp-wrapper a {
+    text-decoration: none !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-container {
+    width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
+    margin-inline: auto !important;
+  }
+
+  /* ============ BUTTON (design-system/components/button.md) ============ */
+  .sozo-sku-prp-wrapper .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--space-2) !important;
+    min-height: 48px !important;
+    padding: 0 var(--space-6) !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--radius-full) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-prp-wrapper .btn:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-sku-prp-wrapper .btn:active {
+    transform: translateY(0) !important;
+  }
+
+  .sozo-sku-prp-wrapper .btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: var(--focus-offset) !important;
+  }
+
+  .sozo-sku-prp-wrapper .btn--primary,
+  .sozo-sku-prp-wrapper .btn--primary:visited {
+    background-color: var(--color-brand-primary) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-prp-wrapper .btn--primary:hover {
+    background-color: var(--color-primary-hover) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-prp-wrapper .btn__icon {
+    width: 16px !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    flex: none !important;
+  }
+
+  /* ============ BADGE (design-system/components/badge.md) ============ */
+  .sozo-sku-prp-wrapper .badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 30px !important;
+    padding: 0 var(--space-3) !important;
+    border-radius: var(--radius-full) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-badge) !important;
+  }
+
+  .sozo-sku-prp-wrapper .badge--brand {
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-prp-wrapper .badge--label {
+    min-height: 30px !important;
+    padding: 0 18px !important;
+    margin-bottom: var(--space-4) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    letter-spacing: 0.25em !important;
+    text-transform: uppercase !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ BREADCRUMB (design-system/components/breadcrumb.md) ============ */
+  .sozo-sku-prp-wrapper .breadcrumb {
+    padding-top: var(--space-4) !important;
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-prp-wrapper .breadcrumb__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: 13px !important;
+    line-height: var(--leading-caption) !important;
+  }
+
+  .sozo-sku-prp-wrapper .breadcrumb__list li {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-prp-wrapper .breadcrumb__list li + li::before {
+    content: "/" !important;
+    color: var(--color-border-strong) !important;
+  }
+
+  .sozo-sku-prp-wrapper .breadcrumb a {
+    color: var(--color-text-muted) !important;
+    font-weight: 500 !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-prp-wrapper .breadcrumb a:hover {
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-prp-wrapper .breadcrumb a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-prp-wrapper .breadcrumb__current {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ HERO ============ */
+  .sozo-sku-prp-wrapper .rs-hero {
+    padding-bottom: var(--section-y) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-hero__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important;
+    gap: var(--space-8) !important;
+    align-items: center !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-hero__title {
+    margin-bottom: var(--space-4) !important;
+    font-size: clamp(28px, 2.8vw, 38px) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Masalah yang bisa diatasi */
+  .sozo-sku-prp-wrapper .rs-problems {
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-problems__label {
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-eyebrow) !important;
+    text-transform: uppercase !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-problems__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-problems__list li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Paragraf intro: justify, selebar kolom (sama dengan Infus Whitening) */
+  .sozo-sku-prp-wrapper .rs-hero__desc {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    text-align: justify !important;
+    hyphens: auto !important;
+  }
+
+  /* Info: durasi, frekuensi, harga */
+  .sozo-sku-prp-wrapper .rs-info {
+    list-style: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    margin-bottom: var(--space-5) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-info__item {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-3) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: var(--space-4) !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-info__item + .rs-info__item {
+    border-left: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-info__icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-info__text {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-info__label {
+    font-size: var(--text-label) !important;
+    font-weight: 500 !important;
+    line-height: var(--leading-caption) !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-info__value {
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Gambar treatment: standalone, rasio 4:3 (design-system/components/image.md) */
+  .sozo-sku-prp-wrapper .rs-hero__media img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  /* ============ BOTTOM CONTENT (DESKRIPSI TREATMENT) ============ */
+  .sozo-sku-prp-wrapper .rs-content {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-section-title {
+    margin-bottom: var(--space-4) !important;
+    font-size: var(--text-section-title) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-content__desc {
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    margin-bottom: var(--space-4) !important;
+    text-align: justify !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-content__desc a,
+  .sozo-sku-prp-wrapper .rs-content__desc a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-content__desc a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-content__subtitle {
+    margin: var(--space-2) 0 var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-content__checklist {
+    list-style: none !important;
+    margin: 0 0 var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-content__checklist li {
+    position: relative !important;
+    padding-left: 28px !important;
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-content__checklist li::before {
+    content: "\2713" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    font-weight: 700 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Tahapan treatment: daftar bernomor */
+  .sozo-sku-prp-wrapper .rs-content__steps {
+    list-style: none !important;
+    counter-reset: rs-step !important;
+    margin: 0 0 var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-content__steps li {
+    position: relative !important;
+    counter-increment: rs-step !important;
+    padding-left: 36px !important;
+    margin-bottom: var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-content__steps li::before {
+    content: counter(rs-step) !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-content__steps strong {
+    color: var(--color-text-primary) !important;
+    font-weight: 600 !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-expandable {
+    display: grid !important;
+    grid-template-rows: 0fr !important;
+    transition: grid-template-rows var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-expandable.is-expanded {
+    grid-template-rows: 1fr !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-expandable__inner {
+    overflow: hidden !important;
+    min-height: 0 !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-expand-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-top: var(--space-1) !important;
+    color: var(--color-brand-primary) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard),
+                opacity var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-expand-btn:hover {
+    color: var(--color-primary-hover) !important;
+    opacity: 0.85 !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-expand-btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-expand-btn svg {
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-expand-btn.is-active svg {
+    transform: rotate(180deg) !important;
+  }
+
+  /* ============ FAQ ============ */
+  .sozo-sku-prp-wrapper .rs-faq {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__item {
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__question {
+    width: 100% !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: var(--space-4) !important;
+    padding: 18px 0 !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    color: var(--color-text-primary) !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__question:hover {
+    color: var(--color-brand-primary) !important;
+    background: none !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__question:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__question > span {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__question svg {
+    flex-shrink: 0 !important;
+    color: var(--color-brand-primary) !important;
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__item.is-open .rs-faq__question svg {
+    transform: rotate(180deg) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__answer {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__item.is-open .rs-faq__answer {
+    max-height: 1000px !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__answer p {
+    padding-bottom: 18px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__answer a,
+  .sozo-sku-prp-wrapper .rs-faq__answer a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-prp-wrapper .rs-faq__answer a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* ============================================================
+     RESPONSIVE (breakpoint design system: 1024 / 768 / 480)
+     ============================================================ */
+  @media (max-width: 1024px) {
+    /* Hero satu kolom: teks dulu, gambar di bawah CTA */
+    .sozo-sku-prp-wrapper .rs-hero__grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: var(--space-5) !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-hero__media img {
+      aspect-ratio: 16 / 9 !important;
+      max-height: 400px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-prp-wrapper .breadcrumb {
+      padding-top: var(--space-3) !important;
+      margin-bottom: var(--space-3) !important;
+    }
+
+    /* Breadcrumb: font kecil supaya muat maksimal 2 baris.
+       Tiap item tidak dipotong di tengah (nowrap per item). */
+    .sozo-sku-prp-wrapper .breadcrumb__list {
+      flex-wrap: wrap !important;
+    }
+
+    .sozo-sku-prp-wrapper .breadcrumb__list li {
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-prp-wrapper .breadcrumb__list,
+    .sozo-sku-prp-wrapper .breadcrumb__list li,
+    .sozo-sku-prp-wrapper .breadcrumb__list a,
+    .sozo-sku-prp-wrapper .breadcrumb__current {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
+    }
+
+    .sozo-sku-prp-wrapper .breadcrumb__list,
+    .sozo-sku-prp-wrapper .breadcrumb__list li {
+      gap: 4px !important;
+    }
+
+    .sozo-sku-prp-wrapper .breadcrumb__list li {
+      flex: none !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-hero__title {
+      margin-bottom: var(--space-2) !important;
+      font-size: 20px !important;
+      line-height: 1.25 !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-problems {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-problems__label {
+      margin-bottom: 6px !important;
+      font-size: 11px !important;
+    }
+
+    /* Badge masalah: satu baris, geser ke samping kalau tidak muat (EX-04) */
+    .sozo-sku-prp-wrapper .rs-problems__list {
+      flex-wrap: nowrap !important;
+      gap: 6px !important;
+      overflow-x: auto !important;
+      scrollbar-width: none !important;
+      -webkit-overflow-scrolling: touch !important;
+      -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+      mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-problems__list::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .sozo-sku-prp-wrapper .badge {
+      flex: none !important;
+      min-height: 26px !important;
+      padding: 0 10px !important;
+      font-size: 11px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-hero__desc {
+      margin-bottom: var(--space-4) !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Info tetap 3 kolom, ikon disembunyikan supaya ringkas */
+    .sozo-sku-prp-wrapper .rs-info {
+      margin-bottom: var(--space-4) !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-info__item {
+      justify-content: center !important;
+      padding: 10px 6px !important;
+      text-align: center !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-info__icon {
+      display: none !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-info__label {
+      font-size: 11px !important;
+      line-height: 1.3 !important;
+    }
+
+    /* Nilai tidak dipotong ke baris baru (mis. "Rp 7.798.000") */
+    .sozo-sku-prp-wrapper .rs-info__value {
+      font-size: 13px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-prp-wrapper .btn {
+      min-height: 44px !important;
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-prp-wrapper .btn__icon {
+      width: 15px !important;
+      font-size: 15px !important;
+    }
+
+    /* Bottom content + FAQ: skala font sama dengan hero (H2 < H1 20px, body 13px) */
+    .sozo-sku-prp-wrapper .rs-section-title {
+      margin-bottom: var(--space-3) !important;
+      font-size: 18px !important;
+      line-height: 1.3 !important;
+    }
+
+    .sozo-sku-prp-wrapper .badge--label {
+      min-height: 26px !important;
+      margin-bottom: var(--space-3) !important;
+      padding: 0 12px !important;
+      font-size: 10px !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-content__subtitle {
+      margin: var(--space-1) 0 var(--space-2) !important;
+      font-size: 14px !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-content__desc,
+    .sozo-sku-prp-wrapper .rs-content__checklist li,
+    .sozo-sku-prp-wrapper .rs-content__steps li {
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-content__checklist li {
+      padding-left: 22px !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-content__steps li {
+      padding-left: 30px !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-content__steps li::before {
+      top: 1px !important;
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 11px !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-content__desc {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-expand-btn {
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-faq__question {
+      padding: 12px 0 !important;
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-faq__question svg {
+      width: 18px !important;
+      height: 18px !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-faq__answer p {
+      padding-bottom: 12px !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+  }
+
+  /* HP kecil (320–360px): breadcrumb tetap maksimal 2 baris, harga tetap 1 baris */
+  @media (max-width: 360px) {
+    .sozo-sku-prp-wrapper .breadcrumb__list,
+    .sozo-sku-prp-wrapper .breadcrumb__list li,
+    .sozo-sku-prp-wrapper .breadcrumb__list a,
+    .sozo-sku-prp-wrapper .breadcrumb__current {
+      font-size: 10px !important;
+    }
+
+    .sozo-sku-prp-wrapper .breadcrumb__list,
+    .sozo-sku-prp-wrapper .breadcrumb__list li {
+      gap: 2px !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-info__item {
+      padding: 10px 4px !important;
+    }
+
+    .sozo-sku-prp-wrapper .rs-info__value {
+      font-size: 12px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sozo-sku-prp-wrapper .btn--block-mobile {
+      display: flex !important;
+      width: 100% !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-prp-wrapper .btn:hover {
+      transform: none !important;
+    }
+  }
+
+  /* ============ FLOATING WHATSAPP (design-system/components/whatsapp-cta.md) ============
+     JS memindahkan tombol ke <body> supaya position: fixed tidak terkunci
+     oleh transform di container Elementor. Karena itu token ditulis langsung
+     di class ini, bukan lewat wrapper. Tombol tampil sejak halaman dibuka.
+     Bentuk pill + label "Buat Jadwal", sama dengan CTA hero. */
+  .sozo-wa-float {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 40px !important;
+    z-index: 900 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 48px !important;
+    padding: 0 24px !important;
+    border-radius: 999px !important;
+    background-color: #E9DFD5 !important;
+    color: #1A2080 !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 16px 40px rgba(23, 23, 21, 0.10) !important;
+    text-decoration: none !important;
+    transition:
+      opacity 180ms ease,
+      visibility 180ms ease,
+      transform 180ms ease,
+      background-color 180ms ease !important;
+  }
+
+  /* Disembunyikan saat footer terlihat supaya tidak menutupi link footer */
+  .sozo-wa-float.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(8px) !important;
+  }
+
+  /* Hover berubah ke biru brand supaya jelas tombol bisa diklik */
+  .sozo-wa-float:hover {
+    background-color: #1A2080 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-wa-float:focus-visible {
+    outline: 2px solid #1A2080 !important;
+    outline-offset: 3px !important;
+  }
+
+  .sozo-wa-float i {
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  /* Mobile: lebih ringkas supaya tidak banyak menutupi konten */
+  @media (max-width: 768px) {
+    .sozo-wa-float {
+      right: 16px !important;
+      bottom: 28px !important;
+      gap: 6px !important;
+      height: 42px !important;
+      padding: 0 16px !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-wa-float i {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-wa-float,
+    .sozo-wa-float:hover {
+      transform: none !important;
+      transition: none !important;
+    }
+  }</style>
+
+<div class="sozo-sku-prp-wrapper" id="sozo-prp-widget">
+
+  <!-- ===== HERO ===== -->
+  <section class="rs-hero">
+    <div class="rs-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li><a href="https://sozoskinclinic.com/treatment/">Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/">Scar Treatment</a></li>
+          <li><span class="breadcrumb__current" aria-current="page">PRP Wajah</span></li>
+        </ol>
+      </nav>
+
+      <div class="rs-hero__grid">
+        <div class="rs-hero__content">
+          <h1 class="rs-hero__title">PRP Wajah (PRP Face) Treatment</h1>
+
+          <div class="rs-problems">
+            <p class="rs-problems__label" id="rs-problems-label">Membantu mengatasi</p>
+            <ul class="rs-problems__list" aria-labelledby="rs-problems-label">
+              <li class="badge badge--brand">Bopeng Bekas Jerawat</li>
+              <li class="badge badge--brand">Tekstur Kulit Tidak Rata</li>
+              <li class="badge badge--brand">Kulit Kusam</li>
+            </ul>
           </div>
-          <div class="sozo-info-text">
-            <span class="sozo-info-label">Durasi</span>
-            <span class="sozo-info-value">75 Menit</span>
-          </div>
-        </div>
 
-        <div class="sozo-info-col">
-          <div class="sozo-info-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-          </div>
-          <div class="sozo-info-text">
-            <span class="sozo-info-label">Harga Promo</span>
-            <span class="sozo-info-value">Rp 1.079.000</span>
-          </div>
-        </div>
-      </div>
+          <p class="rs-hero__desc">
+            PRP Wajah (Platelet Rich Plasma) memakai plasma dari darah Anda sendiri yang kaya trombosit dan faktor pertumbuhan. Plasma ini membantu regenerasi kulit, sehingga bopeng bekas jerawat dan tekstur kulit tidak rata tampak tersamarkan secara bertahap.
+          </p>
 
-      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20PRP%20Treatment%20%5Bsumber:%20ORG-scar%20treatment%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
-    </div>
-
-    <div class="sozo-hero-image">
-      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Scar-Single-Treatment-PRP-Wajah.webp" alt="PRP Treatment wajah untuk bopeng di Sozo Skin Clinic">
-    </div>
-  </div>
-
-  <div class="sozo-cta-wrapper">
-    <div class="sozo-cta-banner">
-      <h2>Perbaiki Tekstur Kulit dengan PRP Treatment Untuk Wajah</h2>
-      <p>PRP Treatment membantu mendukung proses regenerasi kulit menggunakan plasma darah sendiri yang kaya trombosit, sehingga bopeng bekas jerawat, tekstur tidak rata, dan kulit kusam dapat tampak lebih tersamarkan secara bertahap.</p>
-      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20PRP%20Treatment%20%5Bsumber:%20ORG-scar%20treatment%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
-    </div>
-  </div>
-
-  <div class="sozo-content-wrapper">
-
-    <div class="sozo-section-card">
-      <h2>Masalah Kulit yang Dapat Dibantu PRP Treatment Wajah</h2>
-      <p>PRP Treatment wajah dapat menjadi pilihan untuk membantu memperbaiki kualitas kulit dari dalam, terutama pada keluhan berikut:</p>
-      <div class="sozo-problem-grid">
-        <div class="sozo-problem-card">
-          <strong>Bopeng Bekas Jerawat</strong>
-          <span>Permukaan kulit tampak cekung atau tidak rata akibat bekas jerawat lama.</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Tekstur Kulit Tidak Rata</strong>
-          <span>Kulit terasa kasar, bergelombang, atau tampak kurang halus saat terkena cahaya.</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Kulit Kusam</strong>
-          <span>Wajah tampak lelah dan kurang segar karena kualitas kulit yang menurun.</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Garis Halus</strong>
-          <span>Tanda penuaan awal yang mulai terlihat di beberapa area wajah.</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Bekas Jerawat Kemerahan</strong>
-          <span>Bekas jerawat yang membuat warna kulit terlihat kurang merata.</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Pori Tampak Besar</strong>
-          <span>Pori yang terlihat jelas akibat tekstur kulit dan elastisitas yang menurun.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="sozo-section-card">
-      <h2>PRP Treatment Untuk Wajah: Regenerasi Kulit Secara Bertahap</h2>
-      <p>PRP Treatment adalah prosedur perawatan kulit yang menggunakan Platelet Rich Plasma, yaitu plasma darah pasien sendiri yang mengandung trombosit dan faktor pertumbuhan. Setelah diproses dengan alat centrifuge, plasma ini diaplikasikan kembali ke area kulit wajah untuk membantu mendukung perbaikan jaringan kulit.</p>
-      <p>Di SOZO Skin Clinic, PRP Treatment dilakukan melalui konsultasi dokter terlebih dahulu agar kondisi kulit, tipe bekas jerawat, dan kebutuhan perawatan dapat dinilai dengan lebih tepat. Hasil perawatan dapat berbeda pada setiap orang tergantung kondisi kulit awal, kedalaman bopeng, usia bekas jerawat, dan respons kulit terhadap perawatan.</p>
-
-      <div class="sozo-expandable-content" id="treatmentDescriptionPrp">
-        <div class="sozo-expandable-inner">
-          <h3>Apa Itu PRP Treatment Wajah?</h3>
-          <p>PRP Treatment atau Platelet Rich Plasma wajah adalah perawatan yang memanfaatkan plasma darah sendiri untuk membantu proses regenerasi kulit. Karena berasal dari tubuh pasien sendiri, risiko reaksi alergi cenderung lebih rendah, namun prosedur tetap perlu dilakukan secara steril dan melalui evaluasi dokter.</p>
-
-          <h3>Manfaat PRP Treatment Wajah untuk Kulit</h3>
-          <ul>
-            <li><strong>Membantu menyamarkan bopeng:</strong> mendukung perbaikan jaringan kulit pada area bekas jerawat secara bertahap.</li>
-            <li><strong>Membantu memperbaiki tekstur kulit:</strong> membuat permukaan kulit tampak lebih halus dan merata.</li>
-            <li><strong>Mendukung produksi kolagen:</strong> membantu proses peremajaan kulit dari dalam.</li>
-            <li><strong>Membantu kulit tampak lebih segar:</strong> mendukung kualitas kulit agar terlihat lebih sehat dan bercahaya alami.</li>
+          <ul class="rs-info">
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Estimasi Treatment</span>
+              <span class="rs-info__value">75 Menit</span>
+            </span>
+          </li>
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Downtime</span>
+              <span class="rs-info__value">1–3 Hari</span>
+            </span>
+          </li>
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" x2="7.01" y1="7" y2="7"></line></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Harga Promo</span>
+              <span class="rs-info__value">Rp 1.079.000</span>
+            </span>
+          </li>
           </ul>
 
-          <h3>PRP Treatment Wajah dan Vampire Facial, Apa Bedanya?</h3>
-          <p>PRP Treatment sering dikenal juga sebagai Vampire Facial karena menggunakan plasma darah sendiri sebagai bagian dari prosedurnya. Istilah Vampire Facial lebih populer secara umum, sedangkan PRP Treatment lebih menjelaskan metode medis yang digunakan, yaitu Platelet Rich Plasma.</p>
+          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20PRP%20Treatment%20%5Bsumber:%20ORG-scar%20treatment%5D" class="btn btn--primary btn--block-mobile" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+        </div>
 
-          <h3>Siapa yang Cocok Melakukan PRP Treatment Wajah?</h3>
-          <p>Perawatan ini umumnya cocok untuk Anda yang memiliki bopeng bekas jerawat ringan sampai sedang, tekstur kulit tidak rata, kulit kusam, atau tanda penuaan awal. Untuk memastikan kesesuaian tindakan, dokter akan memeriksa kondisi kulit dan riwayat kesehatan terlebih dahulu sebelum perawatan dilakukan.</p>
+        <div class="rs-hero__media">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Scar-Single-Treatment-PRP-Wajah.webp" alt="PRP Wajah (PRP Face) Treatment di Sozo Skin Clinic" width="800" height="600" fetchpriority="high" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TENTANG TREATMENT ===== -->
+  <section class="rs-content" aria-labelledby="rs-content-title">
+    <div class="rs-container">
+      <span class="badge badge--label">TENTANG TREATMENT</span>
+      <h2 class="rs-section-title" id="rs-content-title">Mengenal PRP Wajah, Perawatan Plasma Darah Sendiri untuk Bopeng dan Tekstur Kulit</h2>
+
+      <p class="rs-content__desc">
+        PRP (Platelet Rich Plasma) diambil dari darah Anda sendiri, lalu diproses dengan alat centrifuge untuk memisahkan plasma yang kaya trombosit dan faktor pertumbuhan. Plasma ini diaplikasikan kembali ke kulit wajah untuk mendukung perbaikan jaringan dan produksi kolagen.
+      </p>
+      <p class="rs-content__desc">
+        Bopeng bekas jerawat, tekstur kasar, dan pori yang tampak jelas muncul saat jaringan kulit rusak dan elastisitasnya menurun. Karena bahannya berasal dari tubuh sendiri, risiko reaksi alergi PRP cenderung lebih rendah.
+      </p>
+
+      <div class="rs-expandable" id="rsContentExpandable">
+        <div class="rs-expandable__inner">
+          <h3 class="rs-content__subtitle">Manfaat PRP Wajah untuk Kulit</h3>
+          <ul class="rs-content__checklist">
+            <li><strong>Bopeng lebih samar.</strong> PRP mendukung perbaikan jaringan kulit di area bekas jerawat secara bertahap.</li>
+            <li><strong>Tekstur lebih halus.</strong> Permukaan kulit tampak lebih rata dan merata.</li>
+            <li><strong>Produksi kolagen meningkat.</strong> Kulit terbantu meremajakan diri dari dalam.</li>
+            <li><strong>Kulit tampak lebih segar.</strong> Kualitas kulit membaik, sehingga wajah terlihat lebih sehat dan bercahaya alami.</li>
+          </ul>
+
+          <h3 class="rs-content__subtitle">Tahapan PRP Wajah Treatment</h3>
+          <ol class="rs-content__steps">
+            <li><strong>Konsultasi &amp; analisa kulit.</strong> Dokter memeriksa kondisi kulit, tipe bekas jerawat, dan area yang perlu dirawat.</li>
+            <li><strong>Pengambilan darah.</strong> Sampel darah diambil dalam jumlah kecil untuk diproses menjadi plasma.</li>
+            <li><strong>Pemisahan plasma.</strong> Darah diputar di alat centrifuge untuk memisahkan plasma yang kaya trombosit.</li>
+            <li><strong>Aplikasi PRP.</strong> Plasma diaplikasikan ke area wajah sesuai evaluasi dokter. Kemerahan ringan setelahnya normal dan bersifat sementara.</li>
+          </ol>
+
+          <h3 class="rs-content__subtitle">PRP Wajah atau Vampire Facial?</h3>
+          <p class="rs-content__desc">
+            Keduanya merujuk ke perawatan yang sama. Vampire Facial adalah istilah populer, sedangkan PRP Treatment menyebut metode medisnya, yaitu Platelet Rich Plasma.
+          </p>
+
+          <h3 class="rs-content__subtitle">Bopeng Lebih Dalam? Ini Pilihan Lainnya</h3>
+          <p class="rs-content__desc">
+            Dokter bisa menyarankan kombinasi atau treatment lanjutan sesuai kondisi kulit Anda. <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/rejuran-scar-treatment/">Rejuran Scar</a> memakai polinukleotida untuk mendukung regenerasi kulit. <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/restylane-scar/">Restylane Scar</a> memakai hyaluronic acid untuk mengisi bekas luka cekung. <a href="https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-co2-treatment/">Laser CO2</a> memakai laser fractional untuk menyamarkan bopeng, pori besar, dan tekstur tidak rata.
+          </p>
+
+          <h3 class="rs-content__subtitle">Siapa yang Cocok untuk PRP Wajah?</h3>
+          <p class="rs-content__desc">
+            PRP Wajah cocok untuk Anda dengan bopeng bekas jerawat ringan sampai sedang, tekstur kulit tidak rata, kulit kusam, atau tanda penuaan awal. Dokter akan memeriksa kondisi kulit dan riwayat kesehatan Anda dulu sebelum tindakan.
+          </p>
+
+          <h3 class="rs-content__subtitle">Berapa Lama Waktu Prosedurnya?</h3>
+          <p class="rs-content__desc">
+            Satu sesi berlangsung sekitar 75 menit, termasuk persiapan, pengambilan darah, pemisahan plasma, dan tindakan di wajah. Setelahnya kulit bisa tampak kemerahan atau lebih sensitif selama 1–3 hari. Jumlah sesi disesuaikan dokter dengan kondisi kulit dan kedalaman bopeng Anda.
+          </p>
         </div>
       </div>
 
-      <button class="sozo-load-more-btn" onclick="togglePrpDescription()">
-        <span id="prpReadMoreText">Baca Selengkapnya</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      <button type="button" class="rs-expand-btn" id="rsExpandBtn" onclick="togglePrpDesc()" aria-expanded="false" aria-controls="rsContentExpandable">
+        <span id="rsExpandBtnText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </button>
     </div>
+  </section>
 
-    <div class="sozo-section-card">
-      <h2>Proses dan Cara Kerja PRP Treatment Wajah</h2>
-      <p>PRP Treatment dilakukan secara bertahap dengan prosedur yang terkontrol untuk menjaga keamanan dan kenyamanan pasien.</p>
+  <!-- ===== FAQ ===== -->
+  <section class="rs-faq" aria-labelledby="rs-faq-title">
+    <div class="rs-container">
+      <h2 class="rs-section-title" id="rs-faq-title">Pertanyaan Seputar PRP Treatment Wajah</h2>
 
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">1</div>
-        <div class="sozo-step-text">
-          <strong>Konsultasi Dokter</strong>
-          <p>Dokter memeriksa kondisi kulit, tipe bekas jerawat, dan area yang membutuhkan perawatan.</p>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePrpFaq(this)" aria-expanded="false" aria-controls="rs-faq-1-content" id="rs-faq-1-trigger">
+          <span>Apa itu PRP Treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-1-content" role="region" aria-labelledby="rs-faq-1-trigger">
+          <p>PRP Treatment adalah perawatan yang menggunakan Platelet Rich Plasma atau plasma darah sendiri yang kaya trombosit untuk membantu mendukung proses regenerasi kulit. Pada wajah, PRP sering digunakan untuk membantu menyamarkan bopeng bekas jerawat, memperbaiki tekstur kulit, dan mendukung kulit tampak lebih sehat secara bertahap.</p>
         </div>
       </div>
 
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">2</div>
-        <div class="sozo-step-text">
-          <strong>Pengambilan Darah</strong>
-          <p>Sampel darah diambil dalam jumlah tertentu untuk diproses menjadi plasma kaya trombosit.</p>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePrpFaq(this)" aria-expanded="false" aria-controls="rs-faq-2-content" id="rs-faq-2-trigger">
+          <span>Apakah PRP Treatment sama dengan Vampire Facial?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-2-content" role="region" aria-labelledby="rs-faq-2-trigger">
+          <p>PRP Treatment sering dikenal sebagai Vampire Facial karena menggunakan plasma dari darah pasien sendiri. Perbedaannya, PRP Treatment menjelaskan metode medis yang digunakan, sedangkan Vampire Facial adalah istilah populer yang sering dipakai untuk perawatan wajah berbasis PRP.</p>
         </div>
       </div>
 
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">3</div>
-        <div class="sozo-step-text">
-          <strong>Proses Centrifuge</strong>
-          <p>Darah diproses menggunakan alat centrifuge untuk memisahkan plasma yang dibutuhkan dalam tindakan PRP.</p>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePrpFaq(this)" aria-expanded="false" aria-controls="rs-faq-3-content" id="rs-faq-3-trigger">
+          <span>Apakah PRP Treatment bisa membantu bopeng bekas jerawat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-3-content" role="region" aria-labelledby="rs-faq-3-trigger">
+          <p>PRP Treatment dapat membantu mendukung perbaikan tekstur kulit dan menyamarkan bopeng bekas jerawat secara bertahap. Tingkat perbaikan dapat berbeda pada setiap orang, tergantung kedalaman bopeng, kondisi kulit awal, dan respons kulit terhadap rangkaian perawatan.</p>
         </div>
       </div>
 
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">4</div>
-        <div class="sozo-step-text">
-          <strong>Aplikasi PRP ke Kulit</strong>
-          <p>PRP diaplikasikan ke area wajah sesuai evaluasi dokter. Kemerahan ringan setelah tindakan dapat terjadi dan biasanya bersifat sementara.</p>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePrpFaq(this)" aria-expanded="false" aria-controls="rs-faq-4-content" id="rs-faq-4-trigger">
+          <span>Apakah PRP Treatment aman dilakukan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-4-content" role="region" aria-labelledby="rs-faq-4-trigger">
+          <p>PRP Treatment umumnya aman bila dilakukan dengan prosedur steril dan evaluasi dokter. Karena menggunakan plasma dari darah sendiri, risiko reaksi alergi cenderung lebih rendah, namun konsultasi tetap diperlukan untuk memastikan tindakan sesuai dengan kondisi kulit dan riwayat kesehatan Anda.</p>
         </div>
       </div>
-    </div>
 
-    <div class="sozo-section-card">
-      <h2>Treatment Terkait untuk Bekas Jerawat dan Tekstur Kulit</h2>
-      <p>Beberapa perawatan berikut dapat menjadi pilihan lanjutan atau kombinasi sesuai evaluasi dokter.</p>
-
-      <div class="sozo-related-grid">
-        <div class="sozo-related-card">
-          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Rejuran-Scar-2048x2048.webp" alt="Rejuran Scar Sozo Skin Clinic">
-          <div class="sozo-related-body">
-            <h3>Rejuran Scar</h3>
-            <p>Membantu memperbaiki tekstur kulit dan bekas jerawat dengan polinukleotida untuk mendukung regenerasi kulit secara bertahap.</p>
-            <div class="sozo-related-actions">
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Rejuran%20Scar%20%5Bsumber:%20ORG-scar%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
-              <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/rejuran-scar-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="sozo-related-card">
-          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Restylance-Scar.webp" alt="Restylane Scar Sozo Skin Clinic">
-          <div class="sozo-related-body">
-            <h3>Restylane Scar</h3>
-            <p>Treatment berbasis hyaluronic acid untuk membantu mengisi area bekas luka cekung dan membuat tekstur kulit tampak lebih merata.</p>
-            <div class="sozo-related-actions">
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Restylane%20Scar%20%5Bsumber:%20ORG-scar%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
-              <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/restylane-scar/" class="sozo-related-link">Lihat Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="sozo-related-card">
-          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Laser-CO2-Acne-scar-_-Pores-Full-Face.webp" alt="Laser CO2 Full Face Sozo Skin Clinic">
-          <div class="sozo-related-body">
-            <h3>Laser CO2 Full Face</h3>
-            <p>Laser fractional untuk membantu menyamarkan bopeng, pori tampak besar, dan tekstur tidak rata melalui stimulasi perbaikan kulit.</p>
-            <div class="sozo-related-actions">
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Laser%20CO2%20Full%20Face%20%5Bsumber:%20ORG-scar%20treatment%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
-              <a href="https://sozoskinclinic.com/skin-treatment/scar-treatment/laser-co2-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
-            </div>
-          </div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePrpFaq(this)" aria-expanded="false" aria-controls="rs-faq-5-content" id="rs-faq-5-trigger">
+          <span>Berapa lama durasi PRP Treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-5-content" role="region" aria-labelledby="rs-faq-5-trigger">
+          <p>Durasi PRP Treatment di SOZO Skin Clinic sekitar 75 menit, termasuk persiapan, proses pengambilan darah, pemisahan plasma, dan tindakan pada area wajah.</p>
         </div>
       </div>
-    </div>
 
-    <div class="sozo-faq-section">
-      <h2>Pertanyaan Seputar PRP Treatment Wajah</h2>
-
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePrpFaq(this)"><span>Apa itu PRP Treatment?</span></button>
-        <div class="sozo-faq-answer"><p>PRP Treatment adalah perawatan yang menggunakan Platelet Rich Plasma atau plasma darah sendiri yang kaya trombosit untuk membantu mendukung proses regenerasi kulit. Pada wajah, PRP sering digunakan untuk membantu menyamarkan bopeng bekas jerawat, memperbaiki tekstur kulit, dan mendukung kulit tampak lebih sehat secara bertahap.</p></div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePrpFaq(this)" aria-expanded="false" aria-controls="rs-faq-6-content" id="rs-faq-6-trigger">
+          <span>Berapa harga PRP Treatment di SOZO?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-6-content" role="region" aria-labelledby="rs-faq-6-trigger">
+          <p>Harga promo PRP Treatment di SOZO Skin Clinic mulai dari Rp 1.079.000 per sesi. Untuk informasi promo terbaru dan rekomendasi paket perawatan, Anda dapat menghubungi tim SOZO melalui WhatsApp.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePrpFaq(this)"><span>Apakah PRP Treatment sama dengan Vampire Facial?</span></button>
-        <div class="sozo-faq-answer"><p>PRP Treatment sering dikenal sebagai Vampire Facial karena menggunakan plasma dari darah pasien sendiri. Perbedaannya, PRP Treatment menjelaskan metode medis yang digunakan, sedangkan Vampire Facial adalah istilah populer yang sering dipakai untuk perawatan wajah berbasis PRP.</p></div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePrpFaq(this)" aria-expanded="false" aria-controls="rs-faq-7-content" id="rs-faq-7-trigger">
+          <span>Berapa kali sesi PRP Treatment yang diperlukan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-7-content" role="region" aria-labelledby="rs-faq-7-trigger">
+          <p>Jumlah sesi PRP Treatment dapat berbeda pada setiap orang. Dokter biasanya akan menyesuaikan rekomendasi sesi berdasarkan kondisi kulit, kedalaman bopeng, target perawatan, dan respons kulit setelah tindakan pertama.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePrpFaq(this)"><span>Apakah PRP Treatment bisa membantu bopeng bekas jerawat?</span></button>
-        <div class="sozo-faq-answer"><p>PRP Treatment dapat membantu mendukung perbaikan tekstur kulit dan menyamarkan bopeng bekas jerawat secara bertahap. Tingkat perbaikan dapat berbeda pada setiap orang, tergantung kedalaman bopeng, kondisi kulit awal, dan respons kulit terhadap rangkaian perawatan.</p></div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePrpFaq(this)" aria-expanded="false" aria-controls="rs-faq-8-content" id="rs-faq-8-trigger">
+          <span>Apakah ada downtime setelah PRP Treatment?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-8-content" role="region" aria-labelledby="rs-faq-8-trigger">
+          <p>Setelah PRP Treatment, kulit dapat tampak kemerahan, terasa hangat, atau lebih sensitif selama 1 sampai 3 hari. Reaksi ini umumnya bersifat sementara. Dokter akan memberikan arahan perawatan setelah tindakan agar pemulihan lebih nyaman.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePrpFaq(this)"><span>Apakah PRP Treatment aman dilakukan?</span></button>
-        <div class="sozo-faq-answer"><p>PRP Treatment umumnya aman bila dilakukan dengan prosedur steril dan evaluasi dokter. Karena menggunakan plasma dari darah sendiri, risiko reaksi alergi cenderung lebih rendah, namun konsultasi tetap diperlukan untuk memastikan tindakan sesuai dengan kondisi kulit dan riwayat kesehatan Anda.</p></div>
-      </div>
-
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePrpFaq(this)"><span>Berapa lama durasi PRP Treatment?</span></button>
-        <div class="sozo-faq-answer"><p>Durasi PRP Treatment di SOZO Skin Clinic sekitar 75 menit, termasuk persiapan, proses pengambilan darah, pemisahan plasma, dan tindakan pada area wajah.</p></div>
-      </div>
-
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePrpFaq(this)"><span>Berapa harga PRP Treatment di SOZO?</span></button>
-        <div class="sozo-faq-answer"><p>Harga promo PRP Treatment di SOZO Skin Clinic mulai dari Rp 1.079.000 per sesi. Untuk informasi promo terbaru dan rekomendasi paket perawatan, Anda dapat menghubungi tim SOZO melalui WhatsApp.</p></div>
-      </div>
-
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePrpFaq(this)"><span>Berapa kali sesi PRP Treatment yang diperlukan?</span></button>
-        <div class="sozo-faq-answer"><p>Jumlah sesi PRP Treatment dapat berbeda pada setiap orang. Dokter biasanya akan menyesuaikan rekomendasi sesi berdasarkan kondisi kulit, kedalaman bopeng, target perawatan, dan respons kulit setelah tindakan pertama.</p></div>
-      </div>
-
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePrpFaq(this)"><span>Apakah ada downtime setelah PRP Treatment?</span></button>
-        <div class="sozo-faq-answer"><p>Setelah PRP Treatment, kulit dapat tampak kemerahan, terasa hangat, atau lebih sensitif selama 1 sampai 3 hari. Reaksi ini umumnya bersifat sementara. Dokter akan memberikan arahan perawatan setelah tindakan agar pemulihan lebih nyaman.</p></div>
-      </div>
-
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePrpFaq(this)"><span>Di mana lokasi PRP Treatment atau PRP wajah terdekat?</span></button>
-        <div class="sozo-faq-answer"><p>Jika Anda sedang mencari klinik kecantikan untuk PRP Treatment atau PRP wajah terdekat dengan prosedur yang aman dan nyaman, Anda bisa mengunjungi seluruh cabang SOZO Skin Clinic. Setiap klinik kami didukung fasilitas medis modern, menggunakan produk berkualitas tinggi, dan ditangani langsung oleh terapis serta Dokter Kecantikan profesional. Klinik kami tersebar di berbagai wilayah Jabodetabek, termasuk Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Untuk menemukan cabang yang paling mudah dijangkau dari domisili Anda, silakan cek halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a>.</p></div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePrpFaq(this)" aria-expanded="false" aria-controls="rs-faq-9-content" id="rs-faq-9-trigger">
+          <span>Di mana lokasi PRP Treatment atau PRP wajah terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-9-content" role="region" aria-labelledby="rs-faq-9-trigger">
+          <p>Jika Anda sedang mencari klinik kecantikan untuk PRP Treatment atau PRP wajah terdekat dengan prosedur yang aman dan nyaman, Anda bisa mengunjungi seluruh cabang SOZO Skin Clinic. Setiap klinik kami didukung fasilitas medis modern, menggunakan produk berkualitas tinggi, dan ditangani langsung oleh terapis serta Dokter Kecantikan profesional. Klinik kami tersebar di berbagai wilayah Jabodetabek, termasuk Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Untuk menemukan cabang yang paling mudah dijangkau dari domisili Anda, silakan cek halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a>.</p>
+        </div>
       </div>
 
     </div>
-  </div>
+  </section>
 </div>
 
-<script>
-  function togglePrpDescription() {
-    const content = document.getElementById('treatmentDescriptionPrp');
-    const btnText = document.getElementById('prpReadMoreText');
-    if (!content || !btnText) return;
-    content.classList.toggle('expanded');
-    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+<!-- FLOATING WHATSAPP -->
+<a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20PRP%20Treatment%20%5Bsumber:%20ORG-scar%20treatment%5D" class="sozo-wa-float" id="rsWaFloat" target="_blank" rel="noopener noreferrer" aria-label="Buat Jadwal via WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+
+<!-- data-no-optimize: dikecualikan dari LiteSpeed "Delay JS" supaya onclick FAQ & Baca Selengkapnya langsung jalan di klik pertama -->
+<script data-no-optimize="1">
+  function togglePrpFaq(btn) {
+    var item = btn.closest('.rs-faq__item');
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    var widget = document.getElementById('sozo-prp-widget');
+    var items = widget ? widget.querySelectorAll('.rs-faq__item') : [];
+
+    Array.prototype.forEach.call(items, function (other) {
+      if (other !== item) {
+        other.querySelector('.rs-faq__question').setAttribute('aria-expanded', 'false');
+        other.classList.remove('is-open');
+      }
+    });
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    item.classList.toggle('is-open', !isOpen);
   }
 
-  function togglePrpFaq(button) {
-    const answer = button.nextElementSibling;
-    if (!answer) return;
-    if (answer.style.maxHeight) {
-      answer.style.maxHeight = null;
-    } else {
-      answer.style.maxHeight = answer.scrollHeight + "px";
+  function togglePrpDesc() {
+    var content = document.getElementById('rsContentExpandable');
+    var btn = document.getElementById('rsExpandBtn');
+    var btnText = document.getElementById('rsExpandBtnText');
+    if (!content || !btn || !btnText) return;
+
+    var isExpanded = content.classList.contains('is-expanded');
+    content.classList.toggle('is-expanded', !isExpanded);
+    btn.classList.toggle('is-active', !isExpanded);
+    btn.setAttribute('aria-expanded', String(!isExpanded));
+    btnText.textContent = !isExpanded ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+
+  (function initPrpWaFloat() {
+    var fab = document.getElementById('rsWaFloat');
+    if (!fab) return;
+    document.body.appendChild(fab);
+    var ticking = false;
+    function updateFab() {
+      ticking = false;
+      var zone = window.innerWidth <= 768 ? 700 : 400;
+      var distanceToBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      fab.classList.toggle('is-hidden', distanceToBottom < zone);
     }
-  }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(updateFab); }
+    }, { passive: true });
+    window.addEventListener('resize', updateFab);
+    window.addEventListener('load', updateFab);
+  })();
 </script>
-
-
