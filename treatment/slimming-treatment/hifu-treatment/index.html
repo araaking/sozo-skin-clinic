@@ -19,8 +19,8 @@
       "@type": "WebPage",
       "@id": "https://sozoskinclinic.com/hifu-treatment/#webpage",
       "url": "https://sozoskinclinic.com/hifu-treatment/",
-      "name": "HIFU Treatment untuk Wajah Kencang & Tirus Tanpa Operasi | Sozo Skin Clinic",
-      "description": "HIFU mengirim gelombang ultrasound terfokus ke lapisan SMAS untuk merangsang kolagen baru. Kulit wajah tampak lebih kencang dan tirus secara bertahap, tanpa operasi dan tanpa downtime.",
+      "name": "HIFU Treatment untuk Kulit Kencang Tanpa Operasi | Sozo Skin Clinic",
+      "description": "HIFU (High-Intensity Focused Ultrasound) adalah perawatan tanpa operasi yang memakai energi ultrasound terfokus untuk merangsang pembentukan kolagen baru di lapisan dalam kulit. HIFU membantu mengencangkan kulit wajah yang mulai kendur serta mempertegas garis rahang dan dagu. Hasilnya muncul bertahap, dan umumnya Anda bisa langsung kembali beraktivitas.",
       "inLanguage": "id",
       "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
       "about": { "@id": "https://sozoskinclinic.com/#organization" },
@@ -147,7 +147,7 @@
 
     /* Typography */
     --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --text-section-title: clamp(24px, 3vw, 32px);
+    --text-section-title: clamp(18px, 2vw, 22px);
     --text-body: 16px;
     --text-body-sm: 14px;
     --leading-body: 1.60;
@@ -166,7 +166,7 @@
     --container-max: 1280px;
     --container-pad: 32px;
     --grid-gap: 24px;
-    --section-y: var(--space-6);
+    --section-y: var(--space-5);
 
     /* Shape & elevation */
     --radius-lg: 16px;
@@ -201,7 +201,7 @@
     .sozo-botox {
       --container-pad: 20px;
       --grid-gap: 16px;
-      --section-y: var(--space-5);
+      --section-y: var(--space-4);
     }
   }
 
@@ -402,41 +402,24 @@
   }
 
   /* ============ HERO (compact page header) ============ */
-  /* Gradient White -> Almond. Gambar cover di kanan, fade ke kiri lewat mask. */
+  /* Background foto full-bleed (model di kanan), teks di area kosong kiri. Tanpa gradient. */
   .sozo-botox .hero-section {
     display: flex !important;
     align-items: stretch !important;
-    min-height: 300px !important;
-    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-brand-almond) 100%) !important;
+    min-height: 220px !important;
+    background: #a39a92 url("https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/SKIN-Landing-page-experiment-Main-Facial-.webp") right center / cover no-repeat !important;
     overflow: hidden !important;
     position: relative !important;
   }
 
   .sozo-botox .hero-content {
-    flex: 1 1 0 !important;
+    flex: 0 0 56% !important;
     min-width: 0 !important;
     align-self: center !important;
-    padding-block: var(--space-6) !important;
+    padding-block: var(--space-5) !important;
     padding-right: var(--space-4) !important;
     padding-left: max(var(--container-pad), calc((100% - var(--container-max)) / 2)) !important;
     z-index: 2 !important;
-  }
-
-  .sozo-botox .hero-image {
-    flex: 0 0 46% !important;
-    position: relative !important;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 30%) !important;
-    mask-image: linear-gradient(to right, transparent 0%, #000 30%) !important;
-  }
-
-  .sozo-botox .hero-image img {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
-    object-fit: cover !important;
-    object-position: 60% 0% !important;
   }
 
   .sozo-botox .hero-title {
@@ -449,6 +432,7 @@
   /* ============ SECTION WRAPPER ============ */
   .sozo-botox .description-section,
   .sozo-botox .soz-cat,
+  .sozo-botox .soz-loc,
   .sozo-botox .soz-faq-section {
     position: relative !important;
     width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
@@ -472,11 +456,158 @@
   /* Paragraf intro & deskripsi section: justify, selebar container */
   .sozo-botox .description-text,
   .sozo-botox .section-desc {
-    font-size: var(--text-body) !important;
-    line-height: 1.7 !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
     color: var(--color-text-secondary) !important;
     text-align: justify !important;
     hyphens: auto !important;
+  }
+
+  /* ============================================================
+     LOKASI (compact): chip kota -> /lokasi/[kota]/, tanpa iframe maps.
+     Desktop: judul + CTA satu baris, chip wrap di bawahnya.
+     Mobile : chip satu baris, geser horizontal; CTA full width di bawah.
+     ============================================================ */
+  .sozo-botox .soz-loc {
+    padding-bottom: 0 !important;
+  }
+
+  .sozo-botox .soz-loc-card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-areas:
+      "head cta"
+      "list list" !important;
+    align-items: center !important;
+    gap: var(--space-4) var(--space-6) !important;
+    padding: var(--space-5) var(--space-6) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-xl) !important;
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-brand-almond) 100%) !important;
+  }
+
+  .sozo-botox .soz-loc-head {
+    grid-area: head !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-botox .soz-loc-title {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: clamp(18px, 2vw, 20px) !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-botox .soz-loc-title i {
+    font-size: 0.85em !important;
+    flex: none !important;
+  }
+
+  .sozo-botox .soz-loc-desc {
+    margin-top: var(--space-1) !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: var(--leading-body-sm) !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-botox .soz-loc-cta {
+    grid-area: cta !important;
+  }
+
+  .sozo-botox .soz-loc-list {
+    grid-area: list !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-botox .soz-loc-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    flex: none !important;
+  }
+
+  .sozo-botox .soz-loc-chip,
+  .sozo-botox .soz-loc-chip:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 40px !important;
+    padding: 0 var(--space-4) !important;
+    border: 1px solid var(--color-border-strong) !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-white) !important;
+    color: var(--color-brand-primary) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-body-sm) !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard),
+      color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-botox .soz-loc-chip:hover {
+    background-color: var(--color-brand-primary) !important;
+    border-color: var(--color-brand-primary) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-botox .soz-loc-chip:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-botox .soz-loc-card {
+      grid-template-columns: minmax(0, 1fr) !important;
+      grid-template-areas:
+        "head"
+        "list"
+        "cta" !important;
+      gap: var(--space-3) !important;
+      padding: var(--space-4) !important;
+      border-radius: var(--radius-lg) !important;
+    }
+
+    .sozo-botox .soz-loc-title {
+      font-size: 15px !important;
+    }
+
+    .sozo-botox .soz-loc-desc {
+      font-size: 12px !important;
+    }
+
+    /* Satu baris chip, geser horizontal. Fade kanan = tanda masih ada kota lain. */
+    .sozo-botox .soz-loc-list {
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x proximity !important;
+      scrollbar-width: none !important;
+      -webkit-mask-image: linear-gradient(to right, #000 85%, transparent 100%) !important;
+      mask-image: linear-gradient(to right, #000 85%, transparent 100%) !important;
+    }
+
+    .sozo-botox .soz-loc-list::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .sozo-botox .soz-loc-list li {
+      scroll-snap-align: start !important;
+    }
+
+    .sozo-botox .soz-loc-cta {
+      display: flex !important;
+      width: 100% !important;
+    }
   }
 
   /* ============================================================
@@ -486,8 +617,8 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: var(--space-3) !important;
-    margin-bottom: var(--space-5) !important;
+    gap: var(--space-2) !important;
+    margin-bottom: var(--space-4) !important;
   }
 
   .sozo-botox .soz-cat-nav {
@@ -532,7 +663,7 @@
     position: relative !important;
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    max-width: 880px !important; /* 2 SKU: dibatasi supaya kartu tidak terlalu lebar */
+    max-width: 720px !important; /* 2 SKU: dibatasi supaya kartu tidak terlalu lebar */
     gap: var(--grid-gap) !important;
     align-items: stretch !important;
   }
@@ -575,7 +706,7 @@
 
   .sozo-botox .soz-cat-card-img {
     position: relative !important;
-    aspect-ratio: 4 / 3 !important;
+    aspect-ratio: 16 / 10 !important;
     background: var(--color-brand-almond) !important;
     overflow: hidden !important;
   }
@@ -589,14 +720,14 @@
   }
 
   .sozo-botox .soz-cat-card-body {
-    padding: 20px var(--space-4) !important;
+    padding: var(--space-4) !important;
     display: flex !important;
     flex-direction: column !important;
     flex-grow: 1 !important;
   }
 
   .sozo-botox .soz-cat-card-title {
-    font-size: 20px !important;
+    font-size: 17px !important;
     font-weight: 600 !important;
     line-height: 1.35 !important;
     color: var(--color-brand-primary) !important;
@@ -620,8 +751,8 @@
   }
 
   .sozo-botox .soz-cat-card-desc {
-    margin-bottom: var(--space-3) !important;
-    font-size: var(--text-body-sm) !important;
+    margin-bottom: var(--space-2) !important;
+    font-size: 13px !important;
     line-height: var(--leading-body-sm) !important;
     color: var(--color-text-secondary) !important;
     display: -webkit-box !important;
@@ -649,6 +780,18 @@
     display: flex !important;
     flex-direction: column !important;
     gap: var(--space-2) !important;
+  }
+
+  /* Tombol di kartu SKU lebih kecil dari btn--sm standar */
+  .sozo-botox .soz-cat-card-footer .btn {
+    min-height: 36px !important;
+    padding-inline: var(--space-4) !important;
+    font-size: 13px !important;
+  }
+
+  .sozo-botox .soz-cat-card-footer .btn__icon {
+    width: 14px !important;
+    font-size: 14px !important;
   }
 
   /* ============================================================
@@ -773,13 +916,14 @@
   @media (max-width: 1024px) {
     /* SKU: slider scroll-snap di tablet & mobile */
     .sozo-botox .soz-cat-head {
-      margin-bottom: var(--space-4) !important;
+      gap: var(--space-1) !important;
+      margin-bottom: var(--space-3) !important;
     }
 
     .sozo-botox .soz-cat-nav {
       display: flex !important;
-      gap: 10px !important;
-      margin-top: 6px !important;
+      gap: var(--space-2) !important;
+      margin-top: var(--space-1) !important;
     }
 
     .sozo-botox .soz-cat-track {
@@ -801,8 +945,8 @@
     }
 
     .sozo-botox .soz-cat-track > * {
-      flex: 0 0 85% !important;
-      max-width: 85% !important;
+      flex: 0 0 72% !important;
+      max-width: 72% !important;
       scroll-snap-align: start !important;
     }
 
@@ -810,7 +954,7 @@
       display: flex !important;
       gap: var(--space-2) !important;
       justify-content: center !important;
-      margin-top: 20px !important;
+      margin-top: var(--space-3) !important;
     }
 
   }
@@ -850,19 +994,42 @@
 
     .sozo-botox .description-text,
     .sozo-botox .section-desc {
-      font-size: var(--text-body-sm) !important;
+      font-size: 11px !important;
+      line-height: 1.5 !important;
     }
 
     .sozo-botox .section-title {
-      font-size: 22px !important;
+      font-size: 15px !important;
+      line-height: 1.3 !important;
     }
 
     .sozo-botox .soz-cat-card-body {
-      padding: 14px var(--space-3) !important;
+      padding: var(--space-3) !important;
     }
 
     .sozo-botox .soz-cat-card-title {
-      font-size: 16px !important;
+      font-size: 15px !important;
+      margin-bottom: var(--space-1) !important;
+    }
+
+    .sozo-botox .soz-cat-card-desc {
+      font-size: 12px !important;
+    }
+
+    .sozo-botox .soz-cat-card-footer {
+      padding-top: var(--space-2) !important;
+      gap: 6px !important;
+    }
+
+    .sozo-botox .soz-cat-card-footer .btn {
+      min-height: 34px !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-botox .soz-cat-arrow {
+      width: 36px !important;
+      height: 36px !important;
+      font-size: 12px !important;
     }
 
 
@@ -1068,19 +1235,15 @@
         </ol>
       </nav>
 
-      <h1 class="hero-title">HIFU Treatment untuk Wajah Kencang &amp; Tirus Tanpa Operasi</h1>
+      <h1 class="hero-title">HIFU Treatment untuk Kulit Kencang Tanpa Operasi</h1>
 
-    </div>
-
-    <div class="hero-image">
-      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/DSC06476-scaled-HIFU.webp" alt="HIFU Treatment di Sozo Skin Clinic" width="2560" height="1440" fetchpriority="high" decoding="async">
     </div>
   </div>
 
   <!-- ===== DESKRIPSI ===== -->
   <div class="description-section">
     <p class="description-text">
-      HIFU (High-Intensity Focused Ultrasound) mengirim gelombang ultrasound terfokus ke lapisan SMAS di bawah kulit. Panasnya merangsang produksi kolagen baru, sehingga kulit wajah tampak lebih kencang, garis rahang lebih tegas, dan double chin berkurang secara bertahap. Prosedurnya non-invasif, tanpa jarum, dan Anda bisa langsung beraktivitas setelahnya. Setiap tindakan ditangani dokter estetika di Sozo Skin Clinic.
+      HIFU (High-Intensity Focused Ultrasound) adalah perawatan tanpa operasi yang memakai energi ultrasound terfokus untuk merangsang pembentukan kolagen baru di lapisan dalam kulit. HIFU membantu mengencangkan kulit wajah yang mulai kendur serta mempertegas garis rahang dan dagu. Hasilnya muncul bertahap, dan umumnya Anda bisa langsung kembali beraktivitas.
     </p>
   </div>
 
@@ -1135,6 +1298,31 @@
     </div>
 
   </div>
+
+  <!-- ===== LOKASI (compact) ===== -->
+  <section class="soz-loc" aria-labelledby="soz-loc-title">
+    <div class="soz-loc-card">
+      <div class="soz-loc-head">
+        <h2 class="soz-loc-title" id="soz-loc-title"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Lokasi HIFU Treatment di Sozo Skin Clinic</h2>
+        <p class="soz-loc-desc">Pilih kota terdekat untuk lihat alamat cabang Sozo dan buat jadwal HIFU.</p>
+      </div>
+
+      <ul class="soz-loc-list" aria-label="Kota cabang Sozo Skin Clinic">
+        <li><a href="https://sozoskinclinic.com/lokasi/jakarta/" class="soz-loc-chip">Jakarta</a></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/tangerang/" class="soz-loc-chip">Tangerang</a></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/tangerang-selatan/" class="soz-loc-chip">Tangerang Selatan</a></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/bekasi/" class="soz-loc-chip">Bekasi</a></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/depok/" class="soz-loc-chip">Depok</a></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/bogor/" class="soz-loc-chip">Bogor</a></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/bandung/" class="soz-loc-chip">Bandung</a></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/surabaya/" class="soz-loc-chip">Surabaya</a></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/semarang/" class="soz-loc-chip">Semarang</a></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/medan/" class="soz-loc-chip">Medan</a></li>
+      </ul>
+
+      <a href="https://sozoskinclinic.com/lokasi/" class="btn btn--outline btn--sm soz-loc-cta">Lihat Semua Lokasi<i class="fa-solid fa-arrow-right btn__icon" aria-hidden="true"></i></a>
+    </div>
+  </section>
 
   <!-- ===== FAQ ===== -->
   <div class="soz-faq-section" id="soz-botox-faq">
