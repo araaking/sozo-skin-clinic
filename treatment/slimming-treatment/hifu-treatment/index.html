@@ -402,14 +402,23 @@
   }
 
   /* ============ HERO (compact page header) ============ */
-  /* Background foto full-bleed (model di kanan), teks di area kosong kiri. Tanpa gradient. */
+  /* Background foto full-bleed, tanpa gradient. Foto penuh objek, jadi ada lapisan gelap
+     polos (bukan gradient) supaya teks Almond tetap terbaca. */
   .sozo-botox .hero-section {
     display: flex !important;
     align-items: stretch !important;
     min-height: 220px !important;
-    background: #a39a92 url("https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/SKIN-Landing-page-experiment-Main-Facial-.webp") right center / cover no-repeat !important;
+    background: #454553 url("https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/liftera-hifu-face-treatment.webp") center 35% / cover no-repeat !important;
     overflow: hidden !important;
     position: relative !important;
+  }
+
+  .sozo-botox .hero-section::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(30, 26, 24, 0.5) !important;
+    pointer-events: none !important;
   }
 
   .sozo-botox .hero-content {
