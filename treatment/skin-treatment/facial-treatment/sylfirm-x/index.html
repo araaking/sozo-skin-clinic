@@ -3,9 +3,11 @@
      URL     : https://sozoskinclinic.com/skin-treatment/facial-treatment/sylfirm-x/
      Style   : Sozo Design System V1.1 (design-system/), Elementor Safe, scoped
      Layout  : Sama dengan halaman Immune Glow Injection
-     Seksi   : Breadcrumb -> Hero (H1, masalah, deskripsi, info, CTA, gambar)
+     Seksi   : Breadcrumb -> Hero (H1, masalah, deskripsi, info, CTA Buat
+               Jadwal + Lihat Lokasi, gambar)
                -> Bottom Content (Deskripsi Ringkas Treatment & Expandable Detail)
-               -> FAQ -> Floating WhatsApp
+               -> Lokasi (cabang Arteri + slider Foto Klinik/Peta) -> FAQ
+               -> Floating WhatsApp
      CSS+JS  : Sudah digabung di file ini (Font Awesome preload, Poppins,
                CSS .sozo-sku-sylfirm-wrapper, JS FAQ, floating WA).
      JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList + FAQPage).
@@ -140,6 +142,7 @@
     --color-border: #DFDBD4;
     --color-border-strong: #C8C3BA;
     --color-primary-hover: #151A6D;
+    --color-primary-subtle: rgba(26, 32, 128, 0.05);
 
     /* Typography */
     --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -265,6 +268,25 @@
   .sozo-sku-sylfirm-wrapper .btn--primary:hover {
     background-color: var(--color-primary-hover) !important;
     color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .btn--outline,
+  .sozo-sku-sylfirm-wrapper .btn--outline:visited {
+    background-color: transparent !important;
+    border-color: var(--color-brand-primary) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .btn--outline:hover {
+    background-color: var(--color-primary-subtle) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* CTA hero: Buat Jadwal + Lihat Lokasi, selalu sejajar */
+  .sozo-sku-sylfirm-wrapper .sf-cta {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-3) !important;
   }
 
   .sozo-sku-sylfirm-wrapper .btn__icon {
@@ -583,6 +605,192 @@
     transform: rotate(180deg) !important;
   }
 
+  /* ============ LOKASI ============
+     Satu cabang (Arteri): kartu info kiri + peta kanan.
+     Mobile: peta di atas, info + tombol di bawah. */
+  .sozo-sku-sylfirm-wrapper .sf-loc {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+    scroll-margin-top: 80px !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__intro {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) !important;
+    overflow: hidden !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+    background-color: var(--color-white) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-4) !important;
+    padding: var(--space-6) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__name {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__meta {
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-3) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__meta li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: var(--space-3) !important;
+    margin: 0 !important;
+    list-style: none !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.6 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__meta i {
+    width: 16px !important;
+    margin-top: 4px !important;
+    flex: none !important;
+    text-align: center !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__meta strong {
+    display: block !important;
+    font-weight: 600 !important;
+    color: var(--color-text-primary) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-3) !important;
+    margin-top: auto !important;
+  }
+
+  /* Tombol kartu lokasi: ukuran small (btn--sm di design system) */
+  .sozo-sku-sylfirm-wrapper .sf-loc__actions .btn {
+    min-height: 40px !important;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__actions .btn__icon {
+    width: 14px !important;
+    font-size: 14px !important;
+  }
+
+  /* Slider Foto Klinik / Peta: scroll-snap horizontal. Tab di pojok kanan atas
+     supaya tidak menimpa kartu info Google Maps di kiri atas. */
+  .sozo-sku-sylfirm-wrapper .sf-loc__media {
+    position: relative !important;
+    min-height: 260px !important;
+    background-color: var(--color-brand-almond) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__track {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__track::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__slide {
+    position: relative !important;
+    flex: 0 0 100% !important;
+    scroll-snap-align: start !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__slide img,
+  .sozo-sku-sylfirm-wrapper .sf-loc__slide iframe {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    object-fit: cover !important;
+  }
+
+  /* Foto depan klinik persegi: fokus ke bawah supaya pintu masuk ikut terlihat */
+  .sozo-sku-sylfirm-wrapper .sf-loc__slide img {
+    object-position: center 80% !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__tabs {
+    position: absolute !important;
+    top: var(--space-2) !important;
+    right: var(--space-2) !important;
+    z-index: 2 !important;
+    display: inline-flex !important;
+    gap: 2px !important;
+    padding: 3px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-white) !important;
+    box-shadow: 0 8px 24px rgba(23, 23, 21, 0.12) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__tab {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    min-height: 26px !important;
+    padding: 0 10px !important;
+    border: 0 !important;
+    border-radius: var(--radius-full) !important;
+    background: transparent !important;
+    color: var(--color-brand-primary) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition: background-color var(--duration-fast) var(--ease-standard),
+                color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__tab i {
+    font-size: 11px !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__tab:hover {
+    background-color: var(--color-primary-subtle) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__tab.is-active {
+    background-color: var(--color-brand-primary) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-sylfirm-wrapper .sf-loc__tab:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
   /* ============ FAQ ============ */
   .sozo-sku-sylfirm-wrapper .sf-faq {
     padding-block: var(--section-y) !important;
@@ -771,6 +979,36 @@
       font-size: 14px !important;
     }
 
+    /* CTA hero sejajar, masing-masing setengah lebar */
+    .sozo-sku-sylfirm-wrapper .sf-cta .btn,
+    .sozo-sku-sylfirm-wrapper .sf-loc__actions .btn {
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      padding: 0 var(--space-3) !important;
+    }
+
+    .sozo-sku-sylfirm-wrapper .sf-loc__intro {
+      margin-bottom: var(--space-4) !important;
+      font-size: var(--text-body-sm) !important;
+    }
+
+    .sozo-sku-sylfirm-wrapper .sf-loc__card {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .sozo-sku-sylfirm-wrapper .sf-loc__media {
+      order: -1 !important;
+      min-height: 0 !important;
+      aspect-ratio: 16 / 9 !important;
+    }
+
+    .sozo-sku-sylfirm-wrapper .sf-loc__info {
+      padding: var(--space-4) !important;
+    }
+
+    .sozo-sku-sylfirm-wrapper .sf-loc__name {
+      font-size: 17px !important;
+    }
     .sozo-sku-sylfirm-wrapper .sf-faq__question {
       padding: 14px 0 !important;
       font-size: var(--text-body-sm) !important;
@@ -782,9 +1020,8 @@
   }
 
   @media (max-width: 480px) {
-    .sozo-sku-sylfirm-wrapper .btn--block-mobile {
-      display: flex !important;
-      width: 100% !important;
+    .sozo-sku-sylfirm-wrapper .btn {
+      font-size: 13px !important;
     }
   }
 
@@ -941,7 +1178,10 @@
             </li>
           </ul>
 
-          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Sylfirm%20X%20di%20Sozo%20%5Bsrc%3AORG-Sylfirm-X%5D" class="btn btn--primary btn--block-mobile" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+          <div class="sf-cta">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Sylfirm%20X%20di%20Sozo%20%5Bsrc%3AORG-Sylfirm-X%5D" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+            <a href="#sf-lokasi" class="btn btn--outline"><i class="fa-solid fa-location-dot btn__icon" aria-hidden="true"></i><span>Lihat Lokasi</span></a>
+          </div>
         </div>
 
         <div class="sf-hero__media">
@@ -1003,6 +1243,50 @@
         </svg>
       </button>
 
+    </div>
+  </section>
+
+  <!-- LOKASI (Sylfirm X hanya di cabang Arteri) -->
+  <section class="sf-loc" id="sf-lokasi" aria-labelledby="sf-loc-title">
+    <div class="sf-container">
+      <span class="badge badge--label">LOKASI</span>
+      <h2 class="sf-section-title" id="sf-loc-title">Lokasi Treatment Sylfirm X di Sozo</h2>
+      <p class="sf-loc__intro">Treatment Sylfirm X saat ini hanya tersedia di Sozo Skin Clinic Arteri Pondok Indah, Jakarta Selatan. Konfirmasi jadwal terlebih dahulu sebelum datang.</p>
+
+      <div class="sf-loc__card">
+        <div class="sf-loc__info">
+          <h3 class="sf-loc__name">Sozo Skin Clinic - Arteri Pondok Indah</h3>
+          <ul class="sf-loc__meta">
+            <li>
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span><strong>Alamat</strong>Jl. Sultan Iskandar Muda No.68A, RT.3/RW.2, Kby. Lama Utara, Kec. Kebayoran Lama, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12240</span>
+            </li>
+            <li>
+              <i class="fa-regular fa-clock" aria-hidden="true"></i>
+              <span><strong>Jam Operasional</strong>Senin–Minggu, 09:00–20:00</span>
+            </li>
+          </ul>
+          <div class="sf-loc__actions">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20treatment%20Sylfirm%20X%20di%20Sozo%20Arteri%20Pondok%20Indah%20%5Bsrc%3AORG-Sylfirm-X%5D" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Sozo+Skin+Clinic+-+Arteri+Pondok+Indah%2C+Jl.+Sultan+Iskandar+Muda+No.68A%2C+Kebayoran+Lama%2C+Jakarta+Selatan+12240" class="btn btn--outline" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-map-location-dot btn__icon" aria-hidden="true"></i><span>Lihat Maps</span></a>
+          </div>
+        </div>
+        <!-- Slider media: Foto Klinik / Peta. Geser (swipe) atau klik tab. -->
+        <div class="sf-loc__media">
+          <div class="sf-loc__track" id="sfLocTrack">
+            <div class="sf-loc__slide" id="sf-loc-slide-foto" role="tabpanel" aria-labelledby="sf-loc-tab-foto">
+              <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-arteri-depan.webp" alt="Tampak depan Sozo Skin Clinic Arteri Pondok Indah" loading="lazy" decoding="async">
+            </div>
+            <div class="sf-loc__slide" id="sf-loc-slide-peta" role="tabpanel" aria-labelledby="sf-loc-tab-peta">
+              <iframe src="https://maps.google.com/maps?q=Sozo%20Skin%20Clinic%20-%20Arteri%20Pondok%20Indah%2C%20Jl.%20Sultan%20Iskandar%20Muda%20No.68A%2C%20Kebayoran%20Lama%2C%20Jakarta%20Selatan%2012240&t=&z=16&ie=UTF8&iwloc=&output=embed" title="Peta Sozo Skin Clinic Arteri Pondok Indah" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="sf-loc__tabs" role="tablist" aria-label="Media lokasi">
+            <button type="button" class="sf-loc__tab is-active" id="sf-loc-tab-foto" role="tab" aria-selected="true" aria-controls="sf-loc-slide-foto" data-slide="0"><i class="fa-regular fa-image" aria-hidden="true"></i>Foto Klinik</button>
+            <button type="button" class="sf-loc__tab" id="sf-loc-tab-peta" role="tab" aria-selected="false" aria-controls="sf-loc-slide-peta" data-slide="1"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>Peta</button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1128,6 +1412,34 @@
     btn.setAttribute('aria-expanded', String(!isExpanded));
     btnText.textContent = !isExpanded ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
   }
+
+  (function initSylfirmLocSlider() {
+    var track = document.getElementById('sfLocTrack');
+    if (!track) return;
+    var tabs = document.querySelectorAll('#sozo-sylfirm-widget .sf-loc__tab');
+    function setActive(index) {
+      Array.prototype.forEach.call(tabs, function (tab, i) {
+        tab.classList.toggle('is-active', i === index);
+        tab.setAttribute('aria-selected', String(i === index));
+      });
+    }
+    Array.prototype.forEach.call(tabs, function (tab) {
+      tab.addEventListener('click', function () {
+        var index = Number(tab.getAttribute('data-slide'));
+        track.scrollTo({ left: index * track.clientWidth });
+        setActive(index);
+      });
+    });
+    var ticking = false;
+    track.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () {
+        ticking = false;
+        setActive(Math.round(track.scrollLeft / track.clientWidth));
+      });
+    }, { passive: true });
+  })();
 
   (function initSylfirmWaFloat() {
     var fab = document.getElementById('sfWaFloat');
