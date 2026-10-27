@@ -1,0 +1,850 @@
+<!-- ============================================================
+     DETAIL CABANG - SOZO SKIN CLINIC ARTERI PONDOK INDAH (REDESIGN)
+     URL     : /lokasi/jakarta/jakarta-selatan/pondok-indah/
+     Style   : Sozo Design System V1.2 (design-system/), Elementor Safe, scoped
+               ke .sz-branch. Token di wrapper, bukan :root.
+     Seksi   : Breadcrumb -> [kolom kiri: H1, rating + status buka, lead,
+               jam operasional 7 hari, alamat, CTA | galeri kanan setinggi kolom kiri].
+               Tablet: galeri 4:3 tidak ditarik. Mobile: header -> info -> galeri 16:9.
+     UX      : jam operasional di atas panel, satu baris jadwal + status live
+               (dihitung dari jam WIB), salin alamat, Petunjuk Arah langsung ke
+               Google Maps directions, galeri bisa klik, drag/swipe, keyboard.
+     Catatan : Tidak ada elemen position: fixed. Container Elementor yang punya
+               transform (animasi entrance) mematahkan fixed, dan floating
+               WhatsApp global sudah menempati pojok bawah.
+     ============================================================ -->
+
+<!-- Font resmi Sozo: Poppins 400-800 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .sz-branch {
+    /* Token: salinan design-system/tokens.css yang dipakai halaman ini */
+    --color-brand-primary: #1A2080 !important;
+    --color-brand-secondary: #D9C7B1 !important;
+    --color-brand-almond: #E9DFD5 !important;
+    --color-brand-isabelline: #DFDBD4 !important;
+    --color-white: #FFFFFF !important;
+    --color-promo-yellow: #FFC200 !important;
+    --color-text-primary: #171715 !important;
+    --color-text-secondary: #41413E !important;
+    --color-text-muted: #777771 !important;
+    --color-text-on-primary: #FFFFFF !important;
+    --color-border: #DFDBD4 !important;
+    --color-border-strong: #C8C3BA !important;
+    --color-primary-hover: #151A6D !important;
+    --color-primary-subtle: rgba(26, 32, 128, 0.05) !important;
+    --color-success: #267A57 !important;
+    --color-error: #B64242 !important;
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    --font-weight-regular: 400 !important;
+    --font-weight-medium: 500 !important;
+    --font-weight-semibold: 600 !important;
+    --font-weight-bold: 700 !important;
+    --text-h4: 24px !important;
+    --text-h5: 20px !important;
+    --text-body: 16px !important;
+    --text-body-sm: 14px !important;
+    --text-caption: 12px !important;
+    --text-label: 12px !important;
+    --leading-h4: 1.30 !important;
+    --leading-h5: 1.35 !important;
+    --leading-body: 1.60 !important;
+    --leading-body-sm: 1.55 !important;
+    --leading-label: 1.40 !important;
+    --tracking-eyebrow: 0.12em !important;
+    --measure: 65ch !important;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 40px;
+    --space-8: 48px;
+    --space-9: 64px;
+    --container-max: 1280px !important;
+    --container-pad: 32px !important;
+    --grid-gap: 24px !important;
+    --section-y: 80px !important;
+    --radius-sm: 6px !important;
+    --radius-md: 10px !important;
+    --radius-lg: 16px !important;
+    --radius-full: 999px !important;
+    --shadow-sm: 0 2px 8px rgba(23, 23, 21, 0.04) !important;
+    --shadow-md: 0 8px 24px rgba(23, 23, 21, 0.07) !important;
+    --focus-ring: 2px solid var(--color-brand-primary) !important;
+    --focus-offset: 3px !important;
+    --duration-fast: 180ms !important;
+    --duration-media: 400ms !important;
+    --ease-standard: ease !important;
+    --pulse-ring: rgba(38, 122, 87, 0.35) !important; /* lokal: cincin pulse status buka, turunan --color-success */
+
+    width: 100% !important;
+    margin: 0 !important;
+    padding: var(--space-7) 0 var(--section-y) !important;
+    background: var(--color-white) !important;
+    color: var(--color-text-secondary) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-body) !important;
+    line-height: var(--leading-body) !important;
+    box-sizing: border-box !important;
+    overflow-x: clip !important;
+  }
+  .sz-branch *, .sz-branch *::before, .sz-branch *::after {
+    box-sizing: border-box !important;
+    font-family: var(--font-family-primary) !important;
+  }
+  .sz-branch a { text-decoration: none !important; }
+  .sz-branch a:focus-visible,
+  .sz-branch button:focus-visible,
+  .sz-branch summary:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: var(--focus-offset) !important;
+  }
+  .sz-branch .sz-visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+  }
+
+  /* Container (foundations/04-spacing-layout.md) */
+  .sz-branch .sz-container {
+    width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
+    margin-inline: auto !important;
+  }
+
+  /* ---------- Button (components/button.md) ---------- */
+  /* Ukuran btn--sm (40px / 18px / 13px) di semua viewport, termasuk mobile (permintaan user,
+     menyimpang dari aturan button.md "aksi utama mobile ≥ btn--md") */
+  .sz-branch .sz-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--space-2) !important;
+    min-height: 40px !important;
+    margin: 0 !important;
+    padding: 0 18px !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--radius-full) !important;
+    font-size: 13px !important;
+    font-weight: var(--font-weight-semibold) !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    text-transform: none !important;
+    cursor: pointer !important;
+    transition: background-color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard) !important;
+  }
+  .sz-branch .sz-btn:hover { transform: translateY(-1px) !important; }
+  .sz-branch .sz-btn:active { transform: translateY(0) !important; }
+  .sz-branch .sz-btn--primary,
+  .sz-branch .sz-btn--primary:visited { background: var(--color-brand-primary) !important; color: var(--color-text-on-primary) !important; }
+  .sz-branch .sz-btn--primary:hover { background: var(--color-primary-hover) !important; color: var(--color-text-on-primary) !important; }
+  .sz-branch .sz-btn--outline,
+  .sz-branch .sz-btn--outline:visited { background: transparent !important; color: var(--color-brand-primary) !important; border-color: var(--color-brand-primary) !important; }
+  .sz-branch .sz-btn--outline:hover { background: var(--color-primary-subtle) !important; color: var(--color-brand-primary) !important; }
+  .sz-branch .sz-btn svg { width: 16px !important; height: 16px !important; flex: none !important; }
+
+  /* ---------- Breadcrumb (components/breadcrumb.md) ---------- */
+  .sz-branch .sz-breadcrumb__list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin: 0 0 var(--space-5) !important;
+    padding: 0 !important;
+    list-style: none !important;
+    font-size: 13px !important;
+    line-height: var(--leading-label) !important;
+  }
+  .sz-branch .sz-breadcrumb__list li { display: inline-flex !important; align-items: center !important; gap: var(--space-2) !important; margin: 0 !important; }
+  .sz-branch .sz-breadcrumb__list li + li::before { content: "/" !important; color: var(--color-border-strong) !important; }
+  .sz-branch .sz-breadcrumb a { color: var(--color-text-muted) !important; font-weight: var(--font-weight-medium) !important; }
+  .sz-branch .sz-breadcrumb a:hover { color: var(--color-brand-primary) !important; }
+  .sz-branch .sz-breadcrumb__current { color: var(--color-brand-primary) !important; font-weight: var(--font-weight-semibold) !important; }
+
+  /* ---------- 1. Header (compact: judul skala H4, lead body-sm) ---------- */
+  .sz-branch .sz-branch__head { margin: 0 !important; }
+  .sz-branch .sz-branch__title {
+    margin: 0 0 var(--space-2) !important;
+    font-size: var(--text-h4) !important;
+    font-weight: var(--font-weight-bold) !important;
+    line-height: var(--leading-h4) !important;
+    color: var(--color-brand-primary) !important;
+  }
+  /* Rating + status buka satu baris, langsung di bawah judul */
+  .sz-branch .sz-branch__meta {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--space-2) var(--space-4) !important;
+    margin: 0 0 var(--space-3) !important;
+  }
+  .sz-branch .sz-rating {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: var(--leading-body-sm) !important;
+    color: var(--color-text-secondary) !important;
+  }
+  .sz-branch .sz-rating svg { width: 16px !important; height: 16px !important; fill: var(--color-promo-yellow) !important; flex: none !important; }
+  .sz-branch .sz-rating strong { color: var(--color-text-primary) !important; font-weight: var(--font-weight-semibold) !important; }
+  .sz-branch .sz-rating a,
+  .sz-branch .sz-rating a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: var(--font-weight-medium) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+  }
+  .sz-branch .sz-rating a:hover { color: var(--color-primary-hover) !important; }
+  .sz-branch .sz-branch__lead {
+    max-width: var(--measure) !important;
+    margin: 0 !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: var(--leading-body-sm) !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  /* ---------- 2. Layout: semua info di kolom kiri, galeri kanan setinggi kolom kiri ---------- */
+  .sz-branch .sz-branch__body {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: auto auto !important;
+    gap: 0 var(--space-7) !important;
+  }
+  .sz-branch .sz-branch__head { grid-column: 1 !important; grid-row: 1 !important; }
+  .sz-branch .sz-panel { grid-column: 1 !important; grid-row: 2 !important; }
+  .sz-branch .sz-gallery { grid-column: 2 !important; grid-row: 1 / span 2 !important; }
+
+  /* Info tanpa kotak: grup dipisah garis tipis supaya ringan */
+  .sz-branch .sz-panel {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  .sz-branch .sz-panel__group {
+    margin: var(--space-4) 0 0 !important;
+    padding: var(--space-4) 0 0 !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+  .sz-branch .sz-panel__label {
+    margin: 0 0 var(--space-2) !important;
+    font-size: var(--text-label) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    line-height: var(--leading-label) !important;
+    letter-spacing: var(--tracking-eyebrow) !important;
+    text-transform: uppercase !important;
+    color: var(--color-text-muted) !important;
+  }
+  /* Baris kepala grup: label kiri, status/aksi kecil kanan */
+  .sz-branch .sz-panel__head {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: var(--space-1) var(--space-3) !important;
+    margin: 0 0 var(--space-2) !important;
+  }
+  .sz-branch .sz-panel__head .sz-panel__label { margin: 0 !important; }
+  /* Area tap tetap 44px, tapi tidak menambah tinggi baris */
+  .sz-branch .sz-panel__head .sz-textbtn { margin: calc(var(--space-3) * -1) 0 !important; }
+  .sz-branch .sz-panel__address {
+    max-width: var(--measure) !important;
+    margin: 0 !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: var(--leading-body-sm) !important;
+    color: var(--color-text-primary) !important;
+  }
+  .sz-branch .sz-textbtn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-size: var(--text-body-sm) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    line-height: 1 !important;
+    color: var(--color-brand-primary) !important;
+    cursor: pointer !important;
+  }
+  .sz-branch .sz-textbtn:hover,
+  .sz-branch .sz-textbtn:focus { background: none !important; color: var(--color-brand-primary) !important; }
+  .sz-branch .sz-textbtn:hover span { text-decoration: underline !important; text-underline-offset: 3px !important; }
+  .sz-branch .sz-textbtn svg { width: 16px !important; height: 16px !important; fill: currentColor !important; flex: none !important; }
+  .sz-branch .sz-textbtn.is-done { color: var(--color-success) !important; }
+
+  /* Tombol selebar isinya di desktop (button.md: desktop tidak memakai tombol lebar penuh) */
+  .sz-branch .sz-panel__actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-3) !important;
+    margin-top: var(--space-4) !important;
+  }
+
+  /* Jam operasional: 7 hari selalu tampil sebagai teks HTML (terbaca Google),
+     2 kolom mengalir ke bawah (Senin-Kamis | Jumat-Minggu), hari ini disorot */
+  .sz-branch .sz-hours__list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(4, auto) !important;
+    grid-auto-flow: column !important;
+    gap: 0 var(--space-4) !important;
+    max-width: 440px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .sz-branch .sz-hours__item {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+    padding: var(--space-1) var(--space-2) !important;
+    border-radius: var(--radius-sm) !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: var(--leading-body-sm) !important;
+  }
+  .sz-branch .sz-hours__item dt {
+    margin: 0 !important;
+    font-weight: var(--font-weight-regular) !important;
+    color: var(--color-text-secondary) !important;
+  }
+  .sz-branch .sz-hours__item dd {
+    margin: 0 !important;
+    color: var(--color-text-primary) !important;
+    font-variant-numeric: tabular-nums !important;
+    white-space: nowrap !important;
+  }
+  .sz-branch .sz-hours__item.is-today {
+    background: var(--color-primary-subtle) !important;
+    animation: sz-fade-in var(--duration-media) var(--ease-standard) both !important;
+  }
+  .sz-branch .sz-hours__item.is-today dt,
+  .sz-branch .sz-hours__item.is-today dd {
+    font-weight: var(--font-weight-semibold) !important;
+    color: var(--color-brand-primary) !important;
+  }
+  .sz-branch .sz-hours__status {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+    font-size: var(--text-body-sm) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    line-height: var(--leading-body-sm) !important;
+    animation: sz-fade-in var(--duration-media) var(--ease-standard) both !important;
+  }
+  .sz-branch .sz-hours__status[hidden] { display: none !important; }
+  .sz-branch .sz-hours__status.is-open { color: var(--color-success) !important; }
+  .sz-branch .sz-hours__status.is-closed { color: var(--color-error) !important; }
+  .sz-branch .sz-hours__dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: var(--radius-full) !important;
+    background: currentColor !important;
+    flex: none !important;
+  }
+  .sz-branch .sz-hours__status.is-open .sz-hours__dot { animation: sz-pulse 2s var(--ease-standard) infinite !important; }
+
+  @keyframes sz-fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes sz-pulse {
+    0% { box-shadow: 0 0 0 0 var(--pulse-ring); }
+    70% { box-shadow: 0 0 0 8px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+
+  /* Galeri (components/image.md, standalone radius-lg). Desktop: tinggi ikut kolom kiri,
+     foto besar mengisi sisa tinggi (rasio menyesuaikan, object-fit cover). Tablet & mobile: rasio tetap. */
+  .sz-branch .sz-gallery {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+  .sz-branch .sz-gallery__stage {
+    position: relative !important;
+    flex: 1 1 auto !important;
+    min-height: 280px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    border-radius: var(--radius-lg) !important;
+    background: var(--color-brand-almond) !important;
+    touch-action: pan-y !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+  }
+  .sz-branch .sz-gallery__stage img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    transition: opacity var(--duration-fast) var(--ease-standard) !important;
+  }
+  .sz-branch .sz-gallery__stage img.is-fading { opacity: 0 !important; }
+  .sz-branch .sz-gallery__nav {
+    position: absolute !important;
+    top: 50% !important;
+    z-index: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 0 !important;
+    margin: -22px 0 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: var(--radius-full) !important;
+    background: var(--color-white) !important;
+    color: var(--color-brand-primary) !important;
+    box-shadow: var(--shadow-md) !important;
+    cursor: pointer !important;
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+  .sz-branch .sz-gallery__nav:hover,
+  .sz-branch .sz-gallery__nav:focus { background: var(--color-white) !important; color: var(--color-brand-primary) !important; transform: scale(1.05) !important; }
+  .sz-branch .sz-gallery__nav svg { width: 20px !important; height: 20px !important; flex: none !important; }
+  .sz-branch .sz-gallery__nav--prev { left: var(--space-4) !important; }
+  .sz-branch .sz-gallery__nav--next { right: var(--space-4) !important; }
+  .sz-branch .sz-gallery__count {
+    position: absolute !important;
+    right: var(--space-4) !important;
+    bottom: var(--space-4) !important;
+    z-index: 2 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 30px !important;
+    padding: 0 10px !important;
+    border-radius: var(--radius-full) !important;
+    background: var(--color-white) !important;
+    color: var(--color-text-primary) !important;
+    font-size: var(--text-label) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    line-height: var(--leading-label) !important;
+    font-variant-numeric: tabular-nums !important;
+    box-shadow: var(--shadow-sm) !important;
+  }
+
+  .sz-branch .sz-gallery__thumbs {
+    display: grid !important;
+    flex: none !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: var(--space-3) !important;
+    margin: var(--space-3) 0 0 !important;
+    padding: 0 !important;
+  }
+  .sz-branch .sz-gallery__thumb {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    background: var(--color-brand-almond) !important;
+    cursor: pointer !important;
+    opacity: 0.6 !important;
+    transition: opacity var(--duration-fast) var(--ease-standard) !important;
+  }
+  .sz-branch .sz-gallery__thumb::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    border: 2px solid transparent !important;
+    border-radius: inherit !important;
+    transition: border-color var(--duration-fast) var(--ease-standard) !important;
+  }
+  .sz-branch .sz-gallery__thumb:hover,
+  .sz-branch .sz-gallery__thumb:focus { background: var(--color-brand-almond) !important; opacity: 1 !important; }
+  .sz-branch .sz-gallery__thumb[aria-current="true"] { opacity: 1 !important; }
+  .sz-branch .sz-gallery__thumb[aria-current="true"]::after { border-color: var(--color-brand-primary) !important; }
+  .sz-branch .sz-gallery__thumb img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    object-fit: cover !important;
+  }
+
+  /* ---------- Tablet (≤ 1024px) ---------- */
+  @media (max-width: 1024px) {
+    .sz-branch { --grid-gap: 20px !important; --section-y: 64px !important; }
+    .sz-branch .sz-branch__body { column-gap: var(--space-5) !important; }
+    /* Kolom kiri tablet lebih tinggi; galeri tidak ditarik supaya tidak jadi potret */
+    .sz-branch .sz-gallery { align-self: start !important; }
+    .sz-branch .sz-gallery__stage { flex: none !important; min-height: 0 !important; aspect-ratio: 4 / 3 !important; }
+  }
+
+  /* ---------- Mobile (≤ 768px): stack, urutan prioritas tetap (info dulu) ---------- */
+  @media (max-width: 768px) {
+    .sz-branch { --container-pad: 20px !important; --grid-gap: 16px !important; --section-y: 56px !important; padding-top: var(--space-5) !important; }
+    .sz-branch .sz-branch__body { grid-template-columns: minmax(0, 1fr) !important; grid-template-rows: none !important; }
+    .sz-branch .sz-branch__head { grid-column: 1 !important; grid-row: 1 !important; }
+    .sz-branch .sz-panel { grid-column: 1 !important; grid-row: 2 !important; }
+    .sz-branch .sz-gallery { grid-column: 1 !important; grid-row: 3 !important; margin-top: var(--space-5) !important; }
+    .sz-branch .sz-breadcrumb__list { margin-bottom: var(--space-3) !important; }
+    .sz-branch .sz-branch__title { font-size: var(--text-h5) !important; line-height: var(--leading-h5) !important; }
+    .sz-branch .sz-branch__meta { margin-bottom: var(--space-2) !important; }
+    .sz-branch .sz-gallery__stage { aspect-ratio: 16 / 9 !important; border-radius: var(--radius-md) !important; }
+    .sz-branch .sz-gallery__nav { display: none !important; }
+    .sz-branch .sz-gallery__thumbs { gap: var(--space-2) !important; margin-top: var(--space-2) !important; }
+    .sz-branch .sz-gallery__thumb { border-radius: var(--radius-sm) !important; }
+  }
+
+  /* ---------- Mobile kecil (≤ 480px): CTA lebar penuh ---------- */
+  @media (max-width: 480px) {
+    .sz-branch .sz-panel__actions { flex-direction: column !important; }
+    .sz-branch .sz-panel__actions .sz-btn { width: 100% !important; }
+    .sz-branch .sz-hours__list { gap: 0 var(--space-2) !important; }
+    .sz-branch .sz-hours__item { gap: var(--space-1) !important; padding: var(--space-1) !important; font-size: var(--text-caption) !important; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sz-branch .sz-btn:hover,
+    .sz-branch .sz-gallery__nav:hover { transform: none !important; }
+    .sz-branch .sz-gallery__stage img { transition: none !important; }
+    .sz-branch .sz-hours__status,
+    .sz-branch .sz-hours__item.is-today,
+    .sz-branch .sz-hours__status.is-open .sz-hours__dot { animation: none !important; }
+  }
+</style>
+
+<div class="sz-branch">
+  <div class="sz-container">
+
+    <nav class="sz-breadcrumb" aria-label="Breadcrumb">
+      <ol class="sz-breadcrumb__list">
+        <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/">Lokasi</a></li>
+        <li><span class="sz-breadcrumb__current" aria-current="page">Arteri Pondok Indah</span></li>
+      </ol>
+    </nav>
+
+    <!-- Desktop: kolom kiri (header + jam + alamat + CTA), galeri kanan setinggi kolom kiri.
+         Mobile: header -> info -> galeri. -->
+    <div class="sz-branch__body">
+
+      <!-- ==================== 1. HEADER ==================== -->
+      <header class="sz-branch__head">
+        <h1 class="sz-branch__title">Sozo Skin Clinic - Arteri Pondok Indah</h1>
+
+        <div class="sz-branch__meta">
+          <span class="sz-rating">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.3l-5.9 3.2 1.3-6.5L2.5 9.4l6.6-.8z"/></svg>
+            <strong>4.7</strong>
+            <a href="https://www.google.com/maps/search/?api=1&query=Sozo%20Skin%20Clinic%20-%20Arteri%20Pondok%20Indah" target="_blank" rel="noopener">1.856 ulasan Google</a>
+          </span>
+          <p class="sz-hours__status" id="szHoursStatus" hidden>
+            <span class="sz-hours__dot" aria-hidden="true"></span>
+            <span id="szHoursStatusText"></span>
+          </p>
+        </div>
+
+        <p class="sz-branch__lead">Mencari klinik kecantikan di Pondok Indah dan Kebayoran Lama yang terpercaya? Sozo hadir di Jl. Sultan Iskandar Muda (Arteri Pondok Indah) dengan kualitas terbaik, harga transparan dan terjangkau.</p>
+      </header>
+
+      <!-- ==================== 2. INFO CABANG (jam, alamat + CTA) ==================== -->
+      <section class="sz-panel" aria-label="Info klinik">
+        <div class="sz-panel__group sz-hours">
+          <div class="sz-panel__head">
+            <h2 class="sz-panel__label">Jam Operasional (WIB)</h2>
+          </div>
+          <dl class="sz-hours__list">
+            <div class="sz-hours__item" data-day="1"><dt>Senin</dt><dd><time datetime="09:00">09:00</time> - <time datetime="20:00">20:00</time></dd></div>
+            <div class="sz-hours__item" data-day="2"><dt>Selasa</dt><dd><time datetime="09:00">09:00</time> - <time datetime="20:00">20:00</time></dd></div>
+            <div class="sz-hours__item" data-day="3"><dt>Rabu</dt><dd><time datetime="09:00">09:00</time> - <time datetime="20:00">20:00</time></dd></div>
+            <div class="sz-hours__item" data-day="4"><dt>Kamis</dt><dd><time datetime="09:00">09:00</time> - <time datetime="20:00">20:00</time></dd></div>
+            <div class="sz-hours__item" data-day="5"><dt>Jumat</dt><dd><time datetime="09:00">09:00</time> - <time datetime="20:00">20:00</time></dd></div>
+            <div class="sz-hours__item" data-day="6"><dt>Sabtu</dt><dd><time datetime="09:00">09:00</time> - <time datetime="20:00">20:00</time></dd></div>
+            <div class="sz-hours__item" data-day="0"><dt>Minggu</dt><dd><time datetime="09:00">09:00</time> - <time datetime="20:00">20:00</time></dd></div>
+          </dl>
+        </div>
+
+        <div class="sz-panel__group">
+          <div class="sz-panel__head">
+            <h2 class="sz-panel__label">Alamat</h2>
+            <button type="button" class="sz-textbtn" id="szCopyAddress">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/></svg>
+              <span id="szCopyLabel">Salin alamat</span>
+            </button>
+          </div>
+          <p class="sz-panel__address" id="szAddress">Jl. Sultan Iskandar Muda No.68A, RT.3/RW.2, Kby. Lama Utara, Kec. Kebayoran Lama, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12240</p>
+          <span class="sz-visually-hidden" aria-live="polite" id="szCopyStatus"></span>
+
+          <div class="sz-panel__actions">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20treatment%20sozo%20di%20Sozo%20Skin%20Clinic%20Arteri%20Pondok%20Indah%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sz-btn sz-btn--primary sozo-master-cta">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Buat Jadwal</span>
+            </a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Sozo%20Skin%20Clinic%20-%20Arteri%20Pondok%20Indah" target="_blank" rel="noopener" class="sz-btn sz-btn--outline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+              <span>Petunjuk Arah</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 3. GALERI KLINIK ==================== -->
+      <section class="sz-gallery" aria-label="Galeri foto Sozo Skin Clinic Arteri Pondok Indah">
+        <div class="sz-gallery__stage" id="szGalleryStage">
+          <img id="szGalleryMain" src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-arteri-depan.webp" alt="Tampak depan Sozo Skin Clinic Arteri Pondok Indah" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" draggable="false">
+          <button type="button" class="sz-gallery__nav sz-gallery__nav--prev" id="szGalleryPrev" aria-label="Foto sebelumnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="sz-gallery__nav sz-gallery__nav--next" id="szGalleryNext" aria-label="Foto selanjutnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          <span class="sz-gallery__count" id="szGalleryCount" aria-live="polite">1 / 4</span>
+        </div>
+
+        <div class="sz-gallery__thumbs">
+          <button type="button" class="sz-gallery__thumb" aria-current="true" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-arteri-depan.webp" data-alt="Tampak depan Sozo Skin Clinic Arteri Pondok Indah" aria-label="Foto 1: tampak depan klinik">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-arteri-depan.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="sz-gallery__thumb" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-1.webp" data-alt="Ruang Sozo Skin Clinic Arteri Pondok Indah" aria-label="Foto 2: ruang klinik">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-1.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="sz-gallery__thumb" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-2.webp" data-alt="Ruang Sozo Skin Clinic Arteri Pondok Indah" aria-label="Foto 3: ruang klinik">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-2.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="sz-gallery__thumb" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-3.webp" data-alt="Ruang Sozo Skin Clinic Arteri Pondok Indah" aria-label="Foto 4: ruang klinik">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-3.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+(function() {
+  // Jam buka per hari dalam menit sejak 00:00 WIB. 0 = Minggu.
+  const HOURS = {
+    0: [540, 1200], 1: [540, 1200], 2: [540, 1200], 3: [540, 1200],
+    4: [540, 1200], 5: [540, 1200], 6: [540, 1200]
+  };
+  const DAY_NAMES = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+
+  function fmt(mins) {
+    return String(Math.floor(mins / 60)).padStart(2, '0') + ':' + String(mins % 60).padStart(2, '0');
+  }
+
+  function nowInJakarta() {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Jakarta', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false
+    }).formatToParts(new Date());
+    const get = type => parts.find(p => p.type === type).value;
+    const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+    return { day: day, mins: (parseInt(get('hour'), 10) % 24) * 60 + parseInt(get('minute'), 10) };
+  }
+
+  function nextOpening(day) {
+    for (let i = 1; i <= 7; i++) {
+      const d = (day + i) % 7;
+      if (HOURS[d]) return (i === 1 ? 'besok' : DAY_NAMES[d]) + ' ' + fmt(HOURS[d][0]);
+    }
+    return '';
+  }
+
+  // Status live di atas jadwal + sorot hari ini. Tanpa JS keduanya tidak muncul,
+  // daftar 7 hari tetap tampil lengkap.
+  function setupHours() {
+    const status = document.getElementById('szHoursStatus');
+    const text = document.getElementById('szHoursStatusText');
+    if (!status || !text) return;
+
+    const now = nowInJakarta();
+    const today = HOURS[now.day];
+
+    const item = document.querySelector('.sz-branch .sz-hours__item[data-day="' + now.day + '"]');
+    if (item) item.classList.add('is-today');
+
+    let open = false;
+    let message;
+    if (today && now.mins >= today[0] && now.mins < today[1]) {
+      open = true;
+      message = 'Buka sekarang · tutup ' + fmt(today[1]) + ' WIB';
+    } else if (today && now.mins < today[0]) {
+      message = 'Tutup · buka hari ini ' + fmt(today[0]) + ' WIB';
+    } else {
+      const next = nextOpening(now.day);
+      message = next ? 'Tutup · buka ' + next + ' WIB' : 'Tutup';
+    }
+
+    text.textContent = message;
+    status.classList.add(open ? 'is-open' : 'is-closed');
+    status.hidden = false;
+  }
+
+  function setupCopy() {
+    const btn = document.getElementById('szCopyAddress');
+    const label = document.getElementById('szCopyLabel');
+    const status = document.getElementById('szCopyStatus');
+    const address = document.getElementById('szAddress');
+    if (!btn || !address) return;
+
+    function fallbackCopy(value) {
+      const area = document.createElement('textarea');
+      area.value = value;
+      area.setAttribute('readonly', '');
+      area.style.position = 'absolute';
+      area.style.left = '-9999px';
+      document.body.appendChild(area);
+      area.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    let resetTimer;
+    function done(ok) {
+      label.textContent = ok ? 'Alamat disalin' : 'Gagal menyalin';
+      status.textContent = ok ? 'Alamat disalin ke clipboard' : 'Alamat gagal disalin';
+      btn.classList.toggle('is-done', ok);
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => {
+        label.textContent = 'Salin alamat';
+        btn.classList.remove('is-done');
+      }, 2200);
+    }
+
+    btn.addEventListener('click', () => {
+      const value = address.textContent.trim();
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(value).then(() => done(true), () => done(fallbackCopy(value)));
+      } else {
+        done(fallbackCopy(value));
+      }
+    });
+  }
+
+  function setupGallery() {
+    const gallery = document.querySelector('.sz-branch .sz-gallery');
+    if (!gallery) return;
+    const stage = gallery.querySelector('.sz-gallery__stage');
+    const main = gallery.querySelector('.sz-gallery__stage img');
+    const count = gallery.querySelector('.sz-gallery__count');
+    const thumbs = Array.from(gallery.querySelectorAll('.sz-gallery__thumb'));
+    if (!stage || !main || thumbs.length === 0) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let current = 0;
+    let fadeTimer;
+
+    // URL foto diambil dari data-full; fallback ke gambar thumbnail kalau plugin lazy-load mengubah atribut
+    function fullSrc(thumb) {
+      const img = thumb.querySelector('img');
+      return thumb.getAttribute('data-full') || (img && (img.currentSrc || img.src)) || '';
+    }
+
+    function show(index) {
+      current = (index + thumbs.length) % thumbs.length;
+      const thumb = thumbs[current];
+      const swap = () => {
+        main.removeAttribute('srcset');
+        main.src = fullSrc(thumb);
+        main.alt = thumb.getAttribute('data-alt') || '';
+        main.classList.remove('is-fading');
+      };
+      clearTimeout(fadeTimer);
+      if (reduceMotion) {
+        swap();
+      } else {
+        main.classList.add('is-fading');
+        fadeTimer = setTimeout(swap, 150);
+      }
+      thumbs.forEach((t, i) => {
+        if (i === current) t.setAttribute('aria-current', 'true');
+        else t.removeAttribute('aria-current');
+      });
+      if (count) count.textContent = (current + 1) + ' / ' + thumbs.length;
+    }
+
+    // Swipe/drag: sentuh di HP, tarik mouse di desktop
+    let startX = null;
+    let startY = 0;
+    let dragged = false;
+    stage.addEventListener('pointerdown', e => {
+      if (e.target.closest('.sz-gallery__nav')) return;
+      startX = e.clientX;
+      startY = e.clientY;
+      dragged = false;
+    });
+    stage.addEventListener('pointerup', e => {
+      if (startX === null) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      startX = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+        dragged = true;
+        show(current + (dx < 0 ? 1 : -1));
+      }
+    });
+    stage.addEventListener('pointercancel', () => { startX = null; });
+    main.addEventListener('dragstart', e => e.preventDefault());
+
+    // Satu listener di level galeri: thumbnail, panah, dan klik foto besar (= foto berikutnya)
+    gallery.addEventListener('click', e => {
+      const thumb = e.target.closest('.sz-gallery__thumb');
+      if (thumb) { show(thumbs.indexOf(thumb)); return; }
+      if (e.target.closest('.sz-gallery__nav--prev')) { show(current - 1); return; }
+      if (e.target.closest('.sz-gallery__nav--next')) { show(current + 1); return; }
+      if (e.target.closest('.sz-gallery__stage')) {
+        if (dragged) { dragged = false; return; }
+        show(current + 1);
+      }
+    });
+
+    gallery.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  }
+
+  function init() {
+    // Tiap fitur jalan sendiri, supaya error di satu bagian tidak mematikan yang lain
+    [setupHours, setupCopy, setupGallery].forEach(fn => {
+      try { fn(); } catch (err) { console.error('[sz-branch]', err); }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
