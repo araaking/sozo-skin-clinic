@@ -1,0 +1,533 @@
+<!-- BACKUP: versi live sebelum revamp, diambil dari https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/jalupro-treatment/ (2026-10-27).
+     Markup sudah diproses WordPress/LiteSpeed (script type="litespeed/javascript", lazyload). -->
+<style>/* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-jalupro-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+
+  .sozo-sku-jalupro-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-jalupro-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-jalupro-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-jalupro-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-jalupro-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-jalupro-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-jalupro-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 340px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-jalupro-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-jalupro-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-jalupro-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-jalupro-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-jalupro-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- STYLING STRUCTURAL CONTENT SECTIONS --- */
+  .sozo-sku-jalupro-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-jalupro-wrapper .sozo-section-card h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-section-card h3 {
+    font-size: 20px !important;
+    color: #1A2080 !important;
+    margin-top: 25px !important;
+    margin-bottom: 15px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-section-card p {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-section-card ul, 
+  .sozo-sku-jalupro-wrapper .sozo-section-card ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: #475569;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-section-card li {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  /* --- PROBLEM GRID & CARDS SYSTEM --- */
+  .sozo-sku-jalupro-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-problem-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    border-color: #cbd5e1;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 18px;
+    color: #1A2080;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-problem-card span {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.5;
+    display: block;
+  }
+
+  /* --- PROCESS STEPS STYLING --- */
+  .sozo-sku-jalupro-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-process-step:last-child {
+    margin-bottom: 0;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-step-num {
+    background-color: #EEF2FF;
+    color: #1A2080;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+    border: 1px solid #e0e7ff;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-step-text {
+    flex: 1;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-step-text p {
+    margin: 0 !important;
+    font-size: 15px !important;
+    color: #475569 !important;
+  }
+
+  /* --- LOAD MORE ANIMATION BOX --- */
+  .sozo-sku-jalupro-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-jalupro-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-jalupro-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-jalupro-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-jalupro-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-jalupro-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-faq-question h3 {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-faq-question:hover h3 { color: #1A2080 !important; }
+  .sozo-sku-jalupro-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+    color: #64748b;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-jalupro-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 600;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-jalupro-wrapper .sozo-treatment-hero {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .sozo-sku-jalupro-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    .sozo-sku-jalupro-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+    .sozo-sku-jalupro-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-jalupro-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-jalupro-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-jalupro-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-jalupro-wrapper .sozo-section-card, 
+    .sozo-sku-jalupro-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
+    .sozo-sku-jalupro-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }</style><div class="sozo-sku-jalupro-wrapper" id="sozo-jalupro-widget"><nav aria-label="Breadcrumb" class="sozo-breadcrumb"><ol itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="https://sozoskinclinic.com/">
+<span itemprop="name">Home</span>
+</a><meta itemprop="position" content="1" /></li><li class="separator">/</li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="https://sozoskinclinic.com/injectable-treatment/">
+<span itemprop="name">Injectable Treatment</span>
+</a><meta itemprop="position" content="2" /></li><li class="separator">/</li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/">
+<span itemprop="name">Skin Booster Treatment</span>
+</a><meta itemprop="position" content="3" /></li><li class="separator">/</li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+<span itemprop="name" style="color: #1A2080; font-weight: 600;">Jalupro Treatment</span><meta itemprop="item" content="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/jalupro-treatment/" /><meta itemprop="position" content="4" /></li></ol></nav><div class="sozo-treatment-hero" itemscope itemtype="https://schema.org/Product"><div class="sozo-hero-text"><h1 itemprop="name">Jalupro Treatment</h1><p itemprop="description">
+Jalupro adalah skin booster premium yang mengombinasikan Hyaluronic Acid dan Asam Amino untuk membantu merangsang produksi kolagen alami dari dalam kulit. Sebagai Jalupro Skin Booster, treatment ini efektif mengatasi kulit kusam, garis halus, kulit kendur, hingga dark circle sehingga kulit terasa lebih kenyal, lembap, dan tampak lebih muda. Temukan berbagai manfaat Jalupro melalui prosedur yang aman, nyaman, dan dilakukan oleh dokter berpengalaman di Sozo Skin Clinic.</p><div class="sozo-info-row"><div class="sozo-info-col"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Durasi</span>
+<span class="sozo-info-value">60 Menit</span></div></div><div class="sozo-info-col" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Harga</span>
+<span class="sozo-info-value"><meta itemprop="priceCurrency" content="IDR" /><meta itemprop="price" content="8598000" />
+Rp 8.598.000
+</span></div></div></div>
+<a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Jalupro%20%20di%20Sozo%20%5Bsrc%3AORG-Jalupro%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a></div><div class="sozo-hero-image">
+<img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" decoding="async" itemprop="image" data-src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/09/jalupro.webp" alt="Jalupro Treatment Sozo Skin Clinic"></div></div><div class="sozo-cta-wrapper"><div class="sozo-cta-banner"><h2>Jalupro untuk Kulit Kencang & Anti Aging Efektif</h2><p>Pulihkan elastisitas kulit dan samarkan area gelap di bawah mata dengan teknologi Asam Amino. Konsultasikan kulit Anda dengan dokter ahli SOZO Skin Clinic hari ini.</p>
+<a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Jalupro%20%20di%20Sozo%20%5Bsrc%3AORG-Jalupro%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a></div></div><div class="sozo-content-wrapper"><div class="sozo-section-card"><h2>Masalah Kulit yang Sering Dialami dan Dapat Dibantu dengan Jalupro Treatment</h2><p>Seiring bertambahnya usia, produksi kolagen alami dan kemampuan kulit dalam mempertahankan kelembapan dapat mengalami penurunan. Hal ini dapat membuat kulit terlihat kusam, kurang elastis, serta muncul berbagai tanda penuaan yang mengganggu penampilan.</p><p>Jalupro Treatment hadir sebagai solusi skin booster premium yang membantu memperbaiki kualitas kulit dari dalam dengan kombinasi Hyaluronic Acid dan Asam Amino yang mendukung proses regenerasi serta produksi kolagen alami. Beberapa masalah kulit yang sering menjadi alasan pasien memilih Jalupro antara lain:</p><div class="sozo-problem-grid"><div class="sozo-problem-card">
+<strong>Kulit Kusam dan Kurang Bercahaya</strong>
+<span>Paparan sinar matahari, polusi, serta proses penuaan dapat membuat kulit kehilangan kelembapan dan terlihat kusam. Jalupro membantu meningkatkan hidrasi kulit sehingga wajah tampak lebih segar, sehat, dan glowing.</span></div><div class="sozo-problem-card">
+<strong>Garis Halus dan Tanda Penuaan Dini</strong>
+<span>Penurunan produksi kolagen dapat menyebabkan munculnya garis halus di area wajah, seperti sekitar mata, dahi, dan area senyum. Jalupro membantu mendukung pembentukan kolagen sehingga kulit tampak lebih halus dan elastis.</span></div><div class="sozo-problem-card">
+<strong>Kulit Mulai Kendur dan Kehilangan Kekenyalan</strong>
+<span>Berkurangnya kolagen dan elastin dapat membuat kulit kehilangan struktur dan terasa kurang padat. Kandungan Asam Amino dalam Jalupro membantu memberikan nutrisi yang dibutuhkan kulit untuk mempertahankan kualitas dan kekencangannya.</span></div><div class="sozo-problem-card">
+<strong>Dark Circle dan Area Bawah Mata Terlihat Lelah</strong>
+<span>Area bawah mata memiliki lapisan kulit yang lebih tipis sehingga lebih mudah menunjukkan tanda kelelahan dan penuaan. Jalupro banyak digunakan untuk membantu meningkatkan kualitas kulit area bawah mata sehingga tampak lebih segar dan terhidrasi.</span></div><div class="sozo-problem-card">
+<strong>Kulit Kering dan Dehidrasi</strong>
+<span>Kulit yang kekurangan hidrasi dapat terlihat kasar dan kurang sehat. Kandungan Hyaluronic Acid pada Jalupro membantu menjaga kelembapan kulit sehingga teksturnya terasa lebih lembut dan kenyal.</span></div></div></div><div class="sozo-section-card"><h2>Apa Itu Jalupro Treatment? Skin Booster dengan Asam Amino untuk Merangsang Kolagen Kulit</h2><p>Jalupro adalah <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/">skin booster</a> medis yang dirancang untuk membantu memperbaiki kualitas kulit dari dalam melalui kombinasi Hyaluronic Acid (HA) dan kompleks Asam Amino. Berbeda dengan perawatan yang hanya bekerja pada permukaan kulit, Jalupro Skin Booster bekerja dengan memberikan nutrisi penting yang dibutuhkan oleh sel kulit untuk mendukung proses regenerasi dan produksi kolagen alami.</p><p>Formula Jalupro mengandung kombinasi Asam Amino seperti Glycine, L-Proline, L-Leucine, dan L-Lysine yang berperan sebagai komponen pembentuk kolagen. Dengan stimulasi ini, kulit dapat terlihat lebih lembap, kenyal, elastis, serta membantu menyamarkan tanda-tanda penuaan seperti garis halus dan kulit yang mulai kehilangan kekencangan.</p><div class="sozo-expandable-content sozo-jalupro-desc-content" id="treatmentDescriptionJalupro"><div class="sozo-expandable-inner"><h3>Bagaimana Cara Kerja Jalupro Skin Booster?</h3><p>Seiring bertambahnya usia, kemampuan kulit untuk memproduksi kolagen dan elastin secara alami akan mengalami penurunan. Kondisi ini dapat menyebabkan munculnya berbagai tanda penuaan seperti kulit kendur, tekstur kulit tidak rata, garis halus, dan kulit terlihat kusam.</p><p>Jalupro bekerja melalui proses injeksi pada lapisan kulit dengan memberikan kombinasi Hyaluronic Acid dan Asam Amino yang membantu:</p><ol><li><strong>Meningkatkan hidrasi kulit:</strong> Hyaluronic Acid membantu menarik dan mempertahankan kadar air sehingga kulit terasa lebih lembap dan plump.</li><li><strong>Mendukung aktivitas fibroblast kulit:</strong> Kandungan Asam Amino membantu menyediakan nutrisi yang dibutuhkan oleh fibroblast, yaitu sel yang berperan dalam pembentukan kolagen.</li><li><strong>Merangsang regenerasi kulit:</strong> Produksi kolagen dan elastin yang lebih optimal membantu memperbaiki tekstur serta elastisitas kulit.</li></ol><p>Hasilnya, kulit tidak hanya terlihat lebih glowing dari luar, tetapi juga mengalami perbaikan kualitas kulit dari dalam.</p><h3>Manfaat Jalupro Treatment untuk Kulit</h3><p>Sebagai salah satu skin booster premium, Jalupro memiliki berbagai manfaat untuk membantu memperbaiki kondisi kulit, seperti:</p><ul><li><strong>Membantu Mengurangi Garis Halus dan Kerutan:</strong> Jalupro membantu meningkatkan kualitas struktur kulit sehingga garis halus pada area wajah dapat terlihat lebih tersamarkan, terutama pada area dengan tanda penuaan dini.</li><li><strong>Membantu Mengatasi Dark Circle dan Mata Panda:</strong> Salah satu keunggulan Jalupro adalah kemampuannya untuk membantu memperbaiki tampilan area bawah mata yang terlihat lelah, kusam, dan memiliki garis halus.</li><li><strong>Meningkatkan Kekenyalan dan Elastisitas Kulit:</strong> Dengan mendukung produksi kolagen alami, kulit dapat terasa lebih padat, kencang, dan memiliki tekstur yang lebih sehat.</li><li><strong>Membuat Kulit Tampak Lebih Cerah dan Glowing:</strong> Kombinasi Hyaluronic Acid dan Asam Amino membantu meningkatkan hidrasi kulit sehingga wajah terlihat lebih segar dan bercahaya.</li><li><strong>Membantu Memperbaiki Tekstur Kulit:</strong> Jalupro dapat membantu memperbaiki kulit yang terasa kasar, kering, atau mengalami penurunan kualitas akibat faktor usia dan lingkungan.</li></ul><h3>Area yang Dapat Dilakukan Jalupro Treatment</h3><p>Jalupro dapat diaplikasikan pada beberapa area yang membutuhkan peningkatan kualitas kulit, seperti:</p><ul><li>Area wajah</li><li>Bawah mata (under eye)</li><li>Leher</li><li>Tangan</li><li>Area kulit yang mengalami penurunan elastisitas</li></ul><p>Dokter akan menentukan area dan teknik tindakan berdasarkan kondisi kulit serta kebutuhan masing-masing pasien.</p><h3>Jalupro vs Skin Booster Biasa, Apa Perbedaannya?</h3><p>Berbeda dengan beberapa skin booster yang hanya berfokus pada hidrasi kulit, Jalupro memiliki kombinasi Hyaluronic Acid dan Asam Amino yang membantu memberikan nutrisi tambahan untuk mendukung proses pembentukan kolagen.</p><p>Karena itu, Jalupro sering dipilih untuk pasien yang tidak hanya ingin mendapatkan efek kulit lebih lembap, tetapi juga ingin memperbaiki kualitas kulit, elastisitas, dan tanda penuaan dari dalam.</p><h3>Proses Jalupro Treatment dan Masa Pemulihan</h3><p><strong>Proses Tindakan:</strong> Sebelum tindakan dimulai, dokter akan melakukan konsultasi untuk mengevaluasi kondisi kulit dan menentukan area treatment. Setelah itu, krim anestesi akan diaplikasikan untuk meningkatkan kenyamanan selama prosedur. Durasi tindakan Jalupro umumnya sekitar 60 menit, tergantung area yang dilakukan treatment.</p><p><strong>Downtime Setelah Treatment:</strong> Setelah prosedur, beberapa pasien dapat mengalami kemerahan ringan, sedikit bengkak, atau papul kecil pada titik suntikan. Kondisi tersebut merupakan reaksi normal setelah injeksi dan biasanya akan membaik dalam beberapa hari.</p></div></div>
+<button class="sozo-load-more-btn sozo-jalupro-read-more" onclick="toggleJaluproDescription()">
+<span id="jaluproReadMoreText">Baca Selengkapnya</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button></div><div class="sozo-section-card"><h2>Proses & Cara Kerja Jalupro Treatment</h2><p>Jalupro Treatment dilakukan melalui prosedur injeksi skin booster dengan memasukkan formula khusus yang mengandung Hyaluronic Acid dan Asam Amino ke lapisan kulit tertentu sesuai kebutuhan pasien. Sebelum treatment dilakukan, dokter akan melakukan konsultasi dan analisis kondisi kulit untuk menentukan area serta teknik tindakan yang paling sesuai.</p><div class="sozo-process-step"><div class="sozo-step-num">1</div><div class="sozo-step-text">
+<strong>Konsultasi dan Analisis Kondisi Kulit</strong><p>Dokter akan mengevaluasi kondisi kulit, masalah yang ingin diperbaiki, serta menentukan apakah Jalupro merupakan pilihan treatment yang tepat.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">2</div><div class="sozo-step-text">
+<strong>Persiapan Area Treatment</strong><p>Area wajah akan dibersihkan dan dipersiapkan sebelum tindakan. Untuk meningkatkan kenyamanan pasien, dokter akan mengaplikasikan anestesi topikal sebelum proses injeksi dilakukan.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">3</div><div class="sozo-step-text">
+<strong>Proses Penyuntikan Jalupro Skin Booster</strong><p>Formula Jalupro yang mengandung Hyaluronic Acid dan Asam Amino akan disuntikkan secara presisi pada area yang membutuhkan perbaikan kualitas kulit. Kandungan ini bekerja membantu meningkatkan hidrasi kulit, mendukung aktivitas fibroblast pembentuk kolagen, dan memperbaiki tekstur kulit.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">4</div><div class="sozo-step-text">
+<strong>Setelah Treatment dan Masa Pemulihan</strong><p>Setelah tindakan, pasien dapat mengalami kemerahan ringan, sedikit bengkak, atau papul kecil pada titik suntikan. Kondisi ini normal dan umumnya akan membaik dalam beberapa hari. Pasien dapat kembali beraktivitas seperti biasa dengan mengikuti arahan dokter.</p></div></div></div><div class="sozo-faq-section" itemscope itemtype="https://schema.org/FAQPage"><h2>Pertanyaan Seputar Jalupro Treatment</h2><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Apa itu Jalupro Treatment?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Jalupro adalah skin booster injeksi yang menggunakan kombinasi Hyaluronic Acid dan kompleks Asam Amino untuk membantu meningkatkan kualitas kulit serta mendukung proses regenerasi kulit dari dalam. Treatment ini dirancang untuk membantu memperbaiki kondisi kulit yang mengalami penurunan elastisitas, dehidrasi, garis halus, dan tanda penuaan dini.</p></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Berapa harga Jalupro Treatment di Sozo Skin Clinic?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Harga Jalupro Treatment di Sozo Skin Clinic adalah Rp8.598.000 per sesi. Biaya tersebut sudah termasuk konsultasi dokter, tindakan treatment, anestesi, serta penggunaan produk Jalupro original. Dokter akan membantu menentukan rekomendasi treatment berdasarkan kondisi dan kebutuhan kulit Anda.</p></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Apakah Jalupro Treatment sakit?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Jalupro merupakan prosedur injeksi sehingga mungkin terdapat rasa kurang nyaman selama tindakan berlangsung. Untuk meningkatkan kenyamanan pasien, area treatment akan diberikan anestesi terlebih dahulu sebelum proses injeksi dilakukan. Setelah treatment, pasien dapat mengalami kemerahan ringan atau benjolan kecil pada titik suntikan yang biasanya membaik dalam beberapa hari.</p></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Berapa lama hasil Jalupro mulai terlihat?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Efek awal seperti kulit terasa lebih lembap dan kenyal dapat mulai dirasakan beberapa hari setelah treatment. Perbaikan kualitas kulit secara bertahap biasanya terlihat dalam beberapa minggu setelah treatment seiring proses regenerasi kulit dan pembentukan kolagen berlangsung.</p></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Berapa lama hasil Jalupro dapat bertahan?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Durasi hasil Jalupro dapat berbeda pada setiap individu tergantung usia, kondisi kulit, gaya hidup, serta rutinitas perawatan kulit. Dokter akan memberikan rekomendasi jadwal maintenance yang sesuai agar hasil treatment dapat dipertahankan secara optimal.</p></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Apakah Jalupro aman dilakukan?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Jalupro aman dilakukan apabila menggunakan produk original dan dilakukan oleh tenaga medis yang berpengalaman. Sebelum treatment, dokter akan melakukan konsultasi untuk memastikan prosedur sesuai dengan kondisi kulit dan kebutuhan pasien.</p></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Apakah Jalupro bisa membantu mengatasi dark circle atau mata panda?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Jalupro dapat membantu memperbaiki tampilan area bawah mata yang terlihat kusam, kering, atau memiliki garis halus. Namun, efektivitas treatment terhadap dark circle dapat berbeda tergantung penyebabnya, seperti pigmentasi, faktor pembuluh darah, atau struktur cekungan bawah mata.</p></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Apa perbedaan Jalupro dengan skin booster lainnya?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Jalupro memiliki formula kombinasi Hyaluronic Acid dan Asam Amino yang dirancang untuk membantu meningkatkan hidrasi sekaligus mendukung kualitas struktur kulit. Pemilihan jenis skin booster terbaik tetap perlu disesuaikan dengan masalah kulit dan tujuan perawatan masing-masing pasien.</p></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Apakah Jalupro bisa dikombinasikan dengan treatment lain?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Kombinasi Jalupro dengan treatment estetika lainnya dapat dilakukan sesuai kondisi kulit dan rekomendasi dokter. Dokter akan menentukan kombinasi treatment yang tepat berdasarkan kebutuhan pasien agar hasil yang diperoleh tetap aman dan optimal.</p></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Apa yang perlu diperhatikan setelah melakukan Jalupro Treatment?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Setelah treatment, pasien disarankan untuk menghindari menyentuh atau memberikan tekanan berlebih pada area suntikan, menghindari aktivitas berat sementara waktu sesuai arahan dokter, menggunakan skincare sesuai rekomendasi, serta menggunakan sunscreen secara rutin untuk menjaga kondisi kulit.</p></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleJaluproFaq(this)"><h3 itemprop="name">Di mana saya bisa melakukan Jalupro Treatment terdekat?</h3>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Anda dapat melakukan Jalupro Treatment di Sozo Skin Clinic yang tersedia di beberapa lokasi. Konsultasikan kondisi kulit Anda bersama dokter kami untuk mendapatkan rekomendasi treatment yang sesuai. Kunjungi halaman <a href="https://sozoskinclinic.com/lokasi/" style="color: #1A2080; font-weight: 600; text-decoration: underline;">Lokasi Cabang</a> untuk menemukan klinik terdekat.</p></div></div></div></div></div><script type="litespeed/javascript">function toggleJaluproDescription(){const content=document.getElementById('treatmentDescriptionJalupro');const btn=document.querySelector('.sozo-jalupro-read-more');const btnText=document.getElementById('jaluproReadMoreText');if(!content||!btn)return;content.classList.toggle('expanded');btn.classList.toggle('active');if(content.classList.contains('expanded')){btnText.textContent='Tampilkan Lebih Sedikit'}else{btnText.textContent='Baca Selengkapnya'}}
+function toggleJaluproFaq(button){const answer=button.nextElementSibling;if(!answer)return;button.classList.toggle('active');if(answer.style.maxHeight){answer.style.maxHeight=null}else{answer.style.maxHeight=answer.scrollHeight+"px"}}</script></div></div></div></div></main>
