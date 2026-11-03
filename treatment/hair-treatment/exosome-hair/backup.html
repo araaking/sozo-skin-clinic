@@ -1,0 +1,633 @@
+<!-- BACKUP: versi live sebelum revamp, diambil dari https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/ (2026-11-03).
+     Markup sudah diproses WordPress/LiteSpeed (script type="litespeed/javascript", lazyload). -->
+<style>/* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-exosome-hair-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+
+  .sozo-sku-exosome-hair-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-exosome-hair-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-exosome-hair-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- NEW SECTIONS STYLING (Cards, Grids, Steps) --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-section-card > h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-section-card > p {
+    color: #475569 !important;
+    font-size: 16px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  /* Problem Grid Styling (2x2) */
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-problem-card span {
+    font-size: 14px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Process Steps Styling */
+  .sozo-sku-exosome-hair-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-step-num {
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-step-text p {
+    font-size: 15px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section p,
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section li {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-description-section ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-exosome-hair-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-answer a:hover {
+    color: #2e38b5 !important;
+  }
+
+  /* Reset layout heading H3 dalam button FAQ agar ukuran font-size tidak berubah */
+  .sozo-sku-exosome-hair-wrapper .sozo-faq-question h3 {
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    display: inline !important;
+    line-height: inherit !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-exosome-hair-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .sozo-sku-exosome-hair-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-exosome-hair-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-exosome-hair-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-exosome-hair-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-exosome-hair-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-exosome-hair-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-exosome-hair-wrapper .sozo-description-section, 
+    .sozo-sku-exosome-hair-wrapper .sozo-faq-section,
+    .sozo-sku-exosome-hair-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+
+    .sozo-sku-exosome-hair-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+    }
+  }</style><div class="sozo-sku-exosome-hair-wrapper" id="sozo-exosome-hair-widget"><nav aria-label="Breadcrumb" class="sozo-breadcrumb"><ol><li><a href="https://sozoskinclinic.com/"><span>Home</span></a></li><li class="separator" aria-hidden="true">/</li><li><a href="https://sozoskinclinic.com/hair-treatment/"><span>Hair Treatment</span></a></li><li class="separator" aria-hidden="true">/</li><li aria-current="page"><span style="color: #1A2080; font-weight: 600;">Exosome Hair Treatment</span></li></ol></nav><div class="sozo-treatment-hero"><div class="sozo-hero-text"><h1>Exosome Hair Treatment: Terapi Nano-Regeneratif Atasi Rambut Rontok & Kebotakan</h1><p>
+Atasi rambut rontok, penipisan, hingga kebotakan dari akarnya dengan inovasi medis mutakhir: Exosome Hair Treatment. Memanfaatkan teknologi vesikel berukuran nano, terapi regeneratif ini bertindak sebagai "pembawa pesan" yang mengirimkan miliaran growth factor dan protein esensial langsung ke folikel rambut yang pasif. Diaplikasikan melalui metode microneedling medis untuk memastikan penetrasi yang merata dan optimal, formula murni Exosome menembus lapisan kulit kepala terdalam untuk memperbaiki sel rusak, memperkuat akar, dan merangsang pertumbuhan rambut lebat secara alami tanpa perlu operasi transplantasi.</p><div class="sozo-info-row"><div class="sozo-info-col"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Durasi</span>
+<span class="sozo-info-value">45 Menit</span></div></div><div class="sozo-info-col"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Harga Mulai</span>
+<span class="sozo-info-value">Rp 3.849.000</span></div></div></div><a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Exosome%20Hair%20di%20Sozo%20%5Bsrc%3AORG-Exo-Hair%5D" class="sozo-btn" target="_blank" rel="noopener">Reservasi Sekarang</a></div><div class="sozo-hero-image">
+<img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODAiIGhlaWdodD0iMzQwIiB2aWV3Qm94PSIwIDAgNDgwIDM0MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsLW9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=" decoding="async" data-src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-Exosome-Hair-5cc-scaled.webp" 
+           alt="Prosedur Advanced Exosome Hair Treatment di Sozo Skin Clinic"
+           width="480"
+           height="340"></div></div><div class="sozo-cta-wrapper"><div class="sozo-cta-banner"><h2>Kembalikan Ketebalan Rambut dengan Teknologi Exosome</h2><p>Jangan biarkan penipisan rambut mengganggu rasa percaya diri Anda. Jalani aktivitas <strong>hair care</strong> tingkat lanjut beserta diagnosis presisi langsung dari tim dokter ahli kami.</p>
+<a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Exosome%20Hair%20di%20Sozo%20%5Bsrc%3AORG-Exo-Hair%5D" class="sozo-btn-secondary" target="_blank" rel="noopener">Konsultasi Dokter Sekarang</a></div></div><div class="sozo-content-wrapper"><div class="sozo-section-card"><h2>Masalah Kerontokan yang Sering Dialami</h2><p>Kehilangan rambut tidak hanya memengaruhi penampilan, tetapi juga rasa percaya diri. Exosome hair therapy hadir sebagai solusi medis definitif untuk mengatasi berbagai keluhan folikel berikut:</p><div class="sozo-problem-grid"><div class="sozo-problem-card">
+<strong>Rambut Rontok Parah (Hair Fall)</strong>
+<span>Kehilangan lebih dari 100 helai rambut per hari akibat faktor stres, perubahan hormon, genetik, atau pasca-sakit.</span></div><div class="sozo-problem-card">
+<strong>Penipisan Rambut (Hair Thinning)</strong>
+<span>Volume rambut tampak semakin kempes, helai rambut menjadi tipis dan rapuh, sehingga kulit kepala mulai terlihat jelas.</span></div><div class="sozo-problem-card">
+<strong>Kebotakan Dini & Pola (Alopecia)</strong>
+<span>Mundurnya garis rambut pada area depan (receding hairline) pada pria, atau penipisan di area puncak kepala (Female Pattern Hair Loss) pada wanita.</span></div><div class="sozo-problem-card">
+<strong>Pertumbuhan Rambut Lambat</strong>
+<span>Siklus pertumbuhan folikel rambut yang terhenti atau "tertidur" panjang karena akar rambut kekurangan nutrisi tingkat seluler.</span></div></div></div><article class="sozo-description-section"><h2>Apa Itu Eradication Exosome Hair Treatment? Terapi Regenerasi Seluler Canggih untuk Rambut Lebat</h2><p>Banyak calon pasien yang mencari tahu, "sebenarnya, exosome hair treatment adalah apa?". Secara medis, terapi exosome adalah prosedur regeneratif revolusioner yang memanfaatkan partikel mikroskopis bernama eksosom yang secara alami berfungsi di dalam tubuh.</p><p>Molekul pintar ini bertindak sebagai "kurir" biologis yang membawa berbagai informasi genetik serta protein spesifik langsung ke jaringan sel yang mengalami kerusakan—dalam hal ini, sel folikel rambut Anda. Begitu exosome hair serum ini diantarkan ke kulit kepala melalui metode microneedling medis, folikel yang sudah pasif (fase istirahat/telogen) akan dirangsang untuk "bangun" dan kembali memproduksi helai rambut baru (fase anagen).</p><div class="sozo-expandable-content" id="treatmentDescriptionExo"><div class="sozo-expandable-inner"><h3>4 Keunggulan Utama Terapi Exosome Rambut Ditandingkan Perawatan Lain</h3><p>Sebagai salah satu solusi medis tercanggih di dunia estetik, exosome for hair treatment memiliki kelebihan absolut untuk mengatasi penipisan rambut:</p><ul><li><strong>Kekuatan Regenerasi Berkali Lipat (Lebih Stabil dari PRP):</strong> Hair exosome mengandung konsentrasi growth factor murni yang sangat tinggi. Formulanya tidak bergantung pada kondisi darah pasien (seperti pada terapi PRP tradisional), sehingga memberikan hasil yang sangat stabil dalam merangsang produksi kolagen untuk menjaga kesehatan kulit kepala.</li><li><strong>Reaktivasi Folikel yang Ekstrem:</strong> Molekul ini membawa sinyal penyembuhan langsung ke area kulit kepala yang mengalami penipisan atau cedera, memberikan instruksi biologis pada tingkat sel untuk memicu pertumbuhan baby hair secara masif.</li><li><strong>Memperpanjang Siklus Hidup Rambut:</strong> Tidak hanya memicu pertumbuhan helai baru, exosome rambut juga membantu memperbaiki sel-sel folikel yang menua dan memperkuat ikatan akar rambut, sehingga meminimalisir risiko kerontokan di masa depan.</li><li><strong>Prosedur Cepat & Aman (Minim Downtime):</strong> Aplikasi serum exosomes hair ini umumnya memiliki efek samping yang sangat minim. Sebagian orang mungkin hanya mengalami keluhan ringan seperti kemerahan sesaat. Waktu pemulihannya sangat cepat sehingga Anda bisa langsung kembali beraktivitas normal.</li></ul><h3>Berapa Harga Exosome Treatment di SOZO Skin Clinic?</h3><p>Dengan teknologi premium yang ditawarkan, banyak pasien yang bertanya mengenai biaya exosome treatment. Di SOZO Skin Clinic, kami memastikan harga treatment exosome sangat kompetitif dan sepadan dengan hasil nyata dari penggunaan exosome hair treatment serum murni berstandar medis. Anda bisa langsung mengamankan harga exosome treatment dengan harga promo terbaik dengan mengklik tombol reservasi konsultasi dokter di bawah ini!</p></div></div>
+<button class="sozo-load-more-btn" id="exoLoadMore" onclick="toggleExoDescription()">
+<span id="exoReadMoreText">Baca Selengkapnya</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button></article><div class="sozo-section-card"><h2>Proses & Cara Kerja Exosome Hair Therapy</h2><p>Di Sozo Skin Clinic, protokol perawatan ini dilakukan langsung oleh dokter profesional dengan mengedepankan presisi dan kenyamanan pasien:</p><div class="sozo-process-step"><div class="sozo-step-num">1</div><div class="sozo-step-text">
+<strong>Konsultasi & Trichoscopy</strong><p>Dokter akan menganalisa kondisi kulit kepala dan kepadatan akar rambut Anda menggunakan alat pembesar khusus (trichoscopy) untuk menentukan tingkat keparahan kebotakan atau kerontokan.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">2</div><div class="sozo-step-text">
+<strong>Pembersihan & Aplikasi Anestesi</strong><p>Kulit kepala dibersihkan agar steril dari minyak dan kotoran. Kemudian, krim anestesi lokal (numbing cream) diaplikasikan agar selama proses penyaluran serum, Anda merasa sangat nyaman.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">3</div><div class="sozo-step-text">
+<strong>Tindakan Infusi Exosome Rambut</strong><p>Menggunakan teknik injeksi mikro atau microneedling, miliaran partikel exosome hair disalurkan secara perlahan dan merata ke lapisan kulit kepala agar menembus tepat ke target folikel rambut yang bermasalah.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">4</div><div class="sozo-step-text">
+<strong>Aftercare & Terapi Lanjutan</strong><p>Setelah tindakan selesai, area kepala akan dibersihkan. Dokter akan memberikan instruksi pantangan pasca-tindakan di rumah (seperti tidak keramas dengan air hangat terlebih dahulu) serta menjadwalkan sesi berikutnya.</p></div></div></div><div class="sozo-faq-section" itemscope itemtype="https://schema.org/FAQPage"><h2>Pertanyaan Seputar Exosome Hair Treatment</h2><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+<span><h3 itemprop="name">Apa itu Exosome hair treatment  dan bagaimana cara kerjanya?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Exosome hair treatment adalah terapi regenerasi rambut tingkat seluler yang menggunakan molekul vesikel dari sel punca (stem cells). Cara kerjanya adalah dengan mengirimkan sinyal regenerasi, protein, dan growth factor secara langsung ke folikel rambut. Sinyal ini berfungsi menghentikan kerontokan secara drastis sekaligus memicu pembiakan sel untuk pertumbuhan rambut baru yang sehat dan tebal.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+<span><h3 itemprop="name">Apa bedanya terapi Exosome Hair dengan PRP Rambut biasa?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Meskipun keduanya bertujuan untuk mengatasi kerontokan, terapi exosome jauh lebih canggih dan poten. Exosome diekstrak di laboratorium medis secara murni dengan konsentrasi growth factor ratusan kali lebih stabil dan tinggi. Berbeda dengan PRP (plasma darah) yang diambil dari darah pasien sendiri, di mana kualitas plasma tersebut sangat bergantung pada usia, diet, dan kondisi kesehatan pasien pada hari tindakan.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+<span><h3 itemprop="name">Siapa yang paling cocok melakukan Exosome Hair Therapy ini?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Terapi ini sangat direkomendasikan bagi pria maupun wanita yang mengalami masalah rambut rontok parah, penipisan volume rambut yang tidak wajar, alopecia (kebotakan berpola), atau bagi mereka yang folikel rambutnya melemah akibat stres, faktor usia, maupun infeksi pasca-penyakit berat.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+<span><h3 itemprop="name">Kapan hasil pertumbuhan rambut dari exosome rambut mulai terlihat?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Karena exosome bekerja meregenerasi sel dari dalam secara biologis, hasilnya bersifat progresif. Penurunan tingkat kerontokan biasanya langsung terasa secara signifikan dalam 2 hingga 4 minggu pertama. Sementara pertumbuhan rambut baru (baby hair) yang lebih kuat dan tebal umumnya akan mulai terlihat dengan jelas pada bulan ke-2 hingga ke-3 pasca-tindakan.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+<span><h3 itemprop="name">Berapa kali sesi yang dibutuhkan untuk mendapatkan rambut lebat permanen?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Pertumbuhan rambut membutuhkan waktu yang konsisten. Dokter kami biasanya merekomendasikan protokol awal sebanyak 3 hingga 5 sesi treatment, bergantung pada tingkat keparahan kebotakan. Interval antar sesi biasanya dilakukan setiap 2 hingga 4 minggu sekali untuk hasil yang maksimal.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+<span><h3 itemprop="name">Berapa kisaran exosome treatment harga atau biayanya per sesi?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Jika dibandingkan dengan operasi transplantasi rambut yang sangat mahal, harga treatment exosome di Sozo Skin Clinic merupakan investasi medis yang sangat kompetitif dan hemat. Treatment exosome harga promonya saat ini dimulai dari Rp 3.849.000 per sesi. Kami menyarankan Anda untuk berkonsultasi gratis terlebih dahulu agar dokter dapat menyesuaikan dosis dan program exosome treatment harga yang paling efektif untuk Anda.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleExoFaq(this)">
+<span><h3 itemprop="name">Di mana saya bisa menemukan klinik untuk Exosome Hair Treatment terdekat?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Anda bisa mendapatkan prosedur exosome hair therapy yang aman, steril, dengan serum berstandar medis premium di seluruh cabang Sozo Skin Clinic. Temukan jadwal dokter dan lokasi klinik paling mudah dijangkau dari tempat tinggal Anda melalui halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang Sozo Skin Clinic</a>.</p></div></div></div></div></div></div><script type="litespeed/javascript">function toggleExoDescription(){const content=document.getElementById('treatmentDescriptionExo');const btn=document.getElementById('exoLoadMore');const btnText=document.getElementById('exoReadMoreText');content.classList.toggle('expanded');btn.classList.toggle('active');btnText.textContent=content.classList.contains('expanded')?'Tampilkan Lebih Sedikit':'Baca Selengkapnya'}
+function toggleExoFaq(button){const faqItem=button.closest('.sozo-faq-item');const answer=faqItem.querySelector('.sozo-faq-answer');button.classList.toggle('active');if(button.classList.contains('active')){answer.style.maxHeight=answer.scrollHeight+50+"px"}else{answer.style.maxHeight="0px"}}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sozoskinclinic.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Hair Treatment", "item": "https://sozoskinclinic.com/hair-treatment/" },
+        { "@type": "ListItem", "position": 3, "name": "Exosome Hair Treatment", "item": "https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/#webpage",
+      "url": "https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/",
+      "name": "Exosome Hair Treatment - SOZO Skin Clinic",
+      "breadcrumb": { "@id": "https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/#breadcrumb" }
+    },
+    {
+      "@type": "Product",
+      "name": "Exosome Hair Treatment",
+      "image": "https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Exosome-Hair-5cc.webp",
+      "description": "Atasi rambut rontok, penipisan, hingga kebotakan dari akarnya dengan inovasi medis mutakhir: Exosome Hair Treatment.",
+      "brand": { "@type": "Brand", "name": "SOZO Skin Clinic" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "IDR",
+        "price": "3849000",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu Exosome hair treatment dan bagaimana cara kerjanya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Exosome hair treatment adalah terapi regenerasi rambut tingkat seluler yang menggunakan molekul vesikel dari sel punca (stem cells). Cara kerjanya adalah dengan mengirimkan sinyal regenerasi, protein, dan growth factor secara langsung ke folikel rambut. Sinyal ini berfungsi menghentikan kerontokan secara drastis sekaligus memicu pembiakan sel untuk pertumbuhan rambut baru yang sehat dan tebal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa bedanya terapi Exosome Hair dengan PRP Rambut biasa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Meskipun keduanya bertujuan untuk mengatasi kerontokan, terapi exosome jauh lebih canggih dan poten. Exosome diekstrak di laboratorium medis secara murni dengan konsentrasi growth factor ratusan kali lebih stabil dan tinggi. Berbeda dengan PRP (plasma darah) yang diambil dari darah pasien sendiri, di mana kualitas plasma tersebut sangat bergantung pada usia, diet, dan kondisi kesehatan pasien pada hari tindakan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Siapa yang paling cocok melakukan Exosome Hair Therapy ini?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Terapi ini sangat direkomendasikan bagi pria maupun wanita yang mengalami masalah rambut rontok parah, penipisan volume rambut yang tidak wajar, alopecia (kebotakan berpola), atau bagi mereka yang folikel rambutnya melemah akibat stres, faktor usia, maupun infeksi pasca-penyakit berat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kapan hasil pertumbuhan rambut dari exosome rambut mulai terlihat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Karena exosome bekerja meregenerasi sel dari dalam secara biologis, hasilnya bersifat progresif. Penurunan tingkat kerontokan biasanya langsung terasa secara signifikan dalam 2 hingga 4 minggu pertama. Sementara pertumbuhan rambut baru (baby hair) yang lebih kuat dan tebal umumnya akan mulai terlihat dengan jelas pada bulan ke-2 hingga ke-3 pasca-tindakan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa kali sesi yang dibutuhkan untuk mendapatkan rambut lebat permanen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pertumbuhan rambut membutuhkan waktu yang konsisten. Dokter kami biasanya merekomendasikan protokol awal sebanyak 3 hingga 5 sesi treatment, bergantung pada tingkat keparahan kebotakan. Interval antar sesi biasanya dilakukan setiap 2 hingga 4 minggu sekali untuk hasil yang maksimal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa kisaran exosome treatment harga atau biayanya per sesi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jika dibandingkan dengan operasi transplantasi rambut yang sangat mahal, harga treatment exosome di Sozo Skin Clinic merupakan investasi medis yang sangat kompetitif dan hemat. Treatment exosome harga promonya saat ini dimulai dari Rp 3.849.000 per sesi. Kami menyarankan Anda untuk berkonsultasi gratis terlebih dahulu agar dokter dapat menyesuaikan dosis dan program exosome treatment harga yang paling efektif untuk Anda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana saya bisa menemukan klinik untuk Exosome Hair Treatment terdekat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anda bisa mendapatkan prosedur exosome hair therapy yang aman, steril, dengan serum berstandar medis premium di seluruh cabang Sozo Skin Clinic. Temukan jadwal dokter dan lokasi klinik paling mudah dijangkau dari tempat tinggal Anda melalui halaman Lokasi Cabang Sozo Skin Clinic."
+          }
+        }
+      ]
+    }
+  ]
+}</script></div></div></div></div></main>
