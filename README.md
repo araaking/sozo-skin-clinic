@@ -71,9 +71,9 @@ Berikan data berikut ke AI sebelum meminta kode:
 ### 💇‍♀️ 2. Hair Removal Treatment (Category Hub & Subs)
 - [x] **Main Hub: Hair Removal Treatment** (`https://sozoskinclinic.com/hair-removal-treatment/`)[cite: 1]
 - [x] Laser Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/laser-hair-removal-treatment/`)
-- [x] Brazilian Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/brazilian-hair-removal-treatment/`)
-- [x] Body Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/hair-removal-body-treatment/`)
-- [x] Underarm Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/underarm-hair-removal-treatment/`)
+- [x] Brazilian Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/brazilian-hair-removal-treatment/`) — copy + FAQPage 10 pertanyaan diperbarui 2026-11-03, harga ikut price list paket IPL
+- [x] Body Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/hair-removal-body-treatment/`) — copy + FAQPage 10 pertanyaan diperbarui 2026-11-03, harga ikut price list paket IPL
+- [x] Underarm Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/underarm-hair-removal-treatment/`) — copy + FAQPage 10 pertanyaan diperbarui 2026-11-03 mengikuti dokumen internal Hair Removal
 - [x] Underarm Brightening (`https://sozoskinclinic.com/hair-removal-treatment/underarm-brightening-treatment/`)
 - [ ] DPL Treatment (`https://sozoskinclinic.com/hair-removal-treatment/dpl-treatment/`) — *sub-treatment baru, schema belum dibuat*
 
@@ -82,7 +82,7 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [ ] Perawatan Rambut Rontok (`https://sozoskinclinic.com/hair-treatment/perawatan-rambut-rontok/`)
 - [x] Hair Growth Booster (`https://sozoskinclinic.com/hair-treatment/hair-grow-booster-treatment/`)
 - [x] PRP Hair Treatment (`https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/`)
-- [x] Exosome Hair Treatment (`https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/`)
+- [x] Exosome Hair Treatment (`https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/`) — copy + FAQPage 10 pertanyaan diperbarui 2026-11-03 mengikuti dokumen internal, harga mulai Rp 7.598.000 per sesi
 - [x] Biolight Hair (`https://sozoskinclinic.com/hair-treatment/biolight-hair-treatment/`)
 - [x] Beard Treatment (`https://sozoskinclinic.com/hair-treatment/beard-grow-treatment/`)
 - [x] Treatment Alis - Brow Grow (`https://sozoskinclinic.com/hair-treatment/brow-grow/`)
@@ -183,7 +183,8 @@ Berikan data berikut ke AI sebelum meminta kode:
 
 ### 🛒 7. Product Pages (Skincare E-Commerce Schema)
 *Catatan: Gunakan tipe schema `Product` khusus untuk rumpun URL ini.*
-- [ ] **Product Catalog Hub** (`https://sozoskinclinic.com/product/`)
+- [x] **Product Catalog Hub** (`https://sozoskinclinic.com/product/`) — *WebPage + BreadcrumbList; UI toko e-commerce (paket rutinitas, filter, quick view, keranjang → checkout WhatsApp) di `product/index.html`, Design System V1.2 + EX-08, 3 November 2026. WPCode belum dipasang*
+  - `product/index-ecom.html` — halaman utama e-commerce (hero produk unggulan, kategori, paket per keluhan, katalog dengan cari/filter/urutkan, quick view, keranjang → WhatsApp). Redesign total 3 November 2026, Design System V1.2 + EX-09. Schema `@graph` WebPage + BreadcrumbList + ItemList 15 Product/Offer (tanpa aggregateRating, harga coret via `StrikethroughPrice` untuk 5 produk berharga Shopee). URL `/product/`, menggantikan `product/index.html`. WPCode belum dipasang
 - [ ] Sunscreen (`https://sozoskinclinic.com/product/sunscreen/`)
 - [ ] Acne Skincare (`https://sozoskinclinic.com/product/obat-cream-acne-jerawat/`)
 - [ ] Serum Pencerah Wajah (`https://sozoskinclinic.com/product/serum-pencerah-wajah/`)

@@ -1,270 +1,1490 @@
+<!-- ============================================================
+     HALAMAN TOKO PRODUK SKINCARE - SOZO SKIN CLINIC
+     URL     : https://sozoskinclinic.com/product/
+     Style   : Sozo Design System V1.2 (design-system/), Elementor Safe
+               (semua deklarasi !important, di-scope ke #sozo-react-app)
+     Arah    : Specimen catalogue. Tiap produk berdiri sendiri di tile
+               warna rata (Warm / Almond / Isabelline), foto di-multiply.
+     Seksi   : Hero deret produk (geser, produk tengah aktif)
+               -> Rutinitas per keluhan (pilih keluhan, ambil paket 4 produk)
+               -> Katalog (15 produk, filter kategori, urutkan)
+               -> Cara pesan (3 tile bertambah besar)
+               -> FAQ (kartu indeks bertab)
+               -> CTA konsultasi (kartu balasan)
+     Overlay : Quick view <dialog>, keranjang <dialog>, tombol keranjang
+               melayang kiri bawah (EX-08), toast.
+     Data    : Kartu katalog ditulis statis di HTML (terbaca Googlebot).
+               Nama, harga, gambar dibaca script dari kartu katalog.
+               Isi quick view di objek INFO, paket di objek ROUTINES.
+     Gambar  : asset.sozoskinclinic.com/.../*.webp (URL .png lama 404).
+     Keranjang: localStorage "sozoCart", checkout = satu pesan WhatsApp.
+     JSON-LD : WebPage + BreadcrumbList (@graph).
+     ============================================================ -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Rangkaian Produk SOZO Skincare Lengkap",
-  "numberOfItems": 15,
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "Product",
-        "name": "Acne Lotion",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Lotion-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "65000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/product/#webpage",
+      "url": "https://sozoskinclinic.com/product/",
+      "name": "Toko Produk Skincare SOZO Skin Clinic",
+      "description": "Belanja produk skincare SOZO Skin Clinic untuk kulit berjerawat, kusam, sensitif, dan garis halus. Pilih satuan atau paket rutinitas, pesan langsung lewat WhatsApp.",
+      "inLanguage": "id",
+      "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
+      "about": { "@id": "https://sozoskinclinic.com/#organization" },
+      "breadcrumb": { "@id": "https://sozoskinclinic.com/product/#breadcrumb" }
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "Product",
-        "name": "Acne Sunscreen",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Sunscreen-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "75000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "Product",
-        "name": "Acne Toner",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Toner-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "65000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "item": {
-        "@type": "Product",
-        "name": "Advanced Acne Cream",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Advanced-Acne-Cream-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "85000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "item": {
-        "@type": "Product",
-        "name": "Purifying Cleanser",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Purifying-Cleanser-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "65000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "item": {
-        "@type": "Product",
-        "name": "Super Serum Acne",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-Acne-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "125000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 7,
-      "item": {
-        "@type": "Product",
-        "name": "Daily Acne Cream",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Daily-Acne-Cream-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "75000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 8,
-      "item": {
-        "@type": "Product",
-        "name": "Ultimate Retinol Cream",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Ultimate-Retinol-Cream-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "125000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 9,
-      "item": {
-        "@type": "Product",
-        "name": "Gentle Rice Cleanser",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Gentle-Rice-Cleanser-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "65000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 10,
-      "item": {
-        "@type": "Product",
-        "name": "Hydro Essence Toner",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Hydro-Essence-Toner-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "65000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 11,
-      "item": {
-        "@type": "Product",
-        "name": "Lightening Sunscreen",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Lightening-Sunscreen-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "75000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 12,
-      "item": {
-        "@type": "Product",
-        "name": "Luminous Silk Cream",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Luminious-Silk-Cream-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "85000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 13,
-      "item": {
-        "@type": "Product",
-        "name": "SOZO Super Serum - White Silk",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-White-Silk-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "125000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 14,
-      "item": {
-        "@type": "Product",
-        "name": "Calming Barrier Cream",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Calming-Barrier-Cream-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "85000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 15,
-      "item": {
-        "@type": "Product",
-        "name": "Calming Moisture Gel",
-        "image": "https://sozoskinclinic.com/wp-content/uploads/2024/04/Calming-Moisture-Gel-Sozo-Skin-Clinic.png",
-        "brand": { "@type": "Brand", "name": "SOZO Skincare" },
-        "offers": { "@type": "Offer", "priceCurrency": "IDR", "price": "85000", "availability": "https://schema.org/InStock" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2500" }
-      }
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/product/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://sozoskinclinic.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Produk" }
+      ]
     }
   ]
 }
 </script>
 
-<section class="sozo-product-section">
-  <div class="sozo-product-header">
-    <h2 class="sozo-product-title">Rangkaian produk skincare<br> untuk lengkapi kebutuhan kamu</h2>
-    <p class="sozo-product-desc">
-      Dengan rangkaian produk yang dirancang khusus untuk kulit wajah, SOZO Skincare memberikan manfaat lengkap yang sangat dibutuhkan oleh kulit kamu.
-    </p>
-  </div>
-  <div id="sozoProductGrid" class="sozo-product-grid"></div>
-</section>
+<!-- Font resmi Sozo: Poppins 400-700 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-  .sozo-product-section { font-family: inherit; max-width: 1200px; margin: -50px auto 40px auto; padding: 60px 20px; position: relative; z-index: 10; }
-  .sozo-product-header { text-align: center; max-width: 850px; margin: 0 auto 50px auto; }
-  .sozo-product-title { color: #1A2080 !important; font-size: 32px; font-weight: 800; line-height: 1.3; margin-bottom: 20px; }
-  .sozo-product-desc { color: #1A2080 !important; font-size: 16px; line-height: 1.7; margin: 0; }
-  .sozo-product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px; }
-  .sozo-product-card { background: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid #f0f0f0; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: all 0.3s ease; display: flex; flex-direction: column; height: 100%; }
-  .sozo-product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(26, 32, 128, 0.08); border-color: #1A2080; }
-  .sozo-product-image-wrapper { background-color: #f8f9fa; padding: 25px; display: flex; align-items: center; justify-content: center; }
-  .sozo-product-image-wrapper img { max-width: 100%; height: 180px; object-fit: contain; }
-  .sozo-product-info { padding: 15px; text-align: center; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; gap: 8px; }
-  .sozo-product-info h3 { color: #1A2080; font-size: 16px; font-weight: 700; margin: 0; line-height: 1.3; }
-  .sozo-rating { display: flex; align-items: center; justify-content: center; gap: 4px; margin: 2px 0; }
-  .sozo-stars { color: #FFC107; font-size: 14px; }
-  .sozo-review-count { color: #1A2080; font-size: 12px; font-weight: 500; opacity: 0.8; }
-  .sozo-product-price { color: #1A2080; font-size: 18px; font-weight: 800; margin-bottom: 5px; }
-  .sozo-btn-cart { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 700; background-color: #ffffff; color: #1A2080 !important; border: 2px solid #1A2080; transition: all 0.3s ease; }
-  .sozo-btn-cart:hover { background-color: #1A2080; color: #ffffff !important; }
-  .sozo-btn-cart svg { width: 14px; height: 14px; fill: currentColor; }
-  @media (max-width: 768px) { .sozo-product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+  /* ============ TOKEN (design-system/tokens.css, di-scope) ============ */
+  #sozo-react-app {
+    --color-brand-primary: #1A2080 !important;
+    --color-brand-secondary: #D9C7B1 !important;
+    --color-brand-almond: #E9DFD5 !important;
+    --color-brand-isabelline: #DFDBD4 !important;
+    --color-surface-warm: #F7F5F1 !important;
+    --color-white: #FFFFFF !important;
+    --color-text-primary: #171715 !important;
+    --color-text-secondary: #41413E !important;
+    --color-text-muted: #777771 !important;
+    --color-primary-hover: #151A6D !important;
+    --color-secondary-hover: #CBB79F !important;
+    --color-on-primary-soft: #D6D8EE !important; /* teks sekunder di atas Resolution Blue, 9.6:1 */
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+
+    /* Lima ukuran yang bekerja: display, h2, h3, lead, body, small */
+    --sp-t-display: clamp(38px, 4.6vw, 68px) !important;
+    --sp-t-h2: clamp(30px, 3.2vw, 46px) !important;
+    --sp-t-h3: 24px !important;
+    --sp-t-lead: 18px !important;
+    --sp-t-body: 16px !important;
+    --sp-t-small: 14px !important;
+
+    --sp-pad: 32px !important;
+    --sp-max: 1280px !important;
+    --sp-gap: 24px !important;
+    --sp-section: 112px !important;
+    --sp-ease: cubic-bezier(.2, .7, .2, 1) !important;
+    --z-floating: 900 !important;
+
+    font-family: var(--font-family-primary) !important;
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-white) !important;
+    font-size: var(--sp-t-body) !important;
+    line-height: 1.6 !important;
+    -webkit-font-smoothing: antialiased !important;
+    overflow-x: clip !important;
+  }
+  @media (max-width: 1024px) { #sozo-react-app { --sp-section: 88px !important; --sp-gap: 20px !important; } }
+  @media (max-width: 768px) { #sozo-react-app { --sp-pad: 20px !important; --sp-gap: 12px !important; --sp-section: 64px !important; } }
+
+  #sozo-react-app, #sozo-react-app *, #sozo-react-app *::before, #sozo-react-app *::after { box-sizing: border-box !important; }
+  #sozo-react-app h1, #sozo-react-app h2, #sozo-react-app h3, #sozo-react-app p, #sozo-react-app ol,
+  #sozo-react-app ul, #sozo-react-app dl, #sozo-react-app dd, #sozo-react-app dt, #sozo-react-app figure {
+    margin: 0 !important; padding: 0 !important; border: 0 !important;
+    font-family: var(--font-family-primary) !important; letter-spacing: 0 !important; text-transform: none !important;
+  }
+  #sozo-react-app ul, #sozo-react-app ol { list-style: none !important; }
+  #sozo-react-app a { text-decoration: none !important; }
+  #sozo-react-app img { display: block !important; max-width: 100% !important; height: auto !important; border: 0 !important; box-shadow: none !important; } /* taste-skill-ignore: reset */
+  #sozo-react-app button { font-family: var(--font-family-primary) !important; text-transform: none !important; letter-spacing: 0 !important; }
+  #sozo-react-app [hidden][hidden] { display: none !important; }
+  #sozo-react-app .sp-wrap { width: min(100% - (var(--sp-pad) * 2), var(--sp-max)) !important; margin-inline: auto !important; }
+  #sozo-react-app .sp-section { padding-block: var(--sp-section) !important; }
+  #sozo-react-app .sp-h2 {
+    font-size: var(--sp-t-h2) !important; font-weight: 700 !important; line-height: 1.12 !important;
+    letter-spacing: -0.02em !important; color: var(--color-brand-primary) !important;
+  }
+  #sozo-react-app .sp-lead { font-size: var(--sp-t-lead) !important; line-height: 1.6 !important; color: var(--color-text-secondary) !important; max-width: 52ch !important; }
+  #sozo-react-app .sp-ico { width: 20px !important; height: 20px !important; flex: none !important; fill: none !important; stroke: currentColor !important; stroke-width: 2 !important; stroke-linecap: round !important; stroke-linejoin: round !important; }
+  #sozo-react-app .sp-ico--fill { fill: currentColor !important; stroke: none !important; }
+
+  /* Specimen tile: bidang warna rata, foto produk di-multiply supaya latar studio hilang */
+  #sozo-react-app .sp-tile { position: relative !important; display: block !important; overflow: hidden !important; background-color: var(--color-surface-warm) !important; border-radius: 0 !important; }
+  #sozo-react-app .sp-tile--almond { background-color: var(--color-brand-almond) !important; }
+  #sozo-react-app .sp-tile--isa { background-color: var(--color-brand-isabelline) !important; }
+  #sozo-react-app .sp-tile--dun { background-color: var(--color-brand-secondary) !important; }
+  /* Foto punya bingkai kartu sendiri (sudut putih, bayangan di tepi). Di-crop 18% supaya tepinya hilang. */
+  #sozo-react-app .sp-tile img {
+    position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; max-width: none !important;
+    object-fit: cover !important; mix-blend-mode: multiply !important; transform: scale(1.18) !important;
+    transition: transform 500ms var(--sp-ease) !important;
+  }
+
+  /* ============ BUTTON (components/button.md: pill, Poppins 600) ============ */
+  #sozo-react-app .btn {
+    display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important;
+    min-height: 48px !important; margin: 0 !important; padding: 0 24px !important; border: 2px solid transparent !important;
+    border-radius: 999px !important; background: none !important; box-shadow: none !important; /* taste-skill-ignore: reset */
+    font-size: var(--sp-t-body) !important; font-weight: 600 !important; line-height: 1 !important; white-space: nowrap !important;
+    cursor: pointer !important; text-decoration: none !important;
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms var(--sp-ease) !important;
+  }
+  #sozo-react-app .btn:active { transform: scale(.97) !important; }
+  #sozo-react-app .btn:focus-visible { outline: 2px solid var(--color-brand-primary) !important; outline-offset: 3px !important; }
+  #sozo-react-app .btn--sm { min-height: 40px !important; padding: 0 18px !important; font-size: 14px !important; }
+  #sozo-react-app .btn--lg { min-height: 56px !important; padding: 0 28px !important; font-size: 16px !important; }
+  #sozo-react-app .btn--block { width: 100% !important; }
+  #sozo-react-app .btn--primary { background-color: var(--color-brand-primary) !important; color: var(--color-white) !important; }
+  #sozo-react-app .btn--primary:hover { background-color: var(--color-primary-hover) !important; color: var(--color-white) !important; }
+  #sozo-react-app .btn--secondary { background-color: var(--color-brand-secondary) !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .btn--secondary:hover { background-color: var(--color-secondary-hover) !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .btn--outline { border-color: var(--color-brand-primary) !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .btn--outline:hover { background-color: rgba(26, 32, 128, 0.06) !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .btn--on-blue { border-color: var(--color-white) !important; color: var(--color-white) !important; }
+  #sozo-react-app .btn--on-blue:hover { background-color: var(--color-white) !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .btn--on-blue:focus-visible, #sozo-react-app .sp-hero .btn:focus-visible, #sozo-react-app .sp-cta .btn:focus-visible { outline-color: var(--color-white) !important; }
+  #sozo-react-app .btn .sp-ico { width: 18px !important; height: 18px !important; }
+
+  /* ============ HERO: deret produk di atas Resolution Blue ============ */
+  #sozo-react-app .sp-hero {
+    position: relative !important; overflow: hidden !important; padding: 28px 0 64px !important;
+    background-color: var(--color-brand-primary) !important; color: var(--color-white) !important;
+  }
+  #sozo-react-app .sp-crumb ol { display: flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 8px !important; }
+  #sozo-react-app .sp-crumb li { display: inline-flex !important; align-items: center !important; gap: 8px !important; font-size: 13px !important; line-height: 1.4 !important; }
+  #sozo-react-app .sp-crumb li + li::before { content: "/" !important; color: var(--color-on-primary-soft) !important; }
+  #sozo-react-app .sp-crumb a { color: var(--color-on-primary-soft) !important; font-weight: 500 !important; }
+  #sozo-react-app .sp-crumb a:hover { color: var(--color-white) !important; }
+  #sozo-react-app .sp-crumb a:focus-visible { outline: 2px solid var(--color-white) !important; outline-offset: 2px !important; }
+  #sozo-react-app .sp-crumb [aria-current] { color: var(--color-white) !important; font-weight: 600 !important; }
+
+  #sozo-react-app .sp-hero__top {
+    display: grid !important; grid-template-columns: repeat(12, minmax(0, 1fr)) !important; column-gap: var(--sp-gap) !important;
+    align-items: end !important; margin-top: 40px !important;
+  }
+  #sozo-react-app .sp-hero__title {
+    grid-column: 1 / 8 !important; font-size: var(--sp-t-display) !important; font-weight: 700 !important;
+    line-height: 1.02 !important; letter-spacing: -0.035em !important; color: var(--color-white) !important;
+  }
+  #sozo-react-app .sp-hero__title span { display: block !important; }
+  #sozo-react-app .sp-hero__aside { grid-column: 8 / 13 !important; display: grid !important; gap: 20px !important; justify-items: start !important; padding-bottom: 6px !important; }
+  #sozo-react-app .sp-hero__lead { font-size: var(--sp-t-lead) !important; line-height: 1.6 !important; color: var(--color-on-primary-soft) !important; max-width: 44ch !important; }
+
+  #sozo-react-app .sp-arc { --tile: 250px; position: relative !important; margin-top: 8px !important; }
+  #sozo-react-app .sp-arc__track {
+    display: flex !important; align-items: flex-end !important; gap: 64px !important; margin: 0 !important;
+    padding: 150px calc(50% - (var(--tile) / 2)) 28px !important;
+    overflow-x: auto !important; overflow-y: hidden !important; scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important; -webkit-overflow-scrolling: touch !important; outline: none !important;
+  }
+  #sozo-react-app .sp-arc__track::-webkit-scrollbar { display: none !important; }
+  #sozo-react-app .sp-arc__item { flex: 0 0 var(--tile) !important; scroll-snap-align: center !important; }
+  #sozo-react-app .sp-arc__btn {
+    /* --s, --b, --tx, --ty diisi script tiap scroll. Sengaja tanpa !important supaya inline style menang. */
+    --s: .72; --b: .8; --tx: 0px; --ty: 0px;
+    position: relative !important; display: block !important; width: 100% !important; aspect-ratio: 1 / 1 !important; padding: 0 !important; margin: 0 !important; overflow: hidden !important;
+    border: 0 !important; border-radius: 0 !important; cursor: pointer !important; background-color: var(--color-surface-warm) !important;
+    transform-origin: 50% 100% !important;
+    transform: translate3d(var(--tx), var(--ty), 0) scale(var(--s)) !important;
+    filter: brightness(var(--b)) !important;
+    transition: transform 240ms var(--sp-ease), filter 240ms ease !important;
+  }
+  #sozo-react-app .sp-arc.is-dragging .sp-arc__btn { transition: none !important; }
+  #sozo-react-app .sp-arc__btn:focus-visible { outline: 3px solid var(--color-brand-secondary) !important; outline-offset: 4px !important; }
+  #sozo-react-app .sp-arc__btn img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; max-width: none !important; object-fit: cover !important; mix-blend-mode: multiply !important; transform: scale(1.18) !important; pointer-events: none !important; }
+
+  #sozo-react-app .sp-now { display: grid !important; justify-items: center !important; text-align: center !important; gap: 8px !important; margin-top: 4px !important; }
+  #sozo-react-app .sp-now__name { font-size: var(--sp-t-h2) !important; font-weight: 700 !important; line-height: 1.12 !important; letter-spacing: -0.02em !important; color: var(--color-white) !important; }
+  #sozo-react-app .sp-now__fact { font-size: var(--sp-t-lead) !important; color: var(--color-on-primary-soft) !important; }
+  #sozo-react-app .sp-now__fact b { color: var(--color-white) !important; font-weight: 700 !important; white-space: nowrap !important; }
+  #sozo-react-app .sp-now__actions { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 12px !important; margin-top: 12px !important; }
+  #sozo-react-app .sp-now__text { transition: opacity 200ms ease, transform 200ms var(--sp-ease) !important; }
+  #sozo-react-app .sp-now__text.is-swap { opacity: 0 !important; transform: translateY(6px) !important; }
+
+  /* ============ RUTINITAS PER KELUHAN: objek di atas cakram ============ */
+  #sozo-react-app .sp-finder__grid {
+    display: grid !important; grid-template-columns: repeat(12, minmax(0, 1fr)) !important; column-gap: var(--sp-gap) !important; align-items: center !important;
+  }
+  #sozo-react-app .sp-finder__intro { grid-column: 1 / 5 !important; align-self: stretch !important; display: flex !important; flex-direction: column !important; gap: 20px !important; }
+  #sozo-react-app .sp-concerns { display: grid !important; gap: 4px !important; margin-top: auto !important; padding-top: 24px !important; }
+  #sozo-react-app .sp-concern {
+    display: flex !important; align-items: center !important; gap: 14px !important; width: 100% !important; margin: 0 !important; padding: 6px 0 !important;
+    border: 0 !important; background: none !important; text-align: left !important; cursor: pointer !important;
+    font-size: var(--sp-t-h2) !important; font-weight: 600 !important; line-height: 1.2 !important; letter-spacing: -0.015em !important;
+    color: var(--color-text-muted) !important; transition: color 180ms ease, transform 240ms var(--sp-ease) !important;
+  }
+  #sozo-react-app .sp-concern::before {
+    content: "" !important; flex: none !important; width: 14px !important; height: 14px !important; border-radius: 50% !important;
+    background-color: var(--color-brand-primary) !important; opacity: 0 !important; transform: scale(.5) !important; transition: transform 240ms var(--sp-ease), opacity 180ms ease !important;
+  }
+  #sozo-react-app .sp-concern:hover { color: var(--color-text-primary) !important; background: none !important; }
+  #sozo-react-app .sp-concern[aria-pressed="true"] { color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-concern[aria-pressed="true"]::before { opacity: 1 !important; transform: scale(1) !important; }
+  #sozo-react-app .sp-concern:focus-visible { outline: 2px solid var(--color-brand-primary) !important; outline-offset: 4px !important; }
+
+  #sozo-react-app .sp-disc { grid-column: 5 / 9 !important; position: relative !important; display: grid !important; place-items: center !important; padding-top: 12% !important; }
+  #sozo-react-app .sp-disc__field {
+    position: absolute !important; left: 0 !important; right: 0 !important; bottom: 0 !important; aspect-ratio: 1 !important;
+    border-radius: 50% !important; background-color: var(--disc, var(--color-brand-almond)) !important; transition: background-color 300ms ease !important;
+  }
+  #sozo-react-app .sp-disc__stage { position: relative !important; width: 96% !important; aspect-ratio: 906 / 822 !important; }
+  #sozo-react-app .sp-disc__stage img {
+    position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: contain !important;
+    mix-blend-mode: multiply !important; clip-path: circle(47% at 50% 52%) !important;
+    opacity: 0 !important; transition: opacity 300ms ease !important;
+  }
+  #sozo-react-app .sp-disc__stage img.is-on { opacity: 1 !important; animation: sp-float 7s ease-in-out infinite !important; }
+  @keyframes sp-float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-10px) rotate(-1.5deg); } }
+
+  #sozo-react-app .sp-routine { grid-column: 9 / 13 !important; display: grid !important; gap: 20px !important; }
+  #sozo-react-app .sp-routine__for { font-size: var(--sp-t-small) !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-routine__steps { display: grid !important; gap: 14px !important; }
+  #sozo-react-app .sp-step { display: grid !important; grid-template-columns: 64px 1fr auto !important; align-items: center !important; column-gap: 16px !important; }
+  #sozo-react-app .sp-step .sp-tile { width: 64px !important; height: 64px !important; }
+  #sozo-react-app .sp-step__verb { display: block !important; font-size: var(--sp-t-small) !important; color: var(--color-text-secondary) !important; line-height: 1.3 !important; }
+  #sozo-react-app .sp-step__name { display: block !important; font-size: var(--sp-t-body) !important; font-weight: 600 !important; line-height: 1.35 !important; color: var(--color-text-primary) !important; }
+  #sozo-react-app .sp-step__price { font-size: var(--sp-t-small) !important; font-weight: 600 !important; color: var(--color-text-primary) !important; white-space: nowrap !important; }
+  #sozo-react-app .sp-routine__total {
+    display: flex !important; align-items: baseline !important; justify-content: space-between !important; gap: 12px !important;
+    padding: 18px 20px !important; background-color: var(--color-surface-warm) !important;
+  }
+  #sozo-react-app .sp-routine__total span { font-size: var(--sp-t-small) !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-routine__total strong { font-size: var(--sp-t-h3) !important; font-weight: 700 !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-routine__list { transition: opacity 220ms ease !important; }
+  #sozo-react-app .sp-routine__list.is-swap { opacity: 0 !important; }
+
+  /* ============ KATALOG ============ */
+  #sozo-react-app .sp-shop { background-color: var(--color-white) !important; padding-top: 0 !important; }
+  #sozo-react-app .sp-shop__head { display: flex !important; align-items: baseline !important; justify-content: space-between !important; gap: 16px !important; }
+  #sozo-react-app .sp-shop__count { font-size: var(--sp-t-body) !important; color: var(--color-text-secondary) !important; white-space: nowrap !important; }
+  #sozo-react-app .sp-shop__bar {
+    display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 16px !important;
+    margin: 24px 0 36px !important; padding: 12px 0 !important; background-color: var(--color-white) !important;
+  }
+  #sozo-react-app .sp-filters { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; }
+  #sozo-react-app .sp-chip {
+    display: inline-flex !important; align-items: center !important; gap: 8px !important; min-height: 44px !important; margin: 0 !important; padding: 0 18px !important;
+    border: 0 !important; border-radius: 999px !important; background-color: var(--color-surface-warm) !important; color: var(--color-text-primary) !important;
+    font-size: var(--sp-t-small) !important; font-weight: 500 !important; line-height: 1 !important; cursor: pointer !important; white-space: nowrap !important;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms var(--sp-ease) !important;
+  }
+  #sozo-react-app .sp-chip:hover { background-color: var(--color-brand-almond) !important; color: var(--color-text-primary) !important; }
+  #sozo-react-app .sp-chip:active { transform: scale(.96) !important; }
+  #sozo-react-app .sp-chip[aria-pressed="true"] { background-color: var(--color-brand-primary) !important; color: var(--color-white) !important; }
+  #sozo-react-app .sp-chip:focus-visible { outline: 2px solid var(--color-brand-primary) !important; outline-offset: 3px !important; }
+  #sozo-react-app .sp-chip small { font-size: var(--sp-t-small) !important; opacity: .75 !important; }
+  #sozo-react-app .sp-sort { display: flex !important; align-items: center !important; gap: 10px !important; font-size: var(--sp-t-small) !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-sort select {
+    min-height: 44px !important; margin: 0 !important; padding: 0 40px 0 16px !important; border: 1px solid #C8C3BA !important; border-radius: 999px !important;
+    background-color: var(--color-white) !important; color: var(--color-text-primary) !important;
+    font-family: var(--font-family-primary) !important; font-size: var(--sp-t-small) !important; cursor: pointer !important;
+  }
+  #sozo-react-app .sp-sort select:focus-visible { outline: 2px solid var(--color-brand-primary) !important; outline-offset: 2px !important; }
+
+  #sozo-react-app .sp-grid {
+    display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; grid-auto-flow: row dense !important;
+    column-gap: var(--sp-gap) !important; row-gap: 48px !important;
+  }
+  #sozo-react-app .sp-item { display: flex !important; flex-direction: column !important; gap: 14px !important; min-width: 0 !important; }
+  #sozo-react-app .sp-grid.is-curated .sp-item--wide { grid-column: span 2 !important; grid-row: span 2 !important; }
+  #sozo-react-app .sp-item__tile {
+    width: 100% !important; aspect-ratio: 1 / 1 !important; margin: 0 !important; padding: 0 !important; border: 0 !important; cursor: zoom-in !important;
+  }
+  #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__tile { flex: 1 1 auto !important; aspect-ratio: auto !important; min-height: 0 !important; }
+  #sozo-react-app .sp-item__tile:hover img { transform: scale(1.26) !important; }
+  /* Tile lebar: produk utuh (contain), tepi bingkai foto dilebur ke warna tile lewat mask */
+  #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__tile img {
+    object-fit: contain !important; transform: none !important;
+    -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 74%, transparent 100%) !important; /* taste-skill-ignore: mask foto */
+    mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 74%, transparent 100%) !important; /* taste-skill-ignore: mask foto, bukan isian gradient */
+  }
+  #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__tile:hover img { transform: scale(1.05) !important; }
+  #sozo-react-app .sp-item__tile:focus-visible { outline: 2px solid var(--color-brand-primary) !important; outline-offset: 3px !important; }
+  #sozo-react-app .sp-item__body { display: grid !important; gap: 4px !important; }
+  #sozo-react-app .sp-item__name { font-size: var(--sp-t-lead) !important; font-weight: 600 !important; line-height: 1.35 !important; color: var(--color-text-primary) !important; }
+  #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__name { font-size: var(--sp-t-h3) !important; }
+  #sozo-react-app .sp-item__desc { font-size: var(--sp-t-body) !important; line-height: 1.55 !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-item__foot { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 12px !important; margin-top: 6px !important; }
+  #sozo-react-app .sp-item__price { font-size: var(--sp-t-lead) !important; font-weight: 700 !important; color: var(--color-brand-primary) !important; white-space: nowrap !important; }
+  #sozo-react-app .sp-empty { padding: 48px 0 !important; font-size: var(--sp-t-lead) !important; color: var(--color-text-secondary) !important; }
+
+  /* ============ CARA PESAN: tile yang bertambah besar ============ */
+  #sozo-react-app .sp-how { background-color: var(--color-surface-warm) !important; }
+  #sozo-react-app .sp-how__grid {
+    display: grid !important; grid-template-columns: repeat(12, minmax(0, 1fr)) !important; column-gap: 10px !important; row-gap: 24px !important; align-items: end !important;
+  }
+  #sozo-react-app .sp-how__head { grid-column: 1 / 8 !important; grid-row: 1 !important; align-self: start !important; display: grid !important; gap: 16px !important; padding-right: 24px !important; }
+  #sozo-react-app .sp-how__stage { display: flex !important; flex-direction: column !important; gap: 18px !important; grid-row: 2 !important; }
+  #sozo-react-app .sp-how__stage--a { grid-column: 1 / 4 !important; }
+  #sozo-react-app .sp-how__stage--b { grid-column: 4 / 8 !important; }
+  #sozo-react-app .sp-how__stage--c { grid-column: 8 / 13 !important; grid-row: 1 / 3 !important; }
+  #sozo-react-app .sp-how__tile { display: grid !important; place-items: center !important; padding: 8% !important; }
+  #sozo-react-app .sp-how__stage--a .sp-how__tile { height: clamp(200px, 28vw, 300px) !important; }
+  #sozo-react-app .sp-how__stage--b .sp-how__tile { height: clamp(260px, 34vw, 400px) !important; }
+  #sozo-react-app .sp-how__stage--c .sp-how__tile { height: clamp(380px, 46vw, 600px) !important; background-color: var(--color-brand-primary) !important; padding: 8% 10% !important; }
+  #sozo-react-app .sp-how__stage--a .sp-how__tile, #sozo-react-app .sp-how__stage--b .sp-how__tile { position: relative !important; }
+
+  /* Fragmen antarmuka keranjang: isi keranjang yang benar-benar dipakai halaman ini */
+  #sozo-react-app [data-ui].sp-mini { position: relative !important; width: 100% !important; max-width: 340px !important; padding: 20px !important; background-color: var(--color-white) !important; display: grid !important; gap: 12px !important; }
+  #sozo-react-app .sp-mini__title { font-size: var(--sp-t-body) !important; font-weight: 700 !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-mini__list { display: grid !important; gap: 10px !important; }
+  #sozo-react-app .sp-mini__line { display: grid !important; grid-template-columns: 48px 1fr !important; column-gap: 12px !important; align-items: center !important; }
+  #sozo-react-app .sp-mini__line .sp-tile { width: 48px !important; height: 48px !important; grid-row: span 2 !important; }
+  #sozo-react-app .sp-mini__name { font-size: var(--sp-t-small) !important; font-weight: 600 !important; line-height: 1.3 !important; color: var(--color-text-primary) !important; }
+  #sozo-react-app .sp-mini__qty { font-size: var(--sp-t-small) !important; line-height: 1.3 !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-mini__sum { display: flex !important; justify-content: space-between !important; padding-top: 12px !important; font-size: var(--sp-t-small) !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-mini__sum b { font-size: var(--sp-t-body) !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-how__name { font-size: var(--sp-t-h3) !important; font-weight: 600 !important; line-height: 1.3 !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-how__text { font-size: var(--sp-t-body) !important; line-height: 1.6 !important; color: var(--color-text-secondary) !important; max-width: 40ch !important; margin-top: -10px !important; }
+
+  /* Fragmen antarmuka WhatsApp: pesan yang benar-benar dikirim halaman ini */
+  #sozo-react-app [data-ui].sp-chat { width: 100% !important; max-width: 400px !important; display: grid !important; gap: 10px !important; font-family: var(--font-family-primary) !important; }
+  #sozo-react-app .sp-chat__head { display: flex !important; align-items: center !important; gap: 12px !important; color: var(--color-white) !important; }
+  #sozo-react-app .sp-chat__avatar { width: 40px !important; height: 40px !important; border-radius: 50% !important; display: grid !important; place-items: center !important; background-color: var(--color-white) !important; color: var(--color-brand-primary) !important; font-size: var(--sp-t-small) !important; font-weight: 700 !important; }
+  #sozo-react-app .sp-chat__who { font-size: var(--sp-t-body) !important; font-weight: 600 !important; line-height: 1.3 !important; }
+  #sozo-react-app .sp-chat__who small { display: block !important; font-size: var(--sp-t-small) !important; font-weight: 400 !important; color: var(--color-on-primary-soft) !important; }
+  #sozo-react-app .sp-chat__bubble {
+    justify-self: end !important; width: 92% !important; padding: 14px 16px 10px !important; border-radius: 14px 14px 4px 14px !important;
+    background-color: #D9FDD3 !important; color: #111B21 !important; font-size: var(--sp-t-small) !important; line-height: 1.55 !important;
+  }
+  #sozo-react-app .sp-chat__bubble p + p { margin-top: 8px !important; }
+  #sozo-react-app .sp-chat__line { display: flex !important; justify-content: space-between !important; gap: 12px !important; }
+  #sozo-react-app .sp-chat__meta { display: block !important; margin-top: 6px !important; text-align: right !important; font-size: var(--sp-t-small) !important; color: #54656F !important; }
+
+  /* ============ FAQ: kartu indeks bertab ============ */
+  #sozo-react-app .sp-faq__inner { width: min(100%, 860px) !important; margin-inline: auto !important; }
+  #sozo-react-app .sp-faq__head { display: grid !important; gap: 12px !important; margin-bottom: 40px !important; }
+  #sozo-react-app .sp-cards { display: grid !important; }
+  #sozo-react-app .sp-card {
+    --tab-x: 0px;
+    position: relative !important; margin-top: -40px !important; padding-top: 40px !important;
+    background-color: var(--color-brand-almond) !important;
+    clip-path: polygon(var(--tab-x) 0, calc(var(--tab-x) + 200px) 0, calc(var(--tab-x) + 216px) 40px, 100% 40px, 100% 100%, 0 100%, 0 40px, calc(var(--tab-x) - 16px) 40px) !important;
+  }
+  #sozo-react-app .sp-card:first-child { margin-top: 0 !important; --tab-x: 16px; }
+  #sozo-react-app .sp-card:nth-child(2) { --tab-x: 166px; background-color: var(--color-brand-isabelline) !important; }
+  #sozo-react-app .sp-card:nth-child(3) { --tab-x: 316px; background-color: var(--color-brand-secondary) !important; }
+  #sozo-react-app .sp-card:nth-child(4) { --tab-x: 466px; }
+  #sozo-react-app .sp-card:nth-child(5) { --tab-x: 616px; background-color: var(--color-brand-isabelline) !important; }
+  #sozo-react-app .sp-card__tab {
+    position: absolute !important; top: 0 !important; left: var(--tab-x) !important; width: 200px !important; height: 40px !important;
+    display: flex !important; align-items: center !important; padding: 0 20px !important;
+    font-size: var(--sp-t-small) !important; font-weight: 600 !important; color: var(--color-brand-primary) !important; white-space: nowrap !important;
+  }
+  #sozo-react-app .sp-card__q {
+    display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 16px !important; width: 100% !important;
+    min-height: 96px !important; margin: 0 !important; padding: 20px 28px 28px !important; border: 0 !important; background: none !important;
+    text-align: left !important; cursor: pointer !important; color: var(--color-text-primary) !important;
+    font-size: var(--sp-t-lead) !important; font-weight: 600 !important; line-height: 1.4 !important;
+  }
+  #sozo-react-app .sp-card__q:hover { background: none !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-card__q:focus-visible { outline: 2px solid var(--color-brand-primary) !important; outline-offset: -6px !important; }
+  #sozo-react-app .sp-card__q::after {
+    content: "+" !important; flex: none !important; font-size: var(--sp-t-h3) !important; font-weight: 400 !important; line-height: 1 !important;
+    color: var(--color-brand-primary) !important; transition: transform 240ms var(--sp-ease) !important;
+  }
+  #sozo-react-app .sp-card__q[aria-expanded="true"]::after { transform: rotate(45deg) !important; }
+  #sozo-react-app .sp-card__a { padding: 0 28px 64px !important; font-size: var(--sp-t-lead) !important; line-height: 1.65 !important; color: var(--color-text-primary) !important; max-width: 62ch !important; }
+  #sozo-react-app .sp-card__a.is-open { animation: sp-rise 320ms var(--sp-ease) both !important; }
+  #sozo-react-app .sp-card:last-child .sp-card__a { padding-bottom: 32px !important; }
+  @keyframes sp-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+  /* ============ CTA: kartu balasan ============ */
+  #sozo-react-app .sp-cta { position: relative !important; overflow: hidden !important; background-color: var(--color-brand-primary) !important; color: var(--color-white) !important; padding-block: 112px 0 !important; }
+  #sozo-react-app .sp-cta__grid { display: grid !important; grid-template-columns: repeat(12, minmax(0, 1fr)) !important; column-gap: var(--sp-gap) !important; align-items: end !important; }
+  #sozo-react-app .sp-cta__words { grid-column: 1 / 6 !important; padding-bottom: 112px !important; font-size: var(--sp-t-h3) !important; line-height: 1.45 !important; font-weight: 500 !important; color: var(--color-white) !important; }
+  #sozo-react-app .sp-cta__words span { display: block !important; margin-top: 16px !important; font-size: var(--sp-t-body) !important; font-weight: 400 !important; color: var(--color-on-primary-soft) !important; }
+  #sozo-react-app .sp-cta__card {
+    grid-column: 7 / 13 !important; display: grid !important; justify-items: center !important; gap: 16px !important; text-align: center !important;
+    margin-bottom: -60px !important; padding: 56px 48px 104px !important; background-color: var(--color-surface-warm) !important; color: var(--color-text-primary) !important;
+    transform: rotate(-2deg) !important; transform-origin: 100% 100% !important;
+  }
+  #sozo-react-app .sp-cta__card .sp-h2 { max-width: 14ch !important; }
+  #sozo-react-app .sp-cta__card p { font-size: var(--sp-t-lead) !important; line-height: 1.6 !important; color: var(--color-text-secondary) !important; max-width: 40ch !important; }
+  #sozo-react-app .sp-cta__card .btn { margin-top: 12px !important; }
+  #sozo-react-app .sp-cta__small { font-size: var(--sp-t-small) !important; color: var(--color-text-secondary) !important; }
+
+  /* ============ OVERLAY: tombol keranjang, dialog, toast ============ */
+  #sozo-react-app .sp-fab {
+    position: fixed !important; left: 20px !important; bottom: 20px !important; z-index: var(--z-floating) !important;
+    display: inline-flex !important; align-items: center !important; gap: 10px !important; min-height: 56px !important; margin: 0 !important; padding: 0 22px 0 18px !important;
+    border: 0 !important; border-radius: 999px !important; background-color: var(--color-brand-primary) !important; color: var(--color-white) !important;
+    font-size: var(--sp-t-body) !important; font-weight: 600 !important; cursor: pointer !important;
+    transition: transform 240ms var(--sp-ease), background-color 180ms ease !important;
+  }
+  #sozo-react-app .sp-fab:hover { background-color: var(--color-primary-hover) !important; color: var(--color-white) !important; }
+  #sozo-react-app .sp-fab:focus-visible { outline: 2px solid var(--color-brand-primary) !important; outline-offset: 4px !important; }
+  #sozo-react-app .sp-fab__count {
+    display: inline-grid !important; place-items: center !important; min-width: 26px !important; height: 26px !important; padding: 0 6px !important;
+    border-radius: 999px !important; background-color: var(--color-brand-secondary) !important; color: var(--color-brand-primary) !important; font-size: var(--sp-t-small) !important; font-weight: 700 !important;
+  }
+  #sozo-react-app .sp-fab.is-bump { animation: sp-bump 420ms var(--sp-ease) !important; }
+  @keyframes sp-bump { 0% { transform: scale(1); } 40% { transform: scale(1.12); } 100% { transform: scale(1); } }
+
+  #sozo-react-app dialog.sp-dialog {
+    position: fixed !important; margin: auto !important; padding: 0 !important; border: 0 !important; border-radius: 0 !important;
+    max-width: none !important; max-height: none !important; color: var(--color-text-primary) !important; background-color: var(--color-white) !important;
+    font-family: var(--font-family-primary) !important; box-shadow: 0 24px 60px rgba(23, 23, 21, 0.18) !important; /* taste-skill-ignore: dialog melayang */
+  }
+  #sozo-react-app dialog.sp-dialog::backdrop { background-color: rgba(23, 23, 21, 0.55) !important; }
+  #sozo-react-app dialog.sp-dialog[open] { animation: sp-pop 280ms var(--sp-ease) both !important; }
+  @keyframes sp-pop { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  #sozo-react-app .sp-x {
+    display: inline-grid !important; place-items: center !important; width: 44px !important; height: 44px !important; margin: 0 !important; padding: 0 !important;
+    border: 0 !important; border-radius: 50% !important; background-color: var(--color-surface-warm) !important; color: var(--color-text-primary) !important; cursor: pointer !important;
+  }
+  #sozo-react-app .sp-x:hover { background-color: var(--color-brand-almond) !important; color: var(--color-text-primary) !important; }
+  #sozo-react-app .sp-x:focus-visible { outline: 2px solid var(--color-brand-primary) !important; outline-offset: 2px !important; }
+
+  #sozo-react-app .sp-qv { width: min(960px, calc(100% - 32px)) !important; }
+  #sozo-react-app .sp-qv__grid { display: grid !important; grid-template-columns: 1fr 1fr !important; }
+  #sozo-react-app .sp-qv__tile { aspect-ratio: 1 !important; }
+  #sozo-react-app .sp-qv__body { position: relative !important; display: flex !important; flex-direction: column !important; gap: 16px !important; padding: 40px !important; }
+  #sozo-react-app .sp-qv__body .sp-x { position: absolute !important; top: 16px !important; right: 16px !important; }
+  #sozo-react-app .sp-qv__cat { font-size: var(--sp-t-small) !important; color: var(--color-text-secondary) !important; padding-right: 48px !important; }
+  #sozo-react-app .sp-qv__name { font-size: var(--sp-t-h3) !important; font-weight: 700 !important; line-height: 1.15 !important; letter-spacing: -0.015em !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-qv__price { font-size: var(--sp-t-h3) !important; font-weight: 700 !important; color: var(--color-text-primary) !important; }
+  #sozo-react-app .sp-qv__desc { font-size: var(--sp-t-body) !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-qv__facts { display: grid !important; gap: 12px !important; padding: 18px 20px !important; background-color: var(--color-surface-warm) !important; }
+  #sozo-react-app .sp-qv__facts dt { font-size: var(--sp-t-small) !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-qv__facts dd { font-size: var(--sp-t-body) !important; font-weight: 500 !important; color: var(--color-text-primary) !important; }
+  #sozo-react-app .sp-qv__buy { display: flex !important; gap: 12px !important; align-items: center !important; margin-top: auto !important; }
+  #sozo-react-app .sp-qv__buy .btn { flex: 1 !important; }
+
+  #sozo-react-app .sp-qty { display: inline-flex !important; align-items: center !important; border-radius: 999px !important; background-color: var(--color-surface-warm) !important; }
+  #sozo-react-app .sp-qty button {
+    display: inline-grid !important; place-items: center !important; width: 40px !important; height: 40px !important; margin: 0 !important; padding: 0 !important;
+    border: 0 !important; border-radius: 50% !important; background: none !important; color: var(--color-brand-primary) !important; cursor: pointer !important;
+  }
+  #sozo-react-app .sp-qty button:hover { background-color: var(--color-brand-almond) !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-qty button:focus-visible { outline: 2px solid var(--color-brand-primary) !important; outline-offset: 0 !important; }
+  #sozo-react-app .sp-qty output { min-width: 28px !important; text-align: center !important; font-size: var(--sp-t-body) !important; font-weight: 600 !important; }
+  #sozo-react-app .sp-qty--lg button { width: 48px !important; height: 48px !important; }
+
+  #sozo-react-app .sp-cart {
+    width: min(440px, 100%) !important; height: 100% !important; max-height: 100dvh !important;
+    margin: 0 auto 0 0 !important; display: none !important; flex-direction: column !important;
+  }
+  #sozo-react-app .sp-cart[open] { display: flex !important; animation: sp-slide 300ms var(--sp-ease) both !important; }
+  @keyframes sp-slide { from { transform: translateX(-40px); opacity: 0; } to { transform: none; opacity: 1; } }
+  #sozo-react-app .sp-cart__head { display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 20px 24px !important; background-color: var(--color-surface-warm) !important; }
+  #sozo-react-app .sp-cart__title { font-size: var(--sp-t-h3) !important; font-weight: 700 !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-cart__list { flex: 1 1 auto !important; overflow-y: auto !important; padding: 12px 24px !important; display: grid !important; align-content: start !important; gap: 16px !important; }
+  #sozo-react-app .sp-line { display: grid !important; grid-template-columns: 72px 1fr !important; gap: 14px !important; align-items: start !important; padding: 8px 0 !important; }
+  #sozo-react-app .sp-line .sp-tile { width: 72px !important; height: 72px !important; }
+  #sozo-react-app .sp-line__name { font-size: var(--sp-t-body) !important; font-weight: 600 !important; line-height: 1.35 !important; }
+  #sozo-react-app .sp-line__price { font-size: var(--sp-t-small) !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-line__row { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 8px !important; margin-top: 8px !important; }
+  #sozo-react-app .sp-link {
+    margin: 0 !important; padding: 8px 0 !important; border: 0 !important; background: none !important; cursor: pointer !important;
+    font-size: var(--sp-t-small) !important; font-weight: 500 !important; color: var(--color-text-secondary) !important; text-decoration: underline !important; text-underline-offset: 3px !important;
+  }
+  #sozo-react-app .sp-link:hover { background: none !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-link:focus-visible { outline: 2px solid var(--color-brand-primary) !important; outline-offset: 2px !important; }
+  #sozo-react-app .sp-cart__empty { display: grid !important; gap: 16px !important; justify-items: start !important; padding: 24px 0 !important; font-size: var(--sp-t-body) !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-cart__foot { display: grid !important; gap: 12px !important; padding: 20px 24px 24px !important; background-color: var(--color-surface-warm) !important; }
+  #sozo-react-app .sp-cart__sum { display: flex !important; align-items: baseline !important; justify-content: space-between !important; }
+  #sozo-react-app .sp-cart__sum span { font-size: var(--sp-t-body) !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-cart__sum strong { font-size: var(--sp-t-h3) !important; font-weight: 700 !important; color: var(--color-brand-primary) !important; }
+  #sozo-react-app .sp-cart__note { font-size: var(--sp-t-small) !important; color: var(--color-text-secondary) !important; }
+  #sozo-react-app .sp-cart__foot .btn[aria-disabled="true"] { opacity: .45 !important; pointer-events: none !important; }
+
+  #sozo-react-app .sp-toast {
+    position: fixed !important; left: 50% !important; bottom: 24px !important; z-index: 9999995 !important;
+    display: flex !important; align-items: center !important; gap: 16px !important; max-width: calc(100% - 32px) !important; padding: 12px 12px 12px 20px !important;
+    border-radius: 999px !important; background-color: var(--color-text-primary) !important; color: var(--color-white) !important; font-size: var(--sp-t-small) !important;
+    box-shadow: 0 12px 32px rgba(23, 23, 21, 0.25) !important; /* taste-skill-ignore: toast melayang */
+    transform: translate(-50%, 140%) !important; opacity: 0 !important; pointer-events: none !important;
+    transition: transform 320ms var(--sp-ease), opacity 200ms ease !important;
+  }
+  #sozo-react-app .sp-toast.is-on { transform: translate(-50%, 0) !important; opacity: 1 !important; pointer-events: auto !important; }
+  #sozo-react-app .sp-toast button {
+    min-height: 36px !important; margin: 0 !important; padding: 0 16px !important; border: 0 !important; border-radius: 999px !important;
+    background-color: var(--color-brand-secondary) !important; color: var(--color-brand-primary) !important; font-size: var(--sp-t-small) !important; font-weight: 600 !important; cursor: pointer !important; white-space: nowrap !important;
+  }
+  #sozo-react-app .sp-toast button:focus-visible { outline: 2px solid var(--color-white) !important; outline-offset: 2px !important; }
+
+  /* ============ MASUK SAAT DI-SCROLL (hanya kalau JS jalan) ============ */
+  #sozo-react-app.is-js [data-reveal] { opacity: 0 !important; transform: translateY(24px) !important; }
+  #sozo-react-app.is-js [data-reveal].is-in {
+    opacity: 1 !important; transform: none !important;
+    transition: opacity 600ms ease, transform 700ms var(--sp-ease) !important; transition-delay: calc(var(--i, 0) * 80ms) !important;
+  }
+
+  /* ============ TABLET ============ */
+  @media (max-width: 1024px) {
+    #sozo-react-app .sp-hero__title { grid-column: 1 / -1 !important; }
+    #sozo-react-app .sp-hero__aside { grid-column: 1 / -1 !important; margin-top: 20px !important; }
+    #sozo-react-app .sp-arc { --tile: 220px; }
+    #sozo-react-app .sp-finder__intro { grid-column: 1 / -1 !important; }
+    #sozo-react-app .sp-concerns { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; margin-top: 0 !important; padding-top: 0 !important; }
+    #sozo-react-app .sp-disc { grid-column: 1 / 7 !important; margin-top: 32px !important; }
+    #sozo-react-app .sp-routine { grid-column: 7 / 13 !important; margin-top: 32px !important; }
+    #sozo-react-app .sp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+    #sozo-react-app .sp-grid.is-curated .sp-item--wide { grid-column: auto !important; grid-row: auto !important; }
+    #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__tile { flex: none !important; aspect-ratio: 1 / 1 !important; }
+    #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__name { font-size: var(--sp-t-lead) !important; }
+    #sozo-react-app .sp-shop__bar { flex-wrap: wrap !important; }
+    #sozo-react-app .sp-how__head { grid-column: 1 / -1 !important; padding-right: 0 !important; }
+    #sozo-react-app .sp-how__stage--a { grid-column: 1 / 7 !important; grid-row: 2 !important; }
+    #sozo-react-app .sp-how__stage--b { grid-column: 7 / 13 !important; grid-row: 2 !important; }
+    #sozo-react-app .sp-how__stage--c { grid-column: 1 / -1 !important; grid-row: 3 !important; }
+    #sozo-react-app .sp-how__stage--a .sp-how__tile { height: 240px !important; }
+    #sozo-react-app .sp-how__stage--b .sp-how__tile { height: auto !important; min-height: 300px !important; }
+    #sozo-react-app .sp-how__stage--c .sp-how__tile { height: auto !important; min-height: 420px !important; }
+    #sozo-react-app .sp-cta__words { grid-column: 1 / -1 !important; padding-bottom: 40px !important; }
+    #sozo-react-app .sp-cta__card { grid-column: 2 / 12 !important; }
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 768px) {
+    #sozo-react-app .sp-hero { padding: 20px 0 40px !important; }
+    #sozo-react-app .sp-hero__top { margin-top: 24px !important; }
+    #sozo-react-app .sp-hero__title { font-size: clamp(34px, 9.4vw, 44px) !important; }
+    #sozo-react-app .sp-hero__aside { gap: 16px !important; margin-top: 14px !important; }
+    #sozo-react-app .sp-hero__lead { font-size: var(--sp-t-body) !important; }
+    #sozo-react-app .sp-hero__aside .btn { display: none !important; }
+    #sozo-react-app .sp-arc { --tile: 46vw; }
+    #sozo-react-app .sp-arc__track { gap: 6px !important; padding-top: 70px !important; padding-bottom: 16px !important; }
+    #sozo-react-app .sp-now__name { font-size: var(--sp-t-h3) !important; }
+    #sozo-react-app .sp-now__fact { font-size: var(--sp-t-body) !important; }
+    #sozo-react-app .sp-now__actions { width: 100% !important; flex-direction: column !important; align-items: stretch !important; gap: 4px !important; }
+    #sozo-react-app .sp-now__actions .btn { width: 100% !important; }
+
+    #sozo-react-app .sp-concerns { display: flex !important; flex-wrap: wrap !important; gap: 2px 22px !important; padding-top: 0 !important; }
+    #sozo-react-app .sp-concern { width: auto !important; flex: none !important; font-size: var(--sp-t-h3) !important; gap: 10px !important; }
+    #sozo-react-app .sp-concern::before { width: 10px !important; height: 10px !important; }
+    #sozo-react-app .sp-disc { grid-column: 1 / -1 !important; width: 86% !important; justify-self: center !important; margin-top: 16px !important; }
+    #sozo-react-app .sp-routine { grid-column: 1 / -1 !important; margin-top: 24px !important; }
+    #sozo-react-app .sp-step { grid-template-columns: 56px 1fr auto !important; column-gap: 12px !important; }
+    #sozo-react-app .sp-step .sp-tile { width: 56px !important; height: 56px !important; }
+
+    #sozo-react-app .sp-shop__bar { margin: 16px 0 24px !important; gap: 12px !important; }
+    #sozo-react-app .sp-chip { min-height: 40px !important; padding: 0 14px !important; }
+    #sozo-react-app .sp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; row-gap: 32px !important; }
+    #sozo-react-app .sp-grid.is-curated .sp-item--wide { grid-column: span 2 !important; grid-row: span 1 !important; }
+    #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__tile { aspect-ratio: 16 / 10 !important; flex: none !important; }
+    #sozo-react-app .sp-item__name, #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__name { font-size: var(--sp-t-body) !important; }
+    #sozo-react-app .sp-item__desc { display: none !important; }
+    #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__desc { display: block !important; }
+    #sozo-react-app .sp-item__foot { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; margin-top: 2px !important; }
+    #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__foot { flex-direction: row !important; align-items: center !important; }
+    #sozo-react-app .sp-item__foot .btn { width: 100% !important; }
+    #sozo-react-app .sp-grid.is-curated .sp-item--wide .sp-item__foot .btn { width: auto !important; }
+    #sozo-react-app .sp-item__price { font-size: var(--sp-t-body) !important; }
+
+    #sozo-react-app .sp-how__stage--a, #sozo-react-app .sp-how__stage--b, #sozo-react-app .sp-how__stage--c { grid-column: 1 / -1 !important; grid-row: auto !important; }
+    #sozo-react-app .sp-how__stage--a .sp-how__tile { height: 38vw !important; }
+    #sozo-react-app .sp-how__stage--b .sp-how__tile { height: auto !important; min-height: 0 !important; padding: 24px 20px !important; }
+    #sozo-react-app .sp-how__stage--c .sp-how__tile { min-height: 0 !important; padding: 28px 20px !important; }
+    #sozo-react-app .sp-how__name { font-size: var(--sp-t-lead) !important; }
+
+    #sozo-react-app .sp-card { clip-path: polygon(var(--tab-x) 0, calc(var(--tab-x) + 136px) 0, calc(var(--tab-x) + 148px) 40px, 100% 40px, 100% 100%, 0 100%, 0 40px, calc(var(--tab-x) - 12px) 40px) !important; }
+    #sozo-react-app .sp-card:first-child { --tab-x: 12px; }
+    #sozo-react-app .sp-card:nth-child(2) { --tab-x: 56px; }
+    #sozo-react-app .sp-card:nth-child(3) { --tab-x: 100px; }
+    #sozo-react-app .sp-card:nth-child(4) { --tab-x: 144px; }
+    #sozo-react-app .sp-card:nth-child(5) { --tab-x: 188px; }
+    #sozo-react-app .sp-card__tab { width: 136px !important; padding: 0 14px !important; }
+    #sozo-react-app .sp-card__q { min-height: 88px !important; padding: 16px 20px 24px !important; font-size: var(--sp-t-body) !important; }
+    #sozo-react-app .sp-card__a { padding: 0 20px 56px !important; font-size: var(--sp-t-body) !important; }
+
+    #sozo-react-app .sp-cta { padding-top: 64px !important; }
+    #sozo-react-app .sp-cta__words { font-size: 20px !important; padding-bottom: 32px !important; }
+    #sozo-react-app .sp-cta__card { grid-column: 1 / -1 !important; width: 94% !important; justify-self: center !important; padding: 36px 20px 84px !important; transform: rotate(1deg) !important; }
+    #sozo-react-app .sp-cta__card p { font-size: var(--sp-t-body) !important; }
+    #sozo-react-app .sp-cta__card .btn { width: 100% !important; white-space: normal !important; }
+
+    #sozo-react-app .sp-qv { width: 100% !important; margin: auto 0 0 !important; max-height: 92dvh !important; overflow-y: auto !important; }
+    #sozo-react-app .sp-qv__grid { grid-template-columns: 1fr !important; }
+    #sozo-react-app .sp-qv__tile { aspect-ratio: 16 / 11 !important; }
+    #sozo-react-app .sp-qv__body { padding: 24px 20px !important; }
+    #sozo-react-app .sp-qv__body .sp-x { top: -56px !important; right: 12px !important; background-color: var(--color-white) !important; }
+    #sozo-react-app .sp-qv__name { font-size: var(--sp-t-h3) !important; }
+    #sozo-react-app .sp-fab { left: 16px !important; bottom: 16px !important; padding: 0 12px 0 16px !important; gap: 6px !important; }
+    #sozo-react-app .sp-fab__label { display: none !important; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #sozo-react-app *, #sozo-react-app *::before, #sozo-react-app *::after { animation: none !important; transition-duration: 1ms !important; transition-delay: 0ms !important; }
+    #sozo-react-app.is-js [data-reveal] { transform: none !important; }
+    #sozo-react-app .sp-arc__track { scroll-behavior: auto !important; }
+  }
 </style>
 
-<script>
-(function() {
-  const products = [
-    { name: "Acne Lotion", price: 65000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Lotion-Sozo-Skin-Clinic.png" },
-    { name: "Acne Sunscreen", price: 75000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Sunscreen-Sozo-Skin-Clinic.png" },
-    { name: "Acne Toner", price: 65000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Toner-Sozo-Skin-Clinic.png" },
-    { name: "Advanced Acne Cream", price: 85000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Advanced-Acne-Cream-Sozo-Skin-Clinic.png" },
-    { name: "Purifying Cleanser", price: 65000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Purifying-Cleanser-Sozo-Skin-Clinic.png" },
-    { name: "Super Serum Acne", price: 125000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-Acne-Sozo-Skin-Clinic.png" },
-    { name: "Daily Acne Cream", price: 75000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Daily-Acne-Cream-Sozo-Skin-Clinic.png" },
-    { name: "Ultimate Retinol Cream", price: 125000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Ultimate-Retinol-Cream-Sozo-Skin-Clinic.png" },
-    { name: "Gentle Rice Cleanser", price: 65000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Gentle-Rice-Cleanser-Sozo-Skin-Clinic.png" },
-    { name: "Hydro Essence Toner", price: 65000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Hydro-Essence-Toner-Sozo-Skin-Clinic.png" },
-    { name: "Lightening Sunscreen", price: 75000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Lightening-Sunscreen-Sozo-Skin-Clinic.png" },
-    { name: "Luminous Silk Cream", price: 85000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Luminious-Silk-Cream-Sozo-Skin-Clinic.png" },
-    { name: "SOZO Super Serum - White Silk", price: 125000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-White-Silk-Sozo-Skin-Clinic.png" },
-    { name: "Calming Barrier Cream", price: 85000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Calming-Barrier-Cream-Sozo-Skin-Clinic.png" },
-    { name: "Calming Moisture Gel", price: 85000, img: "https://sozoskinclinic.com/wp-content/uploads/2024/04/Calming-Moisture-Gel-Sozo-Skin-Clinic.png" }
-  ];
+<div id="sozo-react-app">
 
-  const gridContainer = document.getElementById("sozoProductGrid");
-  if (!gridContainer) return;
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="sp-i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h2.6l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.2l1.6-6.8H6.1"/></symbol>
+    <symbol id="sp-i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="sp-i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="sp-i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="sp-i-wa" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.8-.7 2-1.5.2-.7.2-1.4.2-1.5-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm0-21.6A11.8 11.8 0 0 0 1.8 17.9L.2 23.8l6-1.6A11.8 11.8 0 1 0 12 .2z"/></symbol>
+  </svg>
 
-  products.forEach(product => {
-    const waText = `Halo, saya Mau Booking Promo Produk Di SOZO [src : ORG-Produk]`;
-    const waLink = `https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20Produk%20di%20Sozo%20%5Bsrc%3AORG-Produk%5D`;
+  <!-- ====== HERO: deret produk, produk tengah aktif ====== -->
+  <section class="sp-hero" aria-labelledby="sp-hero-title">
+    <div class="sp-wrap">
+      <nav class="sp-crumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li><span aria-current="page">Produk</span></li>
+        </ol>
+      </nav>
 
-    const card = document.createElement("div");
-    card.className = "sozo-product-card";
-    card.innerHTML = `
-      <div class="sozo-product-image-wrapper"><img src="${product.img}" alt="${product.name}" loading="lazy" /></div>
-      <div class="sozo-product-info">
-        <div>
-          <h3>${product.name}</h3>
-          <div class="sozo-rating"><span class="sozo-stars">★★★★★</span><span class="sozo-review-count">(2.5k)</span></div>
-          <div class="sozo-product-price">Rp ${product.price.toLocaleString('id-ID')}</div>
+      <div class="sp-hero__top">
+        <h1 class="sp-hero__title" id="sp-hero-title"><span>Skincare harian</span> <span>SOZO Skin Clinic</span></h1>
+        <div class="sp-hero__aside">
+          <p class="sp-hero__lead">15 produk perawatan wajah dari klinik, Rp&nbsp;65.000 sampai Rp&nbsp;125.000. Masukkan ke keranjang, lalu pesan dalam satu chat WhatsApp.</p>
+          <a href="#katalog" class="btn btn--secondary btn--lg">Lihat semua produk</a>
         </div>
-        <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="sozo-btn-cart">
-          <svg viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41.1 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
-          Beli Sekarang
+      </div>
+    </div>
+
+    <div class="sp-arc" data-arc>
+      <ul class="sp-arc__track" data-arc-track aria-label="Deret produk SOZO Skincare, geser untuk memilih">
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="purifying-cleanser"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Purifying-Cleanser-Sozo-Skin-Clinic.webp" alt="Purifying Cleanser" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="gentle-rice-cleanser"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Gentle-Rice-Cleanser-Sozo-Skin-Clinic.webp" alt="Gentle Rice Cleanser" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="acne-toner"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Toner-Sozo-Skin-Clinic.webp" alt="Acne Toner" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="hydro-essence-toner"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Hydro-Essence-Toner-Sozo-Skin-Clinic.webp" alt="Hydro Essence Toner" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="super-serum-acne"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-Acne-Sozo-Skin-Clinic.webp" alt="Super Serum Acne" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="ultimate-retinol-cream"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Ultimate-Retinol-Cream-Sozo-Skin-Clinic.webp" alt="Ultimate Retinol Cream" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="luminous-silk-cream"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Luminious-Silk-Cream-Sozo-Skin-Clinic.webp" alt="Luminous Silk Cream" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="super-serum-white-silk" data-arc-start><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-White-Silk-Sozo-Skin-Clinic.webp" alt="SOZO Super Serum - White Silk" width="906" height="822" fetchpriority="high"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="acne-sunscreen"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Sunscreen-Sozo-Skin-Clinic.webp" alt="Acne Sunscreen" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="calming-barrier-cream"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Calming-Barrier-Cream-Sozo-Skin-Clinic.webp" alt="Calming Barrier Cream" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="advanced-acne-cream"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Advanced-Acne-Cream-Sozo-Skin-Clinic.webp" alt="Advanced Acne Cream" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="calming-moisture-gel"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Calming-Moisture-Gel-Sozo-Skin-Clinic.webp" alt="Calming Moisture Gel" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="daily-acne-cream"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Daily-Acne-Cream-Sozo-Skin-Clinic.webp" alt="Daily Acne Cream" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="lightening-sunscreen"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Lightening-Sunscreen-Sozo-Skin-Clinic.webp" alt="Lightening Sunscreen" width="906" height="822"></button></li>
+        <li class="sp-arc__item"><button type="button" class="sp-arc__btn" data-arc-id="acne-lotion"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Lotion-Sozo-Skin-Clinic.webp" alt="Acne Lotion" width="906" height="822"></button></li>
+      </ul>
+
+      <div class="sp-wrap">
+        <div class="sp-now" aria-live="polite">
+          <div class="sp-now__text" data-now-text>
+            <p class="sp-now__name" data-now-name>SOZO Super Serum - White Silk</p>
+            <p class="sp-now__fact"><span data-now-fact>Serum pencerah · Pagi &amp; malam</span> · <b data-now-price>Rp 125.000</b></p>
+          </div>
+          <div class="sp-now__actions">
+            <button type="button" class="btn btn--secondary btn--lg" data-add data-now-add="super-serum-white-silk">
+              <svg class="sp-ico" aria-hidden="true"><use href="#sp-i-cart"/></svg><span>Tambah ke keranjang</span>
+            </button>
+            <button type="button" class="btn btn--on-blue btn--lg" data-qv-open data-now-detail="super-serum-white-silk">Lihat detail</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== RUTINITAS PER KELUHAN ====== -->
+  <section class="sp-section sp-finder" id="rutinitas" aria-labelledby="sp-finder-title">
+    <div class="sp-wrap sp-finder__grid">
+      <div class="sp-finder__intro">
+        <h2 class="sp-h2" id="sp-finder-title" data-reveal>Rutinitas sesuai keluhan kulit</h2>
+        <p class="sp-lead" data-reveal style="--i:1">Empat produk, urut dari cuci muka sampai langkah terakhir. Pilih keluhan kamu, ambil satu paket.</p>
+        <div class="sp-concerns" role="group" aria-label="Pilih keluhan kulit" data-reveal style="--i:2">
+          <button type="button" class="sp-concern" data-concern="jerawat" aria-pressed="true">Berjerawat</button>
+          <button type="button" class="sp-concern" data-concern="kusam" aria-pressed="false">Kusam &amp; noda</button>
+          <button type="button" class="sp-concern" data-concern="sensitif" aria-pressed="false">Sensitif</button>
+          <button type="button" class="sp-concern" data-concern="penuaan" aria-pressed="false">Garis halus</button>
+        </div>
+      </div>
+
+      <div class="sp-disc" data-reveal style="--i:1; --disc: #E9DFD5" data-disc>
+        <span class="sp-disc__field" aria-hidden="true"></span>
+        <div class="sp-disc__stage" data-disc-stage>
+          <img class="is-on" src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-Acne-Sozo-Skin-Clinic.webp" alt="Super Serum Acne, inti rutinitas kulit berjerawat" width="906" height="822" loading="lazy">
+        </div>
+      </div>
+
+      <div class="sp-routine" data-reveal style="--i:2">
+        <div class="sp-routine__list" data-routine-list aria-live="polite">
+          <p class="sp-routine__for" data-routine-for>Untuk kulit berjerawat dan berminyak</p>
+          <ol class="sp-routine__steps" data-routine-steps>
+            <li class="sp-step"><span class="sp-tile"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Purifying-Cleanser-Sozo-Skin-Clinic.webp" alt="" width="64" height="58" loading="lazy"></span><span><span class="sp-step__verb">Bersihkan</span><span class="sp-step__name">Purifying Cleanser</span></span><span class="sp-step__price">Rp 65.000</span></li>
+            <li class="sp-step"><span class="sp-tile"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Toner-Sozo-Skin-Clinic.webp" alt="" width="64" height="58" loading="lazy"></span><span><span class="sp-step__verb">Seimbangkan</span><span class="sp-step__name">Acne Toner</span></span><span class="sp-step__price">Rp 65.000</span></li>
+            <li class="sp-step"><span class="sp-tile"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-Acne-Sozo-Skin-Clinic.webp" alt="" width="64" height="58" loading="lazy"></span><span><span class="sp-step__verb">Rawat</span><span class="sp-step__name">Super Serum Acne</span></span><span class="sp-step__price">Rp 125.000</span></li>
+            <li class="sp-step"><span class="sp-tile"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Sunscreen-Sozo-Skin-Clinic.webp" alt="" width="64" height="58" loading="lazy"></span><span><span class="sp-step__verb">Lindungi, pagi hari</span><span class="sp-step__name">Acne Sunscreen</span></span><span class="sp-step__price">Rp 75.000</span></li>
+          </ol>
+        </div>
+        <div class="sp-routine__total"><span>Total 4 produk</span><strong data-routine-total>Rp 330.000</strong></div>
+        <button type="button" class="btn btn--primary btn--lg btn--block" data-add-routine>
+          <svg class="sp-ico" aria-hidden="true"><use href="#sp-i-cart"/></svg><span>Masukkan paket ke keranjang</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== KATALOG ====== -->
+  <section class="sp-section sp-shop" id="katalog" aria-labelledby="sp-shop-title">
+    <div class="sp-wrap">
+      <div class="sp-shop__head">
+        <h2 class="sp-h2" id="sp-shop-title" data-reveal>Semua produk</h2>
+        <p class="sp-shop__count" data-count aria-live="polite">15 produk</p>
+      </div>
+
+      <div class="sp-shop__bar">
+        <div class="sp-filters" role="group" aria-label="Saring kategori">
+          <button type="button" class="sp-chip" data-filter="all" aria-pressed="true">Semua <small>15</small></button>
+          <button type="button" class="sp-chip" data-filter="cleanser" aria-pressed="false">Pembersih &amp; toner <small>4</small></button>
+          <button type="button" class="sp-chip" data-filter="serum" aria-pressed="false">Serum <small>2</small></button>
+          <button type="button" class="sp-chip" data-filter="acne" aria-pressed="false">Acne care <small>3</small></button>
+          <button type="button" class="sp-chip" data-filter="cream" aria-pressed="false">Krim &amp; pelembap <small>4</small></button>
+          <button type="button" class="sp-chip" data-filter="sunscreen" aria-pressed="false">Sunscreen <small>2</small></button>
+        </div>
+        <label class="sp-sort">Urutkan
+          <select data-sort>
+            <option value="step">Rekomendasi</option>
+            <option value="low">Harga terendah</option>
+            <option value="high">Harga tertinggi</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="sp-grid is-curated" data-grid>
+        <article class="sp-item sp-item--wide" data-id="super-serum-white-silk" data-cat="serum" data-cat-label="Serum pencerah" data-price="125000" data-step="1">
+          <button type="button" class="sp-tile sp-tile--isa sp-item__tile" data-qv-open aria-label="Lihat detail SOZO Super Serum - White Silk"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-White-Silk-Sozo-Skin-Clinic.webp" alt="SOZO Super Serum White Silk" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">SOZO Super Serum - White Silk</h3>
+            <p class="sp-item__desc">Serum pencerah untuk menyamarkan noda hitam dan bekas jerawat, meratakan warna kulit.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 125.000</span><button type="button" class="btn btn--primary btn--sm" data-add aria-label="Tambah SOZO Super Serum - White Silk ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="purifying-cleanser" data-cat="cleanser" data-cat-label="Pembersih wajah" data-price="65000" data-step="2">
+          <button type="button" class="sp-tile sp-item__tile" data-qv-open aria-label="Lihat detail Purifying Cleanser"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Purifying-Cleanser-Sozo-Skin-Clinic.webp" alt="Purifying Cleanser SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Purifying Cleanser</h3>
+            <p class="sp-item__desc">Pembersih wajah yang mengangkat kotoran dan minyak berlebih tanpa membuat kulit terasa kering.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 65.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Purifying Cleanser ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="gentle-rice-cleanser" data-cat="cleanser" data-cat-label="Pembersih wajah" data-price="65000" data-step="3">
+          <button type="button" class="sp-tile sp-tile--almond sp-item__tile" data-qv-open aria-label="Lihat detail Gentle Rice Cleanser"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Gentle-Rice-Cleanser-Sozo-Skin-Clinic.webp" alt="Gentle Rice Cleanser SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Gentle Rice Cleanser</h3>
+            <p class="sp-item__desc">Pembersih wajah lembut dengan ekstrak beras, membersihkan sambil menjaga kelembapan alami kulit.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 65.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Gentle Rice Cleanser ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="acne-toner" data-cat="cleanser" data-cat-label="Toner" data-price="65000" data-step="4">
+          <button type="button" class="sp-tile sp-tile--almond sp-item__tile" data-qv-open aria-label="Lihat detail Acne Toner"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Toner-Sozo-Skin-Clinic.webp" alt="Acne Toner SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Acne Toner</h3>
+            <p class="sp-item__desc">Toner untuk kulit berjerawat, mengangkat sisa kotoran di pori dan membantu mengontrol minyak.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 65.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Acne Toner ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="hydro-essence-toner" data-cat="cleanser" data-cat-label="Toner" data-price="65000" data-step="5">
+          <button type="button" class="sp-tile sp-item__tile" data-qv-open aria-label="Lihat detail Hydro Essence Toner"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Hydro-Essence-Toner-Sozo-Skin-Clinic.webp" alt="Hydro Essence Toner SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Hydro Essence Toner</h3>
+            <p class="sp-item__desc">Toner esens untuk menghidrasi, menyeimbangkan pH, dan menyegarkan kulit wajah.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 65.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Hydro Essence Toner ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="super-serum-acne" data-cat="serum" data-cat-label="Serum jerawat" data-price="125000" data-step="6">
+          <button type="button" class="sp-tile sp-item__tile" data-qv-open aria-label="Lihat detail Super Serum Acne"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-Acne-Sozo-Skin-Clinic.webp" alt="Super Serum Acne SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Super Serum Acne</h3>
+            <p class="sp-item__desc">Serum untuk meredakan jerawat meradang, mengontrol minyak, dan menyamarkan pori.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 125.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Super Serum Acne ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="acne-lotion" data-cat="acne" data-cat-label="Totol jerawat" data-price="65000" data-step="7">
+          <button type="button" class="sp-tile sp-tile--almond sp-item__tile" data-qv-open aria-label="Lihat detail Acne Lotion"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Lotion-Sozo-Skin-Clinic.webp" alt="Acne Lotion SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Acne Lotion</h3>
+            <p class="sp-item__desc">Lotion untuk titik jerawat, membantu mengeringkan jerawat aktif dan meredakan kemerahan.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 65.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Acne Lotion ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item sp-item--wide" data-id="ultimate-retinol-cream" data-cat="cream" data-cat-label="Krim malam retinol" data-price="125000" data-step="8">
+          <button type="button" class="sp-tile sp-tile--isa sp-item__tile" data-qv-open aria-label="Lihat detail Ultimate Retinol Cream"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Ultimate-Retinol-Cream-Sozo-Skin-Clinic.webp" alt="Ultimate Retinol Cream SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Ultimate Retinol Cream</h3>
+            <p class="sp-item__desc">Krim malam dengan retinol untuk regenerasi kulit, menyamarkan garis halus, dan menghaluskan tekstur.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 125.000</span><button type="button" class="btn btn--primary btn--sm" data-add aria-label="Tambah Ultimate Retinol Cream ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="daily-acne-cream" data-cat="acne" data-cat-label="Krim jerawat harian" data-price="75000" data-step="9">
+          <button type="button" class="sp-tile sp-tile--almond sp-item__tile" data-qv-open aria-label="Lihat detail Daily Acne Cream"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Daily-Acne-Cream-Sozo-Skin-Clinic.webp" alt="Daily Acne Cream SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Daily Acne Cream</h3>
+            <p class="sp-item__desc">Krim harian bertekstur ringan untuk kulit rentan berjerawat, menjaga kelembapan tetap seimbang.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 75.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Daily Acne Cream ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="advanced-acne-cream" data-cat="acne" data-cat-label="Krim jerawat intensif" data-price="85000" data-step="10">
+          <button type="button" class="sp-tile sp-item__tile" data-qv-open aria-label="Lihat detail Advanced Acne Cream"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Advanced-Acne-Cream-Sozo-Skin-Clinic.webp" alt="Advanced Acne Cream SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Advanced Acne Cream</h3>
+            <p class="sp-item__desc">Krim perawatan intensif untuk jerawat membandel sekaligus menyamarkan noda pasca-jerawat.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 85.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Advanced Acne Cream ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item sp-item--wide" data-id="calming-barrier-cream" data-cat="cream" data-cat-label="Krim skin barrier" data-price="85000" data-step="11">
+          <button type="button" class="sp-tile sp-tile--isa sp-item__tile" data-qv-open aria-label="Lihat detail Calming Barrier Cream"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Calming-Barrier-Cream-Sozo-Skin-Clinic.webp" alt="Calming Barrier Cream SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Calming Barrier Cream</h3>
+            <p class="sp-item__desc">Pelembap untuk menenangkan kulit iritasi, meredakan kemerahan, dan membantu memperbaiki skin barrier.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 85.000</span><button type="button" class="btn btn--primary btn--sm" data-add aria-label="Tambah Calming Barrier Cream ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="calming-moisture-gel" data-cat="cream" data-cat-label="Gel pelembap" data-price="85000" data-step="12">
+          <button type="button" class="sp-tile sp-item__tile" data-qv-open aria-label="Lihat detail Calming Moisture Gel"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Calming-Moisture-Gel-Sozo-Skin-Clinic.webp" alt="Calming Moisture Gel SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Calming Moisture Gel</h3>
+            <p class="sp-item__desc">Gel pelembap ringan yang cepat meresap, menyejukkan kulit sensitif maupun berminyak.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 85.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Calming Moisture Gel ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="luminous-silk-cream" data-cat="cream" data-cat-label="Krim pencerah" data-price="85000" data-step="13">
+          <button type="button" class="sp-tile sp-tile--almond sp-item__tile" data-qv-open aria-label="Lihat detail Luminous Silk Cream"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Luminious-Silk-Cream-Sozo-Skin-Clinic.webp" alt="Luminous Silk Cream SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Luminous Silk Cream</h3>
+            <p class="sp-item__desc">Krim pelembap pencerah untuk menutrisi kulit kusam dan membuat wajah tampak lebih cerah.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 85.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Luminous Silk Cream ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="acne-sunscreen" data-cat="sunscreen" data-cat-label="Sunscreen" data-price="75000" data-step="14">
+          <button type="button" class="sp-tile sp-tile--almond sp-item__tile" data-qv-open aria-label="Lihat detail Acne Sunscreen"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Sunscreen-Sozo-Skin-Clinic.webp" alt="Acne Sunscreen SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Acne Sunscreen</h3>
+            <p class="sp-item__desc">Tabir surya ringan untuk kulit berjerawat, melindungi dari sinar UV tanpa terasa berat.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 75.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Acne Sunscreen ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+
+        <article class="sp-item" data-id="lightening-sunscreen" data-cat="sunscreen" data-cat-label="Sunscreen pencerah" data-price="75000" data-step="15">
+          <button type="button" class="sp-tile sp-item__tile" data-qv-open aria-label="Lihat detail Lightening Sunscreen"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Lightening-Sunscreen-Sozo-Skin-Clinic.webp" alt="Lightening Sunscreen SOZO Skincare" width="906" height="822" loading="lazy"></button>
+          <div class="sp-item__body">
+            <h3 class="sp-item__name">Lightening Sunscreen</h3>
+            <p class="sp-item__desc">Perlindungan UV harian dengan kandungan pencerah untuk membantu mencegah flek hitam.</p>
+            <div class="sp-item__foot"><span class="sp-item__price">Rp 75.000</span><button type="button" class="btn btn--outline btn--sm" data-add aria-label="Tambah Lightening Sunscreen ke keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg><span>Keranjang</span></button></div>
+          </div>
+        </article>
+      </div>
+      <p class="sp-empty" data-empty hidden>Belum ada produk di kategori ini.</p>
+    </div>
+  </section>
+
+  <!-- ====== CARA PESAN ====== -->
+  <section class="sp-section sp-how" aria-labelledby="sp-how-title">
+    <div class="sp-wrap sp-how__grid">
+      <div class="sp-how__head">
+        <h2 class="sp-h2" id="sp-how-title" data-reveal>Pesan dalam satu chat</h2>
+        <p class="sp-lead" data-reveal style="--i:1">Tanpa akun dan tanpa form. Keranjang kamu berubah jadi pesan WhatsApp ke admin SOZO.</p>
+      </div>
+
+      <div class="sp-how__stage sp-how__stage--a" data-reveal>
+        <div class="sp-tile sp-tile--almond sp-how__tile"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Toner-Sozo-Skin-Clinic.webp" alt="Acne Toner" width="906" height="822" loading="lazy"></div>
+        <h3 class="sp-how__name">Pilih produk</h3>
+        <p class="sp-how__text">Satuan dari katalog, atau satu paket rutinitas sesuai keluhan kulit.</p>
+      </div>
+
+      <div class="sp-how__stage sp-how__stage--b" data-reveal style="--i:1">
+        <div class="sp-tile sp-tile--isa sp-how__tile">
+          <div class="sp-mini" data-ui aria-label="Contoh isi keranjang">
+            <p class="sp-mini__title">Keranjang (4)</p>
+            <ul class="sp-mini__list">
+              <li class="sp-mini__line"><span class="sp-tile"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Purifying-Cleanser-Sozo-Skin-Clinic.webp" alt="" width="48" height="44" loading="lazy"></span><span class="sp-mini__name">Purifying Cleanser</span><span class="sp-mini__qty">1 x Rp 65.000</span></li>
+              <li class="sp-mini__line"><span class="sp-tile"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Toner-Sozo-Skin-Clinic.webp" alt="" width="48" height="44" loading="lazy"></span><span class="sp-mini__name">Acne Toner</span><span class="sp-mini__qty">1 x Rp 65.000</span></li>
+              <li class="sp-mini__line"><span class="sp-tile"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/SOZO-Super-Serum-Acne-Sozo-Skin-Clinic.webp" alt="" width="48" height="44" loading="lazy"></span><span class="sp-mini__name">Super Serum Acne</span><span class="sp-mini__qty">1 x Rp 125.000</span></li>
+              <li class="sp-mini__line"><span class="sp-tile"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/Acne-Sunscreen-Sozo-Skin-Clinic.webp" alt="" width="48" height="44" loading="lazy"></span><span class="sp-mini__name">Acne Sunscreen</span><span class="sp-mini__qty">1 x Rp 75.000</span></li>
+            </ul>
+            <p class="sp-mini__sum"><span>Subtotal</span><b>Rp 330.000</b></p>
+          </div>
+        </div>
+        <h3 class="sp-how__name">Cek keranjang</h3>
+        <p class="sp-how__text">Atur jumlah tiap produk. Keranjang tetap tersimpan kalau halaman ditutup.</p>
+      </div>
+
+      <div class="sp-how__stage sp-how__stage--c" data-reveal style="--i:2">
+        <div class="sp-how__tile">
+          <div class="sp-chat" data-ui aria-label="Contoh pesan pesanan yang terkirim ke WhatsApp admin SOZO">
+            <div class="sp-chat__head">
+              <span class="sp-chat__avatar" aria-hidden="true">SZ</span>
+              <span class="sp-chat__who">Admin SOZO Skin Clinic<small>0851-7522-5664</small></span>
+            </div>
+            <div class="sp-chat__bubble">
+              <p>Halo SOZO, saya mau pesan produk:</p>
+              <p>
+                <span class="sp-chat__line"><span>1x Purifying Cleanser</span><span>Rp 65.000</span></span>
+                <span class="sp-chat__line"><span>1x Acne Toner</span><span>Rp 65.000</span></span>
+                <span class="sp-chat__line"><span>1x Super Serum Acne</span><span>Rp 125.000</span></span>
+                <span class="sp-chat__line"><span>1x Acne Sunscreen</span><span>Rp 75.000</span></span>
+              </p>
+              <p><span class="sp-chat__line"><b>Total</b><b>Rp 330.000</b></span></p>
+              <span class="sp-chat__meta">Terkirim dari halaman produk</span>
+            </div>
+          </div>
+        </div>
+        <h3 class="sp-how__name">Kirim ke WhatsApp</h3>
+        <p class="sp-how__text">Admin membalas dengan ongkos kirim dan cara bayar, lalu pesanan dikirim.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FAQ ====== -->
+  <section class="sp-section sp-faq" aria-labelledby="sp-faq-title">
+    <div class="sp-wrap">
+      <div class="sp-faq__inner">
+        <div class="sp-faq__head">
+          <h2 class="sp-h2" id="sp-faq-title" data-reveal>Tanya sebelum beli</h2>
+        </div>
+        <div class="sp-cards" data-faq data-reveal style="--i:1">
+          <div class="sp-card">
+            <span class="sp-card__tab">Pemesanan</span>
+            <button type="button" class="sp-card__q" aria-expanded="true" aria-controls="sp-a1" id="sp-q1">Bagaimana cara pesan produk SOZO?</button>
+            <div class="sp-card__a" id="sp-a1" role="region" aria-labelledby="sp-q1">Masukkan produk ke keranjang, lalu tekan "Pesan via WhatsApp". Daftar produk dan totalnya terkirim sebagai satu pesan ke admin SOZO. Admin mengonfirmasi stok, ongkos kirim, dan cara pembayaran di chat yang sama.</div>
+          </div>
+          <div class="sp-card">
+            <span class="sp-card__tab">Konsultasi</span>
+            <button type="button" class="sp-card__q" aria-expanded="false" aria-controls="sp-a2" id="sp-q2">Perlu konsultasi dokter sebelum membeli?</button>
+            <div class="sp-card__a" id="sp-a2" role="region" aria-labelledby="sp-q2" hidden>Tidak wajib. Kalau ragu, ceritakan kondisi kulit kamu ke admin lewat WhatsApp, gratis. Untuk jerawat yang meradang luas atau iritasi berat, periksakan dulu ke dokter di cabang SOZO Skin Clinic terdekat.</div>
+          </div>
+          <div class="sp-card">
+            <span class="sp-card__tab">Urutan pakai</span>
+            <button type="button" class="sp-card__q" aria-expanded="false" aria-controls="sp-a3" id="sp-q3">Urutan pemakaian yang benar seperti apa?</button>
+            <div class="sp-card__a" id="sp-a3" role="region" aria-labelledby="sp-q3" hidden>Pembersih, toner, serum, lalu krim atau pelembap. Pagi hari tutup dengan sunscreen. Acne Lotion dipakai malam, ditotol hanya di titik jerawat setelah serum.</div>
+          </div>
+          <div class="sp-card">
+            <span class="sp-card__tab">Retinol</span>
+            <button type="button" class="sp-card__q" aria-expanded="false" aria-controls="sp-a4" id="sp-q4">Baru pertama pakai retinol, mulai dari mana?</button>
+            <div class="sp-card__a" id="sp-a4" role="region" aria-labelledby="sp-q4" hidden>Pakai Ultimate Retinol Cream tipis-tipis 2–3 malam per minggu dulu, di wajah yang sudah bersih dan kering. Naikkan frekuensinya pelan-pelan. Pagi harinya wajib sunscreen.</div>
+          </div>
+          <div class="sp-card">
+            <span class="sp-card__tab">Kulit sensitif</span>
+            <button type="button" class="sp-card__q" aria-expanded="false" aria-controls="sp-a5" id="sp-q5">Produk mana untuk kulit sensitif?</button>
+            <div class="sp-card__a" id="sp-a5" role="region" aria-labelledby="sp-q5" hidden>Gentle Rice Cleanser, Hydro Essence Toner, Calming Moisture Gel, dan Calming Barrier Cream. Oleskan sedikit di garis rahang dan tunggu 24 jam sebelum dipakai ke seluruh wajah.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA: kartu balasan ====== -->
+  <section class="sp-cta" aria-labelledby="sp-cta-title">
+    <div class="sp-wrap sp-cta__grid">
+      <p class="sp-cta__words" data-reveal>Produk yang sama dipakai dokter SOZO dalam perawatan di klinik.<span>Ceritakan keluhan kulit kamu, tim SOZO bantu pilih rutinitasnya.</span></p>
+      <div class="sp-cta__card" data-reveal style="--i:1">
+        <h2 class="sp-h2" id="sp-cta-title">Bingung pilih produk?</h2>
+        <p>Kirim cerita atau foto kondisi kulit kamu. Konsultasi lewat WhatsApp gratis, tanpa harus membeli.</p>
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20mau%20konsultasi%20produk%20skincare%20di%20Sozo%20%5Bsrc%3AORG-Produk%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg btn--block" data-wa-src="organic">
+          <svg class="sp-ico sp-ico--fill" aria-hidden="true"><use href="#sp-i-wa"/></svg><span>Konsultasi via WhatsApp</span>
         </a>
       </div>
-    `;
-    gridContainer.appendChild(card);
-  });
+    </div>
+  </section>
+
+  <!-- ====== OVERLAY ====== -->
+  <button type="button" class="sp-fab" data-cart-open aria-label="Buka keranjang, 0 produk" hidden>
+    <svg class="sp-ico" aria-hidden="true"><use href="#sp-i-cart"/></svg><span class="sp-fab__label">Keranjang</span><span class="sp-fab__count" data-cart-count>0</span>
+  </button>
+
+  <dialog class="sp-dialog sp-qv" data-qv aria-labelledby="sp-qv-name">
+    <div class="sp-qv__grid">
+      <div class="sp-tile sp-tile--almond sp-qv__tile"><img data-qv-img src="" alt="" width="906" height="822"></div>
+      <div class="sp-qv__body">
+        <button type="button" class="sp-x" data-close aria-label="Tutup detail produk"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-close"/></svg></button>
+        <p class="sp-qv__cat" data-qv-cat></p>
+        <h2 class="sp-qv__name" id="sp-qv-name" data-qv-name></h2>
+        <p class="sp-qv__price" data-qv-price></p>
+        <p class="sp-qv__desc" data-qv-desc></p>
+        <dl class="sp-qv__facts">
+          <div><dt>Cocok untuk</dt><dd data-qv-skin></dd></div>
+          <div><dt>Cara pakai</dt><dd data-qv-use></dd></div>
+          <div><dt>Waktu pakai</dt><dd data-qv-time></dd></div>
+        </dl>
+        <div class="sp-qv__buy">
+          <div class="sp-qty sp-qty--lg">
+            <button type="button" data-qv-minus aria-label="Kurangi jumlah"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-minus"/></svg></button>
+            <output data-qv-qty aria-live="polite">1</output>
+            <button type="button" data-qv-plus aria-label="Tambah jumlah"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg></button>
+          </div>
+          <button type="button" class="btn btn--primary btn--lg" data-qv-add><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-cart"/></svg><span>Tambah ke keranjang</span></button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="sp-dialog sp-cart" data-cart aria-labelledby="sp-cart-title">
+    <div class="sp-cart__head">
+      <h2 class="sp-cart__title" id="sp-cart-title">Keranjang (<span data-cart-count>0</span>)</h2>
+      <button type="button" class="sp-x" data-close aria-label="Tutup keranjang"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-close"/></svg></button>
+    </div>
+    <div class="sp-cart__list" data-cart-list></div>
+    <div class="sp-cart__foot">
+      <div class="sp-cart__sum"><span>Subtotal</span><strong data-cart-total>Rp 0</strong></div>
+      <p class="sp-cart__note">Ongkos kirim dan cara bayar dikonfirmasi admin di WhatsApp.</p>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg btn--block" data-checkout aria-disabled="true">
+        <svg class="sp-ico sp-ico--fill" aria-hidden="true"><use href="#sp-i-wa"/></svg><span>Pesan via WhatsApp</span>
+      </a>
+    </div>
+  </dialog>
+
+  <div class="sp-toast" data-toast role="status" aria-live="polite">
+    <span data-toast-text></span>
+    <button type="button" data-cart-open>Lihat keranjang</button>
+  </div>
+
+</div>
+
+<script data-no-optimize="1" data-no-defer="1">
+/* ============================================================
+   TOKO PRODUK SOZO - deret hero, rutinitas, filter, quick view,
+   keranjang WhatsApp. Nama, harga, gambar dibaca dari kartu katalog
+   (.sp-item). Ubah harga di kartu, bukan di sini.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var WA_PHONE = '6285175225664';
+  var WA_SRC = '[src:ORG-Produk]';
+  var STORE_KEY = 'sozoCart';
+
+  /* Isi quick view. skin = cocok untuk, use = cara pakai, time = waktu pakai */
+  var INFO = {
+    'super-serum-acne': { skin: 'Kulit berjerawat, berminyak, pori besar', use: 'Teteskan 2–3 tetes setelah toner, ratakan ke seluruh wajah.', time: 'Pagi & malam' },
+    'super-serum-white-silk': { skin: 'Kulit kusam, noda hitam, bekas jerawat', use: 'Teteskan 2–3 tetes setelah toner, tepuk lembut sampai meresap.', time: 'Pagi & malam' },
+    'ultimate-retinol-cream': { skin: 'Garis halus, tekstur kasar, pori besar', use: 'Oleskan tipis ke wajah bersih. Mulai 2–3 malam per minggu, wajib sunscreen di pagi hari.', time: 'Malam' },
+    'acne-sunscreen': { skin: 'Kulit berjerawat & berminyak', use: 'Langkah terakhir pagi hari. Ulangi tiap 2–3 jam saat di luar ruangan.', time: 'Pagi' },
+    'lightening-sunscreen': { skin: 'Kulit kusam & rentan flek', use: 'Langkah terakhir pagi hari. Ulangi tiap 2–3 jam saat di luar ruangan.', time: 'Pagi' },
+    'advanced-acne-cream': { skin: 'Jerawat membandel & noda pasca-jerawat', use: 'Oleskan tipis ke area berjerawat setelah serum.', time: 'Malam' },
+    'daily-acne-cream': { skin: 'Kulit rentan berjerawat', use: 'Oleskan merata ke wajah setelah serum, sebelum sunscreen.', time: 'Pagi' },
+    'acne-lotion': { skin: 'Jerawat aktif yang meradang', use: 'Totolkan langsung ke titik jerawat dengan cotton bud.', time: 'Malam' },
+    'luminous-silk-cream': { skin: 'Kulit kusam & kering', use: 'Oleskan merata sebagai langkah pelembap.', time: 'Pagi & malam' },
+    'calming-barrier-cream': { skin: 'Kulit sensitif, kemerahan, skin barrier rusak', use: 'Oleskan merata sebagai langkah pelembap terakhir.', time: 'Pagi & malam' },
+    'calming-moisture-gel': { skin: 'Kulit sensitif & berminyak', use: 'Oleskan merata sebagai langkah pelembap.', time: 'Pagi & malam' },
+    'purifying-cleanser': { skin: 'Kulit berminyak & berjerawat', use: 'Basahi wajah, pijat busa 30–60 detik, bilas air bersih.', time: 'Pagi & malam' },
+    'gentle-rice-cleanser': { skin: 'Kulit normal, kering, sensitif', use: 'Basahi wajah, pijat busa 30–60 detik, bilas air bersih.', time: 'Pagi & malam' },
+    'acne-toner': { skin: 'Kulit berjerawat & berminyak', use: 'Tuang ke kapas, usap lembut ke wajah setelah cuci muka.', time: 'Pagi & malam' },
+    'hydro-essence-toner': { skin: 'Kulit kering, kusam, sensitif', use: 'Tuang ke telapak tangan, tepuk lembut ke wajah setelah cuci muka.', time: 'Pagi & malam' }
+  };
+
+  /* Paket rutinitas per keluhan. steps = [id produk, kata kerja langkah] */
+  var ROUTINES = {
+    jerawat: { label: 'Untuk kulit berjerawat dan berminyak', disc: '#E9DFD5', hero: 'super-serum-acne',
+      steps: [['purifying-cleanser', 'Bersihkan'], ['acne-toner', 'Seimbangkan'], ['super-serum-acne', 'Rawat'], ['acne-sunscreen', 'Lindungi, pagi hari']] },
+    kusam: { label: 'Untuk kulit kusam, noda hitam, dan bekas jerawat', disc: '#D9C7B1', hero: 'super-serum-white-silk',
+      steps: [['gentle-rice-cleanser', 'Bersihkan'], ['hydro-essence-toner', 'Seimbangkan'], ['super-serum-white-silk', 'Rawat'], ['luminous-silk-cream', 'Kunci kelembapan']] },
+    sensitif: { label: 'Untuk kulit sensitif, kemerahan, dan skin barrier rusak', disc: '#DFDBD4', hero: 'calming-barrier-cream',
+      steps: [['gentle-rice-cleanser', 'Bersihkan'], ['hydro-essence-toner', 'Seimbangkan'], ['calming-moisture-gel', 'Tenangkan'], ['calming-barrier-cream', 'Kunci kelembapan']] },
+    penuaan: { label: 'Untuk garis halus, tekstur kasar, dan pori besar', disc: '#E9DFD5', hero: 'ultimate-retinol-cream',
+      steps: [['gentle-rice-cleanser', 'Bersihkan'], ['hydro-essence-toner', 'Seimbangkan'], ['ultimate-retinol-cream', 'Rawat, malam hari'], ['lightening-sunscreen', 'Lindungi, pagi hari']] }
+  };
+
+  function rupiah(n) { return 'Rp\u00a0' + Number(n).toLocaleString('id-ID'); }
+  function $(sel, root) { return (root || document).querySelector(sel); }
+  function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function init() {
+    var app = document.getElementById('sozo-react-app');
+    var grid = app && $('[data-grid]', app);
+    if (!app || !grid) return false;
+    if (app.getAttribute('data-ready')) return true;
+    app.setAttribute('data-ready', '1');
+    app.classList.add('is-js');
+
+    /* ---------- Data produk dari kartu katalog ---------- */
+    var cards = $all('.sp-item', grid);
+    var PRODUCTS = {};
+    cards.forEach(function (card) {
+      var id = card.getAttribute('data-id');
+      var img = $('img', card);
+      PRODUCTS[id] = {
+        id: id,
+        name: $('.sp-item__name', card).textContent.trim(),
+        price: Number(card.getAttribute('data-price')),
+        img: img.getAttribute('src'),
+        cat: card.getAttribute('data-cat-label'),
+        desc: $('.sp-item__desc', card).textContent.trim(),
+        tile: ($('.sp-item__tile', card).className.match(/sp-tile--\w+/) || [''])[0]
+      };
+    });
+
+    /* ---------- Keranjang ---------- */
+    var cart = {};
+    try { cart = JSON.parse(localStorage.getItem(STORE_KEY) || '{}') || {}; } catch (e) { cart = {}; }
+    Object.keys(cart).forEach(function (id) { if (!PRODUCTS[id] || !(cart[id] > 0)) delete cart[id]; });
+
+    var cartDlg = $('[data-cart]', app);
+    var listEl = $('[data-cart-list]', app);
+    var fab = $('.sp-fab', app);
+    var toast = $('[data-toast]', app);
+    var toastTimer;
+
+    function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(cart)); } catch (e) {} }
+    function count() { return Object.keys(cart).reduce(function (s, id) { return s + cart[id]; }, 0); }
+    function total() { return Object.keys(cart).reduce(function (s, id) { return s + cart[id] * PRODUCTS[id].price; }, 0); }
+
+    function waLink() {
+      var lines = ['Halo SOZO, saya mau pesan produk:'];
+      Object.keys(cart).forEach(function (id) {
+        lines.push('- ' + cart[id] + 'x ' + PRODUCTS[id].name + ' = ' + rupiah(cart[id] * PRODUCTS[id].price));
+      });
+      lines.push('Total: ' + rupiah(total()), '', WA_SRC);
+      return 'https://api.whatsapp.com/send?phone=' + WA_PHONE + '&text=' + encodeURIComponent(lines.join('\n'));
+    }
+
+    function renderCart() {
+      var n = count();
+      $all('[data-cart-count]', app).forEach(function (el) { el.textContent = n; });
+      fab.setAttribute('aria-label', 'Buka keranjang, ' + n + ' produk');
+      fab.hidden = n === 0;
+      $('[data-cart-total]', app).textContent = rupiah(total());
+      var checkout = $('[data-checkout]', app);
+      if (n) { checkout.href = waLink(); checkout.removeAttribute('aria-disabled'); checkout.removeAttribute('tabindex'); }
+      else { checkout.href = '#'; checkout.setAttribute('aria-disabled', 'true'); checkout.setAttribute('tabindex', '-1'); }
+
+      if (!n) {
+        listEl.innerHTML = '<div class="sp-cart__empty"><p>Keranjang masih kosong.</p><button type="button" class="btn btn--outline" data-close data-goto="#katalog">Lihat produk</button></div>';
+        return;
+      }
+      listEl.innerHTML = Object.keys(cart).map(function (id) {
+        var p = PRODUCTS[id];
+        return '<div class="sp-line" data-line="' + id + '">' +
+          '<span class="sp-tile ' + p.tile + '"><img src="' + p.img + '" alt="" width="72" height="65"></span>' +
+          '<div><p class="sp-line__name">' + p.name + '</p><p class="sp-line__price">' + rupiah(p.price) + '</p>' +
+          '<div class="sp-line__row"><div class="sp-qty">' +
+          '<button type="button" data-dec aria-label="Kurangi ' + p.name + '"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-minus"/></svg></button>' +
+          '<output aria-label="Jumlah ' + p.name + '">' + cart[id] + '</output>' +
+          '<button type="button" data-inc aria-label="Tambah ' + p.name + '"><svg class="sp-ico" aria-hidden="true"><use href="#sp-i-plus"/></svg></button>' +
+          '</div><button type="button" class="sp-link" data-remove>Hapus</button></div></div></div>';
+      }).join('');
+    }
+
+    function showToast(text) {
+      $('[data-toast-text]', toast).textContent = text;
+      toast.classList.add('is-on');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.classList.remove('is-on'); }, 3200);
+    }
+
+    function add(ids, qty, label) {
+      ids.forEach(function (id) { cart[id] = (cart[id] || 0) + (qty || 1); });
+      save(); renderCart();
+      fab.classList.remove('is-bump'); void fab.offsetWidth; fab.classList.add('is-bump');
+      showToast(label || ('Masuk keranjang: ' + PRODUCTS[ids[0]].name));
+    }
+
+    listEl.addEventListener('click', function (e) {
+      var line = e.target.closest('[data-line]');
+      if (!line) return;
+      var id = line.getAttribute('data-line');
+      if (e.target.closest('[data-inc]')) cart[id]++;
+      else if (e.target.closest('[data-dec]')) cart[id]--;
+      else if (e.target.closest('[data-remove]')) cart[id] = 0;
+      else return;
+      if (cart[id] <= 0) delete cart[id];
+      save(); renderCart();
+    });
+
+    function openDialog(dlg) {
+      if (typeof dlg.showModal === 'function') { if (!dlg.open) dlg.showModal(); }
+      else dlg.setAttribute('open', '');
+    }
+    function closeDialog(dlg) {
+      if (typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open');
+    }
+    function openCart() { toast.classList.remove('is-on'); renderCart(); openDialog(cartDlg); }
+
+    $all('dialog', app).forEach(function (dlg) {
+      dlg.addEventListener('click', function (e) {
+        if (e.target === dlg) { closeDialog(dlg); return; }
+        var closer = e.target.closest('[data-close]');
+        if (!closer) return;
+        closeDialog(dlg);
+        var goto = closer.getAttribute('data-goto');
+        if (goto) { var t = $(goto, app); if (t) t.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }); }
+      });
+    });
+
+    /* ---------- Quick view ---------- */
+    var qv = $('[data-qv]', app);
+    var qvId = null, qvQty = 1;
+    function openQuickView(id) {
+      var p = PRODUCTS[id], info = INFO[id] || {};
+      if (!p) return;
+      qvId = id; qvQty = 1;
+      var tile = $('.sp-qv__tile', qv);
+      tile.className = 'sp-tile sp-qv__tile ' + (p.tile || '');
+      $('[data-qv-img]', qv).src = p.img;
+      $('[data-qv-img]', qv).alt = p.name;
+      $('[data-qv-cat]', qv).textContent = p.cat;
+      $('[data-qv-name]', qv).textContent = p.name;
+      $('[data-qv-price]', qv).textContent = rupiah(p.price);
+      $('[data-qv-desc]', qv).textContent = p.desc;
+      $('[data-qv-skin]', qv).textContent = info.skin || '-';
+      $('[data-qv-use]', qv).textContent = info.use || '-';
+      $('[data-qv-time]', qv).textContent = info.time || '-';
+      $('[data-qv-qty]', qv).textContent = qvQty;
+      openDialog(qv);
+    }
+    $('[data-qv-minus]', qv).addEventListener('click', function () { qvQty = Math.max(1, qvQty - 1); $('[data-qv-qty]', qv).textContent = qvQty; });
+    $('[data-qv-plus]', qv).addEventListener('click', function () { qvQty = Math.min(20, qvQty + 1); $('[data-qv-qty]', qv).textContent = qvQty; });
+    $('[data-qv-add]', qv).addEventListener('click', function () {
+      if (!qvId) return;
+      closeDialog(qv);
+      add([qvId], qvQty, 'Masuk keranjang: ' + qvQty + 'x ' + PRODUCTS[qvId].name);
+    });
+
+    /* ---------- Klik global: tambah, detail, buka keranjang ---------- */
+    app.addEventListener('click', function (e) {
+      var addBtn = e.target.closest('[data-add]');
+      if (addBtn) {
+        var id = addBtn.getAttribute('data-now-add') || addBtn.closest('[data-id]').getAttribute('data-id');
+        add([id], 1);
+        return;
+      }
+      var qvBtn = e.target.closest('[data-qv-open]');
+      if (qvBtn) {
+        var qid = qvBtn.getAttribute('data-now-detail') || qvBtn.closest('[data-id]').getAttribute('data-id');
+        openQuickView(qid);
+        return;
+      }
+      if (e.target.closest('[data-cart-open]')) openCart();
+    });
+
+    /* ---------- Hero: deret produk, produk tengah aktif ---------- */
+    var arc = $('[data-arc]', app);
+    var track = $('[data-arc-track]', app);
+    var arcBtns = $all('.sp-arc__btn', track);
+    var nowText = $('[data-now-text]', app);
+    var current = -1, ticking = false, swapTimer;
+
+    function setNow(i) {
+      var id = arcBtns[i].getAttribute('data-arc-id');
+      var p = PRODUCTS[id], info = INFO[id] || {};
+      arcBtns.forEach(function (b, j) {
+        if (j === i) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+        b.setAttribute('aria-label', (j === i ? 'Lihat detail ' : 'Pilih ') + PRODUCTS[b.getAttribute('data-arc-id')].name);
+      });
+      $('[data-now-add]', app).setAttribute('data-now-add', id);
+      $('[data-now-detail]', app).setAttribute('data-now-detail', id);
+      nowText.classList.add('is-swap');
+      clearTimeout(swapTimer);
+      swapTimer = setTimeout(function () {
+        $('[data-now-name]', app).textContent = p.name;
+        $('[data-now-fact]', app).textContent = p.cat + ' · ' + (info.time || '');
+        $('[data-now-price]', app).textContent = rupiah(p.price);
+        nowText.classList.remove('is-swap');
+      }, reduceMotion ? 0 : 160);
+    }
+
+    function layoutArc() {
+      ticking = false;
+      var r = track.getBoundingClientRect();
+      var cx = r.left + r.width / 2;
+      var phone = window.innerWidth <= 768;
+      var best = 0, bestD = 1e9;
+      arcBtns.forEach(function (btn, i) {
+        var li = btn.parentNode;
+        var b = li.getBoundingClientRect();
+        var d = (b.left + b.width / 2 - cx) / (b.width + (phone ? 6 : 64));
+        var ad = Math.min(Math.abs(d), 4);
+        if (ad < bestD) { bestD = ad; best = i; }
+        var s = phone ? Math.max(0.5, 1.12 * Math.pow(0.62, ad)) : Math.max(0.42, 1.42 * Math.pow(0.7, ad));
+        var tx = -Math.sign(d) * Math.max(0, ad - 1) * (phone ? 30 : 46);
+        var ty = -ad * (phone ? 6 : 16) + (i % 2 ? 10 : -10) * Math.min(ad, 1);
+        btn.style.setProperty('--s', s.toFixed(3));
+        btn.style.setProperty('--b', Math.max(0.55, 1 - 0.16 * ad).toFixed(3));
+        btn.style.setProperty('--tx', tx.toFixed(1) + 'px');
+        btn.style.setProperty('--ty', ty.toFixed(1) + 'px');
+      });
+      if (best !== current) { current = best; setNow(best); }
+    }
+    function requestLayout() { if (!ticking) { ticking = true; requestAnimationFrame(layoutArc); } }
+    function centerOn(i, smooth) {
+      var li = arcBtns[i].parentNode;
+      var left = li.offsetLeft - (track.clientWidth - li.offsetWidth) / 2;
+      track.scrollTo({ left: left, behavior: smooth && !reduceMotion ? 'smooth' : 'auto' });
+    }
+
+    track.addEventListener('scroll', requestLayout, { passive: true });
+    window.addEventListener('resize', function () { centerOn(Math.max(current, 0), false); requestLayout(); });
+    arcBtns.forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        if (i === current) openQuickView(btn.getAttribute('data-arc-id'));
+        else centerOn(i, true);
+      });
+      btn.addEventListener('focus', function () { if (i !== current) centerOn(i, true); });
+    });
+    track.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      var next = Math.min(arcBtns.length - 1, Math.max(0, current + (e.key === 'ArrowRight' ? 1 : -1)));
+      arcBtns[next].focus({ preventScroll: true });
+      centerOn(next, true);
+    });
+
+    /* Drag dengan mouse di desktop (sentuh sudah ditangani scroll native) */
+    var drag = null;
+    track.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      drag = { x: e.clientX, left: track.scrollLeft, moved: false };
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!drag) return;
+      var dx = e.clientX - drag.x;
+      if (!drag.moved && Math.abs(dx) > 5) { drag.moved = true; arc.classList.add('is-dragging'); track.style.scrollSnapType = 'none'; }
+      if (drag.moved) track.scrollLeft = drag.left - dx;
+    });
+    window.addEventListener('pointerup', function () {
+      if (!drag) return;
+      var moved = drag.moved;
+      drag = null;
+      if (!moved) return;
+      arc.classList.remove('is-dragging');
+      track.style.scrollSnapType = '';
+      centerOn(current, true);
+      track.addEventListener('click', function stop(ev) { ev.stopPropagation(); ev.preventDefault(); }, { capture: true, once: true });
+    });
+
+    var start = arcBtns.findIndex(function (b) { return b.hasAttribute('data-arc-start'); });
+    centerOn(Math.max(start, 0), false);
+    layoutArc();
+
+    /* ---------- Rutinitas per keluhan ---------- */
+    var disc = $('[data-disc]', app);
+    var stage = $('[data-disc-stage]', app);
+    var routineList = $('[data-routine-list]', app);
+    var currentRoutine = 'jerawat';
+
+    function routineTotal(key) { return ROUTINES[key].steps.reduce(function (s, st) { return s + PRODUCTS[st[0]].price; }, 0); }
+
+    function showRoutine(key) {
+      var r = ROUTINES[key];
+      if (!r || key === currentRoutine) return;
+      currentRoutine = key;
+      $all('[data-concern]', app).forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-concern') === key)); });
+      disc.style.setProperty('--disc', r.disc);
+
+      var hero = PRODUCTS[r.hero];
+      var old = $('img.is-on', stage);
+      var img = new Image();
+      img.width = 906; img.height = 822;
+      img.src = hero.img;
+      img.alt = hero.name + ', inti rutinitas ' + r.label.replace('Untuk ', '');
+      stage.appendChild(img);
+      requestAnimationFrame(function () {
+        img.classList.add('is-on');
+        if (old) { old.classList.remove('is-on'); setTimeout(function () { if (old.parentNode) old.parentNode.removeChild(old); }, 320); }
+      });
+
+      routineList.classList.add('is-swap');
+      setTimeout(function () {
+        $('[data-routine-for]', app).textContent = r.label;
+        $('[data-routine-steps]', app).innerHTML = r.steps.map(function (st) {
+          var p = PRODUCTS[st[0]];
+          return '<li class="sp-step"><span class="sp-tile"><img src="' + p.img + '" alt="" width="64" height="58"></span>' +
+            '<span><span class="sp-step__verb">' + st[1] + '</span><span class="sp-step__name">' + p.name + '</span></span>' +
+            '<span class="sp-step__price">' + rupiah(p.price) + '</span></li>';
+        }).join('');
+        $('[data-routine-total]', app).textContent = rupiah(routineTotal(key));
+        routineList.classList.remove('is-swap');
+      }, reduceMotion ? 0 : 200);
+    }
+
+    $all('[data-concern]', app).forEach(function (b) {
+      b.addEventListener('click', function () { showRoutine(b.getAttribute('data-concern')); });
+    });
+    $('[data-add-routine]', app).addEventListener('click', function () {
+      var r = ROUTINES[currentRoutine];
+      add(r.steps.map(function (st) { return st[0]; }), 1, 'Paket masuk keranjang: 4 produk, ' + rupiah(routineTotal(currentRoutine)));
+    });
+
+    /* ---------- Katalog: filter & urutkan ---------- */
+    var filter = 'all';
+    var sortSel = $('[data-sort]', app);
+    function applyCatalog() {
+      var shown = 0;
+      cards.forEach(function (c) {
+        var ok = filter === 'all' || c.getAttribute('data-cat') === filter;
+        c.hidden = !ok;
+        if (ok) shown++;
+      });
+      var mode = sortSel.value;
+      cards.slice().sort(function (a, b) {
+        var pa = Number(a.getAttribute('data-price')), pb = Number(b.getAttribute('data-price'));
+        var sa = Number(a.getAttribute('data-step')), sb = Number(b.getAttribute('data-step'));
+        if (mode === 'low') return pa - pb || sa - sb;
+        if (mode === 'high') return pb - pa || sa - sb;
+        return sa - sb;
+      }).forEach(function (c) { grid.appendChild(c); });
+      grid.classList.toggle('is-curated', filter === 'all' && mode === 'step');
+      $('[data-count]', app).textContent = shown + ' produk';
+      $('[data-empty]', app).hidden = shown > 0;
+    }
+    $all('[data-filter]', app).forEach(function (b) {
+      b.addEventListener('click', function () {
+        filter = b.getAttribute('data-filter');
+        $all('[data-filter]', app).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        applyCatalog();
+      });
+    });
+    sortSel.addEventListener('change', applyCatalog);
+
+    /* ---------- FAQ: satu kartu terbuka ---------- */
+    var faq = $('[data-faq]', app);
+    faq.addEventListener('click', function (e) {
+      var q = e.target.closest('.sp-card__q');
+      if (!q) return;
+      var open = q.getAttribute('aria-expanded') === 'true';
+      $all('.sp-card__q', faq).forEach(function (other) {
+        other.setAttribute('aria-expanded', 'false');
+        var a = document.getElementById(other.getAttribute('aria-controls'));
+        a.hidden = true; a.classList.remove('is-open');
+      });
+      if (!open) {
+        q.setAttribute('aria-expanded', 'true');
+        var ans = document.getElementById(q.getAttribute('aria-controls'));
+        ans.hidden = false; ans.classList.add('is-open');
+      }
+    });
+
+    /* ---------- Masuk saat di-scroll ---------- */
+    var revealEls = $all('[data-reveal]', app);
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('is-in'); });
+    }
+
+    renderCart();
+    return true;
+  }
+
+  if (!init()) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else window.addEventListener('load', init);
+  }
 })();
 </script>
