@@ -1,0 +1,2122 @@
+<style>
+  /* ==========================================================
+     CSS GLOBAL & HERO SECTION
+     ========================================================== */
+  .sozo-hero-section {
+    font-family: 'Poppins', sans-serif;
+    background: transparent; 
+    padding: 60px 20px 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .sozo-hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .sozo-hero-content {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  /* Breadcrumb Styling */
+  .sozo-breadcrumb {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    font-weight: 500;
+  }
+
+  .sozo-breadcrumb a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .sozo-breadcrumb a:hover {
+    color: #1A2080;
+  }
+
+  .sozo-breadcrumb span.separator {
+    color: #cbd5e1;
+    font-size: 10px;
+    display: inline-block;
+  }
+
+  .sozo-breadcrumb span.current {
+    color: #1A2080;
+    font-weight: 600;
+  }
+
+  /* Typography */
+  .sozo-hero-content h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.2;
+    color: #1A2080;
+    margin: 0 0 15px 0;
+    font-weight: 800;
+  }
+
+  .sozo-hero-content p {
+    font-size: clamp(18px, 2vw, 22px);
+    color: #475569;
+    line-height: 1.4;
+    margin: 0 0 30px 0;
+    font-weight: 500;
+  }
+
+  /* Button Styling */
+  .sozo-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1A2080;
+    color: #ffffff !important;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #1A2080;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(26, 32, 128, 0.2);
+  }
+
+  .sozo-hero-btn:hover {
+    background-color: transparent;
+    color: #1A2080 !important;
+    transform: translateY(-2px);
+  }
+
+  .sozo-hero-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  /* Image Area */
+  .sozo-hero-image {
+    flex: 1;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  }
+
+  .sozo-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* ==========================================================
+     SECTION INFO (DI BAWAH HERO)
+     ========================================================== */
+  .sozo-info-section {
+    padding: 0 20px 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sozo-info-text {
+    background: #f8fafc;
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  /* MOBILE RESPONSIVE */
+  @media (max-width: 991px) {
+    .sozo-hero-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .sozo-hero-content {
+      max-width: 100%;
+    }
+    .sozo-breadcrumb {
+      justify-content: center;
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .sozo-hero-section {
+      padding: 40px 15px 20px 15px;
+    }
+    .sozo-info-section {
+      padding: 10px 15px 40px 15px;
+    }
+    .sozo-hero-image {
+      border-radius: 16px;
+      margin-top: 20px;
+    }
+    .sozo-info-text {
+      padding: 20px;
+      font-size: 15px;
+    }
+  }
+</style>
+
+<!-- SECTION HERO -->
+<section class="sozo-hero-section">
+  <div class="sozo-hero-container">
+    
+    <div class="sozo-hero-content">
+      <!-- Breadcrumb -->
+      <nav class="sozo-breadcrumb" aria-label="breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">►</span>
+        <a href="/treatment">Treatment</a>
+        <span class="separator">►</span>
+        <a href="/slimming-treatment/">Slimming Treatment</a>
+        <span class="separator">►</span>
+        <span class="current">Ultrasculpt Treatment</span>
+      </nav>
+
+      <!-- Copywriting Utama -->
+      <h1>Ultrasculpt Treatment</h1>
+      <p>Badan Lebih Kencang dengan Ultrasculpt Treatment</p>
+      
+      <!-- Tombol CTA -->
+      <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Ultrasculpt%20di%20Sozo%20%5Bsrc%3AORG-Ultrasculpt%5D" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="sozo-hero-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        Konsultasi Sekarang
+      </a>
+    </div>
+
+    <!-- Kolom Gambar -->
+    <div class="sozo-hero-image">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2025/12/Ultrasculpt.avif" alt="Ultrasculpt Treatment di Sozo Skin Clinic" loading="lazy">
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION INFO TAMBAHAN -->
+<section class="sozo-info-section">
+  <div class="sozo-info-text">
+    Perawatan dengan teknologi terbaru untuk membantu membentuk otot dan mengurangi lemak tubuh melalui kontraksi otot intensif dalam waktu singkat.
+  </div>
+</section>
+
+<!-- =========================================================
+     SOZO ULTRASCULPT — PROBLEM SECTION
+     ========================================================= -->
+
+<section class="sozo-rf-problem-v4" aria-labelledby="rf-problem-title-v4">
+  <div class="rf-v4-inner">
+
+    <div class="rf-v4-heading">
+      <div class="rf-v4-title-wrap">
+        <h2 id="rf-problem-title-v4">
+          Apakah Kamu Mulai Merasakan <span>Hal Ini?</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="rf-v4-list">
+
+      <div class="rf-v4-card">
+        <span class="rf-v4-number">01</span>
+        <div class="rf-v4-card-text">
+          <h3>Lemak tubuh sulit hilang meski sudah diet dan olahraga</h3>
+        </div>
+        <span class="rf-v4-icon">↗</span>
+      </div>
+
+      <div class="rf-v4-card">
+        <span class="rf-v4-number">02</span>
+        <div class="rf-v4-card-text">
+          <h3>Otot tubuh terasa kendur dan butuh stimulasi ekstra</h3>
+        </div>
+        <span class="rf-v4-icon">↗</span>
+      </div>
+
+      <div class="rf-v4-card">
+        <span class="rf-v4-number">03</span>
+        <div class="rf-v4-card-text">
+          <h3>Ingin meraih bentuk tubuh ideal namun memiliki waktu terbatas</h3>
+        </div>
+        <span class="rf-v4-icon">↗</span>
+      </div>
+
+      <div class="rf-v4-card">
+        <span class="rf-v4-number">04</span>
+        <div class="rf-v4-card-text">
+          <h3>Mencari perawatan untuk menstimulasi otot secara praktis tanpa latihan fisik berat</h3>
+        </div>
+        <span class="rf-v4-icon">↗</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* =========================================================
+   V4 — COMPACT, CLEAN, SAME VISUAL LANGUAGE AS SOZO PAGE
+   ========================================================= */
+.sozo-rf-problem-v4{
+  width:100% !important;
+  margin:0 !important;
+  padding:34px 8% 38px !important;
+  background:#ffffff !important;
+  color:#1e293b !important;
+  font-family:'Poppins','Inter',system-ui,-apple-system,sans-serif !important;
+  box-sizing:border-box !important;
+}
+
+.sozo-rf-problem-v4 *,
+.sozo-rf-problem-v4 *::before,
+.sozo-rf-problem-v4 *::after{
+  box-sizing:border-box !important;
+}
+
+.rf-v4-inner{
+  width:100% !important;
+  max-width:1200px !important;
+  margin:0 auto !important;
+}
+
+/* HEADER */
+
+.rf-v4-heading{
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:space-between !important;
+  gap:30px !important;
+  margin-bottom:20px !important;
+}
+
+.rf-v4-kicker{
+  display:block !important;
+  margin-bottom:5px !important;
+  color:#1A2080 !important;
+  font-size:9px !important;
+  font-weight:700 !important;
+  letter-spacing:.12em !important;
+  text-transform:uppercase !important;
+}
+
+.rf-v4-title-wrap h2{
+  margin:0 !important;
+  color:#1A2080 !important;
+  font-size:25px !important;
+  line-height:1.3 !important;
+  font-weight:700 !important;
+  letter-spacing:-.4px !important;
+}
+
+.rf-v4-title-wrap h2 span{
+  color:#1A2080 !important;
+}
+
+.rf-v4-intro{
+  margin:0 0 2px !important;
+  max-width:300px !important;
+  color:#64748b !important;
+  font-size:12px !important;
+  line-height:1.5 !important;
+  text-align:right !important;
+}
+
+/* CARDS */
+
+.rf-v4-list{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:10px !important;
+}
+
+.rf-v4-card{
+  position:relative !important;
+  display:grid !important;
+  grid-template-columns:26px minmax(0,1fr) 24px !important;
+  gap:9px !important;
+  align-items:center !important;
+  min-height:auto !important;
+  padding:14px 12px !important;
+  background:#f8fafc !important;
+  border:1px solid #e2e8f0 !important;
+  border-radius:12px !important;
+  transition:
+    transform .22s ease,
+    border-color .22s ease,
+    background-color .22s ease,
+    box-shadow .22s ease !important;
+}
+
+.rf-v4-card:hover{
+  transform:translateY(-2px) !important;
+  background:#ffffff !important;
+  border-color:#cfd6e5 !important;
+  box-shadow:0 6px 16px rgba(26,32,128,.06) !important;
+}
+
+.rf-v4-number{
+  color:#a1a8b5 !important;
+  font-size:9px !important;
+  font-weight:700 !important;
+  letter-spacing:.06em !important;
+  line-height:1.6 !important;
+}
+
+.rf-v4-card-text{
+  min-width:0 !important;
+}
+
+.rf-v4-card-text h3{
+  margin:0 0 5px !important;
+  color:#1A2080 !important;
+  font-size:13px !important;
+  line-height:1.4 !important;
+  font-weight:700 !important;
+  letter-spacing:-.05px !important;
+}
+
+.rf-v4-card-text p{
+  margin:0 !important;
+  color:#64748b !important;
+  font-size:10.5px !important;
+  line-height:1.45 !important;
+}
+
+.rf-v4-icon{
+  width:23px !important;
+  height:23px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border:1px solid #dfe4ec !important;
+  border-radius:50% !important;
+  color:#1A2080 !important;
+  font-size:10px !important;
+  line-height:1 !important;
+  transition:all .22s ease !important;
+}
+
+.rf-v4-card:hover .rf-v4-icon{
+  background:#eef2ff !important;
+  border-color:#d4daf5 !important;
+  transform:translate(1px,-1px) !important;
+}
+
+/* TABLET */
+
+@media (max-width:1024px){
+  .sozo-rf-problem-v4{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  .rf-v4-list{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+  .sozo-rf-problem-v4{
+    padding:28px 16px 32px !important;
+  }
+
+  .rf-v4-heading{
+    display:block !important;
+    margin-bottom:16px !important;
+  }
+
+  .rf-v4-title-wrap h2{
+    font-size:20px !important;
+    line-height:1.3 !important;
+  }
+
+  .rf-v4-intro{
+    margin-top:7px !important;
+    max-width:none !important;
+    text-align:left !important;
+    font-size:11px !important;
+  }
+
+  .rf-v4-list{
+    grid-template-columns:1fr 1fr !important;
+    gap:8px !important;
+  }
+
+  .rf-v4-card{
+    grid-template-columns:22px minmax(0,1fr) !important;
+    min-height:auto !important;
+    padding:13px 12px !important;
+  }
+
+  .rf-v4-icon{
+    display:none !important;
+  }
+
+  .rf-v4-card-text h3{
+    font-size:12px !important;
+  }
+
+  .rf-v4-card-text p{
+    font-size:10px !important;
+  }
+}
+
+@media (max-width:430px){
+  .rf-v4-list{
+    grid-template-columns:1fr !important;
+  }
+
+  .rf-v4-card{
+    min-height:auto !important;
+    grid-template-columns:25px minmax(0,1fr) 24px !important;
+    align-items:center !important;
+  }
+
+  .rf-v4-icon{
+    display:flex !important;
+  }
+
+  .rf-v4-card-text h3{
+    margin-bottom:3px !important;
+  }
+}
+</style>
+
+<!-- =====================================================================
+     LOAD FONTAWESOME (Jika tema Elementor Anda belum meloadnya)
+====================================================================== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  /* ==========================================================
+     CSS KHUSUS SERVICES SECTION (Elementor Safe)
+     ========================================================== */
+  .sozo-services-section {
+    font-family: 'Poppins', sans-serif;
+    background: transparent;
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sozo-services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sozo-services-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+  }
+
+  .sozo-services-header h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    color: #1A2080;
+    margin: 0 0 16px 0;
+    font-weight: 700;
+  }
+
+  .sozo-services-header p {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Grid Styling - Disesuaikan untuk 2 Item agar di tengah */
+  .sozo-sku-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  /* Card Styling */
+  .sozo-sku-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #E2E8F0;
+    height: 100%;
+  }
+
+  .sozo-sku-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(26, 32, 128, 0.1);
+    border-color: #1A2080;
+  }
+
+  /* Image Area */
+  .sozo-card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: #F0F4F8;
+  }
+
+  .sozo-card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .sozo-sku-card:hover .sozo-card-img-wrapper img {
+    transform: scale(1.05);
+  }
+
+  /* Card Content */
+  .sozo-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .sozo-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .sozo-card-body h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A2080;
+    line-height: 1.3;
+  }
+
+  .sozo-card-body p.sozo-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 10px;
+    color: #475569;
+  }
+
+  /* Toggle Read More */
+  .sozo-toggle-btn {
+    font-size: 13px;
+    color: #1A2080;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+
+  .sozo-toggle-btn:hover {
+    color: #3b429f;
+  }
+
+  .sozo-toggle-btn i {
+    transition: transform 0.3s ease;
+  }
+
+  .sozo-toggle-btn.active i {
+    transform: rotate(180deg);
+  }
+
+  /* Hidden Content Content */
+  .sozo-hidden-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.5s ease;
+  }
+
+  .sozo-hidden-content.show {
+    max-height: 1000px; /* Angka besar agar muat saat dibuka */
+    opacity: 1;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease;
+  }
+
+  /* Styling Khusus Detail Ultrasculpt */
+  .sozo-specs {
+    font-size: 13px;
+    color: #475569;
+    background: #f8fafc;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    border: 1px solid #e2e8f0;
+  }
+
+  .sozo-specs p {
+    margin: 0;
+  }
+
+  .sozo-target {
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 20px;
+  }
+
+  .sozo-target strong {
+    display: block;
+    color: #1A2080;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .sozo-target ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .sozo-target li {
+    margin-bottom: 5px;
+  }
+
+  .sozo-price {
+    font-size: 15px;
+    color: #475569;
+    margin: auto 0 15px 0; 
+  }
+
+  .sozo-price strong {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1A2080;
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .sozo-card-footer {
+    margin-top: 0;
+  }
+
+  /* Buttons */
+  .sozo-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sozo-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    height: 48px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    border: 2px solid #1A2080 !important;
+  }
+
+  .sozo-btn-primary:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+  }
+
+  /* Mobile Friendly */
+  @media (max-width: 767px) {
+    .sozo-services-section {
+      padding: 40px 15px;
+    }
+    .sozo-sku-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .sozo-card-img-wrapper {
+      height: 140px;
+    }
+    .sozo-card-content {
+      padding: 15px 12px;
+    }
+    .sozo-card-body h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    .sozo-card-body p.sozo-desc {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .sozo-toggle-btn {
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+    .sozo-specs {
+      font-size: 11px;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    .sozo-target {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+    .sozo-target ul {
+      padding-left: 15px;
+    }
+    .sozo-price {
+      font-size: 13px;
+    }
+    .sozo-price strong {
+      font-size: 18px;
+      display: block;
+      margin-left: 0;
+    }
+    .sozo-btn-primary {
+      padding: 8px !important;
+      font-size: 12px !important;
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sozo-sku-grid {
+      grid-template-columns: 1fr; /* 1 baris ke bawah di layar kecil */
+      gap: 20px;
+    }
+    .sozo-card-img-wrapper {
+      height: 200px;
+    }
+    .sozo-card-body h3 {
+      font-size: 18px;
+    }
+    .sozo-card-body p.sozo-desc {
+      font-size: 13px;
+    }
+    .sozo-toggle-btn, .sozo-specs, .sozo-target {
+      font-size: 13px;
+    }
+    .sozo-price strong {
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+</style>
+
+<section class="sozo-services-section">
+  <div class="sozo-services-container">
+    
+    <div class="sozo-services-header">
+      <h2>Solusi Praktis untuk Otot Kencang dan Lemak Berkurang</h2>
+      <p>Dua pilihan durasi UltraSculpt sesuai kebutuhanmu. Bantu kencangkan perut, lengan, paha, dan pinggang lewat kontraksi otot supramaksimal.</p>
+    </div>
+
+    <div class="sozo-sku-grid">
+      
+      <!-- 1. UltraSculpt 15 Menit -->
+      <article class="sozo-sku-card">
+        <div class="sozo-card-img-wrapper">
+          <img src="https://sozoskinclinic.com/wp-content/uploads/2025/07/ultrasculpt.webp" alt="UltraSculpt 15 Menit" loading="lazy">
+        </div>
+        <div class="sozo-card-content">
+          <div class="sozo-card-body">
+            <h3>UltraSculpt 15 Menit</h3>
+            <p class="sozo-desc">Durasi treatment singkat untuk stimulasi otot secara efektif.</p>
+            
+            <!-- Tombol Expand -->
+            <div class="sozo-toggle-btn" onclick="toggleDetails(this)">
+              <span>Lihat Selengkapnya</span> <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            
+            <!-- Konten yang disembunyikan -->
+            <div class="sozo-hidden-content">
+              <div class="sozo-specs">
+                <p>⏱ Treatment: 15 menit<br>
+                   ⏱ Total waktu: ±35 menit<br>
+                   ⚡ Fokus pada pembentukan otot dasar</p>
+              </div>
+              <div class="sozo-target">
+                <strong>Cocok untuk:</strong>
+                <ul>
+                  <li>Pemula</li>
+                  <li>Maintenance</li>
+                  <li>Area kecil</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Harga (Selalu Tampil) -->
+            <div class="sozo-price">Harga mulai <strong>399K</strong></div>
+          </div>
+          <div class="sozo-card-footer">
+            <div class="sozo-card-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Ultrasculpt%20di%20Sozo%20%5Bsrc%3AORG-Ultrasculpt%5D" target="_blank" class="sozo-btn-primary">Reservasi Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. UltraSculpt 30 Menit -->
+      <article class="sozo-sku-card">
+        <div class="sozo-card-img-wrapper">
+          <img src="https://sozoskinclinic.com/wp-content/uploads/2025/12/Ultrasculpt.avif" alt="UltraSculpt 30 Menit" loading="lazy">
+        </div>
+        <div class="sozo-card-content">
+          <div class="sozo-card-body">
+            <h3>UltraSculpt 30 Menit</h3>
+            <p class="sozo-desc">Program lebih intens untuk pembentukan otot & pembakaran lemak.</p>
+            
+            <!-- Tombol Expand -->
+            <div class="sozo-toggle-btn" onclick="toggleDetails(this)">
+              <span>Lihat Selengkapnya</span> <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            
+            <!-- Konten yang disembunyikan -->
+            <div class="sozo-hidden-content">
+              <div class="sozo-specs">
+                <p>⏱ Treatment: 30 menit<br>
+                   ⏱ Total waktu: ±50 menit<br>
+                   ⚡ Kontraksi supramaksimal lebih kuat</p>
+              </div>
+              <div class="sozo-target">
+                <strong>Cocok untuk:</strong>
+                <ul>
+                  <li>Target pembentukan tubuh lebih cepat</li>
+                  <li>Area lebih besar seperti perut</li>
+                  <li>Hasil lebih optimal</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Harga (Selalu Tampil) -->
+            <div class="sozo-price">Harga mulai <strong>399K</strong></div>
+          </div>
+          <div class="sozo-card-footer">
+            <div class="sozo-card-actions">
+              <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Ultrasculpt%20di%20Sozo%20%5Bsrc%3AORG-Ultrasculpt%5D" target="_blank" class="sozo-btn-primary">Reservasi Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Script untuk fungsi buka tutup Lihat Selengkapnya -->
+<script>
+  function toggleDetails(btn) {
+    // Cari elemen konten tepat setelah tombol ini
+    var content = btn.nextElementSibling;
+    var spanText = btn.querySelector('span');
+
+    // Toggle class active & show
+    btn.classList.toggle('active');
+    
+    if (content.classList.contains('show')) {
+      content.classList.remove('show');
+      spanText.innerText = "Lihat Selengkapnya";
+    } else {
+      content.classList.add('show');
+      spanText.innerText = "Sembunyikan";
+    }
+  }
+</script>
+
+<style>
+  /* ==========================================================
+     CSS SECTION GALERI (Elementor Safe)
+     ========================================================== */
+  .sozo-gallery-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .sozo-gallery-section h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    color: #1A2080;
+    font-weight: 800;
+    margin-bottom: 40px;
+    line-height: 1.3;
+  }
+
+  .sozo-image-grid {
+    display: grid;
+    /* Desktop: 2 Kolom karena hanya ada 2 gambar utama */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px; /* Membatasi lebar grid agar gambar tidak terlalu raksasa */
+    margin: 0 auto;
+  }
+
+  .sozo-image-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 1 / 1; /* Biar kotak presisi */
+  }
+
+  .sozo-image-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(26, 32, 128, 0.15);
+  }
+
+  .sozo-image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ==========================================================
+     RESPONSIVE BREAKPOINTS
+     ========================================================== */
+  
+  /* Mobile & Tablet */
+  @media (max-width: 767px) {
+    .sozo-gallery-section {
+      padding: 40px 15px;
+    }
+    .sozo-gallery-section h2 {
+      margin-bottom: 25px;
+    }
+    .sozo-image-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .sozo-image-item {
+      border-radius: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sozo-image-grid {
+      grid-template-columns: 1fr; /* 1 kolom di HP kecil agar detail gambar jelas */
+      max-width: 300px;
+    }
+  }
+</style>
+
+<section class="sozo-gallery-section">
+  <h2>Badan Kencang Mulai dari Sini dengan Ultrasculpt Sozo Skin Treatment</h2>
+  
+  <div class="sozo-image-grid">
+    <!-- Gambar 1 -->
+    <div class="sozo-image-item">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2025/07/ultrasculpt.webp" alt="Ultrasculpt Sozo Skin Treatment 1" loading="lazy">
+    </div>
+
+    <!-- Gambar 2 -->
+    <div class="sozo-image-item">
+      <img src="https://sozoskinclinic.com/wp-content/uploads/2025/12/Ultrasculpt.avif" alt="Ultrasculpt Sozo Skin Treatment 2" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================
+     CSS SECTION BEFORE AFTER - CONTAIN VERSION
+     ========================================================== */
+  .sozo-ba-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 80px 20px;
+    width: 100%;
+    background-color: #1A2080;
+    box-sizing: border-box;
+  }
+
+  .sozo-ba-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sozo-ba-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sozo-ba-header h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.3;
+  }
+
+  .sozo-ba-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .sozo-ba-list li {
+    font-size: 16px;
+    color: #e2e8f0;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.5;
+  }
+
+  .sozo-ba-list li::before {
+    content: '✓';
+    color: #1A2080;
+    font-weight: 900;
+    background: #ffffff;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  /* Grid Gambar */
+  .sozo-ba-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    margin: 0 auto;
+  }
+
+  .sozo-ba-item {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Rasio tetap dipertahankan agar kotak card-nya seragam */
+    aspect-ratio: 4 / 5; 
+    /* Background diganti ke warna gelap/hitam agar saat 'contain' tidak kontras */
+    background-color: #000000; 
+  }
+
+  .sozo-ba-item:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .sozo-ba-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    
+    /* UPDATE: Menggunakan contain agar gambar utuh */
+    object-fit: contain; 
+    object-position: center;
+  }
+
+  /* ==========================================================
+     RESPONSIVE
+     ========================================================== */
+  @media (max-width: 991px) {
+    .sozo-ba-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .sozo-ba-section { padding: 60px 15px; }
+    .sozo-ba-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      max-width: 350px;
+    }
+  }
+</style>
+
+<section class="sozo-ba-section">
+  <div class="sozo-ba-container">
+    <div class="sozo-ba-header">
+      <h2>Badan Lebih Kencang & Otot Tumbuh Optimal</h2>
+      <ul class="sozo-ba-list">
+        <li>Membantu mengurangi lemak dan membentuk otot</li>
+        <li>Tanpa operasi & minim downtime</li>
+        <li>Hasil cepat terlihat</li>
+      </ul>
+    </div>
+
+    <div class="sozo-ba-grid">
+      <div class="sozo-ba-item">
+        <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/LP-Mockup-Slimming-Slimming-Badan-Before-After-PAHA.avif" alt="Before After Ultrasculpt Paha" loading="lazy">
+      </div>
+      <div class="sozo-ba-item">
+        <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Before-After-Perut.avif" alt="Before After Ultrasculpt Perut" loading="lazy">
+      </div>
+      <div class="sozo-ba-item">
+        <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Before-After-Perut-1.avif" alt="Before After Ultrasculpt Perut Samping" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================
+     CSS SECTION PROSES PERAWATAN (Elementor Safe)
+     ========================================================== */
+  .sozo-process-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 80px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #F8FAFC; /* Background abu-abu kebiruan sangat soft */
+  }
+
+  .sozo-process-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .sozo-process-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sozo-process-header h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    color: #1A2080;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+
+  .sozo-process-header p {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Grid Layout 2x2 */
+  .sozo-process-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* Card Styling */
+  .sozo-process-card {
+    background-color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #E2E8F0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sozo-process-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(26, 32, 128, 0.08);
+    border-color: #cbd5e1;
+  }
+
+  /* Icon Wrapper */
+  .sozo-process-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #EEF2FF; /* Lingkaran biru pudar */
+    color: #1A2080;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  /* Text Content in Card */
+  .sozo-process-card h3 {
+    font-size: 20px;
+    color: #1A2080;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+  }
+
+  .sozo-process-card p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ==========================================================
+     RESPONSIVE
+     ========================================================== */
+  
+  @media (max-width: 767px) {
+    .sozo-process-section {
+      padding: 60px 15px;
+    }
+    .sozo-process-header {
+      margin-bottom: 40px;
+    }
+    .sozo-process-grid {
+      grid-template-columns: 1fr; /* Jadi 1 kolom memanjang ke bawah di HP */
+      gap: 20px;
+    }
+    .sozo-process-card {
+      padding: 25px 20px;
+      flex-direction: row; /* Di HP, icon pindah ke kiri, teks ke kanan */
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .sozo-process-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      margin-bottom: 0;
+      flex-shrink: 0; /* Mencegah icon mengecil */
+    }
+    .sozo-process-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .sozo-process-card p {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<section class="sozo-process-section">
+  <div class="sozo-process-container">
+    
+    <!-- Header Section -->
+    <div class="sozo-process-header">
+      <h2>Proses Perawatan Ultrasculpt</h2>
+      <p>Pahami proses perawatan Ultrasculpt dan lihat hasil nyata yang bisa kamu dapatkan dengan cepat</p>
+    </div>
+
+    <!-- Grid Cards -->
+    <div class="sozo-process-grid">
+      
+      <!-- Card 1 -->
+      <div class="sozo-process-card">
+        <div class="sozo-process-icon">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <div>
+          <h3>Konsultasi & Analisa</h3>
+          <p>Konsultasi & analisa tubuh dengan tim profesional Sozo.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="sozo-process-card">
+        <div class="sozo-process-icon">
+          <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <div>
+          <h3>Target Area</h3>
+          <p>Penentuan area tubuh untuk dilakukan treatment.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="sozo-process-card">
+        <div class="sozo-process-icon">
+          <i class="fa-solid fa-bolt-lightning"></i>
+        </div>
+        <div>
+          <h3>Proses Treatment</h3>
+          <p>Proses UltraSculpt Treatment menggunakan teknologi terbaru.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="sozo-process-card">
+        <div class="sozo-process-icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div>
+          <h3>Hasil Akhir</h3>
+          <p>Treatment selesai dan bisa lihat hasilnya.</p>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+</section>
+
+<style>
+  /* ==========================================================
+     CSS SECTION PROMO SLIDER (Elementor Safe)
+     ========================================================== */
+  .sozo-promo-section {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 30px 20px 40px 20px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .sozo-promo-section h2 {
+    font-size: clamp(28px, 4vw, 36px) !important;
+    color: #1A2080 !important;
+    font-weight: 800 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .sozo-promo-section > p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 25px 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  .sozo-promo-slider {
+    position: relative !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+  }
+
+  .sozo-promo-track {
+    display: flex !important;
+    transition: transform 0.5s ease !important;
+  }
+
+  .sozo-promo-slide {
+    flex: 0 0 33.3333% !important;
+    padding: 0 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .sozo-promo-card {
+    aspect-ratio: 16 / 9 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 25px rgba(26, 32, 128, 0.12) !important;
+  }
+
+  .sozo-promo-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .sozo-promo-cta {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 12px !important;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    padding: 11px 16px !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    border: 2px solid #1A2080 !important;
+    transition: all 0.3s ease !important;
+    white-space: nowrap !important;
+  }
+
+  .sozo-promo-cta:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+  }
+
+  .sozo-promo-arrow {
+    position: absolute !important;
+    top: 38% !important;
+    transform: translateY(-50%) !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    color: #ffffff !important;
+    font-size: 0 !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    line-height: 1 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .sozo-promo-arrow svg {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .sozo-promo-arrow:hover {
+    background: #ffffff !important;
+    color: #1A2080 !important;
+    border-color: #ffffff !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .sozo-promo-prev { left: 14px !important; }
+  .sozo-promo-next { right: 14px !important; }
+
+  .sozo-promo-dots {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-top: 18px !important;
+  }
+
+  .sozo-promo-dot {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    background: #cbd5e1 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .sozo-promo-dot.active {
+    background: #1A2080 !important;
+    width: 28px !important;
+    border-radius: 6px !important;
+  }
+
+  @media (max-width: 767px) {
+    .sozo-promo-section {
+      padding: 20px 15px 30px 15px !important;
+    }
+    .sozo-promo-section > p {
+      font-size: 14px !important;
+      margin-bottom: 18px !important;
+    }
+    .sozo-promo-slide {
+      flex-basis: 100% !important;
+      padding: 0 4px !important;
+    }
+    .sozo-promo-card {
+      border-radius: 14px !important;
+    }
+    .sozo-promo-arrow {
+      width: 40px !important;
+      height: 40px !important;
+    }
+    .sozo-promo-arrow svg {
+      width: 16px !important;
+      height: 16px !important;
+    }
+    .sozo-promo-prev { left: 8px !important; }
+    .sozo-promo-next { right: 8px !important; }
+    .sozo-promo-cta {
+      font-size: 14px !important;
+      padding: 12px 16px !important;
+    }
+  }
+</style>
+
+<section class="sozo-promo-section">
+  <h2>Promo Spesial Ultrasculpt</h2>
+  <p>Klaim promo slimming treatment terbaik sebelum kehabisan!</p>
+
+  <div class="sozo-promo-slider" id="sozoPromoSlider">
+    <div class="sozo-promo-track" id="sozoPromoTrack">
+      <div class="sozo-promo-slide"><div class="sozo-promo-card">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/08/slimming-treatment-banner-1.webp" alt="Promo Slimming Treatment 1" loading="lazy">
+      </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20klaim%20promo%20treatment%20Ultrasculpt%20di%20Sozo%20%5Bsrc%3AORG-Ultrasculpt%5D" target="_blank" rel="noopener noreferrer" class="sozo-promo-cta">Klaim Sekarang</a>
+      </div>
+      <div class="sozo-promo-slide"><div class="sozo-promo-card">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/08/slimming-treatment-banner-3.webp" alt="Promo Slimming Treatment 2" loading="lazy">
+      </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20klaim%20promo%20treatment%20Ultrasculpt%20di%20Sozo%20%5Bsrc%3AORG-Ultrasculpt%5D" target="_blank" rel="noopener noreferrer" class="sozo-promo-cta">Klaim Sekarang</a>
+      </div>
+      <div class="sozo-promo-slide"><div class="sozo-promo-card">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/08/slimming-treatment-banner-4.webp" alt="Promo Slimming Treatment 3" loading="lazy">
+      </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20klaim%20promo%20treatment%20Ultrasculpt%20di%20Sozo%20%5Bsrc%3AORG-Ultrasculpt%5D" target="_blank" rel="noopener noreferrer" class="sozo-promo-cta">Klaim Sekarang</a>
+      </div>
+      <div class="sozo-promo-slide"><div class="sozo-promo-card">
+        <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/08/slimming-treatment-banner-5.webp" alt="Promo Slimming Treatment 4" loading="lazy">
+      </div>
+        <a href="https://api.whatsapp.com/send?phone=6285175318108&text=Halo%2C%20saya%20mau%20klaim%20promo%20treatment%20Ultrasculpt%20di%20Sozo%20%5Bsrc%3AORG-Ultrasculpt%5D" target="_blank" rel="noopener noreferrer" class="sozo-promo-cta">Klaim Sekarang</a>
+      </div>
+    </div>
+
+    <button class="sozo-promo-arrow sozo-promo-prev" onclick="sozoPromoMove(-1)" aria-label="Sebelumnya"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button class="sozo-promo-arrow sozo-promo-next" onclick="sozoPromoMove(1)" aria-label="Berikutnya"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+
+    <div class="sozo-promo-dots" id="sozoPromoDots"></div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var index = 0;
+    var track = document.getElementById('sozoPromoTrack');
+    var dotsWrap = document.getElementById('sozoPromoDots');
+    if (!track || !dotsWrap) return;
+    var total = track.children.length;
+
+    function perView() {
+      return window.innerWidth <= 767 ? 1 : 3;
+    }
+
+    function maxIndex() {
+      return total - perView();
+    }
+
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      for (var i = 0; i <= maxIndex(); i++) {
+        var dot = document.createElement('button');
+        dot.className = 'sozo-promo-dot' + (i === index ? ' active' : '');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        (function (n) {
+          dot.addEventListener('click', function () { sozoPromoGo(n); });
+        })(i);
+        dotsWrap.appendChild(dot);
+      }
+    }
+
+    window.sozoPromoGo = function (n) {
+      var max = maxIndex();
+      if (n < 0) n = max;
+      if (n > max) n = 0;
+      index = n;
+      track.style.transform = 'translateX(-' + (index * (100 / perView())) + '%)';
+      var dots = dotsWrap.children;
+      for (var j = 0; j < dots.length; j++) {
+        dots[j].classList.toggle('active', j === index);
+      }
+    };
+
+    window.sozoPromoMove = function (dir) {
+      sozoPromoGo(index + dir);
+    };
+
+    window.addEventListener('resize', function () {
+      buildDots();
+      sozoPromoGo(index);
+    });
+
+    buildDots();
+
+    setInterval(function () {
+      sozoPromoGo(index + 1);
+    }, 5000);
+  })();
+</script>
+
+<style>
+    /* Section FAQ Sozo Meso / Ultrasculpt */
+    .sozo-faq-wrapper {
+        padding: 80px 20px;
+        font-family: 'Poppins', sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #ffffff;
+    }
+
+    .sozo-faq-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .sozo-faq-header h2 {
+        color: #1A2080;
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+
+    .sozo-faq-header p {
+        color: #555e7d;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Accordion Styling */
+    .sozo-faq-item {
+        margin-bottom: 15px;
+        border: 1px solid #f0f0f5;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .sozo-faq-question {
+        padding: 20px 25px;
+        background: #ffffff;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s ease;
+    }
+
+    .sozo-faq-question h3 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: #1A2080;
+        line-height: 1.4;
+        padding-right: 20px;
+    }
+
+    .sozo-faq-icon {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+    }
+
+    .sozo-faq-icon::before,
+    .sozo-faq-icon::after {
+        content: '';
+        position: absolute;
+        background-color: #1A2080;
+        transition: all 0.3s ease;
+    }
+
+    .sozo-faq-icon::before {
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    .sozo-faq-icon::after {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .sozo-faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+        background: #fcfcff;
+    }
+
+    .sozo-faq-answer-inner {
+        padding: 0 25px 25px 25px;
+        color: #555e7d;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .sozo-faq-answer-inner p {
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+
+    .sozo-faq-answer-inner p:last-child {
+        margin-bottom: 0;
+    }
+
+    .sozo-faq-answer-inner ul {
+        margin-top: 0;
+        margin-bottom: 15px;
+        padding-left: 20px;
+    }
+
+    .sozo-faq-answer-inner li {
+        margin-bottom: 8px;
+    }
+
+    .sozo-faq-item.active {
+        border-color: #1A2080;
+        box-shadow: 0 10px 25px rgba(26, 32, 128, 0.05);
+    }
+
+    .sozo-faq-item.active .sozo-faq-answer {
+        max-height: 1200px;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .sozo-faq-item.active .sozo-faq-icon {
+        transform: rotate(45deg);
+    }
+
+    @media (max-width: 767px) {
+        .sozo-faq-header h2 { font-size: 26px; }
+        .sozo-faq-wrapper { padding: 50px 20px; }
+        .sozo-faq-question h3 { font-size: 15px; }
+    }
+</style>
+
+<section class="sozo-faq-wrapper">
+    <div class="sozo-faq-header">
+        <h2>FaQ (Frequently Asked Question)</h2>
+        <p><b>Bentuk Tubuh Ideal dengan Perawatan UltraSculpt di SOZO</b><br>
+        Ingin membentuk otot dan mengurangi lemak tanpa operasi? Yuk, reservasi UltraSculpt di Sozo Skin Clinic sekarang!</p>
+    </div>
+
+    <div class="sozo-faq-container">
+        
+        <!-- FAQ 1 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Apa itu UltraSculpt?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>UltraSculpt adalah treatment pembentukan tubuh yang menggunakan teknologi elektro current untuk merangsang kontraksi otot secara intens, membantu membentuk otot dan membakar lemak secara efektif tanpa operasi.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Bagaimana cara kerja UltraSculpt?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>UltraSculpt bekerja dengan menciptakan kontraksi otot supramaksimal (lebih kuat dari olahraga biasa). Kontraksi ini memicu:</p>
+                    <ul>
+                        <li>Pembentukan massa otot baru</li>
+                        <li>Pembakaran lemak di area treatment</li>
+                        <li>Peningkatan kekencangan tubuh</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Apa manfaat utama UltraSculpt?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Manfaat dari Ultrasculpt treatment adalah:</p>
+                    <ul>
+                        <li>Membentuk otot lebih cepat tanpa olahraga intens</li>
+                        <li>Mengurangi lemak di area tertentu</li>
+                        <li>Mengencangkan tubuh (perut, lengan, paha, dll)</li>
+                        <li>Membantu body contouring lebih ideal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Area tubuh mana saja yang bisa di-treatment?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>UltraSculpt treatment dapat diperuntukan ke beberapa bagian tubuh seperti:</p>
+                    <ul>
+                        <li>Perut (abs)</li>
+                        <li>Lengan</li>
+                        <li>Paha</li>
+                        <li>Pinggang</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Berapa lama durasi treatment UltraSculpt?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Tersedia 2 pilihan treatment dengan durasi berbeda:</p>
+                    <ul>
+                        <li>UltraSculpt 15 menit → total treatment sekitar 35 menit</li>
+                        <li>UltraSculpt 30 menit → total treatment sekitar 50 menit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Apakah UltraSculpt sakit?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Treatment Ultrasculpt tidak menimbulkan rasa sakit. Anda hanya akan merasakan kontraksi otot yang intens seperti sedang olahraga berat, namun tetap nyaman dan aman.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Apakah hasil UltraSculpt permanen?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Hasil ultrasculpt bisa bertahan lama jika didukung dengan:</p>
+                    <ul>
+                        <li>Pola makan sehat</li>
+                        <li>Olahraga ringan</li>
+                        <li>Gaya hidup seimbang</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Apakah UltraSculpt bisa menggantikan olahraga?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Tidak sepenuhnya. UltraSculpt membantu mempercepat pembentukan otot dan pembakaran lemak, namun tetap ideal jika dikombinasikan dengan gaya hidup sehat.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 9 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Siapa yang cocok melakukan UltraSculpt?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Treatment ini sangat cocok untuk:</p>
+                    <ul>
+                        <li>Anda yang ingin membentuk tubuh lebih ideal</li>
+                        <li>Memiliki lemak lokal yang sulit hilang</li>
+                        <li>Ingin meningkatkan definisi otot tanpa operasi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 10 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Apakah ada downtime setelah treatment?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Tidak ada downtime. Setelah melakukan ultrasculpt treatment, Anda bisa langsung kembali beraktivitas setelah treatment.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 11 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Apakah UltraSculpt aman?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>UltraSculpt treatment sangat aman karena merupakan perawatan non-invasive (tanpa operasi), dilakukan oleh tenaga profesional, menggunakan teknologi modern.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 12 -->
+        <div class="sozo-faq-item">
+            <div class="sozo-faq-question" onclick="toggleFaq(this)">
+                <h3>Berapa harga UltraSculpt?</h3>
+                <div class="sozo-faq-icon"></div>
+            </div>
+            <div class="sozo-faq-answer">
+                <div class="sozo-faq-answer-inner">
+                    <p>Ultrasculpt treatment di Sozo mulai dari Rp 399.000</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    function toggleFaq(element) {
+        const item = element.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        document.querySelectorAll('.sozo-faq-item').forEach(el => {
+            el.classList.remove('active');
+        });
+
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apa itu UltraSculpt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UltraSculpt adalah treatment pembentukan tubuh yang menggunakan teknologi elektro current untuk merangsang kontraksi otot secara intens, membantu membentuk otot dan membakar lemak secara efektif tanpa operasi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara kerja UltraSculpt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UltraSculpt bekerja dengan menciptakan kontraksi otot supramaksimal (lebih kuat dari olahraga biasa). Kontraksi ini memicu pembentukan massa otot baru, pembakaran lemak di area treatment, dan peningkatan kekencangan tubuh."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa manfaat utama UltraSculpt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Manfaat dari Ultrasculpt treatment adalah membantu membentuk otot lebih cepat tanpa olahraga intens, mengurangi lemak di area tertentu, mengencangkan tubuh (perut, lengan, paha, dll), dan membantu body contouring lebih ideal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Area tubuh mana saja yang bisa di-treatment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UltraSculpt treatment dapat diperuntukan ke beberapa bagian tubuh seperti perut (abs), lengan, paha, dan pinggang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa lama durasi treatment UltraSculpt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tersedia 2 pilihan treatment dengan durasi berbeda: UltraSculpt 15 menit (total treatment sekitar 35 menit) dan UltraSculpt 30 menit (total treatment sekitar 50 menit)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah UltraSculpt sakit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treatment Ultrasculpt tidak menimbulkan rasa sakit. Anda hanya akan merasakan kontraksi otot yang intens seperti sedang olahraga berat, namun tetap nyaman dan aman."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah hasil UltraSculpt permanen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hasil ultrasculpt bisa bertahan lama jika didukung dengan pola makan sehat, olahraga ringan, dan gaya hidup seimbang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah UltraSculpt bisa menggantikan olahraga?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak sepenuhnya. UltraSculpt membantu mempercepat pembentukan otot dan pembakaran lemak, namun tetap ideal jika dikombinasikan dengan gaya hidup sehat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Siapa yang cocok melakukan UltraSculpt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treatment ini sangat cocok untuk Anda yang ingin membentuk tubuh lebih ideal, memiliki lemak lokal yang sulit hilang, dan ingin meningkatkan definisi otot tanpa operasi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah ada downtime setelah treatment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak ada downtime. Setelah melakukan ultrasculpt treatment, Anda bisa langsung kembali beraktivitas setelah treatment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah UltraSculpt aman?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UltraSculpt treatment sangat aman karena merupakan perawatan non-invasive (tanpa operasi), dilakukan oleh tenaga profesional, dan menggunakan teknologi modern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa harga UltraSculpt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ultrasculpt treatment di Sozo mulai dari Rp 399.000."
+      }
+    }
+  ]
+}
+</script>

@@ -92,8 +92,8 @@ Berikan data berikut ke AI sebelum meminta kode:
 
 ### 💃 4. Slimming, RF, & Meso Treatment (Shape & Contouring)
 - [x] **Main Hub: Slimming Treatment** (`https://sozoskinclinic.com/slimming-treatment/`)[cite: 1]
-- [ ] Caloburn Treatment (`https://sozoskinclinic.com/caloburn-treatment/`)
-- [ ] UltraSculpt Treatment (`https://sozoskinclinic.com/ultrasculpt-treatment/`) — *URL live benar `ultrasculpt`, README lama pakai typo `ultrascrupt`*
+- [x] Caloburn Treatment (`https://sozoskinclinic.com/caloburn-treatment/`) — *redesign total ke pola Ultrasculpt 2026-11-04: H1 "Caloburn - Sauna Blanket Treatment", copy + FAQPage 10 pertanyaan mengikuti dokumen internal, 60 menit, 1–2x seminggu (riset, perlu konfirmasi), Rp 999.000, 3 klinik (Benhil, Pondok Bambu, Bintaro)*
+- [x] UltraSculpt Treatment (`https://sozoskinclinic.com/ultrasculpt-treatment/`) — *URL live benar `ultrasculpt`, folder repo masih `ultrascrupt`*. Redesign total ke pola Restylane 2026-11-03: copy + FAQPage 10 pertanyaan mengikuti dokumen internal, Rp 899.000 per sesi (30 menit), tiap 1 minggu, 10 klinik
 - [x] **Meso Treatment Hub** (`https://sozoskinclinic.com/meso-treatment/`)
     - [x] Meso Slim Body (`https://sozoskinclinic.com/meso-treatment/meso-slim-body/`) — Rp 1.499.000
     - [x] Meso V Line (`https://sozoskinclinic.com/meso-treatment/meso-v-line/`) — Rp 299.000
@@ -106,7 +106,7 @@ Berikan data berikut ke AI sebelum meminta kode:
 
 ### 💉 5. Injectable & Anti-Aging Treatment
 - [x] **Main Hub: Injectable Treatment** (`https://sozoskinclinic.com/injectable-treatment/`)
-- [x] **Botox:** Zo-Tox Treatment (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/`) — *revamp UI + schema siap (2026-08-05), WPCode belum dipasang; CSS/JS dipisah ke `style-js.html` (3 widget: style-js + markup + schema)*
+- [x] **Botox:** Zo-Tox Treatment (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/`) — *redesign ke layout hub Injectable 2026-11-04: satu file `index.html` (JSON-LD + CSS + JS + markup), deskripsi + FAQPage 13 pertanyaan mengikuti dokumen internal, 5 kartu SKU dengan harga. `style-js.html` dan `schema-markup.html` lama tidak dipakai. WPCode belum dipasang*
     - [ ] Zo-Tox 10U (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/zo-tox-10u/`) — *sub-treatment baru*
     - [ ] Zo-Tox Premium (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/zo-tox-premium/`) — *sub-treatment baru*
 - [x] **Threadlift:** Tanam Benang Hub (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/`)
