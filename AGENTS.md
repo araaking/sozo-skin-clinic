@@ -36,16 +36,8 @@ Rule ini berlaku untuk penjelasan, dokumentasi, dan komentar. **Tidak berlaku un
 
 Proyek ini dulunya fokus tunggal pada schema markup JSON-LD. Sejak 13 Juli 2026, scope berkembang menjadi dokumentasi UI & SEO lengkap untuk `sozoskinclinic.com`. README.md, AGENTS.md, dan Dokumentasi.md adalah tiga dokumen utama. Folder `docs/` adalah ekstensi modular:
 
-* **`docs/adr/`** — Architecture Decision Records. Setiap keputusan teknis (kenapa, bukan cuma apa) layak didokumentasikan di sini. Saat ini 8 ADR:
-  - `0001-disable-yoast-schema.md` — Matikan output JSON-LD Yoast SEO
-  - `0002-use-service-not-product.md` — Pakai schema Service, bukan Product
-  - `0003-homepage-as-knowledge-hub.md` — Homepage sebagai knowledge graph hub
-  - `0004-pricespecification-as-offer-wrapper.md` — `Service.offers` pakai wrapper PriceSpecification
-  - `0005-keep-faq-after-rich-result-removal.md` — FAQPage tetap dipasang meski Google hapus rich result Mei 2026
-  - `0006-skip-yoast-breadcrumb.md` — Skip Yoast breadcrumb sepenuhnya (visual maupun schema)
-  - `0007-two-file-convention.md` — Konvensi dua file per treatment (index.html + schema-markup.html)
-  - `0008-single-source-blog-schema.md` — Satu sumber schema artikel (`blog/singlepost.php`), `articleBody` + referensi entity
-* **`docs/components/`** — UI component specs. Standar atom/molekul UI yang dipakai di LP. Standarisasi di level **atom** (button, input, badge) — bukan di level section (hero, info-row). Section bervariasi antar LP, atom harus konsisten. Saat ini 5 specs: button, table, card, accordion, whatsapp-button.
+* **`docs/adr/`** — Architecture Decision Records. Setiap keputusan teknis (kenapa, bukan cuma apa) layak didokumentasikan di sini. Nama file ADR menjelaskan keputusannya; baca ADR terkait sebelum mengubah pola schema.
+* **`docs/components/`** — UI component specs. Standar atom/molekul UI yang dipakai di LP. Standarisasi di level **atom** (button, input, badge) — bukan di level section (hero, info-row). Section bervariasi antar LP, atom harus konsisten.
 
 AGENTS.md ini fokus pada **schema generation rules** + cara AI bekerja di project. Untuk keputusan arsitektur, lihat `docs/adr/`. Untuk UI components, lihat `docs/components/`. Untuk status per-LP, lihat README.md.
 
