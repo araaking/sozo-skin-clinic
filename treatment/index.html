@@ -3,11 +3,11 @@
      URL     : https://sozoskinclinic.com/treatment/
      Style   : Sozo Design System V1.1 (design-system/), Elementor Safe
      Seksi   : Hero (breadcrumb, H1, banner konsultasi, ikon kategori)
-               -> Katalog (cari, chip keluhan, tab kategori, kartu, muat lebih banyak)
+               -> Katalog (cari, chip keluhan, tab kategori, kartu, pagination ?halaman=n)
                -> CTA konsultasi
      Kartu   : Ditulis statis oleh build-treatment-list.mjs dari treatments.json.
                Jangan edit isi di antara penanda GEN secara manual.
-     JS      : data-treatment.js (filter, cari, muat lebih banyak). Pasang terpisah.
+     JS      : data.js (filter, cari, pagination ?halaman=n). Pasang terpisah.
      JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList).
      ============================================================ -->
 
@@ -603,6 +603,32 @@
   /* Tombol WA di atas stretched link supaya tetap bisa diklik */
   #sozo-react-app a.tc-card__action { position: relative !important; z-index: 2 !important; }
 
+  /* Tombol "Buat Jadwal" kartu: gaya sama dengan BUAT JADWAL di halaman lokasi */
+  #sozo-react-app a.tc-card__action.btn--primary,
+  #sozo-react-app a.tc-card__action.btn--primary:visited {
+    min-height: 42px !important;
+    padding: 0 16px !important;
+    border: 1.5px solid transparent !important;
+    border-radius: 12px !important;
+    background-color: var(--color-brand-primary) !important;
+    color: var(--color-white) !important;
+    box-shadow: 0 4px 12px rgba(26, 32, 128, 0.18) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    text-transform: uppercase !important;
+  }
+  #sozo-react-app a.tc-card__action.btn--primary:hover {
+    background-color: var(--color-brand-primary) !important;
+    color: var(--color-white) !important;
+    box-shadow: 0 6px 16px rgba(26, 32, 128, 0.24) !important;
+  }
+  #sozo-react-app a.tc-card__action svg.btn__icon {
+    width: 15px !important;
+    height: 15px !important;
+    fill: currentColor !important;
+  }
+
   /* Hover hanya untuk kartu yang seluruhnya bisa diklik */
   #sozo-react-app .tc-card--link:hover {
     transform: translateY(-2px) !important;
@@ -610,7 +636,6 @@
     border-color: var(--color-border-strong) !important;
   }
   #sozo-react-app .tc-card--link:hover .tc-card__media img { transform: scale(1.03) !important; }
-  #sozo-react-app .tc-card--link:hover .tc-card__action { background-color: var(--color-primary-subtle) !important; }
 
   /* Empty state */
   #sozo-react-app .tc-empty {
@@ -641,13 +666,61 @@
     color: var(--color-text-secondary) !important;
   }
 
-  /* Muat lebih banyak */
-  #sozo-react-app .tc-more {
+  /* Pagination (URL ?halaman=n, diatur data.js) */
+  #sozo-react-app .tc-pagination {
     display: flex !important;
+    flex-wrap: wrap !important;
     justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
     margin-top: 32px !important;
   }
-  #sozo-react-app .tc-more .btn { min-width: 240px !important; }
+  #sozo-react-app .tc-page {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    margin: 0 !important;
+    padding: 0 8px !important;
+    border: none !important;
+    border-radius: var(--radius-full) !important;
+    background: transparent !important;
+    color: var(--color-text-secondary) !important;
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+  }
+  #sozo-react-app .tc-page:hover:not(:disabled):not([aria-current="page"]) {
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+  #sozo-react-app .tc-page[aria-current="page"] {
+    background-color: var(--color-brand-primary) !important;
+    color: var(--color-white) !important;
+    cursor: default !important;
+  }
+  #sozo-react-app .tc-page:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+  #sozo-react-app .tc-page--arrow {
+    color: var(--color-brand-primary) !important;
+    font-size: 20px !important;
+  }
+  #sozo-react-app .tc-page--arrow:disabled {
+    color: var(--color-border) !important;
+    cursor: default !important;
+  }
+  #sozo-react-app .tc-page--dots {
+    min-width: 24px !important;
+    padding: 0 !important;
+    color: var(--color-text-muted) !important;
+    cursor: default !important;
+  }
 
   /* ============ CTA KONSULTASI ============ */
   #sozo-react-app .tc-cta-section { padding-bottom: var(--section-y) !important; }
@@ -731,8 +804,18 @@
     #sozo-react-app .tc-card__meta { font-size: 12px !important; }
     #sozo-react-app .tc-card__price { font-size: 15px !important; }
     #sozo-react-app .tc-card .btn--sm { padding: 0 8px !important; font-size: 12px !important; }
+    #sozo-react-app a.tc-card__action.btn--primary {
+      min-height: 38px !important;
+      padding: 0 8px !important;
+      gap: 6px !important;
+      font-size: 11.5px !important;
+      font-weight: 700 !important;
+    }
+    #sozo-react-app a.tc-card__action svg.btn__icon { width: 13px !important; height: 13px !important; }
 
-    #sozo-react-app .tc-more .btn { width: 100% !important; }
+    #sozo-react-app .tc-pagination { gap: 4px !important; margin-top: 24px !important; }
+    #sozo-react-app .tc-page { min-width: 36px !important; height: 36px !important; padding: 0 6px !important; }
+    #sozo-react-app .tc-page--dots { min-width: 20px !important; padding: 0 !important; }
     #sozo-react-app .tc-cta {
       flex-direction: column !important;
       align-items: stretch !important;
@@ -854,21 +937,26 @@
         <button type="button" class="tc-tab" data-cat="scar-treatment" data-title="Scar Treatment" data-link="https://sozoskinclinic.com/skin-treatment/scar-treatment/" data-desc="" aria-pressed="false">Scar</button>
         <button type="button" class="tc-tab" data-cat="rf-treatment" data-title="RF Treatment" data-link="https://sozoskinclinic.com/radiofrequency-treatment/" data-desc="" aria-pressed="false">RF</button>
         <button type="button" class="tc-tab" data-cat="hifu-treatment" data-title="HIFU Treatment" data-link="https://sozoskinclinic.com/hifu-treatment/" data-desc="" aria-pressed="false">HIFU</button>
+        <button type="button" class="tc-tab" data-cat="slimming-treatment" data-title="Slimming Treatment" data-link="https://sozoskinclinic.com/slimming-treatment/" data-desc="" aria-pressed="false">Slimming</button>
         <!-- /GEN:TABS -->
       </div>
 
       <p class="tc-filter-desc" id="tc-filter-desc" hidden></p>
       <p class="tc-count" id="tc-count" aria-live="polite">
         <!-- GEN:COUNT -->
-        Menampilkan 12 dari 88 treatment
+        Menampilkan 1–12 dari 90 treatment
         <!-- /GEN:COUNT -->
       </p>
 
+      <!-- Ikon WhatsApp dipakai ulang oleh tombol "Buat Jadwal" di kartu (sama dengan halaman lokasi) -->
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="tc-i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+      </svg>
       <div class="tc-grid" id="tc-grid">
         <!-- GEN:CARDS -->
         <article class="tc-card" data-cat="skin-booster" data-concerns="kusam" data-search="whitening booster skin booster skin booster treatment skin booster whitening brightening">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/K-Glow-DNA-boost.avif" alt="Whitening Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/K-Glow-DNA-boost.webp" alt="Whitening Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <span class="tc-card__badge">Baru</span>
           <div class="tc-card__body">
@@ -877,13 +965,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 899.000</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="skin-booster" data-concerns="penuaan" data-search="vitaran h skin booster skin booster treatment skin booster anti aging regenerasi">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Healer1.avif" alt="Vitaran H di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Healer1.webp" alt="Vitaran H di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <span class="tc-card__badge">Baru</span>
           <div class="tc-card__body">
@@ -892,7 +980,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 7.598.000</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -907,13 +995,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 599.000</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="penuaan" data-search="rejuran healer skin booster skin booster treatment skin booster anti aging regenerasi">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Healer1.avif" alt="Rejuran Healer di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Healer1.webp" alt="Rejuran Healer di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -921,13 +1009,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>90 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 6.499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="" data-search="rejuran skin booster skin booster skin booster treatment skin booster hidrasi">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Scar1.avif" alt="Rejuran Skin Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Scar1.webp" alt="Rejuran Skin Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -935,13 +1023,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>90 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 2.999.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="" data-search="rejuran hb skin booster skin booster treatment skin booster hidrasi maksimal">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-HB.avif" alt="Rejuran HB di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-HB.webp" alt="Rejuran HB di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -949,13 +1037,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>90 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 8.198.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="penuaan" data-search="jalupro skin booster skin booster treatment skin booster kolagen mata panda">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/09/jalupro.webp" alt="Jalupro di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/09/jalupro.webp" alt="Jalupro di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -963,13 +1051,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 8.598.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="penuaan" data-search="profhilo skin booster skin booster treatment skin booster remodeling kulit lifting">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/12/profhilo-treatment-1.avif" alt="Profhilo di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/12/profhilo-treatment-1.webp" alt="Profhilo di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -977,13 +1065,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 6.999.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="kusam" data-search="dna glow (dna salmon) skin booster skin booster treatment skin booster dna salmon cerah">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/K-Glow-DNA-boost.avif" alt="DNA Glow (DNA Salmon) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/K-Glow-DNA-boost.webp" alt="DNA Glow (DNA Salmon) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -991,13 +1079,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.599.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="kusam pori" data-search="glass skin booster skin booster skin booster treatment skin booster glowing pori-pori">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Glass-Skin-Skinbooster1.avif" alt="Glass Skin Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Glass-Skin-Skinbooster1.webp" alt="Glass Skin Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -1005,13 +1093,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 2.099.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="" data-search="exosome face skin booster skin booster treatment skin booster exosome sensitif">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Exosome-Face.avif" alt="Exosome Face di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Exosome-Face.webp" alt="Exosome Face di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -1019,13 +1107,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>90 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 8.398.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="penuaan" data-search="xela rederm skin booster skin booster treatment skin booster anti aging">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Xela-Rederm1.avif" alt="Xela Rederm di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Xela-Rederm1.webp" alt="Xela Rederm di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -1033,13 +1121,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 8.598.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="penuaan" data-search="juvelook skin booster skin booster treatment skin booster volume kolagen">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/09/juvelook.webp" alt="Juvelook di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/09/juvelook.webp" alt="Juvelook di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -1047,13 +1135,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 11.198.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="" data-search="nucleofill skin booster skin booster treatment skin booster regenerasi">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2024/07/nucleofill-skinbooster-treatment.avif" alt="Nucleofill di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/07/nucleofill-skinbooster-treatment.webp" alt="Nucleofill di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -1061,13 +1149,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>80 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 6.499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="penuaan" data-search="restylane skinbooster skin booster skin booster treatment skin booster hidrasi kolagen">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Restylance-Scar.avif" alt="Restylane Skinbooster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Restylance-Scar.webp" alt="Restylane Skinbooster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -1075,13 +1163,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 7.798.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="skin-booster" data-concerns="" data-search="aqua shine skinbooster skin booster skin booster treatment skin booster hidrasi">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/09/aquashine.webp" alt="Aqua Shine Skinbooster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/09/aquashine.webp" alt="Aqua Shine Skinbooster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -1089,13 +1177,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 2.599.000</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="skin-booster" data-concerns="kusam" data-search="sozo pink bomb skin booster skin booster treatment skin booster mencerahkan">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/09/sozo-pink-bomb.webp" alt="Sozo Pink Bomb di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/09/sozo-pink-bomb.webp" alt="Sozo Pink Bomb di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -1103,7 +1191,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 3.099.000</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1117,13 +1205,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 6.198.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="" data-search="panda eye booster skin booster skin booster treatment eye treatment mata panda">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/under-eye-filler-mata-panda-1.avif" alt="Panda Eye Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/under-eye-filler-mata-panda-1.webp" alt="Panda Eye Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -1131,13 +1219,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 2.099.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="skin-booster" data-concerns="" data-search="pink lips booster skin booster skin booster treatment lip treatment bibir hitam">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pink-Lips.avif" alt="Pink Lips Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pink-Lips.webp" alt="Pink Lips Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Skin Booster</p>
@@ -1145,13 +1233,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>30 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.599.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="injectable-treatment" data-concerns="penuaan" data-search="zo-tox / botox standar 10u injectable injectable treatment botox anti aging kerutan">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2024/04/zo-tox-treatment-standar-10u.jpg" alt="Zo-Tox / Botox Standar 10u di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/zo-tox-treatment-standar-10u.webp" alt="Zo-Tox / Botox Standar 10u di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1159,13 +1247,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>50 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="injectable-treatment" data-concerns="penuaan" data-search="zo-tox / botox premium 10u injectable injectable treatment botox anti aging kerutan">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2024/04/zo-tox-treatment-premium-10u.jpg" alt="Zo-Tox / Botox Premium 10u di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/04/zo-tox-treatment-premium-10u.webp" alt="Zo-Tox / Botox Premium 10u di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1173,13 +1261,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>50 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="injectable-treatment" data-concerns="" data-search="botox underarm injectable injectable treatment botox hyperhidrosis ketiak">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Botox-Underarm-Premium-100u.avif" alt="Botox Underarm di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Botox-Underarm-Premium-100u.webp" alt="Botox Underarm di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1187,13 +1275,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>90 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="injectable-treatment" data-concerns="penuaan" data-search="korean filler injectable injectable treatment filler volume wajah kolagen">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Korean-Filler.avif" alt="Korean Filler di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Korean-Filler.webp" alt="Korean Filler di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1201,13 +1289,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="injectable-treatment" data-concerns="penuaan" data-search="premium filler injectable injectable treatment filler anti aging pengencangan">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Premium-Filler.avif" alt="Premium Filler di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Premium-Filler.webp" alt="Premium Filler di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1215,13 +1303,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="injectable-treatment" data-concerns="" data-search="filler dagu injectable injectable treatment filler v-shape kontur dagu">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Premium-Filler.avif" alt="Filler Dagu di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Premium-Filler.webp" alt="Filler Dagu di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1229,13 +1317,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="injectable-treatment" data-concerns="penuaan" data-search="facelift (threadlift) injectable injectable treatment threadlift facelift anti aging">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2024/03/facelift-sozo-skin-clinic.avif" alt="Facelift (Threadlift) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/facelift-sozo-skin-clinic.webp" alt="Facelift (Threadlift) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1243,13 +1331,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="injectable-treatment" data-concerns="penuaan" data-search="perfect facelift injectable injectable treatment threadlift facelift pengencangan">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2024/03/perfect-facelift-sozo-skin-clinic.avif" alt="Perfect Facelift di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/perfect-facelift-sozo-skin-clinic.webp" alt="Perfect Facelift di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1257,13 +1345,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>90 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="injectable-treatment" data-concerns="" data-search="nose job (threadlift) injectable injectable treatment threadlift hidung nose job">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2024/03/nose-job-sozo-skin-clinic.avif" alt="Nose Job (Threadlift) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/nose-job-sozo-skin-clinic.webp" alt="Nose Job (Threadlift) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1271,13 +1359,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="injectable-treatment" data-concerns="" data-search="perfect nose job injectable injectable treatment threadlift hidung nose job">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2024/03/perfect-nose-job-sozo-skin-clinic.avif" alt="Perfect Nose Job di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/perfect-nose-job-sozo-skin-clinic.webp" alt="Perfect Nose Job di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1285,13 +1373,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="injectable-treatment" data-concerns="kusam" data-search="immune glow injection injectable injectable treatment infus whitening vitamin c cerah">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.png" alt="Immune Glow Injection di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.webp" alt="Immune Glow Injection di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1299,13 +1387,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>15 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 199.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="injectable-treatment" data-concerns="kusam" data-search="immune glow infusion injectable injectable treatment infus whitening imunitas cerah">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.png" alt="Immune Glow Infusion di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.webp" alt="Immune Glow Infusion di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1313,13 +1401,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 399.000</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="injectable-treatment" data-concerns="kusam" data-search="premium glow infusion injectable injectable treatment infus whitening stamina regenerasi">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.png" alt="Premium Glow Infusion di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2023/11/perawatan-assetwhiteinfusion.webp" alt="Premium Glow Infusion di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Injectable</p>
@@ -1327,13 +1415,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>100 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.299.000</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="facial-treatment" data-concerns="jerawat kusam" data-search="mini facial facial facial treatment facial treatment komedo mencerahkan">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Mini-Facial.avif" alt="Mini Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Mini-Facial.webp" alt="Mini Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Facial</p>
@@ -1341,13 +1429,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>30 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 149.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="facial-treatment" data-concerns="jerawat bekas-jerawat" data-search="acne clear facial facial facial treatment facial treatment acne scar solution jerawat">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.avif" alt="Acne Clear Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.webp" alt="Acne Clear Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Facial</p>
@@ -1355,13 +1443,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 299.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="facial-treatment" data-concerns="kusam" data-search="skin bright facial facial facial treatment facial treatment body &amp; face brightening solution kusam">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.avif" alt="Skin Bright Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.webp" alt="Skin Bright Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Facial</p>
@@ -1369,13 +1457,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 299.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="facial-treatment" data-concerns="penuaan" data-search="sozo signature facial facial facial treatment facial treatment anti aging solution signature">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_SOZO-Signature-Facial.avif" alt="Sozo Signature Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_SOZO-Signature-Facial.webp" alt="Sozo Signature Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Facial</p>
@@ -1383,13 +1471,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 699.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="facial-treatment" data-concerns="penuaan pori" data-search="diamond laser facial facial facial treatment facial treatment anti aging solution pori-pori">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.avif" alt="Diamond Laser Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.webp" alt="Diamond Laser Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Facial</p>
@@ -1397,13 +1485,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="facial-treatment" data-concerns="bekas-jerawat flek" data-search="sylfirm x facial facial treatment facial treatment melasma acne scar solution">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.avif" alt="Sylfirm X di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.webp" alt="Sylfirm X di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Facial</p>
@@ -1411,13 +1499,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 7.999.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="facial-treatment" data-concerns="jerawat bekas-jerawat" data-search="acne laser facial facial facial treatment facial treatment jerawat acne scar solution">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Laser-Facial.avif" alt="Acne Laser Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Laser-Facial.webp" alt="Acne Laser Facial di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Facial</p>
@@ -1425,13 +1513,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="facial-treatment" data-concerns="kusam" data-search="collagen mask facial facial treatment facial treatment glowing mask">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Mini-Facial.avif" alt="Collagen Mask di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Mini-Facial.webp" alt="Collagen Mask di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Facial</p>
@@ -1439,13 +1527,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>30 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 199.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="laser-treatment" data-concerns="flek penuaan" data-search="nano laser laser laser treatment laser treatment pigmentasi rejuvenation">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Nano-Laser.avif" alt="Nano Laser di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Nano-Laser.webp" alt="Nano Laser di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Laser</p>
@@ -1453,13 +1541,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.199.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="laser-treatment" data-concerns="flek" data-search="pico laser laser laser treatment laser treatment pigmentasi melasma">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pico-Laser.avif" alt="Pico Laser di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pico-Laser.webp" alt="Pico Laser di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Laser</p>
@@ -1467,13 +1555,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.199.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="laser-treatment" data-concerns="bekas-jerawat pori" data-search="laser co2 laser laser treatment laser treatment bopeng pori-pori besar">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Laser-CO2.avif" alt="Laser CO2 di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Laser-CO2.webp" alt="Laser CO2 di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Laser</p>
@@ -1481,13 +1569,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.199.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="laser-treatment" data-concerns="penuaan" data-search="pink lips laser laser laser treatment laser treatment bibir rejuvenation">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pink-Lips.avif" alt="Pink Lips Laser di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Pink-Lips.webp" alt="Pink Lips Laser di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Laser</p>
@@ -1495,13 +1583,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>30 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="laser-treatment" data-concerns="" data-search="laser tattoo removal laser laser treatment laser treatment tattoo removal">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Tatto-Laser.avif" alt="Laser Tattoo Removal di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Tatto-Laser.webp" alt="Laser Tattoo Removal di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Laser</p>
@@ -1509,13 +1597,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="laser-treatment" data-concerns="penuaan" data-search="laser rejuve laser laser treatment laser treatment rejuvenation anti aging">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Nano-Laser.avif" alt="Laser Rejuve di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Nano-Laser.webp" alt="Laser Rejuve di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Laser</p>
@@ -1523,13 +1611,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.199.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-treatment" data-concerns="rambut-rontok" data-search="hair grow booster hair hair treatment hair care solution kerontokan">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Hair-Grow-Booster-1.avif" alt="Hair Grow Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Hair-Grow-Booster-1.webp" alt="Hair Grow Booster di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair</p>
@@ -1537,13 +1625,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-treatment" data-concerns="rambut-rontok" data-search="prp hair hair hair treatment hair care solution kerontokan">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_PRP-Hair-1.avif" alt="PRP Hair di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_PRP-Hair-1.webp" alt="PRP Hair di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair</p>
@@ -1551,13 +1639,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 1.749.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-treatment" data-concerns="rambut-rontok" data-search="biolight hair hair hair treatment hair care solution kerontokan">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Biolight-Hair-1.avif" alt="Biolight Hair di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Biolight-Hair-1.webp" alt="Biolight Hair di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair</p>
@@ -1565,13 +1653,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>70 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 199.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="hair-treatment" data-concerns="rambut-rontok" data-search="salmon dna hair hair hair treatment hair care solution kulit kepala">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Salmon-DNA-Hair-1.avif" alt="Salmon DNA Hair di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Salmon-DNA-Hair-1.webp" alt="Salmon DNA Hair di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair</p>
@@ -1579,13 +1667,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>80 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 1.399.000</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-treatment" data-concerns="rambut-rontok" data-search="exosome hair 5cc hair hair treatment hair care solution kerontokan">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Exosome-Hair-5cc-1.avif" alt="Exosome Hair 5cc di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Exosome-Hair-5cc-1.webp" alt="Exosome Hair 5cc di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair</p>
@@ -1593,13 +1681,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>80 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 3.849.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card" data-cat="hair-treatment" data-concerns="rambut-rontok" data-search="express hair therapy hair hair treatment hair care solution kulit kepala">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Hair-Therapy-1.avif" alt="Express Hair Therapy di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Hair-Therapy-1.webp" alt="Express Hair Therapy di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair</p>
@@ -1607,13 +1695,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-treatment" data-concerns="rambut-rontok" data-search="brow grow hair hair treatment hair care solution alis &amp; jenggot">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Brow-Grow-1.avif" alt="Brow Grow di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Brow-Grow-1.webp" alt="Brow Grow di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair</p>
@@ -1621,13 +1709,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>80 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 599.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-treatment" data-concerns="rambut-rontok" data-search="beard grow hair hair treatment hair care solution alis &amp; jenggot">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Beard-Grow-1.avif" alt="Beard Grow di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Hair_Beard-Grow-1.webp" alt="Beard Grow di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair</p>
@@ -1635,13 +1723,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>80 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 749.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-removal" data-concerns="bulu" data-search="laser hair removal hair removal hair removal treatment hair removal solution laser">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Laser-Hair-Removal.avif" alt="Laser Hair Removal di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Laser-Hair-Removal.webp" alt="Laser Hair Removal di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair Removal</p>
@@ -1649,13 +1737,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>30 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 799.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-removal" data-concerns="bulu" data-search="underarm removal treatment hair removal hair removal treatment hair removal solution underarm">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_IPL-Underarm.avif" alt="Underarm Removal Treatment di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_IPL-Underarm.webp" alt="Underarm Removal Treatment di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair Removal</p>
@@ -1663,13 +1751,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>20 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 249.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-removal" data-concerns="kusam bulu" data-search="underarm brightening treatment hair removal hair removal treatment hair removal solution underarm brightening">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Underarm-Brightening.avif" alt="Underarm Brightening Treatment di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Underarm-Brightening.webp" alt="Underarm Brightening Treatment di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair Removal</p>
@@ -1677,13 +1765,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>30 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 597.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-removal" data-concerns="bulu" data-search="brazilian hair removal hair removal hair removal treatment hair removal solution body">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Brazilian.avif" alt="Brazilian Hair Removal di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Brazilian.webp" alt="Brazilian Hair Removal di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair Removal</p>
@@ -1691,13 +1779,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 1.199.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="hair-removal" data-concerns="bulu" data-search="body hair removal (med/large) hair removal hair removal treatment hair removal solution body">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Hair-Removal-Large.avif" alt="Body Hair Removal (Med/Large) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Hair-Removal-Large.webp" alt="Body Hair Removal (Med/Large) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Hair Removal</p>
@@ -1705,7 +1793,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Mulai Rp 1.598.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1719,7 +1807,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1733,7 +1821,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1747,7 +1835,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1761,7 +1849,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1775,7 +1863,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1789,7 +1877,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1803,7 +1891,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1817,7 +1905,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1831,7 +1919,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1845,7 +1933,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -1859,13 +1947,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="ipl-treatment" data-concerns="jerawat" data-search="ipl acne ipl ipl treatment ipl treatment jerawat acne">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Laser-Facial.avif" alt="IPL Acne di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Laser-Facial.webp" alt="IPL Acne di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">IPL</p>
@@ -1873,13 +1961,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>30 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 299.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="ipl-treatment" data-concerns="kusam" data-search="ipl glow ipl ipl treatment ipl treatment glow brightening">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.avif" alt="IPL Glow di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.webp" alt="IPL Glow di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">IPL</p>
@@ -1887,13 +1975,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>30 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 299.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="derma-peel" data-concerns="kusam" data-search="glow peel derma peel derma peel derma peel glow brightening">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.avif" alt="Glow Peel di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Skin-Bright-Facial.webp" alt="Glow Peel di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Derma Peel</p>
@@ -1901,13 +1989,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 399.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="derma-peel" data-concerns="jerawat" data-search="acne peel derma peel derma peel derma peel acne komedo">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.avif" alt="Acne Peel di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Acne-Clear-Facial.webp" alt="Acne Peel di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Derma Peel</p>
@@ -1915,13 +2003,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 299.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="derma-peel" data-concerns="kusam penuaan" data-search="dazzling glow peel derma peel derma peel derma peel glow anti aging">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.avif" alt="Dazzling Glow Peel di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_Diamond-Laser-Facial.webp" alt="Dazzling Glow Peel di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Derma Peel</p>
@@ -1929,13 +2017,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="derma-peel" data-concerns="flek penuaan" data-search="eternal bloom peel derma peel derma peel derma peel anti aging hiperpigmentasi">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_SOZO-Signature-Facial.avif" alt="Eternal Bloom Peel di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_SOZO-Signature-Facial.webp" alt="Eternal Bloom Peel di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Derma Peel</p>
@@ -1943,13 +2031,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 699.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="scar-treatment" data-concerns="bekas-jerawat" data-search="rejuran scar scar scar treatment scar treatment bopeng regenerasi">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/10/Rejuran-Scar-2048x2048.webp" alt="Rejuran Scar di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Rejuran-Scar-2048x2048.webp" alt="Rejuran Scar di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Scar</p>
@@ -1957,13 +2045,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>90 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 5.499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="scar-treatment" data-concerns="bekas-jerawat" data-search="restylane scar scar scar treatment scar treatment bopeng skin booster">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Restylance-Scar.avif" alt="Restylane Scar di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Restylance-Scar.webp" alt="Restylane Scar di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Scar</p>
@@ -1971,13 +2059,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 7.798.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="scar-treatment" data-concerns="bekas-jerawat" data-search="prp treatment (face) scar scar treatment scar treatment bopeng prp">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/10/PRP-Face-2048x2048.webp" alt="PRP Treatment (Face) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/PRP-Face-2048x2048.webp" alt="PRP Treatment (Face) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Scar</p>
@@ -1985,13 +2073,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="scar-treatment" data-concerns="bekas-jerawat penuaan" data-search="laser co2 (rejuve) scar scar treatment scar treatment rejuvenation laser">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Laser-CO2.avif" alt="Laser CO2 (Rejuve) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Laser-Treatment_Laser-CO2.webp" alt="Laser CO2 (Rejuve) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Scar</p>
@@ -1999,13 +2087,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.199.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="scar-treatment" data-concerns="bekas-jerawat pori" data-search="laser co2 (scar/pores) scar scar treatment scar treatment bopeng pori-pori">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/10/Laser-CO2-Acne-scar-_-Pores-Full-Face.webp" alt="Laser CO2 (Scar/Pores) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Laser-CO2-Acne-scar-_-Pores-Full-Face.webp" alt="Laser CO2 (Scar/Pores) di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Scar</p>
@@ -2013,13 +2101,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 1.499.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="scar-treatment" data-concerns="jerawat bekas-jerawat pori" data-search="pore detox scar scar treatment scar treatment pori-pori komedo">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Scar-Package-Treatment-Scar-Repair-PRP-I.avif" alt="Pore Detox di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Scar-Package-Treatment-Scar-Repair-PRP-I.webp" alt="Pore Detox di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Scar</p>
@@ -2027,13 +2115,13 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>90 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 599.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
         <article class="tc-card tc-card--link" data-cat="scar-treatment" data-concerns="bekas-jerawat" data-search="subcision scar scar treatment scar treatment bopeng subcision">
           <div class="tc-card__media">
-            <img src="https://sozoskinclinic.com/wp-content/uploads/2025/10/Website-Acne-Campaign_USP-Before-After-Scar-Scar-Fighter-1-768x576.webp" alt="Subcision di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Website-Acne-Campaign_USP-Before-After-Scar-Scar-Fighter-1-768x576.webp" alt="Subcision di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
           </div>
           <div class="tc-card__body">
             <p class="tc-card__category">Scar</p>
@@ -2041,7 +2129,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Rp 299.000</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -2055,7 +2143,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -2069,7 +2157,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>45 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -2083,7 +2171,7 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <span class="btn btn--outline btn--sm btn--block tc-card__action" aria-hidden="true">Lihat Detail</span>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -2097,7 +2185,35 @@
             <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>75 Menit</span></p>
             <div class="tc-card__footer">
               <p class="tc-card__price">Konsultasikan</p>
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><i class="fab fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="tc-card tc-card--link" data-cat="slimming-treatment" data-concerns="lemak" data-search="caloburn sauna blanket slimming slimming treatment body detox keringat lemak body goals">
+          <div class="tc-card__media">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/07/Caloburn.webp" alt="Caloburn di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+          </div>
+          <div class="tc-card__body">
+            <p class="tc-card__category">Slimming</p>
+            <h3 class="tc-card__title"><a href="https://sozoskinclinic.com/caloburn-treatment/">Caloburn</a></h3>
+            <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>60 Menit</span></p>
+            <div class="tc-card__footer">
+              <p class="tc-card__price">Rp 999.000</p>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="tc-card tc-card--link" data-cat="slimming-treatment" data-concerns="lemak" data-search="ultrasculpt ultrascrupt slimming slimming treatment body contouring otot kontraksi body goals lemak">
+          <div class="tc-card__media">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/12/Ultrasculpt.webp" alt="Ultrasculpt di SOZO Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+          </div>
+          <div class="tc-card__body">
+            <p class="tc-card__category">Slimming</p>
+            <h3 class="tc-card__title"><a href="https://sozoskinclinic.com/ultrascrupt-treatment/">Ultrasculpt</a></h3>
+            <p class="tc-card__meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>30 Menit</span></p>
+            <div class="tc-card__footer">
+              <p class="tc-card__price">Rp 899.000</p>
+              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20General%20di%20Sozo%20%5Bsrc%3AORG-General%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block tc-card__action" data-wa-src="organic"><svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#tc-i-wa"></use></svg><span>Buat Jadwal</span></a>
             </div>
           </div>
         </article>
@@ -2113,9 +2229,7 @@
         <button type="button" class="btn btn--primary" id="tc-reset">Lihat Semua Treatment</button>
       </div>
 
-      <div class="tc-more">
-        <button type="button" class="btn btn--outline" id="tc-more" hidden>Muat lebih banyak</button>
-      </div>
+      <nav class="tc-pagination" id="tc-pagination" aria-label="Halaman daftar treatment" hidden></nav>
     </div>
   </section>
 

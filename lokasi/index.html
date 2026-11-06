@@ -116,10 +116,989 @@
     </div>
 
     <!-- ==================== 4. CLINIC GRID & COMPACT LIST ==================== -->
-    <div id="sozoClinicGrid" class="sozo-map-grid"></div>
+    <!-- Ikon dipakai ulang oleh semua kartu klinik -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <symbol id="sozo-i-pin" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
+      <symbol id="sozo-i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+      <symbol id="sozo-i-map" viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="1 6 8 2 16 6 23 2 23 18 16 22 8 18 1 22 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></symbol>
+    </svg>
+    <div id="sozoClinicGrid" class="sozo-map-grid">
+      <div class="sozo-map-card" data-branch-name="AEON Tanjung Barat" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - AEON Tanjung Barat" data-province="DKI Jakarta">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3>AEON Tanjung Barat</h3>
+          <p class="sozo-address">AEON Tanjung Barat (3-23AB) - Jl. Raya Tanjung Barat No. 163, RT 012 RW 04, Tanjung Barat, Jagakarsa, Jakarta Selatan, DKI Jakarta 12530</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20AEON%20Tanjung%20Barat%2C%20AEON%20Tanjung%20Barat%20(3-23AB)%20-%20Jl.%20Raya%20Tanjung%20Barat%20No.%20163%2C%20RT%20012%20RW%2004%2C%20Tanjung%20Barat%2C%20Jagakarsa%2C%20Jakarta%20Selatan%2C%20DKI%20Jakarta%2012530" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Alam Sutera" data-branch-province="Banten" data-name="Sozo Skin Clinic - Alam Sutera" data-province="Banten" data-url="https://sozoskinclinic.com/lokasi/sozo-alam-sutera/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-alam-sutera-depan.webp" alt="Tampak depan Sozo Skin Clinic - Alam Sutera" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-alam-sutera/" class="sozo-branch-link">Alam Sutera</a></h3>
+          <p class="sozo-address">Ruko Jalur Sutera 25 BC-15, Alam Sutera, Kel. Pakualam, Kec. Tangerang, Kota Tangerang Selatan, Banten 15331</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Alam%20Sutera%2C%20Ruko%20Jalur%20Sutera%2025%20BC-15%2C%20Alam%20Sutera%2C%20Kel.%20Pakualam%2C%20Kec.%20Tangerang%2C%20Kota%20Tangerang%20Selatan%2C%20Banten%2015331" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Arteri Pondok Indah" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Arteri Pondok Indah" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/sozo-arteri-pondok-indah/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-arteri-depan.webp" alt="Tampak depan Sozo Skin Clinic - Arteri Pondok Indah" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-arteri-pondok-indah/" class="sozo-branch-link">Arteri Pondok Indah</a></h3>
+          <p class="sozo-address">Jl. Iskandar Muda No.68A, RT.3/RW.2, Kec. Kby. Lama, Jakarta Selatan, DKI Jakarta 12240</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Arteri%20Pondok%20Indah%2C%20Jl.%20Iskandar%20Muda%20No.68A%2C%20RT.3%2FRW.2%2C%20Kec.%20Kby.%20Lama%2C%20Jakarta%20Selatan%2C%20DKI%20Jakarta%2012240" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bali" data-branch-province="Bali" data-name="Sozo Skin Clinic - Bali" data-province="Bali" data-url="https://sozoskinclinic.com/lokasi/sozo-bali-renon/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bali-depan.webp" alt="Tampak depan Sozo Skin Clinic - Bali" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Bali</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bali-renon/" class="sozo-branch-link">Bali</a></h3>
+          <p class="sozo-address">Jl. Raya Puputan No.190 A, Renon, Denpasar Selatan, Kota Denpasar, Bali 80226</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bali%2C%20Jl.%20Raya%20Puputan%20No.190%20A%2C%20Renon%2C%20Denpasar%20Selatan%2C%20Kota%20Denpasar%2C%20Bali%2080226" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bali Gatot Subroto" data-branch-province="Bali" data-name="Sozo Skin Clinic - Bali Gatot Subroto" data-province="Bali" data-url="https://sozoskinclinic.com/lokasi/sozo-bali-gatot-subroto/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bali-gatot-subroto-depan.webp" alt="Tampak depan Sozo Skin Clinic - Bali Gatot Subroto" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Bali</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bali-gatot-subroto/" class="sozo-branch-link">Bali Gatot Subroto</a></h3>
+          <p class="sozo-address">Jl. Gatot Subroto No. 279, Dauh Puri Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80237</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bali%20Gatot%20Subroto%2C%20Jl.%20Gatot%20Subroto%20No.%20279%2C%20Dauh%20Puri%20Kaja%2C%20Kec.%20Denpasar%20Utara%2C%20Kota%20Denpasar%2C%20Bali%2080237" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Balikpapan" data-branch-province="Kalimantan Timur" data-name="Sozo Skin Clinic - Balikpapan" data-province="Kalimantan Timur" data-url="https://sozoskinclinic.com/lokasi/sozo-balikpapan-ruhui-rahayu/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-balikpapan-depan.webp" alt="Tampak depan Sozo Skin Clinic - Balikpapan" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Kalimantan Timur</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-balikpapan-ruhui-rahayu/" class="sozo-branch-link">Balikpapan</a></h3>
+          <p class="sozo-address">Jl. Ruhui Rahayu Ring Road No.1, Sepinggan, Kecamatan Balikpapan Selatan, Balikpapan, Kalimantan Timur 76115</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Balikpapan%2C%20Jl.%20Ruhui%20Rahayu%20Ring%20Road%20No.1%2C%20Sepinggan%2C%20Kecamatan%20Balikpapan%20Selatan%2C%20Balikpapan%2C%20Kalimantan%20Timur%2076115" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Balikpapan Superblock" data-branch-province="Kalimantan Timur" data-name="Sozo Skin Clinic - Balikpapan Superblock" data-province="Kalimantan Timur">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Kalimantan Timur</span>
+          <h3>Balikpapan Superblock</h3>
+          <p class="sozo-address">Ruko Komplek Balikpapan Super Blok (BSB) Blok E-20, Jl. Jenderal Sudirman, Kel. Gunung Bahagia, Kec. Balikpapan Selatan, Kota Balikpapan, Kalimantan Timur 76114</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Balikpapan%20Superblock%2C%20Ruko%20Komplek%20Balikpapan%20Super%20Blok%20(BSB)%20Blok%20E-20%2C%20Jl.%20Jenderal%20Sudirman%2C%20Kel.%20Gunung%20Bahagia%2C%20Kec.%20Balikpapan%20Selatan%2C%20Kota%20Balikpapan%2C%20Kalimantan%20Timur%2076114" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bandung Buah Batu" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Bandung Buah Batu" data-province="Jawa Barat" data-url="https://sozoskinclinic.com/lokasi/sozo-bandung-buah-batu/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bandung-buah-batu-depan.webp" alt="Tampak depan Sozo Skin Clinic - Bandung Buah Batu" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bandung-buah-batu/" class="sozo-branch-link">Bandung Buah Batu</a></h3>
+          <p class="sozo-address">Jl. Buah Batu No 250, Cijagra, Kec. Lengkong, Bandung, Jawa Barat 40265</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bandung%20Buah%20Batu%2C%20Jl.%20Buah%20Batu%20No%20250%2C%20Cijagra%2C%20Kec.%20Lengkong%2C%20Bandung%2C%20Jawa%20Barat%2040265" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bandung Paskal" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Bandung Paskal" data-province="Jawa Barat" data-url="https://sozoskinclinic.com/lokasi/sozo-bandung-paskal/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bandung-paskal-depan.webp" alt="Tampak depan Sozo Skin Clinic - Bandung Paskal" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bandung-paskal/" class="sozo-branch-link">Bandung Paskal</a></h3>
+          <p class="sozo-address">Jalan Pajajaran No.68, Pamoyanan, Kecamatan Cicendo, Kota Bandung, Jawa Barat 40173</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bandung%20Paskal%2C%20Jalan%20Pajajaran%20No.68%2C%20Pamoyanan%2C%20Kecamatan%20Cicendo%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040173" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bandung Summarecon" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Bandung Summarecon" data-province="Jawa Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3>Bandung Summarecon</h3>
+          <p class="sozo-address">Ruko Topaz Commercial No. 20, Summarecon Bandung, Cisaranten Kidul, Kec. Gedebage, Kota Bandung, Jawa Barat 40295</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bandung%20Summarecon%2C%20Ruko%20Topaz%20Commercial%20No.%2020%2C%20Summarecon%20Bandung%2C%20Cisaranten%20Kidul%2C%20Kec.%20Gedebage%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040295" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bandung Surya Sumantri" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Bandung Surya Sumantri" data-province="Jawa Barat" data-url="https://sozoskinclinic.com/lokasi/sozo-bandung-surya-sumantri/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bandung-surya-sumantri-1.webp" alt="Tampak depan Sozo Skin Clinic - Bandung Surya Sumantri" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bandung-surya-sumantri/" class="sozo-branch-link">Bandung Surya Sumantri</a></h3>
+          <p class="sozo-address">Jalan Prof Surya Sumantri No. 156, Kelurahan Sukagalih, Kecamatan Sukajadi, Kota Bandung, Jawa Barat 40164</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bandung%20Surya%20Sumantri%2C%20Jalan%20Prof%20Surya%20Sumantri%20No.%20156%2C%20Kelurahan%20Sukagalih%2C%20Kecamatan%20Sukajadi%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040164" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Banjarmasin" data-branch-province="Kalimantan Selatan" data-name="Sozo Skin Clinic - Banjarmasin" data-province="Kalimantan Selatan" data-url="https://sozoskinclinic.com/lokasi/sozo-banjarmasin/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-banjarmasin-depan.webp" alt="Tampak depan Sozo Skin Clinic - Banjarmasin" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Kalimantan Selatan</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-banjarmasin/" class="sozo-branch-link">Banjarmasin</a></h3>
+          <p class="sozo-address">Jalan Ahmad Yani KM 5,7 Nomor 7A RT 008 RW 001 Kel. Pemurus Dalam Kec. Banjarmasin Selatan, Banjarmasin, Kalimantan Selatan 70238</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Banjarmasin%2C%20Jalan%20Ahmad%20Yani%20KM%205%2C7%20Nomor%207A%20RT%20008%20RW%20001%20Kel.%20Pemurus%20Dalam%20Kec.%20Banjarmasin%20Selatan%2C%20Banjarmasin%2C%20Kalimantan%20Selatan%2070238" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Batam" data-branch-province="Kepulauan Riau" data-name="Sozo Skin Clinic - Batam" data-province="Kepulauan Riau" data-url="https://sozoskinclinic.com/lokasi/sozo-batam/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-batam-depan.webp" alt="Tampak depan Sozo Skin Clinic - Batam" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Kepulauan Riau</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-batam/" class="sozo-branch-link">Batam</a></h3>
+          <p class="sozo-address">Teluk Tering, Kec. Batam Kota, Batam, Kepulauan Riau 29444</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Batam%2C%20Teluk%20Tering%2C%20Kec.%20Batam%20Kota%2C%20Batam%2C%20Kepulauan%20Riau%2029444" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bekasi" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Bekasi" data-province="Jawa Barat" data-url="https://sozoskinclinic.com/lokasi/sozo-bekasi-jakasampurna/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bekasi-depan.webp" alt="Tampak depan Sozo Skin Clinic - Bekasi" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bekasi-jakasampurna/" class="sozo-branch-link">Bekasi</a></h3>
+          <p class="sozo-address">Jl. Cemara Raya no. 1, Kavling 10D, RT.003/RW.006A, Jakasampurna, Kota Bekasi, Jawa Barat 17145</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bekasi%2C%20Jl.%20Cemara%20Raya%20no.%201%2C%20Kavling%2010D%2C%20RT.003%2FRW.006A%2C%20Jakasampurna%2C%20Kota%20Bekasi%2C%20Jawa%20Barat%2017145" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bekasi Grand Galaxy" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Bekasi Grand Galaxy" data-province="Jawa Barat" data-url="https://sozoskinclinic.com/lokasi/sozo-bekasi-grand-galaxy/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bekasi-grand-luxury-1.webp" alt="Tampak depan Sozo Skin Clinic - Bekasi Grand Galaxy" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bekasi-grand-galaxy/" class="sozo-branch-link">Bekasi Grand Galaxy</a></h3>
+          <p class="sozo-address">Jl. Boulevard Raya RGA No.67, RT.001/RW.002, Jaka Setia, Kec. Bekasi Sel., Kota Bks, Jawa Barat 17147</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bekasi%20Grand%20Galaxy%2C%20Jl.%20Boulevard%20Raya%20RGA%20No.67%2C%20RT.001%2FRW.002%2C%20Jaka%20Setia%2C%20Kec.%20Bekasi%20Sel.%2C%20Kota%20Bks%2C%20Jawa%20Barat%2017147" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bekasi Summarecon" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Bekasi Summarecon" data-province="Jawa Barat" data-url="https://sozoskinclinic.com/lokasi/sozo-bekasi-summarecon/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bekasi-sumarecon-1.webp" alt="Tampak depan Sozo Skin Clinic - Bekasi Summarecon" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bekasi-summarecon/" class="sozo-branch-link">Bekasi Summarecon</a></h3>
+          <p class="sozo-address">Ruko Emerald Commercial Blok UA No 27, RT 004 RW 011, Marga Mulya, Kec. Bekasi Utara, Bekasi, Jawa Barat 17123</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bekasi%20Summarecon%2C%20Ruko%20Emerald%20Commercial%20Blok%20UA%20No%2027%2C%20RT%20004%20RW%20011%2C%20Marga%20Mulya%2C%20Kec.%20Bekasi%20Utara%2C%20Bekasi%2C%20Jawa%20Barat%2017123" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bendungan Hilir" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Bendungan Hilir" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/sozo-bendungan-hilir/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bendungan-hilir-depan.webp" alt="Tampak depan Sozo Skin Clinic - Bendungan Hilir" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bendungan-hilir/" class="sozo-branch-link">Bendungan Hilir</a></h3>
+          <p class="sozo-address">Jl. Bendungan Hilir No 7 , RT.11/RW.3, Bend. Hilir, Kecamatan Tanah Abang, Jakarta, DKI Jakarta 10210</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bendungan%20Hilir%2C%20Jl.%20Bendungan%20Hilir%20No%207%20%2C%20RT.11%2FRW.3%2C%20Bend.%20Hilir%2C%20Kecamatan%20Tanah%20Abang%2C%20Jakarta%2C%20DKI%20Jakarta%2010210" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bintaro" data-branch-province="Banten" data-name="Sozo Skin Clinic - Bintaro" data-province="Banten" data-url="https://sozoskinclinic.com/lokasi/sozo-bintaro-sektor-5/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bintaro-depan.webp" alt="Tampak depan Sozo Skin Clinic - Bintaro" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bintaro-sektor-5/" class="sozo-branch-link">Bintaro</a></h3>
+          <p class="sozo-address">Jl. Bintaro Utama V Blok EA 2 lantai 2, Bintaro Jaya No.27, Pd. Ranji, Kec. Ciputat Timur, Tangerang Selatan, Banten 15224</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bintaro%2C%20Jl.%20Bintaro%20Utama%20V%20Blok%20EA%202%20lantai%202%2C%20Bintaro%20Jaya%20No.27%2C%20Pd.%20Ranji%2C%20Kec.%20Ciputat%20Timur%2C%20Tangerang%20Selatan%2C%20Banten%2015224" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bintaro Sektor 7" data-branch-province="Banten" data-name="Sozo Skin Clinic - Bintaro Sektor 7" data-province="Banten" data-url="https://sozoskinclinic.com/lokasi/sozo-bintaro-sektor-7/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bintaro-sektor7-1.webp" alt="Tampak depan Sozo Skin Clinic - Bintaro Sektor 7" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bintaro-sektor-7/" class="sozo-branch-link">Bintaro Sektor 7</a></h3>
+          <p class="sozo-address">Ruko Kebayoran Arcade 1, Jl. Boulevard Bintaro Jaya Blok 7, Pd. Jaya, Kec. Pd. Aren, Tangerang Selatan, Banten 15220</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bintaro%20Sektor%207%2C%20Ruko%20Kebayoran%20Arcade%201%2C%20Jl.%20Boulevard%20Bintaro%20Jaya%20Blok%207%2C%20Pd.%20Jaya%2C%20Kec.%20Pd.%20Aren%2C%20Tangerang%20Selatan%2C%20Banten%2015220" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bogor" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Bogor" data-province="Jawa Barat" data-url="https://sozoskinclinic.com/lokasi/sozo-bogor-bangbarung/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bogor-depan.webp" alt="Tampak depan Sozo Skin Clinic - Bogor" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bogor-bangbarung/" class="sozo-branch-link">Bogor</a></h3>
+          <p class="sozo-address">Jl. Bangbarung Raya No.24, RT.02/RW.07, Bantarjati, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16153</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bogor%2C%20Jl.%20Bangbarung%20Raya%20No.24%2C%20RT.02%2FRW.07%2C%20Bantarjati%2C%20Kec.%20Bogor%20Utara%2C%20Kota%20Bogor%2C%20Jawa%20Barat%2016153" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Bogor Taman Yasmin" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Bogor Taman Yasmin" data-province="Jawa Barat" data-url="https://sozoskinclinic.com/lokasi/sozo-bogor-taman-yasmin/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bogor-taman-yasamin-depan.webp" alt="Tampak depan Sozo Skin Clinic - Bogor Taman Yasmin" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bogor-taman-yasmin/" class="sozo-branch-link">Bogor Taman Yasmin</a></h3>
+          <p class="sozo-address">Komplek Ruko Permata Yasmin, Jl. Brigjen Saptadji Hadiprawira No. 1 &amp; 2, Cilendek Barat, Bogor Barat, Kota Bogor, Jawa Barat 16112</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Bogor%20Taman%20Yasmin%2C%20Komplek%20Ruko%20Permata%20Yasmin%2C%20Jl.%20Brigjen%20Saptadji%20Hadiprawira%20No.%201%20%26%202%2C%20Cilendek%20Barat%2C%20Bogor%20Barat%2C%20Kota%20Bogor%2C%20Jawa%20Barat%2016112" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="BSD" data-branch-province="Banten" data-name="Sozo Skin Clinic - BSD" data-province="Banten" data-url="https://sozoskinclinic.com/lokasi/sozo-bsd/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bsd-depan.webp" alt="Tampak depan Sozo Skin Clinic - BSD" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-bsd/" class="sozo-branch-link">BSD</a></h3>
+          <p class="sozo-address">Ruko Pasar Modern Timur 2, Jl. Letnan Sutopo Blok AA Nomor 25-26, Bumi Serpong Damai, Rawa Mekar Jaya, Kec. Serpong, Tangerang Selatan, Banten 15318</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20BSD%2C%20Ruko%20Pasar%20Modern%20Timur%202%2C%20Jl.%20Letnan%20Sutopo%20Blok%20AA%20Nomor%2025-26%2C%20Bumi%20Serpong%20Damai%2C%20Rawa%20Mekar%20Jaya%2C%20Kec.%20Serpong%2C%20Tangerang%20Selatan%2C%20Banten%2015318" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Cibinong" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Cibinong" data-province="Jawa Barat" data-url="https://sozoskinclinic.com/lokasi/sozo-cibinong/">
+        <div class="sozo-card-media"><img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-cibinong-1.webp" alt="Tampak depan Sozo Skin Clinic - Cibinong" class="sozo-card-photo" loading="lazy" width="190" height="190"></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/sozo-cibinong/" class="sozo-branch-link">Cibinong</a></h3>
+          <p class="sozo-address">Jl. Raya Jakarta-Bogor KM. 45 No. 43a, Pakansari, Kec. Cibinong, Kabupaten Bogor, Jawa Barat 16195</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Cibinong%2C%20Jl.%20Raya%20Jakarta-Bogor%20KM.%2045%20No.%2043a%2C%20Pakansari%2C%20Kec.%20Cibinong%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat%2016195" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Cibubur Transyogi" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Cibubur Transyogi" data-province="Jawa Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3>Cibubur Transyogi</h3>
+          <p class="sozo-address">Ruko Cibubur Point, Jl. Alternatif Cibubur, Blk. A, No.9, Harjamukti, Kec. Cimanggis, Kota Depok, Jawa Barat 16454</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Cibubur%20Transyogi%2C%20Ruko%20Cibubur%20Point%2C%20Jl.%20Alternatif%20Cibubur%2C%20Blk.%20A%2C%20No.9%2C%20Harjamukti%2C%20Kec.%20Cimanggis%2C%20Kota%20Depok%2C%20Jawa%20Barat%2016454" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Cikarang" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Cikarang" data-province="Jawa Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3>Cikarang</h3>
+          <p class="sozo-address">Jl. Raya Cikarang - Cibarusah No.1, Serang, Cikarang Selatan, Kabupaten Bekasi, Jawa Barat 17530</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Cikarang%2C%20Jl.%20Raya%20Cikarang%20-%20Cibarusah%20No.1%2C%20Serang%2C%20Cikarang%20Selatan%2C%20Kabupaten%20Bekasi%2C%20Jawa%20Barat%2017530" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Ciledug Petukangan" data-branch-province="Banten" data-name="Sozo Skin Clinic - Ciledug Petukangan" data-province="Banten">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3>Ciledug Petukangan</h3>
+          <p class="sozo-address">Jl. Ciledug Raya No.1, RT.004/RW.001, Cipadu, Kec. Larangan, Kota Tangerang, Banten 15154</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Ciledug%20Petukangan%2C%20Jl.%20Ciledug%20Raya%20No.1%2C%20RT.004%2FRW.001%2C%20Cipadu%2C%20Kec.%20Larangan%2C%20Kota%20Tangerang%2C%20Banten%2015154" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Cinere" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Cinere" data-province="Jawa Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3>Cinere</h3>
+          <p class="sozo-address">Jl. Cinere Raya No. 9, Cinere, Kec. Cinere, Kota Depok, Jawa Barat 16514</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Cinere%2C%20Jl.%20Cinere%20Raya%20No.%209%2C%20Cinere%2C%20Kec.%20Cinere%2C%20Kota%20Depok%2C%20Jawa%20Barat%2016514" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Cirebon" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Cirebon" data-province="Jawa Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3>Cirebon</h3>
+          <p class="sozo-address">Jl. DR. Cipto Mangunkusumo Komplek CSB (Cirebon Super Blok) Office Park Kav No. 5, Kel. Pekiringan, Kec. Kesambi, Cirebon, Jawa Barat 45131</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Cirebon%2C%20Jl.%20DR.%20Cipto%20Mangunkusumo%20Komplek%20CSB%20(Cirebon%20Super%20Blok)%20Office%20Park%20Kav%20No.%205%2C%20Kel.%20Pekiringan%2C%20Kec.%20Kesambi%2C%20Cirebon%2C%20Jawa%20Barat%2045131" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Gading Serpong" data-branch-province="Banten" data-name="Sozo Skin Clinic - Gading Serpong" data-province="Banten" data-url="https://sozoskinclinic.com/lokasi/tangerang/gading-serpong/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/tangerang/gading-serpong/" class="sozo-branch-link">Gading Serpong</a></h3>
+          <p class="sozo-address">Jl. Gading Serpong Boulevard, Ruko Odessa Blok AA 2 No.32 Kabupaten Tangerang, Banten 15810</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Gading%20Serpong%2C%20Jl.%20Gading%20Serpong%20Boulevard%2C%20Ruko%20Odessa%20Blok%20AA%202%20No.32%20Kabupaten%20Tangerang%2C%20Banten%2015810" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Green Lake City" data-branch-province="Banten" data-name="Sozo Skin Clinic - Green Lake City" data-province="Banten" data-url="https://sozoskinclinic.com/lokasi/tangerang/greenlake/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/tangerang/greenlake/" class="sozo-branch-link">Green Lake City</a></h3>
+          <p class="sozo-address">Jl. Green Lake City Boulevard Blok D No. 26, Komplek Greenlake City Ruko Cordoba, Kota Tangerang, Banten 15147</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Green%20Lake%20City%2C%20Jl.%20Green%20Lake%20City%20Boulevard%20Blok%20D%20No.%2026%2C%20Komplek%20Greenlake%20City%20Ruko%20Cordoba%2C%20Kota%20Tangerang%2C%20Banten%2015147" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Gresik" data-branch-province="Jawa Timur" data-name="Sozo Skin Clinic - Gresik" data-province="Jawa Timur">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Timur</span>
+          <h3>Gresik</h3>
+          <p class="sozo-address">Jl. Kartini No.98B-100, Injen Barat, Tlogobendung, Kec. Gresik, Gresik, Jawa Timur 61122</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Gresik%2C%20Jl.%20Kartini%20No.98B-100%2C%20Injen%20Barat%2C%20Tlogobendung%2C%20Kec.%20Gresik%2C%20Gresik%2C%20Jawa%20Timur%2061122" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Jambi" data-branch-province="Jambi" data-name="Sozo Skin Clinic - Jambi" data-province="Jambi">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jambi</span>
+          <h3>Jambi</h3>
+          <p class="sozo-address">Ruko Jambi Business Center (JBC) No. E1-12 &amp; E1, Jl. Kapten Pattimura, No.15, Simpang III Sipin, Kec. Kota Baru, Jambi, 36361</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Jambi%2C%20Ruko%20Jambi%20Business%20Center%20(JBC)%20No.%20E1-12%20%26%20E1%2C%20Jl.%20Kapten%20Pattimura%2C%20No.15%2C%20Simpang%20III%20Sipin%2C%20Kec.%20Kota%20Baru%2C%20Jambi%2C%2036361" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="JGC" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - JGC" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/jgc/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/jgc/" class="sozo-branch-link">JGC</a></h3>
+          <p class="sozo-address">Ruko New East, Jl. Jakarta Garden City Boulevard, RT. 11 RW. 8, Cakung Timur, Cakung, Jakarta Timur, DKI Jakarta 13910</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20JGC%2C%20Ruko%20New%20East%2C%20Jl.%20Jakarta%20Garden%20City%20Boulevard%2C%20RT.%2011%20RW.%208%2C%20Cakung%20Timur%2C%20Cakung%2C%20Jakarta%20Timur%2C%20DKI%20Jakarta%2013910" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Kalideres Citra Garden" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Kalideres Citra Garden" data-province="DKI Jakarta">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3>Kalideres Citra Garden</h3>
+          <p class="sozo-address">Jl. Citra Garden VI No.1A, RT.1/RW.5, Tegal Alur, Kec. Kalideres, Jakarta Barat, DKI Jakarta 11820</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Kalideres%20Citra%20Garden%2C%20Jl.%20Citra%20Garden%20VI%20No.1A%2C%20RT.1%2FRW.5%2C%20Tegal%20Alur%2C%20Kec.%20Kalideres%2C%20Jakarta%20Barat%2C%20DKI%20Jakarta%2011820" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Karawaci" data-branch-province="Banten" data-name="Sozo Skin Clinic - Karawaci" data-province="Banten" data-url="https://sozoskinclinic.com/lokasi/tangerang/karawaci/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/tangerang/karawaci/" class="sozo-branch-link">Karawaci</a></h3>
+          <p class="sozo-address">Supermall Karawaci, Unit. FF # 11 Jalan 105 Bulevar Diponegoro Lippo Karawaci, Kel. Bencongan Indah. Kec. Kelapa Dua, Tangerang, Banten 15811</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Karawaci%2C%20Supermall%20Karawaci%2C%20Unit.%20FF%20%23%2011%20Jalan%20105%20Bulevar%20Diponegoro%20Lippo%20Karawaci%2C%20Kel.%20Bencongan%20Indah.%20Kec.%20Kelapa%20Dua%2C%20Tangerang%2C%20Banten%2015811" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Karawaci Palem Semi" data-branch-province="Banten" data-name="Sozo Skin Clinic - Karawaci Palem Semi" data-province="Banten" data-url="https://sozoskinclinic.com/lokasi/tangerang/karawaci/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/tangerang/karawaci/" class="sozo-branch-link">Karawaci Palem Semi</a></h3>
+          <p class="sozo-address">Ruko CBD, Jl. Palem Semi No.32, RT.001/RW.009, Panunggangan Barat, Cibodas, Tangerang, Banten 15139</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Karawaci%20Palem%20Semi%2C%20Ruko%20CBD%2C%20Jl.%20Palem%20Semi%20No.32%2C%20RT.001%2FRW.009%2C%20Panunggangan%20Barat%2C%20Cibodas%2C%20Tangerang%2C%20Banten%2015139" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Karawaci Taman Permata" data-branch-province="Banten" data-name="Sozo Skin Clinic - Karawaci Taman Permata" data-province="Banten" data-url="https://sozoskinclinic.com/lokasi/tangerang/karawaci/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/tangerang/karawaci/" class="sozo-branch-link">Karawaci Taman Permata</a></h3>
+          <p class="sozo-address">Ruko New Asia, Lippo Village, Jl. Taman Permata No.220, Binong, Curug, Tangerang, Banten 15810</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Karawaci%20Taman%20Permata%2C%20Ruko%20New%20Asia%2C%20Lippo%20Village%2C%20Jl.%20Taman%20Permata%20No.220%2C%20Binong%2C%20Curug%2C%20Tangerang%2C%20Banten%2015810" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Karawang" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Karawang" data-province="Jawa Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3>Karawang</h3>
+          <p class="sozo-address">Jalan Bharata Blok J No. 3 Kel. Sukaluyu Kec. Telukjambe Timur, Karawang, Jawa Barat 41361</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Karawang%2C%20Jalan%20Bharata%20Blok%20J%20No.%203%20Kel.%20Sukaluyu%20Kec.%20Telukjambe%20Timur%2C%20Karawang%2C%20Jawa%20Barat%2041361" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Kelapa Gading Boulevard" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Kelapa Gading Boulevard" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-utara/kelapa-gading/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-utara/kelapa-gading/" class="sozo-branch-link">Kelapa Gading Boulevard</a></h3>
+          <p class="sozo-address">H 4 / 6, Jl. Boulevard Raya, RT.1/RW.2, Kelapa Gading Timur, Kec. Kelapa Gading, Jakarta Utara, DKI Jakarta 14240</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Kelapa%20Gading%20Boulevard%2C%20H%204%20%2F%206%2C%20Jl.%20Boulevard%20Raya%2C%20RT.1%2FRW.2%2C%20Kelapa%20Gading%20Timur%2C%20Kec.%20Kelapa%20Gading%2C%20Jakarta%20Utara%2C%20DKI%20Jakarta%2014240" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Kelapa Gading Summarecon" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Kelapa Gading Summarecon" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-utara/kelapa-gading/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-utara/kelapa-gading/" class="sozo-branch-link">Kelapa Gading Summarecon</a></h3>
+          <p class="sozo-address">Blok LC 6 No.43, Jl. Boulevard Bar., Klp. Gading Bar., Kec. Klp. Gading, Jakarta Utara, DKI Jakarta 14240</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Kelapa%20Gading%20Summarecon%2C%20Blok%20LC%206%20No.43%2C%20Jl.%20Boulevard%20Bar.%2C%20Klp.%20Gading%20Bar.%2C%20Kec.%20Klp.%20Gading%2C%20Jakarta%20Utara%2C%20DKI%20Jakarta%2014240" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Kemang" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Kemang" data-province="DKI Jakarta">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3>Kemang</h3>
+          <p class="sozo-address">Jalan Kemang Raya No. 72, RT.4/RW.2, Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan, DKI Jakarta 12730</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Kemang%2C%20Jalan%20Kemang%20Raya%20No.%2072%2C%20RT.4%2FRW.2%2C%20Bangka%2C%20Kec.%20Mampang%20Prapatan%2C%20Kota%20Jakarta%20Selatan%2C%20DKI%20Jakarta%2012730" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Kemanggisan" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Kemanggisan" data-province="DKI Jakarta">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3>Kemanggisan</h3>
+          <p class="sozo-address">Ruko Kemanggisan Square, Jl. Kemanggisan Raya No. B5 Unit C &amp; D, Kel. Palmerah, Kec. Palmerah, Kota Jakarta Barat, DKI Jakarta 11480</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Kemanggisan%2C%20Ruko%20Kemanggisan%20Square%2C%20Jl.%20Kemanggisan%20Raya%20No.%20B5%20Unit%20C%20%26%20D%2C%20Kel.%20Palmerah%2C%20Kec.%20Palmerah%2C%20Kota%20Jakarta%20Barat%2C%20DKI%20Jakarta%2011480" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Kota Wisata Cibubur" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Kota Wisata Cibubur" data-province="Jawa Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3>Kota Wisata Cibubur</h3>
+          <p class="sozo-address">Ruko Downtown Madison Blok SHC6 No. 8 Jl. Raya Kota Wisata Cibubur, Kel. Ciangsana Kec. Gunung Putri Kab. Bogor Jawa Barat 16969</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Kota%20Wisata%20Cibubur%2C%20Ruko%20Downtown%20Madison%20Blok%20SHC6%20No.%208%20Jl.%20Raya%20Kota%20Wisata%20Cibubur%2C%20Kel.%20Ciangsana%20Kec.%20Gunung%20Putri%20Kab.%20Bogor%20Jawa%20Barat%2016969" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Lampung" data-branch-province="Lampung" data-name="Sozo Skin Clinic - Lampung" data-province="Lainnya">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Lampung</span>
+          <h3>Lampung</h3>
+          <p class="sozo-address">Jl. Kartini No.127 B, Klp. Tiga, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35127</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Lampung%2C%20Jl.%20Kartini%20No.127%20B%2C%20Klp.%20Tiga%2C%20Kec.%20Tj.%20Karang%20Pusat%2C%20Kota%20Bandar%20Lampung%2C%20Lampung%2035127" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Makassar" data-branch-province="Sulawesi Selatan" data-name="Sozo Skin Clinic - Makassar" data-province="Sulawesi Selatan">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Sulawesi Selatan</span>
+          <h3>Makassar</h3>
+          <p class="sozo-address">Ko. Business Centre Jade No.1, RT.001/RW.01, Masale, Kecamatan Panakkukang, Kota Makassar, Sulawesi Selatan 90231</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Makassar%2C%20Ko.%20Business%20Centre%20Jade%20No.1%2C%20RT.001%2FRW.01%2C%20Masale%2C%20Kecamatan%20Panakkukang%2C%20Kota%20Makassar%2C%20Sulawesi%20Selatan%2090231" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Makassar Tamalanrea" data-branch-province="Sulawesi Selatan" data-name="Sozo Skin Clinic - Makassar Tamalanrea" data-province="Sulawesi Selatan">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Sulawesi Selatan</span>
+          <h3>Makassar Tamalanrea</h3>
+          <p class="sozo-address">Jalan Perintis Kemerdekaan, Tamalanrea Jaya, Tamalanrea, Kota Makassar, Sulawesi Selatan 90245</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Makassar%20Tamalanrea%2C%20Jalan%20Perintis%20Kemerdekaan%2C%20Tamalanrea%20Jaya%2C%20Tamalanrea%2C%20Kota%20Makassar%2C%20Sulawesi%20Selatan%2090245" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Malang" data-branch-province="Jawa Timur" data-name="Sozo Skin Clinic - Malang" data-province="Jawa Timur">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Timur</span>
+          <h3>Malang</h3>
+          <p class="sozo-address">Jl. Pahlawan Trip No.23, Oro-oro Dowo, Kec. Klojen, Malang, Jawa Timur 65145</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Malang%2C%20Jl.%20Pahlawan%20Trip%20No.23%2C%20Oro-oro%20Dowo%2C%20Kec.%20Klojen%2C%20Malang%2C%20Jawa%20Timur%2065145" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Mampang" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Mampang" data-province="DKI Jakarta">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3>Mampang</h3>
+          <p class="sozo-address">Jalan Mampang Prapatan Raya No. 99, Kel. Duren Tiga, Kec. Pancoran, Jakarta Selatan, DKI Jakarta 12760</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Mampang%2C%20Jalan%20Mampang%20Prapatan%20Raya%20No.%2099%2C%20Kel.%20Duren%20Tiga%2C%20Kec.%20Pancoran%2C%20Jakarta%20Selatan%2C%20DKI%20Jakarta%2012760" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Manado" data-branch-province="Sulawesi Utara" data-name="Sozo Skin Clinic - Manado" data-province="Sulawesi Utara">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Sulawesi Utara</span>
+          <h3>Manado</h3>
+          <p class="sozo-address">Komp. Ruko Mega Mas Blok C1 No. 15-16, Jl. Pierre Tendean - Boulevard, Wenang Sel., Kec. Wenang, Kota Manado, Sulawesi Utara 95111</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Manado%2C%20Komp.%20Ruko%20Mega%20Mas%20Blok%20C1%20No.%2015-16%2C%20Jl.%20Pierre%20Tendean%20-%20Boulevard%2C%20Wenang%20Sel.%2C%20Kec.%20Wenang%2C%20Kota%20Manado%2C%20Sulawesi%20Utara%2095111" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Mangga Besar" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Mangga Besar" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/mangga-besar/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/mangga-besar/" class="sozo-branch-link">Mangga Besar</a></h3>
+          <p class="sozo-address">Jl. Raya Mangga Besar No.84 13, RT.13/RW.1, Taman Sari, Kec. Taman Sari, Kota Jakarta Barat, DKI Jakarta 11150</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Mangga%20Besar%2C%20Jl.%20Raya%20Mangga%20Besar%20No.84%2013%2C%20RT.13%2FRW.1%2C%20Taman%20Sari%2C%20Kec.%20Taman%20Sari%2C%20Kota%20Jakarta%20Barat%2C%20DKI%20Jakarta%2011150" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Margonda Depok" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Margonda Depok" data-province="Jawa Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3>Margonda Depok</h3>
+          <p class="sozo-address">Jl. Margonda No.27, Pondok Cina, Kecamatan Beji, Depok, Jawa Barat 16424</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Margonda%20Depok%2C%20Jl.%20Margonda%20No.27%2C%20Pondok%20Cina%2C%20Kecamatan%20Beji%2C%20Depok%2C%20Jawa%20Barat%2016424" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Mataram" data-branch-province="Nusa Tenggara Barat" data-name="Sozo Skin Clinic - Mataram" data-province="Nusa Tenggara Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Nusa Tenggara Barat</span>
+          <h3>Mataram</h3>
+          <p class="sozo-address">Jl. Pejanggik No. 82C, Kel. Pejanggik, Kec. Mataram, Mataram, Nusa Tenggara Barat 83122</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Mataram%2C%20Jl.%20Pejanggik%20No.%2082C%2C%20Kel.%20Pejanggik%2C%20Kec.%20Mataram%2C%20Mataram%2C%20Nusa%20Tenggara%20Barat%2083122" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Medan" data-branch-province="Sumatera Utara" data-name="Sozo Skin Clinic - Medan" data-province="Sumatera Utara">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Sumatera Utara</span>
+          <h3>Medan</h3>
+          <p class="sozo-address">Jalan iskandar muda no 23, Medan Baru, Kota Medan, Sumatera Utara 20154</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Medan%2C%20Jalan%20iskandar%20muda%20no%2023%2C%20Medan%20Baru%2C%20Kota%20Medan%2C%20Sumatera%20Utara%2020154" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Medan Cemara Asri" data-branch-province="Sumatera Utara" data-name="Sozo Skin Clinic - Medan Cemara Asri" data-province="Sumatera Utara">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Sumatera Utara</span>
+          <h3>Medan Cemara Asri</h3>
+          <p class="sozo-address">Jl. Cemara Boulevard Blok A-1 No. 40, Medan Estate, Percut Sei Tuan, Deli Serdang, Sumatera Utara 20233</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Medan%20Cemara%20Asri%2C%20Jl.%20Cemara%20Boulevard%20Blok%20A-1%20No.%2040%2C%20Medan%20Estate%2C%20Percut%20Sei%20Tuan%2C%20Deli%20Serdang%2C%20Sumatera%20Utara%2020233" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Medan Johor" data-branch-province="Sumatera Utara" data-name="Sozo Skin Clinic - Medan Johor" data-province="Sumatera Utara">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Sumatera Utara</span>
+          <h3>Medan Johor</h3>
+          <p class="sozo-address">Jl. Jenderal Besar A.H. Nasution No.53, Pangkalan Masyhur, Kec. Medan Johor, Kota Medan, Sumatera Utara 20143</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Medan%20Johor%2C%20Jl.%20Jenderal%20Besar%20A.H.%20Nasution%20No.53%2C%20Pangkalan%20Masyhur%2C%20Kec.%20Medan%20Johor%2C%20Kota%20Medan%2C%20Sumatera%20Utara%2020143" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Padang" data-branch-province="Sumatera Barat" data-name="Sozo Skin Clinic - Padang" data-province="Lainnya">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Sumatera Barat</span>
+          <h3>Padang</h3>
+          <p class="sozo-address">Jl. H. Agus Salim No.17, Sawahan, Kec. Padang Tim., Kota Padang, Sumatera Barat 25171</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Padang%2C%20Jl.%20H.%20Agus%20Salim%20No.17%2C%20Sawahan%2C%20Kec.%20Padang%20Tim.%2C%20Kota%20Padang%2C%20Sumatera%20Barat%2025171" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Palembang" data-branch-province="Sumatera Selatan" data-name="Sozo Skin Clinic - Palembang" data-province="Sumatera Selatan">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Sumatera Selatan</span>
+          <h3>Palembang</h3>
+          <p class="sozo-address">Jl. Jend. Basuki Rachmat No.12 B-C, Pahlawan, Kec. Kemuning, Palembang, Sumatera Selatan 30128</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Palembang%2C%20Jl.%20Jend.%20Basuki%20Rachmat%20No.12%20B-C%2C%20Pahlawan%2C%20Kec.%20Kemuning%2C%20Palembang%2C%20Sumatera%20Selatan%2030128" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Pekanbaru" data-branch-province="Riau" data-name="Sozo Skin Clinic - Pekanbaru" data-province="Riau">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Riau</span>
+          <h3>Pekanbaru</h3>
+          <p class="sozo-address">Jl. Jend. Sudirman No.11, Tengkerang Sel., Kec. Bukit Raya, Pekanbaru, Riau 28125</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Pekanbaru%2C%20Jl.%20Jend.%20Sudirman%20No.11%2C%20Tengkerang%20Sel.%2C%20Kec.%20Bukit%20Raya%2C%20Pekanbaru%2C%20Riau%2028125" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="PIK" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - PIK" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-utara/pik/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-utara/pik/" class="sozo-branch-link">PIK</a></h3>
+          <p class="sozo-address">Ruko Arcade, Jl Pantai Indah Utara 2, RT.2/RW.7, Kapuk Muara, Kec. Penjaringan, Jakarta Utara, DKI Jakarta 14460</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20PIK%2C%20Ruko%20Arcade%2C%20Jl%20Pantai%20Indah%20Utara%202%2C%20RT.2%2FRW.7%2C%20Kapuk%20Muara%2C%20Kec.%20Penjaringan%2C%20Jakarta%20Utara%2C%20DKI%20Jakarta%2014460" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Pluit" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Pluit" data-province="DKI Jakarta">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3>Pluit</h3>
+          <p class="sozo-address">Ruko CBD Pluit, Unit No. C-16, Jl. Pintu III, RT.23/RW.8, Jakarta Utara, DKI Jakarta 14440</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Pluit%2C%20Ruko%20CBD%20Pluit%2C%20Unit%20No.%20C-16%2C%20Jl.%20Pintu%20III%2C%20RT.23%2FRW.8%2C%20Jakarta%20Utara%2C%20DKI%20Jakarta%2014440" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Pondok Bambu" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Pondok Bambu" data-province="DKI Jakarta">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3>Pondok Bambu</h3>
+          <p class="sozo-address">Jl. Pahlawan Revolusi No.2, RW.4, Pondok Bambu, Durensawit, Jakarta Timur, DKI Jakarta 13430</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Pondok%20Bambu%2C%20Jl.%20Pahlawan%20Revolusi%20No.2%2C%20RW.4%2C%20Pondok%20Bambu%2C%20Durensawit%2C%20Jakarta%20Timur%2C%20DKI%20Jakarta%2013430" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Pontianak" data-branch-province="Kalimantan Barat" data-name="Sozo Skin Clinic - Pontianak" data-province="Kalimantan Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Kalimantan Barat</span>
+          <h3>Pontianak</h3>
+          <p class="sozo-address">Jl. Slt. Abdurrahman Kelurahan No.67, Sungai Bangkong, Kec. Pontianak Kota, Pontianak, Kalimantan Barat 78116</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Pontianak%2C%20Jl.%20Slt.%20Abdurrahman%20Kelurahan%20No.67%2C%20Sungai%20Bangkong%2C%20Kec.%20Pontianak%20Kota%2C%20Pontianak%2C%20Kalimantan%20Barat%2078116" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Puri Indah" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Puri Indah" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/puri-indah/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/puri-indah/" class="sozo-branch-link">Puri Indah</a></h3>
+          <p class="sozo-address">Jl. Puri Indah Raya Blok T1 No.3A, RT.1/RW.2, Kembangan Selatan, Kembangan, Jakarta Barat, DKI Jakarta 11610</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Puri%20Indah%2C%20Jl.%20Puri%20Indah%20Raya%20Blok%20T1%20No.3A%2C%20RT.1%2FRW.2%2C%20Kembangan%20Selatan%2C%20Kembangan%2C%20Jakarta%20Barat%2C%20DKI%20Jakarta%2011610" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Rawamangun" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Rawamangun" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/rawamangun/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/rawamangun/" class="sozo-branch-link">Rawamangun</a></h3>
+          <p class="sozo-address">Jl. Pemuda No.78 C, RT.1/RW.8, Jati, Kec. Pulo Gadung, Jakarta Timur, DKI Jakarta 13220</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Rawamangun%2C%20Jl.%20Pemuda%20No.78%20C%2C%20RT.1%2FRW.8%2C%20Jati%2C%20Kec.%20Pulo%20Gadung%2C%20Jakarta%20Timur%2C%20DKI%20Jakarta%2013220" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Samarinda" data-branch-province="Kalimantan Timur" data-name="Sozo Skin Clinic - Samarinda" data-province="Kalimantan Timur">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Kalimantan Timur</span>
+          <h3>Samarinda</h3>
+          <p class="sozo-address">Jl. Dr. Sutomo No.8b, Sidodadi, Kec. Samarinda Ulu, Samarinda, Kalimantan Timur 75243</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Samarinda%2C%20Jl.%20Dr.%20Sutomo%20No.8b%2C%20Sidodadi%2C%20Kec.%20Samarinda%20Ulu%2C%20Samarinda%2C%20Kalimantan%20Timur%2075243" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Semarang" data-branch-province="Jawa Tengah" data-name="Sozo Skin Clinic - Semarang" data-province="Jawa Tengah">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Tengah</span>
+          <h3>Semarang</h3>
+          <p class="sozo-address">Jl. Mayjend Sutoyo No.83, Karangkidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50136</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Semarang%2C%20Jl.%20Mayjend%20Sutoyo%20No.83%2C%20Karangkidul%2C%20Kec.%20Semarang%20Tengah%2C%20Kota%20Semarang%2C%20Jawa%20Tengah%2050136" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Semarang Banyumanik" data-branch-province="Jawa Tengah" data-name="Sozo Skin Clinic - Semarang Banyumanik" data-province="Jawa Tengah">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Tengah</span>
+          <h3>Semarang Banyumanik</h3>
+          <p class="sozo-address">Jl. Setia Budi No.115, Srondol Kulon, Kec. Banyumanik, Semarang, Jawa Tengah 50263</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Semarang%20Banyumanik%2C%20Jl.%20Setia%20Budi%20No.115%2C%20Srondol%20Kulon%2C%20Kec.%20Banyumanik%2C%20Semarang%2C%20Jawa%20Tengah%2050263" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Serang" data-branch-province="Banten" data-name="Sozo Skin Clinic - Serang" data-province="Banten">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3>Serang</h3>
+          <p class="sozo-address">Jalan Jenderal Ahmad Yani No. 160 Kel. Sumur Pecung Kec. Serang, Kota Serang, Banten 42118</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Serang%2C%20Jalan%20Jenderal%20Ahmad%20Yani%20No.%20160%20Kel.%20Sumur%20Pecung%20Kec.%20Serang%2C%20Kota%20Serang%2C%20Banten%2042118" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Solo" data-branch-province="Jawa Tengah" data-name="Sozo Skin Clinic - Solo" data-province="Jawa Tengah">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Tengah</span>
+          <h3>Solo</h3>
+          <p class="sozo-address">Jl. Prof. DR. Supomo 25-47, Timuran, Kec. Banjarsari, Surakarta, Jawa Tengah 57139</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Solo%2C%20Jl.%20Prof.%20DR.%20Supomo%2025-47%2C%20Timuran%2C%20Kec.%20Banjarsari%2C%20Surakarta%2C%20Jawa%20Tengah%2057139" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Sunter" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Sunter" data-province="DKI Jakarta">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3>Sunter</h3>
+          <p class="sozo-address">Ruko Greenlake Sunter Blok TBS BSM, Jalan Danau Sunter Selatan, RT.4/RW.18, Sunter Agung, Kecamatan Tanjung Priok, Jakarta Utara, DKI Jakarta 14350</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Sunter%2C%20Ruko%20Greenlake%20Sunter%20Blok%20TBS%20BSM%2C%20Jalan%20Danau%20Sunter%20Selatan%2C%20RT.4%2FRW.18%2C%20Sunter%20Agung%2C%20Kecamatan%20Tanjung%20Priok%2C%20Jakarta%20Utara%2C%20DKI%20Jakarta%2014350" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Surabaya Bukit Darmo" data-branch-province="Jawa Timur" data-name="Sozo Skin Clinic - Surabaya Bukit Darmo" data-province="Jawa Timur">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Timur</span>
+          <h3>Surabaya Bukit Darmo</h3>
+          <p class="sozo-address">Office Park, Jl. Mayjend. Jonosewojo, Pradahkalikendal, Kec. Dukuhpakis, Surabaya, Jawa Timur 60225</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Surabaya%20Bukit%20Darmo%2C%20Office%20Park%2C%20Jl.%20Mayjend.%20Jonosewojo%2C%20Pradahkalikendal%2C%20Kec.%20Dukuhpakis%2C%20Surabaya%2C%20Jawa%20Timur%2060225" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Surabaya Jemursari" data-branch-province="Jawa Timur" data-name="Sozo Skin Clinic - Surabaya Jemursari" data-province="Jawa Timur">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Timur</span>
+          <h3>Surabaya Jemursari</h3>
+          <p class="sozo-address">Jalan Jemursari No. 106A Jemur Wonosari, Kec. Tenggilis Mejoyo, Kota Surabaya, Jawa Timur 60292</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Surabaya%20Jemursari%2C%20Jalan%20Jemursari%20No.%20106A%20Jemur%20Wonosari%2C%20Kec.%20Tenggilis%20Mejoyo%2C%20Kota%20Surabaya%2C%20Jawa%20Timur%2060292" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Surabaya Manyar" data-branch-province="Jawa Timur" data-name="Sozo Skin Clinic - Surabaya Manyar" data-province="Jawa Timur">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Timur</span>
+          <h3>Surabaya Manyar</h3>
+          <p class="sozo-address">Jl. Manyar Kertoarjo No.10A, Mojo, Kecamatan Gubeng, Surabaya, Jawa Timur 60285</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Surabaya%20Manyar%2C%20Jl.%20Manyar%20Kertoarjo%20No.10A%2C%20Mojo%2C%20Kecamatan%20Gubeng%2C%20Surabaya%2C%20Jawa%20Timur%2060285" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Surabaya Mulyosari" data-branch-province="Jawa Timur" data-name="Sozo Skin Clinic - Surabaya Mulyosari" data-province="Jawa Timur">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Timur</span>
+          <h3>Surabaya Mulyosari</h3>
+          <p class="sozo-address">Jalan Raya Mulyosari, Kalisari, Kecamatan Mulyorejo, Surabaya, Jawa Timur 60113</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Surabaya%20Mulyosari%2C%20Jalan%20Raya%20Mulyosari%2C%20Kalisari%2C%20Kecamatan%20Mulyorejo%2C%20Surabaya%2C%20Jawa%20Timur%2060113" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Tangerang City" data-branch-province="Banten" data-name="Sozo Skin Clinic - Tangerang City" data-province="Banten">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Banten</span>
+          <h3>Tangerang City</h3>
+          <p class="sozo-address">Jl. Perintis Kemerdekaan Blok C No. 5 RT.005/RW.005, Babakan, Ruko Business Park Tangcity Superblock, Kota Tangerang, Banten 15133</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Tangerang%20City%2C%20Jl.%20Perintis%20Kemerdekaan%20Blok%20C%20No.%205%20RT.005%2FRW.005%2C%20Babakan%2C%20Ruko%20Business%20Park%20Tangcity%20Superblock%2C%20Kota%20Tangerang%2C%20Banten%2015133" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Tanjung Duren" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Tanjung Duren" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/tanjung-duren/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/tanjung-duren/" class="sozo-branch-link">Tanjung Duren</a></h3>
+          <p class="sozo-address">Jl. Tanjung Duren Raya No. 41 D, Jakarta Barat, DKI Jakarta 11470</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Tanjung%20Duren%2C%20Jl.%20Tanjung%20Duren%20Raya%20No.%2041%20D%2C%20Jakarta%20Barat%2C%20DKI%20Jakarta%2011470" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Tanjung Duren 2" data-branch-province="DKI Jakarta" data-name="Sozo Skin Signature - Tanjung Duren 2" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/tanjung-duren/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/tanjung-duren/" class="sozo-branch-link">Tanjung Duren 2</a></h3>
+          <p class="sozo-address">Jl. Tanjung Duren Raya No.364A, Tj. Duren Utara, Kec. Grogol petamburan, Jakarta Barat, DKI Jakarta 11470</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Signature%20-%20Tanjung%20Duren%202%2C%20Jl.%20Tanjung%20Duren%20Raya%20No.364A%2C%20Tj.%20Duren%20Utara%2C%20Kec.%20Grogol%20petamburan%2C%20Jakarta%20Barat%2C%20DKI%20Jakarta%2011470" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Tasikmalaya" data-branch-province="Jawa Barat" data-name="Sozo Skin Clinic - Tasikmalaya" data-province="Jawa Barat">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>Jawa Barat</span>
+          <h3>Tasikmalaya</h3>
+          <p class="sozo-address">Komplek Ruko Permata Regency, Jl. HZ Mustofa, Kelurahan Kahuripan, Kec. Tawang, Tasikmalaya, Jawa Barat 46115</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Tasikmalaya%2C%20Komplek%20Ruko%20Permata%20Regency%2C%20Jl.%20HZ%20Mustofa%2C%20Kelurahan%20Kahuripan%2C%20Kec.%20Tawang%2C%20Tasikmalaya%2C%20Jawa%20Barat%2046115" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Tebet" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Tebet" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/tebet/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/tebet/" class="sozo-branch-link">Tebet</a></h3>
+          <p class="sozo-address">Jl. Tebet Utara Dalam No. 3A RT. 003 RW 002 Blok V Persil No. 561, Kota Jakarta Selatan, DKI Jakarta 12820</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Tebet%2C%20Jl.%20Tebet%20Utara%20Dalam%20No.%203A%20RT.%20003%20RW%20002%20Blok%20V%20Persil%20No.%20561%2C%20Kota%20Jakarta%20Selatan%2C%20DKI%20Jakarta%2012820" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Tebet Timur" data-branch-province="DKI Jakarta" data-name="Sozo Skin Clinic - Tebet Timur" data-province="DKI Jakarta" data-url="https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/tebet/">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DKI Jakarta</span>
+          <h3><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/tebet/" class="sozo-branch-link">Tebet Timur</a></h3>
+          <p class="sozo-address">Jl. Tebet Timur Raya No.67D, RT.9/RW.3, Tebet Tim., Kec. Tebet, Kota Jakarta Selatan, DKI Jakarta 12820</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Tebet%20Timur%2C%20Jl.%20Tebet%20Timur%20Raya%20No.67D%2C%20RT.9%2FRW.3%2C%20Tebet%20Tim.%2C%20Kec.%20Tebet%2C%20Kota%20Jakarta%20Selatan%2C%20DKI%20Jakarta%2012820" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="sozo-map-card" data-branch-name="Yogyakarta" data-branch-province="DI Yogyakarta" data-name="Sozo Skin Clinic - Yogyakarta" data-province="DI Yogyakarta">
+        <div class="sozo-card-media"><div class="sozo-card-placeholder"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg><span>SOZO</span></div></div>
+        <div class="sozo-card-content">
+          <span class="sozo-region-badge"><svg aria-hidden="true"><use href="#sozo-i-pin"></use></svg>DI Yogyakarta</span>
+          <h3>Yogyakarta</h3>
+          <p class="sozo-address">Jl. Pangeran Diponegoro No.58, Gowongan, Kec. Jetis, Yogyakarta, DI Yogyakarta 55233</p>
+          <div class="sozo-action-buttons">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic"><svg aria-hidden="true"><use href="#sozo-i-wa"></use></svg> BUAT JADWAL</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Yogyakarta%2C%20Jl.%20Pangeran%20Diponegoro%20No.58%2C%20Gowongan%2C%20Kec.%20Jetis%2C%20Yogyakarta%2C%20DI%20Yogyakarta%2055233" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps"><svg aria-hidden="true"><use href="#sozo-i-map"></use></svg> LIHAT MAPS &gt;</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ==================== 5. PAGINATION (ERHA MINIMALIST STYLE) ==================== -->
-    <div id="sozoPagination" class="sozo-pagination"></div>
+    <nav id="sozoPagination" class="sozo-pagination" aria-label="Halaman daftar klinik"></nav>
 
     <!-- ==================== 6. EMPTY STATE ==================== -->
     <div id="sozoEmptyState" class="sozo-empty-state">
@@ -466,6 +1445,10 @@
     align-items: stretch !important;
     gap: 22px !important;
   }
+  /* Sebelum JS aktif, tampilkan halaman 1 saja (6 kartu). Kartu lain tetap ada di HTML untuk crawler. */
+  .sozo-map-grid:not(.is-ready) > .sozo-map-card:nth-child(n+7) {
+    display: none !important;
+  }
   .sozo-card-media {
     width: 190px !important;
     height: 190px !important;
@@ -546,6 +1529,24 @@
   .sozo-card-content h3 a:hover {
     color: #0E1356 !important;
     text-decoration: underline !important;
+  }
+  /* Seluruh card bisa diklik: link judul diperluas ke area card */
+  .sozo-map-card {
+    position: relative !important;
+  }
+  .sozo-card-content h3 a.sozo-branch-link::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 1 !important;
+  }
+  /* Tombol WA & Maps tetap di atas overlay supaya bisa diklik sendiri */
+  .sozo-card-content .sozo-btn {
+    position: relative !important;
+    z-index: 2 !important;
   }
   .sozo-address {
     color: #41413E !important;
@@ -635,6 +1636,14 @@
     transition: all 0.2s ease !important;
     border: none !important;
     user-select: none !important;
+    font-family: inherit !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+  }
+  .sozo-page-item:focus-visible,
+  .sozo-page-arrow:focus-visible {
+    outline: 2px solid #1A2080 !important;
+    outline-offset: 2px !important;
   }
   .sozo-page-item:hover:not(.active):not(.dots) {
     background: #E9DFD5 !important;
@@ -662,6 +1671,12 @@
     border-radius: 50% !important;
     transition: all 0.2s ease !important;
     user-select: none !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: inherit !important;
+    line-height: 1 !important;
   }
   .sozo-page-arrow:hover {
     background: #E9DFD5 !important;
@@ -1138,90 +2153,6 @@
 <script>
 (function() {
   function initSozoLocator() {
-    const clinicsData = [
-      {"name": "Sozo Skin Clinic - AEON Tanjung Barat", "address": "AEON Tanjung Barat (3-23AB) - Jl. Raya Tanjung Barat No. 163, RT 012 RW 04, Tanjung Barat, Jagakarsa, Jakarta Selatan, DKI Jakarta 12530", "province": "DKI Jakarta"},
-      {"name": "Sozo Skin Clinic - Alam Sutera", "address": "Ruko Jalur Sutera 25 BC-15, Alam Sutera, Kel. Pakualam, Kec. Tangerang, Kota Tangerang Selatan, Banten 15331", "province": "Banten", "image": "https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-alam-sutera-depan.webp"},
-      {"name": "Sozo Skin Clinic - Arteri Pondok Indah", "address": "Jl. Iskandar Muda No.68A, RT.3/RW.2, Kec. Kby. Lama, Jakarta Selatan, DKI Jakarta 12240", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/pondok-indah/"},
-      {"name": "Sozo Skin Clinic - Bali", "address": "Jl. Raya Puputan No.190 A, Renon, Denpasar Selatan, Kota Denpasar, Bali 80226", "province": "Bali"},
-      {"name": "Sozo Skin Clinic - Bali Gatot Subroto", "address": "Jl. Gatot Subroto No. 279, Dauh Puri Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80237", "province": "Bali"},
-      {"name": "Sozo Skin Clinic - Balikpapan", "address": "Jl. Ruhui Rahayu Ring Road No.1, Sepinggan, Kecamatan Balikpapan Selatan, Balikpapan, Kalimantan Timur 76115", "province": "Kalimantan Timur"},
-      {"name": "Sozo Skin Clinic - Balikpapan Superblock", "address": "Ruko Komplek Balikpapan Super Blok (BSB) Blok E-20, Jl. Jenderal Sudirman, Kel. Gunung Bahagia, Kec. Balikpapan Selatan, Kota Balikpapan, Kalimantan Timur 76114", "province": "Kalimantan Timur"},
-      {"name": "Sozo Skin Clinic - Bandung Buah Batu", "address": "Jl. Buah Batu No 250, Cijagra, Kec. Lengkong, Bandung, Jawa Barat 40265", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Bandung Paskal", "address": "Jalan Pajajaran No.68, Pamoyanan, Kecamatan Cicendo, Kota Bandung, Jawa Barat 40173", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Bandung Summarecon", "address": "Ruko Topaz Commercial No. 20, Summarecon Bandung, Cisaranten Kidul, Kec. Gedebage, Kota Bandung, Jawa Barat 40295", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Bandung Surya Sumantri", "address": "Jalan Prof Surya Sumantri No. 156, Kelurahan Sukagalih, Kecamatan Sukajadi, Kota Bandung, Jawa Barat 40164", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Banjarmasin", "address": "Jalan Ahmad Yani KM 5,7 Nomor 7A RT 008 RW 001 Kel. Pemurus Dalam Kec. Banjarmasin Selatan, Banjarmasin, Kalimantan Selatan 70238", "province": "Kalimantan Selatan"},
-      {"name": "Sozo Skin Clinic - Batam", "address": "Teluk Tering, Kec. Batam Kota, Batam, Kepulauan Riau 29444", "province": "Kepulauan Riau"},
-      {"name": "Sozo Skin Clinic - Bekasi", "address": "Jl. Cemara Raya no. 1, Kavling 10D, RT.003/RW.006A, Jakasampurna, Kota Bekasi, Jawa Barat 17145", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Bekasi Grand Galaxy", "address": "Jl. Boulevard Raya RGA No.67, RT.001/RW.002, Jaka Setia, Kec. Bekasi Sel., Kota Bks, Jawa Barat 17147", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Bekasi Summarecon", "address": "Ruko Emerald Commercial Blok UA No 27, RT 004 RW 011, Marga Mulya, Kec. Bekasi Utara, Bekasi, Jawa Barat 17123", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Bendungan Hilir", "address": "Jl. Bendungan Hilir No 7 , RT.11/RW.3, Bend. Hilir, Kecamatan Tanah Abang, Jakarta, DKI Jakarta 10210", "province": "DKI Jakarta"},
-      {"name": "Sozo Skin Clinic - Bintaro", "address": "Jl. Bintaro Utama V Blok EA 2 lantai 2, Bintaro Jaya No.27, Pd. Ranji, Kec. Ciputat Timur, Tangerang Selatan, Banten 15224", "province": "Banten", "url": "https://sozoskinclinic.com/lokasi/tangerang-selatan/bintaro/"},
-      {"name": "Sozo Skin Clinic - Bintaro Sektor 7", "address": "Ruko Kebayoran Arcade 1, Jl. Boulevard Bintaro Jaya Blok 7, Pd. Jaya, Kec. Pd. Aren, Tangerang Selatan, Banten 15220", "province": "Banten"},
-      {"name": "Sozo Skin Clinic - Bogor", "address": "Jl. Bangbarung Raya No.24, RT.02/RW.07, Bantarjati, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16153", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Bogor Taman Yasmin", "address": "Komplek Ruko Permata Yasmin, Jl. Brigjen Saptadji Hadiprawira No. 1 & 2, Cilendek Barat, Bogor Barat, Kota Bogor, Jawa Barat 16112", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - BSD", "address": "Ruko Pasar Modern Timur 2, Jl. Letnan Sutopo Blok AA Nomor 25-26, Bumi Serpong Damai, Rawa Mekar Jaya, Kec. Serpong, Tangerang Selatan, Banten 15318", "province": "Banten", "url": "https://sozoskinclinic.com/lokasi/tangerang-selatan/bsd/"},
-      {"name": "Sozo Skin Clinic - Cibinong", "address": "Jl. Raya Jakarta-Bogor KM. 45 No. 43a, Pakansari, Kec. Cibinong, Kabupaten Bogor, Jawa Barat 16195", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Cibubur Transyogi", "address": "Ruko Cibubur Point, Jl. Alternatif Cibubur, Blk. A, No.9, Harjamukti, Kec. Cimanggis, Kota Depok, Jawa Barat 16454", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Cikarang", "address": "Jl. Raya Cikarang - Cibarusah No.1, Serang, Cikarang Selatan, Kabupaten Bekasi, Jawa Barat 17530", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Ciledug Petukangan", "address": "Jl. Ciledug Raya No.1, RT.004/RW.001, Cipadu, Kec. Larangan, Kota Tangerang, Banten 15154", "province": "Banten"},
-      {"name": "Sozo Skin Clinic - Cinere", "address": "Jl. Cinere Raya No. 9, Cinere, Kec. Cinere, Kota Depok, Jawa Barat 16514", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Cirebon", "address": "Jl. DR. Cipto Mangunkusumo Komplek CSB (Cirebon Super Blok) Office Park Kav No. 5, Kel. Pekiringan, Kec. Kesambi, Cirebon, Jawa Barat 45131", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Gading Serpong", "address": "Jl. Gading Serpong Boulevard, Ruko Odessa Blok AA 2 No.32 Kabupaten Tangerang, Banten 15810", "province": "Banten", "url": "https://sozoskinclinic.com/lokasi/tangerang/gading-serpong/"},
-      {"name": "Sozo Skin Clinic - Green Lake City", "address": "Jl. Green Lake City Boulevard Blok D No. 26, Komplek Greenlake City Ruko Cordoba, Kota Tangerang, Banten 15147", "province": "Banten", "url": "https://sozoskinclinic.com/lokasi/tangerang/greenlake/"},
-      {"name": "Sozo Skin Clinic - Gresik", "address": "Jl. Kartini No.98B-100, Injen Barat, Tlogobendung, Kec. Gresik, Gresik, Jawa Timur 61122", "province": "Jawa Timur"},
-      {"name": "Sozo Skin Clinic - Jambi", "address": "Ruko Jambi Business Center (JBC) No. E1-12 & E1, Jl. Kapten Pattimura, No.15, Simpang III Sipin, Kec. Kota Baru, Jambi, 36361", "province": "Jambi"},
-      {"name": "Sozo Skin Clinic - JGC", "address": "Ruko New East, Jl. Jakarta Garden City Boulevard, RT. 11 RW. 8, Cakung Timur, Cakung, Jakarta Timur, DKI Jakarta 13910", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/jgc/"},
-      {"name": "Sozo Skin Clinic - Kalideres Citra Garden", "address": "Jl. Citra Garden VI No.1A, RT.1/RW.5, Tegal Alur, Kec. Kalideres, Jakarta Barat, DKI Jakarta 11820", "province": "DKI Jakarta"},
-      {"name": "Sozo Skin Clinic - Karawaci", "address": "Supermall Karawaci, Unit. FF # 11 Jalan 105 Bulevar Diponegoro Lippo Karawaci, Kel. Bencongan Indah. Kec. Kelapa Dua, Tangerang, Banten 15811", "province": "Banten", "url": "https://sozoskinclinic.com/lokasi/tangerang/karawaci/"},
-      {"name": "Sozo Skin Clinic - Karawaci Palem Semi", "address": "Ruko CBD, Jl. Palem Semi No.32, RT.001/RW.009, Panunggangan Barat, Cibodas, Tangerang, Banten 15139", "province": "Banten", "url": "https://sozoskinclinic.com/lokasi/tangerang/karawaci/"},
-      {"name": "Sozo Skin Clinic - Karawaci Taman Permata", "address": "Ruko New Asia, Lippo Village, Jl. Taman Permata No.220, Binong, Curug, Tangerang, Banten 15810", "province": "Banten", "url": "https://sozoskinclinic.com/lokasi/tangerang/karawaci/"},
-      {"name": "Sozo Skin Clinic - Karawang", "address": "Jalan Bharata Blok J No. 3 Kel. Sukaluyu Kec. Telukjambe Timur, Karawang, Jawa Barat 41361", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Kelapa Gading Boulevard", "address": "H 4 / 6, Jl. Boulevard Raya, RT.1/RW.2, Kelapa Gading Timur, Kec. Kelapa Gading, Jakarta Utara, DKI Jakarta 14240", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-utara/kelapa-gading/"},
-      {"name": "Sozo Skin Clinic - Kelapa Gading Summarecon", "address": "Blok LC 6 No.43, Jl. Boulevard Bar., Klp. Gading Bar., Kec. Klp. Gading, Jakarta Utara, DKI Jakarta 14240", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-utara/kelapa-gading/"},
-      {"name": "Sozo Skin Clinic - Kemang", "address": "Jalan Kemang Raya No. 72, RT.4/RW.2, Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan, DKI Jakarta 12730", "province": "DKI Jakarta"},
-      {"name": "Sozo Skin Clinic - Kemanggisan", "address": "Ruko Kemanggisan Square, Jl. Kemanggisan Raya No. B5 Unit C & D, Kel. Palmerah, Kec. Palmerah, Kota Jakarta Barat, DKI Jakarta 11480", "province": "DKI Jakarta"},
-      {"name": "Sozo Skin Clinic - Kota Wisata Cibubur", "address": "Ruko Downtown Madison Blok SHC6 No. 8 Jl. Raya Kota Wisata Cibubur, Kel. Ciangsana Kec. Gunung Putri Kab. Bogor Jawa Barat 16969", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Lampung", "address": "Jl. Kartini No.127 B, Klp. Tiga, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35127", "province": "Lainnya"},
-      {"name": "Sozo Skin Clinic - Makassar", "address": "Ko. Business Centre Jade No.1, RT.001/RW.01, Masale, Kecamatan Panakkukang, Kota Makassar, Sulawesi Selatan 90231", "province": "Sulawesi Selatan"},
-      {"name": "Sozo Skin Clinic - Makassar Tamalanrea", "address": "Jalan Perintis Kemerdekaan, Tamalanrea Jaya, Tamalanrea, Kota Makassar, Sulawesi Selatan 90245", "province": "Sulawesi Selatan"},
-      {"name": "Sozo Skin Clinic - Malang", "address": "Jl. Pahlawan Trip No.23, Oro-oro Dowo, Kec. Klojen, Malang, Jawa Timur 65145", "province": "Jawa Timur"},
-      {"name": "Sozo Skin Clinic - Mampang", "address": "Jalan Mampang Prapatan Raya No. 99, Kel. Duren Tiga, Kec. Pancoran, Jakarta Selatan, DKI Jakarta 12760", "province": "DKI Jakarta"},
-      {"name": "Sozo Skin Clinic - Manado", "address": "Komp. Ruko Mega Mas Blok C1 No. 15-16, Jl. Pierre Tendean - Boulevard, Wenang Sel., Kec. Wenang, Kota Manado, Sulawesi Utara 95111", "province": "Sulawesi Utara"},
-      {"name": "Sozo Skin Clinic - Mangga Besar", "address": "Jl. Raya Mangga Besar No.84 13, RT.13/RW.1, Taman Sari, Kec. Taman Sari, Kota Jakarta Barat, DKI Jakarta 11150", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/mangga-besar/"},
-      {"name": "Sozo Skin Clinic - Margonda Depok", "address": "Jl. Margonda No.27, Pondok Cina, Kecamatan Beji, Depok, Jawa Barat 16424", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Mataram", "address": "Jl. Pejanggik No. 82C, Kel. Pejanggik, Kec. Mataram, Mataram, Nusa Tenggara Barat 83122", "province": "Nusa Tenggara Barat"},
-      {"name": "Sozo Skin Clinic - Medan", "address": "Jalan iskandar muda no 23, Medan Baru, Kota Medan, Sumatera Utara 20154", "province": "Sumatera Utara"},
-      {"name": "Sozo Skin Clinic - Medan Cemara Asri", "address": "Jl. Cemara Boulevard Blok A-1 No. 40, Medan Estate, Percut Sei Tuan, Deli Serdang, Sumatera Utara 20233", "province": "Sumatera Utara"},
-      {"name": "Sozo Skin Clinic - Medan Johor", "address": "Jl. Jenderal Besar A.H. Nasution No.53, Pangkalan Masyhur, Kec. Medan Johor, Kota Medan, Sumatera Utara 20143", "province": "Sumatera Utara"},
-      {"name": "Sozo Skin Clinic - Padang", "address": "Jl. H. Agus Salim No.17, Sawahan, Kec. Padang Tim., Kota Padang, Sumatera Barat 25171", "province": "Lainnya"},
-      {"name": "Sozo Skin Clinic - Palembang", "address": "Jl. Jend. Basuki Rachmat No.12 B-C, Pahlawan, Kec. Kemuning, Palembang, Sumatera Selatan 30128", "province": "Sumatera Selatan"},
-      {"name": "Sozo Skin Clinic - Pekanbaru", "address": "Jl. Jend. Sudirman No.11, Tengkerang Sel., Kec. Bukit Raya, Pekanbaru, Riau 28125", "province": "Riau"},
-      {"name": "Sozo Skin Clinic - PIK", "address": "Ruko Arcade, Jl Pantai Indah Utara 2, RT.2/RW.7, Kapuk Muara, Kec. Penjaringan, Jakarta Utara, DKI Jakarta 14460", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-utara/pik/"},
-      {"name": "Sozo Skin Clinic - Pluit", "address": "Ruko CBD Pluit, Unit No. C-16, Jl. Pintu III, RT.23/RW.8, Jakarta Utara, DKI Jakarta 14440", "province": "DKI Jakarta"},
-      {"name": "Sozo Skin Clinic - Pondok Bambu", "address": "Jl. Pahlawan Revolusi No.2, RW.4, Pondok Bambu, Durensawit, Jakarta Timur, DKI Jakarta 13430", "province": "DKI Jakarta"},
-      {"name": "Sozo Skin Clinic - Pontianak", "address": "Jl. Slt. Abdurrahman Kelurahan No.67, Sungai Bangkong, Kec. Pontianak Kota, Pontianak, Kalimantan Barat 78116", "province": "Kalimantan Barat"},
-      {"name": "Sozo Skin Clinic - Puri Indah", "address": "Jl. Puri Indah Raya Blok T1 No.3A, RT.1/RW.2, Kembangan Selatan, Kembangan, Jakarta Barat, DKI Jakarta 11610", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/puri-indah/"},
-      {"name": "Sozo Skin Clinic - Rawamangun", "address": "Jl. Pemuda No.78 C, RT.1/RW.8, Jati, Kec. Pulo Gadung, Jakarta Timur, DKI Jakarta 13220", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-timur/rawamangun/"},
-      {"name": "Sozo Skin Clinic - Samarinda", "address": "Jl. Dr. Sutomo No.8b, Sidodadi, Kec. Samarinda Ulu, Samarinda, Kalimantan Timur 75243", "province": "Kalimantan Timur"},
-      {"name": "Sozo Skin Clinic - Semarang", "address": "Jl. Mayjend Sutoyo No.83, Karangkidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50136", "province": "Jawa Tengah"},
-      {"name": "Sozo Skin Clinic - Semarang Banyumanik", "address": "Jl. Setia Budi No.115, Srondol Kulon, Kec. Banyumanik, Semarang, Jawa Tengah 50263", "province": "Jawa Tengah"},
-      {"name": "Sozo Skin Clinic - Serang", "address": "Jalan Jenderal Ahmad Yani No. 160 Kel. Sumur Pecung Kec. Serang, Kota Serang, Banten 42118", "province": "Banten"},
-      {"name": "Sozo Skin Clinic - Solo", "address": "Jl. Prof. DR. Supomo 25-47, Timuran, Kec. Banjarsari, Surakarta, Jawa Tengah 57139", "province": "Jawa Tengah"},
-      {"name": "Sozo Skin Clinic - Sunter", "address": "Ruko Greenlake Sunter Blok TBS BSM, Jalan Danau Sunter Selatan, RT.4/RW.18, Sunter Agung, Kecamatan Tanjung Priok, Jakarta Utara, DKI Jakarta 14350", "province": "DKI Jakarta"},
-      {"name": "Sozo Skin Clinic - Surabaya Bukit Darmo", "address": "Office Park, Jl. Mayjend. Jonosewojo, Pradahkalikendal, Kec. Dukuhpakis, Surabaya, Jawa Timur 60225", "province": "Jawa Timur"},
-      {"name": "Sozo Skin Clinic - Surabaya Jemursari", "address": "Jalan Jemursari No. 106A Jemur Wonosari, Kec. Tenggilis Mejoyo, Kota Surabaya, Jawa Timur 60292", "province": "Jawa Timur"},
-      {"name": "Sozo Skin Clinic - Surabaya Manyar", "address": "Jl. Manyar Kertoarjo No.10A, Mojo, Kecamatan Gubeng, Surabaya, Jawa Timur 60285", "province": "Jawa Timur"},
-      {"name": "Sozo Skin Clinic - Surabaya Mulyosari", "address": "Jalan Raya Mulyosari, Kalisari, Kecamatan Mulyorejo, Surabaya, Jawa Timur 60113", "province": "Jawa Timur"},
-      {"name": "Sozo Skin Clinic - Tangerang City", "address": "Jl. Perintis Kemerdekaan Blok C No. 5 RT.005/RW.005, Babakan, Ruko Business Park Tangcity Superblock, Kota Tangerang, Banten 15133", "province": "Banten"},
-      {"name": "Sozo Skin Clinic - Tanjung Duren", "address": "Jl. Tanjung Duren Raya No. 41 D, Jakarta Barat, DKI Jakarta 11470", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/tanjung-duren/"},
-      {"name": "Sozo Skin Signature - Tanjung Duren 2", "address": "Jl. Tanjung Duren Raya No.364A, Tj. Duren Utara, Kec. Grogol petamburan, Jakarta Barat, DKI Jakarta 11470", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/tanjung-duren/"},
-      {"name": "Sozo Skin Clinic - Tasikmalaya", "address": "Komplek Ruko Permata Regency, Jl. HZ Mustofa, Kelurahan Kahuripan, Kec. Tawang, Tasikmalaya, Jawa Barat 46115", "province": "Jawa Barat"},
-      {"name": "Sozo Skin Clinic - Tebet", "address": "Jl. Tebet Utara Dalam No. 3A RT. 003 RW 002 Blok V Persil No. 561, Kota Jakarta Selatan, DKI Jakarta 12820", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/tebet/"},
-      {"name": "Sozo Skin Clinic - Tebet Timur", "address": "Jl. Tebet Timur Raya No.67D, RT.9/RW.3, Tebet Tim., Kec. Tebet, Kota Jakarta Selatan, DKI Jakarta 12820", "province": "DKI Jakarta", "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/tebet/"},
-      {"name": "Sozo Skin Clinic - Yogyakarta", "address": "Jl. Pangeran Diponegoro No.58, Gowongan, Kec. Jetis, Yogyakarta, DI Yogyakarta 55233", "province": "DI Yogyakarta"}
-    ];
-
     const provinces = [
       "Semua Lokasi", "DKI Jakarta", "Jawa Barat", "Banten", "Jawa Tengah", 
       "DI Yogyakarta", "Jawa Timur", "Bali", "Nusa Tenggara Barat", 
@@ -1276,63 +2207,17 @@
       }
     }
 
-    function regionLabel(clinic) {
-      if (clinic.province && clinic.province !== "Lainnya") return clinic.province;
-      const m = clinic.address.match(/,\s*([A-Za-z.\s]+?)\s*\d{5}\s*$/);
-      return m ? m[1].trim() : "Indonesia";
-    }
-
-    function formatClinicName(name) {
-      return name.replace(/^Sozo\s+Skin\s+(Clinic|Signature)\s*-\s*/i, '');
-    }
-
-    // Inisialisasi: Buat elemen DOM untuk semua klinik sekali saja di awal
-    // Seluruh 80+ klinik tercetak di DOM sehingga Googlebot dapat meng-crawl seluruh link cabang
-    const allClinicElements = clinicsData.map(clinic => {
-      const searchQuery = encodeURIComponent(clinic.name + ", " + clinic.address);
-      const mapRedirectUrl = `https://www.google.com/maps/search/?api=1&query=${searchQuery}`;
-      const waLink = `https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20lihat%20info%20Lokasi%20dan%20mau%20ambil%20promo%20treatment%20Sozo%20%5Bsrc%3AORG-LOK%5D`;
-      const cleanName = formatClinicName(clinic.name);
-      const clinicProvince = regionLabel(clinic);
-
-      const card = document.createElement("div");
-      card.className = "sozo-map-card";
-      card.setAttribute("data-branch-name", cleanName);
-      card.setAttribute("data-branch-province", clinicProvince);
-
-      const titleHtml = clinic.url 
-        ? `<h3><a href="${clinic.url}" class="sozo-branch-link">${cleanName}</a></h3>` 
-        : `<h3>${cleanName}</h3>`;
-
-      // Klinik dengan field image pakai foto klinik, sisanya placeholder logo (tanpa embed maps)
-      const mediaHtml = clinic.image
-        ? `<img src="${clinic.image}" alt="Tampak depan ${clinic.name}" class="sozo-card-photo" loading="lazy">`
-        : `<div class="sozo-card-placeholder">
-            <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
-            <span>SOZO</span>
-          </div>`;
-
-      card.innerHTML = `
-        <div class="sozo-card-media">
-          ${mediaHtml}
-        </div>
-        <div class="sozo-card-content">
-          <span class="sozo-region-badge">
-            <svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
-            ${clinicProvince}
-          </span>
-          ${titleHtml}
-          <p class="sozo-address">${clinic.address}</p>
-          <div class="sozo-action-buttons">
-            <a href="${waLink}" target="_blank" rel="noopener" class="sozo-btn sozo-btn-wa" data-wa-src="organic">
-              <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> BUAT JADWAL
-            </a>
-            <a href="${mapRedirectUrl}" target="_blank" rel="noopener" class="sozo-btn sozo-btn-maps">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 8 2 16 6 23 2 23 18 16 22 8 18 1 22 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg> LIHAT MAPS &gt;
-            </a>
-          </div>
-        </div>
-      `;
+    // Semua kartu klinik sudah tercetak di HTML (#sozoClinicGrid), jadi link cabang
+    // terbaca crawler tanpa render JS. JS hanya mengatur filter & pagination tampilan.
+    const allClinicElements = Array.from(gridContainer.querySelectorAll(".sozo-map-card")).map(card => {
+      const clinic = {
+        name: card.getAttribute("data-name") || "",
+        province: card.getAttribute("data-province") || "",
+        address: (card.querySelector(".sozo-address") || {}).textContent || "",
+        url: card.getAttribute("data-url") || ""
+      };
+      const cleanName = card.getAttribute("data-branch-name") || clinic.name;
+      const clinicProvince = card.getAttribute("data-branch-province") || clinic.province;
 
       // Tracking CTA & Link
       const titleLink = card.querySelector(".sozo-branch-link");
@@ -1367,9 +2252,11 @@
         });
       }
 
-      gridContainer.appendChild(card);
       return { clinic, element: card };
     });
+
+    // JS sudah aktif: lepas CSS pre-render (kartu ke-7 dst disembunyikan sebelum JS jalan)
+    gridContainer.classList.add("is-ready");
 
     let filteredData = [...allClinicElements];
 
@@ -1400,6 +2287,57 @@
 
     let searchDebounceTimer = null;
 
+    // ==========================================
+    // URL PAGINATION (?halaman=n)
+    // Pakai "halaman", bukan "page": WordPress me-redirect ?page=2 (301) ke /lokasi/.
+    // Yoast tetap memberi canonical /lokasi/ untuk ?halaman=n, karena isi HTML-nya sama.
+    // URL hanya diisi saat daftar tidak difilter, supaya link yang dibagikan selalu valid.
+    // ==========================================
+    const PAGE_PARAM = "halaman";
+
+    function isUnfiltered() {
+      return !searchInput.value.trim() && selectedProvince === "Semua Lokasi";
+    }
+
+    function getTotalPages() {
+      return Math.max(1, Math.ceil(filteredData.length / itemsPerPage));
+    }
+
+    function readPageFromUrl() {
+      const n = parseInt(new URLSearchParams(window.location.search).get(PAGE_PARAM), 10);
+      return Number.isFinite(n) && n > 1 ? n : 1;
+    }
+
+    function syncPageUrl(push) {
+      try {
+        const url = new URL(window.location.href);
+        if (currentPage > 1 && isUnfiltered()) {
+          url.searchParams.set(PAGE_PARAM, String(currentPage));
+        } else {
+          url.searchParams.delete(PAGE_PARAM);
+        }
+        if (url.href === window.location.href) return;
+        window.history[push ? "pushState" : "replaceState"]({ sozoPage: currentPage }, "", url.href);
+      } catch (e) {
+        // History API tidak tersedia: pagination tetap jalan tanpa ubah URL
+      }
+    }
+
+    function goToPage(page) {
+      currentPage = Math.min(Math.max(1, page), getTotalPages());
+      renderClinics();
+      syncPageUrl(true);
+      gridContainer.scrollIntoView({ behavior: "smooth" });
+      trackEvent("pagination_click", { target_page: currentPage });
+    }
+
+    // Tombol back/forward browser
+    window.addEventListener("popstate", () => {
+      currentPage = Math.min(readPageFromUrl(), getTotalPages());
+      renderClinics();
+      gridContainer.scrollIntoView({ behavior: "smooth" });
+    });
+
     function executeFilter(isManualSubmit = false) {
       const term = searchInput.value.toLowerCase().trim();
       
@@ -1414,6 +2352,7 @@
 
       currentPage = 1;
       renderClinics();
+      syncPageUrl(false);
 
       // Tracking ke Microsoft Clarity
       if (term || selectedProvince !== "Semua Lokasi" || isManualSubmit) {
@@ -1487,16 +2426,14 @@
 
       paginationContainer.style.setProperty("display", "flex", "important");
 
-      const prevArrow = document.createElement("div");
+      const prevArrow = document.createElement("button");
+      prevArrow.type = "button";
       prevArrow.className = `sozo-page-arrow ${currentPage === 1 ? 'disabled' : ''}`;
+      prevArrow.setAttribute("aria-label", "Halaman sebelumnya");
+      prevArrow.disabled = currentPage === 1;
       prevArrow.innerHTML = "&#8249;";
       prevArrow.addEventListener("click", () => {
-        if (currentPage > 1) {
-          currentPage--;
-          renderClinics();
-          gridContainer.scrollIntoView({ behavior: "smooth" });
-          trackEvent("pagination_click", { target_page: currentPage });
-        }
+        if (currentPage > 1) goToPage(currentPage - 1);
       });
       paginationContainer.appendChild(prevArrow);
 
@@ -1531,36 +2468,35 @@
 
       pages.forEach(p => {
         if (p === '...') {
-          const dots = document.createElement("div");
+          const dots = document.createElement("span");
           dots.className = "sozo-page-item dots";
+          dots.setAttribute("aria-hidden", "true");
           dots.textContent = "...";
           paginationContainer.appendChild(dots);
         } else {
-          const pageBtn = document.createElement("div");
+          const pageBtn = document.createElement("button");
+          pageBtn.type = "button";
           pageBtn.className = `sozo-page-item ${p === currentPage ? 'active' : ''}`;
+          pageBtn.setAttribute("aria-label", `Halaman ${p}`);
+          if (p === currentPage) pageBtn.setAttribute("aria-current", "page");
           pageBtn.textContent = p;
           
           pageBtn.addEventListener("click", () => {
-            currentPage = p;
-            renderClinics();
-            gridContainer.scrollIntoView({ behavior: "smooth" });
-            trackEvent("pagination_click", { target_page: currentPage });
+            if (p !== currentPage) goToPage(p);
           });
           
           paginationContainer.appendChild(pageBtn);
         }
       });
 
-      const nextArrow = document.createElement("div");
+      const nextArrow = document.createElement("button");
+      nextArrow.type = "button";
       nextArrow.className = `sozo-page-arrow ${currentPage === totalPages ? 'disabled' : ''}`;
+      nextArrow.setAttribute("aria-label", "Halaman berikutnya");
+      nextArrow.disabled = currentPage === totalPages;
       nextArrow.innerHTML = "&#8250;";
       nextArrow.addEventListener("click", () => {
-        if (currentPage < totalPages) {
-          currentPage++;
-          renderClinics();
-          gridContainer.scrollIntoView({ behavior: "smooth" });
-          trackEvent("pagination_click", { target_page: currentPage });
-        }
+        if (currentPage < totalPages) goToPage(currentPage + 1);
       });
       paginationContainer.appendChild(nextArrow);
     }
@@ -1628,7 +2564,10 @@
       });
     }
 
+    // Buka langsung di halaman dari URL (?halaman=n); nilai di luar rentang dinormalkan
+    currentPage = Math.min(readPageFromUrl(), getTotalPages());
     renderClinics();
+    syncPageUrl(false);
   }
 
   if (document.readyState === "loading") {
