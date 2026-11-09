@@ -1,0 +1,1403 @@
+<!-- ============================================================
+     HALAMAN LOKASI - KLINIK KECANTIKAN BALIKPAPAN (REDESIGN LIST)
+     URL     : /lokasi/balikpapan/
+     Patokan : lokasi/jakarta/jakarta-selatan/index-redesign.html (disetujui mentor).
+               Halaman kota: belum ada LP area, jadi tanpa toggle (tambah di cfg toggles kalau LP area terbit).
+     Sumber  : lokasi/backup/balikpapan/index.html (hanya dibaca).
+               Peta, jadwal, pemilih cabang, galeri Suasana Klinik dihapus; section lain tetap.
+     CSS     : style.css lama halaman ini (lokasi/backup/balikpapan/style.css).
+     ============================================================ -->
+
+<!-- Google Font Poppins Preconnect & Stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- SYSTEM PRELOAD FONTAWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Ikon SVG untuk breadcrumb, toggle area, dan kartu cabang (dipakai lewat <use>) -->
+<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="sz-area-i-pin" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
+  <symbol id="sz-area-i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+  <symbol id="sz-area-i-map" viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="1 6 8 2 16 6 23 2 23 18 16 22 8 18 1 22 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></symbol>
+</svg>
+
+<!-- CSS daftar cabang. Prefix .sz-area-* supaya tidak bentrok dengan style.css halaman
+     (.sozo-btn, .sozo-btn-wa, dll. sudah dipakai di sana). Nilai mengikuti kartu /lokasi. -->
+<style>
+  /* Breadcrumb */
+  .sz-area-breadcrumb { display: flex !important; justify-content: center !important; margin: 0 0 16px !important; }
+  .sz-area-breadcrumb ol {
+    display: flex !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important;
+    gap: 8px 10px !important; list-style: none !important; margin: 0 !important; padding: 0 !important;
+    font-size: 12px !important; font-weight: 500 !important; line-height: 1.4 !important;
+  }
+  .sz-area-breadcrumb li { margin: 0 !important; padding: 0 !important; }
+  .sz-area-breadcrumb a { color: #777771 !important; text-decoration: none !important; transition: color 180ms ease !important; }
+  .sz-area-breadcrumb a:hover, .sz-area-breadcrumb a:focus-visible { color: #1A2080 !important; }
+  .sz-area-breadcrumb .sz-area-sep { color: #777771 !important; }
+  .sz-area-breadcrumb [aria-current="page"] { color: #1A2080 !important; font-weight: 600 !important; }
+
+  /* Judul daftar + toggle area dalam satu baris */
+  .sz-area-list__head {
+    display: flex !important; align-items: center !important; justify-content: space-between !important;
+    gap: 12px 24px !important; flex-wrap: wrap !important; margin: 0 0 4px !important;
+  }
+  .sz-area-toggles { display: flex !important; align-items: center !important; gap: 10px !important; min-width: 0 !important; margin: 0 !important; }
+  .sz-area-toggles__label { color: #777771 !important; font-size: 13px !important; font-weight: 500 !important; white-space: nowrap !important; line-height: 1.4 !important; }
+  .sz-area-toggles ul {
+    display: flex !important; gap: 8px !important; list-style: none !important; margin: 0 !important; padding: 0 !important;
+    overflow-x: auto !important; scrollbar-width: none !important; -webkit-overflow-scrolling: touch !important;
+  }
+  .sz-area-toggles ul::-webkit-scrollbar { display: none !important; }
+  .sz-area-toggles li { margin: 0 !important; padding: 0 !important; flex-shrink: 0 !important; }
+  .sz-area-toggle {
+    display: inline-flex !important; align-items: center !important; gap: 6px !important;
+    padding: 6px 14px !important; border: 1px solid #DFDBD4 !important; border-radius: 50px !important;
+    background: #FFFFFF !important; color: #41413E !important; font-size: 12.5px !important; font-weight: 600 !important;
+    line-height: 1.2 !important; white-space: nowrap !important; text-decoration: none !important; transition: all 0.25s ease !important;
+  }
+  .sz-area-toggle svg { width: 12px !important; height: 12px !important; fill: #1A2080 !important; }
+  .sz-area-toggle:hover, .sz-area-toggle:focus-visible { border-color: #1A2080 !important; color: #1A2080 !important; background: #E9DFD5 !important; }
+
+  /* Daftar cabang */
+  .sz-area-list { margin: 0 !important; }
+  .sz-area-list__title {
+    margin: 0 !important; color: #777771 !important; font-size: 13px !important; font-weight: 600 !important;
+    letter-spacing: 0.04em !important; text-transform: uppercase !important; line-height: 1.4 !important;
+  }
+  .sz-area-grid {
+    display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 32px !important; row-gap: 0 !important;
+  }
+  .sz-area-card {
+    display: flex !important; align-items: stretch !important; gap: 22px !important;
+    padding: 20px 0 !important; border-bottom: 1px solid #DFDBD4 !important; background: transparent !important;
+  }
+  /* Baris kartu terakhir tanpa garis bawah: segmen berikutnya sudah punya garis atas */
+  .sz-area-card:nth-last-child(-n+2):nth-child(odd), .sz-area-card:last-child { border-bottom: 0 !important; }
+  .sz-area-media {
+    display: block !important; width: 190px !important; height: 190px !important; flex-shrink: 0 !important;
+    border-radius: 16px !important; overflow: hidden !important; background: #E9DFD5 !important;
+    text-decoration: none !important;
+  }
+  .sz-area-media img {
+    display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important;
+    transition: transform 0.35s ease !important;
+  }
+  .sz-area-media:hover img { transform: scale(1.04) !important; }
+  .sz-area-ph {
+    display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important;
+    width: 100% !important; height: 100% !important; background: #1A2080 !important; color: #FFFFFF !important;
+  }
+  .sz-area-ph svg { width: 40px !important; height: 40px !important; fill: #FFFFFF !important; margin-bottom: 6px !important; }
+  .sz-area-ph span { font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.08em !important; color: #FFFFFF !important; }
+  .sz-area-body { display: flex !important; flex-direction: column !important; flex: 1 !important; min-width: 0 !important; padding: 4px 0 !important; }
+  .sz-area-badge {
+    align-self: flex-start !important; display: inline-flex !important; align-items: center !important; gap: 5px !important;
+    margin: 0 0 10px !important; padding: 4px 10px !important; border-radius: 50px !important;
+    background: #E9DFD5 !important; color: #1A2080 !important; font-size: 11px !important; font-weight: 700 !important;
+    letter-spacing: 0.05em !important; text-transform: uppercase !important; line-height: 1.3 !important;
+  }
+  .sz-area-badge svg { width: 11px !important; height: 11px !important; fill: #1A2080 !important; }
+  .sz-area-name { margin: 0 0 2px !important; font-size: 16.5px !important; font-weight: 700 !important; line-height: 1.35 !important; color: #1A2080 !important; }
+  .sz-area-name a { color: #1A2080 !important; text-decoration: none !important; }
+  .sz-area-name a:hover, .sz-area-name a:focus-visible { color: #0E1356 !important; text-decoration: underline !important; }
+  .sz-area-rating { margin: 0 0 8px !important; color: #E8A317 !important; font-size: 13px !important; font-weight: 600 !important; line-height: 1.4 !important; }
+  .sz-area-address { flex-grow: 1 !important; margin: 0 0 18px !important; color: #41413E !important; font-size: 13.5px !important; font-weight: 400 !important; line-height: 1.6 !important; }
+  .sz-area-actions { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 16px !important; }
+  .sz-area-btn-wa, .sz-area-btn-maps {
+    display: inline-flex !important; align-items: center !important; gap: 8px !important;
+    font-size: 13.5px !important; font-weight: 600 !important; line-height: 1.2 !important;
+    text-decoration: none !important; text-transform: uppercase !important; transition: all 0.25s ease !important;
+  }
+  .sz-area-btn-wa {
+    padding: 11px 22px !important; border-radius: 12px !important; background: #1A2080 !important; color: #FFFFFF !important;
+    border: 1.5px solid transparent !important; box-shadow: 0 4px 12px rgba(26, 32, 128, 0.18) !important;
+  }
+  .sz-area-btn-wa svg { width: 15px !important; height: 15px !important; fill: #FFFFFF !important; }
+  .sz-area-btn-wa:hover { background: #0E1356 !important; color: #FFFFFF !important; transform: translateY(-1px) !important; }
+  .sz-area-btn-maps { padding: 0 !important; color: #1A2080 !important; background: transparent !important; }
+  .sz-area-btn-maps svg { width: 15px !important; height: 15px !important; stroke: #1A2080 !important; }
+  .sz-area-btn-maps:hover { text-decoration: underline !important; }
+
+  /* Tablet: foto lebih kecil supaya 2 kolom tetap lega */
+  @media (max-width: 1024px) {
+    .sz-area-media { width: 140px !important; height: 140px !important; }
+    .sz-area-card { gap: 16px !important; }
+    .sz-area-actions { flex-wrap: wrap !important; gap: 10px 16px !important; }
+  }
+
+  /* Mobile: list rata satu kolom, pola /lokasi mobile */
+  @media (max-width: 768px) {
+    .sz-area-list__head { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; margin: 0 0 12px !important; }
+    .sz-area-list__title { font-size: 12px !important; }
+    .sz-area-toggles { width: 100% !important; }
+    .sz-area-toggles__label { font-size: 12px !important; }
+    .sz-area-grid { display: flex !important; flex-direction: column !important; border-top: 1px solid #DFDBD4 !important; }
+    .sz-area-card { align-items: flex-start !important; gap: 14px !important; padding: 16px 4px !important; }
+    .sz-area-card:nth-last-child(-n+2):nth-child(odd) { border-bottom: 1px solid #DFDBD4 !important; }
+    .sz-area-card:last-child { border-bottom: 0 !important; }
+    .sz-area-media { width: 76px !important; height: 76px !important; border-radius: 10px !important; }
+    .sz-area-ph svg { width: 22px !important; height: 22px !important; margin-bottom: 2px !important; }
+    .sz-area-ph span { font-size: 8px !important; }
+    .sz-area-body { padding: 0 !important; }
+    .sz-area-badge { margin: 0 0 6px !important; padding: 3px 8px !important; font-size: 9.5px !important; }
+    .sz-area-badge svg { width: 9px !important; height: 9px !important; }
+    .sz-area-name { font-size: 14.5px !important; line-height: 1.3 !important; }
+    .sz-area-rating { margin: 0 0 4px !important; font-size: 12px !important; }
+    .sz-area-address { margin: 0 0 10px !important; font-size: 11.5px !important; line-height: 1.5 !important; }
+    .sz-area-actions { justify-content: flex-start !important; gap: 16px !important; }
+    .sz-area-btn-wa {
+      padding: 5px 14px !important; border-radius: 50px !important; font-size: 11px !important; font-weight: 700 !important;
+      background: transparent !important; color: #1A2080 !important; border: 1.5px solid #1A2080 !important; box-shadow: none !important;
+    }
+    .sz-area-btn-wa:hover { background: #1A2080 !important; color: #FFFFFF !important; transform: none !important; }
+    .sz-area-btn-wa svg, .sz-area-btn-maps svg { display: none !important; }
+    .sz-area-btn-maps { font-size: 11.5px !important; font-weight: 700 !important; }
+  }
+
+  /* ==================== JARAK ANTAR SEGMEN (compact) ====================
+     Menimpa jarak dari style.css hanya di halaman ini. "html body" menaikkan
+     spesifisitas supaya menang apa pun urutan style.css dimuat.
+     Satu ritme: 40px antar segmen di desktop (20 margin + 20 padding), 32px di mobile. */
+  html body .sozo-location-page-wrapper { padding-top: 32px !important; padding-bottom: 32px !important; }
+  html body .sozo-clean-hero { margin-bottom: 24px !important; }
+  html body .sozo-category-section,
+  html body .sozo-results-section,
+  html body .sozo-promo-section { margin-top: 20px !important; padding-top: 20px !important; }
+  html body .sozo-why-section { padding-top: 36px !important; padding-bottom: 36px !important; }
+  html body .sozo-compact-cta-section { padding-top: 28px !important; padding-bottom: 16px !important; }
+  html body .sozo-faq-section { padding-top: 28px !important; padding-bottom: 36px !important; }
+
+  @media (max-width: 768px) {
+    html body .sozo-location-page-wrapper { padding-top: 20px !important; padding-bottom: 24px !important; }
+    html body .sozo-clean-hero { margin-bottom: 20px !important; }
+    html body .sozo-category-section,
+    html body .sozo-results-section,
+    html body .sozo-promo-section { margin-top: 16px !important; padding-top: 16px !important; }
+    html body .sozo-why-section { padding-top: 28px !important; padding-bottom: 28px !important; }
+    html body .sozo-compact-cta-section { padding-top: 20px !important; padding-bottom: 12px !important; }
+    html body .sozo-faq-section { padding-top: 24px !important; padding-bottom: 28px !important; }
+  }
+
+  /* Halaman area: section "Cara Menuju Lokasi" ikut ritme compact */
+  html body .sozo-directions-section { padding-top: 28px !important; padding-bottom: 12px !important; }
+  @media (max-width: 768px) {
+    html body .sozo-directions-section { padding-top: 24px !important; padding-bottom: 8px !important; }
+  }
+</style>
+
+<div class="sozo-location-page-wrapper">
+  <div class="sozo-location-page-container">
+    
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <div class="sozo-clean-hero">
+      <nav class="sz-area-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li class="sz-area-sep" aria-hidden="true">/</li>
+          <li><a href="https://sozoskinclinic.com/lokasi/">Lokasi</a></li>
+          <li class="sz-area-sep" aria-hidden="true">/</li>
+          <li aria-current="page"><span>Balikpapan</span></li>
+        </ol>
+      </nav>
+      <h1 class="sozo-clean-title">Klinik Kecantikan Terbaik Di Balikpapan</h1>
+      <p class="sozo-clean-desc">Mencari klinik kecantikan Balikpapan yang terpercaya? Sozo Hadir di Balikpapan dengan kualitas terbaik, harga transparan dan terjangkau.</p>
+    </div>
+
+    <!-- ==================== 2. DAFTAR CABANG ==================== -->
+    <!-- Pola sama dengan lokasi/jakarta/jakarta-selatan/index-redesign.html. Satu kartu = satu <article>;
+         foto + nama -> LP detail cabang. Cabang tanpa foto memakai .sz-area-ph (blok biru "SOZO"). -->
+    <section class="sz-area-list" aria-labelledby="szAreaListTitle">
+      <div class="sz-area-list__head">
+        <h2 class="sz-area-list__title" id="szAreaListTitle">2 Cabang Klinik Kecantikan Sozo di Balikpapan</h2>
+      </div>
+      <div class="sz-area-grid">
+
+        <article class="sz-area-card">
+          <a class="sz-area-media" href="https://sozoskinclinic.com/lokasi/sozo-balikpapan-ruhui-rahayu/" tabindex="-1" aria-hidden="true">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-balikpapan-depan.webp" alt="Tampak depan Sozo Skin Clinic Balikpapan Ruhui Rahayu" width="190" height="190" loading="lazy" decoding="async">
+          </a>
+          <div class="sz-area-body">
+            <span class="sz-area-badge"><svg aria-hidden="true" viewBox="0 0 384 512"><use href="#sz-area-i-pin"></use></svg>Sepinggan</span>
+            <h3 class="sz-area-name"><a href="https://sozoskinclinic.com/lokasi/sozo-balikpapan-ruhui-rahayu/">Balikpapan Ruhui Rahayu</a></h3>
+            <p class="sz-area-rating" aria-label="Rating Google 4.9">★ 4.9</p>
+            <p class="sz-area-address">Jl. Ruhui Rahayu Ring Road No. 1, Sepinggan, Kec. Balikpapan Selatan, Kota Balikpapan, Kalimantan Timur 76115</p>
+            <div class="sz-area-actions">
+              <a class="sz-area-btn-wa" href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Balikpapan%20%5Bsrc%3AORG-BPN%5D" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 448 512"><use href="#sz-area-i-wa"></use></svg>Buat Jadwal</a>
+              <a class="sz-area-btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Balikpapan" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#sz-area-i-map"></use></svg>Lihat Maps &gt;</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="sz-area-card">
+          <a class="sz-area-media" href="https://sozoskinclinic.com/lokasi/sozo-balikpapan-superblock/" tabindex="-1" aria-hidden="true">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-balikpapan-superblock-depan.webp" alt="Tampak depan Sozo Skin Clinic Balikpapan Superblock" width="190" height="190" loading="lazy" decoding="async">
+          </a>
+          <div class="sz-area-body">
+            <span class="sz-area-badge"><svg aria-hidden="true" viewBox="0 0 384 512"><use href="#sz-area-i-pin"></use></svg>Gunung Bahagia</span>
+            <h3 class="sz-area-name"><a href="https://sozoskinclinic.com/lokasi/sozo-balikpapan-superblock/">Balikpapan Superblock</a></h3>
+            <p class="sz-area-rating" aria-label="Rating Google 4.9">★ 4.9</p>
+            <p class="sz-area-address">Ruko Komplek Balikpapan Super Blok (BSB) Blok E-20, Jl. Jenderal Sudirman, Gunung Bahagia, Kec. Balikpapan Selatan, Kota Balikpapan, Kalimantan Timur 76114</p>
+            <div class="sz-area-actions">
+              <a class="sz-area-btn-wa" href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Balikpapan%20%5Bsrc%3AORG-BPN%5D" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 448 512"><use href="#sz-area-i-wa"></use></svg>Buat Jadwal</a>
+              <a class="sz-area-btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Balikpapan%20Superblock" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#sz-area-i-map"></use></svg>Lihat Maps &gt;</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. TREATMENT CATEGORIES ==================== -->
+    <div class="sozo-category-section">
+      <h2 class="sozo-category-heading">Pilihan Treatment di Sozo Skin Clinic Balikpapan</h2>
+      <p class="sozo-category-sub">Pilih kategori perawatan kulit & tubuh yang sesuai dengan kebutuhanmu</p>
+      
+      <div class="sozo-category-grid">
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Skin-Bright-Facial-Medical-1.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Skin<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Injection.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Injectable<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Slimming-1-11.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Slimming<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/03/Gemini_Generated_Image_qncw0qncw0qncw0q.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Hair-Removal-Underarm-Glow.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Removal</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Acne-Single-Treatment-Acne-laser-facial.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Acne<br>Treatment</span>
+        </a>
+      </div>
+
+      <div class="sozo-category-cta-wrap">
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-btn">
+          <span>Lihat Semua Treatment</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ==================== 4.5 HASIL NYATA & TESTIMONI ==================== -->
+    <div class="sozo-results-section">
+      <div class="sozo-results-header">
+        <div class="sozo-results-pill">Real Results & Testimonials</div>
+        <h2 class="sozo-results-title">Hasil Nyata Treatment di Sozo Skin Clinic Balikpapan</h2>
+        <p class="sozo-results-desc">Lihat transformasi nyata dan cerita pengalaman langsung dari para pasien yang telah membuktikannya.</p>
+      </div>
+
+      <!-- Sub-Block 1: Before After Gallery Slider -->
+      <div class="sozo-sub-slider-block">
+        <div class="sozo-sub-slider-head">
+          <span class="sozo-sub-slider-tag"><i class="fa-solid fa-camera-retro"></i> Transformasi Klinis</span>
+        </div>
+
+        <div class="sozo-slider-wrapper">
+          <div class="sozo-ba-slider-container" id="sozoBaSliderContainer">
+            <div class="sozo-ba-slider-track" id="sozoBaSliderTrack">
+              
+              <!-- BA 1 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/LP-Mockup-Suplemen-Pelangsing-Slimming-Program-Before-After-2.webp" alt="Before After Slimming Program" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 2 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/hifu-treatment-di-sozo-skin-clinic.webp" alt="Before After HIFU Treatment" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 3 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-pink-lips.webp" alt="Before After Pink Lips" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 4 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-underarm.webp" alt="Before After Underarm Treatment" loading="lazy">
+                </div>
+              </div>
+
+              <!-- BA 5 -->
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/BA-skin-booster.webp" alt="Before After Skin Booster" loading="lazy">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button type="button" class="sozo-slider-btn sozo-ba-prev" id="sozoBaPrev" aria-label="Hasil Sebelumnya">❮</button>
+          <button type="button" class="sozo-slider-btn sozo-ba-next" id="sozoBaNext" aria-label="Hasil Selanjutnya">❯</button>
+          <div class="sozo-slider-dots" id="sozoBaDots"></div>
+        </div>
+      </div>
+
+      <!-- Sub-Block 2: Testimonial Quotes Slider -->
+      <div class="sozo-sub-slider-block" style="margin-top: 30px;">
+        <div class="sozo-sub-slider-head">
+          <span class="sozo-sub-slider-tag"><i class="fa-solid fa-comment-dots"></i> Ulasan Pasien Terverifikasi</span>
+        </div>
+
+        <div class="sozo-slider-wrapper">
+          <div class="sozo-quote-slider-container" id="sozoQuoteSliderContainer">
+            <div class="sozo-quote-slider-track" id="sozoQuoteSliderTrack">
+              
+              <!-- Quote 1 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Pelayanan di Sozo Balikpapan sangat ramah dan profesional. Dokternya detail banget jelasin kondisi kulit tanpa memaksa beli paket mahal. Kulit kusam saya langsung fresh glowing dalam 2 kali treatment!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">AN</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Anisa Novitasari</strong>
+                      <span class="sozo-author-meta">Pasien Facial &amp; Skin Booster • Ruhui Rahayu</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 2 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Tempatnya estetik, nyaman, dan bersih di area BSB Balikpapan Superblock. Treatment Laser flek hasilnya langsung kelihatan nyata tanpa downtime berlebih. Sangat recommended buat yang kerja di Balikpapan!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">RP</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Rizky Pratama</strong>
+                      <span class="sozo-author-meta">Pasien Laser Rejuvenation • Balikpapan Superblock</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 3 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Suka banget sama lokasinya yang dekat Bandara Sepinggan di Ring Road Ruhui Rahayu. Parkirnya luas, dokternya komunikatif, dan harga tindakannya sangat terjangkau dibanding klinik lain.</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">ML</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Mega Lestari</strong>
+                      <span class="sozo-author-meta">Pasien Acne Clear Treatment • Balikpapan Selatan</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 4 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Klinik langganan di Balikpapan. Terapisnya teliti pas ekstraksi komedo sama sekali nggak sakit, perawatannya higienis berstandar medis. Wajib coba facial-nya!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">DW</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Dina Wahyuni</strong>
+                      <span class="sozo-author-meta">Pasien Skin Bright Facial • Balikpapan</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 5 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Hair treatment di Sozo sangat membantu mengatasi rambut rontok akibat sering pakai helm proyek. Hasilnya dalam beberapa sesi anak rambut mulai tumbuh lebat lagi.</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">BP</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Bambang Pamungkas</strong>
+                      <span class="sozo-author-meta">Pasien PRP Hair Therapy • Balikpapan</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 6 -->
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">Konsultasi dokter gratis dan dokternya solutif banget. Perawatan underarm hair removal-nya benar-benar painless dan ketiak jadi lebih cerah!</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">ST</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Siti Trihandayani</strong>
+                      <span class="sozo-author-meta">Pasien Hair Removal &amp; Glow • BSB</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button type="button" class="sozo-slider-btn sozo-quote-prev" id="sozoQuotePrev" aria-label="Ulasan Sebelumnya">❮</button>
+          <button type="button" class="sozo-slider-btn sozo-quote-next" id="sozoQuoteNext" aria-label="Ulasan Selanjutnya">❯</button>
+          <div class="sozo-slider-dots" id="sozoQuoteDots"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 4.6 PROMO KHUSUS HARI INI ==================== -->
+    <div class="sozo-promo-section">
+      <div class="sozo-promo-header">
+        <div class="sozo-promo-pill">Penawaran Terbatas</div>
+        <h2 class="sozo-promo-title">Promo Spesial Klinik Kecantikan Balikpapan</h2>
+        <p class="sozo-promo-desc">Manfaatkan penawaran eksklusif minggu ini untuk perawatan kulit &amp; tubuh impianmu di cabang Balikpapan.</p>
+      </div>
+
+      <div class="sozo-slider-wrapper">
+        <div class="sozo-promo-slider-container" id="sozoPromoSliderContainer">
+          <div class="sozo-promo-slider-track" id="sozoPromoSliderTrack">
+            
+            <!-- Promo 1 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Promo Spesial</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-0-scaled.webp" alt="Promo Treatment Sozo Balikpapan" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Promo Treatment Spesial</h3>
+                    <p class="sozo-promo-card-desc">Dapatkan diskon eksklusif untuk berbagai pilihan treatment unggulan di Sozo Skin Clinic Balikpapan.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Balikpapan%20%5Bsrc%3AORG-BPN%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 2 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Voucher Diskon</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-potongan100rb-scaled.webp" alt="Promo Potongan 100rb" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Voucher Potongan Langsung</h3>
+                    <p class="sozo-promo-card-desc">Nikmati potongan harga langsung untuk reservasi pertama perawatan wajah dan tubuh pilihanmu.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Balikpapan%20%5Bsrc%3AORG-BPN%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 3 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Best Seller</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/skin-booster-promo-scaled.webp" alt="Promo Skin Booster Balikpapan" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Paket Skin Booster Glowing</h3>
+                    <p class="sozo-promo-card-desc">Kulit lebih lembap, cerah, dan tampak awet muda dengan paket skin booster berstandar medis.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Balikpapan%20%5Bsrc%3AORG-BPN%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 4 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Hair Care</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/LP-Mockup-Landing-Page-Refreshment-MEI-Promo-banner-bye2-rontok.webp" alt="Promo Hair Treatment Balikpapan" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Promo Bye-Bye Rambut Rontok</h3>
+                    <p class="sozo-promo-card-desc">Solusi tepat untuk mengatasi kerontokan dan merangsang pertumbuhan rambut baru secara optimal.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Balikpapan%20%5Bsrc%3AORG-BPN%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Klaim Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <button type="button" class="sozo-slider-btn sozo-promo-prev" id="sozoPromoPrev" aria-label="Promo Sebelumnya">❮</button>
+        <button type="button" class="sozo-slider-btn sozo-promo-next" id="sozoPromoNext" aria-label="Promo Selanjutnya">❯</button>
+        <div class="sozo-slider-dots" id="sozoPromoDots"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ==================== 5. WHY CHOOSE US ==================== -->
+<section class="sozo-why-section">
+  <div class="sozo-why-container">
+    <div class="sozo-why-header">
+      <h2>Mengapa Memilih SOZO Skin Clinic Balikpapan?</h2>
+      <p>Klinik kecantikan modern dan terpercaya yang mengutamakan kualitas, keamanan, dan kepuasan pasien di Balikpapan.</p>
+    </div>
+
+    <div class="sozo-why-grid">
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Dokter Berpengalaman</strong>
+          <p class="sozo-why-card-text">Ditangani oleh dokter estetika profesional dan tersertifikasi.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-microchip"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Teknologi Modern</strong>
+          <p class="sozo-why-card-text">Menggunakan peralatan canggih berstandar internasional.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Pelayanan Terbaik</strong>
+          <p class="sozo-why-card-text">Klinik kecantikan yang nyaman, higienis, dan ramah.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-handshake-angle"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Konsultasi Dokter Gratis</strong>
+          <p class="sozo-why-card-text">Reservasi sekarang untuk konsultasi tepat dan transparan.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-tags"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Harga Terjangkau</strong>
+          <p class="sozo-why-card-text">Perawatan premium berkualitas tinggi dengan harga ramah kantong.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Lokasi Strategis</strong>
+          <p class="sozo-why-card-text">2 Cabang strategis di Ruhui Rahayu (Ring Road) &amp; Balikpapan Superblock (BSB).</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6. COMPACT MINIMAL BANNER CTA ==================== -->
+<section class="sozo-compact-cta-section">
+  <div class="sozo-compact-cta-container">
+    <div class="sozo-compact-cta-box">
+      <div class="sozo-compact-cta-text">
+        <h3 class="sozo-compact-cta-title">Segera Kunjungi Klinik Kecantikan Balikpapan SOZO.</h3>
+        <p class="sozo-compact-cta-desc">Konsultasikan kondisi kulitmu dan temukan solusi treatment yang tepat bersama dokter profesional kami.</p>
+      </div>
+      <div class="sozo-compact-cta-action">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Balikpapan%20%5Bsrc%3AORG-BPN%5D" target="_blank" rel="noopener" class="sozo-custom-cta-btn sozo-master-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>Hubungi Kami Untuk Reservasi</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6.5 CARA MENUJU LOKASI (EXPANDABLE) ==================== -->
+<section class="sozo-directions-section">
+  <div class="sozo-directions-container">
+    
+    <div class="sozo-directions-header">
+      <div class="sozo-directions-pill">Panduan Rute &amp; Akses</div>
+      <h2 class="sozo-directions-title">Cara Menuju Lokasi</h2>
+      <p class="sozo-directions-desc">Berikut adalah panduan arah menuju dua lokasi cabang Sozo Skin Clinic di Kota Balikpapan.</p>
+    </div>
+
+    <div class="sozo-directions-list">
+      
+      <!-- 1. Balikpapan (Ruhui Rahayu) -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>1. Menuju Sozo Skin Clinic - Balikpapan (Ruhui Rahayu)</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-lead">Berlokasi di Jl. Ruhui Rahayu Ring Road No.1, Sepinggan, Kecamatan Balikpapan Selatan. Mengantongi reputasi cemerlang dengan rating 4.9 dari ratusan ulasan pelanggan, cabang ini menempati salah satu urat nadi kawasan perkantoran dan hunian di Balikpapan. Posisinya sangat berdekatan dengan landmark kota seperti Taman Tiga Generasi, BSCC (Balikpapan Sport and Convention Center / DOM), serta kantor Polda Kaltim.</p>
+            
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-car"></i> Akses Kendaraan Pribadi</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Dari arah Bandara Internasional SAMS Sepinggan:</strong> Arahkan kendaraan Anda keluar bandara menuju barat menyusuri Jl. Marsma R. Iswahyudi. Saat tiba di persimpangan lampu merah (Simpang Balikpapan Baru / MT Haryono), ambil arah menuju Jl. MT Haryono (Ring Road) dan masuk ke lajur Jl. Ruhui Rahayu. Klinik berada di ruko strategis yang mudah terlihat dari jalan raya.</li>
+                <li><strong>Dari arah MT Haryono / Pusat Kota:</strong> Susuri terus Jl. MT Haryono menuju timur (arah Ring Road). Setelah melewati area RSUD dr. Kanujoso Djatiwibowo atau kawasan Balikpapan Baru, perhatikan petunjuk jalan untuk mengarah ke Jl. Ruhui Rahayu. Lokasinya memiliki fasilitas parkir yang sangat memadai bagi pasien.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-train-subway"></i> Akses Transportasi Umum</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Ojek / Taksi Online:</strong> Karena letaknya yang berada di jalan protokol (Ring Road), titik ini sangat mudah dijangkau oleh layanan transportasi online (seperti Gojek, Grab, atau Maxim) dari seluruh penjuru Balikpapan dengan waktu tunggu yang sangat singkat.</li>
+                <li><strong>Angkutan Kota (Angkot):</strong> Anda dapat menggunakan armada Angkot berwarna hijau (Trayek No. 7) yang biasa melintasi rute MT Haryono dan kawasan Ring Road. Minta pengemudi untuk menurunkan Anda di sekitar area Taman Tiga Generasi atau tepat di pinggir jalan Jl. Ruhui Rahayu.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Balikpapan Superblock (BSB) -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>2. Menuju Sozo Skin Clinic - Balikpapan Superblock (BSB)</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-lead">Terletak di Ruko Komplek Balikpapan Superblock (BSB) Blok E-20, Jl. Jenderal Sudirman, Gunung Bahagia. Berada tepat di dalam kawasan superblok terbesar dan termegah di Balikpapan (yang menaungi e-Walk dan Pentacity Mall), cabang ini menawarkan kemudahan akses sekaligus pengalaman gaya hidup premium yang tak tertandingi.</p>
+            
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-car"></i> Akses Kendaraan Pribadi</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Dari arah Klandasan / Pusat Pemerintahan Kota:</strong> Susuri Jl. Jenderal Sudirman mengarah ke timur (menyusuri garis pantai) melewati area Markas Kodam VI/Mulawarman. Terus melaju hingga Anda melihat gerbang megah Balikpapan Superblock (BSB) di sisi kiri Anda. Masuk ke dalam kawasan superblok dan arahkan kendaraan ke area Ruko Blok E-20.</li>
+                <li><strong>Dari arah Stalkuda / Bandara Sepinggan:</strong> Susuri Jl. Marsma R. Iswahyudi yang akan menyambung menjadi Jl. Jenderal Sudirman. Setelah melewati kawasan Stalkuda, gerbang masuk kawasan BSB akan berada di sebelah kanan jalan. Kompleks ini terintegrasi langsung dengan mal, sehingga keamanan dan kenyamanan parkirnya sangat terjamin.</li>
+              </ul>
+            </div>
+
+            <div class="sozo-route-block">
+              <h4 class="sozo-route-title"><i class="fa-solid fa-train-subway"></i> Akses Transportasi Umum</h4>
+              <ul class="sozo-route-list">
+                <li><strong>Ojek &amp; Taksi Online:</strong> Kawasan BSB adalah titik drop-off dan pick-up utama di Balikpapan. Anda bisa memesan transportasi online dan langsung diantarkan ke depan ruko klinik di Blok E-20 tanpa harus berjalan jauh dari area mal.</li>
+                <li><strong>Angkutan Kota (Angkot):</strong> Jl. Jenderal Sudirman adalah rute utama yang paling banyak dilalui transportasi umum. Anda bisa menaiki Angkot berwarna putih (Trayek No. 5) atau hijau (Trayek No. 7) dan turun persis di halte/pintu masuk Balikpapan Superblock, kemudian berjalan kaki santai menyusuri area komersial di dalamnya.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== 7. FAQ SECTION ==================== -->
+<section class="sozo-faq-section">
+  <div class="sozo-faq-container">
+    <div class="sozo-faq-header">
+      <div class="sozo-faq-pill">FAQ</div>
+      <h2 class="sozo-faq-title">Pertanyaan yang Sering Diajukan</h2>
+      <p class="sozo-faq-desc">Informasi lengkap seputar layanan, reservasi, dan perawatan di Sozo Skin Clinic Balikpapan.</p>
+    </div>
+
+    <div class="sozo-faq-list">
+      
+      <!-- FAQ 1 -->
+      <div class="sozo-faq-item active">
+        <button type="button" class="sozo-faq-question" aria-expanded="true">
+          <span>1. Di mana lokasi Sozo Skin Clinic Balikpapan? Apakah dekat dari bandara?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" style="max-height: 250px;">
+          <p>Cabang Sozo Balikpapan berlokasi sangat strategis di Jl. Ruhui Rahayu Ring Road No. 1, Sepinggan, Kec. Balikpapan Selatan. Posisinya yang berada di jalan lingkar utama menjadikannya bebas dari kemacetan pusat kota dan sangat dekat dengan Bandara Internasional Sepinggan. Sangat ideal bagi Anda yang sedang transit atau bekerja di kawasan industri Balikpapan.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>2. Bagaimana cara tercepat mendaftar perawatan tanpa perlu antre lama?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Kami sangat menyarankan Anda melakukan reservasi secara online sebelum kedatangan, terutama jika Anda merencanakan kunjungan di akhir pekan. Anda dapat melakukan pendaftaran melalui WhatsApp kami yang tersedia di website kami.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>3. Cuaca Balikpapan sangat panas dan berangin, apa perawatan yang cocok agar kulit tidak kusam dan kering?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Iklim maritim dengan intensitas matahari tinggi memang rentan merusak kelembapan pelindung kulit (skin barrier). Kami sangat merekomendasikan injeksi Skin Booster (seperti Aqua Shine atau DNA Glow) yang berfungsi menanamkan hidrasi (asam hialuronat) langsung ke lapisan dalam kulit. Untuk meratakan warna kulit akibat paparan sinar UV, terapi cahaya IPL Glow sangat efektif memecah noda hitam/melasma tanpa membuat kulit mengelupas.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>4. Apakah ada perawatan untuk mengencangkan double chin tanpa waktu pemulihan?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sangat ada. Bagi Anda para profesional dan eksekutif yang sibuk, kami menawarkan Radiofrequency (RF) Face. Terapi ini melelehkan tumpukan lemak di bawah dagu dan merajut kembali kekencangan kulit menggunakan energi panas terkontrol. Prosedurnya sangat nyaman, cepat, dan Anda bisa langsung kembali melakukan aktivitas kembali dengan zero downtime.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>5. Rambut saya rontok parah akibat memakai helm proyek setiap hari, apa solusinya?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Kondisi kulit kepala yang lembap karena helm safety sering memicu kerontokan progresif (folikulitis). Kami memiliki solusi medis khusus Hair Treatment. Anda bisa mencoba terapi sinar Biolight Hair (mulai Rp199.000) untuk merangsang sirkulasi oksigen di folikel rambut. Untuk kebotakan yang lebih serius, dokter kami merekomendasikan injeksi PRP Hair (plasma darah kaya nutrisi) guna membangkitkan kembali tunas akar rambut yang pasif.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>6. Apakah perawatan di Sozo Balikpapan terjamin kebersihan dan sterilitasnya?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Keselamatan medis adalah hal yang tidak bisa ditawar. Semua peralatan tajam yang bersentuhan dengan tubuh (seperti jarum) dipastikan 100% baru dan sekali pakai (single-use disposable). Sementara itu, instrumen perawatan wajah lainnya wajib melalui proses sterilisasi ganda (desinfeksi tingkat tinggi dan autoclave berstandar rumah sakit) setelah setiap kali digunakan. Anda berada di tangan yang sangat aman.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>7. Apakah laser penghilang bulu ketiak di Sozo Balikpapan terasa sakit?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Sama sekali tidak. Anda bisa melupakan rasa perih atau iritasi kulit seperti saat di-waxing. Teknologi Laser Hair Removal yang kami gunakan dilengkapi dengan sensor pendingin canggih, sehingga sensasi yang dirasakan hanya sebatas kehangatan ringan dan nyaris tanpa rasa sakit (painless). Kami juga menyediakan paket hemat bundling: hilangkan bulu sekaligus cerahkan area ketiak (Underarm Removal + Glow) dengan harga mulai Rp299.000 saja.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>8. Apa bedanya perawatan IPL Acne dan IPL Glow?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Meski menggunakan alat berbasis cahaya yang sama, keduanya memiliki target yang sama sekali berbeda: IPL Acne menggunakan panjang gelombang khusus yang menembus masuk ke dalam pori-pori untuk mematikan bakteri penyebab jerawat meradang dan mengeringkannya secara cepat. Sedangkan IPL Glow difokuskan untuk memecah pigmen gelap di permukaan kulit (seperti noda hitam bekas jerawat atau kekusaman akibat sinar matahari) agar wajah tampak lebih cerah merata (glowing).</p>
+        </div>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>9. Apakah ada layanan tanpa operasi untuk menghancurkan lemak perut atau paha?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Kami memiliki departemen Body Slimming Treatment khusus. Untuk menghancurkan sel lemak membandel (adiposit) di area perut, lengan, atau paha, kami mengkombinasikan teknologi FatBurn Laser dengan suntikan pelebur lemak Meso Treatment. Jika target Anda adalah merapatkan kulit yang kendur pasca melahirkan, energi gelombang dari HIFU Body adalah pilihan yang sangat ideal.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>10. Apakah ibu hamil dan menyusui boleh melakukan perawatan di klinik ini?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Keselamatan Anda dan janin adalah hal yang paling kami utamakan. Prosedur medis berbasis energi panas tinggi (seperti laser) atau injeksi kosmetik (seperti botox) wajib dihindari selama kehamilan. Namun, Anda tetap bisa memanjakan diri dengan ekstraksi komedo ringan serta rangkaian Facial Treatment hidrasi klasik yang sangat menyejukkan dan 100% aman. Selalu komunikasikan kondisi kehamilan Anda agar dokter kami dapat menyesuaikan perawatannya.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 11 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>11. Apakah ada perawatan untuk mencerahkan lipatan kulit gelap?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Tentu saja. Kami memahami bahwa penggelapan pigmen pada area lipatan (akibat gesekan atau hormon) kerap menurunkan kepercayaan diri. Anda dapat berkonsultasi secara tertutup dengan dokter kami untuk mengambil prosedur Intimate Glow. Perawatan spesifik ini sangat ampuh mengangkat tumpukan sel kulit mati yang menggelap di area sensitif, menjadikannya tampak lebih bersih dan cerah dengan jaminan privasi yang mutlak.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ==================== JAVASCRIPT CONTROLLER WITH TRACKING ==================== -->
+<script data-no-optimize="1">
+(function() {
+  const MASTER_WA_URL = "https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Balikpapan%20%5Bsrc%3AORG-BPN%5D";
+
+
+  // ==========================================
+  // UNIFIED TRACKING HELPER (GTM & Clarity)
+  // ==========================================
+  function trackEvent(eventName, params = {}) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: eventName,
+      ...params
+    });
+
+    if (typeof window.clarity === "function") {
+      window.clarity("event", eventName);
+      Object.keys(params).forEach(k => {
+        if (params[k] !== undefined && params[k] !== null && params[k] !== "") {
+          window.clarity("set", k, String(params[k]));
+        }
+      });
+    }
+  }
+
+  function getPerView() {
+    const w = window.innerWidth;
+    if (w <= 768) return 1;
+    if (w <= 992) return 2;
+    return 3;
+  }
+
+  function initGenericSlider(trackId, prevId, nextId, dotsId, containerId, autoInterval) {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const dotsContainer = document.getElementById(dotsId);
+    const container = document.getElementById(containerId);
+
+    if (!track) return null;
+
+    let currentIndex = 0;
+    let autoTimer = null;
+
+    function getSlides() {
+      return track.children;
+    }
+
+    function buildDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      const total = getSlides().length;
+      const perView = getPerView();
+      const count = Math.max(1, total - perView + 1);
+
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'sozo-slider-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dot.addEventListener('click', () => {
+          goTo(i);
+          resetAuto();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function goTo(index) {
+      const slides = getSlides();
+      const total = slides.length;
+      if (total === 0) return;
+
+      const perView = getPerView();
+      const maxIndex = Math.max(0, total - perView);
+
+      if (index < 0) index = 0;
+      if (index > maxIndex) index = maxIndex;
+      currentIndex = index;
+
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = 16;
+      const move = (slideWidth + gap) * currentIndex;
+
+      track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+      track.style.transform = `translateX(-${move}px)`;
+
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.sozo-slider-dot');
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === currentIndex));
+      }
+    }
+
+    function next() {
+      const total = getSlides().length;
+      const maxIndex = Math.max(0, total - getPerView());
+      if (currentIndex >= maxIndex) goTo(0);
+      else goTo(currentIndex + 1);
+    }
+
+    function prev() {
+      const total = getSlides().length;
+      const maxIndex = Math.max(0, total - getPerView());
+      if (currentIndex <= 0) goTo(maxIndex);
+      else goTo(currentIndex - 1);
+    }
+
+    function startAuto() {
+      if (autoInterval && !autoTimer) {
+        autoTimer = setInterval(next, autoInterval);
+      }
+    }
+
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function resetAuto() {
+      stopAuto();
+      startAuto();
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        next();
+        resetAuto();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prev();
+        resetAuto();
+      });
+    }
+
+    if (container) {
+      container.addEventListener('mouseenter', stopAuto);
+      container.addEventListener('mouseleave', startAuto);
+
+      let startX = 0;
+      let startY = 0;
+      let currentX = 0;
+      let isTouching = false;
+      let isHorizontal = null;
+
+      container.addEventListener('touchstart', (e) => {
+        stopAuto();
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        currentX = startX;
+        isTouching = true;
+        isHorizontal = null;
+      }, { passive: true });
+
+      container.addEventListener('touchmove', (e) => {
+        if (!isTouching) return;
+        const touch = e.touches[0];
+        currentX = touch.clientX;
+        const diffX = currentX - startX;
+        const diffY = touch.clientY - startY;
+
+        if (isHorizontal === null) {
+          if (Math.abs(diffX) > 6 || Math.abs(diffY) > 6) {
+            isHorizontal = Math.abs(diffX) > Math.abs(diffY);
+          }
+        }
+
+        if (isHorizontal) {
+          track.style.transition = 'none';
+          const slides = getSlides();
+          if (slides.length > 0) {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            const gap = 16;
+            const baseMove = (slideWidth + gap) * currentIndex;
+            track.style.transform = `translateX(${-baseMove + diffX}px)`;
+          }
+        }
+      }, { passive: true });
+
+      function handleTouchEnd() {
+        if (!isTouching) return;
+        isTouching = false;
+        track.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)';
+
+        const diffX = startX - currentX;
+        if (isHorizontal && Math.abs(diffX) > 35) {
+          if (diffX > 0) next();
+          else prev();
+        } else {
+          goTo(currentIndex);
+        }
+        resetAuto();
+      }
+
+      container.addEventListener('touchend', handleTouchEnd, { passive: true });
+      container.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+    }
+
+    buildDots();
+    goTo(0);
+    startAuto();
+
+    return {
+      refresh: () => {
+        buildDots();
+        goTo(currentIndex);
+      },
+      goTo: goTo
+    };
+  }
+
+
+
+
+  function setupDirections() {
+    document.querySelectorAll('.sozo-direction-item').forEach(item => {
+      const btn = item.querySelector('.sozo-direction-toggle');
+      const ans = item.querySelector('.sozo-direction-content');
+
+      btn.addEventListener('click', () => {
+        const active = item.classList.contains('active');
+        document.querySelectorAll('.sozo-direction-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            other.querySelector('.sozo-direction-toggle').setAttribute('aria-expanded', 'false');
+            other.querySelector('.sozo-direction-content').style.maxHeight = null;
+          }
+        });
+
+        if (!active) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          ans.style.maxHeight = ans.scrollHeight + "px";
+          trackEvent("directions_toggle", {
+            direction_target: btn.textContent.trim(),
+            city: "Balikpapan"
+          });
+        } else {
+          item.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+          ans.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  function setupFaq() {
+    document.querySelectorAll('.sozo-faq-item').forEach(item => {
+      const btn = item.querySelector('.sozo-faq-question');
+      const ans = item.querySelector('.sozo-faq-answer');
+
+      btn.addEventListener('click', () => {
+        const active = item.classList.contains('active');
+        document.querySelectorAll('.sozo-faq-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            other.querySelector('.sozo-faq-question').setAttribute('aria-expanded', 'false');
+            other.querySelector('.sozo-faq-answer').style.maxHeight = null;
+          }
+        });
+
+        if (!active) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          ans.style.maxHeight = ans.scrollHeight + "px";
+          trackEvent("faq_toggle", {
+            faq_question: btn.textContent.trim(),
+            city: "Balikpapan"
+          });
+        } else {
+          item.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+          ans.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  function setupCtaTracking() {
+    const waBtn = document.getElementById('sozoWaBtn');
+    if (waBtn) {
+      waBtn.addEventListener('click', () => {
+        const activeBranch = document.getElementById('sozoDetailName').textContent.trim();
+        trackEvent("branch_wa_click", {
+          clicked_branch_name: activeBranch,
+          clicked_branch_province: "Kalimantan Timur"
+        });
+      });
+    }
+
+    const mapBtn = document.getElementById('sozoMapBtn');
+    if (mapBtn) {
+      mapBtn.addEventListener('click', () => {
+        const activeBranch = document.getElementById('sozoDetailName').textContent.trim();
+        trackEvent("branch_maps_click", {
+          clicked_branch_name: activeBranch,
+          clicked_branch_province: "Kalimantan Timur"
+        });
+      });
+    }
+
+    document.querySelectorAll('.sozo-custom-cta-btn, .sozo-promo-btn, .sozo-category-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        trackEvent("branch_wa_click", {
+          clicked_branch_name: "Sozo Skin Clinic - Balikpapan (Promo Banner)",
+          clicked_branch_province: "Kalimantan Timur"
+        });
+      });
+    });
+  }
+
+  let promoSliderCtrl = null;
+  let baSliderCtrl = null;
+  let quoteSliderCtrl = null;
+
+  function initSliders() {
+    promoSliderCtrl = initGenericSlider(
+      'sozoPromoSliderTrack',
+      'sozoPromoPrev',
+      'sozoPromoNext',
+      'sozoPromoDots',
+      'sozoPromoSliderContainer',
+      5500
+    );
+
+    baSliderCtrl = initGenericSlider(
+      'sozoBaSliderTrack',
+      'sozoBaPrev',
+      'sozoBaNext',
+      'sozoBaDots',
+      'sozoBaSliderContainer',
+      5000
+    );
+
+    quoteSliderCtrl = initGenericSlider(
+      'sozoQuoteSliderTrack',
+      'sozoQuotePrev',
+      'sozoQuoteNext',
+      'sozoQuoteDots',
+      'sozoQuoteSliderContainer',
+      6000
+    );
+  }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (promoSliderCtrl) promoSliderCtrl.refresh();
+      if (baSliderCtrl) baSliderCtrl.refresh();
+      if (quoteSliderCtrl) quoteSliderCtrl.refresh();
+    }, 200);
+  });
+
+  function init() {
+    setupDirections();
+    setupFaq();
+    setupCtaTracking();
+    initSliders();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<!-- ==================== SCHEMA MARKUP (WEBPAGE + BREADCRUMBLIST + FAQPAGE) ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/lokasi/balikpapan/#webpage",
+      "url": "https://sozoskinclinic.com/lokasi/balikpapan/",
+      "name": "Klinik Kecantikan Terbaik Di Balikpapan",
+      "description": "Mencari klinik kecantikan Balikpapan yang terpercaya? Sozo Hadir di Balikpapan dengan kualitas terbaik, harga transparan dan terjangkau.",
+      "inLanguage": "id"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/lokasi/balikpapan/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lokasi",
+          "item": "https://sozoskinclinic.com/lokasi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Balikpapan"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sozoskinclinic.com/lokasi/balikpapan/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Di mana lokasi Sozo Skin Clinic Balikpapan? Apakah dekat dari bandara?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cabang Sozo Balikpapan berlokasi sangat strategis di Jl. Ruhui Rahayu Ring Road No. 1, Sepinggan, Kec. Balikpapan Selatan. Posisinya yang berada di jalan lingkar utama menjadikannya bebas dari kemacetan pusat kota dan sangat dekat dengan Bandara Internasional Sepinggan. Sangat ideal bagi Anda yang sedang transit atau bekerja di kawasan industri Balikpapan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara tercepat mendaftar perawatan tanpa perlu antre lama?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kami sangat menyarankan Anda melakukan reservasi secara online sebelum kedatangan, terutama jika Anda merencanakan kunjungan di akhir pekan. Anda dapat melakukan pendaftaran melalui WhatsApp kami yang tersedia di website kami."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cuaca Balikpapan sangat panas dan berangin, apa perawatan yang cocok agar kulit tidak kusam dan kering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Iklim maritim dengan intensitas matahari tinggi memang rentan merusak kelembapan pelindung kulit (skin barrier). Kami sangat merekomendasikan injeksi Skin Booster (seperti Aqua Shine atau DNA Glow) yang berfungsi menanamkan hidrasi (asam hialuronat) langsung ke lapisan dalam kulit. Untuk meratakan warna kulit akibat paparan sinar UV, terapi cahaya IPL Glow sangat efektif memecah noda hitam/melasma tanpa membuat kulit mengelupas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ada perawatan untuk mengencangkan double chin tanpa waktu pemulihan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sangat ada. Bagi Anda para profesional dan eksekutif yang sibuk, kami menawarkan Radiofrequency (RF) Face. Terapi ini melelehkan tumpukan lemak di bawah dagu dan merajut kembali kekencangan kulit menggunakan energi panas terkontrol. Prosedurnya sangat nyaman, cepat, dan Anda bisa langsung kembali melakukan aktivitas kembali dengan zero downtime."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Rambut saya rontok parah akibat memakai helm proyek setiap hari, apa solusinya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kondisi kulit kepala yang lembap karena helm safety sering memicu kerontokan progresif (folikulitis). Kami memiliki solusi medis khusus Hair Treatment. Anda bisa mencoba terapi sinar Biolight Hair (mulai Rp199.000) untuk merangsang sirkulasi oksigen di folikel rambut. Untuk kebotakan yang lebih serius, dokter kami merekomendasikan injeksi PRP Hair (plasma darah kaya nutrisi) guna membangkitkan kembali tunas akar rambut yang pasif."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah perawatan di Sozo Balikpapan terjamin kebersihan dan sterilitasnya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keselamatan medis adalah hal yang tidak bisa ditawar. Semua peralatan tajam yang bersentuhan dengan tubuh (seperti jarum) dipastikan 100% baru dan sekali pakai (single-use disposable). Sementara itu, instrumen perawatan wajah lainnya wajib melalui proses sterilisasi ganda (desinfeksi tingkat tinggi dan autoclave berstandar rumah sakit) setelah setiap kali digunakan. Anda berada di tangan yang sangat aman."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah laser penghilang bulu ketiak di Sozo Balikpapan terasa sakit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sama sekali tidak. Anda bisa melupakan rasa perih atau iritasi kulit seperti saat di-waxing. Teknologi Laser Hair Removal yang kami gunakan dilengkapi dengan sensor pendingin canggih, sehingga sensasi yang dirasakan hanya sebatas kehangatan ringan dan nyaris tanpa rasa sakit (painless). Kami juga menyediakan paket hemat bundling: hilangkan bulu sekaligus cerahkan area ketiak (Underarm Removal + Glow) dengan harga mulai Rp299.000 saja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa bedanya perawatan IPL Acne dan IPL Glow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Meski menggunakan alat berbasis cahaya yang sama, keduanya memiliki target yang sama sekali berbeda: IPL Acne menggunakan panjang gelombang khusus yang menembus masuk ke dalam pori-pori untuk mematikan bakteri penyebab jerawat meradang dan mengeringkannya secara cepat. Sedangkan IPL Glow difokuskan untuk memecah pigmen gelap di permukaan kulit (seperti noda hitam bekas jerawat atau kekusaman akibat sinar matahari) agar wajah tampak lebih cerah merata (glowing)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ada layanan tanpa operasi untuk menghancurkan lemak perut atau paha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kami memiliki departemen Body Slimming Treatment khusus. Untuk menghancurkan sel lemak membandel (adiposit) di area perut, lengan, atau paha, kami mengkombinasikan teknologi FatBurn Laser dengan suntikan pelebur lemak Meso Treatment. Jika target Anda adalah merapatkan kulit yang kendur pasca melahirkan, energi gelombang dari HIFU Body adalah pilihan yang sangat ideal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ibu hamil dan menyusui boleh melakukan perawatan di klinik ini?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keselamatan Anda dan janin adalah hal yang paling kami utamakan. Prosedur medis berbasis energi panas tinggi (seperti laser) atau injeksi kosmetik (seperti botox) wajib dihindari selama kehamilan. Namun, Anda tetap bisa memanjakan diri dengan ekstraksi komedo ringan serta rangkaian Facial Treatment hidrasi klasik yang sangat menyejukkan dan 100% aman. Selalu komunikasikan kondisi kehamilan Anda agar dokter kami dapat menyesuaikan perawatannya."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ada perawatan untuk mencerahkan lipatan kulit gelap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tentu saja. Kami memahami bahwa penggelapan pigmen pada area lipatan (akibat gesekan atau hormon) kerap menurunkan kepercayaan diri. Anda dapat berkonsultasi secara tertutup dengan dokter kami untuk mengambil prosedur Intimate Glow. Perawatan spesifik ini sangat ampuh mengangkat tumpukan sel kulit mati yang menggelap di area sensitif, menjadikannya tampak lebih bersih dan cerah dengan jaminan privasi yang mutlak."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
