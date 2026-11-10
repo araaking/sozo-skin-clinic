@@ -22,7 +22,7 @@ Tiga dokumen utama + dua folder ekstensi:
 | `docs/components/` | UI component specs (saat ini 5: button, table, card, accordion, whatsapp-button) | 13 Juli 2026 |
 | `design-system/` | Design System V1.1: `tokens.css`, 6 foundations, 10 component specs, checklists, decisions | 8 Oktober 2026 |
 | `treatment/treatments.json` + `treatment/build-treatment-list.mjs` | Data katalog halaman `/treatment/` (88 treatment, 13 kategori, 9 keluhan) dan generator yang menulis kartunya sebagai HTML statis ke `treatment/index.html`. Jalankan `node treatment/build-treatment-list.mjs` setiap kali data berubah | 8 Oktober 2026 |
-| `lokasi/detail-klinik/` | Template dinamis halaman detail cabang: `sozo-branch.php` (snippet WPCode, shortcode `[sozo_branch]`, data dari post meta `sz_*`, schema `MedicalClinic` lewat Yoast), `sozo-branch-rest-example.json` (body REST contoh), `sozo-branch-docs.md` (pasang, meta key, checklist test). `sozo-arteri-redesign.html` = acuan statis Arteri Pondok Indah | 2 November 2026 |
+| `lokasi/detail-klinik/` | Halaman detail cabang: 40 file HTML statis (`sozo-[cabang].html`, Arteri = `sozo-arteri.html`), tiap file berisi JSON-LD `WebPage` + `BreadcrumbList` inline. Isi folder digabung dari `lokasi/backup/detail-klinik/` pada 10 November 2026, jadi ikut ada template dinamis `sozo-branch.php` (snippet WPCode, shortcode `[sozo_branch]`, data dari post meta `sz_*`, menyuntik `MedicalClinic` + `FAQPage` lewat Yoast; jangan diaktifkan karena bentrok dengan keputusan schema cabang), `sozo-branch-rest-example.json`, dan `sozo-branch-docs.md` | 10 November 2026 |
 | `tools/searlo-rank-test/run.mjs` | Tes akurasi rank tracking Searlo: bandingkan posisi organik `/search/web` dengan `/rankings/check` dan `/serp` (Google Indonesia, 6 keyword). Butuh env `SEARLO_API_KEY`; output ke `tools/searlo-rank-test/output/<timestamp>/` | 12 Oktober 2026 |
 | `tools/searlo-rank-tracker/` | Rank check manual `sozoskinclinic.com` (Google Indonesia, top 30) via Searlo `/rankings/batch`. Keyword di `keywords.txt`; output `output/rank-YYYY-MM-DD.tsv` + `.md` siap paste ke spreadsheet. Lihat README di folder itu | 12 Oktober 2026 |
 
@@ -239,6 +239,49 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [ ] Bintaro (`https://sozoskinclinic.com/lokasi/tangerang-selatan/bintaro/`)
     - [ ] BSD (`https://sozoskinclinic.com/lokasi/tangerang-selatan/bsd/`)
     - [ ] Bali (`https://sozoskinclinic.com/lokasi/bali/`) — *cabang di luar Jawa*
+
+#### Detail Cabang (40 halaman, `lokasi/detail-klinik/`)
+*Catatan: halaman detail cabang memakai `WebPage` + `BreadcrumbList` saja (keputusan 10 November 2026), tanpa `MedicalClinic`, `FAQPage`, atau `Service`. Blok JSON-LD digabung langsung di HTML tiap halaman, tepat di bawah breadcrumb visual. Item `BreadcrumbList` sama dengan breadcrumb visual; ubah keduanya bersamaan. Belum diuji di Rich Results Test, belum dipasang di WordPress. URL 20 cabang baru (Cinere sampai Yogyakarta) diambil dari komentar header file, belum dicocokkan dengan slug di WordPress. Halaman Arteri = `sozo-arteri.html` (layout redesign, diperbarui 10 November 2026), memakai URL live `/lokasi/jakarta/jakarta-selatan/pondok-indah/`. File `sozo-arteri-redesign.html` dan `sozo-arteri-redesign copy.html` sudah dihapus user.*
+- [x] Alam Sutera (`https://sozoskinclinic.com/lokasi/sozo-alam-sutera/`)
+- [x] Arteri Pondok Indah (`https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/pondok-indah/`) — *URL live, sama dengan halaman area Pondok Indah*
+- [x] Bali Gatot Subroto (`https://sozoskinclinic.com/lokasi/sozo-bali-gatot-subroto/`)
+- [x] Bali Renon (`https://sozoskinclinic.com/lokasi/sozo-bali-renon/`)
+- [x] Balikpapan Ruhui Rahayu (`https://sozoskinclinic.com/lokasi/sozo-balikpapan-ruhui-rahayu/`)
+- [x] Balikpapan Superblock (`https://sozoskinclinic.com/lokasi/sozo-balikpapan-superblock/`)
+- [x] Bandung Buah Batu (`https://sozoskinclinic.com/lokasi/sozo-bandung-buah-batu/`)
+- [x] Bandung Paskal (`https://sozoskinclinic.com/lokasi/sozo-bandung-paskal/`)
+- [x] Bandung Surya Sumantri (`https://sozoskinclinic.com/lokasi/sozo-bandung-surya-sumantri/`)
+- [x] Banjarmasin (`https://sozoskinclinic.com/lokasi/sozo-banjarmasin/`)
+- [x] Batam (`https://sozoskinclinic.com/lokasi/sozo-batam/`)
+- [x] Bekasi Grand Galaxy (`https://sozoskinclinic.com/lokasi/sozo-bekasi-grand-galaxy/`)
+- [x] Bekasi Jakasampurna (`https://sozoskinclinic.com/lokasi/sozo-bekasi-jakasampurna/`)
+- [x] Bekasi Summarecon (`https://sozoskinclinic.com/lokasi/sozo-bekasi-summarecon/`)
+- [x] Bendungan Hilir (`https://sozoskinclinic.com/lokasi/sozo-bendungan-hilir/`)
+- [x] Bintaro Sektor 5 (`https://sozoskinclinic.com/lokasi/sozo-bintaro-sektor-5/`)
+- [x] Bintaro Sektor 7 (`https://sozoskinclinic.com/lokasi/sozo-bintaro-sektor-7/`)
+- [x] Bogor Bangbarung (`https://sozoskinclinic.com/lokasi/sozo-bogor-bangbarung/`)
+- [x] Bogor Taman Yasmin (`https://sozoskinclinic.com/lokasi/sozo-bogor-taman-yasmin/`)
+- [x] BSD (`https://sozoskinclinic.com/lokasi/sozo-bsd/`)
+- [x] Cibinong (`https://sozoskinclinic.com/lokasi/sozo-cibinong/`)
+- [x] Cinere (`https://sozoskinclinic.com/lokasi/sozo-cinere/`)
+- [x] Cirebon (`https://sozoskinclinic.com/lokasi/sozo-cirebon/`)
+- [x] Makassar Panakkukang (`https://sozoskinclinic.com/lokasi/sozo-makassar/`)
+- [x] Malang (`https://sozoskinclinic.com/lokasi/sozo-malang/`)
+- [x] Manado (`https://sozoskinclinic.com/lokasi/sozo-manado/`)
+- [x] Margonda Depok (`https://sozoskinclinic.com/lokasi/sozo-margonda-depok/`)
+- [x] Medan Iskandar Muda (`https://sozoskinclinic.com/lokasi/sozo-medan/`)
+- [x] Palembang (`https://sozoskinclinic.com/lokasi/sozo-palembang/`)
+- [x] Rawamangun (`https://sozoskinclinic.com/lokasi/sozo-rawamangun/`)
+- [x] Semarang (`https://sozoskinclinic.com/lokasi/sozo-semarang/`)
+- [x] Solo (`https://sozoskinclinic.com/lokasi/sozo-solo/`)
+- [x] Surabaya Bukit Darmo (`https://sozoskinclinic.com/lokasi/sozo-surabaya-bukit-darmo/`)
+- [x] Surabaya Jemursari (`https://sozoskinclinic.com/lokasi/sozo-surabaya-jemursari/`)
+- [x] Surabaya Manyar (`https://sozoskinclinic.com/lokasi/sozo-surabaya-manyar/`)
+- [x] Surabaya Mulyosari (`https://sozoskinclinic.com/lokasi/sozo-surabaya-mulyosari/`)
+- [x] Tangerang City (`https://sozoskinclinic.com/lokasi/sozo-tangerang-city/`)
+- [x] Tanjung Duren (`https://sozoskinclinic.com/lokasi/sozo-tanjung-duren/`)
+- [x] Tebet (`https://sozoskinclinic.com/lokasi/sozo-tebet/`)
+- [x] Yogyakarta (`https://sozoskinclinic.com/lokasi/sozo-yogyakarta/`)
 
 ### 🩺 9. Halaman Tim Dokter (List & Detail Profil)
 *Catatan: pola schema dokter berbeda dari treatment. List page pakai `CollectionPage` + `ItemList`, detail page pakai `ProfilePage` + `IndividualPhysician` (array `["Person", "IndividualPhysician"]`). Lihat AGENTS.md §6 dan §5.*

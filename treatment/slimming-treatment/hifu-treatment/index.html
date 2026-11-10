@@ -379,7 +379,8 @@
     color: var(--color-border-strong) !important;
   }
 
-  /* Hero latar putih: link breadcrumb pakai text-secondary, halaman aktif navy. */
+  /* EX-01: breadcrumb di atas hero Almond pakai text-secondary (7.79:1).
+     Text muted di Almond cuma 3.43:1, gagal AA. */
   .sozo-botox .breadcrumb a {
     color: var(--color-text-secondary) !important;
     font-weight: 500 !important;
@@ -401,34 +402,41 @@
   }
 
   /* ============ HERO (compact page header) ============ */
-  /* Split putih selebar container: kiri breadcrumb + H1, kanan foto rounded. */
+  /* Gradient White -> Almond. Gambar cover di kanan, fade ke kiri lewat mask. */
   .sozo-botox .hero-section {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 480px) !important;
-    align-items: center !important;
-    gap: var(--space-6) !important;
-    width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
-    margin: var(--space-5) auto 0 !important;
-    background: var(--color-white) !important;
+    display: flex !important;
+    align-items: stretch !important;
+    min-height: 220px !important;
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-brand-almond) 100%) !important;
+    overflow: hidden !important;
+    position: relative !important;
   }
 
   .sozo-botox .hero-content {
+    flex: 1 1 0 !important;
     min-width: 0 !important;
+    align-self: center !important;
+    padding-block: var(--space-5) !important;
+    padding-right: var(--space-4) !important;
+    padding-left: max(var(--container-pad), calc((100% - var(--container-max)) / 2)) !important;
+    z-index: 2 !important;
   }
 
   .sozo-botox .hero-image {
-    aspect-ratio: 16 / 9 !important;
-    border-radius: var(--radius-xl) !important;
-    overflow: hidden !important;
-    background-color: var(--color-brand-almond) !important;
+    flex: 0 0 46% !important;
+    position: relative !important;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 30%) !important;
+    mask-image: linear-gradient(to right, transparent 0%, #000 30%) !important;
   }
 
   .sozo-botox .hero-image img {
+    position: absolute !important;
+    inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
     display: block !important;
     object-fit: cover !important;
-    object-position: center 40% !important;
+    object-position: 60% 0% !important;
   }
 
   .sozo-botox .hero-title {
@@ -969,16 +977,17 @@
   }
 
   @media (max-width: 768px) {
-    /* Hero mobile compact: tetap berdampingan, teks kiri lebih lebar, foto 4:3 di kanan */
+    /* Hero mobile compact: teks kiri, gambar cover kanan (tetap berdampingan) */
     .sozo-botox .hero-section {
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) !important;
-      gap: var(--space-3) !important;
-      margin-top: var(--space-4) !important;
+      min-height: 130px !important;
+    }
+
+    .sozo-botox .hero-content {
+      padding: var(--space-4) var(--space-1) var(--space-4) var(--space-4) !important;
     }
 
     .sozo-botox .hero-image {
-      aspect-ratio: 4 / 3 !important;
-      border-radius: var(--radius-lg) !important;
+      flex: 0 0 38% !important;
     }
 
     .sozo-botox .breadcrumb {
@@ -1248,7 +1257,7 @@
     </div>
 
     <div class="hero-image">
-      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/liftera2-hifu-face-treatment.webp" alt="Treatment Liftera HIFU di rahang pasien Sozo Skin Clinic" width="1920" height="1080" fetchpriority="high" decoding="async">
+      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/08/DSC06476-scaled-HIFU.webp" alt="HIFU Treatment di Sozo Skin Clinic" width="2560" height="1440" fetchpriority="high" decoding="async">
     </div>
   </div>
 

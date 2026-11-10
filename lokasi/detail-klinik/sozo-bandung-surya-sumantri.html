@@ -1,6 +1,8 @@
 <!-- ============================================================
-     DETAIL CABANG - SOZO SKIN CLINIC ARTERI PONDOK INDAH (REDESIGN)
-     URL     : /lokasi/jakarta/jakarta-selatan/pondok-indah/
+     DETAIL CABANG - SOZO SKIN CLINIC BANDUNG SURYA SUMANTRI
+     URL     : /lokasi/sozo-bandung-surya-sumantri/ (target di sheet lokasi)
+     Template: sozo-arteri-redesign.html (mentor). Hanya data cabang yang diganti;
+               script diberi data-no-optimize="1" untuk LiteSpeed Delay JS.
      Style   : Sozo Design System V1.2 (design-system/), Elementor Safe, scoped
                ke .sz-branch. Token di wrapper, bukan :root.
      Seksi   : Breadcrumb -> [kolom kiri: H1, rating + status buka, lead,
@@ -537,6 +539,8 @@
     .sz-branch .sz-hours__item.is-today,
     .sz-branch .sz-hours__status.is-open .sz-hours__dot { animation: none !important; }
   }
+  /* Galeri 3 foto: thumbnail 3 kolom */
+  .sz-branch .sz-gallery__thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
 </style>
 
 <div class="sz-branch">
@@ -546,12 +550,65 @@
       <ol class="sz-breadcrumb__list">
         <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
         <li><a href="https://sozoskinclinic.com/lokasi/">Lokasi</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/jakarta/">Jakarta</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/">Jakarta Selatan</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-selatan/pondok-indah/">Pondok Indah</a></li>
-        <li><span class="sz-breadcrumb__current" aria-current="page">Arteri Pondok Indah</span></li>
+        <li><a href="https://sozoskinclinic.com/lokasi/bandung/">Bandung</a></li>
+        <li><span class="sz-breadcrumb__current" aria-current="page">Bandung Surya Sumantri</span></li>
       </ol>
     </nav>
+
+    <!-- SCHEMA: WebPage + BreadcrumbList. Item breadcrumb sama dengan breadcrumb visual di atas; ubah keduanya bersamaan. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://sozoskinclinic.com/lokasi/sozo-bandung-surya-sumantri/#webpage",
+          "url": "https://sozoskinclinic.com/lokasi/sozo-bandung-surya-sumantri/",
+          "name": "Sozo Skin Clinic - Bandung Surya Sumantri",
+          "description": "Mencari klinik kecantikan di Sukajadi, Bandung yang terpercaya? Sozo hadir di Jl. Prof. Surya Sumantri No. 156 dengan kualitas terbaik, harga transparan dan terjangkau.",
+          "inLanguage": "id",
+          "isPartOf": {
+            "@id": "https://sozoskinclinic.com/#website"
+          },
+          "about": {
+            "@id": "https://sozoskinclinic.com/#organization"
+          },
+          "breadcrumb": {
+            "@id": "https://sozoskinclinic.com/lokasi/sozo-bandung-surya-sumantri/#breadcrumb"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://sozoskinclinic.com/lokasi/sozo-bandung-surya-sumantri/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Beranda",
+              "item": "https://sozoskinclinic.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Lokasi",
+              "item": "https://sozoskinclinic.com/lokasi/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Bandung",
+              "item": "https://sozoskinclinic.com/lokasi/bandung/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Bandung Surya Sumantri"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Desktop: kolom kiri (header + jam + alamat + CTA), galeri kanan setinggi kolom kiri.
          Mobile: header -> info -> galeri. -->
@@ -559,13 +616,13 @@
 
       <!-- ==================== 1. HEADER ==================== -->
       <header class="sz-branch__head">
-        <h1 class="sz-branch__title">Sozo Skin Clinic - Arteri Pondok Indah</h1>
+        <h1 class="sz-branch__title">Sozo Skin Clinic - Bandung Surya Sumantri</h1>
 
         <div class="sz-branch__meta">
           <span class="sz-rating">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.3l-5.9 3.2 1.3-6.5L2.5 9.4l6.6-.8z"/></svg>
-            <strong>4.7</strong>
-            <a href="https://www.google.com/maps/search/?api=1&query=Sozo%20Skin%20Clinic%20-%20Arteri%20Pondok%20Indah" target="_blank" rel="noopener">1.856 ulasan Google</a>
+            <strong>4.9</strong>
+            <a href="https://www.google.com/maps/search/?api=1&query=Sozo%20Skin%20Clinic%20-%20Bandung%20Surya%20Sumantri" target="_blank" rel="noopener">363 ulasan Google</a>
           </span>
           <p class="sz-hours__status" id="szHoursStatus" hidden>
             <span class="sz-hours__dot" aria-hidden="true"></span>
@@ -573,7 +630,7 @@
           </p>
         </div>
 
-        <p class="sz-branch__lead">Mencari klinik kecantikan di Pondok Indah dan Kebayoran Lama yang terpercaya? Sozo hadir di Jl. Sultan Iskandar Muda (Arteri Pondok Indah) dengan kualitas terbaik, harga transparan dan terjangkau.</p>
+        <p class="sz-branch__lead">Mencari klinik kecantikan di Sukajadi, Bandung yang terpercaya? Sozo hadir di Jl. Prof. Surya Sumantri No. 156 dengan kualitas terbaik, harga transparan dan terjangkau.</p>
       </header>
 
       <!-- ==================== 2. INFO CABANG (jam, alamat + CTA) ==================== -->
@@ -601,15 +658,15 @@
               <span id="szCopyLabel">Salin alamat</span>
             </button>
           </div>
-          <p class="sz-panel__address" id="szAddress">Jl. Sultan Iskandar Muda No.68A, RT.3/RW.2, Kby. Lama Utara, Kec. Kebayoran Lama, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12240</p>
+          <p class="sz-panel__address" id="szAddress">Jl. Prof. Surya Sumantri No. 156, Sukagalih, Kec. Sukajadi, Kota Bandung, Jawa Barat 40164</p>
           <span class="sz-visually-hidden" aria-live="polite" id="szCopyStatus"></span>
 
           <div class="sz-panel__actions">
-            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20treatment%20sozo%20di%20Sozo%20Skin%20Clinic%20Arteri%20Pondok%20Indah%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sz-btn sz-btn--primary sozo-master-cta">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20treatment%20sozo%20di%20Sozo%20Skin%20Clinic%20Bandung%20Surya%20Sumantri%20%5Bsrc%3AORG-LOK%5D" target="_blank" rel="noopener" class="sz-btn sz-btn--primary sozo-master-cta">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
               <span>Buat Jadwal</span>
             </a>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Sozo%20Skin%20Clinic%20-%20Arteri%20Pondok%20Indah" target="_blank" rel="noopener" class="sz-btn sz-btn--outline">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Sozo%20Skin%20Clinic%20-%20Bandung%20Surya%20Sumantri" target="_blank" rel="noopener" class="sz-btn sz-btn--outline">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
               <span>Petunjuk Arah</span>
             </a>
@@ -618,30 +675,27 @@
       </section>
 
       <!-- ==================== 3. GALERI KLINIK ==================== -->
-      <section class="sz-gallery" aria-label="Galeri foto Sozo Skin Clinic Arteri Pondok Indah">
+      <section class="sz-gallery" aria-label="Galeri foto Sozo Skin Clinic Bandung Surya Sumantri">
         <div class="sz-gallery__stage" id="szGalleryStage">
-          <img id="szGalleryMain" src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-arteri-depan.webp" alt="Tampak depan Sozo Skin Clinic Arteri Pondok Indah" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" draggable="false">
+          <img id="szGalleryMain" src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bandung-surya-sumantri-1.webp" alt="Ruang Sozo Skin Clinic Bandung Surya Sumantri" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" draggable="false">
           <button type="button" class="sz-gallery__nav sz-gallery__nav--prev" id="szGalleryPrev" aria-label="Foto sebelumnya">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
           </button>
           <button type="button" class="sz-gallery__nav sz-gallery__nav--next" id="szGalleryNext" aria-label="Foto selanjutnya">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
           </button>
-          <span class="sz-gallery__count" id="szGalleryCount" aria-live="polite">1 / 4</span>
+          <span class="sz-gallery__count" id="szGalleryCount" aria-live="polite">1 / 3</span>
         </div>
 
         <div class="sz-gallery__thumbs">
-          <button type="button" class="sz-gallery__thumb" aria-current="true" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-arteri-depan.webp" data-alt="Tampak depan Sozo Skin Clinic Arteri Pondok Indah" aria-label="Foto 1: tampak depan klinik">
-            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-arteri-depan.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
+          <button type="button" class="sz-gallery__thumb" aria-current="true" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bandung-surya-sumantri-1.webp" data-alt="Ruang Sozo Skin Clinic Bandung Surya Sumantri" aria-label="Foto 1: ruang klinik">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bandung-surya-sumantri-1.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
           </button>
-          <button type="button" class="sz-gallery__thumb" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-1.webp" data-alt="Ruang Sozo Skin Clinic Arteri Pondok Indah" aria-label="Foto 2: ruang klinik">
-            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-1.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
+          <button type="button" class="sz-gallery__thumb" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bandung-surya-sumantri-2.webp" data-alt="Ruang Sozo Skin Clinic Bandung Surya Sumantri" aria-label="Foto 2: ruang klinik">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bandung-surya-sumantri-2.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
           </button>
-          <button type="button" class="sz-gallery__thumb" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-2.webp" data-alt="Ruang Sozo Skin Clinic Arteri Pondok Indah" aria-label="Foto 3: ruang klinik">
-            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-2.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
-          </button>
-          <button type="button" class="sz-gallery__thumb" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-3.webp" data-alt="Ruang Sozo Skin Clinic Arteri Pondok Indah" aria-label="Foto 4: ruang klinik">
-            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-arteri-3.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
+          <button type="button" class="sz-gallery__thumb" data-full="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bandung-surya-sumantri-3.webp" data-alt="Ruang Sozo Skin Clinic Bandung Surya Sumantri" aria-label="Foto 3: ruang klinik">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/10/sozo-skin-clinic-bandung-surya-sumantri-3.webp" alt="" width="320" height="180" loading="lazy" decoding="async">
           </button>
         </div>
       </section>
@@ -651,7 +705,8 @@
 </div>
 
 <!-- ==================== JAVASCRIPT ==================== -->
-<script>
+<!-- data-no-optimize: dikecualikan dari LiteSpeed "Delay JS" supaya galeri, salin alamat, dan status buka langsung jalan -->
+<script data-no-optimize="1">
 (function() {
   // Jam buka per hari dalam menit sejak 00:00 WIB. 0 = Minggu.
   const HOURS = {

@@ -555,6 +555,61 @@
       </ol>
     </nav>
 
+    <!-- SCHEMA: WebPage + BreadcrumbList. Item breadcrumb sama dengan breadcrumb visual di atas; ubah keduanya bersamaan. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://sozoskinclinic.com/lokasi/sozo-solo/#webpage",
+          "url": "https://sozoskinclinic.com/lokasi/sozo-solo/",
+          "name": "Sozo Skin Clinic - Solo",
+          "description": "Mencari klinik kecantikan di Solo yang terpercaya? Sozo hadir di Jl. Prof. Dr. Supomo, Banjarsari dengan kualitas terbaik, harga transparan dan terjangkau.",
+          "inLanguage": "id",
+          "isPartOf": {
+            "@id": "https://sozoskinclinic.com/#website"
+          },
+          "about": {
+            "@id": "https://sozoskinclinic.com/#organization"
+          },
+          "breadcrumb": {
+            "@id": "https://sozoskinclinic.com/lokasi/sozo-solo/#breadcrumb"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://sozoskinclinic.com/lokasi/sozo-solo/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Beranda",
+              "item": "https://sozoskinclinic.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Lokasi",
+              "item": "https://sozoskinclinic.com/lokasi/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Solo",
+              "item": "https://sozoskinclinic.com/lokasi/solo/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Sozo Solo"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <!-- Desktop: kolom kiri (header + jam + alamat + CTA), galeri kanan setinggi kolom kiri.
          Mobile: header -> info -> galeri. -->
     <div class="sz-branch__body">
