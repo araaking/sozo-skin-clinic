@@ -1,0 +1,536 @@
+<style>/* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-brow-grow-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    /* PERFORMANCE SPEED: Menunda beban kerja rendering browser jika elemen belum di-scroll */
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+
+  .sozo-sku-brow-grow-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-brow-grow-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-brow-grow-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-brow-grow-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-brow-grow-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-brow-grow-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-brow-grow-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-brow-grow-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- NEW SECTIONS STYLING (Cards, Grids, Steps) --- */
+  .sozo-sku-brow-grow-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-section-card > h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-section-card > p {
+    color: #475569 !important;
+    font-size: 16px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  /* Problem Grid Styling (2x2) */
+  .sozo-sku-brow-grow-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-problem-card span {
+    font-size: 14px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Process Steps Styling */
+  .sozo-sku-brow-grow-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-step-num {
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-step-text p {
+    font-size: 15px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-brow-grow-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  /* Mengatur h3 agar senada dengan h2 */
+  .sozo-sku-brow-grow-wrapper .sozo-description-section h3 {
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-description-section p,
+  .sozo-sku-brow-grow-wrapper .sozo-description-section li {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-description-section ul {
+    padding-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .sozo-sku-brow-grow-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-brow-grow-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-brow-grow-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-brow-grow-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-brow-grow-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-answer a {
+    color: #1A2080 !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+  .sozo-sku-brow-grow-wrapper .sozo-faq-answer a:hover {
+    color: #2e38b5 !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-brow-grow-wrapper .sozo-treatment-hero {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .sozo-sku-brow-grow-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-brow-grow-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-brow-grow-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-brow-grow-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-brow-grow-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-brow-grow-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-brow-grow-wrapper .sozo-description-section, 
+    .sozo-sku-brow-grow-wrapper .sozo-faq-section,
+    .sozo-sku-brow-grow-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+
+    /* Agar Problem Grid menjadi 1 kolom di HP */
+    .sozo-sku-brow-grow-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+    }
+  }</style><div class="sozo-sku-brow-grow-wrapper" id="sozo-brow-grow-widget"><nav aria-label="Breadcrumb" class="sozo-breadcrumb"><ol><li>
+<a href="https://sozoskinclinic.com/">
+<span>Home</span>
+</a></li><li class="separator" aria-hidden="true">/</li><li>
+<a href="https://sozoskinclinic.com/hair-treatment/">
+<span>Hair Treatment</span>
+</a></li><li class="separator" aria-hidden="true">/</li><li aria-current="page">
+<span style="color: #1A2080; font-weight: 600;">Brow Grow</span></li></ol></nav><div class="sozo-treatment-hero"><div class="sozo-hero-text"><h1>Brow Grow Treatment Alis</h1><p>
+Dapatkan alis tebal, lebat, dan natural tanpa perlu repot menggambar setiap hari. Brow Grow adalah treatment alis inovatif berstandar medis yang memadukan teknologi microneedling dan infusi serum penumbuh rambut (hair growth factor). Solusi medis paling tepat dan aman untuk mengatasi alis tipis atau rontok, merangsang folikel baru, dan meningkatkan kepadatan helai alis 100% menggunakan rambut asli Anda.</p><div class="sozo-info-row"><div class="sozo-info-col"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Durasi</span>
+<span class="sozo-info-value">45 Menit</span></div></div><div class="sozo-info-col"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Harga Mulai</span>
+<span class="sozo-info-value">Rp 599.000</span></div></div></div><a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Brow%20Grow%20di%20Sozo%20%5Bsrc%3AORG-Brow-Grow%5D" class="sozo-btn" target="_blank" rel="noopener">Reservasi Sekarang</a></div><div class="sozo-hero-image">
+<img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODAiIGhlaWdodD0iMzQwIiB2aWV3Qm94PSIwIDAgNDgwIDM0MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsLW9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=" decoding="async" data-src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/07/LP-Brow-Grow-scaled.webp" 
+           alt="Brow Grow Treatment Alis Sozo Clinic"
+           width="480"
+           height="340"></div></div><div class="sozo-cta-wrapper"><div class="sozo-cta-banner"><h2>Dapatkan Alis Tebal & Natural dengan Brow Grow</h2><p>Jangan biarkan alis tipis mengganggu kepercayaan diri Anda. Konsultasikan alis Anda hari ini bersama dokter ahli kami.</p>
+<a href="https://api.whatsapp.com/send?phone=6285183174835&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Brow%20Grow%20di%20Sozo%20%5Bsrc%3AORG-Brow-Grow%5D" class="sozo-btn-secondary" target="_blank" rel="noopener">Konsultasi Dokter Sekarang</a></div></div><div class="sozo-content-wrapper"><section class="sozo-section-card"><h2>Masalah Alis yang Sering Dialami</h2><p>Bentuk alis yang kurang bervolume atau asimetris sering kali membuat tampilan wajah kurang berkarakter dan menguras waktu berdandan Anda. Treatment alis Brow Grow hadir sebagai solusi cerdas untuk mengatasi berbagai keluhan berikut:</p><div class="sozo-problem-grid"><div class="sozo-problem-card">
+<strong>Alis Tipis & Botak</strong>
+<span>Pertumbuhan rambut alis yang sangat jarang, tipis secara genetik, atau adanya area kosong (botak) pada pangkal hingga ujung alis.</span></div><div class="sozo-problem-card">
+<strong>Kerontokan Akibat Makeup/Sulam</strong>
+<span>Kerusakan folikel atau kerontokan helai alis akibat keseringan mencabut, mencukur, efek bahan kimia riasan, atau prosedur sulam alis yang gagal.</span></div><div class="sozo-problem-card">
+<strong>Alis Asimetris</strong>
+<span>Bentuk, kepadatan, dan ketebalan rambut alis sebelah kiri dan kanan yang tidak seimbang secara alami.</span></div><div class="sozo-problem-card">
+<strong>Lelah Menggambar Alis Setiap Hari</strong>
+<span>Habis waktu setiap pagi hanya untuk membingkai, menebalkan, dan menggambar alis menggunakan pensil atau pomade agar terlihat presisi.</span></div></div></section><article class="sozo-description-section"><h2>Brow Grow: Treatment Alis Medis untuk Kepadatan 100% Natural</h2><p>Selama ini, banyak orang memilih jalan pintas seperti sulam alis untuk mendapatkan bentuk alis idaman. Namun, sulam alis pada dasarnya adalah seni memasukkan tinta pigmen ke dalam kulit yang berisiko pudar, berubah warna menjadi kemerahan/kebiruan, dan justru membuat tampilan wajah menjadi kaku.</p><p>Sebagai klinik estetika medis, kami menghadirkan Brow Grow—sebuah treatment alis berteknologi mutakhir yang mendobrak pendekatan kosmetik konvensional tersebut. Perawatan ini berfokus pada penyembuhan dan stimulasi rambut alis asli Anda, bukan sekadar menggambarnya dengan tinta.</p><div class="sozo-expandable-content" id="treatmentDescriptionBrow"><div class="sozo-expandable-inner"><h3>Bagaimana Teknologi Microneedling & Serum Bekerja Menebalkan Alis?</h3><p>Rahasia keberhasilan Brow Grow terletak pada sinergi antara stimulasi fisik dan nutrisi tingkat seluler. Menggunakan perangkat microneedle khusus, dokter akan menciptakan ribuan jalur tak kasat mata di area kulit alis Anda. Luka-luka mikro yang terkontrol ini akan "membangunkan" sistem penyembuhan alami tubuh dan melancarkan aliran darah ke area alis.</p><p>Secara bersamaan, dokter akan menginfuskan serum hair growth factor berdosis tinggi langsung ke dalam jalur mikro tersebut. Dengan cara ini, nutrisi tidak hanya menguap di permukaan kulit, melainkan langsung terserap secara presisi ke akar folikel rambut yang tadinya "tertidur" atau lemah, memaksanya untuk kembali aktif memproduksi helai rambut yang tebal, gelap, dan kuat.</p><h3>4 Keunggulan Mutlak Brow Grow Dibandingkan Sulam Alis</h3><ul><li><strong>Hasil 100% Rambut Asli (Berdimensi 3D):</strong> Karena yang tumbuh adalah rambut Anda sendiri, alis akan memiliki tekstur dan dimensi alami yang tidak bisa ditiru oleh guratan tinta sulam terbaik sekalipun.</li><li><strong>Bebas Risiko Perubahan Warna Tinta:</strong> Anda tidak perlu khawatir warna alis memudar menjadi biru, hijau, atau merah di kemudian hari karena kami sama sekali tidak menggunakan bahan pigmen buatan.</li><li><strong>Memperbaiki Kualitas Folikel Kulit:</strong> Selain menebalkan anak rambut (baby hair) baru, perawatan ini menyehatkan helai rambut alis yang sudah ada agar siklus hidupnya lebih panjang dan tidak mudah rontok.</li><li><strong>Aman, Steril, & Ditangani Dokter:</strong> Prosedur dikerjakan oleh tenaga medis profesional menggunakan jarum mikro steril single-use (sekali pakai), menghilangkan risiko infeksi parah, keloid, atau penularan penyakit.</li></ul></div></div>
+<button class="sozo-load-more-btn" id="browLoadMore" onclick="toggleBrowDescription()">
+<span id="browReadMoreText">Baca Selengkapnya</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button></article><section class="sozo-section-card"><h2>Proses & Cara Kerja Treatment Alis Brow Grow</h2><p>Prosedur penumbuh alis ini dirancang agar memberikan hasil maksimal dengan pengalaman treatment yang sangat nyaman bagi pasien:</p><div class="sozo-process-step"><div class="sozo-step-num">1</div><div class="sozo-step-text">
+<strong>Konsultasi & Asesmen Folikel</strong><p>Dokter atau terapis ahli kami akan memeriksa area alis Anda menggunakan pencahayaan khusus. Tujuannya adalah memetakan area yang mengalami kebotakan dan memastikan folikel rambut Anda masih memiliki potensi untuk distimulasi pertumbuhannya.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">2</div><div class="sozo-step-text">
+<strong>Pembersihan & Anestesi Lokal</strong><p>Area dahi dan alis akan dibersihkan secara menyeluruh dari segala sisa makeup, minyak, dan kotoran. Setelah itu, krim anestesi lokal (numbing cream) akan dioleskan dan didiamkan selama 30 menit agar seluruh prosedur bebas dari rasa sakit.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">3</div><div class="sozo-step-text">
+<strong>Tindakan Microneedling & Infusi Serum</strong><p>Dokter akan mulai melakukan microneedling secara perlahan mengikuti arah pertumbuhan alami alis Anda. Bersamaan dengan proses ini, serum penumbuh alis kaya nutrisi akan diteteskan agar langsung terpenetrasi ke lapisan akar rambut.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">4</div><div class="sozo-step-text">
+<strong>Pemberian Aftercare & Edukasi</strong><p>Setelah prosedur selesai, area tersebut akan dibersihkan dan diberikan krim anti-iritasi. Dokter akan meresepkan langkah-langkah aftercare di rumah yang wajib Anda ikuti, sekaligus merencanakan jadwal kunjungan untuk sesi berikutnya agar pertumbuhan alis berjalan sempurna.</p></div></div></section><section class="sozo-faq-section" itemscope itemtype="https://schema.org/FAQPage"><h2>Pertanyaan Seputar Brow Grow Alis</h2><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleBrowFaq(this)">
+<span itemprop="name">Apa itu Brow Grow dan bagaimana cara kerjanya secara medis?</span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Brow Grow adalah treatment alis invasif minimal berstandar medis yang menggabungkan metode microneedling (terapi jarum mikro) dengan serum growth factor. Cara kerjanya adalah dengan menciptakan trauma mikro yang terkontrol pada kulit di area alis. Proses ini secara otomatis memicu aliran darah yang membawa oksigen ke area tersebut, sekaligus membuka jalan agar serum penumbuh rambut dapat menyerap jauh ke dalam folikel yang pasif, memicu sel-sel rambut untuk kembali ke fase pertumbuhan aktif (fase anagen).</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleBrowFaq(this)">
+<span itemprop="name">Apakah treatment alis dengan microneedling ini terasa sakit atau berdarah?</span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Anda tidak perlu khawatir, karena prosedur ini dirancang agar sangat nyaman. Sebelum tindakan dimulai, kami selalu mengaplikasikan krim anestesi (krim kebas) berstandar medis pada area alis Anda. Selain itu, penetrasi jarum yang digunakan sangatlah dangkal (hanya mencapai lapisan epidermis atas tempat folikel berada), sehingga Anda umumnya hanya akan merasakan sensasi getaran ringan layaknya pijatan kecil, tanpa rasa sakit yang berarti atau pendarahan hebat.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleBrowFaq(this)">
+<span itemprop="name">Apakah hasil lebat dari Brow Grow bersifat permanen?</span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Ya, karena yang tumbuh adalah rambut asli Anda, hasilnya jauh lebih permanen dibandingkan tinta sulam alis. Namun, perlu diingat bahwa rambut alis manusia memiliki siklus alami di mana mereka akan rontok dan tumbuh kembali. Ketahanan kepadatan alis Anda ke depannya akan sangat bergantung pada faktor genetik, usia, asupan nutrisi tubuh, serta cara Anda memperlakukan alis (misalnya, menghindari pemakaian pensil alis berbahan keras atau kebiasaan mencabut alis).</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleBrowFaq(this)">
+<span itemprop="name">Berapa kali sesi treatment alis yang direkomendasikan untuk hasil optimal?</span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Untuk membangun fondasi folikel yang kuat dan mencapai tingkat ketebalan yang Anda inginkan, dokter kami umumnya merekomendasikan program awal sebanyak 3 hingga 5 sesi treatment, dengan jarak interval setiap 2 hingga 4 minggu sekali. Setelah alis Anda mencapai kepadatan ideal, Anda cukup melakukan sesi pemeliharaan (maintenance) beberapa bulan sekali jika dirasa perlu.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleBrowFaq(this)">
+<span itemprop="name">Mengapa ada larangan membasahi alis setelah melakukan treatment ini?</span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Setelah tindakan microneedling, ribuan saluran mikro (pori-pori) di area alis Anda sedang dalam keadaan terbuka maksimal untuk menyerap serum. Kami melarang Anda membasahi area tersebut dengan air (terutama air hangat), berkeringat berlebih (olahraga/sauna), atau menggunakan makeup selama 24-48 jam pertama untuk mencegah masuknya bakteri yang dapat memicu infeksi, serta agar nutrisi serum tidak luntur sebelum mengunci di akar folikel.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleBrowFaq(this)">
+<span itemprop="name">Berapa biaya treatment alis Brow Grow per sesinya?</span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Harga treatment alis Brow Grow di seluruh cabang Sozo Skin Clinic saat ini adalah mulai dari Rp 599.000 per sesi dengan durasi tindakan sekitar 45 menit. Ini merupakan alternatif investasi perawatan kecantikan yang jauh lebih hemat, alami, dan minim risiko jika dibandingkan dengan biaya perbaikan atau penghapusan laser akibat kegagalan prosedur sulam alis di luaran sana.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleBrowFaq(this)">
+<span itemprop="name">Di mana saya bisa melakukan treatment alis Brow Grow terdekat?</span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Jika Anda sudah lelah menggambar alis setiap hari dan ingin solusi medis yang terpercaya, Anda dapat melakukan perawatan Brow Grow di seluruh cabang Sozo Skin Clinic. Klinik kami tersebar di berbagai lokasi strategis di area Jabodetabek (Jakarta, Selatan, Pusat, Bogor, Depok, Tangerang, hingga Bekasi). Silakan cek jadwal operasional dan temukan cabang kami melalui halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang Sozo Skin Clinic</a>.</p></div></div></div></section></div></div><script type="litespeed/javascript">function toggleBrowDescription(){const content=document.getElementById('treatmentDescriptionBrow');const btn=document.getElementById('browLoadMore');const btnText=document.getElementById('browReadMoreText');content.classList.toggle('expanded');btn.classList.toggle('active');btnText.textContent=content.classList.contains('expanded')?'Tampilkan Lebih Sedikit':'Baca Selengkapnya'}
+function toggleBrowFaq(button){const answer=button.nextElementSibling;button.classList.toggle('active');answer.style.maxHeight=answer.style.maxHeight?null:answer.scrollHeight+"px"}</script></div></div></div></div></main>
