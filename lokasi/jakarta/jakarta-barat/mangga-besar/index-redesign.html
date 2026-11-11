@@ -1,0 +1,1413 @@
+<!-- ============================================================
+     HALAMAN LOKASI - KLINIK KECANTIKAN MANGGA BESAR (REDESIGN LIST)
+     URL     : /lokasi/jakarta/jakarta-barat/mangga-besar/
+     Patokan : lokasi/jakarta/jakarta-selatan/index-redesign.html (disetujui mentor).
+               Halaman area: tanpa toggle area (revisi mentor).
+     Sumber  : lokasi/backup/jakarta/jakarta-barat/mangga-besar/index.html (hanya dibaca).
+               Peta, jadwal, pemilih cabang, galeri Suasana Klinik dihapus; section lain tetap.
+     CSS     : style.css lama halaman ini (lokasi/backup/jakarta/jakarta-barat/mangga-besar/style.css).
+     ============================================================ -->
+
+<!-- Google Font Poppins Preconnect & Stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- SYSTEM PRELOAD FONTAWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Ikon SVG untuk breadcrumb, toggle area, dan kartu cabang (dipakai lewat <use>) -->
+<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="sz-area-i-pin" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
+  <symbol id="sz-area-i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+  <symbol id="sz-area-i-map" viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="1 6 8 2 16 6 23 2 23 18 16 22 8 18 1 22 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></symbol>
+</svg>
+
+<!-- CSS daftar cabang. Prefix .sz-area-* supaya tidak bentrok dengan style.css halaman
+     (.sozo-btn, .sozo-btn-wa, dll. sudah dipakai di sana). Nilai mengikuti kartu /lokasi. -->
+<style>
+  /* Breadcrumb */
+  .sz-area-breadcrumb { display: flex !important; justify-content: center !important; margin: 0 0 16px !important; }
+  .sz-area-breadcrumb ol {
+    display: flex !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important;
+    gap: 8px 10px !important; list-style: none !important; margin: 0 !important; padding: 0 !important;
+    font-size: 12px !important; font-weight: 500 !important; line-height: 1.4 !important;
+  }
+  .sz-area-breadcrumb li { margin: 0 !important; padding: 0 !important; }
+  .sz-area-breadcrumb a { color: #777771 !important; text-decoration: none !important; transition: color 180ms ease !important; }
+  .sz-area-breadcrumb a:hover, .sz-area-breadcrumb a:focus-visible { color: #1A2080 !important; }
+  .sz-area-breadcrumb .sz-area-sep { color: #777771 !important; }
+  .sz-area-breadcrumb [aria-current="page"] { color: #1A2080 !important; font-weight: 600 !important; }
+
+  /* Judul daftar + toggle area dalam satu baris */
+  .sz-area-list__head {
+    display: flex !important; align-items: center !important; justify-content: space-between !important;
+    gap: 12px 24px !important; flex-wrap: wrap !important; margin: 0 0 4px !important;
+  }
+  .sz-area-toggles { display: flex !important; align-items: center !important; gap: 10px !important; min-width: 0 !important; margin: 0 !important; }
+  .sz-area-toggles__label { color: #777771 !important; font-size: 13px !important; font-weight: 500 !important; white-space: nowrap !important; line-height: 1.4 !important; }
+  .sz-area-toggles ul {
+    display: flex !important; gap: 8px !important; list-style: none !important; margin: 0 !important; padding: 0 !important;
+    overflow-x: auto !important; scrollbar-width: none !important; -webkit-overflow-scrolling: touch !important;
+  }
+  .sz-area-toggles ul::-webkit-scrollbar { display: none !important; }
+  .sz-area-toggles li { margin: 0 !important; padding: 0 !important; flex-shrink: 0 !important; }
+  .sz-area-toggle {
+    display: inline-flex !important; align-items: center !important; gap: 6px !important;
+    padding: 6px 14px !important; border: 1px solid #DFDBD4 !important; border-radius: 50px !important;
+    background: #FFFFFF !important; color: #41413E !important; font-size: 12.5px !important; font-weight: 600 !important;
+    line-height: 1.2 !important; white-space: nowrap !important; text-decoration: none !important; transition: all 0.25s ease !important;
+  }
+  .sz-area-toggle svg { width: 12px !important; height: 12px !important; fill: #1A2080 !important; }
+  .sz-area-toggle:hover, .sz-area-toggle:focus-visible { border-color: #1A2080 !important; color: #1A2080 !important; background: #E9DFD5 !important; }
+
+  /* Daftar cabang */
+  .sz-area-list { margin: 0 !important; }
+  .sz-area-list__title {
+    margin: 0 !important; color: #777771 !important; font-size: 13px !important; font-weight: 600 !important;
+    letter-spacing: 0.04em !important; text-transform: uppercase !important; line-height: 1.4 !important;
+  }
+  .sz-area-grid {
+    display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 32px !important; row-gap: 0 !important;
+  }
+  .sz-area-card {
+    display: flex !important; align-items: stretch !important; gap: 22px !important;
+    padding: 20px 0 !important; border-bottom: 1px solid #DFDBD4 !important; background: transparent !important;
+  }
+  /* Baris kartu terakhir tanpa garis bawah: segmen berikutnya sudah punya garis atas */
+  .sz-area-card:nth-last-child(-n+2):nth-child(odd), .sz-area-card:last-child { border-bottom: 0 !important; }
+  .sz-area-media {
+    display: block !important; width: 190px !important; height: 190px !important; flex-shrink: 0 !important;
+    border-radius: 16px !important; overflow: hidden !important; background: #E9DFD5 !important;
+    text-decoration: none !important;
+  }
+  .sz-area-media img {
+    display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important;
+    transition: transform 0.35s ease !important;
+  }
+  .sz-area-media:hover img { transform: scale(1.04) !important; }
+  .sz-area-ph {
+    display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important;
+    width: 100% !important; height: 100% !important; background: #1A2080 !important; color: #FFFFFF !important;
+  }
+  .sz-area-ph svg { width: 40px !important; height: 40px !important; fill: #FFFFFF !important; margin-bottom: 6px !important; }
+  .sz-area-ph span { font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.08em !important; color: #FFFFFF !important; }
+  .sz-area-body { display: flex !important; flex-direction: column !important; flex: 1 !important; min-width: 0 !important; padding: 4px 0 !important; }
+  .sz-area-badge {
+    align-self: flex-start !important; display: inline-flex !important; align-items: center !important; gap: 5px !important;
+    margin: 0 0 10px !important; padding: 4px 10px !important; border-radius: 50px !important;
+    background: #E9DFD5 !important; color: #1A2080 !important; font-size: 11px !important; font-weight: 700 !important;
+    letter-spacing: 0.05em !important; text-transform: uppercase !important; line-height: 1.3 !important;
+  }
+  .sz-area-badge svg { width: 11px !important; height: 11px !important; fill: #1A2080 !important; }
+  .sz-area-name { margin: 0 0 2px !important; font-size: 16.5px !important; font-weight: 700 !important; line-height: 1.35 !important; color: #1A2080 !important; }
+  .sz-area-name a { color: #1A2080 !important; text-decoration: none !important; }
+  .sz-area-name a:hover, .sz-area-name a:focus-visible { color: #0E1356 !important; text-decoration: underline !important; }
+  .sz-area-rating { margin: 0 0 8px !important; color: #E8A317 !important; font-size: 13px !important; font-weight: 600 !important; line-height: 1.4 !important; }
+  .sz-area-address { flex-grow: 1 !important; margin: 0 0 18px !important; color: #41413E !important; font-size: 13.5px !important; font-weight: 400 !important; line-height: 1.6 !important; }
+  .sz-area-actions { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 16px !important; }
+  .sz-area-btn-wa, .sz-area-btn-maps {
+    display: inline-flex !important; align-items: center !important; gap: 8px !important;
+    font-size: 13.5px !important; font-weight: 600 !important; line-height: 1.2 !important;
+    text-decoration: none !important; text-transform: uppercase !important; transition: all 0.25s ease !important;
+  }
+  .sz-area-btn-wa {
+    padding: 11px 22px !important; border-radius: 12px !important; background: #1A2080 !important; color: #FFFFFF !important;
+    border: 1.5px solid transparent !important; box-shadow: 0 4px 12px rgba(26, 32, 128, 0.18) !important;
+  }
+  .sz-area-btn-wa svg { width: 15px !important; height: 15px !important; fill: #FFFFFF !important; }
+  .sz-area-btn-wa:hover { background: #0E1356 !important; color: #FFFFFF !important; transform: translateY(-1px) !important; }
+  .sz-area-btn-maps { padding: 0 !important; color: #1A2080 !important; background: transparent !important; }
+  .sz-area-btn-maps svg { width: 15px !important; height: 15px !important; stroke: #1A2080 !important; }
+  .sz-area-btn-maps:hover { text-decoration: underline !important; }
+
+  /* Tablet: foto lebih kecil supaya 2 kolom tetap lega */
+  @media (max-width: 1024px) {
+    .sz-area-media { width: 140px !important; height: 140px !important; }
+    .sz-area-card { gap: 16px !important; }
+    .sz-area-actions { flex-wrap: wrap !important; gap: 10px 16px !important; }
+  }
+
+  /* Mobile: list rata satu kolom, pola /lokasi mobile */
+  @media (max-width: 768px) {
+    .sz-area-list__head { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; margin: 0 0 12px !important; }
+    .sz-area-list__title { font-size: 12px !important; }
+    .sz-area-toggles { width: 100% !important; }
+    .sz-area-toggles__label { font-size: 12px !important; }
+    .sz-area-grid { display: flex !important; flex-direction: column !important; border-top: 1px solid #DFDBD4 !important; }
+    .sz-area-card { align-items: flex-start !important; gap: 14px !important; padding: 16px 4px !important; }
+    .sz-area-card:nth-last-child(-n+2):nth-child(odd) { border-bottom: 1px solid #DFDBD4 !important; }
+    .sz-area-card:last-child { border-bottom: 0 !important; }
+    .sz-area-media { width: 76px !important; height: 76px !important; border-radius: 10px !important; }
+    .sz-area-ph svg { width: 22px !important; height: 22px !important; margin-bottom: 2px !important; }
+    .sz-area-ph span { font-size: 8px !important; }
+    .sz-area-body { padding: 0 !important; }
+    .sz-area-badge { margin: 0 0 6px !important; padding: 3px 8px !important; font-size: 9.5px !important; }
+    .sz-area-badge svg { width: 9px !important; height: 9px !important; }
+    .sz-area-name { font-size: 14.5px !important; line-height: 1.3 !important; }
+    .sz-area-rating { margin: 0 0 4px !important; font-size: 12px !important; }
+    .sz-area-address { margin: 0 0 10px !important; font-size: 11.5px !important; line-height: 1.5 !important; }
+    .sz-area-actions { justify-content: flex-start !important; gap: 16px !important; }
+    .sz-area-btn-wa {
+      padding: 5px 14px !important; border-radius: 50px !important; font-size: 11px !important; font-weight: 700 !important;
+      background: transparent !important; color: #1A2080 !important; border: 1.5px solid #1A2080 !important; box-shadow: none !important;
+    }
+    .sz-area-btn-wa:hover { background: #1A2080 !important; color: #FFFFFF !important; transform: none !important; }
+    .sz-area-btn-wa svg, .sz-area-btn-maps svg { display: none !important; }
+    .sz-area-btn-maps { font-size: 11.5px !important; font-weight: 700 !important; }
+  }
+
+  /* ==================== JARAK ANTAR SEGMEN (compact) ====================
+     Menimpa jarak dari style.css hanya di halaman ini. "html body" menaikkan
+     spesifisitas supaya menang apa pun urutan style.css dimuat.
+     Satu ritme: 40px antar segmen di desktop (20 margin + 20 padding), 32px di mobile. */
+  html body .sozo-location-page-wrapper { padding-top: 32px !important; padding-bottom: 32px !important; }
+  html body .sozo-clean-hero { margin-bottom: 24px !important; }
+  html body .sozo-category-section,
+  html body .sozo-results-section,
+  html body .sozo-promo-section { margin-top: 20px !important; padding-top: 20px !important; }
+  html body .sozo-why-section { padding-top: 36px !important; padding-bottom: 36px !important; }
+  html body .sozo-compact-cta-section { padding-top: 28px !important; padding-bottom: 16px !important; }
+  html body .sozo-faq-section { padding-top: 28px !important; padding-bottom: 36px !important; }
+
+  @media (max-width: 768px) {
+    html body .sozo-location-page-wrapper { padding-top: 20px !important; padding-bottom: 24px !important; }
+    html body .sozo-clean-hero { margin-bottom: 20px !important; }
+    html body .sozo-category-section,
+    html body .sozo-results-section,
+    html body .sozo-promo-section { margin-top: 16px !important; padding-top: 16px !important; }
+    html body .sozo-why-section { padding-top: 28px !important; padding-bottom: 28px !important; }
+    html body .sozo-compact-cta-section { padding-top: 20px !important; padding-bottom: 12px !important; }
+    html body .sozo-faq-section { padding-top: 24px !important; padding-bottom: 28px !important; }
+  }
+
+  /* Halaman area: section "Cara Menuju Lokasi" ikut ritme compact */
+  html body .sozo-directions-section { padding-top: 28px !important; padding-bottom: 12px !important; }
+  @media (max-width: 768px) {
+    html body .sozo-directions-section { padding-top: 24px !important; padding-bottom: 8px !important; }
+  }
+</style>
+
+<div class="sozo-location-page-wrapper">
+  <div class="sozo-location-page-container">
+    
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <div class="sozo-clean-hero">
+      <nav class="sz-area-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li class="sz-area-sep" aria-hidden="true">/</li>
+          <li><a href="https://sozoskinclinic.com/lokasi/">Lokasi</a></li>
+          <li class="sz-area-sep" aria-hidden="true">/</li>
+          <li><a href="https://sozoskinclinic.com/lokasi/jakarta/">Jakarta</a></li>
+          <li class="sz-area-sep" aria-hidden="true">/</li>
+          <li><a href="https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/">Jakarta Barat</a></li>
+          <li class="sz-area-sep" aria-hidden="true">/</li>
+          <li aria-current="page"><span>Mangga Besar</span></li>
+        </ol>
+      </nav>
+      <h1 class="sozo-clean-title">Klinik Kecantikan Terbaik Di Mangga Besar</h1>
+      <p class="sozo-clean-desc">Mencari klinik kecantikan Mangga Besar yang terpercaya? Sozo Hadir di Mangga Besar dengan kualitas terbaik, harga transparan dan terjangkau.</p>
+    </div>
+
+    <!-- ==================== 2. DAFTAR CABANG ==================== -->
+    <!-- Pola sama dengan lokasi/jakarta/jakarta-selatan/index-redesign.html. Satu kartu = satu <article>;
+         foto + nama -> LP detail cabang. Cabang tanpa foto memakai .sz-area-ph (blok biru "SOZO"). -->
+    <section class="sz-area-list" aria-labelledby="szAreaListTitle">
+      <div class="sz-area-list__head">
+        <h2 class="sz-area-list__title" id="szAreaListTitle">Cabang Klinik Kecantikan Sozo di Mangga Besar</h2>
+      </div>
+      <div class="sz-area-grid">
+
+        <article class="sz-area-card">
+          <a class="sz-area-media" href="https://sozoskinclinic.com/lokasi/sozo-mangga-besar/" tabindex="-1" aria-hidden="true">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/11/sozo-skin-clinic-mangga-besar-1.webp" alt="Ruang Sozo Skin Clinic Mangga Besar" width="190" height="190" loading="lazy" decoding="async">
+          </a>
+          <div class="sz-area-body">
+            <span class="sz-area-badge"><svg aria-hidden="true" viewBox="0 0 384 512"><use href="#sz-area-i-pin"></use></svg>Taman Sari</span>
+            <h3 class="sz-area-name"><a href="https://sozoskinclinic.com/lokasi/sozo-mangga-besar/">Mangga Besar</a></h3>
+            <p class="sz-area-rating" aria-label="Rating Google 4.9">★ 4.9</p>
+            <p class="sz-area-address">Jl. Raya Mangga Besar No. 84 13, RT.13/RW.1, Taman Sari, Kec. Taman Sari, Kota Jakarta Barat, DKI Jakarta 11150</p>
+            <div class="sz-area-actions">
+              <a class="sz-area-btn-wa" href="https://api.whatsapp.com/send?phone=6285175225664&amp;text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Mangga%20Besar%20%5Bsrc%3AORG-MGB%5D" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 448 512"><use href="#sz-area-i-wa"></use></svg>Buat Jadwal</a>
+              <a class="sz-area-btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Sozo%20Skin%20Clinic%20-%20Mangga%20Besar" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#sz-area-i-map"></use></svg>Lihat Maps &gt;</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. TREATMENT CATEGORIES ==================== -->
+    <div class="sozo-category-section">
+      <h2 class="sozo-category-heading">Pilihan Treatment di Sozo Skin Clinic Mangga Besar</h2>
+      <p class="sozo-category-sub">Pilih kategori perawatan kulit & tubuh yang sesuai dengan kebutuhanmu</p>
+
+      <div class="sozo-category-grid">
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Skin-Bright-Facial-Medical-1.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Skin<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Injection.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Injectable<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Slimming-1-11.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Slimming<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/03/Gemini_Generated_Image_qncw0qncw0qncw0q.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Treatment</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Hair-Removal-Underarm-Glow.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Hair<br>Removal</span>
+        </a>
+
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-card">
+          <div class="sozo-cat-bg" style="background-image: url('https://asset.sozoskinclinic.com/wp-content/uploads/2026/01/Landing-Page-Acne-Single-Treatment-Acne-laser-facial.webp');"></div>
+          <div class="sozo-cat-overlay"></div>
+          <span class="sozo-cat-label">Acne<br>Treatment</span>
+        </a>
+      </div>
+
+      <div class="sozo-category-cta-wrap">
+        <a href="https://sozoskinclinic.com/treatment/" class="sozo-category-btn">
+          <span>Lihat Semua Treatment</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ==================== 4.5 TESTIMONI & HASIL NYATA SECTION ==================== -->
+    <div class="sozo-results-section">
+      
+      <div class="sozo-results-header">
+        <div class="sozo-results-pill">Real Results & Testimonials</div>
+        <h2 class="sozo-results-title">Hasil Nyata Treatment di Sozo Skin Clinic Mangga Besar</h2>
+        <p class="sozo-results-desc">Lihat transformasi nyata dan cerita pengalaman langsung dari para pasien yang telah membuktikannya.</p>
+      </div>
+
+      <!-- BAGIAN 1: SLIDER BEFORE AFTER (GAMBAR 16:9) -->
+      <div class="sozo-sub-slider-block">
+        <div class="sozo-sub-slider-head">
+          <span class="sozo-sub-slider-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Before & After Results</span>
+        </div>
+
+        <div class="sozo-slider-wrapper">
+          <div class="sozo-ba-slider-container" id="sozoBaSliderContainer">
+            <div class="sozo-ba-slider-track" id="sozoBaSliderTrack">
+              
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/LP-Mockup-Suplemen-Pelangsing-Slimming-Program-Before-After-2.webp" alt="Before After Slimming Program" loading="lazy">
+                </div>
+              </div>
+
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/hifu-treatment-di-sozo-skin-clinic.webp" alt="Before After HIFU Treatment" loading="lazy">
+                </div>
+              </div>
+
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-pink-lips.webp" alt="Before After Pink Lips" loading="lazy">
+                </div>
+              </div>
+
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/BA-underarm.webp" alt="Before After Underarm Treatment" loading="lazy">
+                </div>
+              </div>
+
+              <div class="sozo-ba-slide">
+                <div class="sozo-ba-img-card">
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/06/BA-skin-booster.webp" alt="Before After Skin Booster" loading="lazy">
+                </div>
+              </div>
+
+            </div>
+
+            <button type="button" class="sozo-slider-btn sozo-ba-prev" id="sozoBaPrev" aria-label="Before After Sebelumnya">❮</button>
+            <button type="button" class="sozo-slider-btn sozo-ba-next" id="sozoBaNext" aria-label="Before After Selanjutnya">❯</button>
+            <div class="sozo-slider-dots" id="sozoBaDots"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BAGIAN 2: SLIDER REVIEW TEKS -->
+      <div class="sozo-sub-slider-block" style="margin-top: 40px;">
+        <div class="sozo-sub-slider-head">
+          <span class="sozo-sub-slider-tag"><i class="fa-solid fa-quote-left"></i> Cerita Pengalaman Pasien</span>
+        </div>
+
+        <div class="sozo-slider-wrapper">
+          <div class="sozo-quote-slider-container" id="sozoQuoteSliderContainer">
+            <div class="sozo-quote-slider-track" id="sozoQuoteSliderTrack">
+              
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Jerawat aku bikin ribet sampai harus nutupin pakai makeup terus. Nyoba 30 Days Acne Program karena saran temen, dan ternyata works di aku. Jerawat jadi jauh lebih kalem, bekasnya juga makin pudar, bikin pede naik!"</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">AS</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Asha</strong>
+                      <span class="sozo-author-meta">Pasien 30 Days Acne Program</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Dulu sih gue jerawatan banget sampai males ketemu orang. Abis Pore Detox sekali, jerawat gue langsung kalem, terus bikin jerawat gue nggak gampang nongol lagi. Fix, ini treatment all-in banget sih!"</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">HK</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Hakim</strong>
+                      <span class="sozo-author-meta">Pasien Pore Detox</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Sempet takut dan bertanya-tanya, emang bisa ya muka jerawatan di-facial? Ternyata bisa banget, malah bikin wajah gue jadi lebih bersih dan kemerahannya reda. Pokoknya aman deh untuk wajah berjerawat."</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">HM</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Hilman</strong>
+                      <span class="sozo-author-meta">Pasien Acne Facial</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Bekas jerawat gak ilang-ilang, warna kulit jadi gak merata dan kusam. Udah cobain banyak serum masih gak ngaruh. Akhirnya cobain treatment Diamond Laser Facial, ternyata baru 1x treatment langsung keliatan hasilnya. Kemerahan hilang dan kulit jadi lebih cerah."</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">CK</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Chika</strong>
+                      <span class="sozo-author-meta">Pasien Diamond Laser Facial</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Suka sekali dengan RF Wajah di sini. Kerutan halus di sekitar mata mulai tersamarkan dan wajah kelihatan lebih v-shape serta fresh. Tempatnya bersih dan nyaman banget."</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">AP</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Amanda Putri</strong>
+                      <span class="sozo-author-meta">Pasien RF Wajah</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sozo-quote-slide">
+                <div class="sozo-quote-card">
+                  <div class="sozo-quote-icon">“</div>
+                  <p class="sozo-quote-text">"Pelayanan di Sozo Skin Clinic juara banget. Nggak cuma dapet treatment yang tepat, tapi juga dikasih tips skincare routine yang cocok buat jenis kulit saya."</p>
+                  <div class="sozo-quote-author">
+                    <div class="sozo-author-avatar">BS</div>
+                    <div class="sozo-author-info">
+                      <strong class="sozo-author-name">Budi Santoso</strong>
+                      <span class="sozo-author-meta">Pasien Skin Treatment</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <button type="button" class="sozo-slider-btn sozo-quote-prev" id="sozoQuotePrev" aria-label="Testimoni Sebelumnya">❮</button>
+            <button type="button" class="sozo-slider-btn sozo-quote-next" id="sozoQuoteNext" aria-label="Testimoni Selanjutnya">❯</button>
+            <div class="sozo-slider-dots" id="sozoQuoteDots"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== 4.6 PROMO KHUSUS HARI INI SECTION ==================== -->
+    <div class="sozo-promo-section">
+      
+      <div class="sozo-promo-header">
+        <div class="sozo-promo-pill">Limited Time Offer</div>
+        <h2 class="sozo-promo-title">Promo Khusus Hari Ini</h2>
+        <p class="sozo-promo-desc">Nikmati penawaran spesial dan diskon perawatan eksklusif hanya untuk Anda hari ini.</p>
+      </div>
+
+      <div class="sozo-slider-wrapper">
+        <div class="sozo-promo-slider-container" id="sozoPromoSliderContainer">
+          <div class="sozo-promo-slider-track" id="sozoPromoSliderTrack">
+            
+            <!-- Promo 1 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Cicilan 0%</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-0-scaled.webp" alt="Promo Cicilan 0% & Cashback s.d 500rb" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Cicilan 0% &amp; Cashback s.d 500rb</h3>
+                    <p class="sozo-promo-card-desc">Nikmati kemudahan cicilan bunga 0% dan cashback spesial hingga Rp 500.000 untuk treatment pilihan.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Mangga%20Besar%20%5Bsrc%3AORG-MGB%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Ambil Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 2 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Hemat Rp 100 Ribu</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/promo-potongan100rb-scaled.webp" alt="Promo Potongan 100 Ribu Sozo" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Voucher Potongan Rp 100.000</h3>
+                    <p class="sozo-promo-card-desc">Potongan langsung Rp 100.000 untuk berbagai pilihan treatment kulit, laser, dan estetika medis di Sozo Mangga Besar.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Mangga%20Besar%20%5Bsrc%3AORG-MGB%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Ambil Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 3 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Special Deal</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/08/skin-booster-promo-scaled.webp" alt="Special Deal Promo Skin Booster" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Special Deal Skin Booster</h3>
+                    <p class="sozo-promo-card-desc">Diskon spesial berbagai pilihan Skin Booster premium untuk kulit glowing maksimal.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Mangga%20Besar%20%5Bsrc%3AORG-MGB%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Ambil Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo 4 -->
+            <div class="sozo-promo-slide">
+              <div class="sozo-promo-card">
+                <div class="sozo-promo-img-wrap">
+                  <span class="sozo-promo-badge">Hair Treatment</span>
+                  <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/promo-byebye-scaled.webp" alt="Promo Bye-Bye Rambut Rontok & Botak" loading="lazy">
+                </div>
+                <div class="sozo-promo-body">
+                  <div class="sozo-promo-info">
+                    <h3 class="sozo-promo-card-title">Promo Bye-Bye Rambut Rontok &amp; Botak</h3>
+                    <p class="sozo-promo-card-desc">Perawatan intensif stimulasi pertumbuhan rambut, kuatkan akar, dan atasi kerontokan serta kebotakan.</p>
+                  </div>
+                  <div class="sozo-promo-actions">
+                    <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Mangga%20Besar%20%5Bsrc%3AORG-MGB%5D" target="_blank" rel="noopener" class="sozo-promo-btn sozo-master-cta">
+                      <span>Ambil Promo</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <button type="button" class="sozo-slider-btn sozo-promo-prev" id="sozoPromoPrev" aria-label="Promo Sebelumnya">❮</button>
+          <button type="button" class="sozo-slider-btn sozo-promo-next" id="sozoPromoNext" aria-label="Promo Selanjutnya">❯</button>
+          <div class="sozo-slider-dots" id="sozoPromoDots"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ==================== 5. WHY CHOOSE SOZO SECTION ==================== -->
+<section class="sozo-why-section">
+  <div class="sozo-why-container">
+    
+    <div class="sozo-why-header">
+      <h2>Keunggulan Sozo Dibanding Beauty Clinic Lain</h2>
+      <p>Komitmen kami adalah memberikan pelayanan terbaik, aman, dan tepercaya untuk pancarkan pesona alami Anda.</p>
+    </div>
+
+    <div class="sozo-why-grid">
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Tenaga Medis Profesional</strong>
+          <p class="sozo-why-card-text">Ditangani oleh Dokter berpengalaman.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-microscope"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Teknologi Terkini</strong>
+          <p class="sozo-why-card-text">Mesin berkualitas tinggi untuk hasil maksimal.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Pelayanan Terbaik</strong>
+          <p class="sozo-why-card-text">Klinik kecantikan yang nyaman dan ramah.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-handshake-angle"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Konsultasi Dokter Gratis</strong>
+          <p class="sozo-why-card-text">Reservasi sekarang untuk konsultasi tepat.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-tags"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Harga Terjangkau</strong>
+          <p class="sozo-why-card-text">Perawatan premium dengan harga terjangkau.</p>
+        </div>
+      </article>
+
+      <article class="sozo-why-card">
+        <div class="sozo-why-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="sozo-why-content">
+          <strong class="sozo-why-card-title">Klinik Kecantikan Terdekat</strong>
+          <p class="sozo-why-card-text">60+ cabang di Jakarta, Bogor, Depok, Tangerang, Bekasi, Bandung, Medan, dan Surabaya.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6. COMPACT MINIMAL BANNER CTA ==================== -->
+<section class="sozo-compact-cta-section">
+  <div class="sozo-compact-cta-container">
+    <div class="sozo-compact-cta-box">
+      <div class="sozo-compact-cta-text">
+        <h3 class="sozo-compact-cta-title">Segera Kunjungi Klinik Kecantikan Mangga Besar SOZO.</h3>
+        <p class="sozo-compact-cta-desc">Konsultasikan kondisi kulitmu dan temukan solusi treatment yang tepat bersama dokter profesional kami.</p>
+      </div>
+      <div class="sozo-compact-cta-action">
+        <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20sozo%20di%20Klinik%20Kecantikan%20Mangga%20Besar%20%5Bsrc%3AORG-MGB%5D" target="_blank" rel="noopener" class="sozo-custom-cta-btn sozo-master-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>Hubungi Kami Untuk Reservasi</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6.5 CARA MENUJU LOKASI (EXPANDABLE) ==================== -->
+<section class="sozo-directions-section">
+  <div class="sozo-directions-container">
+    
+    <div class="sozo-directions-header">
+      <div class="sozo-directions-pill">Panduan Rute &amp; Akses</div>
+      <h2 class="sozo-directions-title">Cara Menuju SOZO Skin Clinic Mangga Besar</h2>
+      <p class="sozo-directions-desc">Panduan rute perjalanan untuk memudahkan Anda menuju klinik kecantikan SOZO menggunakan kendaraan pribadi maupun transportasi umum.</p>
+    </div>
+
+    <div class="sozo-directions-list">
+      
+      <!-- 1. Titik Lokasi -->
+      <div class="sozo-direction-item active">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="true">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>1. Titik Lokasi SOZO Skin Clinic Mangga Besar</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content" style="max-height: 400px;">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-desc-text">SOZO Skin Clinic Mangga Besar berlokasi di Jl. Raya Mangga Besar, salah satu jalan utama di kawasan Jakarta Barat yang mudah diakses dari berbagai wilayah di Jakarta. Lokasinya strategis dan dekat dengan sejumlah landmark populer seperti Glodok, Hayam Wuruk, Gajah Mada, Kota Tua Jakarta, Mangga Dua, Pasar Baru, Harmoni, hingga Sawah Besar, sehingga memudahkan pasien untuk datang dari berbagai arah.</p>
+            <p class="sozo-direction-desc-text"><strong>Alamat lengkap:</strong><br>Jl. Raya Mangga Besar No. 84 13, RT.13/RW.1, Taman Sari, Jakarta Barat 11150.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Dari Glodok atau Gajah Mada -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-car"></i>
+            <span>2. Dari Glodok atau Gajah Mada</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-desc-text">Perjalanan dapat ditempuh melalui Jl. Gajah Mada menuju Jl. Mangga Besar Raya. Setelah melewati kawasan pertokoan dan pusat kuliner Mangga Besar, Anda akan menemukan SOZO Skin Clinic di sisi jalan utama dengan waktu tempuh sekitar 5–10 menit, tergantung kondisi lalu lintas.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Dari Kota Tua Jakarta -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-car"></i>
+            <span>3. Dari Kota Tua Jakarta</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-desc-text">Arahkan kendaraan menuju Jl. Pintu Besar Selatan, kemudian lanjutkan ke Jl. Mangga Besar Raya melalui kawasan Glodok. Perjalanan menuju klinik umumnya memerlukan waktu sekitar 10 menit.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Dari Harmoni atau Sawah Besar -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-car"></i>
+            <span>4. Dari Harmoni atau Sawah Besar</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-desc-text">Lanjutkan perjalanan melalui Jl. Hayam Wuruk menuju Jl. Mangga Besar Raya. Lokasi klinik berada di jalur utama sehingga mudah ditemukan menggunakan aplikasi navigasi.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Dari Jakarta Utara -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-car"></i>
+            <span>5. Dari Jakarta Utara (Mangga Dua atau Ancol)</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-desc-text">Gunakan Jl. Gunung Sahari atau Jl. Mangga Dua Raya menuju kawasan Mangga Besar. Setelah memasuki Jl. Raya Mangga Besar, lanjutkan perjalanan hingga tiba di lokasi klinik.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. KRL Commuter Line -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-train-subway"></i>
+            <span>6. KRL Commuter Line</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-desc-text">Turun di Stasiun Mangga Besar, kemudian lanjutkan perjalanan menggunakan ojek online, taksi online, atau berjalan kaki apabila kondisi memungkinkan. Waktu tempuh dari stasiun menuju klinik sekitar 5 menit.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. TransJakarta -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-bus"></i>
+            <span>7. TransJakarta</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-desc-text">Gunakan koridor TransJakarta yang melewati kawasan Mangga Besar, Hayam Wuruk, atau Glodok. Dari halte terdekat, perjalanan dapat dilanjutkan menggunakan ojek online atau berjalan kaki menuju klinik.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. MRT Jakarta -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-train"></i>
+            <span>8. MRT Jakarta</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-desc-text">Bagi pengguna MRT, Anda dapat turun di Stasiun Bundaran HI atau Stasiun Dukuh Atas, kemudian melanjutkan perjalanan menggunakan TransJakarta, KRL, taksi, atau ojek online menuju kawasan Mangga Besar.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Transportasi Online -->
+      <div class="sozo-direction-item">
+        <button type="button" class="sozo-direction-toggle" aria-expanded="false">
+          <div class="sozo-direction-title-wrap">
+            <i class="fa-solid fa-taxi"></i>
+            <span>9. Transportasi Online</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sozo-direction-icon"></i>
+        </button>
+        <div class="sozo-direction-content">
+          <div class="sozo-direction-body">
+            <p class="sozo-direction-desc-text">Layanan ojek online maupun taksi online dapat langsung mengantar Anda ke SOZO Skin Clinic Mangga Besar melalui Jl. Raya Mangga Besar. Lokasinya mudah dikenali dan berada di jalan utama sehingga memudahkan proses penjemputan maupun pengantaran.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 7. FAQ SECTION ==================== -->
+<section class="sozo-faq-section">
+  <div class="sozo-faq-container">
+    <div class="sozo-faq-header">
+      <div class="sozo-faq-pill">FAQ</div>
+      <h2 class="sozo-faq-title">Pertanyaan yang Sering Diajukan di Klinik Kecantikan Mangga Besar</h2>
+      <p class="sozo-faq-desc">Temukan jawaban lengkap seputar konsultasi dokter, pilihan treatment, dan layanan di Sozo Skin Clinic Mangga Besar.</p>
+    </div>
+
+    <div class="sozo-faq-list">
+
+      <!-- FAQ 1 -->
+      <div class="sozo-faq-item active">
+        <button type="button" class="sozo-faq-question" aria-expanded="true">
+          <span>Di mana klinik kecantikan SOZO berada di kawasan Mangga Besar?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer" style="max-height: 300px;">
+          <p>Cabang SOZO berlokasi di kawasan Mangga Besar, Jakarta Barat, sehingga mudah dijangkau dari berbagai area di sekitarnya seperti Hayam Wuruk, Gajah Mada, Glodok, Kota Tua, Harmoni, Sawah Besar, hingga Jakarta Pusat. Lokasi yang strategis memudahkan pasien untuk datang menggunakan kendaraan pribadi maupun transportasi umum.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>Treatment apa saja yang tersedia di klinik kecantikan Mangga Besar?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Berbagai pilihan treatment tersedia untuk membantu mengatasi jerawat, bekas jerawat, flek hitam, kulit kusam, tanda penuaan, pori-pori besar, rambut rontok, hingga program slimming. Sebelum treatment dilakukan, dokter akan membantu menentukan jenis perawatan yang paling sesuai dengan kondisi kulit dan kebutuhan Anda.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>Apakah perlu konsultasi sebelum memilih treatment?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Konsultasi menjadi bagian penting sebelum menjalani treatment karena setiap orang memiliki kondisi kulit yang berbeda. Melalui konsultasi, dokter akan mengevaluasi kondisi kulit, menjelaskan pilihan treatment yang tersedia, serta memberikan rekomendasi perawatan yang sesuai dengan kebutuhan dan target hasil yang ingin dicapai.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>Bagaimana cara membuat reservasi untuk treatment?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Reservasi dapat dilakukan terlebih dahulu melalui whatsapp yang bisa diakses dari website agar Anda memperoleh jadwal konsultasi maupun treatment sesuai dengan ketersediaan dokter. Cara ini juga membantu mengurangi waktu tunggu saat tiba di klinik.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>Apakah klinik ini menerima pasien yang baru pertama kali melakukan treatment?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Bagi pasien yang baru pertama kali menjalani treatment, dokter akan memberikan penjelasan mengenai kondisi kulit, tahapan perawatan, serta rekomendasi treatment yang sesuai sehingga Anda dapat menjalani perawatan dengan lebih nyaman dan percaya diri.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>Bagaimana kisaran biaya treatment di klinik kecantikan Mangga Besar?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Biaya treatment bergantung pada jenis perawatan yang dipilih dan kebutuhan masing-masing pasien. Setelah konsultasi, dokter akan menjelaskan rekomendasi treatment beserta estimasi biaya sehingga Anda dapat menentukan pilihan yang paling sesuai.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>Apakah tersedia treatment untuk mengatasi jerawat dan bekas jerawat?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Tersedia berbagai pilihan treatment yang dirancang untuk membantu mengatasi jerawat aktif, bekas jerawat, pori-pori besar, hingga tekstur kulit yang tidak merata. Jenis treatment yang direkomendasikan akan disesuaikan dengan kondisi kulit setelah melalui proses konsultasi.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>Selain treatment wajah, apakah tersedia treatment rambut dan slimming?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Selain treatment wajah, tersedia juga berbagai pilihan perawatan rambut untuk membantu mengatasi kerontokan maupun menjaga kesehatan kulit kepala, serta treatment slimming yang dirancang untuk membantu membentuk kontur tubuh sesuai kebutuhan pasien.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>Mengapa memilih klinik kecantikan di Mangga Besar dibanding lokasi lain?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Lokasi Mangga Besar berada di kawasan yang strategis dan mudah dijangkau dari berbagai wilayah di Jakarta Barat maupun Jakarta Pusat. Selain akses yang praktis, pasien juga dapat berkonsultasi dengan dokter estetika untuk memperoleh rekomendasi treatment yang disesuaikan dengan kondisi kulit, bukan sekadar memilih treatment yang sedang populer.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>Bagaimana cara menuju klinik dari Glodok, Hayam Wuruk, atau Gajah Mada?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Perjalanan dari kawasan Glodok, Hayam Wuruk, maupun Gajah Mada menuju klinik dapat ditempuh dalam waktu singkat menggunakan kendaraan pribadi, TransJakarta, transportasi online, maupun KRL dengan melanjutkan perjalanan dari stasiun terdekat. Informasi rute menuju klinik juga tersedia pada halaman ini untuk memudahkan perjalanan Anda.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 11 -->
+      <div class="sozo-faq-item">
+        <button type="button" class="sozo-faq-question" aria-expanded="false">
+          <span>Kapan waktu yang tepat untuk datang berkonsultasi ke klinik kecantikan?</span>
+          <i class="fa-solid fa-chevron-down sozo-faq-icon"></i>
+        </button>
+        <div class="sozo-faq-answer">
+          <p>Konsultasi dapat dilakukan kapan saja ketika Anda mulai mengalami keluhan kulit, ingin memperbaiki kondisi wajah, merencanakan treatment anti-aging, mengatasi rambut rontok, atau mencari program slimming yang sesuai. Dengan berkonsultasi lebih awal, dokter dapat membantu menyusun rencana perawatan yang lebih tepat sesuai kebutuhan.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== JAVASCRIPT CONTROLLER ==================== -->
+<script data-no-optimize="1">
+(function() {
+  function getPerView() {
+    const w = window.innerWidth;
+    if (w <= 768) return 1;
+    if (w <= 992) return 2;
+    return 3;
+  }
+
+  function initGenericSlider(trackId, prevId, nextId, dotsId, containerId, autoInterval) {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const dotsContainer = document.getElementById(dotsId);
+    const container = document.getElementById(containerId);
+
+    if (!track) return null;
+
+    let currentIndex = 0;
+    let autoTimer = null;
+
+    function getSlides() {
+      return track.children;
+    }
+
+    function buildDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      const total = getSlides().length;
+      const perView = getPerView();
+      const count = Math.max(1, total - perView + 1);
+
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'sozo-slider-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dot.addEventListener('click', () => {
+          goTo(i);
+          resetAuto();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function goTo(index) {
+      const slides = getSlides();
+      const total = slides.length;
+      if (total === 0) return;
+
+      const perView = getPerView();
+      const maxIndex = Math.max(0, total - perView);
+
+      if (index < 0) index = 0;
+      if (index > maxIndex) index = maxIndex;
+      currentIndex = index;
+
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = 16;
+      const move = (slideWidth + gap) * currentIndex;
+
+      track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+      track.style.transform = `translateX(-${move}px)`;
+
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.sozo-slider-dot');
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === currentIndex));
+      }
+    }
+
+    function next() {
+      const total = getSlides().length;
+      const maxIndex = Math.max(0, total - getPerView());
+      if (currentIndex >= maxIndex) goTo(0);
+      else goTo(currentIndex + 1);
+    }
+
+    function prev() {
+      const total = getSlides().length;
+      const maxIndex = Math.max(0, total - getPerView());
+      if (currentIndex <= 0) goTo(maxIndex);
+      else goTo(currentIndex - 1);
+    }
+
+    function startAuto() {
+      if (autoInterval && !autoTimer) {
+        autoTimer = setInterval(next, autoInterval);
+      }
+    }
+
+    function stopAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function resetAuto() {
+      stopAuto();
+      startAuto();
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        next();
+        resetAuto();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prev();
+        resetAuto();
+      });
+    }
+
+    if (container) {
+      container.addEventListener('mouseenter', stopAuto);
+      container.addEventListener('mouseleave', startAuto);
+
+      let startX = 0;
+      let startY = 0;
+      let currentX = 0;
+      let isTouching = false;
+      let isHorizontal = null;
+
+      container.addEventListener('touchstart', (e) => {
+        stopAuto();
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        currentX = startX;
+        isTouching = true;
+        isHorizontal = null;
+      }, { passive: true });
+
+      container.addEventListener('touchmove', (e) => {
+        if (!isTouching) return;
+        const touch = e.touches[0];
+        currentX = touch.clientX;
+        const diffX = currentX - startX;
+        const diffY = touch.clientY - startY;
+
+        if (isHorizontal === null) {
+          if (Math.abs(diffX) > 6 || Math.abs(diffY) > 6) {
+            isHorizontal = Math.abs(diffX) > Math.abs(diffY);
+          }
+        }
+
+        if (isHorizontal) {
+          track.style.transition = 'none';
+          const slides = getSlides();
+          if (slides.length > 0) {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            const gap = 16;
+            const baseMove = (slideWidth + gap) * currentIndex;
+            track.style.transform = `translateX(${-baseMove + diffX}px)`;
+          }
+        }
+      }, { passive: true });
+
+      function handleTouchEnd() {
+        if (!isTouching) return;
+        isTouching = false;
+        track.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)';
+
+        const diffX = startX - currentX;
+        if (isHorizontal && Math.abs(diffX) > 35) {
+          if (diffX > 0) next();
+          else prev();
+        } else {
+          goTo(currentIndex);
+        }
+        resetAuto();
+      }
+
+      container.addEventListener('touchend', handleTouchEnd, { passive: true });
+      container.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+    }
+
+    buildDots();
+    goTo(0);
+    startAuto();
+
+    return {
+      refresh: () => {
+        buildDots();
+        goTo(currentIndex);
+      },
+      goTo: goTo
+    };
+  }
+
+  function setupFaq() {
+    document.querySelectorAll('.sozo-faq-item').forEach(item => {
+      const btn = item.querySelector('.sozo-faq-question');
+      const ans = item.querySelector('.sozo-faq-answer');
+
+      btn.addEventListener('click', () => {
+        const active = item.classList.contains('active');
+        document.querySelectorAll('.sozo-faq-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            other.querySelector('.sozo-faq-question').setAttribute('aria-expanded', 'false');
+            other.querySelector('.sozo-faq-answer').style.maxHeight = null;
+          }
+        });
+
+        if (!active) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          ans.style.maxHeight = ans.scrollHeight + "px";
+        } else {
+          item.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+          ans.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  function setupDirections() {
+    document.querySelectorAll('.sozo-direction-item').forEach(item => {
+      const btn = item.querySelector('.sozo-direction-toggle');
+      const ans = item.querySelector('.sozo-direction-content');
+      if (!btn || !ans) return;
+
+      btn.addEventListener('click', () => {
+        const active = item.classList.contains('active');
+        document.querySelectorAll('.sozo-direction-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            const otherBtn = other.querySelector('.sozo-direction-toggle');
+            const otherAns = other.querySelector('.sozo-direction-content');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            if (otherAns) otherAns.style.maxHeight = null;
+          }
+        });
+
+        if (!active) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          ans.style.maxHeight = ans.scrollHeight + "px";
+        } else {
+          item.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+          ans.style.maxHeight = null;
+        }
+      });
+    });
+  }
+
+  let promoSliderCtrl = null;
+  let baSliderCtrl = null;
+  let quoteSliderCtrl = null;
+
+  function initSliders() {
+    promoSliderCtrl = initGenericSlider(
+      'sozoPromoSliderTrack',
+      'sozoPromoPrev',
+      'sozoPromoNext',
+      'sozoPromoDots',
+      'sozoPromoSliderContainer',
+      5500
+    );
+
+    baSliderCtrl = initGenericSlider(
+      'sozoBaSliderTrack',
+      'sozoBaPrev',
+      'sozoBaNext',
+      'sozoBaDots',
+      'sozoBaSliderContainer',
+      5000
+    );
+
+    quoteSliderCtrl = initGenericSlider(
+      'sozoQuoteSliderTrack',
+      'sozoQuotePrev',
+      'sozoQuoteNext',
+      'sozoQuoteDots',
+      'sozoQuoteSliderContainer',
+      6000
+    );
+  }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (promoSliderCtrl) promoSliderCtrl.refresh();
+      if (baSliderCtrl) baSliderCtrl.refresh();
+      if (quoteSliderCtrl) quoteSliderCtrl.refresh();
+    }, 200);
+  });
+
+  function init() {
+    setupFaq();
+    setupDirections();
+    initSliders();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<!-- ==================== SCHEMA MARKUP (WEBPAGE + BREADCRUMBLIST + FAQPAGE) ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/mangga-besar/#webpage",
+      "url": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/mangga-besar/",
+      "name": "Klinik Kecantikan Terbaik Di Mangga Besar",
+      "description": "Mencari klinik kecantikan Mangga Besar yang terpercaya? Sozo Hadir di Mangga Besar dengan kualitas terbaik, harga transparan dan terjangkau.",
+      "inLanguage": "id"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/mangga-besar/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lokasi",
+          "item": "https://sozoskinclinic.com/lokasi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Jakarta",
+          "item": "https://sozoskinclinic.com/lokasi/jakarta/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Jakarta Barat",
+          "item": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Mangga Besar"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sozoskinclinic.com/lokasi/jakarta/jakarta-barat/mangga-besar/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Di mana klinik kecantikan SOZO berada di kawasan Mangga Besar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cabang SOZO berlokasi di kawasan Mangga Besar, Jakarta Barat, sehingga mudah dijangkau dari berbagai area di sekitarnya seperti Hayam Wuruk, Gajah Mada, Glodok, Kota Tua, Harmoni, Sawah Besar, hingga Jakarta Pusat. Lokasi yang strategis memudahkan pasien untuk datang menggunakan kendaraan pribadi maupun transportasi umum."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Treatment apa saja yang tersedia di klinik kecantikan Mangga Besar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Berbagai pilihan treatment tersedia untuk membantu mengatasi jerawat, bekas jerawat, flek hitam, kulit kusam, tanda penuaan, pori-pori besar, rambut rontok, hingga program slimming. Sebelum treatment dilakukan, dokter akan membantu menentukan jenis perawatan yang paling sesuai dengan kondisi kulit dan kebutuhan Anda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah perlu konsultasi sebelum memilih treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Konsultasi menjadi bagian penting sebelum menjalani treatment karena setiap orang memiliki kondisi kulit yang berbeda. Melalui konsultasi, dokter akan mengevaluasi kondisi kulit, menjelaskan pilihan treatment yang tersedia, serta memberikan rekomendasi perawatan yang sesuai dengan kebutuhan dan target hasil yang ingin dicapai."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara membuat reservasi untuk treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reservasi dapat dilakukan terlebih dahulu melalui whatsapp yang bisa diakses dari website agar Anda memperoleh jadwal konsultasi maupun treatment sesuai dengan ketersediaan dokter. Cara ini juga membantu mengurangi waktu tunggu saat tiba di klinik."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah klinik ini menerima pasien yang baru pertama kali melakukan treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bagi pasien yang baru pertama kali menjalani treatment, dokter akan memberikan penjelasan mengenai kondisi kulit, tahapan perawatan, serta rekomendasi treatment yang sesuai sehingga Anda dapat menjalani perawatan dengan lebih nyaman dan percaya diri."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana kisaran biaya treatment di klinik kecantikan Mangga Besar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Biaya treatment bergantung pada jenis perawatan yang dipilih dan kebutuhan masing-masing pasien. Setelah konsultasi, dokter akan menjelaskan rekomendasi treatment beserta estimasi biaya sehingga Anda dapat menentukan pilihan yang paling sesuai."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah tersedia treatment untuk mengatasi jerawat dan bekas jerawat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tersedia berbagai pilihan treatment yang dirancang untuk membantu mengatasi jerawat aktif, bekas jerawat, pori-pori besar, hingga tekstur kulit yang tidak merata. Jenis treatment yang direkomendasikan akan disesuaikan dengan kondisi kulit setelah melalui proses konsultasi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Selain treatment wajah, apakah tersedia treatment rambut dan slimming?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Selain treatment wajah, tersedia juga berbagai pilihan perawatan rambut untuk membantu mengatasi kerontokan maupun menjaga kesehatan kulit kepala, serta treatment slimming yang dirancang untuk membantu membentuk kontur tubuh sesuai kebutuhan pasien."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mengapa memilih klinik kecantikan di Mangga Besar dibanding lokasi lain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lokasi Mangga Besar berada di kawasan yang strategis dan mudah dijangkau dari berbagai wilayah di Jakarta Barat maupun Jakarta Pusat. Selain akses yang praktis, pasien juga dapat berkonsultasi dengan dokter estetika untuk memperoleh rekomendasi treatment yang disesuaikan dengan kondisi kulit, bukan sekadar memilih treatment yang sedang populer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara menuju klinik dari Glodok, Hayam Wuruk, atau Gajah Mada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Perjalanan dari kawasan Glodok, Hayam Wuruk, maupun Gajah Mada menuju klinik dapat ditempuh dalam waktu singkat menggunakan kendaraan pribadi, TransJakarta, transportasi online, maupun KRL dengan melanjutkan perjalanan dari stasiun terdekat. Informasi rute menuju klinik juga tersedia pada halaman ini untuk memudahkan perjalanan Anda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kapan waktu yang tepat untuk datang berkonsultasi ke klinik kecantikan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Konsultasi dapat dilakukan kapan saja ketika Anda mulai mengalami keluhan kulit, ingin memperbaiki kondisi wajah, merencanakan treatment anti-aging, mengatasi rambut rontok, atau mencari program slimming yang sesuai. Dengan berkonsultasi lebih awal, dokter dapat membantu menyusun rencana perawatan yang lebih tepat sesuai kebutuhan."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
