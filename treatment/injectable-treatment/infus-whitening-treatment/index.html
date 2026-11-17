@@ -8,6 +8,9 @@
                JS FAQ + slider SKU, CSS + JS promo/lightbox). Tidak perlu widget terpisah.
      JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList + FAQPage).
                Isi FAQPage harus sama dengan FAQ di bawah.
+     Kartu   : Kartu SKU tanpa deskripsi (gambar, judul, tombol), sama dengan hub
+               Injectable/Threadlift. Script memakai data-no-optimize="1".
+     Backup  : Versi live sebelum perubahan (17 Nov 2026) ada di backup.html.
      ============================================================ -->
 
 <script type="application/ld+json">
@@ -616,27 +619,6 @@
   .sozo-botox .soz-cat-card-title a:focus-visible {
     outline: var(--focus-ring) !important;
     outline-offset: 2px !important;
-  }
-
-  .sozo-botox .soz-cat-card-desc {
-    margin-bottom: var(--space-3) !important;
-    font-size: var(--text-body-sm) !important;
-    line-height: var(--leading-body-sm) !important;
-    color: var(--color-text-secondary) !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
-  }
-
-  .sozo-botox .soz-cat-card-desc.is-expanded {
-    -webkit-line-clamp: unset !important;
-  }
-
-  .sozo-botox .soz-cat-readmore {
-    align-self: flex-start !important;
-    margin-bottom: var(--space-3) !important;
-    font-size: 12px !important;
   }
 
   /* Dua tombol ditumpuk, lebar penuh. Kartu tanpa halaman detail
@@ -1398,7 +1380,7 @@
 </style>
 
 
-<script>
+<script data-no-optimize="1">
   function toggleSozFaq(btn) {
     var item = btn.closest('.soz-faq-item');
     var isOpen = btn.getAttribute('aria-expanded') === 'true';
@@ -1418,7 +1400,7 @@
 </script>
 
 
-<script>
+<script data-no-optimize="1">
   (function () {
     'use strict';
 
@@ -1439,24 +1421,6 @@
         clearTimeout(t);
         t = setTimeout(fn, wait);
       };
-    }
-
-    function initReadMore(root) {
-      var btns = root.querySelectorAll('.soz-cat-readmore');
-
-      Array.prototype.forEach.call(btns, function (btn) {
-        if (btn.dataset.bound) return;
-        btn.dataset.bound = '1';
-
-        btn.addEventListener('click', function () {
-          var desc = btn.previousElementSibling;
-          if (!desc) return;
-
-          var expanded = desc.classList.toggle('is-expanded');
-          btn.textContent = expanded ? 'Lebih sedikit' : 'Baca selengkapnya';
-          btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        });
-      });
     }
 
     /* ---------- SKU: grid di desktop, slider scroll-snap di mobile ---------- */
@@ -1682,7 +1646,6 @@
       var cat = document.getElementById('soz-botox-catalog');
       if (cat && !cat.dataset.init) {
         cat.dataset.init = '1';
-        initReadMore(cat);
         initCatalog(cat);
       }
 
@@ -1709,7 +1672,7 @@
 </script>
 
 
-<script>
+<script data-no-optimize="1">
 (function() {
   function initSozoPromo() {
     const root = document.getElementById('sozoPromoSection');
@@ -1915,8 +1878,6 @@
           </div>
           <div class="soz-cat-card-body">
             <h3 class="soz-cat-card-title"><a href="https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow-injection/">Immune Glow Injection</a></h3>
-            <p class="soz-cat-card-desc">Injeksi vitamin C ke dalam tubuh. Efektif mencerahkan kulit, melindungi dari sinar UV, mencegah penuaan, dan melawan radikal bebas.</p>
-            <button type="button" class="soz-cat-readmore link" aria-expanded="false">Baca selengkapnya</button>
             <div class="soz-cat-card-footer">
               <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Infusion%20di%20Sozo%20%5Bsrc%3AORG-Infusion%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
               <a href="https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow-injection/" class="btn btn--outline btn--sm btn--block">Lihat Selengkapnya</a>
@@ -1930,8 +1891,6 @@
           </div>
           <div class="soz-cat-card-body">
             <h3 class="soz-cat-card-title">Immune Glow Infusion</h3>
-            <p class="soz-cat-card-desc">Mencerahkan kulit sekaligus mencegah penuaan dan mempercepat penyembuhan luka secara optimal ke seluruh tubuh.</p>
-            <button type="button" class="soz-cat-readmore link" aria-expanded="false">Baca selengkapnya</button>
             <div class="soz-cat-card-footer">
               <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Infusion%20di%20Sozo%20%5Bsrc%3AORG-Infusion%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
             </div>
@@ -1944,8 +1903,6 @@
           </div>
           <div class="soz-cat-card-body">
             <h3 class="soz-cat-card-title"><a href="https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/">Premium Glow Infusion</a></h3>
-            <p class="soz-cat-card-desc">Meningkatkan stamina, memperbaiki imunitas tubuh, dan mempercepat regenerasi sel kulit untuk hasil cerah maksimal.</p>
-            <button type="button" class="soz-cat-readmore link" aria-expanded="false">Baca selengkapnya</button>
             <div class="soz-cat-card-footer">
               <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Infusion%20di%20Sozo%20%5Bsrc%3AORG-Infusion%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
               <a href="https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/" class="btn btn--outline btn--sm btn--block">Lihat Selengkapnya</a>
