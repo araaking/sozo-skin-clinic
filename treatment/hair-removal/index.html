@@ -2,14 +2,15 @@
      UI HAIR REMOVAL TREATMENT (HUB) - SOZO SKIN CLINIC
      URL     : https://sozoskinclinic.com/hair-removal-treatment/
      Style   : Sozo Design System V1.1 (design-system/), Elementor Safe, scoped
-     Seksi   : Hero -> Deskripsi -> Pilihan Hair Removal Treatment (5 SKU) -> Lokasi -> FAQ.
-               Layout mengikuti injectable-treatment/filler-treatment/index.html.
+     Seksi   : Hero -> Deskripsi -> Pilihan Hair Removal Treatment (5 SKU) -> FAQ.
+               Layout mengikuti injectable-treatment/skin-booster-treatment/index.html.
      CSS+JS  : Sudah digabung di file ini (FontAwesome preload, CSS .sozo-botox,
-               JS FAQ + slider SKU, data-no-optimize).
+               JS FAQ + pagination SKU). Tidak perlu widget terpisah.
      JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList + FAQPage).
                Isi FAQPage harus sama dengan FAQ di bawah.
-     Backup  : Versi live sebelum revamp (11 Nov 2026) ada di backup.html.
+     Backup  : Versi live sebelum revamp ada di backup.html dan backup-12-nove.html.
      ============================================================ -->
+
 
 <script type="application/ld+json">
 {
@@ -19,7 +20,7 @@
       "@type": "WebPage",
       "@id": "https://sozoskinclinic.com/hair-removal-treatment/#webpage",
       "url": "https://sozoskinclinic.com/hair-removal-treatment/",
-      "name": "Hair Removal Treatment IPL & Laser",
+      "name": "Hair Removal Treatment untuk Kulit Bebas Bulu",
       "description": "Mencukur dan waxing hanya mengangkat bulu di permukaan, jadi bulu cepat tumbuh lagi dan kulit mudah iritasi. Hair removal treatment di Sozo memakai IPL dan laser yang menargetkan pigmen di akar bulu, sehingga bulu tumbuh lebih sedikit dan lebih tipis. Tersedia untuk ketiak, tangan, kaki, hingga area bikini.",
       "inLanguage": "id",
       "isPartOf": {
@@ -186,6 +187,7 @@
 </script>
 
 
+
 <!-- SYSTEM PRELOAD FONTAWESOME (Menghindari Render-Blocking CSS) -->
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
@@ -197,7 +199,7 @@
 
 <style>
   /* ============================================================
-     UI HAIR REMOVAL TREATMENT - Hub Kategori
+     UI SKIN BOOSTER TREATMENT - Single Treatment Page
      Layout : layout lama (compact, treatment detail), tidak diubah
      Style  : warna, font, radius, shadow, focus dari Sozo Design System V1.1
               (design-system/). Token di-scope ke .sozo-botox supaya tidak
@@ -515,7 +517,6 @@
   /* ============ SECTION WRAPPER ============ */
   .sozo-botox .description-section,
   .sozo-botox .soz-cat,
-  .sozo-botox .soz-loc,
   .sozo-botox .soz-faq-section {
     position: relative !important;
     width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
@@ -547,154 +548,7 @@
   }
 
   /* ============================================================
-     LOKASI (compact): chip kota -> /lokasi/[kota]/, tanpa iframe maps.
-     Desktop: judul + CTA satu baris, chip wrap di bawahnya.
-     Mobile : chip satu baris, geser horizontal; CTA full width di bawah.
-     ============================================================ */
-  .sozo-botox .soz-loc {
-    padding-bottom: 0 !important;
-  }
-
-  .sozo-botox .soz-loc-card {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) auto !important;
-    grid-template-areas:
-      "head cta"
-      "list list" !important;
-    align-items: center !important;
-    gap: var(--space-4) var(--space-6) !important;
-    padding: var(--space-5) var(--space-6) !important;
-    border: 1px solid var(--color-border) !important;
-    border-radius: var(--radius-xl) !important;
-    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-brand-almond) 100%) !important;
-  }
-
-  .sozo-botox .soz-loc-head {
-    grid-area: head !important;
-    min-width: 0 !important;
-  }
-
-  .sozo-botox .soz-loc-title {
-    display: flex !important;
-    align-items: center !important;
-    gap: var(--space-2) !important;
-    font-size: clamp(18px, 2vw, 20px) !important;
-    font-weight: 700 !important;
-    line-height: 1.3 !important;
-    color: var(--color-brand-primary) !important;
-  }
-
-  .sozo-botox .soz-loc-title i {
-    font-size: 0.85em !important;
-    flex: none !important;
-  }
-
-  .sozo-botox .soz-loc-desc {
-    margin-top: var(--space-1) !important;
-    font-size: var(--text-body-sm) !important;
-    line-height: var(--leading-body-sm) !important;
-    color: var(--color-text-secondary) !important;
-  }
-
-  .sozo-botox .soz-loc-cta {
-    grid-area: cta !important;
-  }
-
-  .sozo-botox .soz-loc-list {
-    grid-area: list !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: var(--space-2) !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-  }
-
-  .sozo-botox .soz-loc-list li {
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-    flex: none !important;
-  }
-
-  .sozo-botox .soz-loc-chip,
-  .sozo-botox .soz-loc-chip:visited {
-    display: inline-flex !important;
-    align-items: center !important;
-    min-height: 40px !important;
-    padding: 0 var(--space-4) !important;
-    border: 1px solid var(--color-border-strong) !important;
-    border-radius: var(--radius-full) !important;
-    background-color: var(--color-white) !important;
-    color: var(--color-brand-primary) !important;
-    font-family: var(--font-family-primary) !important;
-    font-size: var(--text-body-sm) !important;
-    font-weight: 600 !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
-    transition:
-      background-color var(--duration-fast) var(--ease-standard),
-      border-color var(--duration-fast) var(--ease-standard),
-      color var(--duration-fast) var(--ease-standard) !important;
-  }
-
-  .sozo-botox .soz-loc-chip:hover {
-    background-color: var(--color-brand-primary) !important;
-    border-color: var(--color-brand-primary) !important;
-    color: var(--color-text-on-primary) !important;
-  }
-
-  .sozo-botox .soz-loc-chip:focus-visible {
-    outline: var(--focus-ring) !important;
-    outline-offset: 2px !important;
-  }
-
-  @media (max-width: 768px) {
-    .sozo-botox .soz-loc-card {
-      grid-template-columns: minmax(0, 1fr) !important;
-      grid-template-areas:
-        "head"
-        "list"
-        "cta" !important;
-      gap: var(--space-3) !important;
-      padding: var(--space-4) !important;
-      border-radius: var(--radius-lg) !important;
-    }
-
-    .sozo-botox .soz-loc-title {
-      font-size: 15px !important;
-    }
-
-    .sozo-botox .soz-loc-desc {
-      font-size: 12px !important;
-    }
-
-    /* Satu baris chip, geser horizontal. Fade kanan = tanda masih ada kota lain. */
-    .sozo-botox .soz-loc-list {
-      flex-wrap: nowrap !important;
-      overflow-x: auto !important;
-      scroll-snap-type: x proximity !important;
-      scrollbar-width: none !important;
-      -webkit-mask-image: linear-gradient(to right, #000 85%, transparent 100%) !important;
-      mask-image: linear-gradient(to right, #000 85%, transparent 100%) !important;
-    }
-
-    .sozo-botox .soz-loc-list::-webkit-scrollbar {
-      display: none !important;
-    }
-
-    .sozo-botox .soz-loc-list li {
-      scroll-snap-align: start !important;
-    }
-
-    .sozo-botox .soz-loc-cta {
-      display: flex !important;
-      width: 100% !important;
-    }
-  }
-
-  /* ============================================================
-     PILIHAN SKU: grid gaya e-commerce. Desktop 3 kolom, tablet & mobile 2 kolom
+     PILIHAN SKU: grid gaya e-commerce + pagination. Desktop 4 kolom, tablet & mobile 2 kolom
      (tanpa slider). Harga "Mulai dari" di atas tombol, sejajar antar kartu.
      ============================================================ */
   .sozo-botox .soz-cat-head {
@@ -746,8 +600,7 @@
   .sozo-botox .soz-cat-track {
     position: relative !important;
     display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    max-width: 1080px !important; /* 3 SKU: dibatasi supaya kartu tidak terlalu lebar */
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     gap: var(--grid-gap) !important;
     align-items: stretch !important;
   }
@@ -774,6 +627,63 @@
   .sozo-botox .soz-cat-dot.is-active {
     background: var(--color-brand-primary) !important;
     width: 24px !important;
+  }
+
+  /* Pagination SKU: desktop 8 kartu, mobile 4 kartu per halaman (diatur JS).
+     Tanpa JS semua kartu tetap tampil dan pagination tersembunyi. */
+  .sozo-botox .soz-cat-card.is-hidden {
+    display: none !important;
+  }
+
+  .sozo-botox .soz-cat-pagination {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+    margin-top: var(--space-5) !important;
+  }
+
+  .sozo-botox .soz-cat-pagination[hidden] {
+    display: none !important;
+  }
+
+  .sozo-botox .soz-cat-page {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: var(--radius-full) !important;
+    border: 1px solid var(--color-border-strong) !important;
+    background: var(--color-white) !important;
+    color: var(--color-brand-primary) !important;
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard),
+      color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-botox .soz-cat-page:hover {
+    border-color: var(--color-brand-primary) !important;
+    background: var(--color-primary-subtle) !important;
+  }
+
+  .sozo-botox .soz-cat-page[aria-current="page"] {
+    border-color: var(--color-brand-primary) !important;
+    background: var(--color-brand-primary) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-botox .soz-cat-page:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: var(--focus-offset) !important;
   }
 
   /* ---------- Card (Base Card, Standard) ---------- */
@@ -1181,28 +1091,10 @@
       transform: none !important;
     }
   }
-
-  /* ============ TAMBAHAN HUB: harga coret + kartu promo ============ */
-  .sozo-botox .soz-cat-card-price-orig {
-    margin-left: 6px !important;
-    font-size: var(--text-body-sm) !important;
-    font-weight: 500 !important;
-    color: var(--color-text-secondary) !important;
-    text-decoration: line-through !important;
-  }
-
-
-  .sozo-botox .soz-cat-card--promo .soz-cat-card-img {
-    aspect-ratio: 1 / 1 !important;
-  }
-
-  .sozo-botox .soz-cat-card--promo .soz-cat-card-img img {
-    object-position: center !important;
-  }
-
 </style>
 
-<script data-no-optimize="1">
+
+<script>
   function toggleSozFaq(btn) {
     var item = btn.closest('.soz-faq-item');
     var isOpen = btn.getAttribute('aria-expanded') === 'true';
@@ -1222,7 +1114,7 @@
 </script>
 
 
-<script data-no-optimize="1">
+<script>
   (function () {
     'use strict';
 
@@ -1351,12 +1243,75 @@
     }
 
 
+    /* ---------- SKU: pagination, desktop 8 kartu, mobile 4 kartu per halaman ---------- */
+    function initPagination(root) {
+      var track = root.querySelector('.soz-cat-track');
+      var nav = root.querySelector('.soz-cat-pagination');
+      if (!track || !nav) return;
+
+      var cards = Array.prototype.slice.call(track.children);
+      var mq = window.matchMedia('(max-width: 768px)');
+      var page = 1;
+
+      function perPage() {
+        return mq.matches ? 4 : 8;
+      }
+
+      function render(fromClick) {
+        var size = perPage();
+        var total = Math.ceil(cards.length / size);
+        if (page > total) page = total;
+
+        cards.forEach(function (card, i) {
+          card.classList.toggle('is-hidden', Math.floor(i / size) + 1 !== page);
+        });
+
+        nav.innerHTML = '';
+        nav.hidden = total <= 1;
+
+        for (var p = 1; p <= total; p++) {
+          nav.appendChild(makeButton(p));
+        }
+
+        if (fromClick) {
+          nav.querySelector('[aria-current="page"]').focus({ preventScroll: true });
+          root.scrollIntoView({ behavior: smoothBehavior(), block: 'start' });
+        }
+      }
+
+      function makeButton(p) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'soz-cat-page';
+        btn.textContent = p;
+        btn.setAttribute('aria-label', 'Halaman ' + p);
+        if (p === page) btn.setAttribute('aria-current', 'page');
+
+        btn.addEventListener('click', function () {
+          if (p === page) return;
+          page = p;
+          render(true);
+        });
+
+        return btn;
+      }
+
+      if (mq.addEventListener) {
+        mq.addEventListener('change', function () { render(false); });
+      } else if (mq.addListener) {
+        mq.addListener(function () { render(false); });
+      }
+
+      render(false);
+    }
+
     function initAll() {
       var cat = document.getElementById('soz-botox-catalog');
       if (cat && !cat.dataset.init) {
         cat.dataset.init = '1';
         initReadMore(cat);
         initCatalog(cat);
+        initPagination(cat);
       }
     }
 
@@ -1375,7 +1330,6 @@
   })();
 </script>
 
-
 <section class="sozo-botox">
 
   <!-- ===== HERO SECTION ===== -->
@@ -1389,7 +1343,7 @@
         </ol>
       </nav>
 
-      <h1 class="hero-title">Hair Removal Treatment IPL &amp; Laser</h1>
+      <h1 class="hero-title">Hair Removal Treatment untuk Kulit Bebas Bulu</h1>
 
     </div>
   </div>
@@ -1414,11 +1368,11 @@
 
         <article class="soz-cat-card soz-cat-card--link">
           <div class="soz-cat-card-img">
-            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Laser-Hair-Removal.webp" alt="Laser Hair Removal di Sozo Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Laser-Hair-Removal.webp" alt="Laser Hair Removal di Sozo Skin Clinic" width="800" height="600" loading="lazy">
           </div>
           <div class="soz-cat-card-body">
             <h3 class="soz-cat-card-title"><a href="https://sozoskinclinic.com/hair-removal-treatment/laser-hair-removal-treatment/">Laser Hair Removal</a></h3>
-            <p class="soz-cat-card-price"><span class="soz-cat-card-price-label">Mulai dari</span><span class="soz-cat-card-price-amount">Rp 799.000</span></p>
+            <p class="soz-cat-card-price"><span class="soz-cat-card-price-label">Mulai dari</span><span class="soz-cat-card-price-amount">Rp799.000</span></p>
             <div class="soz-cat-card-footer">
               <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Hair%20Removal%20di%20Sozo%20%5Bsrc%3AORG-HR%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
             </div>
@@ -1427,11 +1381,11 @@
 
         <article class="soz-cat-card soz-cat-card--link">
           <div class="soz-cat-card-img">
-            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_IPL-Underarm.webp" alt="Underarm Hair Removal di Sozo Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_IPL-Underarm.webp" alt="Underarm Removal Treatment di Sozo Skin Clinic" width="800" height="600" loading="lazy">
           </div>
           <div class="soz-cat-card-body">
-            <h3 class="soz-cat-card-title"><a href="https://sozoskinclinic.com/hair-removal-treatment/underarm-hair-removal-treatment/">Underarm Hair Removal</a></h3>
-            <p class="soz-cat-card-price"><span class="soz-cat-card-price-label">Mulai dari</span><span class="soz-cat-card-price-amount">Rp 249.000</span></p>
+            <h3 class="soz-cat-card-title"><a href="https://sozoskinclinic.com/hair-removal-treatment/underarm-hair-removal-treatment/">Underarm Removal Treatment</a></h3>
+            <p class="soz-cat-card-price"><span class="soz-cat-card-price-label">Mulai dari</span><span class="soz-cat-card-price-amount">Rp249.000</span></p>
             <div class="soz-cat-card-footer">
               <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Hair%20Removal%20di%20Sozo%20%5Bsrc%3AORG-HR%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
             </div>
@@ -1440,11 +1394,11 @@
 
         <article class="soz-cat-card soz-cat-card--link">
           <div class="soz-cat-card-img">
-            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Underarm-Brightening.webp" alt="Underarm Brightening di Sozo Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Underarm-Brightening.webp" alt="Underarm Brightening Treatment di Sozo Skin Clinic" width="800" height="600" loading="lazy">
           </div>
           <div class="soz-cat-card-body">
-            <h3 class="soz-cat-card-title"><a href="https://sozoskinclinic.com/hair-removal-treatment/underarm-brightening-treatment/">Underarm Brightening</a></h3>
-            <p class="soz-cat-card-price"><span class="soz-cat-card-price-label">Mulai dari</span><span class="soz-cat-card-price-amount">Rp 597.000</span></p>
+            <h3 class="soz-cat-card-title"><a href="https://sozoskinclinic.com/hair-removal-treatment/underarm-brightening-treatment/">Underarm Brightening Treatment</a></h3>
+            <p class="soz-cat-card-price"><span class="soz-cat-card-price-label">Mulai dari</span><span class="soz-cat-card-price-amount">Rp399.000</span></p>
             <div class="soz-cat-card-footer">
               <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Hair%20Removal%20di%20Sozo%20%5Bsrc%3AORG-HR%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
             </div>
@@ -1453,11 +1407,11 @@
 
         <article class="soz-cat-card soz-cat-card--link">
           <div class="soz-cat-card-img">
-            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Brazilian.webp" alt="Brazilian Hair Removal di Sozo Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Brazilian.webp" alt="Brazilian Hair Removal di Sozo Skin Clinic" width="800" height="600" loading="lazy">
           </div>
           <div class="soz-cat-card-body">
             <h3 class="soz-cat-card-title"><a href="https://sozoskinclinic.com/hair-removal-treatment/brazilian-hair-removal-treatment/">Brazilian Hair Removal</a></h3>
-            <p class="soz-cat-card-price"><span class="soz-cat-card-price-label">Mulai dari</span><span class="soz-cat-card-price-amount">Rp 1.199.000</span></p>
+            <p class="soz-cat-card-price"><span class="soz-cat-card-price-label">Mulai dari</span><span class="soz-cat-card-price-amount">Rp499.000</span></p>
             <div class="soz-cat-card-footer">
               <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Hair%20Removal%20di%20Sozo%20%5Bsrc%3AORG-HR%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
             </div>
@@ -1466,11 +1420,11 @@
 
         <article class="soz-cat-card soz-cat-card--link">
           <div class="soz-cat-card-img">
-            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Hair-Removal-Large.webp" alt="Body Hair Removal (Medium/Large) di Sozo Skin Clinic" width="800" height="600" loading="lazy" decoding="async">
+            <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Hair-Removal_Hair-Removal-Large.webp" alt="Body Hair Removal (Med/Large) di Sozo Skin Clinic" width="800" height="600" loading="lazy">
           </div>
           <div class="soz-cat-card-body">
-            <h3 class="soz-cat-card-title"><a href="https://sozoskinclinic.com/hair-removal-treatment/hair-removal-body-treatment/">Body Hair Removal (Medium/Large)</a></h3>
-            <p class="soz-cat-card-price"><span class="soz-cat-card-price-label">Mulai dari</span><span class="soz-cat-card-price-amount">Rp 1.598.000</span></p>
+            <h3 class="soz-cat-card-title"><a href="https://sozoskinclinic.com/hair-removal-treatment/hair-removal-body-treatment/">Body Hair Removal (Med/Large)</a></h3>
+            <p class="soz-cat-card-price"><span class="soz-cat-card-price-label">Mulai dari</span><span class="soz-cat-card-price-amount">Rp499.000</span></p>
             <div class="soz-cat-card-footer">
               <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Hair%20Removal%20di%20Sozo%20%5Bsrc%3AORG-HR%5D" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--block"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
             </div>
@@ -1478,34 +1432,11 @@
         </article>
 
       </div>
+      <nav class="soz-cat-pagination" aria-label="Halaman pilihan Hair Removal Treatment" hidden></nav>
     </div>
 
   </div>
 
-  <!-- ===== LOKASI (compact) ===== -->
-  <section class="soz-loc" aria-labelledby="soz-loc-title">
-    <div class="soz-loc-card">
-      <div class="soz-loc-head">
-        <h2 class="soz-loc-title" id="soz-loc-title"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Lokasi Hair Removal Treatment di Sozo Skin Clinic</h2>
-        <p class="soz-loc-desc">Pilih kota terdekat untuk lihat alamat cabang Sozo dan buat jadwal hair removal.</p>
-      </div>
-
-      <ul class="soz-loc-list" aria-label="Kota cabang Sozo Skin Clinic">
-        <li><a href="https://sozoskinclinic.com/lokasi/jakarta/" class="soz-loc-chip">Jakarta</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/tangerang/" class="soz-loc-chip">Tangerang</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/tangerang-selatan/" class="soz-loc-chip">Tangerang Selatan</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/bekasi/" class="soz-loc-chip">Bekasi</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/depok/" class="soz-loc-chip">Depok</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/bogor/" class="soz-loc-chip">Bogor</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/bandung/" class="soz-loc-chip">Bandung</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/surabaya/" class="soz-loc-chip">Surabaya</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/semarang/" class="soz-loc-chip">Semarang</a></li>
-        <li><a href="https://sozoskinclinic.com/lokasi/medan/" class="soz-loc-chip">Medan</a></li>
-      </ul>
-
-      <a href="https://sozoskinclinic.com/lokasi/" class="btn btn--outline btn--sm soz-loc-cta">Lihat Semua Lokasi<i class="fa-solid fa-arrow-right btn__icon" aria-hidden="true"></i></a>
-    </div>
-  </section>
 
   <!-- ===== FAQ ===== -->
   <div class="soz-faq-section" id="soz-botox-faq">
