@@ -1,0 +1,562 @@
+<style>/* --- GLOBAL & TYPOGRAPHY (ISOLATED FOR ELEMENTOR) --- */
+  .sozo-sku-signature-facial-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    /* PERFORMANCE: Menghemat pemuatan render memori sebelum di-scroll */
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+
+  .sozo-sku-signature-facial-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- STYLING BREADCRUMB --- */
+  .sozo-sku-signature-facial-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- STYLING HERO / DETAIL TREATMENT --- */
+  .sozo-sku-signature-facial-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-hero-text {
+    flex: 1; 
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 30px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* FIXED IMAGE SIZING */
+  .sozo-sku-signature-facial-wrapper .sozo-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 340px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Box Info (Durasi & Harga) */
+  .sozo-sku-signature-facial-wrapper .sozo-info-row {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 35px;
+    padding: 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-info-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-info-label {
+    font-size: 13px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-info-value {
+    font-size: 20px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Styling Tombol Primary */
+  .sozo-sku-signature-facial-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- STYLING CTA BANNER --- */
+  .sozo-sku-signature-facial-wrapper .sozo-cta-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-cta-banner {
+    background-color: #1A2080;
+    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
+    border-radius: 24px;
+    padding: 50px 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-cta-banner h2 {
+    font-size: clamp(24px, 3vw, 32px) !important;
+    color: #ffffff !important;
+    margin: 0 0 15px 0 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-cta-banner p {
+    font-size: 16px !important;
+    color: #e2e8f0 !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 600px;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-signature-facial-wrapper .sozo-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffffff !important;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+  }
+
+  /* --- SECTIONS LAYOUT STYLING (Cards, Grids, Steps) --- */
+  .sozo-sku-signature-facial-wrapper .sozo-section-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-section-card > h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-section-card > p {
+    color: #475569 !important;
+    font-size: 16px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Problem Grid Layout (3 Columns for 6 items) */
+  .sozo-sku-signature-facial-wrapper .sozo-problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-problem-card {
+    background-color: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-problem-card strong {
+    display: block;
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-problem-card span {
+    font-size: 14px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Process Steps Layout */
+  .sozo-sku-signature-facial-wrapper .sozo-process-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-step-num {
+    width: 45px;
+    height: 45px;
+    background-color: #EEF2FF;
+    color: #1A2080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-step-text strong {
+    display: block;
+    font-size: 18px !important;
+    color: #1A2080 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-step-text p {
+    font-size: 15px !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- STYLING EXPLANATION & LOAD MORE --- */
+  .sozo-sku-signature-facial-wrapper .sozo-content-wrapper {
+    padding: 0 20px;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    font-weight: 800 !important;
+  }
+  
+  .sozo-sku-signature-facial-wrapper .sozo-description-section .sozo-sub-title-item {
+    display: block;
+    font-size: 22px !important;
+    color: #1A2080 !important;
+    margin-top: 32px !important;
+    margin-bottom: 16px !important;
+    font-weight: 800 !important;
+  }
+
+  .sozo-sku-signature-facial-wrapper .sozo-description-section p {
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-description-section ul {
+    margin: 0 0 20px 0 !important;
+    padding-left: 24px !important;
+    color: #475569 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-description-section li {
+    margin-bottom: 10px !important;
+  }
+  
+  .sozo-sku-signature-facial-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+  
+  .sozo-sku-signature-facial-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 20px !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-load-more-btn:hover { opacity: 0.7; }
+  .sozo-sku-signature-facial-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
+  .sozo-sku-signature-facial-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
+
+  /* --- STYLING FAQ ACCORDION --- */
+  .sozo-sku-signature-facial-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 8px 0 !important;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-faq-question:hover { color: #1A2080 !important; }
+  .sozo-sku-signature-facial-wrapper .sozo-faq-question svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+    color: #1A2080;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-signature-facial-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Semantic H3 Reset inside FAQ Trigger Buttons */
+  .sozo-sku-signature-facial-wrapper .sozo-faq-question h3 {
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    line-height: inherit !important;
+    display: inline !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-signature-facial-wrapper .sozo-treatment-hero {
+      flex-direction: column-reverse; /* Note: kept from your provided CSS */
+      gap: 30px;
+    }
+    .sozo-sku-signature-facial-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
+    
+    .sozo-sku-signature-facial-wrapper .sozo-hero-image img {
+      height: 250px; 
+      max-width: 100%;
+    }
+
+    .sozo-sku-signature-facial-wrapper .sozo-info-row { 
+      flex-direction: column; 
+      gap: 20px; 
+      padding: 20px;
+    }
+    .sozo-sku-signature-facial-wrapper .sozo-btn { max-width: 100%; }
+    .sozo-sku-signature-facial-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
+    .sozo-sku-signature-facial-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
+    .sozo-sku-signature-facial-wrapper .sozo-description-section, 
+    .sozo-sku-signature-facial-wrapper .sozo-faq-section,
+    .sozo-sku-signature-facial-wrapper .sozo-section-card { padding: 25px; border-radius: 20px; }
+
+    .sozo-sku-signature-facial-wrapper .sozo-problem-grid {
+      grid-template-columns: 1fr;
+    }
+  }</style><div class="sozo-sku-signature-facial-wrapper" id="sozo-signature-facial-widget"><nav aria-label="Breadcrumb" class="sozo-breadcrumb"><ol><li>
+<a href="https://sozoskinclinic.com/">Home</a></li><li class="separator">/</li><li>
+<a href="https://sozoskinclinic.com/skin-treatment/">Skin Treatment</a></li><li class="separator">/</li><li>
+<a href="https://sozoskinclinic.com/skin-treatment/facial-treatment/">Facial Treatment</a></li><li class="separator">/</li><li aria-current="page">
+<span style="color: #1A2080; font-weight: 600;">Signature Facial</span></li></ol></nav><div class="sozo-treatment-hero"><div class="sozo-hero-text"><h1>Signature Facial</h1><p>
+Signature Facial merupakan facial treatment khas SOZO Skin Clinic yang dirancang untuk membantu menjaga kesehatan kulit melalui rangkaian perawatan yang disesuaikan dengan jenis dan kondisi kulit setiap pasien. Dengan kombinasi berbagai tahapan facial dalam satu sesi, treatment ini membantu membersihkan wajah, merawat kulit, serta membuat kulit terasa lebih segar, halus, dan tampak glowing setelah perawatan.</p><div class="sozo-info-row"><div class="sozo-info-col"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Durasi</span>
+<span class="sozo-info-value">45 - 60 Menit</span></div></div><div class="sozo-info-col"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Harga Promo</span>
+<span class="sozo-info-value">Rp 699.000</span></div></div></div><a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Sozo%20Signature%20Facial%20Sozo%20%5Bsrc%3AORG-SSF%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a></div><div class="sozo-hero-image">
+<img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODAiIGhlaWdodD0iMzQwIiB2aWV3Qm94PSIwIDAgNDgwIDM0MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsLW9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=" decoding="async" data-src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Landing-Page-Refreshment-Facial-Treatment_SOZO-Signature-Facial.webp" 
+           alt="Signature Facial Sozo Clinic"
+           width="480" 
+           height="340"></div></div><div class="sozo-cta-wrapper"><div class="sozo-cta-banner"><h2>Manjakan Wajah Anda dengan Signature Facial</h2><p>Dapatkan perawatan premium terlengkap untuk kulit wajah yang lebih sehat, bercahaya, dan bebas masalah. Kembalikan rasa percaya diri Anda hari ini bersama ahlinya.</p>
+<a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Sozo%20Signature%20Facial%20Sozo%20%5Bsrc%3AORG-SSF%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Sekarang</a></div></div><div class="sozo-content-wrapper"><section class="sozo-section-card"><h2>Masalah Kulit yang Sering Dialami</h2><p>Paparan debu, polusi, sinar matahari, hingga penumpukan minyak dan sel kulit mati dapat memengaruhi kondisi kulit setiap hari. Signature Facial membantu merawat kulit secara menyeluruh sehingga kulit tetap bersih, sehat, dan terawat.</p><div class="sozo-problem-grid"><div class="sozo-problem-card">
+<strong>✨ Kulit Kusam</strong>
+<span>Penumpukan sel kulit mati membuat wajah tampak kurang cerah dan kehilangan kilau alaminya.</span></div><div class="sozo-problem-card">
+<strong>🫧 Pori-Pori Tersumbat</strong>
+<span>Minyak, kotoran, dan sisa makeup yang menumpuk dapat menyumbat pori-pori sehingga kulit terasa kurang bersih.</span></div><div class="sozo-problem-card">
+<strong>⚫ Komedo Membandel</strong>
+<span>Komedo putih maupun komedo hitam dapat mengganggu tampilan kulit dan membuat tekstur wajah terasa kasar.</span></div><div class="sozo-problem-card">
+<strong>💧 Kulit Terasa Kering dan Kurang Terhidrasi</strong>
+<span>Kulit yang kehilangan kelembapan alami sering kali terasa kering, kasar, dan tampak kurang sehat.</span></div><div class="sozo-problem-card">
+<strong>🌿 Tekstur Kulit Tidak Merata</strong>
+<span>Permukaan kulit yang terasa kasar akibat penumpukan sel kulit mati membuat makeup kurang menempel dengan baik.</span></div><div class="sozo-problem-card">
+<strong>☀️ Kulit Terpapar Polusi dan Aktivitas Harian</strong>
+<span>Meski tidak memiliki masalah kulit tertentu, facial secara rutin membantu menjaga kebersihan kulit, kenyamanan kulit wajah, serta mempertahankan tampilan kulit agar tetap sehat.</span></div></div></section><article class="sozo-description-section"><h2>Signature Facial: Perawatan Wajah Menyeluruh dalam Satu Sesi</h2><p>Setiap orang memiliki kondisi kulit yang berbeda sehingga kebutuhan perawatannya pun tidak selalu sama. Karena itu, Signature Facial di SOZO Skin Clinic mengutamakan pendekatan yang dipersonalisasi melalui kombinasi beberapa tahapan facial yang disesuaikan dengan kondisi kulit masing-masing pasien.</p><p>Setelah melakukan analisis kulit, dokter atau terapis akan menentukan rangkaian perawatan yang paling sesuai sehingga treatment dapat membantu membersihkan pori-pori, mengangkat kotoran dan sel kulit mati, sekaligus menjaga kelembapan dan kenyamanan kulit setelah facial.</p><div class="sozo-expandable-content" id="treatmentDescriptionSignature"><div class="sozo-expandable-inner"><p>Setiap tahapan dalam Signature Facial dirancang untuk saling melengkapi, mulai dari proses pembersihan, relaksasi, hingga perawatan lanjutan untuk membantu menjaga kesehatan kulit. Dengan pendekatan yang menyeluruh, kulit terasa lebih bersih, segar, halus, dan terawat sehingga Signature Facial dapat menjadi pilihan untuk perawatan kulit secara rutin.</p>
+<strong class="sozo-sub-title-item">Keunggulan Signature Facial di SOZO Skin Clinic</strong><ul><li>Kombinasi beberapa tahapan facial dalam satu sesi perawatan.</li><li>Rangkaian treatment disesuaikan dengan jenis dan kondisi kulit.</li><li>Membantu membersihkan pori-pori serta mengangkat komedo dan sel kulit mati.</li><li>Menggabungkan tahapan relaksasi dan perawatan kulit dalam satu treatment.</li><li>Tanpa downtime sehingga dapat langsung kembali beraktivitas setelah treatment.</li></ul><strong class="sozo-sub-title-item">Proses & Cara Signature Facial</strong><p>Signature Facial diawali dengan konsultasi untuk mengetahui kondisi dan kebutuhan kulit setiap pasien. Setelah itu, dokter atau terapis akan melakukan rangkaian facial yang telah disesuaikan, mulai dari pembersihan wajah, ekstraksi komedo bila diperlukan, hingga tahapan perawatan untuk membantu menjaga kebersihan, kelembapan, dan kenyamanan kulit.</p><p>Setiap sesi Signature Facial mengkombinasikan beberapa tahapan seperti cleansing, aromatherapy, facial massage, high frequency, collagen mask, Biolight, Ice Globe, serta penggunaan Brightening Enzyme atau Acne Enzyme Complex sesuai kondisi kulit. Treatment diakhiri dengan pengaplikasian sunblock untuk membantu melindungi kulit setelah perawatan.</p></div></div>
+<button class="sozo-load-more-btn" id="signatureLoadMoreBtn" onclick="toggleSignatureDescription()">
+<span id="signatureReadMoreText">Baca Selengkapnya</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button></article><section class="sozo-section-card"><h2>Tahapan Signature Facial</h2><div class="sozo-process-step"><div class="sozo-step-num">1</div><div class="sozo-step-text">
+<strong>Konsultasi & Analisis</strong><p>Konsultasi dan analisis kondisi kulit untuk menentukan rangkaian treatment yang sesuai.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">2</div><div class="sozo-step-text">
+<strong>Cleansing</strong><p>Cleansing untuk membersihkan makeup, sunscreen, minyak, dan kotoran pada wajah.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">3</div><div class="sozo-step-text">
+<strong>Aromatherapy & Facial Massage</strong><p>Aromatherapy dan facial massage untuk membantu memberikan relaksasi selama treatment.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">4</div><div class="sozo-step-text">
+<strong>Ekstraksi Komedo</strong><p>Ekstraksi komedo bila diperlukan untuk membantu membersihkan pori-pori.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">5</div><div class="sozo-step-text">
+<strong>High Frequency</strong><p>High Frequency untuk membantu menjaga kebersihan kulit setelah ekstraksi.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">6</div><div class="sozo-step-text">
+<strong>Collagen Mask</strong><p>Collagen Mask untuk membantu menjaga kelembapan kulit.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">7</div><div class="sozo-step-text">
+<strong>Biolight & Ice Globe</strong><p>Biolight dan Ice Globe untuk membantu menenangkan kulit setelah facial.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">8</div><div class="sozo-step-text">
+<strong>Aplikasi Enzyme</strong><p>Penggunaan Brightening Enzyme atau Acne Enzyme Complex yang disesuaikan dengan kondisi kulit.</p></div></div><div class="sozo-process-step"><div class="sozo-step-num">9</div><div class="sozo-step-text">
+<strong>Proteksi Akhir</strong><p>Sunblock sebagai perlindungan kulit setelah treatment selesai.</p></div></div></section><section class="sozo-faq-section" itemscope itemtype="https://schema.org/FAQPage"><h2>Pertanyaan Seputar Signature Facial</h2><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleSignatureFaq(this)">
+<span><h3 itemprop="name">Apa bedanya Signature Facial dengan facial biasa?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Signature Facial merupakan facial treatment yang mengombinasikan beberapa tahapan perawatan dalam satu sesi, seperti cleansing, ekstraksi komedo, facial massage, hingga perawatan lanjutan sesuai kondisi kulit. Rangkaian treatment yang diberikan tidak selalu sama pada setiap pasien karena akan disesuaikan dengan hasil analisis kulit, sehingga perawatan dapat lebih sesuai dengan kebutuhan masing-masing.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleSignatureFaq(this)">
+<span><h3 itemprop="name">Siapa yang cocok menjalani Signature Facial?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Signature Facial cocok untuk pria maupun wanita yang ingin menjaga kesehatan kulit wajah secara rutin atau mengalami masalah kulit ringan seperti kulit kusam, komedo, pori-pori yang terasa tersumbat, maupun tekstur kulit yang kurang halus. Sebelum treatment dilakukan, dokter atau terapis akan mengevaluasi kondisi kulit untuk memastikan rangkaian perawatan yang diberikan sesuai dengan kebutuhan kulit Anda.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleSignatureFaq(this)">
+<span><h3 itemprop="name">Berapa lama satu sesi Signature Facial berlangsung?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Durasi Signature Facial umumnya sekitar 60 hingga 90 menit, tergantung pada kondisi kulit dan tahapan perawatan yang dilakukan. Waktu tersebut sudah mencakup proses pembersihan wajah, facial, hingga perawatan lanjutan sesuai kebutuhan kulit sehingga pasien dapat menikmati treatment secara menyeluruh dalam satu sesi.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleSignatureFaq(this)">
+<span><h3 itemprop="name">Apakah ekstraksi komedo selalu dilakukan saat Signature Facial?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Tidak selalu. Ekstraksi komedo dilakukan apabila dokter atau terapis menemukan adanya komedo yang perlu dibersihkan selama pemeriksaan kulit. Jika kondisi kulit tidak memerlukan ekstraksi atau memiliki pertimbangan tertentu, tahapan treatment akan disesuaikan agar tetap aman dan nyaman bagi pasien.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleSignatureFaq(this)">
+<span><h3 itemprop="name">Apakah Signature Facial dapat dilakukan untuk kulit sensitif atau berjerawat?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Signature Facial dapat disesuaikan dengan berbagai jenis kulit, termasuk kulit sensitif maupun kulit yang berjerawat. Sebelum treatment dimulai, dokter atau terapis akan melakukan analisis kondisi kulit untuk menentukan tahapan yang sesuai sehingga perawatan dapat dilakukan dengan mempertimbangkan kebutuhan serta kenyamanan kulit setiap pasien.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleSignatureFaq(this)">
+<span><h3 itemprop="name">Apakah wajah langsung terlihat glowing setelah Signature Facial?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Banyak pasien merasakan kulit tampak lebih bersih, segar, lembap, dan terasa lebih halus setelah treatment selesai. Namun, hasil yang diperoleh dapat berbeda pada setiap orang karena dipengaruhi oleh kondisi kulit, rutinitas perawatan di rumah, serta konsistensi menjalani facial secara berkala untuk menjaga kesehatan kulit.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleSignatureFaq(this)">
+<span><h3 itemprop="name">Seberapa sering Signature Facial sebaiknya dilakukan?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Frekuensi Signature Facial akan disesuaikan dengan kondisi kulit dan tujuan perawatan masing-masing pasien. Sebagai perawatan rutin, facial umumnya dapat dilakukan secara berkala agar kebersihan pori-pori, kelembapan kulit, dan kesehatan kulit wajah tetap terjaga. Dokter akan memberikan rekomendasi interval treatment yang paling sesuai berdasarkan hasil evaluasi kulit.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleSignatureFaq(this)">
+<span><h3 itemprop="name">Apakah Signature Facial memiliki downtime?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Signature Facial merupakan prosedur non-invasif yang umumnya tidak memerlukan masa pemulihan. Setelah treatment selesai, pasien dapat kembali beraktivitas seperti biasa. Untuk membantu menjaga hasil perawatan, dokter atau terapis biasanya akan memberikan anjuran sederhana, seperti menggunakan sunscreen dan mengikuti rutinitas skincare sesuai kondisi kulit.</p></div></div></div><div class="sozo-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<button class="sozo-faq-question" onclick="toggleSignatureFaq(this)">
+<span><h3 itemprop="name">Apakah Signature Facial aman dilakukan sebelum acara penting?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Signature Facial umumnya menjadi pilihan bagi pasien yang ingin mempersiapkan kondisi kulit sebelum menghadiri acara penting, seperti pesta, wisuda, atau sesi foto. Treatment ini membantu membersihkan kulit, mengangkat sel kulit mati, serta membuat wajah terasa lebih segar dan terawat. Agar kulit memiliki waktu beradaptasi, sebaiknya lakukan treatment beberapa hari sebelum acara dan konsultasikan terlebih dahulu dengan dokter apabila Anda memiliki kondisi kulit tertentu.</p></div></div></div></section></div></div><script type="litespeed/javascript">function toggleSignatureDescription(){const content=document.getElementById('treatmentDescriptionSignature');const btn=document.getElementById('signatureLoadMoreBtn');const btnText=document.getElementById('signatureReadMoreText');if(!content||!btn)return;content.classList.toggle('expanded');btn.classList.toggle('active');if(content.classList.contains('expanded')){btnText.textContent='Tampilkan Lebih Sedikit'}else{btnText.textContent='Baca Selengkapnya'}}
+function toggleSignatureFaq(button){const answer=button.nextElementSibling;if(!answer)return;button.classList.toggle('active');if(answer.style.maxHeight){answer.style.maxHeight=null}else{answer.style.maxHeight=answer.scrollHeight+"px"}}</script></div></div></div></div></main>

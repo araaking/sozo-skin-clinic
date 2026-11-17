@@ -1,0 +1,540 @@
+<style>/* --- GLOBAL & ISOLATION FOR ELEMENTOR --- */
+  .sozo-sku-pore-wrapper {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    color: #333333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  .sozo-sku-pore-wrapper * { 
+    box-sizing: border-box; 
+  }
+
+  /* --- BREADCRUMB --- */
+  .sozo-sku-pore-wrapper .sozo-breadcrumb {
+    padding: 15px 20px 25px 20px;
+    width: 100%;
+  }
+  .sozo-sku-pore-wrapper .sozo-breadcrumb ol {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; 
+  }
+  .sozo-sku-pore-wrapper .sozo-breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1A2080;
+  }
+  .sozo-sku-pore-wrapper .sozo-breadcrumb a {
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-pore-wrapper .sozo-breadcrumb a:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-pore-wrapper .sozo-breadcrumb .separator {
+    color: #cbd5e1;
+    margin: 0 4px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  /* --- HERO SECTION --- */
+  .sozo-sku-pore-wrapper .sozo-treatment-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  .sozo-sku-pore-wrapper .sozo-hero-text {
+    flex: 1.25; 
+  }
+  .sozo-sku-pore-wrapper .sozo-hero-text h1 {
+    font-size: clamp(28px, 3.5vw, 38px) !important;
+    color: #1A2080 !important; 
+    margin: 0 0 16px 0 !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+  }
+
+  /* Problem Badges Section */
+  .sozo-sku-pore-wrapper .sozo-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  .sozo-sku-pore-wrapper .sozo-badge {
+    background-color: #EEF2FF;
+    color: #1A2080;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 50px;
+    border: 1px solid #C7D2FE;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    line-height: 1.35;
+  }
+
+  .sozo-sku-pore-wrapper .sozo-hero-text p {
+    font-size: 16px !important;
+    color: #475569 !important;
+    margin: 0 0 25px 0 !important;
+    line-height: 1.6 !important;
+  }
+  
+  .sozo-sku-pore-wrapper .sozo-hero-image {
+    flex: 0.8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sozo-sku-pore-wrapper .sozo-hero-image img {
+    width: 100%;
+    max-width: 480px; 
+    height: 360px; 
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: block;
+  }
+
+  /* Info Box */
+  .sozo-sku-pore-wrapper .sozo-info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px; 
+    margin-bottom: 30px;
+    padding: 20px 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+  }
+  .sozo-sku-pore-wrapper .sozo-info-col {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .sozo-sku-pore-wrapper .sozo-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    color: #1A2080;
+    flex-shrink: 0;
+  }
+  .sozo-sku-pore-wrapper .sozo-info-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .sozo-sku-pore-wrapper .sozo-info-label {
+    font-size: 12px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sozo-sku-pore-wrapper .sozo-info-value {
+    font-size: 18px !important;
+    color: #1A2080 !important; 
+    font-weight: 700 !important;
+  }
+
+  /* Tombol Primary */
+  .sozo-sku-pore-wrapper .sozo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    background-color: #1A2080 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
+    border: 2px solid #1A2080 !important;
+  }
+  .sozo-sku-pore-wrapper .sozo-btn:hover {
+    background-color: #ffffff !important;
+    color: #1A2080 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(26, 32, 128, 0.15);
+  }
+
+  /* --- SECTION DESKRIPSI & EXPANDABLE CONTENT --- */
+  .sozo-sku-pore-wrapper .sozo-description-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 0 20px 40px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  }
+  .sozo-sku-pore-wrapper .sozo-description-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-pore-wrapper .sozo-description-section h3 {
+    font-size: 18px !important;
+    color: #1e293b !important;
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-pore-wrapper .sozo-description-section h4 {
+    font-size: 16px !important;
+    color: #1A2080 !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    font-weight: 700 !important;
+  }
+  .sozo-sku-pore-wrapper .sozo-description-section p {
+    font-size: 15px !important;
+    color: #475569 !important;
+    line-height: 1.7 !important;
+    margin: 0 0 16px 0 !important;
+  }
+  .sozo-sku-pore-wrapper .sozo-description-section ul {
+    margin: 0 0 16px 0 !important;
+    padding-left: 20px !important;
+  }
+  .sozo-sku-pore-wrapper .sozo-description-section li {
+    font-size: 14.5px !important;
+    color: #475569 !important;
+    line-height: 1.65 !important;
+    margin-bottom: 8px !important;
+  }
+  .sozo-sku-pore-wrapper .sozo-description-section a {
+    color: #1A2080 !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    transition: color 0.2s ease;
+  }
+  .sozo-sku-pore-wrapper .sozo-description-section a:hover {
+    color: #2e38b5 !important;
+  }
+
+  /* Expandable Area via Grid 0fr -> 1fr */
+  .sozo-sku-pore-wrapper .sozo-expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+  .sozo-sku-pore-wrapper .sozo-expandable-content.expanded {
+    grid-template-rows: 1fr;
+  }
+  .sozo-sku-pore-wrapper .sozo-expandable-inner {
+    overflow: hidden;
+  }
+
+  .sozo-sku-pore-wrapper .sozo-load-more-btn {
+    background: none !important;
+    border: none !important;
+    color: #1A2080 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    margin-top: 10px !important;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+  }
+  .sozo-sku-pore-wrapper .sozo-load-more-btn:hover { 
+    opacity: 0.8; 
+  }
+  .sozo-sku-pore-wrapper .sozo-load-more-btn svg {
+    transition: transform 0.3s ease;
+  }
+  .sozo-sku-pore-wrapper .sozo-load-more-btn.active svg {
+    transform: rotate(180deg);
+  }
+
+  /* --- SECTION FAQ ACCORDION --- */
+  .sozo-sku-pore-wrapper .sozo-faq-section {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 0 20px 50px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-section h2 {
+    font-size: 24px !important;
+    color: #1A2080 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    font-weight: 800 !important;
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 16px 0;
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-question {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    text-align: left;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 4px 0 !important;
+    white-space: normal !important;
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-question:hover { 
+    color: #1A2080 !important; 
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-question > span {
+    flex: 1;
+    min-width: 0;
+    white-space: normal !important;
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-question h3 {
+    display: block;
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-question svg {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #1A2080;
+    transition: transform 0.3s ease;
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-question.active svg {
+    transform: rotate(180deg);
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .sozo-sku-pore-wrapper .sozo-faq-answer p {
+    color: #475569 !important;
+    font-size: 15px !important;
+    margin: 8px 0 16px 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* --- RESPONSIVE MOBILE FRIENDLY --- */
+  @media (max-width: 768px) {
+    .sozo-sku-pore-wrapper .sozo-breadcrumb {
+      padding: 12px 15px 18px 15px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-breadcrumb ol {
+      gap: 6px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-breadcrumb li {
+      font-size: 12.5px !important;
+    }
+
+    .sozo-sku-pore-wrapper .sozo-treatment-hero {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 20px !important;
+      padding: 0 15px 30px 15px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-hero-text {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-hero-text h1 { 
+      font-size: 24px !important; 
+      margin-bottom: 8px !important;
+      line-height: 1.25 !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-hero-text p {
+      font-size: 13.5px !important;
+      line-height: 1.55 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .sozo-sku-pore-wrapper .sozo-badges-container {
+      gap: 5px !important;
+      margin-bottom: 14px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-badge {
+      font-size: 10.5px !important;
+      padding: 3px 8px !important;
+    }
+
+    .sozo-sku-pore-wrapper .sozo-hero-image {
+      width: 100% !important;
+      order: 2;
+    }
+    .sozo-sku-pore-wrapper .sozo-hero-image img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 220px !important; 
+      border-radius: 16px !important;
+    }
+
+    .sozo-sku-pore-wrapper .sozo-info-row { 
+      flex-direction: column !important; 
+      gap: 10px !important; 
+      padding: 12px 14px !important;
+      margin-bottom: 18px !important;
+      border-radius: 12px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-info-col {
+      gap: 10px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-info-icon {
+      width: 34px !important;
+      height: 34px !important;
+      border-radius: 8px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-info-icon svg {
+      width: 16px !important;
+      height: 16px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-info-label {
+      font-size: 10px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-info-value {
+      font-size: 14px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-btn { 
+      width: 100% !important;
+      max-width: 100% !important; 
+      padding: 12px 20px !important;
+      font-size: 14px !important;
+    }
+
+    .sozo-sku-pore-wrapper .sozo-description-section,
+    .sozo-sku-pore-wrapper .sozo-faq-section { 
+      padding: 20px 16px !important; 
+      border-radius: 18px !important; 
+      margin-left: 15px !important;
+      margin-right: 15px !important;
+      margin-bottom: 28px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-description-section h2,
+    .sozo-sku-pore-wrapper .sozo-faq-section h2 {
+      font-size: 18px !important;
+      margin-bottom: 14px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-description-section h3 {
+      font-size: 15px !important;
+      margin-bottom: 10px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-description-section h4 {
+      font-size: 14px !important;
+      margin-top: 16px !important;
+      margin-bottom: 8px !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-description-section p {
+      font-size: 13.5px !important;
+      line-height: 1.55 !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-description-section li {
+      font-size: 13px !important;
+      line-height: 1.5 !important;
+    }
+
+    .sozo-sku-pore-wrapper .sozo-faq-question {
+      gap: 10px;
+      padding: 8px 0 !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-faq-question h3 {
+      font-size: 14px !important;
+      line-height: 1.45 !important;
+    }
+    .sozo-sku-pore-wrapper .sozo-faq-answer p {
+      font-size: 13px !important;
+    }
+  }</style><div class="sozo-sku-pore-wrapper" id="sozo-pore-widget"><nav aria-label="Breadcrumb" class="sozo-breadcrumb"><ol><li><a href="https://sozoskinclinic.com/"><span>Home</span></a></li><li class="separator" aria-hidden="true">/</li><li><a href="https://sozoskinclinic.com/skin-treatment/"><span>Skin Treatment</span></a></li><li class="separator" aria-hidden="true">/</li><li><a href="https://sozoskinclinic.com/skin-treatment/acne-treatment/"><span>Acne Treatment</span></a></li><li class="separator" aria-hidden="true">/</li><li aria-current="page"><span style="color: #1A2080; font-weight: 600;">Pore Detox Treatment</span></li></ol></nav><div class="sozo-treatment-hero"><div class="sozo-hero-text"><h1>Paket Program Pore Detox Acne Treatment</h1><div class="sozo-badges-container">
+<span class="sozo-badge">Pori-Pori Membesar</span>
+<span class="sozo-badge">Jerawat Aktif &amp; Meradang</span>
+<span class="sozo-badge">Kulit Kusam Berminyak</span>
+<span class="sozo-badge">Komedo Membandel</span></div><p>
+Paket Program Pore Detox Acne Treatment adalah rangkaian perawatan kombinasi Biolight Acne, IPL Acne, dan Acne Peel untuk membersihkan pori-pori tersumbat, meredakan jerawat aktif, dan mengontrol produksi minyak berlebih. Dilengkapi rangkaian skincare khusus acne untuk mendukung perawatan di rumah, membantu kulit tetap bersih dan bebas jerawat lebih optimal.</p><div class="sozo-info-row"><div class="sozo-info-col"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Durasi</span>
+<span class="sozo-info-value">90 Menit</span></div></div><div class="sozo-info-col"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Kategori</span>
+<span class="sozo-info-value">Paket Lengkap</span></div></div><div class="sozo-info-col"><div class="sozo-info-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></div><div class="sozo-info-text">
+<span class="sozo-info-label">Harga Mulai</span>
+<span class="sozo-info-value">Rp 799.000</span></div></div></div><a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO%2C%20saya%20mau%20booking%20Paket%20Program%20Pore%20Detox%20Acne%20Treatment%20di%20SOZO%20%5Bsumber%3A%20ORG-pore-detox%5D" class="sozo-btn" target="_blank" rel="noopener">Reservasi Sekarang</a></div><div class="sozo-hero-image">
+<img data-lazyloaded="1" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0ODAiIGhlaWdodD0iMzYwIiB2aWV3Qm94PSIwIDAgNDgwIDM2MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsLW9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=" decoding="async" data-src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/10/Acne-Clear-Facial-2.webp" 
+           alt="Paket Program Pore Detox Acne Treatment Sozo Skin Clinic"
+           width="480"
+           height="360"></div></div><div class="sozo-description-section"><h2>Tentang Paket Acne Treatment Pore Detox</h2><h3>Paket Pore Detox Acne Treatment</h3><p>Paket program ini dirancang khusus untuk kamu yang ingin mengatasi jerawat aktif, komedo membandel, dan pori-pori tersumbat. Menggabungkan 4 tindakan klinis langsung bareng dokter dan 7 paket skincare harian, program <a href="https://sozoskinclinic.com/skin-treatment/acne-treatment/">acne treatment</a> ini merawat kulit berjerawat dari luar dan dalam agar hasilnya jauh lebih maksimal.</p><div class="sozo-expandable-content" id="treatmentDescriptionPore"><div class="sozo-expandable-inner"><h4>Yang Kamu Dapatkan:</h4><ul><li><strong>4x Treatment Intensif di Klinik</strong> (Biolight, IPL, dan Acne Peel)</li><li><strong>GRATIS 7 Pcs Skincare Kit Lengkap</strong> untuk perawatan mandiri di rumah</li></ul><h4>Fungsi Treatment di Klinik:</h4><ul><li><strong>2x Biolight Acne:</strong> Terapi cahaya medis untuk meredakan jerawat yang lagi meradang dan menenangkan kemerahan di wajah.</li><li><strong>1x IPL Acne:</strong> Penyinaran khusus untuk membunuh bakteri penyebab jerawat aktif langsung dari dalam pori.</li><li><strong>1x Acne Peel:</strong> Eksfoliasi lembut untuk membersihkan kotoran penyumbat pori, mengangkat komedo, dan mengontrol minyak berlebih.</li></ul><h4>Isi Rangkaian Skincare (Bawa Pulang):</h4><p>Facial Wash, Acne Solution, Day Cream, Night Cream, Moisturizer, Acne Sunscreen, dan Acne Spot.</p></div></div>
+<button class="sozo-load-more-btn" id="poreReadMoreBtn" onclick="togglePoreDescription()" type="button">
+<span id="poreReadMoreText">Baca Selengkapnya</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button></div><div class="sozo-faq-section"><h2>FAQ Seputar Paket Pore Detox Acne Treatment</h2><div class="sozo-faq-item">
+<button class="sozo-faq-question" onclick="togglePoreFaq(this)" type="button">
+<span><h3>Gimana cara reservasi jadwal setelah beli paket?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer"><div><p>Setelah transaksi selesai, admin kami akan langsung menghubungi via WhatsApp untuk konfirmasi dan atur tanggal kunjungan pertama. Kamu juga bisa chat langsung admin cabang tujuanmu kapan saja.</p></div></div></div><div class="sozo-faq-item">
+<button class="sozo-faq-question" onclick="togglePoreFaq(this)" type="button">
+<span><h3>Apakah paket ini bisa dipakai di semua cabang?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer"><div><p>Bisa. Paket ini berlaku dan bisa kamu redeem di seluruh cabang klinik kami tanpa biaya tambahan.</p></div></div></div><div class="sozo-faq-item">
+<button class="sozo-faq-question" onclick="togglePoreFaq(this)" type="button">
+<span><h3>Apakah perawatannya sakit atau ada efek samping (downtime)?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer"><div><p>Rangkaian perawatannya minim rasa sakit dan minim downtime. Kemerahan ringan setelah tindakan sangat wajar dan biasanya hilang dalam beberapa jam, jadi kamu bisa langsung beraktivitas normal.</p></div></div></div><div class="sozo-faq-item">
+<button class="sozo-faq-question" onclick="togglePoreFaq(this)" type="button">
+<span><h3>Apakah paket ini bisa untuk pria dan wanita?</h3></span>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button><div class="sozo-faq-answer"><div><p>Bisa banget. Program ini dirancang aman dan efektif untuk pria maupun wanita yang punya keluhan jerawat aktif, komedo, dan pori-pori besar.</p></div></div></div></div></div><script type="litespeed/javascript">function togglePoreDescription(){var content=document.getElementById('treatmentDescriptionPore');var btn=document.getElementById('poreReadMoreBtn');var btnText=document.getElementById('poreReadMoreText');if(!content||!btn)return;content.classList.toggle('expanded');btn.classList.toggle('active');if(content.classList.contains('expanded')){btnText.textContent='Tampilkan Lebih Sedikit'}else{btnText.textContent='Baca Selengkapnya'}}
+function togglePoreFaq(button){var answer=button.nextElementSibling;if(!answer)return;button.classList.toggle('active');if(answer.style.maxHeight){answer.style.maxHeight=null}else{answer.style.maxHeight=answer.scrollHeight+"px"}}</script></div></div><section class="elementor-section elementor-top-section elementor-element elementor-element-21322e4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="21322e4" data-element_type="section" data-e-type="section"><div class="elementor-container elementor-column-gap-default"><div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d7dbd27" data-id="d7dbd27" data-element_type="column" data-e-type="column"><div class="elementor-widget-wrap elementor-element-populated"><div class="elementor-element elementor-element-a1f2b7a elementor-button-info elementor-align-left elementor-widget__width-auto elementor-fixed elementor-widget elementor-widget-button" data-id="a1f2b7a" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_position&quot;:&quot;fixed&quot;}" data-widget_type="button.default">
+<a class="elementor-button elementor-button-link elementor-size-sm" href="https://api.whatsapp.com/send?phone=6285175225664&#038;text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Pore%20Detox%20di%20Sozo%20%5Bsrc%3AORG-Pore-Detox%5D">
+<span class="elementor-button-content-wrapper">
+<span class="elementor-button-icon">
+<svg aria-hidden="true" class="e-font-icon-svg e-fab-whatsapp" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>			</span>
+<span class="elementor-button-text">Chat Whatsapp</span>
+</span>
+</a></div></div></div></div></section></div></div></main>
