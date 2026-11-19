@@ -1,367 +1,1614 @@
-<style>
+<!-- ============================================================
+     UI TANAM BENANG HIDUNG - SOZO SKIN CLINIC
+     URL     : https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/
+     Style   : Sozo Design System V1.1 (design-system/), Elementor Safe, scoped
+     Layout  : Sama dengan halaman Korean Filler, Juvelook, Rejuran Healer & Profhilo
+     Seksi   : Breadcrumb -> Hero (H1, masalah, deskripsi, info, CTA Buat
+               Jadwal + Lihat Lokasi, gambar)
+               -> Tentang Treatment (deskripsi ringkas + Baca Selengkapnya)
+               -> Lokasi (semua cabang, chip kota) -> FAQ -> Floating WhatsApp
+     Pakai   : Copy seluruh file ke widget HTML Elementor halaman ini.
+     CSS+JS  : Sudah digabung di file ini (Font Awesome preload, Poppins,
+               CSS .sozo-sku-nose-job-wrapper, JS FAQ, Baca Selengkapnya, floating WA).
+     JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList + FAQPage).
+               Isi FAQPage harus sama dengan FAQ di bawah. schema-markup.html
+               tidak dipakai lagi untuk halaman ini.
+     Backup  : Versi live sebelumnya ada di backup.html.
+     ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/#webpage",
+      "url": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/",
+      "name": "Tanam Benang Hidung",
+      "description": "Metode tanam benang (nose threadlift) yang bertujuan membentuk hidung lebih proporsional tanpa operasi dengan memancungkan batang hidung, mempertegas ujung hidung, atau mengecilkan tampilan cuping hidung. Menggunakan benang medis absorbable yang aman dan merangsang kolagen alami, hasilnya langsung terlihat dengan masa pemulihan singkat.",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/#website"
+      },
+      "about": {
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Treatment",
+          "item": "https://sozoskinclinic.com/treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Injectable Treatment",
+          "item": "https://sozoskinclinic.com/injectable-treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Threadlift Treatment",
+          "item": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Tanam Benang Hidung"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu Tanam Benang Hidung dan bagaimana cara kerjanya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tanam Benang Hidung (nose threadlift) adalah metode estetika non-bedah menggunakan benang medis absorbable (seperti PDO atau PCL) untuk membentuk hidung lebih proporsional tanpa operasi. Benang ditempatkan di bawah lapisan kulit sebagai penyangga struktur untuk memancungkan batang hidung, mempertegas ujung hidung, atau mengecilkan tampilan cuping hidung, sekaligus merangsang kolagen alami."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah Tanam Benang Hidung bisa untuk memancungkan batang dan mengecilkan cuping hidung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, metode Tanam Benang Hidung dirancang untuk membantu meninggikan batang hidung (bridge), mempertajam ujung hidung (tip), maupun mengecilkan tampilan cuping hidung yang lebar agar lebih proporsional. Dokter akan menyesuaikan teknik dan jumlah benang berdasarkan anatomi hidung Anda saat konsultasi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa harga Tanam Benang Hidung di Sozo Skin Clinic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harga Tanam Benang Hidung di Sozo Skin Clinic mulai dari Rp 2.499.000 dengan estimasi waktu pengerjaan sekitar 75 menit. Estimasi biaya akhir menyesuaikan jenis dan jumlah benang yang dibutuhkan sesuai hasil evaluasi dokter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kapan hasil Tanam Benang Hidung mulai terlihat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hasil perubahan kontur hidung yang lebih mancung dan tegas dapat langsung terlihat segera setelah tindakan selesai. Pembengkakan ringan pada beberapa hari pertama adalah hal wajar, dan bentuk hidung akan tampak makin natural dalam 1 hingga 2 minggu pascatindakan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama hasil Tanam Benang Hidung dapat bertahan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hasil Tanam Benang Hidung umumnya bertahan sekitar 1 hingga 2 tahun, tergantung jenis benang yang digunakan, jumlah benang, serta respons metabolisme tubuh. Meskipun benang diserap tubuh secara bertahap, jaringan kolagen baru yang terbentuk di sekitar benang membantu mempertahankan kontur hidung lebih lama."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah prosedur Tanam Benang Hidung terasa sakit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sebelum pemasangan benang, area hidung diberikan anestesi lokal sehingga rasa nyeri selama tindakan sangat minimal. Pasien umumnya hanya merasakan sedikit sensasi tekanan ringan saat benang ditempatkan, dan dokter akan memantau kenyamanan Anda sepanjang prosedur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah Tanam Benang Hidung aman dan apa saja efek sampingnya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prosedur ini aman bila dikerjakan oleh dokter terlatih menggunakan benang medis steril yang biocompatible (dapat diserap tubuh). Efek samping yang mungkin muncul bersifat ringan dan sementara, seperti bengkak ringan, kemerahan, rasa kencang, atau ngilu di titik masuknya benang yang umumnya mereda dalam 3 hingga 7 hari."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa perbedaan Tanam Benang Hidung dengan filler hidung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tanam Benang Hidung menggunakan benang penyangga untuk memberi tarikan struktur yang tegas pada batang, ujung, maupun cuping hidung tanpa risiko cairan melebar ke samping. Sementara itu, filler hidung menggunakan gel hyaluronic acid untuk mengisi volume pada lekukan batang hidung. Dokter dapat merekomendasikan salah satu atau kombinasi keduanya sesuai struktur hidung Anda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa saja Do's & Don'ts setelah Tanam Benang Hidung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yang dianjurkan (Do's): Tidur dalam posisi telentang dengan kepala sedikit lebih tinggi selama 1–2 minggu pertama agar hidung tidak tertekan. Kompres dingin secara lembut di sekitar area pipi dekat hidung (tanpa menekan batang atau ujung hidung) bila ada bengkak ringan. Konsumsi obat atau oleskan salep pascatindakan sesuai resep dan anjuran dokter. Bersihkan wajah secara perlahan dengan pembersih lembut tanpa menggosok area hidung. Segera konsultasikan ke dokter bila muncul nyeri berlebih, kemerahan yang makin meluas, atau tanda infeksi. Yang harus dihindari (Don'ts): Jangan menekan, memencet, menggosok, atau memijat batang maupun ujung hidung selama minimal 2 minggu. Hindari pemakaian kacamata berat yang bertumpu di batang hidung selama 1–2 minggu pertama. Hindari tidur tengkurap atau menyamping yang berisiko menggeser posisi benang. Tunda penggunaan makeup di titik masuknya jarum selama minimal 24–48 jam. Hindari olahraga berat, berenang, sauna, dan konsumsi alkohol selama 1–2 minggu pascatindakan. Hindari perawatan facial, ekstraksi komedo di area hidung, atau laser selama minimal 2–4 minggu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana lokasi Tanam Benang Hidung terdekat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tanam Benang Hidung tersedia di seluruh cabang Sozo Skin Clinic di Indonesia (Jabodetabek, Bandung, Surabaya, Semarang, Jogja, Malang, Medan, dan Makassar). Anda dapat mengecek cabang terdekat di halaman Lokasi Cabang Sozo Skin Clinic Terdekat sebelum membuat jadwal."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+<!-- Font resmi Sozo: Poppins 400-800, di-load sekali -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>/* ============================================================
+     Token Sozo Design System V1.1, di-scope ke wrapper supaya
+     tidak bocor ke halaman Elementor lain. Density: compact
+     (treatment detail), sama dengan halaman Restylane Skin Booster.
+     ============================================================ */
   .sozo-sku-nose-job-wrapper {
-    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #333;
-    line-height: 1.6;
-    background-color: #ffffff;
-    font-display: swap;
+    /* Color */
+    --color-brand-primary: #1A2080;
+    --color-brand-almond: #E9DFD5;
+    --color-white: #FFFFFF;
+    --color-text-primary: #171715;
+    --color-text-secondary: #41413E;
+    --color-text-muted: #777771;
+    --color-text-on-primary: #FFFFFF;
+    --color-border: #DFDBD4;
+    --color-border-strong: #C8C3BA;
+    --color-primary-hover: #151A6D;
+    --color-primary-subtle: rgba(26, 32, 128, 0.05);
+
+    /* Typography */
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --text-section-title: clamp(24px, 3vw, 32px);
+    --text-body: 16px;
+    --text-body-sm: 14px;
+    --text-label: 12px;
+    --leading-caption: 1.40;
+    --tracking-eyebrow: 0.12em;
+    --tracking-badge: 0.02em;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
+
+    /* Layout (compact: treatment detail) */
+    --container-max: 1280px;
+    --container-pad: 32px;
+    --section-y: var(--space-6);
+
+    /* Shape */
+    --radius-lg: 16px;
+    --radius-full: 999px;
+    --focus-ring: 2px solid var(--color-brand-primary);
+    --focus-offset: 3px;
+
+    /* Motion */
+    --duration-fast: 180ms;
+    --duration-card: 220ms;
+    --ease-standard: ease;
+
+    font-family: var(--font-family-primary) !important;
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-white) !important;
+    line-height: 1.5 !important;
   }
-  .sozo-sku-nose-job-wrapper * { box-sizing: border-box; }
-
-  .sozo-sku-nose-job-wrapper .sozo-breadcrumb { padding: 15px 20px 25px 20px; width: 100%; }
-  .sozo-sku-nose-job-wrapper .sozo-breadcrumb ol { list-style: none !important; margin: 0 !important; padding: 0 !important; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-  .sozo-sku-nose-job-wrapper .sozo-breadcrumb li { display: flex; align-items: center; font-size: 14px; color: #1A2080; }
-  .sozo-sku-nose-job-wrapper .sozo-breadcrumb a { text-decoration: none !important; color: #64748b !important; font-weight: 500; transition: color 0.2s ease; }
-  .sozo-sku-nose-job-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
-  .sozo-sku-nose-job-wrapper .sozo-breadcrumb .separator { color: #cbd5e1; margin: 0 4px; font-size: 12px; user-select: none; }
-
-  .sozo-sku-nose-job-wrapper .sozo-treatment-hero { display: flex; flex-wrap: nowrap; gap: 50px; align-items: center; margin-bottom: 50px; padding: 0 20px; }
-  .sozo-sku-nose-job-wrapper .sozo-hero-text { flex: 1; }
-  .sozo-sku-nose-job-wrapper .sozo-hero-text h1 { font-size: clamp(32px, 4vw, 42px) !important; color: #1A2080 !important; margin: 0 0 16px 0 !important; line-height: 1.2 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
-  .sozo-sku-nose-job-wrapper .sozo-hero-text p { font-size: 16px !important; color: #475569 !important; margin: 0 0 30px 0 !important; line-height: 1.6 !important; }
-  .sozo-sku-nose-job-wrapper .sozo-hero-image { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; }
-  .sozo-sku-nose-job-wrapper .sozo-hero-image img { width: 100%; max-width: 480px; height: 340px; border-radius: 24px; object-fit: cover; object-position: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); display: block; aspect-ratio: 480 / 340; }
-
-  .sozo-sku-nose-job-wrapper .sozo-info-row { display: flex; gap: 40px; margin-bottom: 35px; padding: 24px; background-color: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9; }
-  .sozo-sku-nose-job-wrapper .sozo-info-col { display: flex; align-items: flex-start; gap: 15px; }
-  .sozo-sku-nose-job-wrapper .sozo-info-icon { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: #EEF2FF; border-radius: 12px; color: #1A2080; }
-  .sozo-sku-nose-job-wrapper .sozo-info-text { display: flex; flex-direction: column; gap: 2px; }
-  .sozo-sku-nose-job-wrapper .sozo-info-label { font-size: 13px !important; color: #64748b !important; font-weight: 600 !important; text-transform: uppercase; letter-spacing: 0.5px; }
-  .sozo-sku-nose-job-wrapper .sozo-info-value { font-size: 20px !important; color: #1A2080 !important; font-weight: 700 !important; }
-
-  .sozo-sku-nose-job-wrapper .sozo-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; padding: 16px 24px; background-color: #1A2080 !important; color: #ffffff !important; text-decoration: none !important; font-size: 16px !important; font-weight: 600 !important; border-radius: 100px; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2); border: 2px solid #1A2080 !important; }
-  .sozo-sku-nose-job-wrapper .sozo-btn:hover { background-color: #ffffff !important; color: #1A2080 !important; transform: translateY(-3px); }
-
-  .sozo-sku-nose-job-wrapper .sozo-cta-wrapper { padding: 0 20px; }
-  .sozo-sku-nose-job-wrapper .sozo-cta-banner { background-color: #1A2080; background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%); border-radius: 24px; padding: 50px 30px; margin-bottom: 50px; text-align: center; color: #ffffff; box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15); }
-  .sozo-sku-nose-job-wrapper .sozo-cta-banner h2 { font-size: clamp(24px, 3vw, 32px) !important; color: #ffffff !important; margin: 0 0 15px 0 !important; font-weight: 800 !important; letter-spacing: -0.5px; }
-  .sozo-sku-nose-job-wrapper .sozo-cta-banner p { font-size: 16px !important; color: #e2e8f0 !important; margin: 0 auto 30px auto !important; max-width: 650px; line-height: 1.6 !important; }
-  .sozo-sku-nose-job-wrapper .sozo-btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background-color: #ffffff !important; color: #1A2080 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 700 !important; border-radius: 100px; border: 2px solid #ffffff !important; }
-  .sozo-sku-nose-job-wrapper .sozo-btn-secondary:hover { background-color: transparent !important; color: #ffffff !important; transform: translateY(-3px); }
-
-  .sozo-sku-nose-job-wrapper .sozo-content-wrapper { padding: 0 20px; }
-  .sozo-sku-nose-job-wrapper .sozo-section-card,
-  .sozo-sku-nose-job-wrapper .sozo-description-section,
-  .sozo-sku-nose-job-wrapper .sozo-faq-section { background-color: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
-  .sozo-sku-nose-job-wrapper .sozo-section-card h2,
-  .sozo-sku-nose-job-wrapper .sozo-description-section h2,
-  .sozo-sku-nose-job-wrapper .sozo-faq-section h2 { font-size: 24px !important; color: #1A2080 !important; margin-top: 0 !important; margin-bottom: 20px !important; font-weight: 800 !important; }
-  .sozo-sku-nose-job-wrapper .sozo-section-card h3,
-  .sozo-sku-nose-job-wrapper .sozo-description-section h3 { font-size: 18px !important; color: #1A2080 !important; margin-top: 24px !important; margin-bottom: 12px !important; font-weight: 700 !important; }
-  .sozo-sku-nose-job-wrapper .sozo-section-card p,
-  .sozo-sku-nose-job-wrapper .sozo-section-card li,
-  .sozo-sku-nose-job-wrapper .sozo-description-section p,
-  .sozo-sku-nose-job-wrapper .sozo-description-section li { color: #475569 !important; margin-bottom: 16px !important; font-size: 16px !important; }
-  .sozo-sku-nose-job-wrapper .sozo-description-section ul { padding-left: 20px !important; margin-bottom: 20px !important; }
-
-  .sozo-sku-nose-job-wrapper .sozo-problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .sozo-sku-nose-job-wrapper .sozo-problem-card { background-color: #f8fafc; border: 1px solid #f1f5f9; border-radius: 14px; padding: 20px; }
-  .sozo-sku-nose-job-wrapper .sozo-problem-card strong { display: block; color: #1A2080; font-size: 16px; margin-bottom: 6px; }
-  .sozo-sku-nose-job-wrapper .sozo-problem-card span { color: #475569; font-size: 14px; }
-
-  .sozo-sku-nose-job-wrapper .sozo-process-step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
-  .sozo-sku-nose-job-wrapper .sozo-step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background-color: #EEF2FF; color: #1A2080; font-weight: 800; display: flex; align-items: center; justify-content: center; }
-  .sozo-sku-nose-job-wrapper .sozo-step-text strong { display: block; color: #1A2080; font-size: 16px; margin-bottom: 4px; }
-  .sozo-sku-nose-job-wrapper .sozo-step-text p { margin: 0 !important; color: #475569 !important; font-size: 15px !important; }
-
-  .sozo-sku-nose-job-wrapper .sozo-expandable-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-  .sozo-sku-nose-job-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
-  .sozo-sku-nose-job-wrapper .sozo-expandable-inner { overflow: hidden; }
-  .sozo-sku-nose-job-wrapper .sozo-load-more-btn { background: none !important; border: none !important; color: #1A2080 !important; font-size: 15px !important; font-weight: 600 !important; padding: 0 !important; margin-top: 15px !important; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
-  .sozo-sku-nose-job-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
-  .sozo-sku-nose-job-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
-
-  .sozo-sku-nose-job-wrapper .sozo-faq-item { border-bottom: 1px solid #f1f5f9; padding: 16px 0; }
-  .sozo-sku-nose-job-wrapper .sozo-faq-item:last-child { border-bottom: none; }
-  .sozo-sku-nose-job-wrapper .sozo-faq-question { width: 100%; background: none !important; border: none !important; text-align: left; font-size: 16px !important; font-weight: 600 !important; color: #1e293b !important; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0 0 8px 0 !important; }
-  .sozo-sku-nose-job-wrapper .sozo-faq-question svg { transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
-  .sozo-sku-nose-job-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
-  .sozo-sku-nose-job-wrapper .sozo-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-  .sozo-sku-nose-job-wrapper .sozo-faq-answer p { color: #475569 !important; font-size: 15px !important; margin: 8px 0 16px 0 !important; line-height: 1.6 !important; }
-  .sozo-sku-nose-job-wrapper .sozo-faq-answer a { color: #1A2080 !important; text-decoration: underline !important; font-weight: 500; }
 
   @media (max-width: 768px) {
-    .sozo-sku-nose-job-wrapper .sozo-treatment-hero { flex-direction: column-reverse; gap: 30px; }
-    .sozo-sku-nose-job-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
-    .sozo-sku-nose-job-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; aspect-ratio: auto; }
-    .sozo-sku-nose-job-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
-    .sozo-sku-nose-job-wrapper .sozo-btn { max-width: 100%; }
-    .sozo-sku-nose-job-wrapper .sozo-cta-banner { padding: 40px 20px; border-radius: 20px; }
-    .sozo-sku-nose-job-wrapper .sozo-btn-secondary { width: 100%; max-width: 320px; }
-    .sozo-sku-nose-job-wrapper .sozo-section-card,
-    .sozo-sku-nose-job-wrapper .sozo-description-section,
-    .sozo-sku-nose-job-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
-    .sozo-sku-nose-job-wrapper .sozo-problem-grid { grid-template-columns: 1fr; }
+    .sozo-sku-nose-job-wrapper {
+      --container-pad: 20px;
+      --section-y: var(--space-5);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-nose-job-wrapper {
+      --duration-fast: 0ms;
+      --duration-card: 0ms;
+    }
+  }
+
+  .sozo-sku-nose-job-wrapper,
+  .sozo-sku-nose-job-wrapper * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-sku-nose-job-wrapper h1,
+  .sozo-sku-nose-job-wrapper h2,
+  .sozo-sku-nose-job-wrapper h3,
+  .sozo-sku-nose-job-wrapper p,
+  .sozo-sku-nose-job-wrapper ul,
+  .sozo-sku-nose-job-wrapper ol {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: var(--font-family-primary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper a {
+    text-decoration: none !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-container {
+    width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
+    margin-inline: auto !important;
+  }
+
+  /* ============ BUTTON (design-system/components/button.md) ============ */
+  .sozo-sku-nose-job-wrapper .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--space-2) !important;
+    min-height: 48px !important;
+    padding: 0 var(--space-6) !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--radius-full) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .btn:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .btn:active {
+    transform: translateY(0) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: var(--focus-offset) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .btn--primary,
+  .sozo-sku-nose-job-wrapper .btn--primary:visited {
+    background-color: var(--color-brand-primary) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .btn--primary:hover {
+    background-color: var(--color-primary-hover) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .btn--outline,
+  .sozo-sku-nose-job-wrapper .btn--outline:visited {
+    background-color: transparent !important;
+    border-color: var(--color-brand-primary) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .btn--outline:hover {
+    background-color: var(--color-primary-subtle) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* CTA hero: Buat Jadwal + Lihat Lokasi, selalu sejajar */
+  .sozo-sku-nose-job-wrapper .rs-cta {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-3) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .btn__icon {
+    width: 16px !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    flex: none !important;
+  }
+
+  /* ============ BADGE (design-system/components/badge.md) ============ */
+  .sozo-sku-nose-job-wrapper .badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 30px !important;
+    padding: 0 var(--space-3) !important;
+    border-radius: var(--radius-full) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-badge) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .badge--brand {
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .badge--label {
+    min-height: 30px !important;
+    padding: 0 18px !important;
+    margin-bottom: var(--space-4) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    letter-spacing: 0.25em !important;
+    text-transform: uppercase !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ BREADCRUMB (design-system/components/breadcrumb.md) ============ */
+  .sozo-sku-nose-job-wrapper .breadcrumb {
+    padding-top: var(--space-4) !important;
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .breadcrumb__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: 13px !important;
+    line-height: var(--leading-caption) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .breadcrumb__list li {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .breadcrumb__list li + li::before {
+    content: "/" !important;
+    color: var(--color-border-strong) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .breadcrumb a {
+    color: var(--color-text-muted) !important;
+    font-weight: 500 !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .breadcrumb a:hover {
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .breadcrumb a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .breadcrumb__current {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ HERO ============ */
+  .sozo-sku-nose-job-wrapper .rs-hero {
+    padding-bottom: var(--section-y) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-hero__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important;
+    gap: var(--space-8) !important;
+    align-items: center !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-hero__title {
+    margin-bottom: var(--space-4) !important;
+    font-size: clamp(28px, 2.8vw, 38px) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Masalah yang bisa diatasi */
+  .sozo-sku-nose-job-wrapper .rs-problems {
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-problems__label {
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-eyebrow) !important;
+    text-transform: uppercase !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-problems__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-problems__list li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Paragraf intro: justify, selebar kolom (sama dengan Infus Whitening) */
+  .sozo-sku-nose-job-wrapper .rs-hero__desc {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    text-align: justify !important;
+    hyphens: auto !important;
+  }
+
+  /* Info: durasi, frekuensi, harga */
+  .sozo-sku-nose-job-wrapper .rs-info {
+    list-style: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    margin-bottom: var(--space-5) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-info__item {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-3) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: var(--space-4) !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-info__item + .rs-info__item {
+    border-left: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-info__icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-info__text {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-info__label {
+    font-size: var(--text-label) !important;
+    font-weight: 500 !important;
+    line-height: var(--leading-caption) !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-info__value {
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Gambar treatment: standalone, rasio 4:3 (design-system/components/image.md) */
+  .sozo-sku-nose-job-wrapper .rs-hero__media img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  /* ============ BOTTOM CONTENT (DESKRIPSI TREATMENT) ============ */
+  .sozo-sku-nose-job-wrapper .rs-content {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-section-title {
+    margin-bottom: var(--space-4) !important;
+    font-size: var(--text-section-title) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-content__desc {
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    margin-bottom: var(--space-4) !important;
+    text-align: justify !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-content__desc a,
+  .sozo-sku-nose-job-wrapper .rs-content__desc a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-content__desc a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-content__subtitle {
+    margin: var(--space-2) 0 var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-content__checklist {
+    list-style: none !important;
+    margin: 0 0 var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-content__checklist li {
+    position: relative !important;
+    padding-left: 28px !important;
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-content__checklist li::before {
+    content: "\2713" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    font-weight: 700 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Tahapan treatment: daftar bernomor */
+  .sozo-sku-nose-job-wrapper .rs-content__steps {
+    list-style: none !important;
+    counter-reset: rs-step !important;
+    margin: 0 0 var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-content__steps li {
+    position: relative !important;
+    counter-increment: rs-step !important;
+    padding-left: 36px !important;
+    margin-bottom: var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-content__steps li::before {
+    content: counter(rs-step) !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-content__steps strong {
+    color: var(--color-text-primary) !important;
+    font-weight: 600 !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-expandable {
+    display: grid !important;
+    grid-template-rows: 0fr !important;
+    transition: grid-template-rows var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-expandable.is-expanded {
+    grid-template-rows: 1fr !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-expandable__inner {
+    overflow: hidden !important;
+    min-height: 0 !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-expand-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-top: var(--space-1) !important;
+    color: var(--color-brand-primary) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard),
+                opacity var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-expand-btn:hover {
+    color: var(--color-primary-hover) !important;
+    opacity: 0.85 !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-expand-btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-expand-btn svg {
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-expand-btn.is-active svg {
+    transform: rotate(180deg) !important;
+  }
+
+  /* ============ LOKASI ============
+     Tersedia di semua cabang: kartu dengan info kiri + chip kota kanan.
+     Chip mengarah ke /lokasi/[kota]/ (daftar kota sama dengan hub /lokasi/).
+     Mobile: info di atas, chip wrap di bawah. */
+  .sozo-sku-nose-job-wrapper .rs-loc {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+    scroll-margin-top: 80px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__intro {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) !important;
+    gap: var(--space-6) !important;
+    align-items: center !important;
+    padding: var(--space-6) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+    background-color: var(--color-white) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-3) !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__name {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__name i {
+    font-size: 0.85em !important;
+    flex: none !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__text {
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.6 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-3) !important;
+    margin-top: var(--space-2) !important;
+  }
+
+  /* Tombol kartu lokasi: ukuran small (btn--sm di design system) */
+  .sozo-sku-nose-job-wrapper .rs-loc__actions .btn {
+    min-height: 40px !important;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__actions .btn__icon {
+    width: 14px !important;
+    font-size: 14px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__list li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__chip,
+  .sozo-sku-nose-job-wrapper .rs-loc__chip:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 36px !important;
+    padding: 0 var(--space-4) !important;
+    border: 1px solid var(--color-border-strong) !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-white) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    transition: background-color var(--duration-fast) var(--ease-standard),
+                border-color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__chip:hover {
+    border-color: var(--color-brand-primary) !important;
+    background-color: var(--color-primary-subtle) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-loc__chip:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* ============ FAQ ============ */
+  .sozo-sku-nose-job-wrapper .rs-faq {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__item {
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__question {
+    width: 100% !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: var(--space-4) !important;
+    padding: 18px 0 !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    color: var(--color-text-primary) !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__question:hover {
+    color: var(--color-brand-primary) !important;
+    background: none !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__question:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__question > span {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__question svg {
+    flex-shrink: 0 !important;
+    color: var(--color-brand-primary) !important;
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__item.is-open .rs-faq__question svg {
+    transform: rotate(180deg) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__answer {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__item.is-open .rs-faq__answer {
+    max-height: 1000px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__answer p {
+    padding-bottom: 18px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__answer a,
+  .sozo-sku-nose-job-wrapper .rs-faq__answer a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__answer a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* ============================================================
+     RESPONSIVE (breakpoint design system: 1024 / 768 / 480)
+     ============================================================ */
+  @media (max-width: 1024px) {
+    /* Hero satu kolom: teks dulu, gambar di bawah CTA */
+    .sozo-sku-nose-job-wrapper .rs-hero__grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: var(--space-5) !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-hero__media img {
+      aspect-ratio: 16 / 9 !important;
+      max-height: 400px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-nose-job-wrapper .breadcrumb {
+      padding-top: var(--space-3) !important;
+      margin-bottom: var(--space-3) !important;
+    }
+
+    /* Breadcrumb: font kecil supaya muat maksimal 2 baris.
+       Tiap item tidak dipotong di tengah (nowrap per item). */
+    .sozo-sku-nose-job-wrapper .breadcrumb__list {
+      flex-wrap: wrap !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .breadcrumb__list li {
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .breadcrumb__list,
+    .sozo-sku-nose-job-wrapper .breadcrumb__list li,
+    .sozo-sku-nose-job-wrapper .breadcrumb__list a,
+    .sozo-sku-nose-job-wrapper .breadcrumb__current {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .breadcrumb__list,
+    .sozo-sku-nose-job-wrapper .breadcrumb__list li {
+      gap: 4px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .breadcrumb__list li {
+      flex: none !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-hero__title {
+      margin-bottom: var(--space-2) !important;
+      font-size: 20px !important;
+      line-height: 1.25 !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-problems {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-problems__label {
+      margin-bottom: 6px !important;
+      font-size: 11px !important;
+    }
+
+    /* Badge masalah: satu baris, geser ke samping kalau tidak muat (EX-04) */
+    .sozo-sku-nose-job-wrapper .rs-problems__list {
+      flex-wrap: nowrap !important;
+      gap: 6px !important;
+      overflow-x: auto !important;
+      scrollbar-width: none !important;
+      -webkit-overflow-scrolling: touch !important;
+      -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+      mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-problems__list::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .badge {
+      flex: none !important;
+      min-height: 26px !important;
+      padding: 0 10px !important;
+      font-size: 11px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-hero__desc {
+      margin-bottom: var(--space-4) !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Info tetap 3 kolom, ikon disembunyikan supaya ringkas */
+    .sozo-sku-nose-job-wrapper .rs-info {
+      margin-bottom: var(--space-4) !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-info__item {
+      justify-content: center !important;
+      padding: 10px 6px !important;
+      text-align: center !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-info__icon {
+      display: none !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-info__label {
+      font-size: 11px !important;
+      line-height: 1.3 !important;
+    }
+
+    /* Nilai tidak dipotong ke baris baru (mis. "Rp 7.798.000") */
+    .sozo-sku-nose-job-wrapper .rs-info__value {
+      font-size: 13px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .btn {
+      min-height: 44px !important;
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .btn__icon {
+      width: 15px !important;
+      font-size: 15px !important;
+    }
+
+    /* Bottom content + FAQ: skala font sama dengan hero (H2 < H1 20px, body 13px) */
+    .sozo-sku-nose-job-wrapper .rs-section-title {
+      margin-bottom: var(--space-3) !important;
+      font-size: 18px !important;
+      line-height: 1.3 !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .badge--label {
+      min-height: 26px !important;
+      margin-bottom: var(--space-3) !important;
+      padding: 0 12px !important;
+      font-size: 10px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-content__subtitle {
+      margin: var(--space-1) 0 var(--space-2) !important;
+      font-size: 14px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-content__desc,
+    .sozo-sku-nose-job-wrapper .rs-content__checklist li,
+    .sozo-sku-nose-job-wrapper .rs-content__steps li {
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-content__checklist li {
+      padding-left: 22px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-content__steps li {
+      padding-left: 30px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-content__steps li::before {
+      top: 1px !important;
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 11px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-content__desc {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-expand-btn {
+      font-size: 13px !important;
+    }
+
+    /* CTA hero & kartu lokasi sejajar, masing-masing setengah lebar */
+    .sozo-sku-nose-job-wrapper .rs-cta .btn,
+    .sozo-sku-nose-job-wrapper .rs-loc__actions .btn {
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      padding: 0 var(--space-3) !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-loc__intro {
+      margin-bottom: var(--space-4) !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-loc__card {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: var(--space-4) !important;
+      padding: var(--space-4) !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-loc__name {
+      font-size: 15px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-loc__text {
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-loc__list {
+      gap: 6px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-loc__chip,
+    .sozo-sku-nose-job-wrapper .rs-loc__chip:visited {
+      min-height: 32px !important;
+      padding: 0 var(--space-3) !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-faq__question {
+      padding: 12px 0 !important;
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-faq__question svg {
+      width: 18px !important;
+      height: 18px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-faq__answer p {
+      padding-bottom: 12px !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+  }
+
+  /* HP kecil (320–360px): breadcrumb tetap maksimal 2 baris, harga tetap 1 baris */
+  @media (max-width: 360px) {
+    .sozo-sku-nose-job-wrapper .breadcrumb__list,
+    .sozo-sku-nose-job-wrapper .breadcrumb__list li,
+    .sozo-sku-nose-job-wrapper .breadcrumb__list a,
+    .sozo-sku-nose-job-wrapper .breadcrumb__current {
+      font-size: 10px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .breadcrumb__list,
+    .sozo-sku-nose-job-wrapper .breadcrumb__list li {
+      gap: 2px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-info__item {
+      padding: 10px 4px !important;
+    }
+
+    .sozo-sku-nose-job-wrapper .rs-info__value {
+      font-size: 12px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sozo-sku-nose-job-wrapper .btn {
+      font-size: 13px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-nose-job-wrapper .btn:hover {
+      transform: none !important;
+    }
+  }
+
+  /* ============ FLOATING WHATSAPP (design-system/components/whatsapp-cta.md) ============
+     JS memindahkan tombol ke <body> supaya position: fixed tidak terkunci
+     oleh transform di container Elementor. Karena itu token ditulis langsung
+     di class ini, bukan lewat wrapper. Tombol tampil sejak halaman dibuka.
+     Bentuk pill + label "Buat Jadwal", sama dengan CTA hero. */
+  .sozo-wa-float {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 40px !important;
+    z-index: 900 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 48px !important;
+    padding: 0 24px !important;
+    border-radius: 999px !important;
+    background-color: #E9DFD5 !important;
+    color: #1A2080 !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 16px 40px rgba(23, 23, 21, 0.10) !important;
+    text-decoration: none !important;
+    transition:
+      opacity 180ms ease,
+      visibility 180ms ease,
+      transform 180ms ease,
+      background-color 180ms ease !important;
+  }
+
+  /* Disembunyikan saat footer terlihat supaya tidak menutupi link footer */
+  .sozo-wa-float.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(8px) !important;
+  }
+
+  /* Hover berubah ke biru brand supaya jelas tombol bisa diklik */
+  .sozo-wa-float:hover {
+    background-color: #1A2080 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-wa-float:focus-visible {
+    outline: 2px solid #1A2080 !important;
+    outline-offset: 3px !important;
+  }
+
+  .sozo-wa-float i {
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  /* Mobile: lebih ringkas supaya tidak banyak menutupi konten */
+  @media (max-width: 768px) {
+    .sozo-wa-float {
+      right: 16px !important;
+      bottom: 28px !important;
+      gap: 6px !important;
+      height: 42px !important;
+      padding: 0 16px !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-wa-float i {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-wa-float,
+    .sozo-wa-float:hover {
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* List di jawaban FAQ (mis. aftercare, harga paket) */
+  .sozo-sku-nose-job-wrapper .rs-faq__answer ol,
+  .sozo-sku-nose-job-wrapper .rs-faq__answer ul {
+    margin: -6px 0 18px !important;
+    padding-left: 20px !important;
+  }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__answer ol { list-style: decimal !important; }
+  .sozo-sku-nose-job-wrapper .rs-faq__answer ul { list-style: disc !important; }
+
+  .sozo-sku-nose-job-wrapper .rs-faq__answer li {
+    margin-bottom: 4px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
   }
 </style>
 
+
 <div class="sozo-sku-nose-job-wrapper" id="sozo-nose-job-widget">
 
-  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
-    <ol>
-      <li>
-        <a href="https://sozoskinclinic.com/"><span>Home</span></a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/injectable-treatment/"><span>Injectable Treatment</span></a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/"><span>Threadlift Treatment</span></a>
-      </li>
-      <li class="separator">/</li>
-      <li aria-current="page">
-        <span style="color: #1A2080; font-weight: 600;">Tanam Benang Hidung</span>
-      </li>
-    </ol>
-  </nav>
+  <!-- ===== HERO ===== -->
+  <section class="rs-hero">
+    <div class="rs-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li><a href="https://sozoskinclinic.com/treatment/">Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/injectable-treatment/">Injectable Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/">Threadlift Treatment</a></li>
+          <li><span class="breadcrumb__current" aria-current="page">Tanam Benang Hidung</span></li>
+        </ol>
+      </nav>
 
-  <div class="sozo-treatment-hero">
-    <div class="sozo-hero-text">
-      <h1>Tanam Benang Hidung untuk Hidung Mancung Tanpa Operasi</h1>
-      <p>Tanam Benang Hidung (Nose Threadlift) adalah perawatan estetika non bedah untuk membantu membuat hidung tampak lebih mancung, proporsional, dan simetris. Menggunakan benang medis absorbable yang aman, prosedur tanpa sayatan ini membantu meninggikan batang hidung (bridge) dan merapikan ujung hidung (tip) dengan hasil yang natural, proses cepat, dan masa pemulihan yang singkat.</p>
+      <div class="rs-hero__grid">
+        <div class="rs-hero__content">
+          <h1 class="rs-hero__title">Tanam Benang Hidung</h1>
 
-      <div class="sozo-info-row">
-        <div class="sozo-info-col">
-          <div class="sozo-info-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <div class="rs-problems">
+            <p class="rs-problems__label" id="rs-problems-label">Membantu mengatasi</p>
+            <ul class="rs-problems__list" aria-labelledby="rs-problems-label">
+              <li class="badge badge--brand">Batang Hidung Kurang Tinggi</li>
+              <li class="badge badge--brand">Ujung Hidung Kurang Tegas</li>
+              <li class="badge badge--brand">Cuping Hidung Lebar</li>
+            </ul>
           </div>
-          <div class="sozo-info-text">
-            <span class="sozo-info-label">Durasi</span>
-            <span class="sozo-info-value">75 Menit</span>
-          </div>
-        </div>
 
-        <div class="sozo-info-col">
-          <div class="sozo-info-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-          </div>
-          <div class="sozo-info-text">
-            <span class="sozo-info-label">Harga Mulai</span>
-            <span class="sozo-info-value">
-              Rp 2.499.000
+          <p class="rs-hero__desc">
+            Metode tanam benang (<em>nose threadlift</em>) yang bertujuan membentuk hidung lebih proporsional tanpa operasi dengan memancungkan batang hidung, mempertegas ujung hidung, atau mengecilkan tampilan cuping hidung. Menggunakan benang medis <em>absorbable</em> yang aman dan merangsang kolagen alami, hasilnya langsung terlihat dengan masa pemulihan singkat.
+          </p>
+
+          <ul class="rs-info">
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Estimasi Treatment</span>
+              <span class="rs-info__value">75 Menit</span>
             </span>
+          </li>
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Frekuensi Sesi</span>
+              <span class="rs-info__value">Tiap 1–2 Tahun</span>
+            </span>
+          </li>
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" x2="7.01" y1="7" y2="7"></line></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Harga Mulai</span>
+              <span class="rs-info__value">Rp 2.499.000</span>
+            </span>
+          </li>
+          </ul>
+
+          <div class="rs-cta">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Tanam%20Benang%20Hidung%20di%20Sozo%20%5Bsrc%3AORG-TBH%5D" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+            <a href="#rs-lokasi" class="btn btn--outline"><i class="fa-solid fa-location-dot btn__icon" aria-hidden="true"></i><span>Lihat Lokasi</span></a>
           </div>
         </div>
-      </div>
 
-      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20Tanam%20Benang%20Hidung%20%5Bsumber:%20ORG-nose-job%5D" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
-    </div>
-
-    <div class="sozo-hero-image">
-      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Nose-Job-2-benang.webp" width="480" height="340" alt="Tanam benang hidung untuk hidung mancung di Sozo Skin Clinic" decoding="async" fetchpriority="high">
-    </div>
-  </div>
-
-  <div class="sozo-cta-wrapper">
-    <div class="sozo-cta-banner">
-      <h2>Tanam Benang Hidung untuk Wajah Lebih Proporsional</h2>
-      <p>Pilihan non bedah untuk membantu meninggikan batang hidung, memperbaiki bentuk, dan merapikan tampilan cuping secara natural. Dapatkan konsultasi gratis dengan dokter ahli kami hari ini.</p>
-      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20konsultasi%20Tanam%20Benang%20Hidung%20%5Bsumber:%20ORG-nose-job%5D" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
-    </div>
-  </div>
-
-  <div class="sozo-content-wrapper">
-
-    <div class="sozo-section-card">
-      <h2>Keluhan Hidung yang Dapat Dibantu Tanam Benang Hidung</h2>
-      <p>Tanam benang hidung dapat menjadi pilihan untuk membantu memperbaiki tampilan hidung pada keluhan berikut:</p>
-      <div class="sozo-problem-grid">
-        <div class="sozo-problem-card">
-          <strong>Hidung Pesek</strong>
-          <span>Batang hidung yang rendah sehingga wajah tampak kurang tegas.</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Ujung Hidung Kurang Tajam</strong>
-          <span>Ujung hidung (tip) yang tampak kurang terdefinisi dan ingin lebih mancung.</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Cuping Hidung Lebar</strong>
-          <span>Tampilan cuping yang ingin terlihat lebih rapi dan proporsional.</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Hidung Kurang Simetris</strong>
-          <span>Bentuk hidung yang tampak kurang simetris atau sedikit miring.</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Ingin Mancung Tanpa Operasi</strong>
-          <span>Mencari cara memancungkan hidung tanpa prosedur bedah.</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Ingin Hasil yang Cepat</strong>
-          <span>Membutuhkan perawatan dengan masa pemulihan yang singkat.</span>
+        <div class="rs-hero__media">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Nose-Job-2-benang.webp" alt="Tanam benang hidung untuk hidung mancung dan proporsional di Sozo Skin Clinic" width="800" height="600" fetchpriority="high" decoding="async">
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="sozo-description-section">
-      <h2>Tanam Benang Hidung: Solusi Hidung Mancung Tanpa Operasi</h2>
-      <p>Tanam benang hidung (Nose Threadlift) adalah prosedur estetika medis non bedah yang menggunakan benang khusus, biasanya berbahan PDO (Polydioxanone) atau PCL yang dapat menyerap ke dalam tubuh, untuk memodifikasi dan meninggikan kontur hidung. Benang ini dimasukkan di bawah lapisan kulit untuk memberikan struktur yang menyangga batang hidung, serta membantu mengangkat ujung hidung (tip projection) agar tampak lebih tajam dan proporsional.</p>
+  <!-- ===== TENTANG TREATMENT ===== -->
+  <section class="rs-content" aria-labelledby="rs-content-title">
+    <div class="rs-container">
+      <span class="badge badge--label">TENTANG TREATMENT</span>
+      <h2 class="rs-section-title" id="rs-content-title">Mengenal Tanam Benang Hidung: Membentuk Hidung Lebih Mancung &amp; Proporsional Tanpa Operasi</h2>
 
-      <div class="sozo-expandable-content sozo-nj-desc-content" id="treatmentDescriptionNJ">
-        <div class="sozo-expandable-inner">
-          <h3>3 Keunggulan Utama Tanam Benang Hidung (Nose Threadlift)</h3>
-          <p>Perawatan ini menjadi alternatif yang banyak diminati dibandingkan operasi bedah plastik (Rhinoplasty) karena menawarkan berbagai keuntungan:</p>
-          <ul>
-            <li><strong>Lifting dan Contouring Cepat:</strong> Hasil hidung yang tampak lebih mancung, ramping, dan tegas umumnya dapat terlihat segera setelah tindakan selesai, tanpa perlu menunggu berbulan bulan.</li>
-            <li><strong>Stimulasi Kolagen Alami:</strong> Seiring waktu, benang yang ditanam membantu merangsang jaringan kulit untuk memproduksi kolagen alami. Hal ini membantu struktur hidung tetap terjaga meskipun benang nantinya akan terserap oleh tubuh.</li>
-            <li><strong>Minim Waktu Pemulihan:</strong> Anda umumnya tidak perlu mengambil cuti panjang atau rawat inap, sehingga dapat kembali beraktivitas dengan nyaman (lunchtime treatment).</li>
+      <p class="rs-content__desc">
+        Bentuk hidung yang terletak di tengah wajah sangat memengaruhi dimensi serta keseimbangan profil wajah secara keseluruhan. Bagi Anda yang memiliki batang hidung kurang tinggi, ujung hidung (<em>nasal tip</em>) kurang terdefinisi, atau cuping hidung yang tampak lebar, Tanam Benang Hidung (<em>Nose Threadlift</em>) menawarkan solusi pembentukan kontur hidung tanpa tindakan bedah plastik.
+      </p>
+      <p class="rs-content__desc">
+        Prosedur ini menempatkan benang medis khusus yang dapat diserap tubuh (<em>absorbable</em>, seperti PDO atau PCL) di bawah lapisan kulit hidung. Benang tersebut bekerja sebagai kerangka penyangga untuk meninggikan batang hidung, mengangkat ujung hidung, maupun merampingkan cuping hidung, sekaligus menstimulasi pembentukan jaringan kolagen alami di sekitarnya.
+      </p>
+
+      <div class="rs-expandable" id="rsContentExpandable">
+        <div class="rs-expandable__inner">
+          <h3 class="rs-content__subtitle">Manfaat Tanam Benang Hidung</h3>
+          <ul class="rs-content__checklist">
+            <li><strong>Memancungkan batang hidung (<em>bridge</em>).</strong> Menambah tinggi dan definisi batang hidung secara terukur tanpa implan bedah.</li>
+            <li><strong>Mempertegas ujung hidung (<em>tip projection</em>).</strong> Membantu mengangkat ujung hidung agar profil samping tampak lebih rapi dan lancip natural.</li>
+            <li><strong>Merampingkan tampilan cuping hidung.</strong> Teknik penempatan benang yang tepat membantu membuat cuping hidung tampak lebih kecil dan proporsional.</li>
+            <li><strong>Merangsang kolagen alami &amp; minim downtime.</strong> Benang medis <em>absorbable</em> memicu produksi kolagen di jaringan sekitar sehingga struktur hidung tetap terjaga lebih lama dengan waktu pemulihan yang singkat.</li>
           </ul>
 
-          <h3>Apa Bedanya Tanam Benang Hidung dengan Filler Hidung?</h3>
-          <p>Banyak calon pasien yang mempertimbangkan antara Threadlift atau Dermal Filler untuk area hidung. Keduanya memiliki fungsi yang berbeda untuk kontur wajah:</p>
-          <ul>
-            <li><strong>Tanam Benang Hidung:</strong> Ideal jika Anda menginginkan batang hidung yang lebih tinggi, tajam, dan ramping. Benang bekerja seperti penyangga struktur dari dalam kulit tanpa melebarkan cuping hidung.</li>
-            <li><strong>Filler Hidung:</strong> Lebih sesuai untuk mengisi volume, memuluskan, atau meratakan permukaan batang hidung yang kurang rata (dorsal hump atau bumps).</li>
-          </ul>
-          <p><em><strong>Catatan:</strong> Untuk transformasi bentuk hidung yang lebih optimal, dokter estetika terkadang mengombinasikan kedua treatment ini (benang dan filler) sesuai evaluasi kondisi hidung pasien.</em></p>
+          <h3 class="rs-content__subtitle">Perbedaan Tanam Benang Hidung dengan Filler Hidung</h3>
+          <p class="rs-content__desc">
+            Tanam Benang Hidung bekerja seperti tiang penyangga dari dalam untuk memberikan tarikan (<em>lifting</em>), ketegasan garis batang hidung, serta perampingan ujung maupun cuping hidung tanpa risiko cairan melebar ke samping. Sementara itu, filler hidung berfungsi mengisi volume pada lekukan tertentu di batang hidung. Dokter akan mengevaluasi anatomi hidung Anda saat konsultasi untuk menentukan teknik dan jumlah benang yang paling tepat.
+          </p>
+
+          <h3 class="rs-content__subtitle">Tahapan Tanam Benang Hidung (75 Menit)</h3>
+          <ol class="rs-content__steps">
+            <li><strong>Konsultasi dan desain kontur hidung.</strong> Dokter menganalisis proporsi wajah dan anatomi hidung Anda untuk menentukan fokus tindakan (batang, ujung, atau cuping hidung) serta jumlah benang yang dibutuhkan.</li>
+            <li><strong>Pembersihan dan anestesi.</strong> Area hidung dibersihkan secara menyeluruh lalu diberikan anestesi lokal agar prosedur berlangsung nyaman dan minim rasa nyeri.</li>
+            <li><strong>Pemasangan benang medis.</strong> Dokter memasukkan benang <em>absorbable</em> steril melalui titik masuk kecil di bawah kulit sesuai desain untuk membentuk kontur hidung yang simetris.</li>
+            <li><strong>Evaluasi dan arahan aftercare.</strong> Dokter memeriksa kesimetrisan hasil akhir serta menjelaskan panduan perawatan pascatindakan di rumah.</li>
+          </ol>
+
+          <h3 class="rs-content__subtitle">Masa Pemulihan dan Daya Tahan Hasil</h3>
+          <p class="rs-content__desc">
+            Perubahan bentuk hidung yang lebih mancung dan proporsional dapat langsung terlihat sesaat setelah prosedur selesai, kemudian tampak makin menyatu natural dalam 1–2 minggu setelah bengkak ringan mereda. Hasil Tanam Benang Hidung umumnya bertahan sekitar 1 hingga 2 tahun, tergantung jenis benang yang digunakan serta metabolisme tubuh.
+          </p>
+
+          <h3 class="rs-content__subtitle">Treatment Wajah Terkait</h3>
+          <p class="rs-content__desc">
+            Untuk menyeimbangkan profil wajah secara menyeluruh (<em>side profile balancing</em>), Tanam Benang Hidung sering dikombinasikan dengan <a href="https://sozoskinclinic.com/injectable-treatment/filler-treatment/filler-dagu/">Filler Dagu</a> untuk mempertegas proyeksi dagu, <a href="https://sozoskinclinic.com/injectable-treatment/filler-treatment/korean-filler/">Korean Filler</a>, atau rangkaian <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/">Threadlift Treatment</a> lainnya untuk pengencangan kontur pipi dan rahang.
+          </p>
         </div>
       </div>
 
-      <button class="sozo-load-more-btn sozo-nj-read-more" onclick="toggleNJDescription()">
-        <span id="njReadMoreText">Baca Selengkapnya</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      <button type="button" class="rs-expand-btn" id="rsExpandBtn" onclick="toggleNoseJobDesc()" aria-expanded="false" aria-controls="rsContentExpandable">
+        <span id="rsExpandBtnText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </button>
     </div>
+  </section>
 
-    <div class="sozo-section-card">
-      <h2>Proses dan Cara Kerja Tanam Benang Hidung</h2>
-      <p>Tanam benang hidung dilakukan secara bertahap dengan prosedur yang terkontrol untuk menjaga keamanan dan kenyamanan pasien.</p>
+  <!-- ===== LOKASI (Tanam Benang Hidung tersedia di semua cabang) ===== -->
+  <section class="rs-loc" id="rs-lokasi" aria-labelledby="rs-loc-title">
+    <div class="rs-container">
+      <span class="badge badge--label">LOKASI</span>
+      <h2 class="rs-section-title" id="rs-loc-title">Lokasi Treatment Tanam Benang Hidung Terdekat di Sozo</h2>
+      <p class="rs-loc__intro">Tanam Benang Hidung tersedia di seluruh cabang Sozo Skin Clinic di Indonesia. Pilih kota terdekat untuk melihat alamat dan jam operasional cabang.</p>
 
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">1</div>
-        <div class="sozo-step-text">
-          <strong>Konsultasi dan Desain Hidung</strong>
-          <p>Dokter menilai anatomi dan keluhan hidung Anda, lalu merancang desain serta jumlah benang yang sesuai.</p>
+      <div class="rs-loc__card">
+        <div class="rs-loc__info">
+          <h3 class="rs-loc__name"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Tersedia di Semua Cabang Sozo</h3>
+          <p class="rs-loc__text">Pilih cabang Sozo yang paling dekat dengan Anda. Konfirmasi jadwal terlebih dahulu sebelum datang.</p>
+          <div class="rs-loc__actions">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Tanam%20Benang%20Hidung%20di%20Sozo%20%5Bsrc%3AORG-TBH%5D" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+            <a href="https://sozoskinclinic.com/lokasi/" class="btn btn--outline"><i class="fa-solid fa-map-location-dot btn__icon" aria-hidden="true"></i><span>Semua Lokasi</span></a>
+          </div>
         </div>
-      </div>
-
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">2</div>
-        <div class="sozo-step-text">
-          <strong>Pembersihan dan Anestesi Topikal</strong>
-          <p>Area hidung dibersihkan dan diberikan anestesi lokal untuk membantu kenyamanan selama tindakan.</p>
-        </div>
-      </div>
-
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">3</div>
-        <div class="sozo-step-text">
-          <strong>Pemasangan Benang</strong>
-          <p>Benang medis absorbable ditempatkan di bawah lapisan kulit sesuai desain untuk membantu meninggikan dan merapikan kontur hidung.</p>
-        </div>
-      </div>
-
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">4</div>
-        <div class="sozo-step-text">
-          <strong>Finishing dan Arahan Perawatan</strong>
-          <p>Dokter merapikan hasil dan memberikan arahan perawatan setelah tindakan agar pemulihan berjalan optimal.</p>
-        </div>
+        <ul class="rs-loc__list" aria-label="Kota cabang Sozo Skin Clinic">
+          <li><a href="https://sozoskinclinic.com/lokasi/jakarta/" class="rs-loc__chip">Jakarta</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/tangerang/" class="rs-loc__chip">Tangerang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/depok/" class="rs-loc__chip">Depok</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bogor/" class="rs-loc__chip">Bogor</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bekasi/" class="rs-loc__chip">Bekasi</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bandung/" class="rs-loc__chip">Bandung</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/surabaya/" class="rs-loc__chip">Surabaya</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/semarang/" class="rs-loc__chip">Semarang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/jogja/" class="rs-loc__chip">Jogja</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/malang/" class="rs-loc__chip">Malang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/medan/" class="rs-loc__chip">Medan</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/makassar/" class="rs-loc__chip">Makassar</a></li>
+        </ul>
       </div>
     </div>
+  </section>
 
-    <div class="sozo-faq-section">
-      <h2>Pertanyaan Seputar Tanam Benang Hidung</h2>
+  <!-- ===== FAQ ===== -->
+  <section class="rs-faq" aria-labelledby="rs-faq-title">
+    <div class="rs-container">
+      <h2 class="rs-section-title" id="rs-faq-title">Pertanyaan Seputar Tanam Benang Hidung</h2>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleNJFaq(this)">
-          <span>Apa itu tanam benang hidung?</span>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleNoseJobFaq(this)" aria-expanded="false" aria-controls="rs-faq-1-content" id="rs-faq-1-trigger">
+          <span>Apa itu Tanam Benang Hidung dan bagaimana cara kerjanya?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Tanam benang hidung (nose threadlift) adalah prosedur estetika non bedah yang menggunakan benang medis absorbable, umumnya berbahan PDO atau PCL, untuk membantu meninggikan batang hidung dan merapikan ujung hidung tanpa sayatan operasi. Benang ditempatkan di bawah lapisan kulit untuk menyangga struktur hidung agar tampak lebih mancung dan proporsional secara natural.</p></div>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-1-content" role="region" aria-labelledby="rs-faq-1-trigger">
+          <p>Tanam Benang Hidung (<em>nose threadlift</em>) adalah metode estetika non-bedah menggunakan benang medis <em>absorbable</em> (seperti PDO atau PCL) untuk membentuk hidung lebih proporsional tanpa operasi. Benang ditempatkan di bawah lapisan kulit sebagai penyangga struktur untuk memancungkan batang hidung, mempertegas ujung hidung, atau mengecilkan tampilan cuping hidung, sekaligus merangsang kolagen alami.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleNJFaq(this)">
-          <span>Kapan hasil tanam benang hidung mulai terlihat?</span>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleNoseJobFaq(this)" aria-expanded="false" aria-controls="rs-faq-2-content" id="rs-faq-2-trigger">
+          <span>Apakah Tanam Benang Hidung bisa untuk memancungkan batang dan mengecilkan cuping hidung?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Salah satu daya tarik prosedur nose threadlift adalah hasilnya yang relatif cepat terlihat. Anda umumnya dapat mengamati perubahan pada dimensi hidung yang tampak lebih mancung dan tegas segera setelah dokter selesai melakukan tindakan. Wajar jika terdapat sedikit pembengkakan ringan pada hari pertama, dan kontur hidung akan tampak semakin natural setelah melewati masa pemulihan awal (sekitar 1 hingga 2 minggu).</p></div>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-2-content" role="region" aria-labelledby="rs-faq-2-trigger">
+          <p>Ya, metode Tanam Benang Hidung dirancang untuk membantu meninggikan batang hidung (<em>bridge</em>), mempertajam ujung hidung (<em>tip</em>), maupun mengecilkan tampilan cuping hidung yang lebar agar lebih proporsional. Dokter akan menyesuaikan teknik dan jumlah benang berdasarkan anatomi hidung Anda saat konsultasi.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleNJFaq(this)">
-          <span>Apakah tanam benang hidung bisa untuk cuping hidung?</span>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleNoseJobFaq(this)" aria-expanded="false" aria-controls="rs-faq-3-content" id="rs-faq-3-trigger">
+          <span>Berapa harga Tanam Benang Hidung di Sozo Skin Clinic?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Tanam benang hidung umumnya difokuskan untuk meninggikan batang hidung dan merapikan ujung hidung. Untuk keluhan pada cuping hidung yang tampak lebar, dokter akan menilai kondisi Anda terlebih dahulu saat konsultasi dan menentukan apakah tanam benang atau kombinasi perawatan lain yang paling sesuai. Setiap tindakan disesuaikan dengan anatomi hidung masing masing pasien.</p></div>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-3-content" role="region" aria-labelledby="rs-faq-3-trigger">
+          <p>Harga Tanam Benang Hidung di Sozo Skin Clinic mulai dari Rp 2.499.000 dengan estimasi waktu pengerjaan sekitar 75 menit. Estimasi biaya akhir menyesuaikan jenis dan jumlah benang yang dibutuhkan sesuai hasil evaluasi dokter.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleNJFaq(this)">
-          <span>Berapa lama hasil tanam benang di hidung dapat bertahan?</span>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleNoseJobFaq(this)" aria-expanded="false" aria-controls="rs-faq-4-content" id="rs-faq-4-trigger">
+          <span>Kapan hasil Tanam Benang Hidung mulai terlihat?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Hasil perawatan tanam benang hidung umumnya bertahan cukup lama, berkisar antara 1 hingga 2 tahun. Durasi ini dipengaruhi oleh jenis bahan benang yang digunakan (seperti PDO atau PCL), jumlah benang, serta respons tubuh pasien. Meskipun benang pada akhirnya akan terserap secara alami oleh tubuh, efek tarikan (lifting) tetap terbantu oleh stimulasi kolagen di sekitar batang hidung. Menjaga gaya hidup sehat dapat membantu mempertahankan bentuk hidung lebih lama.</p></div>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-4-content" role="region" aria-labelledby="rs-faq-4-trigger">
+          <p>Hasil perubahan kontur hidung yang lebih mancung dan tegas dapat langsung terlihat segera setelah tindakan selesai. Pembengkakan ringan pada beberapa hari pertama adalah hal wajar, dan bentuk hidung akan tampak makin natural dalam 1 hingga 2 minggu pascatindakan.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleNJFaq(this)">
-          <span>Apakah prosedur tanam benang hidung sakit?</span>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleNoseJobFaq(this)" aria-expanded="false" aria-controls="rs-faq-5-content" id="rs-faq-5-trigger">
+          <span>Berapa lama hasil Tanam Benang Hidung dapat bertahan?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Sebelum tindakan, area hidung umumnya diberikan anestesi lokal untuk membantu kenyamanan, sehingga rasa tidak nyaman dapat diminimalkan. Sebagian pasien hanya merasakan sensasi menekan atau ngilu ringan selama pemasangan benang. Tingkat kenyamanan dapat berbeda pada setiap orang dan akan dipantau oleh dokter selama prosedur.</p></div>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-5-content" role="region" aria-labelledby="rs-faq-5-trigger">
+          <p>Hasil Tanam Benang Hidung umumnya bertahan sekitar 1 hingga 2 tahun, tergantung jenis benang yang digunakan, jumlah benang, serta respons metabolisme tubuh. Meskipun benang diserap tubuh secara bertahap, jaringan kolagen baru yang terbentuk di sekitar benang membantu mempertahankan kontur hidung lebih lama.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleNJFaq(this)">
-          <span>Apa risiko dan efek samping dari tanam benang di hidung?</span>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleNoseJobFaq(this)" aria-expanded="false" aria-controls="rs-faq-6-content" id="rs-faq-6-trigger">
+          <span>Apakah prosedur Tanam Benang Hidung terasa sakit?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Memancungkan hidung tanpa operasi melalui tanam benang umumnya tergolong aman karena tidak melibatkan sayatan bedah dan menggunakan benang medis yang biocompatible (dapat diterima dengan baik oleh jaringan tubuh). Efek samping yang muncul umumnya minim, bersifat lokal, dan sementara. Pasien mungkin merasakan pembengkakan ringan, sedikit kemerahan, atau rasa ngilu dan kebas di area titik masuknya jarum. Reaksi ini biasanya mereda dalam kurun waktu 3 hingga 7 hari pasca tindakan.</p></div>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-6-content" role="region" aria-labelledby="rs-faq-6-trigger">
+          <p>Sebelum pemasangan benang, area hidung diberikan anestesi lokal sehingga rasa nyeri selama tindakan sangat minimal. Pasien umumnya hanya merasakan sedikit sensasi tekanan ringan saat benang ditempatkan, dan dokter akan memantau kenyamanan Anda sepanjang prosedur.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleNJFaq(this)">
-          <span>Apa larangan atau pantangan setelah melakukan tanam benang hidung?</span>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleNoseJobFaq(this)" aria-expanded="false" aria-controls="rs-faq-7-content" id="rs-faq-7-trigger">
+          <span>Apakah Tanam Benang Hidung aman dan apa saja efek sampingnya?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Untuk memastikan benang dapat berintegrasi dan menyangga struktur hidung dengan baik, ada beberapa perawatan pasca tindakan (aftercare) yang sebaiknya dipatuhi. Selama 1 hingga 2 minggu pertama, hindari menyentuh, memencet, menggosok, atau memijat area hidung. Anda juga disarankan menghindari pemakaian kacamata berbingkai berat karena dapat menekan batang hidung. Selain itu, biasakan tidur telentang, hindari ekspresi wajah berlebihan, serta tunda olahraga berat, berenang, dan sauna agar proses penyembuhan jaringan berjalan optimal.</p></div>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-7-content" role="region" aria-labelledby="rs-faq-7-trigger">
+          <p>Prosedur ini aman bila dikerjakan oleh dokter terlatih menggunakan benang medis steril yang <em>biocompatible</em> (dapat diserap tubuh). Efek samping yang mungkin muncul bersifat ringan dan sementara, seperti bengkak ringan, kemerahan, rasa kencang, atau ngilu di titik masuknya benang yang umumnya mereda dalam 3 hingga 7 hari.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleNJFaq(this)">
-          <span>Berapa harga atau biaya tanam benang hidung per sesi?</span>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleNoseJobFaq(this)" aria-expanded="false" aria-controls="rs-faq-8-content" id="rs-faq-8-trigger">
+          <span>Apa perbedaan Tanam Benang Hidung dengan filler hidung?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Harga tanam benang hidung di SOZO Skin Clinic mulai dari Rp 2.499.000 per sesi (dengan durasi tindakan sekitar 75 menit). Karena struktur anatomi wajah setiap pasien berbeda, kami menyarankan untuk menjadwalkan konsultasi gratis terlebih dahulu. Dokter akan melakukan penilaian (assessment) untuk menentukan jumlah benang yang paling sesuai dengan profil wajah Anda dan menginformasikan estimasi biaya secara transparan.</p></div>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-8-content" role="region" aria-labelledby="rs-faq-8-trigger">
+          <p>Tanam Benang Hidung menggunakan benang penyangga untuk memberi tarikan struktur yang tegas pada batang, ujung, maupun cuping hidung tanpa risiko cairan melebar ke samping. Sementara itu, filler hidung menggunakan gel <em>hyaluronic acid</em> untuk mengisi volume pada lekukan batang hidung. Dokter dapat merekomendasikan salah satu atau kombinasi keduanya sesuai struktur hidung Anda.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="toggleNJFaq(this)">
-          <span>Di mana saya bisa melakukan prosedur tanam benang hidung terdekat?</span>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleNoseJobFaq(this)" aria-expanded="false" aria-controls="rs-faq-9-content" id="rs-faq-9-trigger">
+          <span>Apa saja Do's &amp; Don'ts setelah Tanam Benang Hidung?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Anda dapat melakukan perawatan tanam benang hidung (nose threadlift) yang aman dan ditangani langsung oleh dokter estetika profesional di seluruh cabang SOZO Skin Clinic. Kami hadir di berbagai titik di area Jabodetabek, termasuk Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Temukan klinik yang paling mudah dijangkau melalui halaman <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang Sozo Skin Clinic Terdekat</a> dan jadwalkan konsultasi untuk mewujudkan profil hidung ideal Anda.</p></div>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-9-content" role="region" aria-labelledby="rs-faq-9-trigger">
+          <p><strong>Yang dianjurkan (Do's):</strong></p>
+          <ol>
+            <li>Tidur dalam posisi telentang dengan kepala sedikit lebih tinggi selama 1–2 minggu pertama agar hidung tidak tertekan.</li>
+            <li>Kompres dingin secara lembut di sekitar area pipi dekat hidung (tanpa menekan batang atau ujung hidung) bila ada bengkak ringan.</li>
+            <li>Konsumsi obat atau oleskan salep pascatindakan sesuai resep dan anjuran dokter.</li>
+            <li>Bersihkan wajah secara perlahan dengan pembersih lembut tanpa menggosok area hidung.</li>
+            <li>Segera konsultasikan ke dokter bila muncul nyeri berlebih, kemerahan yang makin meluas, atau tanda infeksi.</li>
+          </ol>
+          <p><strong>Yang harus dihindari (Don'ts):</strong></p>
+          <ol>
+            <li>Jangan menekan, memencet, menggosok, atau memijat batang maupun ujung hidung selama minimal 2 minggu.</li>
+            <li>Hindari pemakaian kacamata berat yang bertumpu di batang hidung selama 1–2 minggu pertama.</li>
+            <li>Hindari tidur tengkurap atau menyamping yang berisiko menggeser posisi benang.</li>
+            <li>Tunda penggunaan makeup di titik masuknya jarum selama minimal 24–48 jam.</li>
+            <li>Hindari olahraga berat, berenang, sauna, dan konsumsi alkohol selama 1–2 minggu pascatindakan.</li>
+            <li>Hindari perawatan facial, ekstraksi komedo di area hidung, atau laser selama minimal 2–4 minggu.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleNoseJobFaq(this)" aria-expanded="false" aria-controls="rs-faq-10-content" id="rs-faq-10-trigger">
+          <span>Di mana lokasi Tanam Benang Hidung terdekat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-10-content" role="region" aria-labelledby="rs-faq-10-trigger">
+          <p>Tanam Benang Hidung tersedia di seluruh cabang Sozo Skin Clinic di Indonesia (Jabodetabek, Bandung, Surabaya, Semarang, Jogja, Malang, Medan, dan Makassar). Anda dapat mengecek cabang terdekat di halaman <a href="https://sozoskinclinic.com/lokasi/">Lokasi Cabang Sozo Skin Clinic Terdekat</a> sebelum membuat jadwal.</p>
+        </div>
       </div>
 
     </div>
-  </div>
+  </section>
 </div>
 
-<script>
-  function toggleNJDescription() {
-    const content = document.getElementById('treatmentDescriptionNJ');
-    const btn = document.querySelector('.sozo-nj-read-more');
-    const btnText = document.getElementById('njReadMoreText');
-    if (!content || !btn) return;
-    content.classList.toggle('expanded');
-    btn.classList.toggle('active');
-    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
-  }
-  function toggleNJFaq(button) {
-    const answer = button.nextElementSibling;
-    if (!answer) return;
-    button.classList.toggle('active');
-    if (answer.style.maxHeight) {
-      answer.style.maxHeight = null;
-    } else {
-      answer.style.maxHeight = answer.scrollHeight + "px";
-    }
-  }
-</script>
+<!-- FLOATING WHATSAPP -->
+<a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Tanam%20Benang%20Hidung%20di%20Sozo%20%5Bsrc%3AORG-TBH%5D" class="sozo-wa-float" id="rsWaFloat" target="_blank" rel="noopener noreferrer" aria-label="Buat Jadwal via WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Buat Jadwal</span></a>
 
+<!-- data-no-optimize: dikecualikan dari LiteSpeed "Delay JS" supaya onclick FAQ & Baca Selengkapnya langsung jalan di klik pertama -->
+<script data-no-optimize="1">
+  function toggleNoseJobFaq(btn) {
+    var item = btn.closest('.rs-faq__item');
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    var widget = document.getElementById('sozo-nose-job-widget');
+    var items = widget ? widget.querySelectorAll('.rs-faq__item') : [];
+
+    Array.prototype.forEach.call(items, function (other) {
+      if (other !== item) {
+        other.querySelector('.rs-faq__question').setAttribute('aria-expanded', 'false');
+        other.classList.remove('is-open');
+      }
+    });
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    item.classList.toggle('is-open', !isOpen);
+  }
+
+  function toggleNoseJobDesc() {
+    var content = document.getElementById('rsContentExpandable');
+    var btn = document.getElementById('rsExpandBtn');
+    var btnText = document.getElementById('rsExpandBtnText');
+    if (!content || !btn || !btnText) return;
+
+    var isExpanded = content.classList.contains('is-expanded');
+    content.classList.toggle('is-expanded', !isExpanded);
+    btn.classList.toggle('is-active', !isExpanded);
+    btn.setAttribute('aria-expanded', String(!isExpanded));
+    btnText.textContent = !isExpanded ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+
+  (function initNoseJobWaFloat() {
+    var fab = document.getElementById('rsWaFloat');
+    if (!fab) return;
+    document.body.appendChild(fab);
+    var ticking = false;
+    function updateFab() {
+      ticking = false;
+      var zone = window.innerWidth <= 768 ? 700 : 400;
+      var distanceToBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      fab.classList.toggle('is-hidden', distanceToBottom < zone);
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(updateFab); }
+    }, { passive: true });
+    window.addEventListener('resize', updateFab);
+    window.addEventListener('load', updateFab);
+  })();
+</script>

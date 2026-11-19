@@ -110,7 +110,7 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [ ] Zo-Tox 10U (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/zo-tox-10u/`) — *sub-treatment baru*
     - [ ] Zo-Tox Premium (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/zo-tox-premium/`) — *sub-treatment baru*
 - [x] **Threadlift:** Tanam Benang Hub (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/`)
-    - [x] Tanam Benang Hidung (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/`) — Rp 2.499.000
+    - [x] Tanam Benang Hidung (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/`) — Rp 2.499.000 (schema digabung di `index.html`)
     - [ ] Facelift (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/`) — *sub-treatment baru, schema belum dibuat*
     - [ ] Perfect Facelift (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/perfect-facelift/`) — *sub-treatment baru, schema belum dibuat*
     - [ ] Perfect Nose Job (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/perfect-nose-job/`) — *sub-treatment baru, schema belum dibuat*
