@@ -74,7 +74,7 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [x] Brazilian Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/brazilian-hair-removal-treatment/`) — copy + FAQPage 10 pertanyaan diperbarui 2026-11-03, harga ikut price list paket IPL
 - [x] Body Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/hair-removal-body-treatment/`) — copy + FAQPage 10 pertanyaan diperbarui 2026-11-03, harga ikut price list paket IPL
 - [x] Underarm Hair Removal (`https://sozoskinclinic.com/hair-removal-treatment/underarm-hair-removal-treatment/`) — copy + FAQPage 10 pertanyaan diperbarui 2026-11-03 mengikuti dokumen internal Hair Removal
-- [x] Underarm Brightening (`https://sozoskinclinic.com/hair-removal-treatment/underarm-brightening-treatment/`)
+- [x] Underarm Brightening (`https://sozoskinclinic.com/hair-removal-treatment/underarm-brightening-treatment/`) — Rp 399.000 (copy + FAQPage 10 pertanyaan diperbarui 2026-11-18)
 - [ ] DPL Treatment (`https://sozoskinclinic.com/hair-removal-treatment/dpl-treatment/`) — *sub-treatment baru, schema belum dibuat*
 
 ### 🦱 3. Hair Treatment (Category Hub & Subs)
@@ -100,7 +100,7 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [x] Meso Bloatway (`https://sozoskinclinic.com/meso-treatment/meso-bloataway/`) — Rp 949.000
     - [x] Meso Cellulift (`https://sozoskinclinic.com/meso-treatment/meso-cellulift/`) — Rp 1.299.000
     - [x] Meso Metabolic Boost (`https://sozoskinclinic.com/meso-treatment/meso-metabolic-boost/`) — Rp 1.499.000
-- [x] **RF Treatment Hub** (`https://sozoskinclinic.com/radiofrequency-treatment/`)
+- [x] **RF Treatment Hub** (`https://sozoskinclinic.com/radiofrequency-treatment/`) — *UI & schema (WebPage + BreadcrumbList + FAQPage 8 pertanyaan) diperbarui ke pola HIFU di `treatment/slimming-treatment/radiofrequency/index.html`, 2026-11-18*
     - [x] RF Face / Wajah (`https://sozoskinclinic.com/radiofrequency-treatment/rf-face/`) — Rp 299.000
     - [x] RF Body (`https://sozoskinclinic.com/radiofrequency-treatment/rf-body/`) — Rp 299.000
 
@@ -118,18 +118,18 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [x] Infus Vitamin C Immune Glow (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow-injection/`) — Rp 199.000 (schema digabung di `index.html`)
     - [x] Premium Glow Infusion (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/`) — Rp 1.299.000 (schema digabung di `index.html`)
 - [x] **Filler Treatment Hub** (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/`)
-    - [x] Filler Dagu (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/filler-dagu/`) — Rp 5.499.000
+    - [x] Filler Dagu (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/filler-dagu/`) — Rp 3.799.000 (schema digabung di `index.html`)
     - [x] Korean Filler (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/korean-filler/`) — Rp 2.999.000
     - [ ] Premium Filler (`https://sozoskinclinic.com/injectable-treatment/filler-treatment/premium-filler/`) — *sub-treatment baru, schema belum dibuat*
 - [x] **Skin Booster Hub** (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/`)
     - [x] Aquashine Treatment (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/aquashine-treatment/`) — Rp 799.000
     - [x] Skin Booster DNA Salmon (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/dna-glow/`) — Rp 1.749.000
     - [x] Exosome Skin Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/exosome-skin-booster/`) — Rp 4.899.000
-    - [x] Profhilo (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/profhilo/`) — Rp 6.999.000
+    - [x] Profhilo (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/profhilo/`) — Rp 6.999.000 (schema digabung di `index.html`)
     - [x] Jalupro (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/jalupro-treatment/`) — Rp 8.598.000
-    - [x] Juvelook (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/juvelook/`) — Rp 5.599.000
-    - [x] Nucleofill (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/nucleofil-treatment/`) — Rp 6.499.000
-    - [x] Rejuran Healer (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-healer/`) — Rp 3.999.000
+    - [x] Juvelook (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/juvelook/`) — Rp 11.198.000 (schema digabung di `index.html`)
+    - [x] Nucleofill (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/nucleofil-treatment/`) — Rp 6.499.000 (schema digabung di `index.html`)
+    - [x] Rejuran Healer (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-healer/`) — Rp 6.499.000 (schema digabung di `index.html`)
     - [x] Rejuran HB (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-hb-treatment/`) — Rp 4.099.000
     - [x] Rejuran Eye (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-eye/`) — Rp 3.099.000
     - [x] Rejuran Skin Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-skin-booster/`) — Rp 2.999.000 (schema siap, WPCode belum dipasang)
@@ -152,11 +152,11 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [x] Acne Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-clear-facial/`)
     - [x] Acne Laser Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/acne-laser-facial/`)
     - [x] Brightening Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/brightening-facial/`)
-    - [x] Diamond Laser Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/diamond-laser-facial/`)
+    - [x] Diamond Laser Facial (`https://sozoskinclinic.com/skin-treatment/facial-treatment/diamond-laser-facial/`) — Rp 1.499.000 (copy + FAQPage 10 pertanyaan diperbarui 2026-11-17)
     - [x] Collagen Mask (`https://sozoskinclinic.com/skin-treatment/facial-treatment/collagen-mask/`) — Rp 199.000 (schema siap, WPCode belum dipasang)
     - [x] Sylfirm X (`https://sozoskinclinic.com/skin-treatment/facial-treatment/sylfirm-x/`)
 - [x] **Acne Treatment (Non-Facial)** (`https://sozoskinclinic.com/skin-treatment/acne-treatment/`)
-    - [x] Pore Detox (`https://sozoskinclinic.com/skin-treatment/acne-treatment/pore-detox/`) — Rp 799.000 (schema siap, WPCode belum dipasang)
+    - [x] Pore Detox (`https://sozoskinclinic.com/skin-treatment/acne-treatment/pore-detox/`) — Rp 799.000 (copy + FAQPage 10 pertanyaan dengan keyword pore detox & pores treatment diperbarui 2026-11-18, WPCode belum dipasang)
 - [x] **IPL Treatment Hub** (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/`)
     - [x] IPL Acne (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/ipl-acne/`) — Rp 399.000
     - [x] IPL Glow (`https://sozoskinclinic.com/skin-treatment/ipl-treatment/ipl-glow/`) — Rp 399.000
@@ -164,7 +164,7 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [x] Acne Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/acne-peel/`) — Rp 299.000
     - [x] Glow Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/glow-peel/`) — Rp 299.000
     - [x] Dazzling Glow Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/dazling-glow-peel/`) — Rp 889.000
-    - [x] Eternal Bloom Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/eternal-bloom-peel/`) — Rp 599.000
+    - [x] Eternal Bloom Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/eternal-bloom-peel/`) — Rp 599.000 (copy + FAQPage 10 pertanyaan diperbarui 2026-11-17)
     - [x] Korean LHALA Peel (`https://sozoskinclinic.com/skin-treatment/derma-peel-treatment/korean-lhala-peel/`) — Rp 299.000
 - [x] **Laser Treatment Hub (Laser Wajah)** (`https://sozoskinclinic.com/skin-treatment/laser-treatment/`)
     - [x] Laser CO2 (`https://sozoskinclinic.com/skin-treatment/laser-treatment/laser-co2-treatment/`)
