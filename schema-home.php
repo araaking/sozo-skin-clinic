@@ -71,9 +71,11 @@ if (!function_exists('sozo_homepage_schema')) {
                         'name'  => 'Indonesia',
                     ),
                     'sameAs'        => array(
-                        'https://www.facebook.com/p/Sozo-Skin-Clinic-100089987562109/',
+                        'https://www.facebook.com/profile.php?id=100075487615952',
                         'https://www.instagram.com/sozo.skinclinic/',
                         'https://www.tiktok.com/@sozo.skin.clinic',
+                        'https://shopee.co.id/sozoskin',
+                        'https://www.tokopedia.com/sozoskinclinic',
                     ),
                 ),
                 array(
