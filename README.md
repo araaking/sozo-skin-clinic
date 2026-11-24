@@ -84,7 +84,7 @@ Berikan data berikut ke AI sebelum meminta kode:
 - [x] PRP Hair Treatment (`https://sozoskinclinic.com/hair-treatment/prp-hair-treatment/`)
 - [x] Exosome Hair Treatment (`https://sozoskinclinic.com/hair-treatment/exosome-hair-treatment/`) — copy + FAQPage 10 pertanyaan diperbarui 2026-11-03 mengikuti dokumen internal, harga mulai Rp 7.598.000 per sesi
 - [x] Biolight Hair (`https://sozoskinclinic.com/hair-treatment/biolight-hair-treatment/`)
-- [x] Beard Treatment (`https://sozoskinclinic.com/hair-treatment/beard-grow-treatment/`)
+- [x] Beard Treatment (`https://sozoskinclinic.com/hair-treatment/beard-grow-treatment/`) — Rp 999.000 (schema digabung di `index.html`)
 - [x] Treatment Alis - Brow Grow (`https://sozoskinclinic.com/hair-treatment/brow-grow/`)
 - [x] Salmon DNA Hair Treatment (`https://sozoskinclinic.com/hair-treatment/salmon-dna-hair-treatment/`)
 - [x] Express Hair Therapy (`https://sozoskinclinic.com/hair-treatment/express-hair-therapy/`)
@@ -111,7 +111,7 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [ ] Zo-Tox Premium (`https://sozoskinclinic.com/injectable-treatment/zo-tox-treatment/zo-tox-premium/`) — *sub-treatment baru*
 - [x] **Threadlift:** Tanam Benang Hub (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/`)
     - [x] Tanam Benang Hidung (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/`) — Rp 2.499.000 (schema digabung di `index.html`)
-    - [ ] Facelift (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/`) — *sub-treatment baru, schema belum dibuat*
+    - [x] Facelift (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/`) — Rp 4.999.000 (schema digabung di `index.html`)
     - [ ] Perfect Facelift (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/perfect-facelift/`) — *sub-treatment baru, schema belum dibuat*
     - [ ] Perfect Nose Job (`https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/perfect-nose-job/`) — *sub-treatment baru, schema belum dibuat*
 - [x] **Infus Whitening Hub** (`https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/`)
@@ -137,7 +137,7 @@ Berikan data berikut ke AI sebelum meminta kode:
     - [x] Xela Rederm (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/xela-rederm-treatment/`) — Rp 4.499.000
     - [x] Glass Skin Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/glass-skin-booster/`) — Rp 2.199.000
     - [x] Treatment Mata Panda (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/eye-booster/`) — Rp 1.799.000
-    - [x] Pink Bomb Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-bomb-booster/`) — Rp 2.999.000
+    - [x] Pink Bomb Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-bomb-booster/`) — Rp 3.099.000 (schema digabung di `index.html`)
     - [x] Pink Lips Booster (`https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-lips-booster/`) — Rp 1.799.000
 
 ### 🧪 6. Advanced Skin & Facial Treatment

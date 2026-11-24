@@ -1,10 +1,20 @@
 <!-- ============================================================
-     SCHEMA MARKUP - Facelift Treatment
-     URL       : https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/
-     Versi     : 1.0
-     Tanggal   : 2026-07-29
-     Catatan   : Pasang di <head> atau via WPCode kondisi
-                 halaman ini saja (Page URL contains facelift)
+     UI FACELIFT - SOZO SKIN CLINIC
+     URL     : https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/
+     Style   : Sozo Design System V1.1 (design-system/), Elementor Safe, scoped
+     Layout  : Sama dengan halaman Tanam Benang Hidung, Korean Filler, Juvelook,
+               Rejuran Healer & Profhilo
+     Seksi   : Breadcrumb -> Hero (H1, masalah, deskripsi, info, CTA Buat
+               Jadwal + Lihat Lokasi, gambar)
+               -> Tentang Treatment (deskripsi ringkas + Baca Selengkapnya)
+               -> Lokasi (chip kota/klinik) -> FAQ -> Floating WhatsApp
+     Pakai   : Copy seluruh file ke widget HTML Elementor halaman ini.
+     CSS+JS  : Sudah digabung di file ini (Font Awesome preload, Poppins,
+               CSS .sozo-sku-facelift-wrapper, JS FAQ, Baca Selengkapnya, floating WA).
+     JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList + FAQPage).
+               Isi FAQPage harus sama dengan FAQ di bawah. schema-markup.html
+               tidak dipakai lagi untuk halaman ini.
+     Backup  : Versi live sebelum revamp (24 Nov 2026) ada di backup.html.
      ============================================================ -->
 
 <script type="application/ld+json">
@@ -12,10 +22,10 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MedicalWebPage",
+      "@type": "WebPage",
       "@id": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/#webpage",
       "url": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/",
-      "name": "Facelift Tanpa Operasi untuk Membantu Mengencangkan Kulit Wajah | Sozo Skin Clinic",
+      "name": "Facelift Threadlift untuk Pipi Kendur & Rahang",
       "description": "Facelift merupakan treatment pengencangan wajah tanpa operasi yang dilakukan menggunakan benang medis (threadlift) untuk membantu mengangkat jaringan kulit yang mulai mengendur. Perawatan ini membantu membuat kontur wajah tampak lebih tegas, mengurangi kesan kendur pada area tertentu, serta merangsang pembentukan kolagen sehingga kulit terlihat lebih kencang dan awet muda.",
       "inLanguage": "id",
       "isPartOf": {
@@ -26,15 +36,6 @@
       },
       "breadcrumb": {
         "@id": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/#breadcrumb"
-      },
-      "specialty": "http://schema.org/Dermatology",
-      "image": "https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/facelift-sozo-skin-clinic.webp",
-      "potentialAction": {
-        "@type": "ReadAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/"
-        }
       }
     },
     {
@@ -44,60 +45,37 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Home",
+          "name": "Beranda",
           "item": "https://sozoskinclinic.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
+          "name": "Treatment",
+          "item": "https://sozoskinclinic.com/treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
           "name": "Injectable Treatment",
           "item": "https://sozoskinclinic.com/injectable-treatment/"
         },
         {
           "@type": "ListItem",
-          "position": 3,
+          "position": 4,
           "name": "Threadlift Treatment",
           "item": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/"
         },
         {
           "@type": "ListItem",
-          "position": 4,
-          "name": "Facelift Treatment",
-          "item": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/"
+          "position": 5,
+          "name": "Facelift"
         }
       ]
     },
     {
-      "@type": "Service",
-      "@id": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/#service",
-      "name": "Facelift Treatment",
-      "alternateName": "Facelift Threadlift",
-      "description": "Facelift merupakan treatment pengencangan wajah tanpa operasi yang dilakukan menggunakan benang medis (threadlift) untuk membantu mengangkat jaringan kulit yang mulai mengendur. Perawatan ini membantu membuat kontur wajah tampak lebih tegas, mengurangi kesan kendur pada area tertentu, serta merangsang pembentukan kolagen sehingga kulit terlihat lebih kencang dan awet muda.",
-      "url": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/",
-      "serviceType": "Threadlift",
-      "category": "Injectable Treatment",
-      "provider": {
-        "@id": "https://sozoskinclinic.com/#organization"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Indonesia"
-      },
-      "image": "https://asset.sozoskinclinic.com/wp-content/uploads/2024/03/facelift-sozo-skin-clinic.webp",
-      "offers": {
-        "@type": "Offer",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "4999000",
-          "priceCurrency": "IDR",
-          "valueAddedTaxIncluded": true,
-          "description": "Harga Mulai"
-        }
-      }
-    },
-    {
       "@type": "FAQPage",
-      "@id": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/#faqpage",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/facelift/#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -128,7 +106,7 @@
           "name": "Bagaimana cara kerja Facelift?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Facelift bekerja dengan memasang benang medis pada lapisan kulit untuk membantu mengangkat jaringan yang mulai turun. Setelah benang terpasang, jaringan kulit akan mendapatkan efek lifting sekaligus stimulasi pembentukan kolagen alami. Kombinasi kedua mekanisme tersebut membantu membuat wajah tampak lebih kencang dan hasil treatment berkembang secara bertahap dalam beberapa minggu setelah tindakan."
+            "text": "Facelift bekerja dengan memasang benang medis pada lapisan kulit untuk membantu mengangkat jaringan yang mulai turun. Setelah benang terpasang, jaringan kulit akan mendapatkan efek lifting sekaligus stimulasi pembentukan kolagen alami. Kombinasi kedua mekanisme tersebut membantu membuat wajah tampak lebih kencang dan hasil treatment berkembang secara bertahap dalam beberapa minggu setelah tindakan"
           }
         },
         {
@@ -208,11 +186,1500 @@
           "name": "Di mana saya bisa melakukan Facelift?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Facelift tersedia di cabang SOZO Skin Clinic. Anda dapat menghubungi tim SOZO melalui WhatsApp untuk mengetahui ketersediaan jadwal treatment di cabang terdekat. Sebelum tindakan dilakukan, dokter akan melakukan konsultasi dan analisis kondisi wajah agar treatment yang diberikan sesuai dengan kebutuhan serta tujuan perawatan Anda."
+            "text": "Facelift tersedia di cabang SOZO Skin Clinic. Anda dapat menghubungi tim SOZO melalui WhatsApp untuk mengetahui ketersediaan jadwal treatment di cabang terdekat. Sebelum tindakan dilakukan, dokter akan melakukan konsultasi dan analisis kondisi wajah agar treatment yang diberikan sesuai dengan kebutuhan serta tujuan perawatan Anda. Lokasi Cabang SOZO Skin Clinic Terdekat"
           }
         }
       ]
     }
   ]
 }
+</script>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+<!-- Font resmi Sozo: Poppins 400-800, di-load sekali -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>/* ============================================================
+     Token Sozo Design System V1.1, di-scope ke wrapper supaya
+     tidak bocor ke halaman Elementor lain. Density: compact
+     (treatment detail), sama dengan halaman Restylane Skin Booster.
+     ============================================================ */
+  .sozo-sku-facelift-wrapper {
+    /* Color */
+    --color-brand-primary: #1A2080;
+    --color-brand-almond: #E9DFD5;
+    --color-white: #FFFFFF;
+    --color-text-primary: #171715;
+    --color-text-secondary: #41413E;
+    --color-text-muted: #777771;
+    --color-text-on-primary: #FFFFFF;
+    --color-border: #DFDBD4;
+    --color-border-strong: #C8C3BA;
+    --color-primary-hover: #151A6D;
+    --color-primary-subtle: rgba(26, 32, 128, 0.05);
+
+    /* Typography */
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --text-section-title: clamp(24px, 3vw, 32px);
+    --text-body: 16px;
+    --text-body-sm: 14px;
+    --text-label: 12px;
+    --leading-caption: 1.40;
+    --tracking-eyebrow: 0.12em;
+    --tracking-badge: 0.02em;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
+
+    /* Layout (compact: treatment detail) */
+    --container-max: 1280px;
+    --container-pad: 32px;
+    --section-y: var(--space-6);
+
+    /* Shape */
+    --radius-lg: 16px;
+    --radius-full: 999px;
+    --focus-ring: 2px solid var(--color-brand-primary);
+    --focus-offset: 3px;
+
+    /* Motion */
+    --duration-fast: 180ms;
+    --duration-card: 220ms;
+    --ease-standard: ease;
+
+    font-family: var(--font-family-primary) !important;
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-white) !important;
+    line-height: 1.5 !important;
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-facelift-wrapper {
+      --container-pad: 20px;
+      --section-y: var(--space-5);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-facelift-wrapper {
+      --duration-fast: 0ms;
+      --duration-card: 0ms;
+    }
+  }
+
+  .sozo-sku-facelift-wrapper,
+  .sozo-sku-facelift-wrapper * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-sku-facelift-wrapper h1,
+  .sozo-sku-facelift-wrapper h2,
+  .sozo-sku-facelift-wrapper h3,
+  .sozo-sku-facelift-wrapper p,
+  .sozo-sku-facelift-wrapper ul,
+  .sozo-sku-facelift-wrapper ol {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: var(--font-family-primary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper a {
+    text-decoration: none !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-container {
+    width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
+    margin-inline: auto !important;
+  }
+
+  /* ============ BUTTON (design-system/components/button.md) ============ */
+  .sozo-sku-facelift-wrapper .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--space-2) !important;
+    min-height: 48px !important;
+    padding: 0 var(--space-6) !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--radius-full) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .btn:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .btn:active {
+    transform: translateY(0) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: var(--focus-offset) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .btn--primary,
+  .sozo-sku-facelift-wrapper .btn--primary:visited {
+    background-color: var(--color-brand-primary) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .btn--primary:hover {
+    background-color: var(--color-primary-hover) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .btn--outline,
+  .sozo-sku-facelift-wrapper .btn--outline:visited {
+    background-color: transparent !important;
+    border-color: var(--color-brand-primary) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .btn--outline:hover {
+    background-color: var(--color-primary-subtle) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* CTA hero: Buat Jadwal + Lihat Lokasi, selalu sejajar */
+  .sozo-sku-facelift-wrapper .rs-cta {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-3) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .btn__icon {
+    width: 16px !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    flex: none !important;
+  }
+
+  /* ============ BADGE (design-system/components/badge.md) ============ */
+  .sozo-sku-facelift-wrapper .badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 30px !important;
+    padding: 0 var(--space-3) !important;
+    border-radius: var(--radius-full) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-badge) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .badge--brand {
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .badge--label {
+    min-height: 30px !important;
+    padding: 0 18px !important;
+    margin-bottom: var(--space-4) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    letter-spacing: 0.25em !important;
+    text-transform: uppercase !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ BREADCRUMB (design-system/components/breadcrumb.md) ============ */
+  .sozo-sku-facelift-wrapper .breadcrumb {
+    padding-top: var(--space-4) !important;
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .breadcrumb__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: 13px !important;
+    line-height: var(--leading-caption) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .breadcrumb__list li {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-facelift-wrapper .breadcrumb__list li + li::before {
+    content: "/" !important;
+    color: var(--color-border-strong) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .breadcrumb a {
+    color: var(--color-text-muted) !important;
+    font-weight: 500 !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .breadcrumb a:hover {
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .breadcrumb a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .breadcrumb__current {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ HERO ============ */
+  .sozo-sku-facelift-wrapper .rs-hero {
+    padding-bottom: var(--section-y) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-hero__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important;
+    gap: var(--space-8) !important;
+    align-items: center !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-hero__title {
+    margin-bottom: var(--space-4) !important;
+    font-size: clamp(28px, 2.8vw, 38px) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Masalah yang bisa diatasi */
+  .sozo-sku-facelift-wrapper .rs-problems {
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-problems__label {
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-eyebrow) !important;
+    text-transform: uppercase !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-problems__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-problems__list li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Paragraf intro: justify, selebar kolom (sama dengan Infus Whitening) */
+  .sozo-sku-facelift-wrapper .rs-hero__desc {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    text-align: justify !important;
+    hyphens: auto !important;
+  }
+
+  /* Info: durasi, frekuensi, harga */
+  .sozo-sku-facelift-wrapper .rs-info {
+    list-style: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    margin-bottom: var(--space-5) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-info__item {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-3) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: var(--space-4) !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-info__item + .rs-info__item {
+    border-left: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-info__icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-info__text {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-info__label {
+    font-size: var(--text-label) !important;
+    font-weight: 500 !important;
+    line-height: var(--leading-caption) !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-info__value {
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Gambar treatment: standalone, rasio 4:3 (design-system/components/image.md) */
+  .sozo-sku-facelift-wrapper .rs-hero__media img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  /* ============ BOTTOM CONTENT (DESKRIPSI TREATMENT) ============ */
+  .sozo-sku-facelift-wrapper .rs-content {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-section-title {
+    margin-bottom: var(--space-4) !important;
+    font-size: var(--text-section-title) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-content__desc {
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    margin-bottom: var(--space-4) !important;
+    text-align: justify !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-content__desc a,
+  .sozo-sku-facelift-wrapper .rs-content__desc a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-content__desc a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-content__subtitle {
+    margin: var(--space-2) 0 var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-content__checklist {
+    list-style: none !important;
+    margin: 0 0 var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-content__checklist li {
+    position: relative !important;
+    padding-left: 28px !important;
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-content__checklist li::before {
+    content: "\2713" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    font-weight: 700 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Tahapan treatment: daftar bernomor */
+  .sozo-sku-facelift-wrapper .rs-content__steps {
+    list-style: none !important;
+    counter-reset: rs-step !important;
+    margin: 0 0 var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-content__steps li {
+    position: relative !important;
+    counter-increment: rs-step !important;
+    padding-left: 36px !important;
+    margin-bottom: var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-content__steps li::before {
+    content: counter(rs-step) !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-content__steps strong {
+    color: var(--color-text-primary) !important;
+    font-weight: 600 !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-expandable {
+    display: grid !important;
+    grid-template-rows: 0fr !important;
+    transition: grid-template-rows var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-expandable.is-expanded {
+    grid-template-rows: 1fr !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-expandable__inner {
+    overflow: hidden !important;
+    min-height: 0 !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-expand-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-top: var(--space-1) !important;
+    color: var(--color-brand-primary) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard),
+                opacity var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-expand-btn:hover {
+    color: var(--color-primary-hover) !important;
+    opacity: 0.85 !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-expand-btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-expand-btn svg {
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-expand-btn.is-active svg {
+    transform: rotate(180deg) !important;
+  }
+
+  /* ============ LOKASI ============
+     Tersedia di semua cabang: kartu dengan info kiri + chip kota kanan.
+     Chip mengarah ke /lokasi/[kota]/ (daftar kota sama dengan hub /lokasi/).
+     Mobile: info di atas, chip wrap di bawah. */
+  .sozo-sku-facelift-wrapper .rs-loc {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+    scroll-margin-top: 80px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__intro {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) !important;
+    gap: var(--space-6) !important;
+    align-items: center !important;
+    padding: var(--space-6) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+    background-color: var(--color-white) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-3) !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__name {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__name i {
+    font-size: 0.85em !important;
+    flex: none !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__text {
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.6 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-3) !important;
+    margin-top: var(--space-2) !important;
+  }
+
+  /* Tombol kartu lokasi: ukuran small (btn--sm di design system) */
+  .sozo-sku-facelift-wrapper .rs-loc__actions .btn {
+    min-height: 40px !important;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__actions .btn__icon {
+    width: 14px !important;
+    font-size: 14px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__list li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__chip,
+  .sozo-sku-facelift-wrapper .rs-loc__chip:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 36px !important;
+    padding: 0 var(--space-4) !important;
+    border: 1px solid var(--color-border-strong) !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-white) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    transition: background-color var(--duration-fast) var(--ease-standard),
+                border-color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__chip:hover {
+    border-color: var(--color-brand-primary) !important;
+    background-color: var(--color-primary-subtle) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-loc__chip:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* ============ FAQ ============ */
+  .sozo-sku-facelift-wrapper .rs-faq {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__item {
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__question {
+    width: 100% !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: var(--space-4) !important;
+    padding: 18px 0 !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    color: var(--color-text-primary) !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__question:hover {
+    color: var(--color-brand-primary) !important;
+    background: none !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__question:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__question > span {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__question svg {
+    flex-shrink: 0 !important;
+    color: var(--color-brand-primary) !important;
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__item.is-open .rs-faq__question svg {
+    transform: rotate(180deg) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__answer {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__item.is-open .rs-faq__answer {
+    max-height: 1000px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__answer p {
+    padding-bottom: 18px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__answer a,
+  .sozo-sku-facelift-wrapper .rs-faq__answer a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__answer a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* ============================================================
+     RESPONSIVE (breakpoint design system: 1024 / 768 / 480)
+     ============================================================ */
+  @media (max-width: 1024px) {
+    /* Hero satu kolom: teks dulu, gambar di bawah CTA */
+    .sozo-sku-facelift-wrapper .rs-hero__grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: var(--space-5) !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-hero__media img {
+      aspect-ratio: 16 / 9 !important;
+      max-height: 400px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-facelift-wrapper .breadcrumb {
+      padding-top: var(--space-3) !important;
+      margin-bottom: var(--space-3) !important;
+    }
+
+    /* Breadcrumb: font kecil supaya muat maksimal 2 baris.
+       Tiap item tidak dipotong di tengah (nowrap per item). */
+    .sozo-sku-facelift-wrapper .breadcrumb__list {
+      flex-wrap: wrap !important;
+    }
+
+    .sozo-sku-facelift-wrapper .breadcrumb__list li {
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-facelift-wrapper .breadcrumb__list,
+    .sozo-sku-facelift-wrapper .breadcrumb__list li,
+    .sozo-sku-facelift-wrapper .breadcrumb__list a,
+    .sozo-sku-facelift-wrapper .breadcrumb__current {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
+    }
+
+    .sozo-sku-facelift-wrapper .breadcrumb__list,
+    .sozo-sku-facelift-wrapper .breadcrumb__list li {
+      gap: 4px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .breadcrumb__list li {
+      flex: none !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-hero__title {
+      margin-bottom: var(--space-2) !important;
+      font-size: 20px !important;
+      line-height: 1.25 !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-problems {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-problems__label {
+      margin-bottom: 6px !important;
+      font-size: 11px !important;
+    }
+
+    /* Badge masalah: satu baris, geser ke samping kalau tidak muat (EX-04) */
+    .sozo-sku-facelift-wrapper .rs-problems__list {
+      flex-wrap: nowrap !important;
+      gap: 6px !important;
+      overflow-x: auto !important;
+      scrollbar-width: none !important;
+      -webkit-overflow-scrolling: touch !important;
+      -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+      mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-problems__list::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .sozo-sku-facelift-wrapper .badge {
+      flex: none !important;
+      min-height: 26px !important;
+      padding: 0 10px !important;
+      font-size: 11px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-hero__desc {
+      margin-bottom: var(--space-4) !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Info tetap 3 kolom, ikon disembunyikan supaya ringkas */
+    .sozo-sku-facelift-wrapper .rs-info {
+      margin-bottom: var(--space-4) !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-info__item {
+      justify-content: center !important;
+      padding: 10px 6px !important;
+      text-align: center !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-info__icon {
+      display: none !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-info__label {
+      font-size: 11px !important;
+      line-height: 1.3 !important;
+    }
+
+    /* Nilai tidak dipotong ke baris baru (mis. "Rp 7.798.000") */
+    .sozo-sku-facelift-wrapper .rs-info__value {
+      font-size: 13px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-facelift-wrapper .btn {
+      min-height: 44px !important;
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .btn__icon {
+      width: 15px !important;
+      font-size: 15px !important;
+    }
+
+    /* Bottom content + FAQ: skala font sama dengan hero (H2 < H1 20px, body 13px) */
+    .sozo-sku-facelift-wrapper .rs-section-title {
+      margin-bottom: var(--space-3) !important;
+      font-size: 18px !important;
+      line-height: 1.3 !important;
+    }
+
+    .sozo-sku-facelift-wrapper .badge--label {
+      min-height: 26px !important;
+      margin-bottom: var(--space-3) !important;
+      padding: 0 12px !important;
+      font-size: 10px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-content__subtitle {
+      margin: var(--space-1) 0 var(--space-2) !important;
+      font-size: 14px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-content__desc,
+    .sozo-sku-facelift-wrapper .rs-content__checklist li,
+    .sozo-sku-facelift-wrapper .rs-content__steps li {
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-content__checklist li {
+      padding-left: 22px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-content__steps li {
+      padding-left: 30px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-content__steps li::before {
+      top: 1px !important;
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 11px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-content__desc {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-expand-btn {
+      font-size: 13px !important;
+    }
+
+    /* CTA hero & kartu lokasi sejajar, masing-masing setengah lebar */
+    .sozo-sku-facelift-wrapper .rs-cta .btn,
+    .sozo-sku-facelift-wrapper .rs-loc__actions .btn {
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      padding: 0 var(--space-3) !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-loc__intro {
+      margin-bottom: var(--space-4) !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-loc__card {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: var(--space-4) !important;
+      padding: var(--space-4) !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-loc__name {
+      font-size: 15px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-loc__text {
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-loc__list {
+      gap: 6px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-loc__chip,
+    .sozo-sku-facelift-wrapper .rs-loc__chip:visited {
+      min-height: 32px !important;
+      padding: 0 var(--space-3) !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-faq__question {
+      padding: 12px 0 !important;
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-faq__question svg {
+      width: 18px !important;
+      height: 18px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-faq__answer p {
+      padding-bottom: 12px !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+  }
+
+  /* HP kecil (320–360px): breadcrumb tetap maksimal 2 baris, harga tetap 1 baris */
+  @media (max-width: 360px) {
+    .sozo-sku-facelift-wrapper .breadcrumb__list,
+    .sozo-sku-facelift-wrapper .breadcrumb__list li,
+    .sozo-sku-facelift-wrapper .breadcrumb__list a,
+    .sozo-sku-facelift-wrapper .breadcrumb__current {
+      font-size: 10px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .breadcrumb__list,
+    .sozo-sku-facelift-wrapper .breadcrumb__list li {
+      gap: 2px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-info__item {
+      padding: 10px 4px !important;
+    }
+
+    .sozo-sku-facelift-wrapper .rs-info__value {
+      font-size: 12px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sozo-sku-facelift-wrapper .btn {
+      font-size: 13px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-facelift-wrapper .btn:hover {
+      transform: none !important;
+    }
+  }
+
+  /* ============ FLOATING WHATSAPP (design-system/components/whatsapp-cta.md) ============
+     JS memindahkan tombol ke <body> supaya position: fixed tidak terkunci
+     oleh transform di container Elementor. Karena itu token ditulis langsung
+     di class ini, bukan lewat wrapper. Tombol tampil sejak halaman dibuka.
+     Bentuk pill + label "Buat Jadwal", sama dengan CTA hero. */
+  .sozo-wa-float {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 40px !important;
+    z-index: 900 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 48px !important;
+    padding: 0 24px !important;
+    border-radius: 999px !important;
+    background-color: #E9DFD5 !important;
+    color: #1A2080 !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 16px 40px rgba(23, 23, 21, 0.10) !important;
+    text-decoration: none !important;
+    transition:
+      opacity 180ms ease,
+      visibility 180ms ease,
+      transform 180ms ease,
+      background-color 180ms ease !important;
+  }
+
+  /* Disembunyikan saat footer terlihat supaya tidak menutupi link footer */
+  .sozo-wa-float.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(8px) !important;
+  }
+
+  /* Hover berubah ke biru brand supaya jelas tombol bisa diklik */
+  .sozo-wa-float:hover {
+    background-color: #1A2080 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-wa-float:focus-visible {
+    outline: 2px solid #1A2080 !important;
+    outline-offset: 3px !important;
+  }
+
+  .sozo-wa-float i {
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  /* Mobile: lebih ringkas supaya tidak banyak menutupi konten */
+  @media (max-width: 768px) {
+    .sozo-wa-float {
+      right: 16px !important;
+      bottom: 28px !important;
+      gap: 6px !important;
+      height: 42px !important;
+      padding: 0 16px !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-wa-float i {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-wa-float,
+    .sozo-wa-float:hover {
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* List di jawaban FAQ (mis. aftercare, harga paket) */
+  .sozo-sku-facelift-wrapper .rs-faq__answer ol,
+  .sozo-sku-facelift-wrapper .rs-faq__answer ul {
+    margin: -6px 0 18px !important;
+    padding-left: 20px !important;
+  }
+
+  .sozo-sku-facelift-wrapper .rs-faq__answer ol { list-style: decimal !important; }
+  .sozo-sku-facelift-wrapper .rs-faq__answer ul { list-style: disc !important; }
+
+  .sozo-sku-facelift-wrapper .rs-faq__answer li {
+    margin-bottom: 4px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+</style>
+
+<div class="sozo-sku-facelift-wrapper" id="sozo-facelift-widget">
+
+  <!-- ===== HERO ===== -->
+  <section class="rs-hero">
+    <div class="rs-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li><a href="https://sozoskinclinic.com/treatment/">Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/injectable-treatment/">Injectable Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/">Threadlift Treatment</a></li>
+          <li><span class="breadcrumb__current" aria-current="page">Facelift</span></li>
+        </ol>
+      </nav>
+
+      <div class="rs-hero__grid">
+        <div class="rs-hero__content">
+          <h1 class="rs-hero__title">Facelift Threadlift untuk Pipi Kendur &amp; Rahang</h1>
+
+          <div class="rs-problems">
+            <p class="rs-problems__label" id="rs-problems-label">Membantu mengatasi</p>
+            <ul class="rs-problems__list" aria-labelledby="rs-problems-label">
+              <li class="badge badge--brand">Pipi Kendur</li>
+              <li class="badge badge--brand">Rahang Kurang Tegas</li>
+              <li class="badge badge--brand">Kulit Wajah Kendur</li>
+            </ul>
+          </div>
+
+          <p class="rs-hero__desc">
+            Facelift merupakan treatment pengencangan wajah tanpa operasi yang dilakukan menggunakan benang medis (<em>threadlift</em>) untuk membantu mengangkat jaringan kulit yang mulai mengendur. Perawatan ini membantu membuat kontur wajah tampak lebih tegas, mengurangi kesan kendur pada area tertentu, serta merangsang pembentukan kolagen sehingga kulit terlihat lebih kencang dan awet muda.
+          </p>
+
+          <ul class="rs-info">
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Estimasi Treatment</span>
+              <span class="rs-info__value">90 Menit</span>
+            </span>
+          </li>
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Frekuensi Sesi</span>
+              <span class="rs-info__value">Tiap 6–8 Bulan</span>
+            </span>
+          </li>
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" x2="7.01" y1="7" y2="7"></line></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Harga Mulai</span>
+              <span class="rs-info__value">Rp 4.999.000</span>
+            </span>
+          </li>
+          </ul>
+
+          <div class="rs-cta">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20threadlift%20%5Bsumber:%20ORG-threadlift%20treatment%5D" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+            <a href="#rs-lokasi" class="btn btn--outline"><i class="fa-solid fa-location-dot btn__icon" aria-hidden="true"></i><span>Lihat Lokasi</span></a>
+          </div>
+        </div>
+
+        <div class="rs-hero__media">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/prosedur-facelift.webp" alt="Facelift threadlift tanpa operasi untuk pipi kendur dan rahang di Sozo Skin Clinic" width="800" height="600" fetchpriority="high" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TENTANG TREATMENT ===== -->
+  <section class="rs-content" aria-labelledby="rs-content-title">
+    <div class="rs-container">
+      <span class="badge badge--label">TENTANG TREATMENT</span>
+      <h2 class="rs-section-title" id="rs-content-title">Mengenal Facelift: Tarik Benang Wajah Tanpa Operasi</h2>
+
+      <p class="rs-content__desc">
+        Facelift adalah treatment pengencangan wajah tanpa operasi yang menggunakan benang medis untuk membantu mengangkat jaringan kulit yang mulai turun atau kehilangan elastisitas. Benang dipasang pada area tertentu sesuai kondisi dan kebutuhan pasien, sehingga membantu memberikan efek <em>lifting</em> sekaligus menopang jaringan kulit agar wajah tampak lebih kencang dan terdefinisi.
+      </p>
+      <p class="rs-content__desc">
+        Selain memberikan efek pengangkatan secara langsung, benang yang digunakan juga membantu merangsang pembentukan kolagen alami pada kulit. Seiring waktu, proses ini membantu membuat hasil treatment tampak lebih natural serta mendukung kualitas kulit agar tetap terlihat sehat.
+      </p>
+
+      <div class="rs-expandable" id="rsContentExpandable">
+        <div class="rs-expandable__inner">
+          <h3 class="rs-content__subtitle">Manfaat Facelift</h3>
+          <ul class="rs-content__checklist">
+            <li>Membantu mengangkat kulit wajah yang mulai mengendur.</li>
+            <li>Membantu membuat kontur wajah tampak lebih tegas dan proporsional.</li>
+            <li>Membantu memperjelas garis rahang (<em>jawline</em>).</li>
+            <li>Membantu mengangkat area pipi yang mulai turun.</li>
+            <li>Membantu mengurangi kesan wajah lelah akibat kulit yang kehilangan kekencangan.</li>
+            <li>Membantu merangsang pembentukan kolagen alami pada kulit.</li>
+            <li>Membantu membuat wajah tampak lebih segar dan awet muda.</li>
+            <li>Membantu mendapatkan efek pengencangan wajah tanpa prosedur operasi.</li>
+          </ul>
+
+          <h3 class="rs-content__subtitle">Mengapa Kulit Wajah Mulai Mengendur?</h3>
+          <p class="rs-content__desc">
+            Produksi kolagen dan elastin yang berfungsi menjaga kekencangan kulit akan semakin berkurang seiring bertambahnya usia, sehingga jaringan penyangga kulit menjadi lebih lemah. Akibatnya, kulit mulai kehilangan elastisitas, area pipi tampak turun, garis rahang menjadi kurang tegas, dan kontur wajah tidak lagi sejelas sebelumnya.
+          </p>
+          <p class="rs-content__desc">
+            Selain faktor usia, paparan sinar ultraviolet, kebiasaan merokok, stres, perubahan berat badan, serta gaya hidup yang kurang sehat juga dapat mempercepat terjadinya kekenduran kulit.
+          </p>
+
+          <h3 class="rs-content__subtitle">Tahapan Facelift (90 Menit)</h3>
+          <ol class="rs-content__steps">
+            <li><strong>Konsultasi dan analisis kondisi wajah.</strong> Dokter memeriksa struktur wajah, elastisitas kulit, tingkat kekenduran, serta area yang ingin diperbaiki, lalu merencanakan titik pemasangan benang sesuai kebutuhan Anda.</li>
+            <li><strong>Persiapan sebelum tindakan.</strong> Area wajah dibersihkan, dokter menandai area pemasangan benang, dan anestesi lokal dapat diberikan agar tindakan lebih nyaman.</li>
+            <li><strong>Pemasangan benang threadlift.</strong> Dokter memasukkan benang medis ke lapisan kulit melalui titik masuk yang telah ditentukan, lalu memosisikannya untuk mengangkat jaringan kulit yang kendur. Paket Facelift menggunakan 4 benang.</li>
+            <li><strong>Evaluasi hasil dan edukasi setelah treatment.</strong> Dokter mengevaluasi hasil <em>lifting</em> dan posisi benang, lalu menjelaskan aktivitas yang perlu dihindari, cara merawat area tindakan, serta jadwal kontrol bila diperlukan.</li>
+          </ol>
+
+          <h3 class="rs-content__subtitle">Kapan Hasil Facelift Terlihat?</h3>
+          <p class="rs-content__desc">
+            Sebagian efek <em>lifting</em> dapat terlihat segera setelah tindakan. Seiring berkurangnya pembengkakan dan berlangsungnya proses pembentukan kolagen, hasil treatment biasanya tampak semakin optimal dalam waktu sekitar 2 hingga 4 minggu.
+          </p>
+
+          <h3 class="rs-content__subtitle">Siapa yang Cocok Menjalani Facelift?</h3>
+          <p class="rs-content__desc">
+            Facelift umumnya cocok bagi Anda yang mulai mengalami kulit wajah mengendur, pipi yang tampak turun, garis rahang yang kehilangan definisi, atau ingin mendapatkan efek pengencangan wajah tanpa menjalani prosedur operasi dengan waktu pemulihan yang relatif lebih singkat.
+          </p>
+          <p class="rs-content__desc">
+            Sebelum treatment, dokter akan mengevaluasi kondisi kulit, tingkat elastisitas, struktur wajah, serta tujuan perawatan Anda untuk menentukan apakah Facelift merupakan pilihan yang sesuai.
+          </p>
+
+          <h3 class="rs-content__subtitle">Treatment Threadlift Terkait</h3>
+          <p class="rs-content__desc">
+            Untuk area smile line dan <em>sagging jowl</em>, dokter dapat merekomendasikan <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/perfect-facelift/">Perfect Facelift</a> dengan 8 benang agar wajah tampak lebih kencang menyeluruh. Untuk membentuk hidung tanpa operasi, tersedia <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/tanam-benang-hidung/">Tanam Benang Hidung</a>. Lihat pilihan lainnya di halaman <a href="https://sozoskinclinic.com/injectable-treatment/threadlift-treatment/">Threadlift Treatment</a>.
+          </p>
+        </div>
+      </div>
+
+      <button type="button" class="rs-expand-btn" id="rsExpandBtn" onclick="toggleFaceliftDesc()" aria-expanded="false" aria-controls="rsContentExpandable">
+        <span id="rsExpandBtnText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== LOKASI (Facelift tersedia di semua cabang) ===== -->
+  <section class="rs-loc" id="rs-lokasi" aria-labelledby="rs-loc-title">
+    <div class="rs-container">
+      <span class="badge badge--label">LOKASI</span>
+      <h2 class="rs-section-title" id="rs-loc-title">Lokasi Treatment Facelift Terdekat di Sozo</h2>
+      <p class="rs-loc__intro">Facelift tersedia di seluruh cabang Sozo Skin Clinic di Indonesia. Pilih kota terdekat untuk melihat alamat dan jam operasional cabang.</p>
+
+      <div class="rs-loc__card">
+        <div class="rs-loc__info">
+          <h3 class="rs-loc__name"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Tersedia di Semua Cabang Sozo</h3>
+          <p class="rs-loc__text">Pilih cabang Sozo yang paling dekat dengan Anda. Konfirmasi jadwal terlebih dahulu sebelum datang.</p>
+          <div class="rs-loc__actions">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20threadlift%20%5Bsumber:%20ORG-threadlift%20treatment%5D" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+            <a href="https://sozoskinclinic.com/lokasi/" class="btn btn--outline"><i class="fa-solid fa-map-location-dot btn__icon" aria-hidden="true"></i><span>Semua Lokasi</span></a>
+          </div>
+        </div>
+        <ul class="rs-loc__list" aria-label="Kota cabang Sozo Skin Clinic">
+          <li><a href="https://sozoskinclinic.com/lokasi/jakarta/" class="rs-loc__chip">Jakarta</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/tangerang/" class="rs-loc__chip">Tangerang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/depok/" class="rs-loc__chip">Depok</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bogor/" class="rs-loc__chip">Bogor</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bekasi/" class="rs-loc__chip">Bekasi</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bandung/" class="rs-loc__chip">Bandung</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/surabaya/" class="rs-loc__chip">Surabaya</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/semarang/" class="rs-loc__chip">Semarang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/jogja/" class="rs-loc__chip">Jogja</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/malang/" class="rs-loc__chip">Malang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/medan/" class="rs-loc__chip">Medan</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/makassar/" class="rs-loc__chip">Makassar</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="rs-faq" aria-labelledby="rs-faq-title">
+    <div class="rs-container">
+      <h2 class="rs-section-title" id="rs-faq-title">Pertanyaan Seputar Facelift</h2>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-1-content" id="rs-faq-1-trigger">
+          <span>Apa itu Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-1-content" role="region" aria-labelledby="rs-faq-1-trigger">
+          <p>Facelift adalah treatment pengencangan wajah tanpa operasi yang dilakukan menggunakan benang medis (threadlift). Benang dipasang pada area tertentu untuk membantu mengangkat jaringan kulit yang mulai mengendur sehingga kontur wajah tampak lebih tegas. Selain memberikan efek lifting, benang juga membantu merangsang pembentukan kolagen yang berperan menjaga kekencangan kulit secara bertahap.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-2-content" id="rs-faq-2-trigger">
+          <span>Apa manfaat Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-2-content" role="region" aria-labelledby="rs-faq-2-trigger">
+          <p>Facelift membantu mengangkat kulit wajah yang mulai mengendur, memperjelas garis rahang, serta memperbaiki kontur wajah agar terlihat lebih proporsional. Selain itu, treatment ini juga membantu merangsang pembentukan kolagen sehingga kulit tampak lebih kencang dan segar. Manfaat yang diperoleh setiap pasien dapat berbeda sesuai dengan kondisi kulit, tingkat kekenduran, serta respons tubuh terhadap treatment.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-3-content" id="rs-faq-3-trigger">
+          <span>Siapa yang cocok menjalani Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-3-content" role="region" aria-labelledby="rs-faq-3-trigger">
+          <p>Facelift umumnya cocok bagi Anda yang mulai mengalami kulit wajah kendur, pipi tampak turun, atau garis rahang yang kehilangan definisi. Treatment ini juga dapat menjadi pilihan bagi pasien yang menginginkan efek pengencangan wajah tanpa menjalani prosedur operasi. Sebelum tindakan dilakukan, dokter akan mengevaluasi kondisi kulit dan struktur wajah untuk menentukan apakah treatment ini sesuai dengan kebutuhan Anda.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-4-content" id="rs-faq-4-trigger">
+          <span>Bagaimana cara kerja Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-4-content" role="region" aria-labelledby="rs-faq-4-trigger">
+          <p>Facelift bekerja dengan memasang benang medis pada lapisan kulit untuk membantu mengangkat jaringan yang mulai turun. Setelah benang terpasang, jaringan kulit akan mendapatkan efek lifting sekaligus stimulasi pembentukan kolagen alami. Kombinasi kedua mekanisme tersebut membantu membuat wajah tampak lebih kencang dan hasil treatment berkembang secara bertahap dalam beberapa minggu setelah tindakan</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-5-content" id="rs-faq-5-trigger">
+          <span>Kapan hasil Facelift mulai terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-5-content" role="region" aria-labelledby="rs-faq-5-trigger">
+          <p>Sebagian efek lifting dapat terlihat segera setelah tindakan dilakukan karena jaringan kulit telah terangkat. Selama beberapa hari pertama, masih mungkin terjadi pembengkakan ringan sebagai bagian dari proses pemulihan. Setelah pembengkakan berkurang, hasil biasanya tampak semakin natural dan optimal dalam waktu sekitar 2 hingga 4 minggu, tergantung kondisi kulit dan proses penyembuhan masing-masing pasien.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-6-content" id="rs-faq-6-trigger">
+          <span>Berapa lama hasil Facelift dapat bertahan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-6-content" role="region" aria-labelledby="rs-faq-6-trigger">
+          <p>Hasil Facelift umumnya dapat bertahan sekitar 6 hingga 8 bulan, meskipun durasinya dapat berbeda pada setiap pasien. Faktor seperti usia, elastisitas kulit, gaya hidup, proses penuaan alami, serta perawatan setelah treatment dapat memengaruhi lamanya hasil bertahan. Dokter dapat memberikan rekomendasi jadwal maintenance sesuai dengan kondisi kulit Anda.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-7-content" id="rs-faq-7-trigger">
+          <span>Apakah Facelift memerlukan operasi?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-7-content" role="region" aria-labelledby="rs-faq-7-trigger">
+          <p>Facelift di SOZO Skin Clinic merupakan treatment tanpa operasi yang menggunakan benang medis untuk membantu mengangkat jaringan kulit. Karena tidak melalui prosedur bedah, treatment ini menjadi salah satu alternatif bagi pasien yang menginginkan efek pengencangan wajah dengan tindakan yang lebih minim invasif. Dokter akan menjelaskan prosedur secara lengkap sebelum treatment dilakukan.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-8-content" id="rs-faq-8-trigger">
+          <span>Berapa lama proses Facelift berlangsung?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-8-content" role="region" aria-labelledby="rs-faq-8-trigger">
+          <p>Lama tindakan dapat berbeda tergantung area yang dirawat dan kebutuhan masing-masing pasien. Selama prosedur berlangsung, dokter akan melakukan pemasangan benang secara bertahap setelah area tindakan dipersiapkan. Sebelum treatment dimulai, dokter akan menjelaskan estimasi waktu tindakan sesuai dengan rencana perawatan Anda.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-9-content" id="rs-faq-9-trigger">
+          <span>Apa yang perlu diperhatikan setelah Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-9-content" role="region" aria-labelledby="rs-faq-9-trigger">
+          <p>Setelah treatment, dokter akan memberikan panduan mengenai aktivitas yang sebaiknya dihindari selama masa pemulihan, termasuk cara merawat area tindakan dan jadwal kontrol apabila diperlukan. Mengikuti seluruh anjuran dokter dapat membantu proses penyembuhan berjalan dengan baik serta mendukung hasil lifting yang lebih optimal.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-10-content" id="rs-faq-10-trigger">
+          <span>Apakah hasil Facelift terlihat alami?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-10-content" role="region" aria-labelledby="rs-faq-10-trigger">
+          <p>Hasil Facelift dirancang untuk membantu mengangkat jaringan kulit secara proporsional sehingga wajah tetap terlihat natural. Dokter akan menyesuaikan jumlah benang, titik pemasangan, serta teknik tindakan berdasarkan bentuk wajah dan tingkat kekenduran kulit masing-masing pasien. Dengan pendekatan tersebut, hasil treatment diharapkan dapat menyatu dengan kontur wajah tanpa mengubah karakter alami pasien.
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-11-content" id="rs-faq-11-trigger">
+          <span>Apakah Facelift aman?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-11-content" role="region" aria-labelledby="rs-faq-11-trigger">
+          <p>Setiap tindakan di SOZO Skin Clinic diawali dengan konsultasi dan evaluasi oleh dokter. Pemeriksaan dilakukan untuk menilai kondisi kulit, struktur wajah, riwayat kesehatan, serta tujuan perawatan sebelum menentukan apakah Facelift merupakan pilihan yang sesuai. Dengan perencanaan yang tepat dan tindakan yang dilakukan oleh tenaga medis, prosedur dapat dilakukan sesuai standar yang berlaku.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-12-content" id="rs-faq-12-trigger">
+          <span>Apakah Facelift dapat dikombinasikan dengan treatment lain?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-12-content" role="region" aria-labelledby="rs-faq-12-trigger">
+          <p>Dalam beberapa kondisi, Facelift dapat dipadukan dengan treatment estetika lain untuk membantu mencapai hasil perawatan yang lebih menyeluruh. Kombinasi treatment akan disesuaikan dengan kondisi kulit, tingkat penuaan, serta tujuan yang ingin dicapai. Setelah melakukan evaluasi, dokter akan memberikan rekomendasi treatment yang paling sesuai untuk setiap pasien.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-13-content" id="rs-faq-13-trigger">
+          <span>Apa perbedaan Facelift dengan operasi facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-13-content" role="region" aria-labelledby="rs-faq-13-trigger">
+          <p>Operasi facelift merupakan prosedur bedah yang dilakukan untuk mengangkat dan mengencangkan jaringan wajah melalui tindakan pembedahan. Sementara itu, Facelift di SOZO Skin Clinic menggunakan benang medis (threadlift) sebagai metode pengencangan tanpa operasi. Treatment ini bersifat minim invasif, memiliki waktu pemulihan yang relatif lebih singkat, dan dapat menjadi pilihan bagi pasien yang menginginkan efek lifting tanpa menjalani prosedur bedah.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="toggleFaceliftFaq(this)" aria-expanded="false" aria-controls="rs-faq-14-content" id="rs-faq-14-trigger">
+          <span>Di mana saya bisa melakukan Facelift?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-14-content" role="region" aria-labelledby="rs-faq-14-trigger">
+          <p>Facelift tersedia di cabang SOZO Skin Clinic. Anda dapat menghubungi tim SOZO melalui WhatsApp untuk mengetahui ketersediaan jadwal treatment di cabang terdekat. Sebelum tindakan dilakukan, dokter akan melakukan konsultasi dan analisis kondisi wajah agar treatment yang diberikan sesuai dengan kebutuhan serta tujuan perawatan Anda. <a href="https://sozoskinclinic.com/lokasi/">Lokasi Cabang SOZO Skin Clinic Terdekat</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20threadlift%20%5Bsumber:%20ORG-threadlift%20treatment%5D" class="sozo-wa-float" id="rsWaFloat" target="_blank" rel="noopener noreferrer" aria-label="Buat Jadwal via WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+
+<!-- data-no-optimize: dikecualikan dari LiteSpeed "Delay JS" supaya onclick FAQ & Baca Selengkapnya langsung jalan di klik pertama -->
+<script data-no-optimize="1">
+  function toggleFaceliftFaq(btn) {
+    var item = btn.closest('.rs-faq__item');
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    var widget = document.getElementById('sozo-facelift-widget');
+    var items = widget ? widget.querySelectorAll('.rs-faq__item') : [];
+
+    Array.prototype.forEach.call(items, function (other) {
+      if (other !== item) {
+        other.querySelector('.rs-faq__question').setAttribute('aria-expanded', 'false');
+        other.classList.remove('is-open');
+      }
+    });
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    item.classList.toggle('is-open', !isOpen);
+  }
+
+  function toggleFaceliftDesc() {
+    var content = document.getElementById('rsContentExpandable');
+    var btn = document.getElementById('rsExpandBtn');
+    var btnText = document.getElementById('rsExpandBtnText');
+    if (!content || !btn || !btnText) return;
+
+    var isExpanded = content.classList.contains('is-expanded');
+    content.classList.toggle('is-expanded', !isExpanded);
+    btn.classList.toggle('is-active', !isExpanded);
+    btn.setAttribute('aria-expanded', String(!isExpanded));
+    btnText.textContent = !isExpanded ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+
+  (function initFaceliftWaFloat() {
+    var fab = document.getElementById('rsWaFloat');
+    if (!fab) return;
+    document.body.appendChild(fab);
+    var ticking = false;
+    function updateFab() {
+      ticking = false;
+      var zone = window.innerWidth <= 768 ? 700 : 400;
+      var distanceToBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      fab.classList.toggle('is-hidden', distanceToBottom < zone);
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(updateFab); }
+    }, { passive: true });
+    window.addEventListener('resize', updateFab);
+    window.addEventListener('load', updateFab);
+  })();
 </script>

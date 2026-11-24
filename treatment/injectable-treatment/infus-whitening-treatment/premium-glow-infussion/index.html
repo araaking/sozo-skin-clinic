@@ -2,14 +2,19 @@
      UI PREMIUM GLOW INFUSION - SOZO SKIN CLINIC
      URL     : https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/
      Style   : Sozo Design System V1.1 (design-system/), Elementor Safe, scoped
-     Seksi   : Breadcrumb -> Hero (H1, masalah, deskripsi, info, CTA, gambar)
-               -> Bottom Content (Tentang Treatment & Expandable Detail)
-               -> FAQ
+     Layout  : Sama dengan halaman Tanam Benang Hidung, Korean Filler, Juvelook,
+               Rejuran Healer & Profhilo
+     Seksi   : Breadcrumb -> Hero (H1, masalah, deskripsi, info, CTA Buat
+               Jadwal + Lihat Lokasi, gambar)
+               -> Tentang Treatment (deskripsi ringkas + Baca Selengkapnya)
+               -> Lokasi (chip kota/klinik) -> FAQ -> Floating WhatsApp
+     Pakai   : Copy seluruh file ke widget HTML Elementor halaman ini.
      CSS+JS  : Sudah digabung di file ini (Font Awesome preload, Poppins,
-               CSS .sozo-sku-premiumglow-wrapper, JS FAQ + expand). Layout sama dengan
-               infus-vitamin-c-immune-glow/index.html.
+               CSS .sozo-sku-premiumglow-wrapper, JS FAQ, Baca Selengkapnya, floating WA).
      JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList + FAQPage).
-               Isi FAQPage harus sama dengan FAQ di bawah.
+               Isi FAQPage harus sama dengan FAQ di bawah. schema-markup.html
+               tidak dipakai lagi untuk halaman ini.
+     Backup  : Versi live sebelum revamp (24 Nov 2026) ada di backup.html.
      ============================================================ -->
 
 <script type="application/ld+json">
@@ -20,28 +25,57 @@
       "@type": "WebPage",
       "@id": "https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/#webpage",
       "url": "https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/",
-      "name": "Premium Glow Infusion - Infus Vitamin untuk Tubuh Bugar & Kulit Lebih Cerah | Sozo Skin Clinic",
+      "name": "Premium Glow Infusion untuk Kulit Kusam & Tubuh Lelah",
       "description": "Infus vitamin dan antioksidan langsung ke aliran darah untuk membantu menjaga daya tahan tubuh, mendukung pembentukan kolagen, dan membuat kulit tampak lebih cerah.",
       "inLanguage": "id",
-      "isPartOf": { "@id": "https://sozoskinclinic.com/#website" },
-      "about": { "@id": "https://sozoskinclinic.com/#organization" },
-      "breadcrumb": { "@id": "https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/#breadcrumb" }
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/#website"
+      },
+      "about": {
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/#breadcrumb"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://sozoskinclinic.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Treatment", "item": "https://sozoskinclinic.com/treatment/" },
-        { "@type": "ListItem", "position": 3, "name": "Injectable Treatment", "item": "https://sozoskinclinic.com/injectable-treatment/" },
-        { "@type": "ListItem", "position": 4, "name": "Infus Whitening", "item": "https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/" },
-        { "@type": "ListItem", "position": 5, "name": "Premium Glow Infusion" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Treatment",
+          "item": "https://sozoskinclinic.com/treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Injectable Treatment",
+          "item": "https://sozoskinclinic.com/injectable-treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Infus Whitening",
+          "item": "https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Premium Glow Infusion"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "@id": "https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/#faq",
-      "isPartOf": { "@id": "https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/premium-glow-infusion/#webpage" },
       "mainEntity": [
         {
           "@type": "Question",
@@ -169,11 +203,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-  /* ============================================================
+<style>/* ============================================================
      Token Sozo Design System V1.1, di-scope ke wrapper supaya
      tidak bocor ke halaman Elementor lain. Density: compact
-     (treatment detail), sama dengan Infus Whitening dan Immune Glow.
+     (treatment detail), sama dengan halaman Restylane Skin Booster.
      ============================================================ */
   .sozo-sku-premiumglow-wrapper {
     /* Color */
@@ -187,6 +220,7 @@
     --color-border: #DFDBD4;
     --color-border-strong: #C8C3BA;
     --color-primary-hover: #151A6D;
+    --color-primary-subtle: rgba(26, 32, 128, 0.05);
 
     /* Typography */
     --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -263,7 +297,7 @@
     text-decoration: none !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-container {
+  .sozo-sku-premiumglow-wrapper .rs-container {
     width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
     margin-inline: auto !important;
   }
@@ -312,6 +346,25 @@
   .sozo-sku-premiumglow-wrapper .btn--primary:hover {
     background-color: var(--color-primary-hover) !important;
     color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .btn--outline,
+  .sozo-sku-premiumglow-wrapper .btn--outline:visited {
+    background-color: transparent !important;
+    border-color: var(--color-brand-primary) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .btn--outline:hover {
+    background-color: var(--color-primary-subtle) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* CTA hero: Buat Jadwal + Lihat Lokasi, selalu sejajar */
+  .sozo-sku-premiumglow-wrapper .rs-cta {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-3) !important;
   }
 
   .sozo-sku-premiumglow-wrapper .btn__icon {
@@ -401,18 +454,18 @@
   }
 
   /* ============ HERO ============ */
-  .sozo-sku-premiumglow-wrapper .ig-hero {
+  .sozo-sku-premiumglow-wrapper .rs-hero {
     padding-bottom: var(--section-y) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-hero__grid {
+  .sozo-sku-premiumglow-wrapper .rs-hero__grid {
     display: grid !important;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important;
     gap: var(--space-8) !important;
     align-items: center !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-hero__title {
+  .sozo-sku-premiumglow-wrapper .rs-hero__title {
     margin-bottom: var(--space-4) !important;
     font-size: clamp(28px, 2.8vw, 38px) !important;
     font-weight: 700 !important;
@@ -421,11 +474,11 @@
   }
 
   /* Masalah yang bisa diatasi */
-  .sozo-sku-premiumglow-wrapper .ig-problems {
+  .sozo-sku-premiumglow-wrapper .rs-problems {
     margin-bottom: var(--space-4) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-problems__label {
+  .sozo-sku-premiumglow-wrapper .rs-problems__label {
     margin-bottom: var(--space-2) !important;
     font-size: var(--text-label) !important;
     font-weight: 600 !important;
@@ -435,20 +488,20 @@
     color: var(--color-text-muted) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-problems__list {
+  .sozo-sku-premiumglow-wrapper .rs-problems__list {
     list-style: none !important;
     display: flex !important;
     flex-wrap: wrap !important;
     gap: var(--space-2) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-problems__list li {
+  .sozo-sku-premiumglow-wrapper .rs-problems__list li {
     margin: 0 !important;
     list-style: none !important;
   }
 
   /* Paragraf intro: justify, selebar kolom (sama dengan Infus Whitening) */
-  .sozo-sku-premiumglow-wrapper .ig-hero__desc {
+  .sozo-sku-premiumglow-wrapper .rs-hero__desc {
     margin-bottom: var(--space-5) !important;
     font-size: var(--text-body) !important;
     line-height: 1.7 !important;
@@ -458,7 +511,7 @@
   }
 
   /* Info: durasi, frekuensi, harga */
-  .sozo-sku-premiumglow-wrapper .ig-info {
+  .sozo-sku-premiumglow-wrapper .rs-info {
     list-style: none !important;
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -467,7 +520,7 @@
     border-radius: var(--radius-lg) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-info__item {
+  .sozo-sku-premiumglow-wrapper .rs-info__item {
     display: flex !important;
     align-items: center !important;
     gap: var(--space-3) !important;
@@ -477,11 +530,11 @@
     list-style: none !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-info__item + .ig-info__item {
+  .sozo-sku-premiumglow-wrapper .rs-info__item + .rs-info__item {
     border-left: 1px solid var(--color-border) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-info__icon {
+  .sozo-sku-premiumglow-wrapper .rs-info__icon {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -493,21 +546,21 @@
     color: var(--color-brand-primary) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-info__text {
+  .sozo-sku-premiumglow-wrapper .rs-info__text {
     display: flex !important;
     flex-direction: column !important;
     gap: 2px !important;
     min-width: 0 !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-info__label {
+  .sozo-sku-premiumglow-wrapper .rs-info__label {
     font-size: var(--text-label) !important;
     font-weight: 500 !important;
     line-height: var(--leading-caption) !important;
     color: var(--color-text-muted) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-info__value {
+  .sozo-sku-premiumglow-wrapper .rs-info__value {
     font-size: var(--text-body) !important;
     font-weight: 700 !important;
     line-height: 1.3 !important;
@@ -515,7 +568,7 @@
   }
 
   /* Gambar treatment: standalone, rasio 4:3 (design-system/components/image.md) */
-  .sozo-sku-premiumglow-wrapper .ig-hero__media img {
+  .sozo-sku-premiumglow-wrapper .rs-hero__media img {
     display: block !important;
     width: 100% !important;
     height: auto !important;
@@ -526,12 +579,20 @@
   }
 
   /* ============ BOTTOM CONTENT (DESKRIPSI TREATMENT) ============ */
-  .sozo-sku-premiumglow-wrapper .ig-content {
+  .sozo-sku-premiumglow-wrapper .rs-content {
     padding-block: var(--section-y) !important;
     border-top: 1px solid var(--color-border) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-content__desc {
+  .sozo-sku-premiumglow-wrapper .rs-section-title {
+    margin-bottom: var(--space-4) !important;
+    font-size: var(--text-section-title) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-content__desc {
     font-size: var(--text-body) !important;
     line-height: 1.7 !important;
     color: var(--color-text-secondary) !important;
@@ -539,7 +600,20 @@
     text-align: justify !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-content__subtitle {
+  .sozo-sku-premiumglow-wrapper .rs-content__desc a,
+  .sozo-sku-premiumglow-wrapper .rs-content__desc a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-content__desc a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-content__subtitle {
     margin: var(--space-2) 0 var(--space-3) !important;
     font-size: var(--text-body) !important;
     font-weight: 700 !important;
@@ -547,13 +621,13 @@
     color: var(--color-brand-primary) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-content__checklist {
+  .sozo-sku-premiumglow-wrapper .rs-content__checklist {
     list-style: none !important;
     margin: 0 0 var(--space-4) !important;
     padding: 0 !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-content__checklist li {
+  .sozo-sku-premiumglow-wrapper .rs-content__checklist li {
     position: relative !important;
     padding-left: 28px !important;
     margin-bottom: var(--space-2) !important;
@@ -562,7 +636,7 @@
     color: var(--color-text-secondary) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-content__checklist li::before {
+  .sozo-sku-premiumglow-wrapper .rs-content__checklist li::before {
     content: "\2713" !important;
     position: absolute !important;
     left: 0 !important;
@@ -571,22 +645,63 @@
     color: var(--color-brand-primary) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-expandable {
+  /* Tahapan treatment: daftar bernomor */
+  .sozo-sku-premiumglow-wrapper .rs-content__steps {
+    list-style: none !important;
+    counter-reset: rs-step !important;
+    margin: 0 0 var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-content__steps li {
+    position: relative !important;
+    counter-increment: rs-step !important;
+    padding-left: 36px !important;
+    margin-bottom: var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-content__steps li::before {
+    content: counter(rs-step) !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-content__steps strong {
+    color: var(--color-text-primary) !important;
+    font-weight: 600 !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-expandable {
     display: grid !important;
     grid-template-rows: 0fr !important;
     transition: grid-template-rows var(--duration-card) var(--ease-standard) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-expandable.is-expanded {
+  .sozo-sku-premiumglow-wrapper .rs-expandable.is-expanded {
     grid-template-rows: 1fr !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-expandable__inner {
+  .sozo-sku-premiumglow-wrapper .rs-expandable__inner {
     overflow: hidden !important;
     min-height: 0 !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-expand-btn {
+  .sozo-sku-premiumglow-wrapper .rs-expand-btn {
     display: inline-flex !important;
     align-items: center !important;
     gap: var(--space-2) !important;
@@ -604,43 +719,150 @@
                 opacity var(--duration-fast) var(--ease-standard) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-expand-btn:hover {
+  .sozo-sku-premiumglow-wrapper .rs-expand-btn:hover {
     color: var(--color-primary-hover) !important;
     opacity: 0.85 !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-expand-btn:focus-visible {
+  .sozo-sku-premiumglow-wrapper .rs-expand-btn:focus-visible {
     outline: var(--focus-ring) !important;
     outline-offset: 2px !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-expand-btn svg {
+  .sozo-sku-premiumglow-wrapper .rs-expand-btn svg {
     transition: transform var(--duration-fast) var(--ease-standard) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-expand-btn.is-active svg {
+  .sozo-sku-premiumglow-wrapper .rs-expand-btn.is-active svg {
     transform: rotate(180deg) !important;
   }
 
+  /* ============ LOKASI ============
+     Tersedia di semua cabang: kartu dengan info kiri + chip kota kanan.
+     Chip mengarah ke /lokasi/[kota]/ (daftar kota sama dengan hub /lokasi/).
+     Mobile: info di atas, chip wrap di bawah. */
+  .sozo-sku-premiumglow-wrapper .rs-loc {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+    scroll-margin-top: 80px !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__intro {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) !important;
+    gap: var(--space-6) !important;
+    align-items: center !important;
+    padding: var(--space-6) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+    background-color: var(--color-white) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-3) !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__name {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__name i {
+    font-size: 0.85em !important;
+    flex: none !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__text {
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.6 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-3) !important;
+    margin-top: var(--space-2) !important;
+  }
+
+  /* Tombol kartu lokasi: ukuran small (btn--sm di design system) */
+  .sozo-sku-premiumglow-wrapper .rs-loc__actions .btn {
+    min-height: 40px !important;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__actions .btn__icon {
+    width: 14px !important;
+    font-size: 14px !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__list li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__chip,
+  .sozo-sku-premiumglow-wrapper .rs-loc__chip:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 36px !important;
+    padding: 0 var(--space-4) !important;
+    border: 1px solid var(--color-border-strong) !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-white) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    transition: background-color var(--duration-fast) var(--ease-standard),
+                border-color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__chip:hover {
+    border-color: var(--color-brand-primary) !important;
+    background-color: var(--color-primary-subtle) !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-loc__chip:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
   /* ============ FAQ ============ */
-  .sozo-sku-premiumglow-wrapper .ig-faq {
+  .sozo-sku-premiumglow-wrapper .rs-faq {
     padding-block: var(--section-y) !important;
     border-top: 1px solid var(--color-border) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-section-title {
-    margin-bottom: var(--space-4) !important;
-    font-size: var(--text-section-title) !important;
-    font-weight: 700 !important;
-    line-height: 1.25 !important;
-    color: var(--color-brand-primary) !important;
-  }
-
-  .sozo-sku-premiumglow-wrapper .ig-faq__item {
+  .sozo-sku-premiumglow-wrapper .rs-faq__item {
     border-bottom: 1px solid var(--color-border) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__question {
+  .sozo-sku-premiumglow-wrapper .rs-faq__question {
     width: 100% !important;
     min-height: 44px !important;
     display: flex !important;
@@ -662,57 +884,57 @@
     transition: color var(--duration-fast) var(--ease-standard) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__question:hover {
+  .sozo-sku-premiumglow-wrapper .rs-faq__question:hover {
     color: var(--color-brand-primary) !important;
     background: none !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__question:focus-visible {
+  .sozo-sku-premiumglow-wrapper .rs-faq__question:focus-visible {
     outline: var(--focus-ring) !important;
     outline-offset: 2px !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__question > span {
+  .sozo-sku-premiumglow-wrapper .rs-faq__question > span {
     flex: 1 1 auto !important;
     min-width: 0 !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__question svg {
+  .sozo-sku-premiumglow-wrapper .rs-faq__question svg {
     flex-shrink: 0 !important;
     color: var(--color-brand-primary) !important;
     transition: transform var(--duration-fast) var(--ease-standard) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__item.is-open .ig-faq__question svg {
+  .sozo-sku-premiumglow-wrapper .rs-faq__item.is-open .rs-faq__question svg {
     transform: rotate(180deg) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__answer {
+  .sozo-sku-premiumglow-wrapper .rs-faq__answer {
     max-height: 0 !important;
     overflow: hidden !important;
     transition: max-height var(--duration-card) var(--ease-standard) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__item.is-open .ig-faq__answer {
+  .sozo-sku-premiumglow-wrapper .rs-faq__item.is-open .rs-faq__answer {
     max-height: 1000px !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__answer p {
+  .sozo-sku-premiumglow-wrapper .rs-faq__answer p {
     padding-bottom: 18px !important;
     font-size: var(--text-body-sm) !important;
     line-height: 1.7 !important;
     color: var(--color-text-secondary) !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__answer a,
-  .sozo-sku-premiumglow-wrapper .ig-faq__answer a:visited {
+  .sozo-sku-premiumglow-wrapper .rs-faq__answer a,
+  .sozo-sku-premiumglow-wrapper .rs-faq__answer a:visited {
     color: var(--color-brand-primary) !important;
     font-weight: 600 !important;
     text-decoration: underline !important;
     text-underline-offset: 4px !important;
   }
 
-  .sozo-sku-premiumglow-wrapper .ig-faq__answer a:focus-visible {
+  .sozo-sku-premiumglow-wrapper .rs-faq__answer a:focus-visible {
     outline: var(--focus-ring) !important;
     outline-offset: 2px !important;
   }
@@ -722,12 +944,12 @@
      ============================================================ */
   @media (max-width: 1024px) {
     /* Hero satu kolom: teks dulu, gambar di bawah CTA */
-    .sozo-sku-premiumglow-wrapper .ig-hero__grid {
+    .sozo-sku-premiumglow-wrapper .rs-hero__grid {
       grid-template-columns: minmax(0, 1fr) !important;
       gap: var(--space-5) !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-hero__media img {
+    .sozo-sku-premiumglow-wrapper .rs-hero__media img {
       aspect-ratio: 16 / 9 !important;
       max-height: 400px !important;
     }
@@ -739,27 +961,50 @@
       margin-bottom: var(--space-3) !important;
     }
 
+    /* Breadcrumb: font kecil supaya muat maksimal 2 baris.
+       Tiap item tidak dipotong di tengah (nowrap per item). */
     .sozo-sku-premiumglow-wrapper .breadcrumb__list {
-      font-size: var(--text-label) !important;
+      flex-wrap: wrap !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .breadcrumb__list li {
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .breadcrumb__list,
+    .sozo-sku-premiumglow-wrapper .breadcrumb__list li,
+    .sozo-sku-premiumglow-wrapper .breadcrumb__list a,
+    .sozo-sku-premiumglow-wrapper .breadcrumb__current {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
     }
 
     .sozo-sku-premiumglow-wrapper .breadcrumb__list,
     .sozo-sku-premiumglow-wrapper .breadcrumb__list li {
-      gap: 6px !important;
+      gap: 4px !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-hero__title {
-      margin-bottom: var(--space-3) !important;
-      font-size: 22px !important;
+    .sozo-sku-premiumglow-wrapper .breadcrumb__list li {
+      flex: none !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-hero__title {
+      margin-bottom: var(--space-2) !important;
+      font-size: 20px !important;
       line-height: 1.25 !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-problems {
+    .sozo-sku-premiumglow-wrapper .rs-problems {
       margin-bottom: var(--space-3) !important;
     }
 
+    .sozo-sku-premiumglow-wrapper .rs-problems__label {
+      margin-bottom: 6px !important;
+      font-size: 11px !important;
+    }
+
     /* Badge masalah: satu baris, geser ke samping kalau tidak muat (EX-04) */
-    .sozo-sku-premiumglow-wrapper .ig-problems__list {
+    .sozo-sku-premiumglow-wrapper .rs-problems__list {
       flex-wrap: nowrap !important;
       gap: 6px !important;
       overflow-x: auto !important;
@@ -769,7 +1014,7 @@
       mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-problems__list::-webkit-scrollbar {
+    .sozo-sku-premiumglow-wrapper .rs-problems__list::-webkit-scrollbar {
       display: none !important;
     }
 
@@ -781,57 +1026,179 @@
       white-space: nowrap !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-hero__desc {
+    .sozo-sku-premiumglow-wrapper .rs-hero__desc {
       margin-bottom: var(--space-4) !important;
-      font-size: var(--text-body-sm) !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
     }
 
     /* Info tetap 3 kolom, ikon disembunyikan supaya ringkas */
-    .sozo-sku-premiumglow-wrapper .ig-info {
+    .sozo-sku-premiumglow-wrapper .rs-info {
       margin-bottom: var(--space-4) !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-info__item {
+    .sozo-sku-premiumglow-wrapper .rs-info__item {
       justify-content: center !important;
-      padding: var(--space-3) var(--space-2) !important;
+      padding: 10px 6px !important;
       text-align: center !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-info__icon {
+    .sozo-sku-premiumglow-wrapper .rs-info__icon {
       display: none !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-info__value {
+    .sozo-sku-premiumglow-wrapper .rs-info__label {
+      font-size: 11px !important;
+      line-height: 1.3 !important;
+    }
+
+    /* Nilai tidak dipotong ke baris baru (mis. "Rp 7.798.000") */
+    .sozo-sku-premiumglow-wrapper .rs-info__value {
+      font-size: 13px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .btn {
+      min-height: 44px !important;
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .btn__icon {
+      width: 15px !important;
       font-size: 15px !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-section-title {
-      font-size: 22px !important;
-    }
-
-    .sozo-sku-premiumglow-wrapper .ig-content__desc {
-      font-size: var(--text-body-sm) !important;
+    /* Bottom content + FAQ: skala font sama dengan hero (H2 < H1 20px, body 13px) */
+    .sozo-sku-premiumglow-wrapper .rs-section-title {
       margin-bottom: var(--space-3) !important;
+      font-size: 18px !important;
+      line-height: 1.3 !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-expand-btn {
+    .sozo-sku-premiumglow-wrapper .badge--label {
+      min-height: 26px !important;
+      margin-bottom: var(--space-3) !important;
+      padding: 0 12px !important;
+      font-size: 10px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-content__subtitle {
+      margin: var(--space-1) 0 var(--space-2) !important;
       font-size: 14px !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-faq__question {
-      padding: 14px 0 !important;
-      font-size: var(--text-body-sm) !important;
+    .sozo-sku-premiumglow-wrapper .rs-content__desc,
+    .sozo-sku-premiumglow-wrapper .rs-content__checklist li,
+    .sozo-sku-premiumglow-wrapper .rs-content__steps li {
+      font-size: 13px !important;
+      line-height: 1.6 !important;
     }
 
-    .sozo-sku-premiumglow-wrapper .ig-faq__answer p {
-      padding-bottom: 14px !important;
+    .sozo-sku-premiumglow-wrapper .rs-content__checklist li {
+      padding-left: 22px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-content__steps li {
+      padding-left: 30px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-content__steps li::before {
+      top: 1px !important;
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 11px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-content__desc {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-expand-btn {
+      font-size: 13px !important;
+    }
+
+    /* CTA hero & kartu lokasi sejajar, masing-masing setengah lebar */
+    .sozo-sku-premiumglow-wrapper .rs-cta .btn,
+    .sozo-sku-premiumglow-wrapper .rs-loc__actions .btn {
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      padding: 0 var(--space-3) !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-loc__intro {
+      margin-bottom: var(--space-4) !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-loc__card {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: var(--space-4) !important;
+      padding: var(--space-4) !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-loc__name {
+      font-size: 15px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-loc__text {
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-loc__list {
+      gap: 6px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-loc__chip,
+    .sozo-sku-premiumglow-wrapper .rs-loc__chip:visited {
+      min-height: 32px !important;
+      padding: 0 var(--space-3) !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-faq__question {
+      padding: 12px 0 !important;
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-faq__question svg {
+      width: 18px !important;
+      height: 18px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-faq__answer p {
+      padding-bottom: 12px !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+  }
+
+  /* HP kecil (320–360px): breadcrumb tetap maksimal 2 baris, harga tetap 1 baris */
+  @media (max-width: 360px) {
+    .sozo-sku-premiumglow-wrapper .breadcrumb__list,
+    .sozo-sku-premiumglow-wrapper .breadcrumb__list li,
+    .sozo-sku-premiumglow-wrapper .breadcrumb__list a,
+    .sozo-sku-premiumglow-wrapper .breadcrumb__current {
+      font-size: 10px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .breadcrumb__list,
+    .sozo-sku-premiumglow-wrapper .breadcrumb__list li {
+      gap: 2px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-info__item {
+      padding: 10px 4px !important;
+    }
+
+    .sozo-sku-premiumglow-wrapper .rs-info__value {
+      font-size: 12px !important;
     }
   }
 
   @media (max-width: 480px) {
-    .sozo-sku-premiumglow-wrapper .btn--block-mobile {
-      display: flex !important;
-      width: 100% !important;
+    .sozo-sku-premiumglow-wrapper .btn {
+      font-size: 13px !important;
     }
   }
 
@@ -922,14 +1289,30 @@
       transition: none !important;
     }
   }
+
+  /* List di jawaban FAQ (mis. aftercare, harga paket) */
+  .sozo-sku-premiumglow-wrapper .rs-faq__answer ol,
+  .sozo-sku-premiumglow-wrapper .rs-faq__answer ul {
+    margin: -6px 0 18px !important;
+    padding-left: 20px !important;
+  }
+
+  .sozo-sku-premiumglow-wrapper .rs-faq__answer ol { list-style: decimal !important; }
+  .sozo-sku-premiumglow-wrapper .rs-faq__answer ul { list-style: disc !important; }
+
+  .sozo-sku-premiumglow-wrapper .rs-faq__answer li {
+    margin-bottom: 4px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
 </style>
 
 <div class="sozo-sku-premiumglow-wrapper" id="sozo-premiumglow-widget">
 
-  <!-- HERO -->
-  <section class="ig-hero">
-    <div class="ig-container">
-
+  <!-- ===== HERO ===== -->
+  <section class="rs-hero">
+    <div class="rs-container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <ol class="breadcrumb__list">
           <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
@@ -940,13 +1323,13 @@
         </ol>
       </nav>
 
-      <div class="ig-hero__grid">
-        <div class="ig-hero__content">
-          <h1 class="ig-hero__title">Premium Glow Infusion - Infus Vitamin untuk Tubuh Bugar &amp; Kulit Lebih Cerah</h1>
+      <div class="rs-hero__grid">
+        <div class="rs-hero__content">
+          <h1 class="rs-hero__title">Premium Glow Infusion untuk Kulit Kusam &amp; Tubuh Lelah</h1>
 
-          <div class="ig-problems">
-            <p class="ig-problems__label" id="pg-problems-label">Membantu mengatasi</p>
-            <ul class="ig-problems__list" aria-labelledby="pg-problems-label">
+          <div class="rs-problems">
+            <p class="rs-problems__label" id="rs-problems-label">Membantu mengatasi</p>
+            <ul class="rs-problems__list" aria-labelledby="rs-problems-label">
               <li class="badge badge--brand">Kulit Kusam</li>
               <li class="badge badge--brand">Mudah Lelah</li>
               <li class="badge badge--brand">Radikal Bebas</li>
@@ -954,71 +1337,64 @@
             </ul>
           </div>
 
-          <p class="ig-hero__desc">
+          <p class="rs-hero__desc">
             Infus vitamin dan antioksidan langsung ke aliran darah untuk membantu menjaga daya tahan tubuh, mendukung pembentukan kolagen, dan membuat kulit tampak lebih cerah.
           </p>
 
-          <ul class="ig-info">
-            <li class="ig-info__item">
-              <span class="ig-info__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-              </span>
-              <span class="ig-info__text">
-                <span class="ig-info__label">Estimasi Treatment</span>
-                <span class="ig-info__value">100 Menit</span>
-              </span>
-            </li>
-            <li class="ig-info__item">
-              <span class="ig-info__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              </span>
-              <span class="ig-info__text">
-                <span class="ig-info__label">Frekuensi Sesi</span>
-                <span class="ig-info__value">1x Sebulan</span>
-              </span>
-            </li>
-            <li class="ig-info__item">
-              <span class="ig-info__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" x2="7.01" y1="7" y2="7"></line></svg>
-              </span>
-              <span class="ig-info__text">
-                <span class="ig-info__label">Harga</span>
-                <span class="ig-info__value">Rp 1.299.000</span>
-              </span>
-            </li>
+          <ul class="rs-info">
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Estimasi Treatment</span>
+              <span class="rs-info__value">100 Menit</span>
+            </span>
+          </li>
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Frekuensi Sesi</span>
+              <span class="rs-info__value">1x Sebulan</span>
+            </span>
+          </li>
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" x2="7.01" y1="7" y2="7"></line></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Harga</span>
+              <span class="rs-info__value">Rp 1.299.000</span>
+            </span>
+          </li>
           </ul>
 
-          <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Immune%20Glow%20Infusion%20Sozo%20%5Bsrc%3AORG-IGI%5D" class="btn btn--primary btn--block-mobile" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+          <div class="rs-cta">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Immune%20Glow%20Infusion%20Sozo%20%5Bsrc%3AORG-IGI%5D" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+            <a href="#rs-lokasi" class="btn btn--outline"><i class="fa-solid fa-location-dot btn__icon" aria-hidden="true"></i><span>Lihat Lokasi</span></a>
+          </div>
         </div>
 
-        <div class="ig-hero__media">
-          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/premium-glow-infussion-scaled.webp" alt="Premium Glow Infusion di Sozo Skin Clinic" width="800" height="600" fetchpriority="high">
+        <div class="rs-hero__media">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/premium-glow-infussion-scaled.webp" alt="Premium Glow Infusion di Sozo Skin Clinic" width="800" height="600" fetchpriority="high" decoding="async">
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- BOTTOM CONTENT (DESKRIPSI TREATMENT) -->
-  <section class="ig-content" aria-labelledby="pg-content-title">
-    <div class="ig-container">
-
+  <!-- ===== TENTANG TREATMENT ===== -->
+  <section class="rs-content" aria-labelledby="rs-content-title">
+    <div class="rs-container">
       <span class="badge badge--label">TENTANG TREATMENT</span>
-      <h2 class="ig-section-title" id="pg-content-title">Mengenal Premium Glow Infusion</h2>
+      <h2 class="rs-section-title" id="rs-content-title">Mengenal Premium Glow Infusion</h2>
 
-      <p class="ig-content__desc">
+      <p class="rs-content__desc">
         Premium Glow Infusion adalah perawatan infus intravena (IV) yang menggabungkan beberapa vitamin dan antioksidan dosis tinggi dalam satu sesi. Cairan infus masuk perlahan selama sekitar 100 menit, sehingga tubuh menerima nutrisi dengan nyaman, tanpa melewati saluran cerna.
       </p>
-
-      <p class="ig-content__desc">
+      <p class="rs-content__desc">
         Kombinasi ini bekerja dari dua sisi. Antioksidan di dalamnya membantu mencerahkan kulit kusam dan melindungi sel dari radikal bebas, sementara asupan vitaminnya membantu mengembalikan energi saat tubuh mudah lelah. Cocok untuk Anda yang butuh perawatan kulit sekaligus pemulihan tubuh setelah rutinitas padat.
       </p>
 
-      <!-- Expandable content (tetap ada di HTML DOM agar terbaca penuh oleh Google) -->
-      <div class="ig-expandable" id="pgContentExpandable">
-        <div class="ig-expandable__inner">
-          <h3 class="ig-content__subtitle">Manfaat Premium Glow Infusion</h3>
-          <ul class="ig-content__checklist">
+      <div class="rs-expandable" id="rsContentExpandable">
+        <div class="rs-expandable__inner">
+          <h3 class="rs-content__subtitle">Manfaat Premium Glow Infusion</h3>
+          <ul class="rs-content__checklist">
             <li>Membantu mencerahkan kulit kusam dan membuat kulit tampak lebih bercahaya</li>
             <li>Membantu melindungi sel dari radikal bebas akibat polusi dan sinar UV</li>
             <li>Mendukung produksi kolagen agar kulit tetap kenyal</li>
@@ -1026,169 +1402,200 @@
             <li>Membantu menjaga daya tahan tubuh</li>
           </ul>
 
-          <h3 class="ig-content__subtitle">Apa Bedanya dengan Immune Glow Injection?</h3>
-          <p class="ig-content__desc">
+          <h3 class="rs-content__subtitle">Apa Bedanya dengan Immune Glow Injection?</h3>
+          <p class="rs-content__desc">
             <a href="https://sozoskinclinic.com/injectable-treatment/infus-whitening-treatment/infus-vitamin-c-immune-glow-injection/">Immune Glow Injection</a> berisi Vitamin C saja dan selesai dalam 15 menit, cocok untuk perawatan rutin yang cepat. Premium Glow berisi kombinasi beberapa kandungan dengan durasi lebih panjang, untuk Anda yang ingin hasil lebih menyeluruh pada kulit dan kebugaran.
           </p>
 
-          <h3 class="ig-content__subtitle">Berapa Lama Waktu Prosedurnya?</h3>
-          <p class="ig-content__desc">
+          <h3 class="rs-content__subtitle">Berapa Lama Waktu Prosedurnya?</h3>
+          <p class="rs-content__desc">
             Sekitar 100 menit dan tiap pasien berbeda-beda, diawali skrining kesehatan oleh tenaga medis profesional (perawat atau dokter). Tidak ada masa pemulihan.
           </p>
         </div>
       </div>
 
-      <button type="button" class="ig-expand-btn" id="pgExpandBtn" onclick="togglePremiumGlowDesc()" aria-expanded="false" aria-controls="pgContentExpandable">
-        <span id="pgExpandBtnText">Baca Selengkapnya</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+      <button type="button" class="rs-expand-btn" id="rsExpandBtn" onclick="togglePremiumGlowDesc()" aria-expanded="false" aria-controls="rsContentExpandable">
+        <span id="rsExpandBtnText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </button>
-
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="ig-faq" aria-labelledby="pg-faq-title">
-    <div class="ig-container">
-      <h2 class="ig-section-title" id="pg-faq-title">Pertanyaan Seputar Premium Glow Infusion</h2>
+  <!-- ===== LOKASI (Premium Glow Infusion tersedia di semua cabang) ===== -->
+  <section class="rs-loc" id="rs-lokasi" aria-labelledby="rs-loc-title">
+    <div class="rs-container">
+      <span class="badge badge--label">LOKASI</span>
+      <h2 class="rs-section-title" id="rs-loc-title">Lokasi Treatment Premium Glow Infusion Terdekat di Sozo</h2>
+      <p class="rs-loc__intro">Premium Glow Infusion tersedia di seluruh cabang Sozo Skin Clinic di Indonesia. Pilih kota terdekat untuk melihat alamat dan jam operasional cabang.</p>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-1-content" id="pg-faq-1-trigger">
+      <div class="rs-loc__card">
+        <div class="rs-loc__info">
+          <h3 class="rs-loc__name"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Tersedia di Semua Cabang Sozo</h3>
+          <p class="rs-loc__text">Pilih cabang Sozo yang paling dekat dengan Anda. Konfirmasi jadwal terlebih dahulu sebelum datang.</p>
+          <div class="rs-loc__actions">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Immune%20Glow%20Infusion%20Sozo%20%5Bsrc%3AORG-IGI%5D" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+            <a href="https://sozoskinclinic.com/lokasi/" class="btn btn--outline"><i class="fa-solid fa-map-location-dot btn__icon" aria-hidden="true"></i><span>Semua Lokasi</span></a>
+          </div>
+        </div>
+        <ul class="rs-loc__list" aria-label="Kota cabang Sozo Skin Clinic">
+          <li><a href="https://sozoskinclinic.com/lokasi/jakarta/" class="rs-loc__chip">Jakarta</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/tangerang/" class="rs-loc__chip">Tangerang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/depok/" class="rs-loc__chip">Depok</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bogor/" class="rs-loc__chip">Bogor</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bekasi/" class="rs-loc__chip">Bekasi</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bandung/" class="rs-loc__chip">Bandung</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/surabaya/" class="rs-loc__chip">Surabaya</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/semarang/" class="rs-loc__chip">Semarang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/jogja/" class="rs-loc__chip">Jogja</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/malang/" class="rs-loc__chip">Malang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/medan/" class="rs-loc__chip">Medan</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/makassar/" class="rs-loc__chip">Makassar</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="rs-faq" aria-labelledby="rs-faq-title">
+    <div class="rs-container">
+      <h2 class="rs-section-title" id="rs-faq-title">Pertanyaan Seputar Premium Glow Infusion</h2>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-1-content" id="rs-faq-1-trigger">
           <span>Apa itu Premium Glow Infusion?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-1-content" role="region" aria-labelledby="pg-faq-1-trigger">
+        <div class="rs-faq__answer" id="rs-faq-1-content" role="region" aria-labelledby="rs-faq-1-trigger">
           <p>Premium Glow Infusion adalah perawatan infus intravena yang menggabungkan beberapa vitamin dan antioksidan dosis tinggi dalam satu sesi. Perawatan ini membantu mencerahkan kulit sekaligus menjaga kebugaran tubuh.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-2-content" id="pg-faq-2-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-2-content" id="rs-faq-2-trigger">
           <span>Apa bedanya dengan Immune Glow Injection?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-2-content" role="region" aria-labelledby="pg-faq-2-trigger">
+        <div class="rs-faq__answer" id="rs-faq-2-content" role="region" aria-labelledby="rs-faq-2-trigger">
           <p>Immune Glow hanya berisi Vitamin C dan selesai sekitar 15 menit. Premium Glow berisi kombinasi beberapa kandungan dengan durasi sekitar 100 menit, untuk hasil yang lebih menyeluruh pada kulit dan kebugaran.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-3-content" id="pg-faq-3-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-3-content" id="rs-faq-3-trigger">
           <span>Apa bedanya infus vitamin dengan minum suplemen?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-3-content" role="region" aria-labelledby="pg-faq-3-trigger">
+        <div class="rs-faq__answer" id="rs-faq-3-content" role="region" aria-labelledby="rs-faq-3-trigger">
           <p>Suplemen harus melewati saluran cerna, sehingga hanya sebagian yang terserap dan dosis tinggi bisa membuat lambung tidak nyaman. Melalui infus, nutrisi masuk langsung ke aliran darah sehingga penyerapannya lebih optimal.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-4-content" id="pg-faq-4-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-4-content" id="rs-faq-4-trigger">
           <span>Apa saja manfaat Premium Glow Infusion?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-4-content" role="region" aria-labelledby="pg-faq-4-trigger">
+        <div class="rs-faq__answer" id="rs-faq-4-content" role="region" aria-labelledby="rs-faq-4-trigger">
           <p>Premium Glow Infusion membantu mencerahkan kulit kusam, melindungi sel dari radikal bebas, mendukung produksi kolagen, mengembalikan energi saat tubuh mudah lelah, serta membantu menjaga daya tahan tubuh.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-5-content" id="pg-faq-5-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-5-content" id="rs-faq-5-trigger">
           <span>Kenapa prosedurnya sampai 100 menit?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-5-content" role="region" aria-labelledby="pg-faq-5-trigger">
+        <div class="rs-faq__answer" id="rs-faq-5-content" role="region" aria-labelledby="rs-faq-5-trigger">
           <p>Cairan infus diberikan perlahan agar tubuh menerima nutrisi dosis tinggi dengan nyaman. Anda bisa beristirahat selama perawatan berlangsung. Durasi tiap pasien bisa berbeda.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-6-content" id="pg-faq-6-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-6-content" id="rs-faq-6-trigger">
           <span>Apakah prosedurnya sakit?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-6-content" role="region" aria-labelledby="pg-faq-6-trigger">
+        <div class="rs-faq__answer" id="rs-faq-6-content" role="region" aria-labelledby="rs-faq-6-trigger">
           <p>Umumnya tidak. Anda mungkin merasakan sensasi seperti tusukan ringan saat jarum infus dipasang.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-7-content" id="pg-faq-7-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-7-content" id="rs-faq-7-trigger">
           <span>Apakah ada downtime?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-7-content" role="region" aria-labelledby="pg-faq-7-trigger">
+        <div class="rs-faq__answer" id="rs-faq-7-content" role="region" aria-labelledby="rs-faq-7-trigger">
           <p>Tidak ada masa pemulihan. Anda bisa langsung kembali beraktivitas setelah perawatan.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-8-content" id="pg-faq-8-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-8-content" id="rs-faq-8-trigger">
           <span>Berapa sesi yang dibutuhkan?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-8-content" role="region" aria-labelledby="pg-faq-8-trigger">
+        <div class="rs-faq__answer" id="rs-faq-8-content" role="region" aria-labelledby="rs-faq-8-trigger">
           <p>Umumnya 1 kali sebulan. Tenaga medis akan menyesuaikan jadwal dengan kondisi dan tujuan perawatan Anda. Hasil dapat berbeda pada setiap orang.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-9-content" id="pg-faq-9-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-9-content" id="rs-faq-9-trigger">
           <span>Apakah hasilnya permanen?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-9-content" role="region" aria-labelledby="pg-faq-9-trigger">
+        <div class="rs-faq__answer" id="rs-faq-9-content" role="region" aria-labelledby="rs-faq-9-trigger">
           <p>Tidak. Nutrisi dari infus akan dimetabolisme oleh tubuh, sehingga perawatan ini bersifat maintenance. Ketahanan hasil juga dipengaruhi gaya hidup, seperti pola makan, tidur, dan perlindungan dari sinar matahari.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-10-content" id="pg-faq-10-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-10-content" id="rs-faq-10-trigger">
           <span>Apakah ada efek samping?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-10-content" role="region" aria-labelledby="pg-faq-10-trigger">
+        <div class="rs-faq__answer" id="rs-faq-10-content" role="region" aria-labelledby="rs-faq-10-trigger">
           <p>Efek samping umumnya ringan dan sementara, seperti rasa tidak nyaman, memar, atau sedikit bengkak di area infus yang biasanya hilang dalam 2–3 hari. Sebagian orang juga bisa merasa lemas, pusing, atau mual. Jika keluhan tidak membaik atau Anda merasa sesak napas, segera hubungi klinik kami.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-11-content" id="pg-faq-11-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-11-content" id="rs-faq-11-trigger">
           <span>Siapa yang perlu berkonsultasi dulu sebelum perawatan?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-11-content" role="region" aria-labelledby="pg-faq-11-trigger">
+        <div class="rs-faq__answer" id="rs-faq-11-content" role="region" aria-labelledby="rs-faq-11-trigger">
           <p>Informasikan kepada tenaga medis jika Anda sedang hamil atau menyusui, memiliki riwayat alergi, mengonsumsi obat rutin, atau memiliki riwayat penyakit tertentu. Setiap pasien akan menjalani skrining kesehatan sebelum tindakan.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-12-content" id="pg-faq-12-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-12-content" id="rs-faq-12-trigger">
           <span>Apa yang perlu disiapkan dan dihindari?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-12-content" role="region" aria-labelledby="pg-faq-12-trigger">
+        <div class="rs-faq__answer" id="rs-faq-12-content" role="region" aria-labelledby="rs-faq-12-trigger">
           <p>Pastikan tubuh cukup terhidrasi dengan minum air putih dan makan terlebih dahulu sebelum tindakan. Hindari infus atau injeksi vitamin lain dalam 14 hari sebelum dan sesudah perawatan, kecuali atas rekomendasi tenaga medis.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-13-content" id="pg-faq-13-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-13-content" id="rs-faq-13-trigger">
           <span>Apakah bisa dikombinasikan dengan treatment lain?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-13-content" role="region" aria-labelledby="pg-faq-13-trigger">
+        <div class="rs-faq__answer" id="rs-faq-13-content" role="region" aria-labelledby="rs-faq-13-trigger">
           <p>Bisa, sesuai rekomendasi dokter. Premium Glow Infusion dapat dikombinasikan dengan treatment kulit lain seperti facial, laser, atau skinbooster.</p>
         </div>
       </div>
 
-      <div class="ig-faq__item">
-        <h3><button type="button" class="ig-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="pg-faq-14-content" id="pg-faq-14-trigger">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePremiumGlowFaq(this)" aria-expanded="false" aria-controls="rs-faq-14-content" id="rs-faq-14-trigger">
           <span>Berapa harga Premium Glow Infusion di SOZO Skin Clinic?</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button></h3>
-        <div class="ig-faq__answer" id="pg-faq-14-content" role="region" aria-labelledby="pg-faq-14-trigger">
+        <div class="rs-faq__answer" id="rs-faq-14-content" role="region" aria-labelledby="rs-faq-14-trigger">
           <p>Harga Premium Glow Infusion Rp1.299.000 per sesi. Klik tombol Buat Jadwal untuk konsultasi dan booking melalui WhatsApp.</p>
         </div>
       </div>
@@ -1198,18 +1605,19 @@
 </div>
 
 <!-- FLOATING WHATSAPP -->
-<a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Immune%20Glow%20Infusion%20Sozo%20%5Bsrc%3AORG-IGI%5D" class="sozo-wa-float" id="pgWaFloat" target="_blank" rel="noopener noreferrer" aria-label="Buat Jadwal via WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+<a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Immune%20Glow%20Infusion%20Sozo%20%5Bsrc%3AORG-IGI%5D" class="sozo-wa-float" id="rsWaFloat" target="_blank" rel="noopener noreferrer" aria-label="Buat Jadwal via WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Buat Jadwal</span></a>
 
-<script>
+<!-- data-no-optimize: dikecualikan dari LiteSpeed "Delay JS" supaya onclick FAQ & Baca Selengkapnya langsung jalan di klik pertama -->
+<script data-no-optimize="1">
   function togglePremiumGlowFaq(btn) {
-    var item = btn.closest('.ig-faq__item');
+    var item = btn.closest('.rs-faq__item');
     var isOpen = btn.getAttribute('aria-expanded') === 'true';
     var widget = document.getElementById('sozo-premiumglow-widget');
-    var items = widget ? widget.querySelectorAll('.ig-faq__item') : [];
+    var items = widget ? widget.querySelectorAll('.rs-faq__item') : [];
 
     Array.prototype.forEach.call(items, function (other) {
       if (other !== item) {
-        other.querySelector('.ig-faq__question').setAttribute('aria-expanded', 'false');
+        other.querySelector('.rs-faq__question').setAttribute('aria-expanded', 'false');
         other.classList.remove('is-open');
       }
     });
@@ -1219,9 +1627,9 @@
   }
 
   function togglePremiumGlowDesc() {
-    var content = document.getElementById('pgContentExpandable');
-    var btn = document.getElementById('pgExpandBtn');
-    var btnText = document.getElementById('pgExpandBtnText');
+    var content = document.getElementById('rsContentExpandable');
+    var btn = document.getElementById('rsExpandBtn');
+    var btnText = document.getElementById('rsExpandBtnText');
     if (!content || !btn || !btnText) return;
 
     var isExpanded = content.classList.contains('is-expanded');
@@ -1232,13 +1640,9 @@
   }
 
   (function initPremiumGlowWaFloat() {
-    var fab = document.getElementById('pgWaFloat');
+    var fab = document.getElementById('rsWaFloat');
     if (!fab) return;
     document.body.appendChild(fab);
-
-    // Footer situs berupa Custom HTML Elementor (tanpa class footer yang pasti),
-    // jadi tombol disembunyikan saat scroll sudah dekat dasar halaman.
-    // Angka zona = perkiraan tinggi footer (mobile lebih tinggi karena menumpuk).
     var ticking = false;
     function updateFab() {
       ticking = false;
@@ -1247,10 +1651,7 @@
       fab.classList.toggle('is-hidden', distanceToBottom < zone);
     }
     window.addEventListener('scroll', function () {
-      if (!ticking) {
-        ticking = true;
-        window.requestAnimationFrame(updateFab);
-      }
+      if (!ticking) { ticking = true; window.requestAnimationFrame(updateFab); }
     }, { passive: true });
     window.addEventListener('resize', updateFab);
     window.addEventListener('load', updateFab);

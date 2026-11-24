@@ -1,816 +1,1676 @@
-<style>
-  .sozo-sku-pores-wrapper {
-    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #333;
-    line-height: 1.6;
-    background-color: #ffffff;
-  }
-  .sozo-sku-pores-wrapper * { box-sizing: border-box; }
+<!-- ============================================================
+     UI PINK BOMB BOOSTER - SOZO SKIN CLINIC
+     URL     : https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-bomb-booster/
+     Style   : Sozo Design System V1.1 (design-system/), Elementor Safe, scoped
+     Layout  : Sama dengan halaman Tanam Benang Hidung, Korean Filler, Juvelook,
+               Rejuran Healer & Profhilo
+     Seksi   : Breadcrumb -> Hero (H1, masalah, deskripsi, info, CTA Buat
+               Jadwal + Lihat Lokasi, gambar)
+               -> Tentang Treatment (deskripsi ringkas + Baca Selengkapnya)
+               -> Lokasi (chip kota/klinik) -> FAQ -> Floating WhatsApp
+     Pakai   : Copy seluruh file ke widget HTML Elementor halaman ini.
+     CSS+JS  : Sudah digabung di file ini (Font Awesome preload, Poppins,
+               CSS .sozo-sku-pink-bomb-wrapper, JS FAQ, Baca Selengkapnya, floating WA).
+     JSON-LD : Sudah digabung di file ini (WebPage + BreadcrumbList + FAQPage).
+               Isi FAQPage harus sama dengan FAQ di bawah. schema-markup.html
+               tidak dipakai lagi untuk halaman ini.
+     Backup  : Versi live sebelum revamp (24 Nov 2026) ada di backup.html.
+     ============================================================ -->
 
-  .sozo-sku-pores-wrapper .sozo-breadcrumb {
-    padding: 15px 20px 25px 20px;
-    width: 100%;
-  }
-  .sozo-sku-pores-wrapper .sozo-breadcrumb ol {
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-  }
-  .sozo-sku-pores-wrapper .sozo-breadcrumb li {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #1A2080;
-  }
-  .sozo-sku-pores-wrapper .sozo-breadcrumb a {
-    text-decoration: none !important;
-    color: #64748b !important;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  .sozo-sku-pores-wrapper .sozo-breadcrumb a:hover { color: #1A2080 !important; }
-  .sozo-sku-pores-wrapper .sozo-breadcrumb .separator {
-    color: #cbd5e1;
-    margin: 0 4px;
-    font-size: 12px;
-    user-select: none;
-  }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-bomb-booster/#webpage",
+      "url": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-bomb-booster/",
+      "name": "Pink Bomb Booster untuk Kulit Kusam & Kering",
+      "description": "Pink Bomb Booster merupakan perawatan skin booster yang menggabungkan 6 bahan aktif untuk membantu meningkatkan produksi kolagen, menghidrasi kulit secara mendalam, serta memperbaiki kualitas kulit secara menyeluruh. Treatment ini membantu membuat kulit tampak lebih kencang, lembap, cerah, dan bertekstur lebih halus sekaligus membantu mengurangi tanda-tanda penuaan sehingga wajah terlihat lebih sehat dan segar.",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@id": "https://sozoskinclinic.com/#website"
+      },
+      "about": {
+        "@id": "https://sozoskinclinic.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-bomb-booster/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-bomb-booster/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://sozoskinclinic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Treatment",
+          "item": "https://sozoskinclinic.com/treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Injectable Treatment",
+          "item": "https://sozoskinclinic.com/injectable-treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Skin Booster Treatment",
+          "item": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Pink Bomb Booster"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/pink-bomb-booster/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu Pink Bomb Booster?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pink Bomb Booster adalah perawatan skin booster yang dilakukan melalui prosedur injeksi untuk membantu meningkatkan kualitas kulit secara menyeluruh. Treatment ini menggabungkan enam bahan aktif yang bekerja untuk membantu meningkatkan produksi kolagen, menjaga hidrasi kulit, memperbaiki tekstur kulit, serta membuat kulit tampak lebih kencang, cerah, dan sehat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa manfaat Pink Bomb Booster untuk kulit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pink Bomb Booster membantu merawat berbagai aspek kualitas kulit dalam satu treatment. Perawatan ini membantu meningkatkan produksi kolagen, menjaga kelembapan kulit, memperbaiki tekstur kulit, mendukung elastisitas kulit, serta membantu membuat wajah tampak lebih cerah dan segar. Kombinasi manfaat tersebut menjadikan Pink Bomb Booster sebagai salah satu pilihan bagi Anda yang ingin menjaga kesehatan kulit sekaligus membantu mengurangi tanda-tanda penuaan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara kerja Pink Bomb Booster?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pink Bomb Booster bekerja dengan mengaplikasikan skin booster melalui injeksi ke lapisan kulit. Kandungan didalamnya membantu mendukung proses pembentukan kolagen sekaligus meningkatkan hidrasi kulit sehingga kualitas kulit dapat membaik secara bertahap. Dokter akan menyesuaikan area treatment berdasarkan kondisi kulit dan kebutuhan masing-masing pasien."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Siapa yang cocok menjalani Pink Bomb Booster?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pink Bomb Booster umumnya direkomendasikan bagi Anda yang mulai merasakan perubahan pada kualitas kulit, seperti kulit kusam, tekstur kulit yang kurang halus, kulit yang terasa kering, elastisitas yang mulai berkurang, maupun munculnya garis-garis halus. Treatment ini juga dapat menjadi pilihan bagi Anda yang ingin menjaga kulit tetap sehat dan tampak segar sebelum tanda-tanda penuaan berkembang lebih lanjut."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang membuat Pink Bomb Booster berbeda dengan skin booster lainnya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Setiap skin booster memiliki formulasi dan fokus manfaat yang berbeda. Pink Bomb Booster dirancang dengan kombinasi enam bahan aktif yang bekerja secara sinergis untuk membantu meningkatkan produksi kolagen, memberikan hidrasi, memperbaiki tekstur kulit, serta mendukung kekencangan kulit dalam satu rangkaian perawatan. Dokter akan membantu menentukan jenis skin booster yang paling sesuai berdasarkan kondisi dan kebutuhan kulit Anda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah Pink Bomb Booster dapat membantu mengencangkan kulit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Berkurangnya produksi kolagen merupakan salah satu penyebab kulit kehilangan elastisitas seiring bertambahnya usia. Pink Bomb Booster membantu mendukung produksi kolagen sehingga kulit dapat terasa lebih kenyal dan tampak lebih kencang. Tingkat perubahan yang diperoleh dapat berbeda pada setiap pasien sesuai dengan kondisi kulit dan respon terhadap treatment"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah Pink Bomb Booster dapat membantu mencerahkan kulit kusam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kulit kusam dapat disebabkan oleh berbagai faktor, seperti paparan sinar matahari, polusi, penumpukan sel kulit mati, hingga berkurangnya regenerasi kulit. Pink Bomb Booster membantu meningkatkan kualitas kulit sehingga wajah tampak lebih segar dan bercahaya. Perawatan yang dilakukan secara rutin sesuai rekomendasi dokter dapat membantu mempertahankan tampilan kulit yang sehat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa kali Pink Bomb Booster perlu dilakukan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jumlah sesi treatment bergantung pada kondisi kulit, usia, tujuan perawatan, serta respon kulit terhadap tindakan yang dilakukan. Setelah konsultasi, dokter akan memberikan rekomendasi jumlah sesi maupun interval treatment yang disesuaikan dengan kebutuhan masing-masing pasien agar hasil perawatan dapat lebih optimal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kapan hasil Pink Bomb Booster mulai terlihat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sebagian pasien dapat merasakan kulit terasa lebih lembap dan segar setelah menjalani treatment. Sementara itu, perubahan pada tekstur kulit, elastisitas, maupun tampilan kulit yang lebih sehat biasanya berkembang secara bertahap seiring proses pembentukan kolagen. Waktu yang dibutuhkan dapat berbeda pada setiap individu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama hasil Pink Bomb Booster dapat bertahan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ketahanan hasil treatment dipengaruhi oleh berbagai faktor, seperti kondisi kulit, usia, gaya hidup, paparan sinar matahari, serta konsistensi dalam menjalankan perawatan kulit sehari-hari. Dokter dapat memberikan rekomendasi jadwal maintenance yang sesuai untuk membantu menjaga kualitas kulit setelah treatment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang perlu diperhatikan setelah Pink Bomb Booster?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Setelah treatment selesai, dokter akan memberikan panduan mengenai perawatan kulit yang perlu dilakukan di rumah, termasuk penggunaan skincare, perlindungan terhadap paparan sinar matahari, serta aktivitas yang sebaiknya dihindari untuk sementara waktu. Mengikuti anjuran tersebut dapat membantu proses pemulihan kulit dan mendukung hasil treatment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah Pink Bomb Booster aman?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sebelum treatment dilakukan, setiap pasien akan menjalani konsultasi dan pemeriksaan kondisi kulit bersama dokter. Evaluasi tersebut bertujuan untuk memastikan bahwa Pink Bomb Booster sesuai dengan kebutuhan kulit dan dapat dilakukan dengan pendekatan yang tepat berdasarkan kondisi masing-masing pasien."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bisakah Pink Bomb Booster dikombinasikan dengan treatment lain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pink Bomb Booster dapat dipertimbangkan untuk dikombinasikan dengan treatment lain sesuai kondisi kulit dan tujuan perawatan. Setelah melakukan analisis kulit, dokter akan menyusun rekomendasi kombinasi treatment yang dinilai sesuai sehingga setiap prosedur dapat saling mendukung tanpa mengabaikan keamanan dan kondisi kulit pasien."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana saya bisa melakukan Pink Bomb Booster?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pink Bomb Booster tersedia di seluruh cabang SOZO Skin Clinic. Anda disarankan untuk melakukan reservasi dan konsultasi melalui Whatsapp resmi Sozo. Sebelum tindakan dilakukan, dokter akan mengevaluasi kondisi kulit dan mendiskusikan tujuan perawatan sehingga treatment yang diberikan dapat disesuaikan dengan kebutuhan setiap pasien. Lokasi Cabang SOZO Skin Clinic Terdekat."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
-  .sozo-sku-pores-wrapper .sozo-treatment-hero {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 50px;
-    align-items: center;
-    margin-bottom: 50px;
-    padding: 0 20px;
-  }
-  .sozo-sku-pores-wrapper .sozo-hero-text { flex: 1; }
-  .sozo-sku-pores-wrapper .sozo-hero-text h1 {
-    font-size: clamp(32px, 4vw, 42px) !important;
-    color: #1A2080 !important;
-    margin: 0 0 16px 0 !important;
-    line-height: 1.2 !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.5px;
-  }
-  .sozo-sku-pores-wrapper .sozo-hero-text p {
-    font-size: 16px !important;
-    color: #475569 !important;
-    margin: 0 0 30px 0 !important;
-    line-height: 1.6 !important;
-  }
-  .sozo-sku-pores-wrapper .sozo-hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .sozo-sku-pores-wrapper .sozo-hero-image img {
-    width: 100%;
-    max-width: 480px;
-    height: 340px;
-    border-radius: 24px;
-    object-fit: cover;
-    object-position: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    display: block;
-  }
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-  .sozo-sku-pores-wrapper .sozo-info-row {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 35px;
-    padding: 24px;
-    background-color: #f8fafc;
-    border-radius: 16px;
-    border: 1px solid #f1f5f9;
-  }
-  .sozo-sku-pores-wrapper .sozo-info-col {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-  }
-  .sozo-sku-pores-wrapper .sozo-info-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    background-color: #EEF2FF;
-    border-radius: 12px;
-    color: #1A2080;
-  }
-  .sozo-sku-pores-wrapper .sozo-info-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .sozo-sku-pores-wrapper .sozo-info-label {
-    font-size: 13px !important;
-    color: #64748b !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .sozo-sku-pores-wrapper .sozo-info-value {
-    font-size: 20px !important;
-    color: #1A2080 !important;
-    font-weight: 700 !important;
-  }
+<!-- Font resmi Sozo: Poppins 400-800, di-load sekali -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  .sozo-sku-pores-wrapper .sozo-btn,
-  .sozo-sku-pores-wrapper .sozo-related-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 320px;
-    padding: 16px 24px;
-    background-color: #1A2080 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(26, 32, 128, 0.2);
-    border: 2px solid #1A2080 !important;
-  }
-  .sozo-sku-pores-wrapper .sozo-btn:hover,
-  .sozo-sku-pores-wrapper .sozo-related-btn:hover {
-    background-color: #ffffff !important;
-    color: #1A2080 !important;
-    transform: translateY(-3px);
-  }
+<style>/* ============================================================
+     Token Sozo Design System V1.1, di-scope ke wrapper supaya
+     tidak bocor ke halaman Elementor lain. Density: compact
+     (treatment detail), sama dengan halaman Restylane Skin Booster.
+     ============================================================ */
+  .sozo-sku-pink-bomb-wrapper {
+    /* Color */
+    --color-brand-primary: #1A2080;
+    --color-brand-almond: #E9DFD5;
+    --color-white: #FFFFFF;
+    --color-text-primary: #171715;
+    --color-text-secondary: #41413E;
+    --color-text-muted: #777771;
+    --color-text-on-primary: #FFFFFF;
+    --color-border: #DFDBD4;
+    --color-border-strong: #C8C3BA;
+    --color-primary-hover: #151A6D;
+    --color-primary-subtle: rgba(26, 32, 128, 0.05);
 
-  .sozo-sku-pores-wrapper .sozo-cta-wrapper { padding: 0 20px; }
-  .sozo-sku-pores-wrapper .sozo-cta-banner {
-    background-image: linear-gradient(135deg, #1A2080 0%, #2e38b5 100%);
-    border-radius: 24px;
-    padding: 50px 30px;
-    margin-bottom: 50px;
-    text-align: center;
-    color: #ffffff;
-    box-shadow: 0 15px 35px rgba(26, 32, 128, 0.15);
-  }
-  .sozo-sku-pores-wrapper .sozo-cta-banner h2 {
-    font-size: clamp(24px, 3vw, 32px) !important;
-    color: #ffffff !important;
-    margin: 0 0 15px 0 !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.5px;
-  }
-  .sozo-sku-pores-wrapper .sozo-cta-banner p {
-    font-size: 16px !important;
-    color: #e2e8f0 !important;
-    margin: 0 auto 30px auto !important;
-    max-width: 650px;
-    line-height: 1.6 !important;
-  }
-  .sozo-sku-pores-wrapper .sozo-btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 36px;
-    background-color: #ffffff !important;
-    color: #1A2080 !important;
-    text-decoration: none !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    border-radius: 100px;
-    border: 2px solid #ffffff !important;
-  }
+    /* Typography */
+    --font-family-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --text-section-title: clamp(24px, 3vw, 32px);
+    --text-body: 16px;
+    --text-body-sm: 14px;
+    --text-label: 12px;
+    --leading-caption: 1.40;
+    --tracking-eyebrow: 0.12em;
+    --tracking-badge: 0.02em;
 
-  .sozo-sku-pores-wrapper .sozo-content-wrapper { padding: 0 20px; }
-  .sozo-sku-pores-wrapper .sozo-section-card,
-  .sozo-sku-pores-wrapper .sozo-faq-section {
-    background-color: #ffffff;
-    border: 1px solid #f1f5f9;
-    border-radius: 24px;
-    padding: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  }
-  .sozo-sku-pores-wrapper .sozo-section-card h2,
-  .sozo-sku-pores-wrapper .sozo-faq-section h2 {
-    font-size: 24px !important;
-    color: #1A2080 !important;
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-    font-weight: 800 !important;
-  }
-  .sozo-sku-pores-wrapper .sozo-section-card h3 {
-    font-size: 18px !important;
-    color: #1A2080 !important;
-    margin-top: 24px !important;
-    margin-bottom: 12px !important;
-    font-weight: 700 !important;
-  }
-  .sozo-sku-pores-wrapper .sozo-section-card p,
-  .sozo-sku-pores-wrapper .sozo-section-card li {
-    color: #475569 !important;
-    font-size: 16px !important;
-  }
-  .sozo-sku-pores-wrapper .sozo-section-card ul {
-    padding-left: 20px !important;
-    margin-bottom: 20px !important;
-  }
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
 
-  .sozo-sku-pores-wrapper .sozo-problem-grid,
-  .sozo-sku-pores-wrapper .sozo-related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .sozo-sku-pores-wrapper .sozo-problem-card {
-    background-color: #f8fafc;
-    border: 1px solid #f1f5f9;
-    border-radius: 14px;
-    padding: 20px;
-  }
-  .sozo-sku-pores-wrapper .sozo-problem-card strong {
-    display: block;
-    color: #1A2080;
-    font-size: 16px;
-    margin-bottom: 6px;
-  }
-  .sozo-sku-pores-wrapper .sozo-problem-card span {
-    color: #475569;
-    font-size: 14px;
-  }
+    /* Layout (compact: treatment detail) */
+    --container-max: 1280px;
+    --container-pad: 32px;
+    --section-y: var(--space-6);
 
-  .sozo-sku-pores-wrapper .sozo-process-step {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  .sozo-sku-pores-wrapper .sozo-step-num {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #EEF2FF;
-    color: #1A2080;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .sozo-sku-pores-wrapper .sozo-step-text strong {
-    display: block;
-    color: #1A2080;
-    font-size: 16px;
-    margin-bottom: 4px;
-  }
-  .sozo-sku-pores-wrapper .sozo-step-text p {
-    margin: 0 !important;
-    color: #475569 !important;
-    font-size: 15px !important;
-  }
+    /* Shape */
+    --radius-lg: 16px;
+    --radius-full: 999px;
+    --focus-ring: 2px solid var(--color-brand-primary);
+    --focus-offset: 3px;
 
-  .sozo-sku-pores-wrapper .sozo-related-card {
-    border: 1px solid #f1f5f9;
-    border-radius: 16px;
-    overflow: hidden;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-  }
-  .sozo-sku-pores-wrapper .sozo-related-card img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    display: block;
-  }
-  .sozo-sku-pores-wrapper .sozo-related-body {
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-  }
-  .sozo-sku-pores-wrapper .sozo-related-body h3 {
-    font-size: 16px !important;
-    color: #1A2080 !important;
-    margin: 0 !important;
-  }
-  .sozo-sku-pores-wrapper .sozo-related-body p {
-    font-size: 14px !important;
-    color: #475569 !important;
-    margin: 0 !important;
-    flex: 1;
-  }
-  .sozo-sku-pores-wrapper .sozo-related-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .sozo-sku-pores-wrapper .sozo-related-btn {
-    max-width: none;
-    padding: 11px 16px;
-    font-size: 14px !important;
-    box-shadow: none;
-  }
-  .sozo-sku-pores-wrapper .sozo-related-link {
-    color: #1A2080 !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-    text-decoration: none !important;
-    text-align: center;
-  }
+    /* Motion */
+    --duration-fast: 180ms;
+    --duration-card: 220ms;
+    --ease-standard: ease;
 
-  .sozo-sku-pores-wrapper .sozo-expandable-content {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.4s ease-out;
-  }
-  .sozo-sku-pores-wrapper .sozo-expandable-content.expanded { grid-template-rows: 1fr; }
-  .sozo-sku-pores-wrapper .sozo-expandable-inner { overflow: hidden; }
-  .sozo-sku-pores-wrapper .sozo-load-more-btn {
-    background: none !important;
-    border: none !important;
-    color: #1A2080 !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
-    padding: 0 !important;
-    margin-top: 15px !important;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .sozo-sku-pores-wrapper .sozo-load-more-btn svg { transition: transform 0.3s ease; }
-  .sozo-sku-pores-wrapper .sozo-load-more-btn.active svg { transform: rotate(180deg); }
-
-  .sozo-sku-pores-wrapper .sozo-faq-item {
-    border-bottom: 1px solid #f1f5f9;
-    padding: 16px 0;
-  }
-  .sozo-sku-pores-wrapper .sozo-faq-item:last-child { border-bottom: none; }
-  .sozo-sku-pores-wrapper .sozo-faq-question {
-    width: 100%;
-    background: none !important;
-    border: none !important;
-    text-align: left;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    color: #1e293b !important;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0 8px 0 !important;
-  }
-  .sozo-sku-pores-wrapper .sozo-faq-question svg { flex-shrink: 0; margin-left: 16px; transition: transform 0.3s ease; }
-  .sozo-sku-pores-wrapper .sozo-faq-question.active svg { transform: rotate(180deg); color: #1A2080; }
-  .sozo-sku-pores-wrapper .sozo-faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-  .sozo-sku-pores-wrapper .sozo-faq-answer p {
-    color: #475569 !important;
-    font-size: 15px !important;
-    margin: 8px 0 16px 0 !important;
-    line-height: 1.6 !important;
-  }
-  .sozo-sku-pores-wrapper .sozo-faq-answer a {
-    color: #1A2080 !important;
-    text-decoration: underline !important;
-    font-weight: 500;
+    font-family: var(--font-family-primary) !important;
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-white) !important;
+    line-height: 1.5 !important;
   }
 
   @media (max-width: 768px) {
-    .sozo-sku-pores-wrapper .sozo-treatment-hero {
-      flex-direction: column-reverse;
-      gap: 30px;
+    .sozo-sku-pink-bomb-wrapper {
+      --container-pad: 20px;
+      --section-y: var(--space-5);
     }
-    .sozo-sku-pores-wrapper .sozo-hero-text h1 { font-size: 32px !important; }
-    .sozo-sku-pores-wrapper .sozo-hero-image img { height: 250px; max-width: 100%; }
-    .sozo-sku-pores-wrapper .sozo-info-row { flex-direction: column; gap: 20px; padding: 20px; }
-    .sozo-sku-pores-wrapper .sozo-btn,
-    .sozo-sku-pores-wrapper .sozo-btn-secondary { max-width: 100%; width: 100%; }
-    .sozo-sku-pores-wrapper .sozo-section-card,
-    .sozo-sku-pores-wrapper .sozo-faq-section { padding: 25px; border-radius: 20px; }
-    .sozo-sku-pores-wrapper .sozo-problem-grid,
-    .sozo-sku-pores-wrapper .sozo-related-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-pink-bomb-wrapper {
+      --duration-fast: 0ms;
+      --duration-card: 0ms;
+    }
+  }
+
+  .sozo-sku-pink-bomb-wrapper,
+  .sozo-sku-pink-bomb-wrapper * {
+    box-sizing: border-box !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper h1,
+  .sozo-sku-pink-bomb-wrapper h2,
+  .sozo-sku-pink-bomb-wrapper h3,
+  .sozo-sku-pink-bomb-wrapper p,
+  .sozo-sku-pink-bomb-wrapper ul,
+  .sozo-sku-pink-bomb-wrapper ol {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: var(--font-family-primary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper a {
+    text-decoration: none !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-container {
+    width: min(100% - (var(--container-pad) * 2), var(--container-max)) !important;
+    margin-inline: auto !important;
+  }
+
+  /* ============ BUTTON (design-system/components/button.md) ============ */
+  .sozo-sku-pink-bomb-wrapper .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--space-2) !important;
+    min-height: 48px !important;
+    padding: 0 var(--space-6) !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--radius-full) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .btn:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .btn:active {
+    transform: translateY(0) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: var(--focus-offset) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .btn--primary,
+  .sozo-sku-pink-bomb-wrapper .btn--primary:visited {
+    background-color: var(--color-brand-primary) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .btn--primary:hover {
+    background-color: var(--color-primary-hover) !important;
+    color: var(--color-text-on-primary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .btn--outline,
+  .sozo-sku-pink-bomb-wrapper .btn--outline:visited {
+    background-color: transparent !important;
+    border-color: var(--color-brand-primary) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .btn--outline:hover {
+    background-color: var(--color-primary-subtle) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* CTA hero: Buat Jadwal + Lihat Lokasi, selalu sejajar */
+  .sozo-sku-pink-bomb-wrapper .rs-cta {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-3) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .btn__icon {
+    width: 16px !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    flex: none !important;
+  }
+
+  /* ============ BADGE (design-system/components/badge.md) ============ */
+  .sozo-sku-pink-bomb-wrapper .badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 30px !important;
+    padding: 0 var(--space-3) !important;
+    border-radius: var(--radius-full) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-badge) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .badge--brand {
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .badge--label {
+    min-height: 30px !important;
+    padding: 0 18px !important;
+    margin-bottom: var(--space-4) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    letter-spacing: 0.25em !important;
+    text-transform: uppercase !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ BREADCRUMB (design-system/components/breadcrumb.md) ============ */
+  .sozo-sku-pink-bomb-wrapper .breadcrumb {
+    padding-top: var(--space-4) !important;
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .breadcrumb__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: 13px !important;
+    line-height: var(--leading-caption) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .breadcrumb__list li {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .breadcrumb__list li + li::before {
+    content: "/" !important;
+    color: var(--color-border-strong) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .breadcrumb a {
+    color: var(--color-text-muted) !important;
+    font-weight: 500 !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .breadcrumb a:hover {
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .breadcrumb a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .breadcrumb__current {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ============ HERO ============ */
+  .sozo-sku-pink-bomb-wrapper .rs-hero {
+    padding-bottom: var(--section-y) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-hero__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important;
+    gap: var(--space-8) !important;
+    align-items: center !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-hero__title {
+    margin-bottom: var(--space-4) !important;
+    font-size: clamp(28px, 2.8vw, 38px) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Masalah yang bisa diatasi */
+  .sozo-sku-pink-bomb-wrapper .rs-problems {
+    margin-bottom: var(--space-4) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-problems__label {
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 600 !important;
+    line-height: var(--leading-caption) !important;
+    letter-spacing: var(--tracking-eyebrow) !important;
+    text-transform: uppercase !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-problems__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-problems__list li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Paragraf intro: justify, selebar kolom (sama dengan Infus Whitening) */
+  .sozo-sku-pink-bomb-wrapper .rs-hero__desc {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    text-align: justify !important;
+    hyphens: auto !important;
+  }
+
+  /* Info: durasi, frekuensi, harga */
+  .sozo-sku-pink-bomb-wrapper .rs-info {
+    list-style: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    margin-bottom: var(--space-5) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-info__item {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-3) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: var(--space-4) !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-info__item + .rs-info__item {
+    border-left: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-info__icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-info__text {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-info__label {
+    font-size: var(--text-label) !important;
+    font-weight: 500 !important;
+    line-height: var(--leading-caption) !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-info__value {
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Gambar treatment: standalone, rasio 4:3 (design-system/components/image.md) */
+  .sozo-sku-pink-bomb-wrapper .rs-hero__media img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  /* ============ BOTTOM CONTENT (DESKRIPSI TREATMENT) ============ */
+  .sozo-sku-pink-bomb-wrapper .rs-content {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-section-title {
+    margin-bottom: var(--space-4) !important;
+    font-size: var(--text-section-title) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-content__desc {
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+    margin-bottom: var(--space-4) !important;
+    text-align: justify !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-content__desc a,
+  .sozo-sku-pink-bomb-wrapper .rs-content__desc a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-content__desc a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-content__subtitle {
+    margin: var(--space-2) 0 var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-content__checklist {
+    list-style: none !important;
+    margin: 0 0 var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-content__checklist li {
+    position: relative !important;
+    padding-left: 28px !important;
+    margin-bottom: var(--space-2) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-content__checklist li::before {
+    content: "\2713" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    font-weight: 700 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  /* Tahapan treatment: daftar bernomor */
+  .sozo-sku-pink-bomb-wrapper .rs-content__steps {
+    list-style: none !important;
+    counter-reset: rs-step !important;
+    margin: 0 0 var(--space-4) !important;
+    padding: 0 !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-content__steps li {
+    position: relative !important;
+    counter-increment: rs-step !important;
+    padding-left: 36px !important;
+    margin-bottom: var(--space-3) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-content__steps li::before {
+    content: counter(rs-step) !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-brand-almond) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: var(--text-label) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-content__steps strong {
+    color: var(--color-text-primary) !important;
+    font-weight: 600 !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-expandable {
+    display: grid !important;
+    grid-template-rows: 0fr !important;
+    transition: grid-template-rows var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-expandable.is-expanded {
+    grid-template-rows: 1fr !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-expandable__inner {
+    overflow: hidden !important;
+    min-height: 0 !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-expand-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-top: var(--space-1) !important;
+    color: var(--color-brand-primary) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard),
+                opacity var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-expand-btn:hover {
+    color: var(--color-primary-hover) !important;
+    opacity: 0.85 !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-expand-btn:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-expand-btn svg {
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-expand-btn.is-active svg {
+    transform: rotate(180deg) !important;
+  }
+
+  /* ============ LOKASI ============
+     Tersedia di semua cabang: kartu dengan info kiri + chip kota kanan.
+     Chip mengarah ke /lokasi/[kota]/ (daftar kota sama dengan hub /lokasi/).
+     Mobile: info di atas, chip wrap di bawah. */
+  .sozo-sku-pink-bomb-wrapper .rs-loc {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+    scroll-margin-top: 80px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__intro {
+    margin-bottom: var(--space-5) !important;
+    font-size: var(--text-body) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) !important;
+    gap: var(--space-6) !important;
+    align-items: center !important;
+    padding: var(--space-6) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+    background-color: var(--color-white) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-3) !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__name {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--color-brand-primary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__name i {
+    font-size: 0.85em !important;
+    flex: none !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__text {
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.6 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: var(--space-3) !important;
+    margin-top: var(--space-2) !important;
+  }
+
+  /* Tombol kartu lokasi: ukuran small (btn--sm di design system) */
+  .sozo-sku-pink-bomb-wrapper .rs-loc__actions .btn {
+    min-height: 40px !important;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__actions .btn__icon {
+    width: 14px !important;
+    font-size: 14px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__list {
+    list-style: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__list li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__chip,
+  .sozo-sku-pink-bomb-wrapper .rs-loc__chip:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 36px !important;
+    padding: 0 var(--space-4) !important;
+    border: 1px solid var(--color-border-strong) !important;
+    border-radius: var(--radius-full) !important;
+    background-color: var(--color-white) !important;
+    color: var(--color-brand-primary) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    transition: background-color var(--duration-fast) var(--ease-standard),
+                border-color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__chip:hover {
+    border-color: var(--color-brand-primary) !important;
+    background-color: var(--color-primary-subtle) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-loc__chip:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* ============ FAQ ============ */
+  .sozo-sku-pink-bomb-wrapper .rs-faq {
+    padding-block: var(--section-y) !important;
+    border-top: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__item {
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__question {
+    width: 100% !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: var(--space-4) !important;
+    padding: 18px 0 !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--text-body) !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    color: var(--color-text-primary) !important;
+    cursor: pointer !important;
+    transition: color var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__question:hover {
+    color: var(--color-brand-primary) !important;
+    background: none !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__question:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__question > span {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__question svg {
+    flex-shrink: 0 !important;
+    color: var(--color-brand-primary) !important;
+    transition: transform var(--duration-fast) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__item.is-open .rs-faq__question svg {
+    transform: rotate(180deg) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__answer {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height var(--duration-card) var(--ease-standard) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__item.is-open .rs-faq__answer {
+    max-height: 1000px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__answer p {
+    padding-bottom: 18px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__answer a,
+  .sozo-sku-pink-bomb-wrapper .rs-faq__answer a:visited {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__answer a:focus-visible {
+    outline: var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* ============================================================
+     RESPONSIVE (breakpoint design system: 1024 / 768 / 480)
+     ============================================================ */
+  @media (max-width: 1024px) {
+    /* Hero satu kolom: teks dulu, gambar di bawah CTA */
+    .sozo-sku-pink-bomb-wrapper .rs-hero__grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: var(--space-5) !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-hero__media img {
+      aspect-ratio: 16 / 9 !important;
+      max-height: 400px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sozo-sku-pink-bomb-wrapper .breadcrumb {
+      padding-top: var(--space-3) !important;
+      margin-bottom: var(--space-3) !important;
+    }
+
+    /* Breadcrumb: font kecil supaya muat maksimal 2 baris.
+       Tiap item tidak dipotong di tengah (nowrap per item). */
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list {
+      flex-wrap: wrap !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list li {
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list,
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list li,
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list a,
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__current {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list,
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list li {
+      gap: 4px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list li {
+      flex: none !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-hero__title {
+      margin-bottom: var(--space-2) !important;
+      font-size: 20px !important;
+      line-height: 1.25 !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-problems {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-problems__label {
+      margin-bottom: 6px !important;
+      font-size: 11px !important;
+    }
+
+    /* Badge masalah: satu baris, geser ke samping kalau tidak muat (EX-04) */
+    .sozo-sku-pink-bomb-wrapper .rs-problems__list {
+      flex-wrap: nowrap !important;
+      gap: 6px !important;
+      overflow-x: auto !important;
+      scrollbar-width: none !important;
+      -webkit-overflow-scrolling: touch !important;
+      -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+      mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-problems__list::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .badge {
+      flex: none !important;
+      min-height: 26px !important;
+      padding: 0 10px !important;
+      font-size: 11px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-hero__desc {
+      margin-bottom: var(--space-4) !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Info tetap 3 kolom, ikon disembunyikan supaya ringkas */
+    .sozo-sku-pink-bomb-wrapper .rs-info {
+      margin-bottom: var(--space-4) !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-info__item {
+      justify-content: center !important;
+      padding: 10px 6px !important;
+      text-align: center !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-info__icon {
+      display: none !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-info__label {
+      font-size: 11px !important;
+      line-height: 1.3 !important;
+    }
+
+    /* Nilai tidak dipotong ke baris baru (mis. "Rp 7.798.000") */
+    .sozo-sku-pink-bomb-wrapper .rs-info__value {
+      font-size: 13px !important;
+      white-space: nowrap !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .btn {
+      min-height: 44px !important;
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .btn__icon {
+      width: 15px !important;
+      font-size: 15px !important;
+    }
+
+    /* Bottom content + FAQ: skala font sama dengan hero (H2 < H1 20px, body 13px) */
+    .sozo-sku-pink-bomb-wrapper .rs-section-title {
+      margin-bottom: var(--space-3) !important;
+      font-size: 18px !important;
+      line-height: 1.3 !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .badge--label {
+      min-height: 26px !important;
+      margin-bottom: var(--space-3) !important;
+      padding: 0 12px !important;
+      font-size: 10px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-content__subtitle {
+      margin: var(--space-1) 0 var(--space-2) !important;
+      font-size: 14px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-content__desc,
+    .sozo-sku-pink-bomb-wrapper .rs-content__checklist li,
+    .sozo-sku-pink-bomb-wrapper .rs-content__steps li {
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-content__checklist li {
+      padding-left: 22px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-content__steps li {
+      padding-left: 30px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-content__steps li::before {
+      top: 1px !important;
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 11px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-content__desc {
+      margin-bottom: var(--space-3) !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-expand-btn {
+      font-size: 13px !important;
+    }
+
+    /* CTA hero & kartu lokasi sejajar, masing-masing setengah lebar */
+    .sozo-sku-pink-bomb-wrapper .rs-cta .btn,
+    .sozo-sku-pink-bomb-wrapper .rs-loc__actions .btn {
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      padding: 0 var(--space-3) !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-loc__intro {
+      margin-bottom: var(--space-4) !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-loc__card {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: var(--space-4) !important;
+      padding: var(--space-4) !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-loc__name {
+      font-size: 15px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-loc__text {
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-loc__list {
+      gap: 6px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-loc__chip,
+    .sozo-sku-pink-bomb-wrapper .rs-loc__chip:visited {
+      min-height: 32px !important;
+      padding: 0 var(--space-3) !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-faq__question {
+      padding: 12px 0 !important;
+      font-size: 13px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-faq__question svg {
+      width: 18px !important;
+      height: 18px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-faq__answer p {
+      padding-bottom: 12px !important;
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+  }
+
+  /* HP kecil (320–360px): breadcrumb tetap maksimal 2 baris, harga tetap 1 baris */
+  @media (max-width: 360px) {
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list,
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list li,
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list a,
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__current {
+      font-size: 10px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list,
+    .sozo-sku-pink-bomb-wrapper .breadcrumb__list li {
+      gap: 2px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-info__item {
+      padding: 10px 4px !important;
+    }
+
+    .sozo-sku-pink-bomb-wrapper .rs-info__value {
+      font-size: 12px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sozo-sku-pink-bomb-wrapper .btn {
+      font-size: 13px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-sku-pink-bomb-wrapper .btn:hover {
+      transform: none !important;
+    }
+  }
+
+  /* ============ FLOATING WHATSAPP (design-system/components/whatsapp-cta.md) ============
+     JS memindahkan tombol ke <body> supaya position: fixed tidak terkunci
+     oleh transform di container Elementor. Karena itu token ditulis langsung
+     di class ini, bukan lewat wrapper. Tombol tampil sejak halaman dibuka.
+     Bentuk pill + label "Buat Jadwal", sama dengan CTA hero. */
+  .sozo-wa-float {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 40px !important;
+    z-index: 900 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 48px !important;
+    padding: 0 24px !important;
+    border-radius: 999px !important;
+    background-color: #E9DFD5 !important;
+    color: #1A2080 !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 16px 40px rgba(23, 23, 21, 0.10) !important;
+    text-decoration: none !important;
+    transition:
+      opacity 180ms ease,
+      visibility 180ms ease,
+      transform 180ms ease,
+      background-color 180ms ease !important;
+  }
+
+  /* Disembunyikan saat footer terlihat supaya tidak menutupi link footer */
+  .sozo-wa-float.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(8px) !important;
+  }
+
+  /* Hover berubah ke biru brand supaya jelas tombol bisa diklik */
+  .sozo-wa-float:hover {
+    background-color: #1A2080 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .sozo-wa-float:focus-visible {
+    outline: 2px solid #1A2080 !important;
+    outline-offset: 3px !important;
+  }
+
+  .sozo-wa-float i {
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  /* Mobile: lebih ringkas supaya tidak banyak menutupi konten */
+  @media (max-width: 768px) {
+    .sozo-wa-float {
+      right: 16px !important;
+      bottom: 28px !important;
+      gap: 6px !important;
+      height: 42px !important;
+      padding: 0 16px !important;
+      font-size: 12px !important;
+    }
+
+    .sozo-wa-float i {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sozo-wa-float,
+    .sozo-wa-float:hover {
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* List di jawaban FAQ (mis. aftercare, harga paket) */
+  .sozo-sku-pink-bomb-wrapper .rs-faq__answer ol,
+  .sozo-sku-pink-bomb-wrapper .rs-faq__answer ul {
+    margin: -6px 0 18px !important;
+    padding-left: 20px !important;
+  }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__answer ol { list-style: decimal !important; }
+  .sozo-sku-pink-bomb-wrapper .rs-faq__answer ul { list-style: disc !important; }
+
+  .sozo-sku-pink-bomb-wrapper .rs-faq__answer li {
+    margin-bottom: 4px !important;
+    font-size: var(--text-body-sm) !important;
+    line-height: 1.7 !important;
+    color: var(--color-text-secondary) !important;
   }
 </style>
 
-<div class="sozo-sku-pores-wrapper" id="sozo-pores-widget">
+<div class="sozo-sku-pink-bomb-wrapper" id="sozo-pink-bomb-widget">
 
-  <nav aria-label="Breadcrumb" class="sozo-breadcrumb">
-    <ol>
-      <li>
-        <a href="https://sozoskinclinic.com/">Home</a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/injectable-treatment/">Injectable Treatment</a>
-      </li>
-      <li class="separator">/</li>
-      <li>
-        <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/">Skin Booster Treatment</a>
-      </li>
-      <li class="separator">/</li>
-      <li aria-current="page">
-        <span style="color: #1A2080; font-weight: 600;">Pink Bomb Booster</span>
-      </li>
-    </ol>
-  </nav>
+  <!-- ===== HERO ===== -->
+  <section class="rs-hero">
+    <div class="rs-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li><a href="https://sozoskinclinic.com/">Beranda</a></li>
+          <li><a href="https://sozoskinclinic.com/treatment/">Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/injectable-treatment/">Injectable Treatment</a></li>
+          <li><a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/">Skin Booster Treatment</a></li>
+          <li><span class="breadcrumb__current" aria-current="page">Pink Bomb Booster</span></li>
+        </ol>
+      </nav>
 
-  <div class="sozo-treatment-hero">
-    <div class="sozo-hero-text">
-      <h1>Pink Bomb Booster untuk Kulit Lebih Kencang, Cerah & Tampak Awet Muda</h1>
-      <p>Pink Bomb Booster merupakan perawatan skin booster yang menggabungkan 6 bahan aktif untuk membantu meningkatkan produksi kolagen, menghidrasi kulit secara mendalam, serta memperbaiki kualitas kulit secara menyeluruh. Treatment ini membantu membuat kulit tampak lebih kencang, lembap, cerah, dan bertekstur lebih halus sekaligus membantu mengurangi tanda-tanda penuaan sehingga wajah terlihat lebih sehat dan segar.
-</p>
+      <div class="rs-hero__grid">
+        <div class="rs-hero__content">
+          <h1 class="rs-hero__title">Pink Bomb Booster untuk Kulit Kusam &amp; Kering</h1>
 
-      <div class="sozo-info-row">
-        <div class="sozo-info-col">
-          <div class="sozo-info-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <div class="rs-problems">
+            <p class="rs-problems__label" id="rs-problems-label">Membantu mengatasi</p>
+            <ul class="rs-problems__list" aria-labelledby="rs-problems-label">
+              <li class="badge badge--brand">Kulit Kusam</li>
+              <li class="badge badge--brand">Kulit Kering</li>
+              <li class="badge badge--brand">Garis Halus</li>
+            </ul>
           </div>
-          <div class="sozo-info-text">
-            <span class="sozo-info-label">Durasi</span>
-            <span class="sozo-info-value">60 Menit</span>
-          </div>
-        </div>
 
-        <div class="sozo-info-col">
-          <div class="sozo-info-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-          </div>
-          <div class="sozo-info-text">
-            <span class="sozo-info-label">Harga Mulai</span>
-            <span class="sozo-info-value">
-              Rp 2.999.000
+          <p class="rs-hero__desc">
+            Pink Bomb Booster merupakan perawatan skin booster yang menggabungkan 6 bahan aktif untuk membantu meningkatkan produksi kolagen, menghidrasi kulit secara mendalam, serta memperbaiki kualitas kulit secara menyeluruh. Treatment ini membantu membuat kulit tampak lebih kencang, lembap, cerah, dan bertekstur lebih halus sekaligus membantu mengurangi tanda-tanda penuaan sehingga wajah terlihat lebih sehat dan segar.
+          </p>
+
+          <ul class="rs-info">
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Estimasi Treatment</span>
+              <span class="rs-info__value">60 Menit</span>
             </span>
+          </li>
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Frekuensi Sesi</span>
+              <span class="rs-info__value">1x Sebulan</span>
+            </span>
+          </li>
+          <li class="rs-info__item">
+            <span class="rs-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" x2="7.01" y1="7" y2="7"></line></svg></span>
+            <span class="rs-info__text">
+              <span class="rs-info__label">Harga Mulai</span>
+              <span class="rs-info__value">Rp 3.099.000</span>
+            </span>
+          </li>
+          </ul>
+
+          <div class="rs-cta">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Pink%20Bomb%20Booster%20di%20Sozo%20%5Bsrc%3AORG-PBB%5D" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+            <a href="#rs-lokasi" class="btn btn--outline"><i class="fa-solid fa-location-dot btn__icon" aria-hidden="true"></i><span>Lihat Lokasi</span></a>
           </div>
         </div>
-      </div>
 
-      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Pink%20Bomb%20[sumber:%20ORG-pink%20bomb" class="sozo-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
-    </div>
-
-    <div class="sozo-hero-image">
-      <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/09/sozo-pink-bomb.webp" alt="Perawatan pori pori besar wajah untuk mengecilkan pori di Sozo Skin Clinic">
-    </div>
-  </div>
-
-  <div class="sozo-cta-wrapper">
-    <div class="sozo-cta-banner">
-      <h2>Treatment Mengecilkan Pori Pori Wajah yang Tampak Besar</h2>
-      <p>Perawatan pori pori besar wajah di SOZO membantu membersihkan pori secara mendalam, mengontrol produksi minyak, dan mengecilkan tampilan pori, sehingga kulit dapat tampak lebih rapat dan halus secara bertahap.</p>
-      <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Pink%20Bomb%20[sumber:%20ORG-pink%20bomb" class="sozo-btn-secondary" target="_blank" rel="noopener noreferrer">Konsultasi Gratis</a>
-    </div>
-  </div>
-
-  <div class="sozo-content-wrapper">
-
-    <div class="sozo-section-card">
-      <h2>Masalah Kulit yang Dapat Dibantu Pink Bomb Booster</h2>
-      <p>Seiring bertambahnya usia, paparan sinar matahari, polusi, dan gaya hidup dapat mempengaruhi kualitas kulit. Pink Bomb Booster dirancang untuk membantu meningkatkan kondisi kulit secara menyeluruh melalui kombinasi bahan aktif yang bekerja untuk menjaga hidrasi, elastisitas, dan tampilan kulit agar tetap sehat.
-</p>
-      <div class="sozo-problem-grid">
-        <div class="sozo-problem-card">
-          <strong>Kulit Kusam</strong>
-          <span>Kulit yang tampak kurang bercahaya dapat disebabkan oleh penumpukan sel kulit mati, paparan lingkungan, maupun berkurangnya regenerasi kulit. Pink Bomb Booster membantu membuat kulit tampak lebih segar dan bercahaya.
-</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Kulit Kering & Dehidrasi</strong>
-          <span>Kulit yang kehilangan kelembapan sering kali terasa kasar, tampak kurang sehat, dan mudah terlihat lelah. Perawatan ini membantu memberikan hidrasi secara mendalam sehingga kulit terasa lebih lembap dan nyaman.
-</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Kulit Mulai Kehilangan Kekencangan
-</strong>
-          <span>Berkurangnya produksi kolagen dapat membuat kulit terasa kurang elastis dan tampak mulai mengendur. Pink Bomb Booster membantu mendukung produksi kolagen sehingga kulit tampak lebih kencang dan kenyal.
-</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Tekstur Kulit Tidak Merata</strong>
-          <span>Permukaan kulit yang terasa kasar atau tampak kurang halus dapat memengaruhi penampilan wajah secara keseluruhan. Treatment ini membantu memperbaiki kualitas kulit sehingga teksturnya tampak lebih halus dan merata.
-</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Garis Halus & Tanda Penuaan Dini
-</strong>
-          <span>Munculnya garis-garis halus merupakan salah satu tanda berkurangnya elastisitas kulit. Pink Bomb Booster membantu merawat kulit agar tampak lebih sehat sekaligus mendukung pengurangan tampilan tanda-tanda penuaan secara bertahap.
-</span>
-        </div>
-        <div class="sozo-problem-card">
-          <strong>Kulit Terlihat Lelah & Kurang Segar
-</strong>
-          <span>Aktivitas sehari-hari, kurang istirahat, serta paparan polusi dapat membuat wajah tampak lelah dan kehilangan vitalitasnya. Pink Bomb Booster membantu meningkatkan kualitas kulit sehingga wajah terlihat lebih segar, sehat, dan terawat.</span>
+        <div class="rs-hero__media">
+          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2026/09/pink-bomb-booster-treatment.webp" alt="Pink Bomb Booster, skin booster injeksi untuk kulit kusam dan kering di Sozo Skin Clinic" width="1032" height="580" fetchpriority="high" decoding="async">
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="sozo-section-card">
-      <h2>Pink Bomb Booster untuk Membantu Meningkatkan Kualitas Kulit & Menjaga Kulit Tampak Awet Muda
-</h2>
-      <p>Pink Bomb Booster merupakan perawatan skin booster yang dirancang untuk membantu meningkatkan kualitas kulit melalui kombinasi 6 bahan aktif yang bekerja secara sinergis di dalam lapisan kulit. Treatment ini membantu meningkatkan produksi kolagen, menjaga hidrasi kulit, memperbaiki tekstur kulit, serta mendukung kulit agar tampak lebih kencang, cerah, dan sehat secara menyeluruh.
-</p>
-      <p>Seiring bertambahnya usia, produksi kolagen alami di dalam kulit akan berkurang. Kondisi ini dapat menyebabkan kulit terasa kurang kenyal, tampak kusam, muncul garis-garis halus, hingga tekstur kulit menjadi kurang merata. Pink Bomb Booster membantu mendukung produksi kolagen sekaligus menjaga kelembapan kulit sehingga wajah terlihat lebih segar dan kualitas kulit tetap terjaga.
-</p>
+  <!-- ===== TENTANG TREATMENT ===== -->
+  <section class="rs-content" aria-labelledby="rs-content-title">
+    <div class="rs-container">
+      <span class="badge badge--label">TENTANG TREATMENT</span>
+      <h2 class="rs-section-title" id="rs-content-title">Mengenal Pink Bomb Booster: Skin Booster untuk Kualitas Kulit yang Lebih Sehat</h2>
 
-      <div class="sozo-expandable-content" id="treatmentDescriptionPores">
-        <div class="sozo-expandable-inner">
-        
-        <p>Di SOZO Skin Clinic, setiap pasien akan menjalani konsultasi dengan dokter sebelum treatment dilakukan. Dokter akan mengevaluasi kondisi kulit, tingkat hidrasi, elastisitas kulit, serta keluhan yang dialami untuk menentukan apakah Pink Bomb Booster merupakan pilihan perawatan yang sesuai. Hasil treatment dapat berbeda pada setiap orang tergantung kondisi kulit, usia, gaya hidup, serta respon kulit terhadap perawatan.
-</p>
-        
-          <h3>Apa Itu Pink Bomb Booster?</h3>
-          <p>Pink Bomb Booster adalah skin booster berbasis injeksi yang menggabungkan enam bahan aktif dalam satu treatment untuk membantu meningkatkan kualitas kulit secara menyeluruh. Perawatan ini dirancang untuk mendukung produksi kolagen, meningkatkan hidrasi kulit, membantu memperbaiki tekstur kulit, serta menjaga kulit agar tampak lebih cerah, kenyal, dan sehat</p>
+      <p class="rs-content__desc">
+        Seiring bertambahnya usia, produksi kolagen alami di dalam kulit akan berkurang. Kondisi ini dapat menyebabkan kulit terasa kurang kenyal, tampak kusam, muncul garis-garis halus, hingga tekstur kulit menjadi kurang merata. Paparan sinar matahari, polusi, dan gaya hidup juga ikut memengaruhi kualitas kulit.
+      </p>
+      <p class="rs-content__desc">
+        Pink Bomb Booster adalah skin booster berbasis injeksi yang menggabungkan enam bahan aktif dalam satu treatment. Kombinasi ini bekerja secara sinergis di dalam lapisan kulit untuk membantu meningkatkan produksi kolagen, menjaga hidrasi, memperbaiki tekstur, serta mendukung kulit agar tampak lebih kencang, cerah, dan sehat secara menyeluruh.
+      </p>
 
-          <h3>Manfaat Pink Bomb Booste</h3>
-          <ul>
-            <li><strong>Membantu meningkatkan produksi kolagen untuk mendukung elastisitas kulit.</strong> </ul>
-        <ul>
-            <li><strong>Membantu membuat kulit terasa lebih lembap melalui hidrasi yang lebih optimal.
-</strong> </ul>
-            <ul>
-            <li><strong>Membantu membuat kulit tampak lebih kencang dan kenyal.
-</strong> </ul>
-            <ul>
-            <li><strong>Membantu memperbaiki tekstur kulit agar terasa lebih halus.</strong> </ul>
-            <ul>
-            <li><strong>Membantu membuat kulit kusam tampak lebih cerah dan segar.</strong> </ul>
-            <ul>
-            <li><strong>Membantu mengurangi tampilan garis-garis halus sebagai bagian dari proses penuaan kulit.
-</strong> </ul>
-            <ul>
-            <li><strong>Membantu menjaga kualitas kulit agar tampak sehat dan terawat.</strong> </ul>
-            <ul>
-            <li><strong>Mengapa Produksi Kolagen Penting untuk Kulit?</strong> </ul>
-            
-        <p>Kolagen merupakan salah satu protein utama yang berperan dalam menjaga kekuatan, elastisitas, dan kekenyalan kulit. Seiring bertambahnya usia, produksi kolagen alami akan menurun sehingga kulit mulai kehilangan kekencangan, tampak lebih kusam, serta muncul tanda-tanda penuaan seperti garis halus dan tekstur yang kurang merata. Oleh karena itu, perawatan yang membantu mendukung produksi kolagen dapat menjadi salah satu langkah untuk menjaga kualitas kulit dalam jangka panjang.
-</p>
-            
-          <h3>Siapa yang Cocok Menjalani Pink Bomb Booster?</h3>
-          <p>Pink Bomb Booster umumnya cocok bagi Anda yang mulai merasakan perubahan kualitas kulit, seperti kulit kusam, kulit kering, tekstur yang kurang halus, kulit yang mulai kehilangan elastisitas, maupun munculnya garis-garis halus. Treatment ini juga dapat menjadi pilihan bagi Anda yang ingin menjaga kesehatan kulit dan mempertahankan tampilan kulit yang lebih segar. Sebelum tindakan dilakukan, dokter akan melakukan pemeriksaan untuk memastikan treatment sesuai dengan kondisi dan kebutuhan kulit Anda.
-</p>
+      <div class="rs-expandable" id="rsContentExpandable">
+        <div class="rs-expandable__inner">
+          <h3 class="rs-content__subtitle">Manfaat Pink Bomb Booster</h3>
+          <ul class="rs-content__checklist">
+            <li>Membantu meningkatkan produksi kolagen untuk mendukung elastisitas kulit.</li>
+            <li>Membantu membuat kulit terasa lebih lembap melalui hidrasi yang lebih optimal.</li>
+            <li>Membantu membuat kulit tampak lebih kencang dan kenyal.</li>
+            <li>Membantu memperbaiki tekstur kulit agar terasa lebih halus.</li>
+            <li>Membantu membuat kulit kusam tampak lebih cerah dan segar.</li>
+            <li>Membantu mengurangi tampilan garis-garis halus sebagai bagian dari proses penuaan kulit.</li>
+            <li>Membantu menjaga kualitas kulit agar tampak sehat dan terawat.</li>
+          </ul>
 
-          
+          <h3 class="rs-content__subtitle">Mengapa Produksi Kolagen Penting untuk Kulit?</h3>
+          <p class="rs-content__desc">
+            Kolagen merupakan salah satu protein utama yang berperan dalam menjaga kekuatan, elastisitas, dan kekenyalan kulit. Seiring bertambahnya usia, produksi kolagen alami akan menurun sehingga kulit mulai kehilangan kekencangan, tampak lebih kusam, serta muncul tanda-tanda penuaan seperti garis halus dan tekstur yang kurang merata. Perawatan yang membantu mendukung produksi kolagen dapat menjadi salah satu langkah untuk menjaga kualitas kulit dalam jangka panjang.
+          </p>
+
+          <h3 class="rs-content__subtitle">Tahapan Pink Bomb Booster (60 Menit)</h3>
+          <ol class="rs-content__steps">
+            <li><strong>Konsultasi dan analisis kondisi kulit.</strong> Dokter mengevaluasi tingkat hidrasi, elastisitas, tekstur, serta tanda-tanda penuaan yang mulai terlihat untuk menentukan apakah Pink Bomb Booster sesuai dengan kondisi kulit Anda.</li>
+            <li><strong>Persiapan area perawatan.</strong> Area wajah dibersihkan terlebih dahulu, lalu dokter mempersiapkan area injeksi sesuai kebutuhan kulit.</li>
+            <li><strong>Aplikasi Pink Bomb Booster.</strong> Skin booster diaplikasikan melalui injeksi pada area wajah yang telah ditentukan dokter. Kombinasi enam bahan aktif bekerja membantu meningkatkan hidrasi, mendukung produksi kolagen, dan memperbaiki kualitas kulit.</li>
+            <li><strong>Edukasi perawatan setelah treatment.</strong> Dokter memberikan panduan penggunaan skincare, aktivitas yang sebaiknya dihindari sementara waktu, serta jadwal kontrol bila diperlukan.</li>
+          </ol>
+
+          <h3 class="rs-content__subtitle">Siapa yang Cocok Menjalani Pink Bomb Booster?</h3>
+          <p class="rs-content__desc">
+            Pink Bomb Booster umumnya cocok bagi Anda yang mulai merasakan perubahan kualitas kulit, seperti kulit kusam, kulit kering, tekstur yang kurang halus, kulit yang mulai kehilangan elastisitas, maupun munculnya garis-garis halus. Treatment ini juga dapat menjadi pilihan bagi Anda yang ingin menjaga kesehatan kulit dan mempertahankan tampilan kulit yang lebih segar.
+          </p>
+          <p class="rs-content__desc">
+            Di Sozo Skin Clinic, setiap pasien menjalani konsultasi dengan dokter sebelum treatment. Hasil treatment dapat berbeda pada setiap orang tergantung kondisi kulit, usia, gaya hidup, serta respons kulit terhadap perawatan.
+          </p>
+
+          <h3 class="rs-content__subtitle">Treatment Skin Booster Terkait</h3>
+          <p class="rs-content__desc">
+            Sesuai evaluasi dokter, Pink Bomb Booster dapat dilanjutkan atau dikombinasikan dengan <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-healer/">Rejuran Healer</a> untuk meremajakan kulit dan memudarkan bekas jerawat, <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-hb-treatment/">Rejuran HB</a> yang memadukan polynucleotide dan hyaluronic acid untuk melembapkan kulit, atau <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/jalupro-treatment/">Jalupro</a> untuk membantu mengencangkan kulit kendur dan menyamarkan kerutan halus.
+          </p>
         </div>
       </div>
 
-      <button class="sozo-load-more-btn" onclick="togglePoresDescription()">
-        <span id="poresReadMoreText">Baca Selengkapnya</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      <button type="button" class="rs-expand-btn" id="rsExpandBtn" onclick="togglePinkBombDesc()" aria-expanded="false" aria-controls="rsContentExpandable">
+        <span id="rsExpandBtnText">Baca Selengkapnya</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </button>
     </div>
+  </section>
 
-    <div class="sozo-section-card">
-      <h2>Proses Pink Bomb Booster di SOZO Skin Clinic</h2>
-      <p>Pink Bomb Booster dilakukan melalui beberapa tahapan yang dirancang untuk membantu menjaga keamanan, kenyamanan, dan hasil perawatan sesuai dengan kondisi kulit setiap pasien</p>
+  <!-- ===== LOKASI (Pink Bomb Booster tersedia di semua cabang) ===== -->
+  <section class="rs-loc" id="rs-lokasi" aria-labelledby="rs-loc-title">
+    <div class="rs-container">
+      <span class="badge badge--label">LOKASI</span>
+      <h2 class="rs-section-title" id="rs-loc-title">Lokasi Treatment Pink Bomb Booster Terdekat di Sozo</h2>
+      <p class="rs-loc__intro">Pink Bomb Booster tersedia di seluruh cabang Sozo Skin Clinic di Indonesia. Pilih kota terdekat untuk melihat alamat dan jam operasional cabang.</p>
 
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">1</div>
-        <div class="sozo-step-text">
-          <strong>Konsultasi & Analisis Kondisi Kulit</strong>
-          <p>Dokter akan mengevaluasi kondisi kulit secara menyeluruh, termasuk tingkat hidrasi, elastisitas kulit, tekstur, serta tanda-tanda penuaan yang mulai terlihat. Berdasarkan hasil konsultasi tersebut, dokter akan menentukan apakah Pink Bomb Booster merupakan pilihan treatment yang sesuai.
-</p>
+      <div class="rs-loc__card">
+        <div class="rs-loc__info">
+          <h3 class="rs-loc__name"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Tersedia di Semua Cabang Sozo</h3>
+          <p class="rs-loc__text">Pilih cabang Sozo yang paling dekat dengan Anda. Konfirmasi jadwal terlebih dahulu sebelum datang.</p>
+          <div class="rs-loc__actions">
+            <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Pink%20Bomb%20Booster%20di%20Sozo%20%5Bsrc%3AORG-PBB%5D" class="btn btn--primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp btn__icon" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+            <a href="https://sozoskinclinic.com/lokasi/" class="btn btn--outline"><i class="fa-solid fa-map-location-dot btn__icon" aria-hidden="true"></i><span>Semua Lokasi</span></a>
+          </div>
         </div>
-      </div>
-
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">2</div>
-        <div class="sozo-step-text">
-          <strong>Persiapan Area Perawatan</strong>
-          <p>Area wajah akan dibersihkan terlebih dahulu sebelum tindakan dilakukan. Dokter kemudian mempersiapkan area injeksi sesuai dengan kebutuhan kulit sehingga prosedur dapat dilakukan dengan lebih optimal.
-</p>
-        </div>
-      </div>
-
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">3</div>
-        <div class="sozo-step-text">
-          <strong>Aplikasi Pink Bomb Booster</strong>
-          <p>Pink Bomb Booster diaplikasikan melalui prosedur injeksi pada area wajah yang telah ditentukan oleh dokter. Kombinasi enam bahan aktif bekerja untuk membantu meningkatkan hidrasi, mendukung produksi kolagen, serta memperbaiki kualitas kulit secara menyeluruh sesuai dengan kondisi kulit pasien.</p>
-        </div>
-      </div>
-
-      <div class="sozo-process-step">
-        <div class="sozo-step-num">4</div>
-        <div class="sozo-step-text">
-          <strong>Edukasi Perawatan Setelah Treatment
-</strong>
-          <p>Setelah treatment selesai, dokter akan memberikan panduan mengenai perawatan kulit setelah tindakan, termasuk penggunaan skincare, aktivitas yang sebaiknya dihindari untuk sementara waktu, serta jadwal kontrol apabila diperlukan agar hasil treatment dapat terjaga dengan baik.
-</p>
-        </div>
+        <ul class="rs-loc__list" aria-label="Kota cabang Sozo Skin Clinic">
+          <li><a href="https://sozoskinclinic.com/lokasi/jakarta/" class="rs-loc__chip">Jakarta</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/tangerang/" class="rs-loc__chip">Tangerang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/depok/" class="rs-loc__chip">Depok</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bogor/" class="rs-loc__chip">Bogor</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bekasi/" class="rs-loc__chip">Bekasi</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/bandung/" class="rs-loc__chip">Bandung</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/surabaya/" class="rs-loc__chip">Surabaya</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/semarang/" class="rs-loc__chip">Semarang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/jogja/" class="rs-loc__chip">Jogja</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/malang/" class="rs-loc__chip">Malang</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/medan/" class="rs-loc__chip">Medan</a></li>
+          <li><a href="https://sozoskinclinic.com/lokasi/makassar/" class="rs-loc__chip">Makassar</a></li>
+        </ul>
       </div>
     </div>
+  </section>
 
-    <div class="sozo-section-card">
-      <h2>Treatment Skin Booster Terkait Untuk Kulit Anda</h2>
-      <p>Beberapa perawatan berikut dapat menjadi pilihan lanjutan atau kombinasi sesuai evaluasi dokter.</p>
+  <!-- ===== FAQ ===== -->
+  <section class="rs-faq" aria-labelledby="rs-faq-title">
+    <div class="rs-container">
+      <h2 class="rs-section-title" id="rs-faq-title">Pertanyaan Seputar Pink Bomb Booster</h2>
 
-      <div class="sozo-related-grid">
-        <div class="sozo-related-card">
-          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-Healer1.webp" alt="Laser CO2 Full Face Sozo Skin Clinic">
-          <div class="sozo-related-body">
-            <h3>Rejuran Healer</h3>
-            <p>Meremajakan kulit, memperbaiki tekstur, dan memudarkan bekas jerawat secara efektif dari dalam lapisan dermis.</p>
-            <div class="sozo-related-actions">
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Rejuran%20[sumber:%20ORG-Rejuran]" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
-              <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-healer/" class="sozo-related-link">Lihat Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="sozo-related-card">
-          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/11/Rejuran-HB.webp" alt="PRP Treatment Wajah Sozo Skin Clinic">
-          <div class="sozo-related-body">
-            <h3>Rejuran HB</h3>
-            <p>Kombinasi polynucleotide dan hyaluronic acid untuk melembapkan, mengencangkan, serta mencerahkan wajah secara instan.</p>
-            <div class="sozo-related-actions">
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20Rejuran%20[sumber:%20ORG-Rejuran]" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
-              <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/rejuran-hb-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="sozo-related-card">
-          <img src="https://asset.sozoskinclinic.com/wp-content/uploads/2025/09/jalupro.webp" alt="Rejuran Scar Sozo Skin Clinic">
-          <div class="sozo-related-body">
-            <h3>Jalupro</h3>
-            <p>Asam amino esensial yang sangat efektif untuk merangsang kolagen, mengencangkan kulit kendur, dan menyamarkan kerutan halus.</p>
-            <div class="sozo-related-actions">
-              <a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%20SOZO,%20saya%20mau%20booking%20promo%20skinbooster%20treatment%20%5Bsumber:%20ORG-skinbooster%5D" class="sozo-related-btn" target="_blank" rel="noopener noreferrer">Reservasi Sekarang</a>
-              <a href="https://sozoskinclinic.com/injectable-treatment/skin-booster-treatment/jalupro-treatment/" class="sozo-related-link">Lihat Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sozo-faq-section">
-      <h2>FAQ Pink Bomb Booster</h2>
-
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-1-content" id="rs-faq-1-trigger">
           <span>Apa itu Pink Bomb Booster?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Pink Bomb Booster adalah perawatan skin booster yang dilakukan melalui prosedur injeksi untuk membantu meningkatkan kualitas kulit secara menyeluruh. Treatment ini menggabungkan enam bahan aktif yang bekerja untuk membantu meningkatkan produksi kolagen, menjaga hidrasi kulit, memperbaiki tekstur kulit, serta membuat kulit tampak lebih kencang, cerah, dan sehat.</p></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-1-content" role="region" aria-labelledby="rs-faq-1-trigger">
+          <p>Pink Bomb Booster adalah perawatan skin booster yang dilakukan melalui prosedur injeksi untuk membantu meningkatkan kualitas kulit secara menyeluruh. Treatment ini menggabungkan enam bahan aktif yang bekerja untuk membantu meningkatkan produksi kolagen, menjaga hidrasi kulit, memperbaiki tekstur kulit, serta membuat kulit tampak lebih kencang, cerah, dan sehat.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
-          <span>Apa manfaat Pink Bomb Booster untuk kulit?
-</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Pink Bomb Booster membantu merawat berbagai aspek kualitas kulit dalam satu treatment. Perawatan ini membantu meningkatkan produksi kolagen, menjaga kelembapan kulit, memperbaiki tekstur kulit, mendukung elastisitas kulit, serta membantu membuat wajah tampak lebih cerah dan segar. Kombinasi manfaat tersebut menjadikan Pink Bomb Booster sebagai salah satu pilihan bagi Anda yang ingin menjaga kesehatan kulit sekaligus membantu mengurangi tanda-tanda penuaan.</p></div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-2-content" id="rs-faq-2-trigger">
+          <span>Apa manfaat Pink Bomb Booster untuk kulit?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-2-content" role="region" aria-labelledby="rs-faq-2-trigger">
+          <p>Pink Bomb Booster membantu merawat berbagai aspek kualitas kulit dalam satu treatment. Perawatan ini membantu meningkatkan produksi kolagen, menjaga kelembapan kulit, memperbaiki tekstur kulit, mendukung elastisitas kulit, serta membantu membuat wajah tampak lebih cerah dan segar. Kombinasi manfaat tersebut menjadikan Pink Bomb Booster sebagai salah satu pilihan bagi Anda yang ingin menjaga kesehatan kulit sekaligus membantu mengurangi tanda-tanda penuaan.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
-          <span>Bagaimana cara kerja Pink Bomb Booster?
-</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Pink Bomb Booster bekerja dengan mengaplikasikan skin booster melalui injeksi ke lapisan kulit. Kandungan didalamnya membantu mendukung proses pembentukan kolagen sekaligus meningkatkan hidrasi kulit sehingga kualitas kulit dapat membaik secara bertahap. Dokter akan menyesuaikan area treatment berdasarkan kondisi kulit dan kebutuhan masing-masing pasien.
-</p></div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-3-content" id="rs-faq-3-trigger">
+          <span>Bagaimana cara kerja Pink Bomb Booster?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-3-content" role="region" aria-labelledby="rs-faq-3-trigger">
+          <p>Pink Bomb Booster bekerja dengan mengaplikasikan skin booster melalui injeksi ke lapisan kulit. Kandungan didalamnya membantu mendukung proses pembentukan kolagen sekaligus meningkatkan hidrasi kulit sehingga kualitas kulit dapat membaik secara bertahap. Dokter akan menyesuaikan area treatment berdasarkan kondisi kulit dan kebutuhan masing-masing pasien.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-4-content" id="rs-faq-4-trigger">
           <span>Siapa yang cocok menjalani Pink Bomb Booster?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Pink Bomb Booster umumnya direkomendasikan bagi Anda yang mulai merasakan perubahan pada kualitas kulit, seperti kulit kusam, tekstur kulit yang kurang halus, kulit yang terasa kering, elastisitas yang mulai berkurang, maupun munculnya garis-garis halus. Treatment ini juga dapat menjadi pilihan bagi Anda yang ingin menjaga kulit tetap sehat dan tampak segar sebelum tanda-tanda penuaan berkembang lebih lanjut.
-</p></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-4-content" role="region" aria-labelledby="rs-faq-4-trigger">
+          <p>Pink Bomb Booster umumnya direkomendasikan bagi Anda yang mulai merasakan perubahan pada kualitas kulit, seperti kulit kusam, tekstur kulit yang kurang halus, kulit yang terasa kering, elastisitas yang mulai berkurang, maupun munculnya garis-garis halus. Treatment ini juga dapat menjadi pilihan bagi Anda yang ingin menjaga kulit tetap sehat dan tampak segar sebelum tanda-tanda penuaan berkembang lebih lanjut.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
-          <span>Apa yang membuat Pink Bomb Booster berbeda dengan skin booster lainnya?
-</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Setiap skin booster memiliki formulasi dan fokus manfaat yang berbeda. Pink Bomb Booster dirancang dengan kombinasi enam bahan aktif yang bekerja secara sinergis untuk membantu meningkatkan produksi kolagen, memberikan hidrasi, memperbaiki tekstur kulit, serta mendukung kekencangan kulit dalam satu rangkaian perawatan. Dokter akan membantu menentukan jenis skin booster yang paling sesuai berdasarkan kondisi dan kebutuhan kulit Anda.
-</p></div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-5-content" id="rs-faq-5-trigger">
+          <span>Apa yang membuat Pink Bomb Booster berbeda dengan skin booster lainnya?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-5-content" role="region" aria-labelledby="rs-faq-5-trigger">
+          <p>Setiap skin booster memiliki formulasi dan fokus manfaat yang berbeda. Pink Bomb Booster dirancang dengan kombinasi enam bahan aktif yang bekerja secara sinergis untuk membantu meningkatkan produksi kolagen, memberikan hidrasi, memperbaiki tekstur kulit, serta mendukung kekencangan kulit dalam satu rangkaian perawatan. Dokter akan membantu menentukan jenis skin booster yang paling sesuai berdasarkan kondisi dan kebutuhan kulit Anda.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-6-content" id="rs-faq-6-trigger">
           <span>Apakah Pink Bomb Booster dapat membantu mengencangkan kulit?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Berkurangnya produksi kolagen merupakan salah satu penyebab kulit kehilangan elastisitas seiring bertambahnya usia. Pink Bomb Booster membantu mendukung produksi kolagen sehingga kulit dapat terasa lebih kenyal dan tampak lebih kencang. Tingkat perubahan yang diperoleh dapat berbeda pada setiap pasien sesuai dengan kondisi kulit dan respon terhadap treatment</p></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-6-content" role="region" aria-labelledby="rs-faq-6-trigger">
+          <p>Berkurangnya produksi kolagen merupakan salah satu penyebab kulit kehilangan elastisitas seiring bertambahnya usia. Pink Bomb Booster membantu mendukung produksi kolagen sehingga kulit dapat terasa lebih kenyal dan tampak lebih kencang. Tingkat perubahan yang diperoleh dapat berbeda pada setiap pasien sesuai dengan kondisi kulit dan respon terhadap treatment</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
-          <span>Apakah Pink Bomb Booster dapat membantu mencerahkan kulit kusam?
-
-</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Kulit kusam dapat disebabkan oleh berbagai faktor, seperti paparan sinar matahari, polusi, penumpukan sel kulit mati, hingga berkurangnya regenerasi kulit. Pink Bomb Booster membantu meningkatkan kualitas kulit sehingga wajah tampak lebih segar dan bercahaya. Perawatan yang dilakukan secara rutin sesuai rekomendasi dokter dapat membantu mempertahankan tampilan kulit yang sehat.
-</p></div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-7-content" id="rs-faq-7-trigger">
+          <span>Apakah Pink Bomb Booster dapat membantu mencerahkan kulit kusam?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-7-content" role="region" aria-labelledby="rs-faq-7-trigger">
+          <p>Kulit kusam dapat disebabkan oleh berbagai faktor, seperti paparan sinar matahari, polusi, penumpukan sel kulit mati, hingga berkurangnya regenerasi kulit. Pink Bomb Booster membantu meningkatkan kualitas kulit sehingga wajah tampak lebih segar dan bercahaya. Perawatan yang dilakukan secara rutin sesuai rekomendasi dokter dapat membantu mempertahankan tampilan kulit yang sehat.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
-          <span>Berapa kali Pink Bomb Booster perlu dilakukan?
-</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Jumlah sesi treatment bergantung pada kondisi kulit, usia, tujuan perawatan, serta respon kulit terhadap tindakan yang dilakukan. Setelah konsultasi, dokter akan memberikan rekomendasi jumlah sesi maupun interval treatment yang disesuaikan dengan kebutuhan masing-masing pasien agar hasil perawatan dapat lebih optimal.
-</p></div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-8-content" id="rs-faq-8-trigger">
+          <span>Berapa kali Pink Bomb Booster perlu dilakukan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-8-content" role="region" aria-labelledby="rs-faq-8-trigger">
+          <p>Jumlah sesi treatment bergantung pada kondisi kulit, usia, tujuan perawatan, serta respon kulit terhadap tindakan yang dilakukan. Setelah konsultasi, dokter akan memberikan rekomendasi jumlah sesi maupun interval treatment yang disesuaikan dengan kebutuhan masing-masing pasien agar hasil perawatan dapat lebih optimal.</p>
+        </div>
       </div>
 
-<div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
-          <span>Kapan hasil Pink Bomb Booster mulai terlihat?
-</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Sebagian pasien dapat merasakan kulit terasa lebih lembap dan segar setelah menjalani treatment. Sementara itu, perubahan pada tekstur kulit, elastisitas, maupun tampilan kulit yang lebih sehat biasanya berkembang secara bertahap seiring proses pembentukan kolagen. Waktu yang dibutuhkan dapat berbeda pada setiap individu.</p></div>
-      </div>
-      
-<div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
-          <span>Berapa lama hasil Pink Bomb Booster dapat bertahan?
-</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Ketahanan hasil treatment dipengaruhi oleh berbagai faktor, seperti kondisi kulit, usia, gaya hidup, paparan sinar matahari, serta konsistensi dalam menjalankan perawatan kulit sehari-hari. Dokter dapat memberikan rekomendasi jadwal maintenance yang sesuai untuk membantu menjaga kualitas kulit setelah treatment.
-</p></div>
-      </div>
-      
-<div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
-          <span>Apa yang perlu diperhatikan setelah Pink Bomb Booster?
-</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Setelah treatment selesai, dokter akan memberikan panduan mengenai perawatan kulit yang perlu dilakukan di rumah, termasuk penggunaan skincare, perlindungan terhadap paparan sinar matahari, serta aktivitas yang sebaiknya dihindari untuk sementara waktu. Mengikuti anjuran tersebut dapat membantu proses pemulihan kulit dan mendukung hasil treatment.
-</p></div>
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-9-content" id="rs-faq-9-trigger">
+          <span>Kapan hasil Pink Bomb Booster mulai terlihat?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-9-content" role="region" aria-labelledby="rs-faq-9-trigger">
+          <p>Sebagian pasien dapat merasakan kulit terasa lebih lembap dan segar setelah menjalani treatment. Sementara itu, perubahan pada tekstur kulit, elastisitas, maupun tampilan kulit yang lebih sehat biasanya berkembang secara bertahap seiring proses pembentukan kolagen. Waktu yang dibutuhkan dapat berbeda pada setiap individu.</p>
+        </div>
       </div>
 
-<div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-10-content" id="rs-faq-10-trigger">
+          <span>Berapa lama hasil Pink Bomb Booster dapat bertahan?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-10-content" role="region" aria-labelledby="rs-faq-10-trigger">
+          <p>Ketahanan hasil treatment dipengaruhi oleh berbagai faktor, seperti kondisi kulit, usia, gaya hidup, paparan sinar matahari, serta konsistensi dalam menjalankan perawatan kulit sehari-hari. Dokter dapat memberikan rekomendasi jadwal maintenance yang sesuai untuk membantu menjaga kualitas kulit setelah treatment.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-11-content" id="rs-faq-11-trigger">
+          <span>Apa yang perlu diperhatikan setelah Pink Bomb Booster?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-11-content" role="region" aria-labelledby="rs-faq-11-trigger">
+          <p>Setelah treatment selesai, dokter akan memberikan panduan mengenai perawatan kulit yang perlu dilakukan di rumah, termasuk penggunaan skincare, perlindungan terhadap paparan sinar matahari, serta aktivitas yang sebaiknya dihindari untuk sementara waktu. Mengikuti anjuran tersebut dapat membantu proses pemulihan kulit dan mendukung hasil treatment.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-12-content" id="rs-faq-12-trigger">
           <span>Apakah Pink Bomb Booster aman?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Sebelum treatment dilakukan, setiap pasien akan menjalani konsultasi dan pemeriksaan kondisi kulit bersama dokter. Evaluasi tersebut bertujuan untuk memastikan bahwa Pink Bomb Booster sesuai dengan kebutuhan kulit dan dapat dilakukan dengan pendekatan yang tepat berdasarkan kondisi masing-masing pasien.</p></div>
-      </div>
-      
-<div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
-          <span>Bisakah Pink Bomb Booster dikombinasikan dengan treatment lain?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Pink Bomb Booster dapat dipertimbangkan untuk dikombinasikan dengan treatment lain sesuai kondisi kulit dan tujuan perawatan. Setelah melakukan analisis kulit, dokter akan menyusun rekomendasi kombinasi treatment yang dinilai sesuai sehingga setiap prosedur dapat saling mendukung tanpa mengabaikan keamanan dan kondisi kulit pasien.
-</p></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-12-content" role="region" aria-labelledby="rs-faq-12-trigger">
+          <p>Sebelum treatment dilakukan, setiap pasien akan menjalani konsultasi dan pemeriksaan kondisi kulit bersama dokter. Evaluasi tersebut bertujuan untuk memastikan bahwa Pink Bomb Booster sesuai dengan kebutuhan kulit dan dapat dilakukan dengan pendekatan yang tepat berdasarkan kondisi masing-masing pasien.</p>
+        </div>
       </div>
 
-      <div class="sozo-faq-item">
-        <button class="sozo-faq-question" onclick="togglePoresFaq(this)">
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-13-content" id="rs-faq-13-trigger">
+          <span>Bisakah Pink Bomb Booster dikombinasikan dengan treatment lain?</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-13-content" role="region" aria-labelledby="rs-faq-13-trigger">
+          <p>Pink Bomb Booster dapat dipertimbangkan untuk dikombinasikan dengan treatment lain sesuai kondisi kulit dan tujuan perawatan. Setelah melakukan analisis kulit, dokter akan menyusun rekomendasi kombinasi treatment yang dinilai sesuai sehingga setiap prosedur dapat saling mendukung tanpa mengabaikan keamanan dan kondisi kulit pasien.</p>
+        </div>
+      </div>
+
+      <div class="rs-faq__item">
+        <h3><button type="button" class="rs-faq__question" onclick="togglePinkBombFaq(this)" aria-expanded="false" aria-controls="rs-faq-14-content" id="rs-faq-14-trigger">
           <span>Di mana saya bisa melakukan Pink Bomb Booster?</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-        <div class="sozo-faq-answer"><p>Pink Bomb Booster tersedia di seluruh cabang SOZO Skin Clinic. Anda disarankan untuk melakukan reservasi dan konsultasi melalui Whatsapp resmi Sozo. Sebelum tindakan dilakukan, dokter akan mengevaluasi kondisi kulit dan mendiskusikan tujuan perawatan sehingga treatment yang diberikan dapat disesuaikan dengan kebutuhan setiap pasien. <a href="https://sozoskinclinic.com/lokasi/" target="_blank" rel="noopener noreferrer">Lokasi Cabang SOZO Skin Clinic Terdekat</a>.</p></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button></h3>
+        <div class="rs-faq__answer" id="rs-faq-14-content" role="region" aria-labelledby="rs-faq-14-trigger">
+          <p>Pink Bomb Booster tersedia di seluruh cabang SOZO Skin Clinic. Anda disarankan untuk melakukan reservasi dan konsultasi melalui Whatsapp resmi Sozo. Sebelum tindakan dilakukan, dokter akan mengevaluasi kondisi kulit dan mendiskusikan tujuan perawatan sehingga treatment yang diberikan dapat disesuaikan dengan kebutuhan setiap pasien. <a href="https://sozoskinclinic.com/lokasi/">Lokasi Cabang SOZO Skin Clinic Terdekat</a>.</p>
+        </div>
       </div>
 
     </div>
-  </div>
+  </section>
 </div>
 
-<script>
-  function togglePoresDescription() {
-    const content = document.getElementById('treatmentDescriptionPores');
-    const btn = document.querySelector('.sozo-load-more-btn');
-    const btnText = document.getElementById('poresReadMoreText');
-    if (!content || !btn) return;
-    content.classList.toggle('expanded');
-    btn.classList.toggle('active');
-    btnText.textContent = content.classList.contains('expanded') ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+<!-- FLOATING WHATSAPP -->
+<a href="https://api.whatsapp.com/send?phone=6285175225664&text=Halo%2C%20saya%20mau%20booking%20promo%20treatment%20Pink%20Bomb%20Booster%20di%20Sozo%20%5Bsrc%3AORG-PBB%5D" class="sozo-wa-float" id="rsWaFloat" target="_blank" rel="noopener noreferrer" aria-label="Buat Jadwal via WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Buat Jadwal</span></a>
+
+<!-- data-no-optimize: dikecualikan dari LiteSpeed "Delay JS" supaya onclick FAQ & Baca Selengkapnya langsung jalan di klik pertama -->
+<script data-no-optimize="1">
+  function togglePinkBombFaq(btn) {
+    var item = btn.closest('.rs-faq__item');
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    var widget = document.getElementById('sozo-pink-bomb-widget');
+    var items = widget ? widget.querySelectorAll('.rs-faq__item') : [];
+
+    Array.prototype.forEach.call(items, function (other) {
+      if (other !== item) {
+        other.querySelector('.rs-faq__question').setAttribute('aria-expanded', 'false');
+        other.classList.remove('is-open');
+      }
+    });
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    item.classList.toggle('is-open', !isOpen);
   }
-  function togglePoresFaq(button) {
-    const answer = button.nextElementSibling;
-    if (!answer) return;
-    button.classList.toggle('active');
-    if (answer.style.maxHeight) {
-      answer.style.maxHeight = null;
-    } else {
-      answer.style.maxHeight = answer.scrollHeight + "px";
+
+  function togglePinkBombDesc() {
+    var content = document.getElementById('rsContentExpandable');
+    var btn = document.getElementById('rsExpandBtn');
+    var btnText = document.getElementById('rsExpandBtnText');
+    if (!content || !btn || !btnText) return;
+
+    var isExpanded = content.classList.contains('is-expanded');
+    content.classList.toggle('is-expanded', !isExpanded);
+    btn.classList.toggle('is-active', !isExpanded);
+    btn.setAttribute('aria-expanded', String(!isExpanded));
+    btnText.textContent = !isExpanded ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya';
+  }
+
+  (function initPinkBombWaFloat() {
+    var fab = document.getElementById('rsWaFloat');
+    if (!fab) return;
+    document.body.appendChild(fab);
+    var ticking = false;
+    function updateFab() {
+      ticking = false;
+      var zone = window.innerWidth <= 768 ? 700 : 400;
+      var distanceToBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      fab.classList.toggle('is-hidden', distanceToBottom < zone);
     }
-  }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(updateFab); }
+    }, { passive: true });
+    window.addEventListener('resize', updateFab);
+    window.addEventListener('load', updateFab);
+  })();
 </script>
-
-
