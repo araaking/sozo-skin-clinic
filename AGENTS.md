@@ -76,8 +76,8 @@ Sebelum aktivasi, pastikan `index.html` sudah bersih dari microdata breadcrumb/P
 Standar saat ini: `WebPage` + `BreadcrumbList`. Cek referensi terdekat sebelum generate.
 
 **Homepage (hub):**
-- `schema-home.php` — canonical dinamis untuk WPCode: `Organization` + `WebSite` + `WebPage`; title & description dari meta Yoast (`_yoast_wpseo_title` / `_yoast_wpseo_metadesc`), fallback judul page → document title → default.
-- `schema-home.html` — contoh render statis `schema-home.php` untuk dokumentasi + validator. Jangan dipasang ke WPCode.
+- `schema-home.html` — versi yang terpasang di production: WPCode HTML Snippet "Homepage | schema markup", berisi `Organization` + `WebSite` + `WebPage` statis. `name`/`description` WebPage diketik manual, jadi setiap meta title/description homepage berubah di Yoast, file ini dan snippet harus diubah juga. Copy seluruh isi file ke snippet saat update.
+- `schema-home.php` — alternatif dinamis (WPCode PHP Snippet), belum dipasang. Title & description diambil dari meta Yoast (`_yoast_wpseo_title` / `_yoast_wpseo_metadesc`), fallback judul page → document title → default. Isi entitasnya harus tetap sama dengan `schema-home.html`. Jangan pasang bersamaan dengan snippet HTML (schema jadi dobel).
 
 **Halaman statis:**
 - `about-us-schema-markup.php` — snippet dinamis `/tentang-kami/`: `WebPage` + `BreadcrumbList`, title & description dari Yoast, guard slug di dalam fungsi.
@@ -94,7 +94,7 @@ Default fokus saat ini: `WebPage` + `BreadcrumbList`. Master URL checklist ada d
 
 | Kategori URL | Pola URL | Tipe Schema | Catatan |
 | :-- | :-- | :-- | :-- |
-| Homepage | `/` | `Organization` + `WebSite` + `WebPage` | Hub deklarasi penuh; lihat `schema-home.php`. |
+| Homepage | `/` | `Organization` + `WebSite` + `WebPage` | Hub deklarasi penuh; lihat `schema-home.html` (terpasang via WPCode HTML Snippet). |
 | Semua halaman lain (default) | — | `WebPage` + `BreadcrumbList` | Standar fokus saat ini; contoh `about-us-schema-markup.php`. Pointer `@id` ke `#organization` dan `#website` wajib. |
 | Promo landing | `/promo/` | `WebPage` + `BreadcrumbList` | Diintegrasikan dalam `promo/index.php` lewat hook `wp_head` dengan guard `is_page('promo')`; breadcrumb Beranda › Promo. |
 | Arsip: treatment | `/treatment/*` | `MedicalWebPage` + `BreadcrumbList` + `Service` (+ `FAQPage` opsional) | Terpasang di production; valid, tapi bukan arah generate baru. |

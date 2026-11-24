@@ -2,6 +2,9 @@
 /**
  * SOZO SKIN - HOMEPAGE SCHEMA (dynamic)
  * File   : schema-home.php
+ * Status : BELUM dipasang. Production memakai schema-home.html
+ *          (WPCode HTML Snippet "Homepage | schema markup").
+ *          Kalau mau pindah ke versi ini, nonaktifkan snippet HTML dulu.
  * Pasang : WPCode > PHP Snippet > Run Everywhere
  * Kondisi: is_front_page() sudah dijaga di dalam fungsi,
  *          jadi Smart Conditional Logic boleh OFF atau set Is Homepage.

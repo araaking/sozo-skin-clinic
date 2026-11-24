@@ -121,7 +121,9 @@ Perbaikan yang dilakukan dari versi Yoast:
 
 * Output sekarang `Organization` + `WebSite` + `WebPage` (3 node), tanpa BreadcrumbList/FAQ.
 
-Dipasang via WPCode tipe PHP (`schema-home.php`), kondisi: Run Everywhere — guard `is_front_page()` di dalam fungsi. Versi statis untuk dokumentasi + validator: `schema-home.html`. Status validator: 0 error, 0 warning.
+Dipasang via WPCode HTML Snippet "Homepage | schema markup" dengan isi `schema-home.html` (statis). Saat update, copy seluruh isi file ke snippet, klik Update, lalu Purge All di LiteSpeed Cache. `name` dan `description` WebPage diketik manual, jadi harus disamakan setiap meta title/description homepage berubah di Yoast. `schema-home.php` adalah alternatif dinamis (WPCode PHP Snippet) yang belum dipasang; jangan aktifkan bersamaan dengan snippet HTML.
+
+Update 24 November 2026: `alternateName` Organization dan WebSite jadi `["Sozo Clinic", "Sozo"]`; `name`/`description` WebPage disamakan dengan meta live ("Sozo Skin Clinic - Klinik Kecantikan Terdekat dari Rumahmu"). Status validator: JSON valid di live.
 
 ## **5.3 Hair Removal Treatment — SELESAI**
 
