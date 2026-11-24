@@ -47,7 +47,7 @@ if (!function_exists('sozo_homepage_schema')) {
                     '@type'         => 'Organization',
                     '@id'           => $org_id,
                     'name'          => 'Sozo Skin Clinic',
-                    'alternateName' => 'Sozo Clinic',
+                    'alternateName' => array('Sozo Clinic', 'Sozo'),
                     'url'           => $home,
                     'description'   => 'Sozo Skin Clinic adalah jaringan klinik kecantikan premium di Indonesia dengan 78 cabang yang tersebar di Jabodetabek, Jawa, Sumatera, Bali, Kalimantan, dan Sulawesi. Klinik ini menawarkan berbagai perawatan, seperti skin booster, laser treatment, dan facial, yang didukung oleh dokter ahli dengan harga terjangkau.',
                     'foundingDate'  => '2022',
@@ -83,7 +83,7 @@ if (!function_exists('sozo_homepage_schema')) {
                     '@id'           => $site_id,
                     'url'           => $home,
                     'name'          => 'Sozo Skin Clinic',
-                    'alternateName' => 'Sozo Clinic',
+                    'alternateName' => array('Sozo Clinic', 'Sozo'),
                     'inLanguage'    => $lang,
                     'publisher'     => array('@id' => $org_id),
                 ),
@@ -144,13 +144,13 @@ if (!function_exists('sozo_home_meta_title')) {
         $title = trim((string) preg_replace('/\s+/u', ' ', $title));
 
         if ($title === '') {
-            $title = 'Sozo Skin Clinic - Klinik Kecantikan Terdekat, Harga Terjangkau';
+            $title = 'Sozo Skin Clinic - Klinik Kecantikan Terdekat dari Rumahmu';
         }
 
         // Judul mentah nama situs saja (tanpa meta spesifik) bukan judul homepage.
         // Kembalikan ke default panjang supaya cocok dengan contoh statis.
         if ($title === (string) get_bloginfo('name')) {
-            $title = 'Sozo Skin Clinic - Klinik Kecantikan Terdekat, Harga Terjangkau';
+            $title = 'Sozo Skin Clinic - Klinik Kecantikan Terdekat dari Rumahmu';
         }
 
         return $title;
@@ -196,7 +196,7 @@ if (!function_exists('sozo_home_meta_desc')) {
         $desc = trim((string) preg_replace('/\s+/u', ' ', $desc));
 
         if ($desc === '') {
-            $desc = 'Klinik kecantikan terdekat dan terbaik. Laser Treatment, Facial, Hair Removal, HIFU, Meso, dan Infus Whitening bersama dokter berpengalaman.';
+            $desc = 'Klinik kecantikan terdekat dari rumahmu. Laser Treatment, Facial, Hair Removal, HIFU, Meso, dan Infus Whitening bersama dokter berpengalaman.';
         }
 
         return $desc;
